@@ -96,27 +96,7 @@
 .demo-kicker{font-size:.72rem;font-weight:800;letter-spacing:.09em;text-transform:uppercase;color:#D9B96A;margin:0 0 10px}
 .step-dot{width:40px;height:40px;min-width:40px;font-size:0;padding:0}
 .step-dot::after{content:"";width:9px;height:9px;border-radius:50%;background:currentColor;display:block}
-/* notification screen */
-.notif-screen{display:flex;flex-direction:column;padding:22px 20px;background:#102F4F;border:1px solid #31516E;border-radius:var(--radius)}
-.notif-h{color:#fff;font-size:1.45rem;margin:0 0 14px;letter-spacing:-.01em}
-.push-notif{background:#0B1E33;border:1px solid #31516E;border-radius:18px;padding:14px 16px;box-shadow:0 12px 28px rgba(0,0,0,.35)}
-.push-in{animation:pushIn .55s cubic-bezier(.32,.72,.24,1)}
-@keyframes pushIn{from{opacity:0;transform:translateY(-18px) scale(.98)}to{opacity:1;transform:none}}
-.push-app{display:flex;align-items:center;gap:7px;font-size:.7rem;font-weight:800;letter-spacing:.08em;color:#8FA3B8;margin-bottom:9px}
-.push-app .push-icon{width:20px;height:20px;border-radius:6px;display:grid;place-items:center;overflow:hidden}
-.push-app .push-time{margin-left:auto;font-weight:600;letter-spacing:0}
-.push-title{margin:0 0 4px;font-size:1.05rem;font-weight:800;color:#fff;line-height:1.35}
-.push-body{margin:0;font-size:.9rem;color:#C7D4E1;line-height:1.5}
-.notif-ask{font-size:1.02rem;font-weight:750;color:#fff;margin:20px 0 4px;text-align:center;line-height:1.45}
-.notif-cta{display:flex;flex-direction:column;gap:4px;align-items:stretch;margin-top:8px}
-.notif-cta .stepper-btn{width:100%;padding:13px 18px;font-size:1rem}
-.btn-quiet{background:none;border:0;color:#8FA3B8;font-weight:700;cursor:pointer;padding:12px;font-size:.92rem;border-radius:10px}
-.btn-quiet:hover{color:#C7D4E1;text-decoration:underline}
-.btn-quiet:focus-visible{outline:3px solid var(--mint);outline-offset:2px}
 .hypo-flag{display:block;font-size:.74rem;color:#8FA3B8;background:transparent;border:1px dashed #3D5A75;border-radius:8px;padding:8px 12px;margin:16px 0 0;text-align:center;line-height:1.45}
-.notif-quiet{text-align:center;padding:30px 6px 10px}
-.quiet-title{font-size:1.15rem;font-weight:800;color:#fff;margin:0 0 6px}
-.quiet-sub{color:#8FA3B8;margin:0 0 18px;font-size:.9rem}
 /* bridge screen */
 .bridge-screen{display:flex;flex-direction:column;align-items:flex-start;gap:12px;padding:30px 24px;background:#102F4F;border:1px solid #31516E;border-radius:var(--radius)}
 .bridge-screen h3{color:#fff;font-size:1.5rem;margin:0;line-height:1.3;letter-spacing:-.01em}
@@ -318,6 +298,14 @@
 .upcoming-panel{border:1px dashed rgba(176,138,74,.6);border-radius:12px;padding:14px 18px;margin:0 0 18px;background:rgba(246,241,231,.65)}
 .upcoming-panel h3{margin:0 0 6px;font-size:1rem}
 .upcoming-panel p{margin:0;font-size:.9rem}
+.upcoming-list{list-style:none;margin:10px 0 0;padding:0;display:grid;gap:12px}
+.upcoming-item{border-top:1px solid rgba(176,138,74,.35);padding-top:10px}
+.upcoming-item:first-child{border-top:0;padding-top:0}
+.upcoming-ref{font-size:.76rem;letter-spacing:.05em;color:#7C5F1E;font-weight:700}
+.upcoming-title{font-weight:700;margin:3px 0;font-size:.95rem}
+.upcoming-meta{font-size:.82rem;color:#5a5347;margin:0 0 5px}
+.upcoming-brief{font-size:.88rem;margin:0 0 6px;line-height:1.5}
+.upcoming-link{font-size:.85rem;font-weight:700;color:#7C5F1E}
 .method-checklist,.changelog{margin:8px 0 4px;padding-left:22px}
 .method-checklist li,.changelog li{margin:4px 0;font-size:.92rem}
 </style>
@@ -395,7 +383,7 @@
 
   <section class="records" id="record">
     <div class="wrap">
-      <div class="records-intro"><div><div class="section-kicker">Toronto City Council Voting Records</div><h2>The Record</h2><p class="section-lede">Search Toronto City Council recorded votes and councillor career totals in this public-record snapshot.</p><p class="record-scope">Of the 33,775 agenda items in this snapshot, 3,162 have a councillor-by-councillor recorded vote — about 1 in 11. This breakdown is available only when a recorded vote is requested. Most items pass “on consent” with no recorded vote — standard council procedure, not a gap in this data.</p></div><div class="record-facts"><strong>94</strong> councillor career totals, 2006–2026<br><strong>33,775</strong> searchable agenda items, 2018–2026</div></div>       <aside class="upcoming-panel" aria-label="Upcoming votes"><h3>What’s coming</h3><p>Council meeting dates for the new term have not been published yet. After the October 27, 2026 municipal election, upcoming meeting dates and agenda statuses will post here — so you can read the brief <em>before</em> the vote.</p></aside>
+      <div class="records-intro"><div><div class="section-kicker">Toronto City Council Voting Records</div><h2>The Record</h2><p class="section-lede">Search Toronto City Council recorded votes and councillor career totals in this public-record snapshot.</p><p class="record-scope">Of the 33,775 agenda items in this snapshot, 3,162 have a councillor-by-councillor recorded vote — about 1 in 11. This breakdown is available only when a recorded vote is requested. Most items pass “on consent” with no recorded vote — standard council procedure, not a gap in this data.</p></div><div class="record-facts"><strong>94</strong> councillor career totals, 2006–2026<br><strong>33,775</strong> searchable agenda items, 2018–2026</div></div>       <aside class="upcoming-panel" aria-label="Upcoming votes"><h3>What’s coming</h3><div id="upcoming-list"><p>Loading upcoming agendas…</p></div></aside>
       <div class="record-shell">
         <nav class="tabs-shell" aria-label="Record sections"><div class="tabs">
           <div role="tablist" aria-label="Record sections" style="display:contents"><button class="tab active" data-view="home" role="tab" id="tab-home" aria-selected="true" aria-controls="record-app">Overview</button><button class="tab" data-view="items" role="tab" id="tab-items" aria-selected="false" aria-controls="record-app" tabindex="-1">Agenda Items</button><button class="tab" data-view="topics" role="tab" id="tab-topics" aria-selected="false" aria-controls="record-app" tabindex="-1">Topics</button><button class="tab" data-view="councillors" role="tab" id="tab-councillors" aria-selected="false" aria-controls="record-app" tabindex="-1">Councillors</button><button class="tab" data-view="compare" role="tab" id="tab-compare" aria-selected="false" aria-controls="record-app" tabindex="-1">Compare</button></div>
@@ -411,7 +399,7 @@
       <div class="section-kicker">Your Vote</div>         <h2 tabindex="-1">Your Vote</h2>
       <p class="section-sub">Try the Deme loop: get the alert, weigh in before the vote, then see how you line up.</p>
       <p class="section-lede">This is a concept demo of the core interaction. It starts with a sample upcoming-vote alert, then lets you weigh in on three recent Toronto City Council decisions and compare your positions with your representative’s recorded vote.</p>
-      <div class="recess-note"><span><strong>No upcoming agendas were available when this snapshot was prepared.</strong> Toronto City Council is in recess ahead of the October 26, 2026 municipal election. These recent recorded votes demonstrate the interaction and are not presented as upcoming decisions.</span></div>
+      <div class="recess-note"><span><strong>Toronto City Council is in recess ahead of the October 26, 2026 municipal election.</strong> These recent recorded votes demonstrate the interaction and are not presented as upcoming decisions.</span></div>
       <aside class="demo-guide" id="demo-guide" aria-labelledby="demo-guide-title"><button class="guide-close" type="button" aria-label="Dismiss demo instructions">×</button><h3 id="demo-guide-title">Try the Real Loop</h3><div class="guide-steps"><div class="guide-step"><b>1</b><span><strong>Get the alert</strong>A notification tells you what’s coming up for a vote.</span></div><div class="guide-step"><b>2</b><span><strong>Have your say</strong>Tap Support or Oppose before council decides.</span></div><div class="guide-step"><b>3</b><span><strong>See the result</strong>After the vote, compare the outcome — and your representative’s record — with your position.</span></div></div></aside>
       <aside class="rep-lookup" aria-labelledby="rep-lookup-title">
         <div><h3 id="rep-lookup-title">Compare Your Position with the Record</h3><p>Enter a Toronto postal code to compare each choice with your representative’s recorded vote.</p></div>
@@ -576,34 +564,21 @@ function hypoBrief(){if(state.simpleMode)return 'Example: the city is thinking a
   function initStepperHeight(){var vp=document.querySelector('.stepper-viewport');var track=document.getElementById('demo-track');if(!vp||!track||vp.dataset.hb)return;vp.dataset.hb='1';fitStepperHeight(true);if('ResizeObserver' in window){try{new ResizeObserver(function(){fitStepperHeight()}).observe(track)}catch(e){}}window.addEventListener('resize',function(){fitStepperHeight(true)})}
   function bindStepperSwipe(){var vp=document.querySelector('.stepper-viewport');if(!vp||vp.dataset.sb)return;vp.dataset.sb='1';var sx=0,sy=0,on=false;vp.addEventListener('touchstart',function(e){if(e.touches.length!==1)return;var t=e.touches[0];sx=t.clientX;sy=t.clientY;on=true},{passive:true});vp.addEventListener('touchcancel',function(){on=false},{passive:true});vp.addEventListener('touchend',function(e){if(!on)return;on=false;var t=e.changedTouches[0];var dx=t.clientX-sx,dy=t.clientY-sy;if(Math.abs(dx)>48&&Math.abs(dx)>Math.abs(dy)*1.25){if(dx<0){demoGo(demoStep>=DEMO_STEP_COUNT-1?0:demoStep+1)}else{demoGo(demoStep-1)}}},{passive:true})}
   function pulseNext(){var nx=document.getElementById('demo-next');if(!nx)return;nx.classList.remove('next-attn');void nx.offsetWidth;nx.classList.add('next-attn');setTimeout(function(){nx.classList.remove('next-attn')},2200)}
-  var DEMO_STEP_COUNT=7;
-  var DEMO_STEP_LABELS=['Upcoming vote alert','Upcoming vote: community centres','How it works','Recent vote 1 of 3','Recent vote 2 of 3','Recent vote 3 of 3','Your comparison'];
-  function demoGo(n,focus){n=Math.max(0,Math.min(DEMO_STEP_COUNT-1,n));demoStep=n;var track=document.getElementById('demo-track');if(!track)return;track.style.transform='translateX(-'+(n*100)+'%)';var slides=track.querySelectorAll('.step-slide');slides.forEach(function(s,i){s.classList.toggle('active',i===n)});var status=document.getElementById('demo-step-status');if(status)status.textContent='Step '+(n+1)+' of '+DEMO_STEP_COUNT+': '+DEMO_STEP_LABELS[n];document.querySelectorAll('.step-dot').forEach(function(d){var g=parseInt(d.dataset.goto,10);if(g===n){d.setAttribute('aria-current','step')}else{d.removeAttribute('aria-current')}d.classList.toggle('done',g<n);d.tabIndex=(g===n?0:-1)});var prev=document.getElementById('demo-prev'),next=document.getElementById('demo-next');if(prev)prev.disabled=(n===0);if(next){next.innerHTML=(n===DEMO_STEP_COUNT-1?'\u21ba Start over':'Next \u2192');next.classList.remove('next-attn');}if(n===0){var wrap=document.getElementById('notif-alert-wrap');var p=document.getElementById('demo-push');if(wrap&&!wrap.hidden&&p){p.classList.remove('push-in');void p.offsetWidth;p.classList.add('push-in');}}if(focus){var t=slides[n].querySelector('[data-step-title]');if(t)t.focus({preventScroll:true})}}
-  function renderDemo(){
-    // Flow: 0 notification, 1 hypothetical vote, 2 bridge, 3-5 real votes, 6 scorecard.
-    var notif='<div class="step-slide" data-slide="0"><div class="notif-screen">'
-      +'<p class="demo-kicker">Demo \u00b7 Upcoming vote alert</p>'
-      +'<h3 tabindex="-1" data-step-title class="notif-h">Your first alert</h3>'
-      +'<div id="notif-alert-wrap">'
-      +'<div class="push-notif push-in" id="demo-push">'
-      +'<div class="push-app"><span class="push-icon" aria-hidden="true"><svg viewBox="0 0 40 40" width="14" height="14" aria-hidden="true"><rect width="40" height="40" rx="8" fill="#B08A4A"/><path d="M10.5 20.5l6.2 6.2L29.8 13.5" fill="none" stroke="#fff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>DEME</span><span class="push-time">now</span></div>'
-      +'<p class="push-title">Pilot extended hours at community centres</p>'
-      +'<p class="push-body">Council votes Tuesday. Want to have your say before they vote?</p>'
-      +'</div>'
-      +'<p class="notif-ask">Want to have your say before they vote?</p>'
-      +'<div class="notif-cta"><button type="button" class="stepper-btn primary" id="notif-vote-now">Vote now</button>'
-      +'<button type="button" class="btn-quiet" id="notif-later">Maybe later</button></div>'
-      +'<p class="hypo-flag">Demo example \u2014 not a real upcoming vote</p>'
-      +'</div>'
-      +'<div class="notif-quiet" id="notif-quiet" hidden>'
-      +'<p class="quiet-title">You\u2019re all caught up.</p>'
-      +'<p class="quiet-sub">New vote alerts will appear here.</p>'
-      +'<button type="button" class="stepper-btn" id="notif-check">Check upcoming votes</button>'
-      +'<p class="hypo-flag">Demo example \u2014 not a real upcoming vote</p>'
-      +'</div>'
-      +'</div></div>';
-    var hypo='<div class="step-slide" data-slide="1"><article class="demo-card demo-hypo" data-hypothetical="true" id="vote-demo-upcoming">'
-      +'<p class="demo-kicker">Upcoming vote \u00b7 Demo example</p>'
+  var DEMO_STEP_COUNT=6;
+  var DEMO_STEP_LABELS=['Upcoming vote: community centres','How it works','Recent vote 1 of 3','Recent vote 2 of 3','Recent vote 3 of 3','Your comparison'];
+  function demoGo(n,focus){n=Math.max(0,Math.min(DEMO_STEP_COUNT-1,n));demoStep=n;var track=document.getElementById('demo-track');if(!track)return;track.style.transform='translateX(-'+(n*100)+'%)';var slides=track.querySelectorAll('.step-slide');slides.forEach(function(s,i){s.classList.toggle('active',i===n)});var status=document.getElementById('demo-step-status');if(status)status.textContent='Step '+(n+1)+' of '+DEMO_STEP_COUNT+': '+DEMO_STEP_LABELS[n];document.querySelectorAll('.step-dot').forEach(function(d){var g=parseInt(d.dataset.goto,10);if(g===n){d.setAttribute('aria-current','step')}else{d.removeAttribute('aria-current')}d.classList.toggle('done',g<n);d.tabIndex=(g===n?0:-1)});var prev=document.getElementById('demo-prev'),next=document.getElementById('demo-next');if(prev)prev.disabled=(n===0);if(next){next.innerHTML=(n===DEMO_STEP_COUNT-1?'\u21ba Start over':'Next \u2192');next.classList.remove('next-attn');}if(focus){var t=slides[n].querySelector('[data-step-title]');if(t)t.focus({preventScroll:true})}}
+  function renderUpcoming(){
+  var el=document.getElementById('upcoming-list');if(!el)return;
+  var up=DATA.upcoming||[];
+  if(!up.length){el.innerHTML='<p>Council meeting dates for the new term have not been published yet. After the October 26, 2026 municipal election, upcoming meeting dates and agenda statuses will post here \u2014 so you can read the brief <em>before</em> the vote.</p>';return;}
+  el.innerHTML='<ul class="upcoming-list">'+up.map(function(u){
+    return '<li class="upcoming-item"><div class="upcoming-ref">'+esc(u.ref)+' \u00b7 '+esc(u.date)+'</div><div class="upcoming-title">'+esc(u.title)+'</div><p class="upcoming-meta">'+esc(u.body)+'</p><p class="upcoming-brief">'+esc(u.brief)+'</p><a class="upcoming-link" href="'+esc(u.tmmis)+'" target="_blank" rel="noopener">View agenda item \u2192</a></li>';
+  }).join('')+'</ul>';
+}
+function renderDemo(){
+    // Flow: 0 hypothetical vote, 1 bridge, 2-4 real votes, 5 scorecard.
+    var hypo='<div class="step-slide" data-slide="0"><article class="demo-card demo-hypo" data-hypothetical="true" id="vote-demo-upcoming">'
+      +'<p class="demo-kicker">It\u2019s your time to vote \u00b7 Demo example</p>'
       +'<h3 tabindex="-1" data-step-title>Pilot extended hours at community centres</h3>'
       +'<p class="hypo-flag">Demo example \u2014 not a real upcoming vote</p>'
       +'<p class="demo-gloss"><span class="brief-label">What\u2019s on the Table</span>'+esc(hypoBrief())+'</p>'
@@ -614,7 +589,7 @@ function hypoBrief(){if(state.simpleMode)return 'Example: the city is thinking a
       +'<p class="reveal-majority rs2"></p>'
       +'<p class="waitlist-nudge rs3" hidden>Want to weigh in on real upcoming votes? <a href="#join">Join the waitlist</a>.</p>'
       +'</div></article></div>';
-    var bridge='<div class="step-slide" data-slide="2"><div class="bridge-screen">'
+    var bridge='<div class="step-slide" data-slide="1"><div class="bridge-screen">'
       +'<p class="demo-kicker">How it works</p>'
       +'<h3 tabindex="-1" data-step-title>Nice \u2014 now see how your views line up.</h3>'
       +'<p>Next up: three recent council votes. Take a position first, then see how the real decision went \u2014 and how your representative voted.</p>'
@@ -635,7 +610,7 @@ function hypoBrief(){if(state.simpleMode)return 'Example: the city is thinking a
       var outcome=/^carried/i.test(voteResult)?'carried':(/^lost/i.test(voteResult)?'failed':'decided');
       var tallyBits=String(voteResult).split(',');
       var tally=tallyBits.length>1?tallyBits[1].trim().replace(/-/g,'\u2013'):((counts.Yes||0)+'\u2013'+(counts.No||0));
-      var slide=idx+3;
+      var slide=idx+2;
       return '<div class="step-slide" data-slide="'+slide+'">'
         +'<article class="demo-card demo-real" id="'+voteId(ref)+'" data-demo="'+esc(ref)+'" data-mkey="'+esc(gkey)+'" data-outcome="'+outcome+'" data-tally="'+esc(tally)+'" data-mkind="'+mkind+'">'
         +'<p class="demo-kicker">From the record \u00b7 Vote '+(idx+1)+' of 3</p>'
@@ -653,12 +628,12 @@ function hypoBrief(){if(state.simpleMode)return 'Example: the city is thinking a
         +'<button class="record-link rs4" data-demo-record="'+esc(ref)+'">See the full record \u2192</button>'
         +'</div></article></div>';
     }).join('');
-    var score='<div class="step-slide" data-slide="6"><div class="scorecard-step" id="demo-scorecard-step" aria-live="polite"></div></div>';
+    var score='<div class="step-slide" data-slide="5"><div class="scorecard-step" id="demo-scorecard-step" aria-live="polite"></div></div>';
     var dots=DEMO_STEP_LABELS.map(function(label,n){
       return '<button type="button" class="step-dot" data-goto="'+n+'" aria-label="Go to step '+(n+1)+' of '+DEMO_STEP_COUNT+': '+esc(label)+'"></button>';
     }).join('');
-    document.getElementById('demo-cards').innerHTML='<div class="demo-stepper"><div class="phone-frame"><div class="phone-notch" aria-hidden="true"></div><div class="stepper-top"><p class="stepper-status" id="demo-step-status" aria-live="polite"></p><div class="stepper-dots" role="group" aria-label="Demo steps">'+dots+'</div></div><div class="stepper-viewport"><div class="stepper-track" id="demo-track">'+notif+hypo+bridge+real+score+'</div></div><div class="stepper-nav"><button type="button" class="stepper-btn" id="demo-prev">\u2190 Back</button><button type="button" class="stepper-btn primary" id="demo-next">Next \u2192</button></div></div></div>';
-    bindDemo();restoreDemoVotes();bindStepper();bindNotif();updateScorecard();highlightLinkedVote();
+    document.getElementById('demo-cards').innerHTML='<div class="demo-stepper"><div class="phone-frame"><div class="phone-notch" aria-hidden="true"></div><div class="stepper-top"><p class="stepper-status" id="demo-step-status" aria-live="polite"></p><div class="stepper-dots" role="group" aria-label="Demo steps">'+dots+'</div></div><div class="stepper-viewport"><div class="stepper-track" id="demo-track">'+hypo+bridge+real+score+'</div></div><div class="stepper-nav"><button type="button" class="stepper-btn" id="demo-prev">\u2190 Back</button><button type="button" class="stepper-btn primary" id="demo-next">Next \u2192</button></div></div></div>';
+    bindDemo();restoreDemoVotes();bindStepper();updateScorecard();highlightLinkedVote();
   }
   function normalizeName(s){return String(s||'').toLowerCase().replace(/^councillor\s+/,'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z0-9]/g,'')}
   function repVoteFor(ref,mkey){if(!demoRep)return null;var target=normalizeName(demoRep.name);var rows=mkey?(motionGroups(ref)[mkey]||[]):(DATA.itemVotes[ref]||[]);return rows.find(function(row){return normalizeName(row.m)===target})||null}
@@ -737,14 +712,6 @@ function hypoBrief(){if(state.simpleMode)return 'Example: the city is thinking a
     return '<div class="ward-sample"><h4>How your ward weighed in <span class="sample-tag">Sample \u2014 not real ward data</span></h4>'+rows+'<p class="ward-sample-note">Illustrative sample only. When Deme launches, this panel will show how verified users in your ward weighed in on each item.</p></div>';
   }
   function bindScorePostal(){var form=document.getElementById('score-postal-form');if(!form||form.dataset.bound)return;form.dataset.bound='1';var input=document.getElementById('score-postal');var status=document.getElementById('score-postal-status');form.addEventListener('submit',function(e){e.preventDefault();doPostalLookup(input.value,status,form.querySelector('button'),function(ok){if(ok){var h=document.querySelector('#demo-scorecard-step h3');if(h)h.focus({preventScroll:true});}});});}
-  function bindNotif(){
-    var vn=document.getElementById('notif-vote-now');
-    if(vn)vn.addEventListener('click',function(){demoGo(1,true)});
-    var ml=document.getElementById('notif-later');
-    if(ml)ml.addEventListener('click',function(){document.getElementById('notif-alert-wrap').hidden=true;document.getElementById('notif-quiet').hidden=false;fitStepperHeight(true);document.getElementById('notif-check').focus();});
-    var cu=document.getElementById('notif-check');
-    if(cu)cu.addEventListener('click',function(){document.getElementById('notif-alert-wrap').hidden=false;document.getElementById('notif-quiet').hidden=true;document.getElementById('notif-vote-now').focus();var p=document.getElementById('demo-push');if(p){p.classList.remove('push-in');void p.offsetWidth;p.classList.add('push-in');}fitStepperHeight(true);});
-  }
   function highlightLinkedVote(){var hash=window.location.hash;if(hash.indexOf('#vote-')!==0){demoGo(demoStep||0,false);return}var target=document.getElementById(hash.slice(1));if(!target){demoGo(demoStep||0,false);return}var slide=target.closest?target.closest('.step-slide'):null;if(slide&&slide.parentNode){demoStep=Array.prototype.indexOf.call(slide.parentNode.children,slide)}demoGo(demoStep||0,false);target.scrollIntoView({behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth',block:'center'});target.classList.add('deep-link-highlight');setTimeout(function(){target.classList.remove('deep-link-highlight')},2300)}
   function bindDemo(){document.querySelectorAll('.demo-card').forEach(function(card){card.querySelectorAll('[data-choice]').forEach(function(btn){btn.addEventListener('click',function(){card.dataset.choice=btn.dataset.choice;saveDemoVote(card);card.querySelectorAll('[data-choice]').forEach(function(b){b.setAttribute('aria-pressed',String(b===btn))});updateDemoResult(card)})})});document.querySelectorAll('[data-demo-record]').forEach(function(b){b.addEventListener('click',function(){go('item',{ref:b.dataset.demoRecord,backView:'home'})})})}  function demoVoteKey(card){return 'deme-demo:'+(card.dataset.demo||'')+'|'+(card.dataset.mkey||'');}
   function saveDemoVote(card){try{var all={};try{all=JSON.parse(localStorage.getItem('demeDemoVotes')||'{}')}catch(e){}all[demoVoteKey(card)]=card.dataset.choice;localStorage.setItem('demeDemoVotes',JSON.stringify(all));}catch(e){}}
@@ -904,11 +871,11 @@ function motionPill(m,idx,main){var kind=idx===main?'main':(isAmendMotion(m.name
   document.addEventListener('click',function(e){var trigger=e.target.closest('.debate-cost-trigger');if(trigger){var box=trigger.closest('.debate-cost');var open=!box.classList.contains('is-open');box.classList.toggle('is-open',open);trigger.setAttribute('aria-expanded',String(open));var pop=box.querySelector('.debate-cost-popover');if(pop){pop.hidden=!open;pop.setAttribute('aria-hidden',String(!open))}return}document.querySelectorAll('.debate-cost.is-open').forEach(function(box){box.classList.remove('is-open');var button=box.querySelector('.debate-cost-trigger');if(button)button.setAttribute('aria-expanded','false');var pop2=box.querySelector('.debate-cost-popover');if(pop2){pop2.hidden=true;pop2.setAttribute('aria-hidden','true')}})});
   var loadData=function(){
   var showLoadError=function(err){document.getElementById('demo-cards').innerHTML='<div class="errorbox"><strong>The demo votes could not be loaded.</strong></div>';app.innerHTML='<div class="errorbox"><strong>The record could not be loaded.</strong><br>Please reopen this page and try again.</div>';console.error(err);};
-  var files=[['councillors','data/councillors.json'],['items','data/items.json'],['itemVotes','data/itemVotes.json'],['memberVotes','data/memberVotes.json'],['profiles','data/profiles.json'],['declarations','data/declarations.json'],['simpleBriefs','data/simpleBriefs.json'],['costEstimates','data/costEstimates.json'],['wardImpact','data/wardImpact.json'],['votingBlocs','data/votingBlocs.json'],['financialImpacts','data/financialImpacts.json'],['termVotes','data/termVotes.json']];
-  var loadOne=function(pair){return fetch(pair[1]).then(function(res){if(!res.ok){if(pair[0]==='declarations'){DATA.declarations={};return null;}throw new Error('Failed to load '+pair[1]+' ('+res.status+')');}return res.json();}).then(function(parsed){if(parsed!==null)DATA[pair[0]]=parsed;});};
+  var files=[['councillors','data/councillors.json'],['items','data/items.json'],['itemVotes','data/itemVotes.json'],['memberVotes','data/memberVotes.json'],['profiles','data/profiles.json'],['declarations','data/declarations.json'],['simpleBriefs','data/simpleBriefs.json'],['costEstimates','data/costEstimates.json'],['wardImpact','data/wardImpact.json'],['votingBlocs','data/votingBlocs.json'],['financialImpacts','data/financialImpacts.json'],['termVotes','data/termVotes.json'],['upcoming','data/upcoming.json']];
+  var loadOne=function(pair){return fetch(pair[1]).then(function(res){if(!res.ok){if(pair[0]==='declarations'||pair[0]==='upcoming'){DATA[pair[0]]=pair[0]==='declarations'?{}:[];return null;}throw new Error('Failed to load '+pair[1]+' ('+res.status+')');}return res.json();}).then(function(parsed){if(parsed!==null)DATA[pair[0]]=parsed;});};
   try{
   Promise.all(files.map(loadOne)).then(function(){
-  var counts={};DATA.items.forEach(function(i){splitTopics(i.topics).forEach(function(t){counts[t]=(counts[t]||0)+1})});DATA.topics=Object.keys(counts).map(function(k){return {name:k,count:counts[k]}}).sort(function(a,b){return b.count-a.count||a.name.localeCompare(b.name)});renderDemo();render();handleItemHash();enhanceHeroDots();
+  var counts={};DATA.items.forEach(function(i){splitTopics(i.topics).forEach(function(t){counts[t]=(counts[t]||0)+1})});DATA.topics=Object.keys(counts).map(function(k){return {name:k,count:counts[k]}}).sort(function(a,b){return b.count-a.count||a.name.localeCompare(b.name)});renderDemo();renderUpcoming();render();handleItemHash();enhanceHeroDots();
   }).catch(showLoadError);
   }catch(err){showLoadError(err);}};if('requestIdleCallback' in window)requestIdleCallback(loadData,{timeout:800});else setTimeout(loadData,0);
 })();

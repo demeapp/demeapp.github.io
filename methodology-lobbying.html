@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en-CA">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>How we count lobbying contact | Deme</title>
+<meta name="description" content="How Deme counts lobbying contact from the Toronto Lobbyist Registry: what is counted, how names are matched, and what the record cannot tell you." />
+<link rel="canonical" href="https://demeapp.github.io/methodology-lobbying.html" />
+<meta property="og:title" content="How we count lobbying contact | Deme" />
+<meta property="og:description" content="How Deme counts lobbying contact from the Toronto Lobbyist Registry: what is counted, how names are matched, and what the record cannot tell you." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://demeapp.github.io/methodology-lobbying.html" />
+<meta property="og:image" content="https://demeapp.github.io/og-image.png" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+:root{--marble:#F6F1E7;--bronze:#B08A4A;--deep:#7C5F1E;--navy:#101E38;--ink:#1D1A15;--muted:#5E5647;--line:#DCD2BC;--surface:#FDFBF5}*{box-sizing:border-box}body{margin:0;background:var(--marble);color:var(--ink);font-family:Inter,system-ui,sans-serif;line-height:1.55}.wrap{width:min(860px,calc(100% - 40px));margin:0 auto;padding:36px 0 56px}h1,h2{font-family:Fraunces,Georgia,serif;color:var(--navy);line-height:1.1;margin:0}h1{font-size:clamp(2rem,5vw,3.2rem);letter-spacing:-.02em}h2{font-size:1.35rem;margin:34px 0 10px}a{color:var(--deep);font-weight:650}.kicker{font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;font-weight:800;color:var(--deep);margin:0 0 10px}.ward{font-size:1.08rem;color:var(--muted);margin:10px 0 0}.card{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:20px 22px;margin-top:22px}.card p{margin:6px 0}.note{font-size:.9rem;color:var(--muted)}ul{margin:8px 0;padding-left:22px}li{margin:5px 0}footer{margin-top:44px;padding-top:18px;border-top:2px solid var(--navy);color:var(--muted);font-size:.85rem}.brand{font-family:Fraunces,Georgia,serif;font-weight:700;color:var(--navy);font-size:1.05rem}.cta{display:inline-block;background:var(--bronze);color:#0A1424;font-weight:800;padding:12px 18px;border-radius:5px;text-decoration:none;margin-top:14px}
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "name": "How we count lobbying contact | Deme", "url": "https://demeapp.github.io/methodology-lobbying.html", "isPartOf": {"@id": "https://demeapp.github.io/#website"}}</script>
+</head>
+<body>
+<main class="wrap">
+<p class="kicker">Deme — our data</p>
+<h1>How we count lobbying contact</h1>
+<p class="ward">The Toronto Lobbyist Registry, read plainly. Registry snapshot: October 8, 2026.</p>
+
+<h2>What this is</h2>
+<p>Toronto keeps a public record of lobbying. When a lobbyist contacts a city office holder about a subject, they must report it: who they contacted, who they work for, what the subject was, when, and how (meeting, e-mail, phone, in writing). The reports are gathered in the <a href="https://open.toronto.ca/dataset/lobbyist-registry/" target="_blank" rel="noopener">Toronto Lobbyist Registry</a>, published by the City as open data.</p>
+<p>Deme reads that public record and places it beside the voting record, so you can see two facts side by side: <strong>the recorded contact</strong> and <strong>the recorded vote</strong>. We report the record. We never make the call about what it means.</p>
+
+<h2>What we count</h2>
+<p>The counts beside a councillor's name are reported contacts where the registry names that Member of Council directly: meetings, e-mails, phone calls, and written messages filed by lobbyists with the City.</p>
+<ul>
+<li><strong>Total contacts</strong> — every reported contact found in the registry for that member, from 2010 to the snapshot date.</li>
+<li><strong>Contacts this term</strong> — the same count since the current council term began on November 15, 2022.</li>
+<li><strong>Lobbyists / clients</strong> — how many different lobbyists, and how many different clients they said they were acting for, appear in those reports.</li>
+<li><strong>Top subjects</strong> — the subject categories the lobbyists themselves chose when they filed.</li>
+<li><strong>Contacts by year</strong> — dated filings placed by year. A filing with no usable date counts in the total but is not placed by year; the panel says how many those are wherever it happens.</li>
+</ul>
+
+<h2>How we match names</h2>
+<p>The registry names the office holder in each report. We match that name to the member in the voting record in exactly two ways: the name matches as written, or it is a spelling variant we verified against the member's term and ward and listed in our public alias table (Adrian Heaps / A.A. Heaps; Justin Di Ciano / Justin J. Di Ciano). We never guess at a similar name.</p>
+<p>If a name in the registry has no recorded votes in our voting record, we don't publish a count for it — we log it and say so in our data notes.</p>
+
+<h2>Contacts with staff</h2>
+<p>About 39,000 reports name a member's staff rather than the member. We do <strong>not</strong> add those to any member's count. The registry labels staff contacts by office, and many of those office labels use the ward map from before 2018, when Toronto's wards were redrawn. Attributing them to today's member would be a guess, so we keep them as office-level counts only — and show them nowhere on a member's page.</p>
+
+<h2>Topic areas on agenda items</h2>
+<p>Near an agenda item you may see: <em>"Registered lobbying communications in this item's topic area this term: N (topic match — not specific to this item)."</em> That number needs its label:</p>
+<ul>
+<li>We group both registry subjects and council items into plain topic areas (for example, Planning &amp; development) using the published subject wording.</li>
+<li>The count is every reported contact to a Member of Council in that topic area since November 15, 2022 — the same broad topic, <strong>not</strong> contact about that specific item. Lobbyists name subject categories, not agenda items (in this snapshot, no in-window filing names a specific item), so a topic match is the most that can honestly be said.</li>
+<li>Items whose topic is not clear from their published title and subject terms don't show a count at all.</li>
+</ul>
+
+<h2>What this record cannot tell you</h2>
+<ul>
+<li><strong>What any lobbyist was paid.</strong> Toronto's registry records no fees, retainers, or charges of any kind; it records who contacted whom, for whom, about what — never a dollar amount. No dataset we use can answer what anyone was paid.</li>
+<li><strong>Whether a contact changed a vote.</strong> Contact is constant around active files. As a check, we measured: 33.2% of dated contacts were followed within 90 days by a same-topic vote from the same member — and 30.4% were preceded by one. Timing on its own shows that contact happened, nothing more, which is why we show votes and contacts separately and never draw an arrow between them.</li>
+<li><strong>Who lobbied about one specific agenda item.</strong> Filings name subject categories, not agenda items, so item pages show topic-area counts only — labelled as topic matches, never as contact about that item.</li>
+<li><strong>Anything from the 2022 election's contribution filings.</strong> Those exist only as scanned statements and are not in this data; the contribution figures described below are 2018 only.</li>
+</ul>
+
+<h2>Campaign contributions (2018)</h2>
+<p>The contribution figures Deme works from come from the City's 2018 election contribution records. Only contributions over $100 are disclosed. The City publishes postal codes for individual donors, not street addresses, and so neither do we: any public view shows candidate totals and donor counts only, never a list of individual donors. People who donated in 2018 and people registered as lobbyists are <strong>not</strong> matched to each other on the public record — a shared name is not proof of a shared person.</p>
+
+<h2>Accuracy</h2>
+<ul>
+<li>Registry reports are filed by lobbyists and published by the City as received, unedited; late and mistaken filings exist. Counts are "as filed", and every figure carries its source, its snapshot date, and this note: <em>Toronto Lobbyist Registry communications filed with the City (snapshot Oct 8, 2026), as filed / self-reported, not verified by Deme.</em></li>
+<li>Before any export is produced, an independent check re-derives every headline number from the raw City files a second way and compares. If the two do not agree, the export is blocked and the failure is written down, not smoothed over.</li>
+<li>Found an error? Corrections are part of the record: we fix the number, note the fix, and keep the source line attached.</li>
+</ul>
+<p><a class="cta" href="https://demeapp.github.io/#record">See the record in the Deme app</a></p>
+<footer>
+<p><span class="brand">Deme</span> — Where the people meet the vote.</p>
+<p>Contact: <a href="mailto:demecivic@gmail.com">demecivic@gmail.com</a> · Source: City of Toronto Open Data — Lobbyist Registry (snapshot October 8, 2026), as filed / self-reported, not verified by Deme.</p>
+<p><a href="https://demeapp.github.io/">Back to Deme</a></p>
+</footer>
+</main>
+</body>
+</html>

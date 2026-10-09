@@ -20,7 +20,8 @@ whenever `data/*.json` is regenerated.
   totals, and agreement from these alone.
 - Small packs on demand: `wardImpact.json`, `profiles.json`,
   `votingBlocs.json`, `financialImpacts.json`, `costEstimates.json`,
-  `declarations.json`.
+  `declarations.json`, `lobbying.json` (profile and item views only —
+  never part of first paint).
 
 `data/items.json`, `data/itemVotes.json`, and `data/simpleBriefs.json` stay
 in the repo as pipeline sources but are **never fetched by the app**;
@@ -71,6 +72,24 @@ word, leak a raw URL, or are longer than the standard brief they simplify.
 `items.json` brief for that ref (the same text the static item pages prefer),
 matching the one-off cleanup of October 9, 2026.
 
+## `build-lobbying.py`
+
+    python3 tools/build-lobbying.py [--exports DIR]
+
+Builds the lobbying layer from the lobbying pipeline's QA-passed **public**
+exports only (default: the pool's `lobbying/exports/2026-10-08/public/`).
+Private exports never enter this repo. It writes `data/lobbying.json`
+(member footprints + per-item topic-area counts), injects the "Lobbying
+contacts on the record" card into every static councillor page and the
+topic-area section into static item pages (marker-wrapped, idempotent),
+writes `methodology-lobbying.html`, and adds that page to `sitemap.xml`.
+Semantics to preserve: footprint totals count dated **and** undated
+filings; year bars count dated filings only, and the undated difference
+is printed on the panel, never hidden. Item numbers are topic-area
+matches — the label "(topic match — not specific to this item)" travels
+with the number. The script aborts if the exports drift from the pinned
+spot-checks (Thompson 1,579/195/428/295; 2026.TE34.21 topic count 3,593).
+
 ## Regeneration order for a new snapshot
 
 1. Write `items.json`, `itemVotes.json`, and the other `data/*.json` files.
@@ -81,4 +100,5 @@ matching the one-off cleanup of October 9, 2026.
    static-page generation.
 4. `python3 tools/build-demo-bootstrap.py`.
 5. `python3 tools/build-shards.py` (year shards, member files, indexes).
-6. `python3 tools/check-data-snapshot.py` — must pass before committing.
+6. `python3 tools/build-lobbying.py` (only when a new lobbying export lands).
+7. `python3 tools/check-data-snapshot.py` — must pass before committing.

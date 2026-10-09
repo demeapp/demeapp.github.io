@@ -1,153 +1,182 @@
-
 {
 "Paul Ainslie":{
-"votes":1844,
+"votes":1842,
 "absent":156,
+"conflict":0,
 "absent_pct":8.5
 },
 "Brad Bradford":{
-"votes":1836,
-"absent":306,
+"votes":1824,
+"absent":305,
+"conflict":11,
 "absent_pct":17.3
 },
 "Alejandra Bravo":{
-"votes":1860,
-"absent":113,
-"absent_pct":6.1
+"votes":1857,
+"absent":112,
+"conflict":0,
+"absent_pct":6.0
 },
 "Jon Burnside":{
-"votes":1812,
+"votes":1811,
 "absent":144,
+"conflict":3,
 "absent_pct":8.1
 },
 "Shelley Carroll":{
-"votes":1823,
+"votes":1819,
 "absent":336,
+"conflict":3,
 "absent_pct":18.6
 },
 "Lily Cheng":{
-"votes":1837,
+"votes":1835,
 "absent":134,
+"conflict":5,
 "absent_pct":7.6
 },
 "Mike Colle":{
-"votes":1846,
+"votes":1845,
 "absent":227,
+"conflict":37,
 "absent_pct":14.3
 },
 "Gary Crawford":{
-"votes":379,
+"votes":378,
 "absent":87,
+"conflict":0,
 "absent_pct":23.0
 },
 "Vincent Crisanti":{
-"votes":1818,
+"votes":1808,
 "absent":370,
-"absent_pct":20.4
+"conflict":0,
+"absent_pct":20.5
 },
 "Paula Fletcher":{
-"votes":1840,
+"votes":1831,
 "absent":189,
+"conflict":0,
 "absent_pct":10.3
 },
 "Stephen Holyday":{
-"votes":1785,
+"votes":1784,
 "absent":0,
+"conflict":1,
 "absent_pct":0.1
 },
 "Ausma Malik":{
-"votes":1851,
+"votes":1840,
 "absent":100,
+"conflict":0,
 "absent_pct":5.4
 },
 "Nick Mantas":{
-"votes":1791,
+"votes":1788,
 "absent":213,
+"conflict":24,
 "absent_pct":13.3
 },
 "Josh Matlow":{
-"votes":1860,
+"votes":1857,
 "absent":118,
+"conflict":1,
 "absent_pct":6.4
 },
 "Jennifer McKelvie":{
-"votes":1213,
+"votes":1211,
 "absent":155,
+"conflict":0,
 "absent_pct":12.8
 },
 "Chris Moise":{
-"votes":1810,
-"absent":97,
-"absent_pct":5.7
+"votes":1807,
+"absent":96,
+"conflict":6,
+"absent_pct":5.6
 },
 "Amber Morley":{
-"votes":1829,
+"votes":1827,
 "absent":51,
+"conflict":0,
 "absent_pct":2.8
 },
 "Jamaal Myers":{
-"votes":1865,
+"votes":1854,
 "absent":105,
+"conflict":8,
 "absent_pct":6.1
 },
 "Frances Nunziata":{
-"votes":1837,
+"votes":1826,
 "absent":13,
+"conflict":5,
 "absent_pct":1.0
 },
 "James Pasternak":{
-"votes":1840,
-"absent":266,
-"absent_pct":14.5
+"votes":1838,
+"absent":265,
+"conflict":0,
+"absent_pct":14.4
 },
 "Gord Perks":{
-"votes":1850,
+"votes":1847,
 "absent":47,
+"conflict":0,
 "absent_pct":2.5
 },
 "Anthony Perruzza":{
-"votes":1804,
+"votes":1803,
 "absent":179,
+"conflict":1,
 "absent_pct":10.0
 },
 "Jaye Robinson":{
-"votes":739,
-"absent":183,
-"absent_pct":24.8
+"votes":738,
+"absent":182,
+"conflict":0,
+"absent_pct":24.7
 },
 "Dianne Saxe":{
-"votes":1830,
+"votes":1829,
 "absent":157,
+"conflict":2,
 "absent_pct":8.7
 },
 "Michael Thompson":{
-"votes":1836,
+"votes":1834,
 "absent":364,
+"conflict":0,
 "absent_pct":19.8
 },
 "John Tory":{
-"votes":116,
-"absent":5,
-"absent_pct":4.3
+"votes":115,
+"absent":4,
+"conflict":0,
+"absent_pct":3.5
 },
 "Olivia Chow":{
-"votes":1420,
-"absent":163,
-"absent_pct":12.0
+"votes":1419,
+"absent":162,
+"conflict":7,
+"absent_pct":11.9
 },
 "Parthi Kandavel":{
-"votes":1349,
+"votes":1345,
 "absent":117,
+"conflict":3,
 "absent_pct":8.9
 },
 "Rachel Chernos Lin":{
 "votes":859,
 "absent":37,
+"conflict":1,
 "absent_pct":4.4
 },
 "Neethan Shan":{
-"votes":436,
+"votes":434,
 "absent":12,
+"conflict":0,
 "absent_pct":2.8
 }
 }

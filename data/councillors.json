@@ -1,4 +1,3 @@
-
 [
 {
 "name":"Frances Nunziata",
@@ -609,7 +608,7 @@
 "yes":3234,
 "no":590,
 "absent":451,
-"absent_conflict":12,
+"absent_conflict":11,
 "absent_pct":10.8
 },
 {

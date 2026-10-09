@@ -21,7 +21,7 @@ whenever `data/*.json` is regenerated.
 - Small packs on demand: `wardImpact.json`, `profiles.json`,
   `votingBlocs.json`, `financialImpacts.json`, `costEstimates.json`,
   `declarations.json`, `lobbying.json` (profile and item views only —
-  never part of first paint).
+  never part of first paint), `promises.json` (profile views only).
 
 `data/items.json`, `data/itemVotes.json`, and `data/simpleBriefs.json` stay
 in the repo as pipeline sources but are **never fetched by the app**;
@@ -90,6 +90,25 @@ matches — the label "(topic match — not specific to this item)" travels
 with the number. The script aborts if the exports drift from the pinned
 spot-checks (Thompson 1,579/195/428/295; 2026.TE34.21 topic count 3,593).
 
+## `build-promises.py`
+
+    python3 tools/build-promises.py [--curated PATH]
+
+Builds `data/promises.json` from the QA-passed evidence-first curation
+in the data pool (default:
+`data-pool/promises/promises-curated.json`; its `AUDIT.md` carries the
+editorial rules and the per-item accept/reject record). The pack holds
+94 atomic claims across 29 members: 34 linked to 73 agenda items (Led
+proven only from item titles — 7), 60 carried as `no_direct_record`,
+each with a plain-English reason. The app renders compact claim rows
+(short title + Led/Supported/Opposed count chips, expandable to the
+actual items, the original promise wording, and its campaign source);
+it never shows a rating or a kept/broken verdict. The script
+re-derives every count from the entries, checks that each claim's
+`promise_idx` still points at the same promise in `data/profiles.json`
+(same source URL), and aborts on any drift from the pinned totals
+(29/94/34/60/73/7). Rebuild only when a new curation lands.
+
 ## Regeneration order for a new snapshot
 
 1. Write `items.json`, `itemVotes.json`, and the other `data/*.json` files.
@@ -101,4 +120,5 @@ spot-checks (Thompson 1,579/195/428/295; 2026.TE34.21 topic count 3,593).
 4. `python3 tools/build-demo-bootstrap.py`.
 5. `python3 tools/build-shards.py` (year shards, member files, indexes).
 6. `python3 tools/build-lobbying.py` (only when a new lobbying export lands).
-7. `python3 tools/check-data-snapshot.py` — must pass before committing.
+7. `python3 tools/build-promises.py` (only when a new promise curation lands).
+8. `python3 tools/check-data-snapshot.py` — must pass before committing.

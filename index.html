@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en-CA">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
@@ -8,16 +8,56 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700;9..144,800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <title>Deme — Where the people meet the vote.</title>
-  <meta name="description" content="Deme — know what Toronto City Council will vote on, have your say in plain language, and review each councillor's recorded votes." />
+  <title>Deme — Toronto City Council Voting Records, Attendance &amp; Declared Interests</title>
+  <meta name="description" content="Toronto City Council's record in plain language: how each councillor voted, attendance, and declared interests. Enter your postal code to find your councillor's record." />
+  <link rel="canonical" href="https://demeapp.github.io/" />
   <meta property="og:title" content="Deme — Where the People Meet the Vote." />
-  <meta property="og:description" content="Know what Toronto City Council will vote on, have your say, and review each councillor’s recorded votes." />
+  <meta property="og:description" content="Toronto City Council's record in plain language: how each councillor voted, attendance, and declared interests." />
   <meta property="og:type" content="website" />
-  <meta property="og:image" content="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='630' viewBox='0 0 1200 630'%3E%3Crect width='1200' height='630' fill='%23101E38'/%3E%3Crect x='88' y='110' width='118' height='118' rx='24' fill='%23B08A4A'/%3E%3Cpath d='M119 169l29 29 61-62' fill='none' stroke='white' stroke-width='15' stroke-linecap='round' stroke-linejoin='round'/%3E%3Ctext x='239' y='195' font-family='Georgia,serif' font-size='86' font-weight='700' fill='white'%3EDeme%3C/text%3E%3Ctext x='88' y='340' font-family='Georgia,serif' font-size='66' font-weight='700' fill='white'%3EWhere the People%3C/text%3E%3Ctext x='88' y='420' font-family='Georgia,serif' font-size='66' font-weight='700' fill='white'%3EMeet the Vote.%3C/text%3E%3Crect x='88' y='488' width='252' height='12' fill='%23B08A4A'/%3E%3C/svg%3E" />
+  <meta property="og:url" content="https://demeapp.github.io/" />
+  <meta property="og:image" content="https://demeapp.github.io/og-image.png" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Deme — Where the People Meet the Vote." />
-  <meta name="twitter:description" content="Know what Toronto City Council will vote on, have your say, and review each councillor’s recorded votes." />
-  <meta name="twitter:image" content="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='630' viewBox='0 0 1200 630'%3E%3Crect width='1200' height='630' fill='%23101E38'/%3E%3Crect x='88' y='110' width='118' height='118' rx='24' fill='%23B08A4A'/%3E%3Cpath d='M119 169l29 29 61-62' fill='none' stroke='white' stroke-width='15' stroke-linecap='round' stroke-linejoin='round'/%3E%3Ctext x='239' y='195' font-family='Georgia,serif' font-size='86' font-weight='700' fill='white'%3EDeme%3C/text%3E%3Ctext x='88' y='340' font-family='Georgia,serif' font-size='66' font-weight='700' fill='white'%3EWhere the People%3C/text%3E%3Ctext x='88' y='420' font-family='Georgia,serif' font-size='66' font-weight='700' fill='white'%3EMeet the Vote.%3C/text%3E%3Crect x='88' y='488' width='252' height='12' fill='%23B08A4A'/%3E%3C/svg%3E" />
+  <meta name="twitter:description" content="Toronto City Council's record in plain language: how each councillor voted, attendance, and declared interests." />
+  <meta name="twitter:image" content="https://demeapp.github.io/og-image.png" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://demeapp.github.io/#organization",
+        "name": "Deme",
+        "url": "https://demeapp.github.io/",
+        "logo": "https://demeapp.github.io/og-image.png",
+        "slogan": "Where the people meet the vote.",
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "email": "demecivic@gmail.com",
+          "contactType": "general enquiries"
+        }
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://demeapp.github.io/#website",
+        "name": "Deme",
+        "url": "https://demeapp.github.io/",
+        "publisher": { "@id": "https://demeapp.github.io/#organization" },
+        "inLanguage": "en-CA"
+      },
+      {
+        "@type": "Dataset",
+        "name": "Toronto City Council voting records, attendance and declared interests",
+        "description": "Recorded votes, attendance and declared interests for Toronto City Council members, drawn from City of Toronto council records (TMMIS) and presented in plain language.",
+        "url": "https://demeapp.github.io/",
+        "keywords": ["Toronto City Council", "voting records", "councillor attendance", "declared interests", "municipal government", "open data"],
+        "inLanguage": "en-CA",
+        "publisher": { "@id": "https://demeapp.github.io/#organization" },
+        "isBasedOn": "https://secure.toronto.ca/tmmis/"
+      }
+    ]
+  }
+  </script>
   <style>
     :root{
       color-scheme:light dark;
@@ -914,11 +954,14 @@ function motionPill(m,idx,main){var kind=idx===main?'main':(isAmendMotion(m.name
   document.addEventListener('click',function(e){var trigger=e.target.closest('.debate-cost-trigger');if(trigger){var box=trigger.closest('.debate-cost');var open=!box.classList.contains('is-open');box.classList.toggle('is-open',open);trigger.setAttribute('aria-expanded',String(open));var pop=box.querySelector('.debate-cost-popover');if(pop){pop.hidden=!open;pop.setAttribute('aria-hidden',String(!open))}return}document.querySelectorAll('.debate-cost.is-open').forEach(function(box){box.classList.remove('is-open');var button=box.querySelector('.debate-cost-trigger');if(button)button.setAttribute('aria-expanded','false');var pop2=box.querySelector('.debate-cost-popover');if(pop2){pop2.hidden=true;pop2.setAttribute('aria-hidden','true')}})});
   var loadData=function(){
   var showLoadError=function(err){document.getElementById('demo-cards').innerHTML='<div class="errorbox"><strong>The demo votes could not be loaded.</strong></div>';app.innerHTML='<div class="errorbox"><strong>The record could not be loaded.</strong><br>Please reopen this page and try again.</div>';console.error(err);};
-  var files=[['councillors','data/councillors.json'],['items','data/items.json'],['itemVotes','data/itemVotes.json'],['memberVotes','data/memberVotes.json'],['profiles','data/profiles.json'],['declarations','data/declarations.json'],['simpleBriefs','data/simpleBriefs.json'],['costEstimates','data/costEstimates.json'],['wardImpact','data/wardImpact.json'],['votingBlocs','data/votingBlocs.json'],['financialImpacts','data/financialImpacts.json'],['termVotes','data/termVotes.json'],['upcoming','data/upcoming.json']];
+  var files=[['councillors','data/councillors.json'],['items','data/items.json'],['itemVotes','data/itemVotes.json'],['profiles','data/profiles.json'],['declarations','data/declarations.json'],['costEstimates','data/costEstimates.json'],['wardImpact','data/wardImpact.json'],['votingBlocs','data/votingBlocs.json'],['financialImpacts','data/financialImpacts.json'],['termVotes','data/termVotes.json'],['upcoming','data/upcoming.json']];
   var loadOne=function(pair){return fetch(pair[1]).then(function(res){if(!res.ok){if(pair[0]==='declarations'||pair[0]==='upcoming'){DATA[pair[0]]=pair[0]==='declarations'?{}:[];return null;}throw new Error('Failed to load '+pair[1]+' ('+res.status+')');}return res.json();}).then(function(parsed){if(parsed!==null)DATA[pair[0]]=parsed;});};
+  var buildMemberVotes=function(){var byRef={};DATA.items.forEach(function(i){byRef[i.ref]=i});var out={};Object.keys(DATA.itemVotes).forEach(function(ref){var item=byRef[ref];if(!item)return;(DATA.itemVotes[ref]||[]).forEach(function(row){(out[row.m]||(out[row.m]=[])).push({d:item.date,ref:ref,t:item.title,v:row.v})})});Object.keys(out).forEach(function(name){out[name].sort(function(a,b){if(a.d!==b.d)return a.d<b.d?1:-1;if(a.ref!==b.ref)return a.ref<b.ref?1:-1;return 0})});return out};
+  var loadSimpleBriefs=function(){fetch('data/simpleBriefs.json').then(function(res){if(!res.ok)throw new Error('Failed to load data/simpleBriefs.json ('+res.status+')');return res.json()}).then(function(parsed){if(!parsed)return;DATA.simpleBriefs=parsed;if(state.simpleMode||state.view==='items'||state.view==='item'){var f=document.activeElement;if(f&&(f.id==='item-filter'||f.id==='topic-filter'))renderKeepFocus(f.id,f.selectionStart);else render()}}).catch(function(){/* Simple-language briefs are optional: the standard plain-language briefs stay in place. */})};
   try{
   Promise.all(files.map(loadOne)).then(function(){
-  var counts={};DATA.items.forEach(function(i){splitTopics(i.topics).forEach(function(t){counts[t]=(counts[t]||0)+1})});DATA.topics=Object.keys(counts).map(function(k){return {name:k,count:counts[k]}}).sort(function(a,b){return b.count-a.count||a.name.localeCompare(b.name)});renderDemo();renderUpcoming();render();handleItemHash();enhanceHeroDots();
+  DATA.memberVotes=buildMemberVotes();
+  var counts={};DATA.items.forEach(function(i){splitTopics(i.topics).forEach(function(t){counts[t]=(counts[t]||0)+1})});DATA.topics=Object.keys(counts).map(function(k){return {name:k,count:counts[k]}}).sort(function(a,b){return b.count-a.count||a.name.localeCompare(b.name)});renderDemo();renderUpcoming();render();handleItemHash();enhanceHeroDots();loadSimpleBriefs();
   }).catch(showLoadError);
   }catch(err){showLoadError(err);}};if('requestIdleCallback' in window)requestIdleCallback(loadData,{timeout:800});else setTimeout(loadData,0);
 })();

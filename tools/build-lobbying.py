@@ -258,7 +258,7 @@ def main():
 
 
 def write_methodology():
-    css = (":root{--marble:#F6F1E7;--bronze:#B08A4A;--deep:#7C5F1E;--navy:#101E38;"
+    css = (":root{--marble:#F6F1E7;--bronze:#7C5F1E;--deep:#7C5F1E;--navy:#101E38;"
            "--ink:#1D1A15;--muted:#5E5647;--line:#DCD2BC;--surface:#FDFBF5}"
            "*{box-sizing:border-box}body{margin:0;background:var(--marble);color:var(--ink);"
            "font-family:Inter,system-ui,sans-serif;line-height:1.55}"

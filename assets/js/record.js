@@ -1,7 +1,12 @@
-/* My Record — resolves each saved pick against the archive: is the item
-   decided yet? What was the outcome? If a recorded vote exists and the
-   visitor set a ward, how did their councillor vote on the first recorded
-   vote of the item, next to the visitor's own pick? All client-side. */
+/* My Record — the visitor's one personal home. It hosts the weigh-in
+   (the upcoming Council items, folded in from the old Vote page by the
+   owner decision of Oct 20, 2026), and it resolves each saved pick
+   against the archive: is the item decided yet? What was the outcome?
+   If a recorded vote exists and the visitor set a ward, how did their
+   councillor vote on the first recorded vote of the item, next to the
+   visitor's own pick? Weighing in requires sign-in: picks save to the
+   account (account.js keeps the account copy in step with the
+   VoteStore cache this page renders from). Reading never does. */
 "use strict";
 renderChrome("my-record.html");
 
@@ -10,6 +15,7 @@ const continuityBox = document.getElementById("continuity");
 const alertsBox = document.getElementById("profile-alerts");
 const picksBox = document.getElementById("picks");
 const agreeBox = document.getElementById("agreement");
+const upcomingBox = document.getElementById("upcoming");
 let people = [];
 let wardNames = new Map();
 let threadThreads = [];
@@ -178,7 +184,8 @@ function renderProfileChrome() {
   setup.hidden = false;
   if (doneRow) doneRow.hidden = !(ward != null && profileEditing);
 }
-window.DemeRecord = { refreshProfileSummary: renderProfileChrome };
+window.DemeRecord = { refreshProfileSummary: renderProfileChrome,
+  refreshWeighIn: renderUpcoming, refreshPicks: renderPicks };
 
 /* Continuity, same snapshot discipline as Home: no snapshot + a known
    current rep primes the snapshot silently; a snapshot naming someone
@@ -232,6 +239,175 @@ function renderAlerts() {
          open, alerts will follow the wards and topics in Your Deme.</p>`}`;
 }
 
+/* ---------------- weigh in (folded in from the old Vote page) ----
+   The Support/Oppose action requires sign-in (owner decision,
+   Oct 20, 2026): signed-out visitors see the value-pitch gate, and
+   any pick already on this device stays visible but read-only.
+   A gate tap remembers the item; when sign-in completes, the
+   account layer asks this page to re-render (refreshWeighIn) and
+   the visitor lands back on the same item. Signed-in picks write
+   to the local cache first, then to the account; a failed account
+   write is said out loud, never hidden. */
+const PENDING_WEIGH_KEY = "deme.pendingWeighIn";
+let upcomingItems = [];
+let upcomingLoaded = false;
+function accountSignedIn() {
+  return Boolean(window.DemeAccount
+    && typeof window.DemeAccount.isSignedIn === "function"
+    && window.DemeAccount.isSignedIn());
+}
+function takePendingWeighIn() {
+  try {
+    const v = sessionStorage.getItem(PENDING_WEIGH_KEY);
+    if (v) sessionStorage.removeItem(PENDING_WEIGH_KEY);
+    return v;
+  } catch (e) { return null; }
+}
+function weighInHTML(u) {
+  const pick = (typeof VoteStore.getPick === "function")
+    ? VoteStore.getPick(u.ref) : null;
+  const picked = pick ? pick.choice : null;
+  if (!accountSignedIn()) {
+    return `<div class="weighin" id="w-${CSS.escape(u.ref)}">
+      ${picked ? `<p class="savedNote">Your pick on this device:
+        <strong>${picked === "support" ? "Support" : "Oppose"}</strong>.
+        Sign in to save picks to your account and to change them.</p>` : ""}
+      <div class="pick-gate">
+        <h3>Sign in to weigh in</h3>
+        <p>Sign in to weigh in — your picks save to your account, and
+        we'll notify you when your voting card is ready: how the vote
+        went, how your councillor voted, and where you stand — on any
+        device.</p>
+        <p style="margin:.6rem 0 0"><button class="btn gate-signin"
+          type="button" data-ref="${esc(u.ref)}">Sign in or create
+          your free account</button></p>
+      </div>
+    </div>`;
+  }
+  return `<div class="weighin" id="w-${CSS.escape(u.ref)}">
+    <div class="choices" role="group" aria-label="Your position on ${esc(u.title)}">
+      <button class="choice support" data-ref="${esc(u.ref)}" data-choice="support"
+        aria-pressed="${picked === "support"}">Support</button>
+      <button class="choice oppose" data-ref="${esc(u.ref)}" data-choice="oppose"
+        aria-pressed="${picked === "oppose"}">Oppose</button>
+    </div>
+    <p class="savedNote" aria-live="polite">${picked
+      ? `Your pick: <strong>${picked === "support" ? "Support" : "Oppose"}</strong> —
+         saved to your account. Tap the other side to change it, any
+         time before the meeting.`
+      : "No pick yet — tap Support or Oppose to save your pick to your account."}</p>
+  </div>`;
+}
+function renderUpcoming() {
+  if (!upcomingBox) return;
+  if (!upcomingItems.length) {
+    upcomingBox.innerHTML = `<div class="calm">
+      <h3>No Council votes are scheduled in the published agenda right now.</h3>
+      <p>The City publishes each Council agenda ahead of the meeting. When
+      the next one appears, its items will be listed here with briefs —
+      ready to weigh in on before the vote, not after.</p>
+      <p style="margin-bottom:.4rem">Toronto's municipal election is
+      <strong>October 26, 2026</strong>; the new Council takes office in
+      November, and its first agendas follow. In the meantime, the full
+      record is open:</p>
+      <p><a class="btn secondary small" href="explore.html">Explore past decisions</a></p>
+    </div>`;
+    return;
+  }
+  upcomingBox.innerHTML = upcomingItems.map((u) => `
+    <article class="card" style="margin-bottom:1rem">
+      <div class="meta"><span>${esc(fmtDate(u.date))}</span>
+        <span>${esc(u.body)}</span><span class="pill ink">Coming up</span></div>
+      <h3>${esc(u.title)}</h3>
+      ${u.brief ? `<p>${esc(u.brief)}</p>` : ""}
+      ${weighInHTML(u)}
+    </article>`).join("");
+  bindWeighIns();
+  let targetRef = takePendingWeighIn();
+  if (!targetRef && location.hash && location.hash.length > 1
+      && !/weigh-in/.test(location.hash)) {
+    try { targetRef = decodeURIComponent(location.hash.slice(1)); }
+    catch (e) { targetRef = null; }
+  }
+  if (targetRef) {
+    const target = document.getElementById(`w-${CSS.escape(targetRef)}`);
+    if (target) {
+      target.scrollIntoView({ block: "center" });
+      target.classList.add("is-pending");
+    }
+  }
+}
+function bindWeighIns() {
+  if (!upcomingBox || upcomingBox.dataset.bound) return;
+  upcomingBox.dataset.bound = "1";
+  upcomingBox.addEventListener("click", async (e) => {
+    const gateBtn = e.target.closest(".gate-signin");
+    if (gateBtn) {
+      try {
+        sessionStorage.setItem(PENDING_WEIGH_KEY, gateBtn.dataset.ref);
+      } catch (e2) {}
+      const zoneEl = document.getElementById("account-zone");
+      if (zoneEl) {
+        zoneEl.scrollIntoView({ block: "start" });
+        const field = zoneEl.querySelector("input");
+        if (field) field.focus({ preventScroll: true });
+      }
+      return;
+    }
+    const btn = e.target.closest(".choice");
+    if (!btn || !accountSignedIn()) return;
+    const ref = btn.dataset.ref, choice = btn.dataset.choice;
+    /* The re-render below replaces the weigh-in block, destroying
+       this button — if it held keyboard focus, give it to its
+       replacement. */
+    const hadFocus = document.activeElement === btn;
+    const current = VoteStore.getPick(ref);
+    const clearing = Boolean(current && current.choice === choice);
+    if (clearing) VoteStore.clearPick(ref);
+    else VoteStore.setPick(ref, choice);
+    let synced = true;
+    if (window.DemeAccount
+        && typeof window.DemeAccount.syncPick === "function") {
+      synced = await window.DemeAccount.syncPick(ref, clearing ? null : choice);
+    }
+    const wrap = document.getElementById(`w-${CSS.escape(ref)}`);
+    const item = upcomingItems.find((u) => u.ref === ref);
+    if (wrap && item) {
+      const fresh = document.createElement("div");
+      fresh.innerHTML = weighInHTML(item);
+      const note = fresh.querySelector(".savedNote");
+      if (note) {
+        note.classList.add("pop");
+        if (!synced) {
+          note.innerHTML += " The account copy didn't go through just "
+            + "now — this pick is saved on this device, and the "
+            + "difference will be offered at your next sign-in.";
+        }
+      }
+      const newWrap = fresh.firstElementChild;
+      wrap.replaceWith(newWrap);
+      if (hadFocus) {
+        const eq = newWrap.querySelector(`.choice[data-choice="${choice}"]`);
+        if (eq) eq.focus();
+      }
+    }
+    renderPicks();
+  });
+}
+async function loadUpcoming() {
+  if (upcomingLoaded) { renderUpcoming(); return; }
+  upcomingLoaded = true;
+  try {
+    const up = await loadJSON(dataPath("upcoming.json"));
+    /* Defence in depth: the weigh-in shows City Council business
+       only. The exporter enforces this upstream; the page enforces
+       it again so no payload can put a board or committee item in
+       front of a visitor as a Council vote. */
+    upcomingItems = (up.items || []).filter((u) => u.body === "City Council");
+  } catch (e) { upcomingItems = []; }
+  renderUpcoming();
+}
+
 async function renderPicks() {
   const picks = VoteStore.allPicks();
   const refs = Object.keys(picks).sort(
@@ -240,8 +416,8 @@ async function renderPicks() {
     picksBox.innerHTML = `<div class="calm"><h3>No picks yet.</h3>
       <p>When you weigh in on an upcoming Council item, your position is
       saved here. After the meeting, this page lines your pick up against
-      what Council actually did. <a href="vote.html">See how weighing in
-      works →</a></p></div>`;
+      what Council actually did. <a href="#weigh-in">See what's coming
+      up →</a></p></div>`;
     agreeBox.innerHTML = "";
     return;
   }
@@ -341,7 +517,7 @@ async function init() {
     URL.revokeObjectURL(a.href);
   });
   document.getElementById("reset").addEventListener("click", () => {
-    if (confirm("Erase all your Deme picks, your ward and Your Deme from this browser?")) {
+    if (confirm("Erase all your Deme picks, your ward and Your Deme from this browser? (Picks saved to your account are not erased by this — deleting the account itself removes those.)")) {
       VoteStore.resetAll();
       topicsEditing = false;
       renderContinuity();
@@ -351,6 +527,7 @@ async function init() {
     }
   });
   renderPicks();
+  loadUpcoming();
 }
 init().catch(() => {
   picksBox.innerHTML = `<p class="small">Your record could not be loaded.</p>`;

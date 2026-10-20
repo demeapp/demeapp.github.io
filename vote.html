@@ -3,80 +3,48 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Vote — weigh in before Council decides — Deme</title>
-<meta name="description" content="Read a plain-language brief on what's coming up at Toronto City Council, weigh in, and afterwards see how the vote actually went.">
+<title>Weigh in — moved to My Record — Deme</title>
+<meta name="description" content="Weighing in now lives in My Record: read what's coming up at Toronto City Council, sign in, and save your picks to your account.">
+<meta name="robots" content="noindex">
 <link rel="stylesheet" href="assets/css/deme.css">
 <link rel="icon" href="favicon-navy.svg" type="image/svg+xml">
 <meta name="theme-color" content="#0E2A47">
 <meta name="referrer" content="strict-origin-when-cross-origin">
-<meta property="og:type" content="website">
-<meta property="og:site_name" content="Deme">
-<meta property="og:title" content="Vote — weigh in before Council decides — Deme">
-<meta property="og:description" content="Read a plain-language brief on what's coming up at Toronto City Council, weigh in, and afterwards see how the vote actually went.">
-<meta property="og:image" content="https://demeapp.github.io/assets/og-image-navy.png">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Vote — weigh in before Council decides — Deme">
-<meta name="twitter:description" content="Read a plain-language brief on what's coming up at Toronto City Council, weigh in, and afterwards see how the vote actually went.">
-<meta name="twitter:image" content="https://demeapp.github.io/assets/og-image-navy.png">
-<link rel="apple-touch-icon" href="assets/icon-180-navy.png">
+<script>
+  /* The weigh-in experience lives in My Record now (owner decision,
+     Oct 20, 2026). A #<ref> deep link is preserved as the pending
+     weigh-in, so the visitor lands on the same item there. */
+  (function () {
+    var ref = (location.hash || "").slice(1);
+    if (ref) {
+      try {
+        sessionStorage.setItem("deme.pendingWeighIn", decodeURIComponent(ref));
+      } catch (e) {}
+    }
+    location.replace("my-record.html#weigh-in");
+  })();
+</script>
+<meta http-equiv="refresh" content="0; url=my-record.html#weigh-in">
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to main content</a>
 <header class="site-header"></header>
 <main id="main">
   <div class="wrap">
-    <section aria-labelledby="vote-h">
+    <section>
       <p class="kicker">Before the vote</p>
-      <h1 id="vote-h">Weigh in before Council decides</h1>
+      <h1>Weighing in has moved</h1>
       <hr class="rule">
-      <p class="lede">This is the heart of Deme: read what's coming up,
-      decide where you stand, and afterwards see how the vote really went —
-      including how your own councillor voted.</p>
-
-      <div class="steps">
-        <div class="step"><span class="n">1</span>
-          <h3>Read the brief</h3>
-          <p class="small" style="margin:0">Each item coming before Council
-          gets a short, plain-language brief — what it is, and what a yes
-          or no would mean.</p></div>
-        <div class="step"><span class="n">2</span>
-          <h3>Weigh in</h3>
-          <p class="small" style="margin:0">Tap Support or Oppose. Your pick
-          is saved on this device only — no account, no sign-up.</p></div>
-        <div class="step"><span class="n">3</span>
-          <h3>See how it went</h3>
-          <p class="small" style="margin:0">After the meeting, the same item
-          shows Council's real decision — and, where a recorded vote
-          exists, how your councillor actually voted.</p></div>
-      </div>
-
-      <div id="upcoming" style="margin-top:2.6rem">
-        <span class="visually-hidden">Loading what's coming up…</span>
-        <div class="skel-card" aria-hidden="true"><span class="skel-el sm"></span><span class="skel-el title"></span><span class="skel-el"></span><span class="skel-el short"></span></div>
-      </div>
-
-      <div class="card" style="margin-top:2.4rem">
-        <h2 style="font-size:1.25rem">Council alerts by email</h2>
-        <p>Get an email when items on your wards or topics reach a City
-        Council agenda. Sign-ups are open now — digests haven't started
-        yet, and they begin with the new Council term. When they start,
-        it will be one digest per Council agenda, never one email per
-        item, and a person reviews every digest before it goes out.</p>
-        <div id="alerts-action"></div>
-      </div>
-
-      <div class="notice" style="margin-top:2.4rem">
-        <strong>Your picks are yours.</strong> They live in this browser and
-        nowhere else. Deme keeps no tally and shows no “community score” —
-        the only vote that decides anything is Council's, and Deme shows
-        you that result exactly as recorded.
-      </div>
+      <p class="lede">The weigh-in now lives in
+      <a href="my-record.html#weigh-in">My Record</a> — one personal home
+      for your picks, your ward and your voting card. If you aren't
+      taken there automatically, follow the link.</p>
     </section>
   </div>
 </main>
 <footer class="site-footer"></footer>
 <script src="assets/js/common.js"></script>
-<script src="assets/js/vote.js"></script>
+<script>renderChrome("my-record.html");</script>
 <script data-goatcounter="https://demecivic.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </body>
 </html>

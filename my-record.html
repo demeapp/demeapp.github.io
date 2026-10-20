@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>My Record — your picks, your councillor — Deme</title>
-<meta name="description" content="Your own Deme record: the positions you took before Council votes, how those votes went, and how your councillor voted. Stored only in your browser.">
+<meta name="description" content="Your own Deme record: the positions you took before Council votes, how those votes went, and how your councillor voted. With a free account, your picks save to your account and follow you across devices.">
 <link rel="stylesheet" href="assets/css/deme.css">
 <link rel="icon" href="favicon-navy.svg" type="image/svg+xml">
 <meta name="theme-color" content="#0E2A47">
@@ -12,11 +12,11 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Deme">
 <meta property="og:title" content="My Record — your picks, your councillor — Deme">
-<meta property="og:description" content="Your own Deme record: the positions you took before Council votes, how those votes went, and how your councillor voted. Stored only in your browser.">
+<meta property="og:description" content="Your own Deme record: the positions you took before Council votes, how those votes went, and how your councillor voted. With a free account, your picks save to your account and follow you across devices.">
 <meta property="og:image" content="https://demeapp.github.io/assets/og-image-navy.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="My Record — your picks, your councillor — Deme">
-<meta name="twitter:description" content="Your own Deme record: the positions you took before Council votes, how those votes went, and how your councillor voted. Stored only in your browser.">
+<meta name="twitter:description" content="Your own Deme record: the positions you took before Council votes, how those votes went, and how your councillor voted. With a free account, your picks save to your account and follow you across devices.">
 <meta name="twitter:image" content="https://demeapp.github.io/assets/og-image-navy.png">
 <link rel="apple-touch-icon" href="assets/icon-180-navy.png">
 </head>
@@ -29,18 +29,22 @@
       <p class="kicker">My Record</p>
       <h1 id="record-h">Your picks, checked against the record</h1>
       <hr class="rule">
-      <p class="lede">Everything here is computed on this device, from your
-      saved picks and the public record. Nothing leaves your browser.</p>
+      <p class="lede">This is your one personal home on Deme: weigh in
+      before the vote, and afterwards see your picks lined up against the
+      public record. Reading the record never needs an account; when
+      you're signed in, your picks save to your account — only you can
+      see them — and Deme never totals visitors' positions.</p>
 
       <div class="card record-card profile-card" id="your-deme" style="margin-top:1.6rem">
         <div id="account-zone">
           <div class="card record-card account-card">
             <p class="kicker">Accounts</p>
-            <h2 style="font-size:1.25rem">Your Deme account</h2>
-            <p>An account syncs Your Deme — your ward, watched ward and
-            topics — across your devices, and makes your account your
-            Council alerts identity. Your picks never leave each device,
-            account or not.</p>
+            <h2 style="font-size:1.25rem">An account gives you a say — not just a login.</h2>
+            <p>Weigh in on what's coming up and have your picks saved to
+            your account, get alerts for your ward and the topics you
+            follow, and see your voting card on any device. Only you can
+            see your picks, and Deme never totals visitors'
+            positions.</p>
             <p class="small">Account tools load here — if they don't
             appear, everything on this page still works in full on this
             device.</p>
@@ -51,8 +55,9 @@
         <div id="profile-setup">
           <h2 style="font-size:1.25rem">Your Deme</h2>
           <p style="max-width:44rem">Set your ward so Deme can put your councillor's
-          actual votes beside your picks. Everything on this card is kept
-          on this device. Only the ward you choose is saved.</p>
+          actual votes beside your picks. Your ward and topics are kept
+          on this device — and on your account, when you're signed in,
+          so they can follow you.</p>
           <div class="profile-block">
             <div id="ward-finder-primary"></div>
           </div>
@@ -70,6 +75,16 @@
         </div>
       </div>
 
+      <h2 style="margin-top:2.4rem" id="weigh-in">Weigh in — before the vote</h2>
+      <hr class="rule">
+      <p style="max-width:44rem">Read what's coming up at Council and take
+      your position before the vote. Signed-in picks save to your
+      account; after the meeting, your picks below are lined up against
+      what Council actually did.</p>
+      <div id="picks-migration"></div>
+      <div id="upcoming"><span class="visually-hidden">Loading what's coming up…</span>
+        <div class="skel-card" aria-hidden="true"><span class="skel-el sm"></span><span class="skel-el title"></span><span class="skel-el"></span><span class="skel-el short"></span></div></div>
+
       <h2 style="margin-top:2.4rem">Your picks</h2>
       <hr class="rule">
       <div id="picks"><span class="visually-hidden">Loading…</span>
@@ -80,12 +95,13 @@
         <button class="btn secondary small" id="export">Download my data (JSON)</button>
         <button class="btn secondary small" id="reset">Erase my picks, ward and Your Deme</button>
       </div>
-      <p class="small" id="local-note" style="max-width:44rem">Your picks never leave this browser, and
-      Deme keeps no tally of visitors' positions. Your local profile
-      lives in this browser's storage; if you create an account, your
-      name, email, wards and topics
-      are also held on our server so they can follow you — see the
-      privacy policy for exactly what's held and how to delete it.</p>
+      <p class="small" id="local-note" style="max-width:44rem">Your picks: when you're signed in, they're
+      saved to your account — only you can see them — and kept on this
+      device too; signed out, they live only in this browser. Deme keeps
+      no tally of visitors' positions. Your local profile lives in this
+      browser's storage; with an account, your name, email, wards, topics
+      and picks are also held on our server so they can follow you — see
+      the privacy policy for exactly what's held and how to delete it.</p>
     </section>
   </div>
 </main>

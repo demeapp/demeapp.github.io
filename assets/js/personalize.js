@@ -53,7 +53,8 @@ const HomeStore = (() => {
     return refs.map((r) => cardCache.get(r.ref) || null);
   }
 
-  /* Same card format as councillors.html — one stat line, no more. */
+  /* Same card format as councillors.html — only the four summary
+     stats approved for member cards. */
   function personCard(c) {
     const role = c.mayor ? "Mayor of Toronto"
       : `Councillor · Ward ${c.ward} — ${esc(c.wardName)}`;
@@ -64,8 +65,7 @@ const HomeStore = (() => {
           <p class="ward">${role}</p>
         </div>
       </div>
-      <p class="onestat">Attendance ${c.attendance == null ? "—" : c.attendance + "%"} ·
-        ${fmtNum(c.votesCast)} votes cast</p>
+      ${memberStatsHTML(c)}
     </article>`;
   }
 
@@ -138,8 +138,9 @@ const HomeStore = (() => {
           <button class="btn" type="button" id="profile-save">${isMayor ? "Save and show my Deme" : "Save and show my ward"}</button>
           <button class="btn secondary" type="button" id="profile-skip">Skip this step</button>
         </p>
-        <p class="small" style="margin:0">Kept only in this browser, like
-        your picks. Change it any time in My Record.</p>
+        <p class="small" style="margin:0">Kept in this browser — and on
+        your account too, if you sign in — like your picks. Change it
+        any time in My Record.</p>
       </div>`;
     const watchFinder = WardFinder.mount(
       document.getElementById("profile-watch-finder"), {

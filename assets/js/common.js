@@ -82,7 +82,6 @@ const NAV = [
   ["index.html", "Home"],
   ["explore.html", "Explore"],
   ["councillors.html", "Councillors"],
-  ["vote.html", "Vote"],
   ["about.html", "About"],
   ["my-record.html", "My Record"],
 ];
@@ -121,7 +120,7 @@ function renderChrome(active) {
           <ul>
             <li><a href="explore.html">Explore</a></li>
             <li><a href="councillors.html">Councillors</a></li>
-            <li><a href="vote.html">Vote</a></li>
+            <li><a href="my-record.html#weigh-in">Weigh in</a></li>
           </ul>
         </nav>
         <nav class="footer-group" aria-label="How it works">
@@ -141,6 +140,30 @@ function renderChrome(active) {
       <a href="about.html">About &amp; method</a>.</p>
       </div>`;
   }
+}
+
+/* Member cards carry only the four summary stats the owner approved:
+   attendance, votes cast, tenure, and declared interests. Tenure is
+   derived only from the member's own term list in councillors.json:
+   the earliest term start plus, where relevant, the number of terms. */
+function memberTenure(person) {
+  const terms = Array.isArray(person.terms) ? person.terms : [];
+  if (!terms.length) return "—";
+  const starts = terms.map((t) => Number(String(t).slice(0, 4))).filter(Boolean);
+  if (!starts.length) return terms.map(fmtTerm).join(" · ");
+  const since = Math.min(...starts);
+  return terms.length === 1
+    ? `On Council since ${since}`
+    : `${terms.length} terms · since ${since}`;
+}
+function memberStatsHTML(person) {
+  const interest = Number(person.interest) || 0;
+  return `<div class="member-stats" aria-label="Record summary">
+    <div><span>Attendance</span><strong>${person.attendance == null ? "—" : `${person.attendance}%`}</strong></div>
+    <div><span>Votes cast</span><strong>${fmtNum(person.votesCast)}</strong></div>
+    <div><span>Tenure</span><strong>${esc(memberTenure(person))}</strong></div>
+    <div><span>Interests declared</span><strong>${fmtNum(interest)}</strong></div>
+  </div>`;
 }
 
 /* ---------------- member avatars ----------------
@@ -344,6 +367,12 @@ const DEME_SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJ
    that dashboard half is a publish-step item, not code. See
    ACTIVATION-AUDIT-PROTOCOL.md F-6 / gate G-10. */
 const DEME_CAPTCHA_KEY = "0x4AAAAAAFeAvARA30IkxZms";
+/* Positions a visitor takes on upcoming items. This store is the
+   on-device cache. When the visitor is signed in, account.js also
+   saves each pick to their account (their own rows only) so their
+   card and notifications follow them across devices; signed-out
+   picks stay on this device. Deme never publishes tallies or
+   percentages of visitor positions, anywhere. */
 const VoteStore = (() => {
   const KEY = "deme.votes.v2", OLD = "deme.votes.v1";
   let mem = null; /* session-only state if a migration cannot persist */
@@ -445,6 +474,13 @@ const VoteStore = (() => {
     },
     clearPick(ref) { const s = read(); delete s.picks[ref]; write(s); },
     allPicks() { return read().picks; },
+    /* Replace the whole pick set — used after a sign-in merge, where
+       the account's rows and the device's rows have been combined. */
+    replacePicks(picks) {
+      const s = read();
+      s.picks = picks && typeof picks === "object" ? picks : {};
+      write(s);
+    },
     exportAll() { return read(); },
     resetAll() {
       mem = null;

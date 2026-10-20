@@ -18,10 +18,14 @@
      value stored there by an earlier build is never read,
      written, or exported.) The email address of record
      lives only with the auth provider (auth.users) — it is never
-     written into the profiles row (F-4). Picks are NOT in the account
-     payload and never leave the device; there is deliberately no
-     field anywhere that could total visitors' picks — the no-tally
-     rule is permanent, accounts or not.
+     written into the profiles row (F-4). Picks DO save to the
+     account (owner decision, Oct 20, 2026 — it reversed the earlier
+     on-device-only line): one row per pick in public.picks (item
+     reference, position, timestamps), own-rows-only under RLS like
+     profiles, used only for the owner's own voting card and
+     notifications. There is deliberately no field or function
+     anywhere that could total visitors' picks — the no-tally rule
+     is permanent, accounts or not.
    - Data access is enforced by Postgres row-level security (each row
      readable/writable only by its owner); the anon key shipped here
      is a public client key by design.
@@ -39,6 +43,13 @@ const DemeAccount = (() => {
   let threadLabels = {};
   let lastSyncedStamp = null; /* profileUpdatedAt last pushed to the server */
   let booted = false;
+  let authReadyResolve = null;
+  const authReadyPromise = new Promise((r) => { authReadyResolve = r; });
+  function authReady() { return authReadyPromise; }
+  function settleAuthReady() {
+    if (authReadyResolve) { authReadyResolve(); authReadyResolve = null; }
+  }
+  function isSignedIn() { return Boolean(session); }
 
   /* ---------------- session storage ---------------- */
   function loadSession() {
@@ -271,6 +282,188 @@ const DemeAccount = (() => {
     } catch (e) { /* next tick retries */ }
   }
 
+  /* ---------------- picks (account-saved, owner decision
+     Oct 20, 2026) ----------------
+     One row per pick in public.picks: item_ref, position,
+     timestamps — own-rows-only under RLS, mirroring profiles.
+     The VoteStore remains the on-device cache every surface
+     renders from; this layer keeps the account copy in step.
+     Failure discipline: a failed account write never loses the
+     device copy — the divergence is remembered as "stale" and
+     offered for correction at the next sign-in merge. Picks are
+     never read for anything but the owner's own card and
+     notifications; there is no tally, here or anywhere. */
+  const STALE_KEY = "deme.stalePicks.v1";
+  function stalePicks() {
+    try {
+      const v = JSON.parse(localStorage.getItem(STALE_KEY));
+      return v && typeof v === "object" ? v : {};
+    } catch (e) { return {}; }
+  }
+  function setStale(ref, choice) {
+    try {
+      const st = stalePicks();
+      if (choice === undefined) delete st[ref];
+      else st[ref] = choice;
+      if (Object.keys(st).length) localStorage.setItem(STALE_KEY, JSON.stringify(st));
+      else localStorage.removeItem(STALE_KEY);
+    } catch (e) {}
+  }
+  async function fetchPicks() {
+    const rows = await authedJSON(
+      `/rest/v1/picks?user_id=eq.${encodeURIComponent(session.user.id)}`
+      + `&select=item_ref,position,created_at,updated_at&order=created_at.asc`);
+    return Array.isArray(rows) ? rows : [];
+  }
+  async function upsertPick(ref, position) {
+    await authedJSON("/rest/v1/picks", {
+      method: "POST",
+      headers: { "Prefer": "resolution=merge-duplicates,return=minimal" },
+      body: JSON.stringify({
+        user_id: session.user.id, item_ref: ref, position,
+      }),
+    });
+  }
+  async function deletePickRow(ref) {
+    await authedJSON(
+      `/rest/v1/picks?user_id=eq.${encodeURIComponent(session.user.id)}`
+      + `&item_ref=eq.${encodeURIComponent(ref)}`,
+      { method: "DELETE", headers: { "Prefer": "return=minimal" } });
+  }
+  /* Called by the weigh-in (record.js) after a pick changes in
+     the local cache. Returns true when the account copy is in
+     step; on failure the divergence is marked stale for the
+     next sign-in merge and false comes back, so the caller can
+     say honestly that only the device copy is saved. */
+  async function syncPick(ref, choice) {
+    if (!session) return false;
+    try {
+      if (choice) await upsertPick(ref, choice);
+      else await deletePickRow(ref);
+      setStale(ref, undefined);
+      return true;
+    } catch (e) {
+      setStale(ref, choice || null);
+      return false;
+    }
+  }
+  function notifyRecord() {
+    const r = window.DemeRecord;
+    if (!r) return;
+    if (typeof r.refreshWeighIn === "function") r.refreshWeighIn();
+    if (typeof r.refreshPicks === "function") r.refreshPicks();
+  }
+  /* On sign-in: the account's rows and this device's picks are
+     merged into the cache. Anything the account doesn't hold
+     yet — picks taken signed-out, picks newer on this device,
+     removals that never reached the server — is OFFERED, never
+     auto-uploaded: the visitor decides. Remote-only picks join
+     the cache silently (they are the account working as
+     promised). */
+  async function bootstrapPicks() {
+    if (!session) return;
+    if (typeof VoteStore.allPicks !== "function"
+        || typeof VoteStore.replacePicks !== "function") return;
+    try {
+      const rows = await fetchPicks();
+      const remote = {};
+      rows.forEach((r) => {
+        if (r && r.item_ref
+            && (r.position === "support" || r.position === "oppose")) {
+          remote[r.item_ref] = r;
+        }
+      });
+      const local = VoteStore.allPicks() || {};
+      const merged = {};
+      Object.entries(remote).forEach(([ref, r]) => {
+        merged[ref] = {
+          choice: r.position,
+          ts: r.updated_at || r.created_at || new Date().toISOString(),
+        };
+      });
+      const uploads = [];
+      Object.entries(local).forEach(([ref, lp]) => {
+        if (!lp || (lp.choice !== "support" && lp.choice !== "oppose")) return;
+        const r = remote[ref];
+        if (!r) { uploads.push(ref); merged[ref] = lp; return; }
+        const localMs = Date.parse(lp.ts || "") || 0;
+        const remoteMs = Date.parse(r.updated_at || r.created_at || "") || 0;
+        if (localMs > remoteMs) { uploads.push(ref); merged[ref] = lp; }
+      });
+      const deletes = [];
+      const stale = stalePicks();
+      Object.entries(stale).forEach(([ref, want]) => {
+        if (want === null && remote[ref] && !local[ref]) {
+          deletes.push(ref);
+          delete merged[ref];
+        } else if (want && local[ref] && !uploads.includes(ref)) {
+          uploads.push(ref);
+          merged[ref] = local[ref];
+        }
+      });
+      VoteStore.replacePicks(merged);
+      renderMigrationOffer(uploads, deletes);
+      notifyRecord();
+    } catch (e) { /* account copy loads on a later visit */ }
+  }
+  function renderMigrationOffer(uploads, deletes) {
+    const host = document.getElementById("picks-migration");
+    if (!host) return;
+    if (!uploads.length && !deletes.length) { host.innerHTML = ""; return; }
+    const parts = [];
+    if (uploads.length) {
+      parts.push(`${uploads.length} pick${uploads.length === 1 ? "" : "s"} `
+        + `on this device ${uploads.length === 1 ? "isn't" : "aren't"} `
+        + `in your account yet`);
+    }
+    if (deletes.length) {
+      parts.push(`${deletes.length} pick${deletes.length === 1 ? "" : "s"} `
+        + `you removed ${deletes.length === 1 ? "still shows" : "still show"} `
+        + `in your account`);
+    }
+    host.innerHTML = `<div class="card pick-gate" style="margin-bottom:1rem">
+      <h3>Bring your account up to date?</h3>
+      <p>${esc(parts.join("; "))}. Update your account so your voting
+      card matches this device on every device — or leave things as
+      they are for now. Either way, only you can see your picks, and
+      Deme never totals visitors' positions.</p>
+      <p class="toolbar" style="margin:.6rem 0 0">
+        <button class="btn small" type="button" id="picks-migrate-yes">Update my account</button>
+        <button class="btn secondary small" type="button" id="picks-migrate-no">Not now</button>
+      </p>
+      <div id="picks-migrate-note"></div>
+    </div>`;
+    host.querySelector("#picks-migrate-no").addEventListener("click", () => {
+      host.innerHTML = "";
+    });
+    host.querySelector("#picks-migrate-yes").addEventListener("click", async () => {
+      const note = host.querySelector("#picks-migrate-note");
+      try {
+        for (const ref of uploads) {
+          const lp = (typeof VoteStore.getPick === "function")
+            ? VoteStore.getPick(ref) : null;
+          if (lp && (lp.choice === "support" || lp.choice === "oppose")) {
+            await upsertPick(ref, lp.choice);
+            setStale(ref, undefined);
+          }
+        }
+        for (const ref of deletes) {
+          await deletePickRow(ref);
+          setStale(ref, undefined);
+        }
+        host.innerHTML = `<p class="wf-note">Your account now matches
+          this device — your picks follow you on any device.</p>`;
+        notifyRecord();
+      } catch (e) {
+        if (note) {
+          note.innerHTML = `<p class="wf-note" role="alert">That didn't
+            go through just now — your picks are safe on this device,
+            and the offer will return at your next sign-in.</p>`;
+        }
+      }
+    });
+  }
+
   /* ---------------- CAPTCHA (F-6 readiness) ----------------
      Wired but inert while DEME_CAPTCHA_KEY stays empty: no
      third-party script is loaded, no widget renders, and auth
@@ -369,15 +562,16 @@ const DemeAccount = (() => {
     if (!zone) return;
     zone.innerHTML = `<div class="card record-card account-card">
       <p class="kicker">Accounts</p>
-      <h2 style="font-size:1.25rem">Your Deme account — opening soon</h2>
-      <p>Soon you'll be able to create a free Deme account with your
-      name and email, so your ward, your watched ward and your topics
-      follow you across devices, and your Council alerts live in one
-      place.</p>
-      <p class="small" style="margin:0">Nothing is missing today: Your
-      Deme on this page already works in full, on this device, with no
-      account at all. An account will be an upgrade — never a
-      requirement.</p>
+      <h2 style="font-size:1.25rem">An account gives you a say — not just a login.</h2>
+      <p>Accounts are opening soon. With a free account you can weigh
+      in on what's coming up and have your picks saved to your
+      account, get alerts for your ward and the topics you follow,
+      and see your voting card — your picks lined up against the real
+      record — on any device.</p>
+      <p class="small" style="margin:0">Nothing is missing today: the
+      full record is open to everyone, and reading it never needs an
+      account. An account is how you weigh in and keep your picks —
+      never a toll on the record.</p>
       <p class="small" style="margin:.8rem 0 0">What Deme holds, where,
       and how to delete it: the
       <a href="privacy.html">privacy policy</a>.</p>
@@ -420,11 +614,20 @@ const DemeAccount = (() => {
     if (!zone) return;
     zone.innerHTML = `<div class="card record-card account-card">
       <p class="kicker">Accounts</p>
-      <h2 style="font-size:1.25rem">Your Deme account</h2>
-      <p>An account syncs Your Deme — your ward, watched ward and
-      topics — across your devices, and makes your account your
-      Council alerts identity. Your picks never leave each device,
-      account or not.</p>
+      <h2 style="font-size:1.25rem">An account gives you a say — not just a login.</h2>
+      <ul style="margin:.4rem 0 .8rem;padding-left:1.2rem">
+        <li><strong>Have your say before the vote</strong> — weigh in
+        on what's coming up, decision by decision. Your picks save to
+        your account.</li>
+        <li><strong>Never miss a vote that affects you</strong> —
+        alerts for your ward and the topics you follow.</li>
+        <li><strong>See how it went</strong> — after the meeting, your
+        voting card lines your picks up against the real record, on
+        any device.</li>
+      </ul>
+      <p>Reading the record never needs an account. Signing in is
+      for weighing in and saving your picks — only you can see them,
+      and Deme never totals visitors' positions.</p>
       ${note ? `<p class="wf-note">${esc(note)}</p>` : ""}
       ${opts.resend ? `<div id="rs-zone">
         <div class="field"><label for="rs-email">Didn't get the confirmation email?</label>
@@ -734,10 +937,10 @@ const DemeAccount = (() => {
         <h3>Your account data</h3>
         <p class="small">Download the record Deme holds on its server
         for your account — your name, email of record,
-        wards, topics, and your alerts opt-in and consent record — as
-        a JSON file. This is the server record only; your picks and
-        this device's profile are exported separately, with the
-        button below this card.</p>
+        wards, topics, your alerts opt-in and consent record, and the
+        picks you have saved to your account — as a JSON file. This
+        device's own copy of Your Deme is exported separately, with
+        the button below this card.</p>
         <p class="toolbar" style="margin:.6rem 0 0">
           <button class="btn secondary" type="button" id="acc-export">Export my account data</button>
         </p>
@@ -746,8 +949,9 @@ const DemeAccount = (() => {
       <div class="account-danger">
         <h3>Delete your account</h3>
         <p class="small">Deletes your account and everything Deme holds
-        on its server for you — name, email, wards, topics
-        and your alerts opt-in. Your picks and profile on this device
+        on its server for you — name, email, wards, topics,
+        your alerts opt-in, and every pick you have saved to your
+        account. The copies of your picks and profile on this device
         are yours and stay unless you erase them below.</p>
         <div id="del-zone">
           <button class="btn danger" type="button" id="acc-del1">Delete my account and data</button>
@@ -814,7 +1018,10 @@ const DemeAccount = (() => {
            source. Server record only: no picks, nothing from this
            device beyond what sync already placed in the row. */
         const row = (await fetchRow()) || accountProfile || {};
-        const payload = { ...row, email: session.user.email || "" };
+        let pickRows = [];
+        try { pickRows = await fetchPicks(); } catch (e3) { pickRows = []; }
+        const payload = { ...row, email: session.user.email || "",
+          picks: pickRows };
         /* The postal area was dropped from the profile (owner
            decision, Oct 20, 2026); a row written by an earlier
            build may still carry the retired fsa column — it is
@@ -838,8 +1045,9 @@ const DemeAccount = (() => {
       session = null;
       accountProfile = null;
       saveSession();
-      renderSignedOut("Signed out on this device. Your local profile and picks stay, as they always have.");
+      renderSignedOut("Signed out on this device. Your local profile and picks stay on this device, and your account keeps its copies for your next sign-in.");
       refreshAlertsBox();
+      notifyRecord();
     });
 
     const delZone = zone.querySelector("#del-zone");
@@ -902,8 +1110,9 @@ const DemeAccount = (() => {
           accountProfile = null;
           saveSession();
           try { localStorage.removeItem(PENDING_KEY); } catch (e) {}
-          renderSignedOut("Your account and its server-held data are deleted. Your local profile and picks remain on this device — erase them any time with the button below.");
+          renderSignedOut("Your account and its server-held data — including every pick saved to your account — are deleted. Your local profile and picks remain on this device — erase them any time with the button below.");
           refreshAlertsBox();
+          notifyRecord();
         } catch (e2) {
           errLine(err, "Automatic deletion couldn't complete just now. Your account can be deleted on request — see the privacy policy for how to reach us, and nothing about your account changes in the meantime.");
         }
@@ -918,6 +1127,8 @@ const DemeAccount = (() => {
     if (typeof mountFinders === "function") mountFinders();
     await renderSignedIn();
     refreshAlertsBox();
+    await bootstrapPicks();
+    settleAuthReady();
   }
 
   /* ---------------- alerts box (called by record.js) ---------------- */
@@ -1068,9 +1279,9 @@ const DemeAccount = (() => {
 
   /* ---------------- boot ---------------- */
   async function boot() {
-    if (!zone || booted) return;
+    if (!zone || booted) { settleAuthReady(); return; }
     booted = true;
-    if (!enabled()) { renderDisabled(); return; }
+    if (!enabled()) { renderDisabled(); settleAuthReady(); return; }
 
     /* Accounts are live, so the "no server and no account" line no
        longer describes the whole page: swap in the re-scoped copy
@@ -1078,13 +1289,15 @@ const DemeAccount = (() => {
        the account layer is activated. */
     const note = document.getElementById("local-note");
     if (note) {
-      note.textContent = "Your picks never leave this browser, and "
-        + "Deme keeps no tally of visitors' positions. Your local "
-        + "profile lives in this browser's storage; if you create an "
-        + "account, your name, email, "
-        + "wards and topics are also held on our server so they can "
-        + "follow you — see the privacy policy for exactly what's held "
-        + "and how to delete it.";
+      note.textContent = "Your picks: when you're signed in, they're "
+        + "saved to your account — only you can see them — and kept "
+        + "on this device too; signed out, they live only in this "
+        + "browser. Deme keeps no tally of visitors' positions. Your "
+        + "local profile lives in this browser's storage; with an "
+        + "account, your name, email, wards, topics and picks are "
+        + "also held on our server so they can follow you — see the "
+        + "privacy policy for exactly what's held and how to delete "
+        + "it.";
     }
 
     try {
@@ -1142,6 +1355,8 @@ const DemeAccount = (() => {
         renderSignedOut();
       }
     }
+    if (session) { await bootstrapPicks(); }
+    settleAuthReady();
     refreshAlertsBox();
     setInterval(syncFromLocal, 20000);
     document.addEventListener("visibilitychange", () => {
@@ -1155,7 +1370,8 @@ const DemeAccount = (() => {
     boot();
   }
 
-  return { enabled, renderAlerts, alertsOptIn };
+  return { enabled, renderAlerts, alertsOptIn, isSignedIn,
+    authReady, syncPick, bootstrapPicks };
 })();
 
 window.DemeAccount = DemeAccount;

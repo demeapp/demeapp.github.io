@@ -222,8 +222,9 @@
         </li>
       </ul>
       <p class="gap-close">Deme is built for Canada's cities:
-      matched to your ward · your positions stay on your device, never
-      tallied · a permanent public record that holds representatives
+      matched to your ward · your positions save to your account —
+      only yours to see, never tallied · a permanent public record
+      that holds representatives
       accountable. <a href="explore.html">Start searching the record →</a></p>
     </section>
 
@@ -253,9 +254,9 @@ function voteCard(u) {
   return `<article class="card">
     <div class="meta"><span>${esc(fmtDate(u.date))}</span>
       <span>${esc(u.body)}</span><span class="pill ink">Coming up</span></div>
-    <h3><a href="vote.html#${encodeURIComponent(u.ref)}">${esc(u.title)}</a></h3>
+    <h3><a href="my-record.html#${encodeURIComponent(u.ref)}">${esc(u.title)}</a></h3>
     ${u.brief ? `<p class="brief">${esc(u.brief)}</p>` : ""}
-    <p class="more"><a href="vote.html#${encodeURIComponent(u.ref)}">Read the brief and weigh in →</a></p>
+    <p class="more"><a href="my-record.html#${encodeURIComponent(u.ref)}">Read the brief and weigh in →</a></p>
   </article>`;
 }
 
@@ -282,7 +283,7 @@ Promise.all([loadJSON(dataPath("stats.json")), loadJSON(dataPath("latest.json"))
     (u) => u.body === "City Council");
   if (councilItems.length) {
     up.innerHTML = `<div class="cards two">${councilItems.slice(0, 4).map(voteCard).join("")}</div>
-      <p style="margin-top:1.1rem"><a class="btn bronze" href="vote.html">Weigh in before the meeting</a></p>`;
+      <p style="margin-top:1.1rem"><a class="btn bronze" href="my-record.html#weigh-in">Weigh in before the meeting</a></p>`;
   } else {
     /* Empty state: one honest line in a slim band — same true wording,
        no big empty box. The items path above is untouched. */
@@ -290,7 +291,7 @@ Promise.all([loadJSON(dataPath("stats.json")), loadJSON(dataPath("latest.json"))
       in the published agenda right now. When City Council publishes its
       next agenda, the items coming up for a vote will appear here first,
       each with a plain-language brief.
-      <a href="vote.html">See how weighing in works →</a></p>`;
+      <a href="my-record.html#weigh-in">See how weighing in works →</a></p>`;
   }
 
   document.getElementById("latest").innerHTML =

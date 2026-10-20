@@ -123,11 +123,16 @@ function motionBlock(m, idx) {
   const absent = m.votes.filter(([, v]) => v === "Absent").length;
   const interest = m.votes.filter(([, v]) => v && v.startsWith("Absent(Interest")).length;
   /* W2: tag the visitor's own representatives in the name-by-name
-     table — a label only, read from the on-device VoteStore snapshots
-     (the same source the alignment feature reads). No tag exists when
-     no ward is set, and nothing is sent anywhere. */
-  const wardRep = (typeof VoteStore !== "undefined") ? VoteStore.getWardRep() : null;
-  const mayorRep = (typeof VoteStore !== "undefined") ? VoteStore.getMayorRep() : null;
+     table — a label only, read from the VoteStore rep snapshots.
+     Owner rule (Oct 20, 2026): the snapshots are primed from the
+     signed-in profile ward (My Record's continuity block, Home's
+     signed-in flow), so the tag renders only for a signed-in
+     visitor; signed out there is no tag, whatever an older build
+     left stored on this device. No tag exists when no ward is set,
+     and nothing is sent anywhere. */
+  const tagReps = typeof demeSignedOut === "function" && !demeSignedOut();
+  const wardRep = tagReps && typeof VoteStore !== "undefined" ? VoteStore.getWardRep() : null;
+  const mayorRep = tagReps && typeof VoteStore !== "undefined" ? VoteStore.getMayorRep() : null;
   const repTag = (name) => {
     if (wardRep && name === wardRep.name) return ` <span class="pill yourrep">Your councillor</span>`;
     if (mayorRep && name === mayorRep.name) return ` <span class="pill yourrep">Your mayor</span>`;

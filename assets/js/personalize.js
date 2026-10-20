@@ -1,10 +1,22 @@
 /* Home personalization — the "Start here" section on index.html.
-   State: localStorage key deme.home.v1 { welcomed, choice } where
-   choice is a ward number, "mayor", or null. A numeric choice is ALSO
-   written through VoteStore (deme.votes.v2) — the ward is never forked
-   into a second store. Nothing here gates any other content: every
-   other section of the home page renders whether or not a ward is set,
-   and everything stays in this browser. */
+   Owner rule (Oct 20, 2026): a ward belongs to the account profile —
+   it is set when the account is created and edited in the account
+   form on My Record; there is no device-level ward. So while
+   accounts are live, a SIGNED-OUT visitor gets the signpost panel
+   (renderSignpost): it writes nothing — no device ward, no rep
+   snapshot, no HomeStore choice — and points at the two honest
+   routes, an account (which carries the ward) and the directory's
+   postal-code lookup (which saves nothing). "For you" stays off too.
+   The flows below run only when the profile can drive them: a
+   signed-in visitor (whose VoteStore ward IS their profile ward,
+   mirrored by the account layer) or, while accounts are not live at
+   all, the on-device profile as before.
+   State in that profile mode: localStorage key deme.home.v1
+   { welcomed, choice } where choice is a ward number, "mayor", or
+   null. A numeric choice is ALSO written through VoteStore
+   (deme.votes.v2) — the ward is never forked into a second store.
+   Nothing here gates any other content: every other section of the
+   home page renders whether or not a ward is set. */
 "use strict";
 
 const HomeStore = (() => {
@@ -138,9 +150,12 @@ const HomeStore = (() => {
           <button class="btn" type="button" id="profile-save">${isMayor ? "Save and show my Deme" : "Save and show my ward"}</button>
           <button class="btn secondary" type="button" id="profile-skip">Skip this step</button>
         </p>
-        <p class="small" style="margin:0">Kept in this browser — and on
-        your account too, if you sign in — like your picks. Change it
-        any time in My Record.</p>
+        <p class="small" style="margin:0">${(typeof demeSignedIn === "function" && demeSignedIn())
+          ? `Saved to your account profile, and kept in this browser
+          so your pages can use it — like your picks. Change it any
+          time in My Record.`
+          : `Kept in this browser — like your picks. Change it any
+          time in My Record.`}</p>
       </div>`;
     const watchFinder = WardFinder.mount(
       document.getElementById("profile-watch-finder"), {
@@ -369,6 +384,33 @@ const HomeStore = (() => {
     }
   }
 
+  /* The signed-out panel (accounts live): a signpost, not a setup.
+     It offers no picker and keeps no state — the ward lives on the
+     account profile, and the directory lookup finds a councillor
+     without saving anything. */
+  function renderSignpost() {
+    section.hidden = false;
+    body.innerHTML = `
+      <p class="kicker">Your Deme</p>
+      <h2 id="starthere-h">Make Deme yours</h2>
+      <hr class="rule">
+      <div class="card starthere-card entry-panel">
+        <p class="entry-lede">Your ward is part of your account
+        profile — it's set when you create your account, so Deme can
+        put your councillor's actual votes beside your picks, on any
+        device.</p>
+        <p class="entry-actions">
+          <a class="btn bronze" href="my-record.html#account-zone">Create your account</a>
+          <a class="btn secondary" href="my-record.html#account-zone">Sign in</a>
+        </p>
+        <p class="small" style="margin:.9rem 0 0">Just looking for
+        your councillor? <a href="councillors.html#ward-lookup">Find
+        them by postal code in the directory</a> — a lookup only;
+        nothing is saved. And nothing else on this page waits on an
+        account — the whole record stays open either way.</p>
+      </div>`;
+  }
+
   function render(state) {
     if (state.welcomed && state.choice == null) { renderEntrySlim(state); return; }
     section.hidden = false;
@@ -378,8 +420,18 @@ const HomeStore = (() => {
 
   loadJSON(dataPath("councillors.json")).then((list) => {
     people = list;
+    if (typeof demeSignedOut === "function" && demeSignedOut()) {
+      /* Signed out with live accounts: no device ward is read,
+         adopted, or written, no rep snapshot is primed, and the
+         profile-driven "For you" section stays off. */
+      renderSignpost();
+      return;
+    }
     const state = HomeStore.read();
-    /* Returning visitor: a ward already in VoteStore is the choice. */
+    /* Returning visitor: a ward already in VoteStore is the choice.
+       In this branch that ward is the profile ward (signed in) or
+       the on-device profile (accounts not live) — never a signed-out
+       device ward; that state returned above. */
     const storedWard = VoteStore.getWard();
     if (storedWard != null) {
       state.welcomed = true;

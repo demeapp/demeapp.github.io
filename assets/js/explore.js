@@ -42,7 +42,9 @@ function effectiveFilters() {
   const yearSel = $("f-year").value;
   const statusSel = $("f-status").value;
   const wardSel = $("f-ward").value;
-  const storedWard = (typeof VoteStore !== "undefined") ? VoteStore.getWard() : null;
+  /* The profile ward only (owner rule, Oct 20, 2026): signed out
+     with live accounts there is no "my ward" here — see common.js. */
+  const storedWard = (typeof demeProfileWard === "function") ? demeProfileWard() : null;
 
   let yearFrom = null, yearTo = null;
   if (yearSel) { yearFrom = Number(yearSel); yearTo = Number(yearSel); }
@@ -224,6 +226,10 @@ async function setupProfileRow(params) {
   const row = $("profile-row");
   if (!row) return;
   if (typeof VoteStore === "undefined" || !VoteStore.hasProfile()) return;
+  /* Signed out with live accounts, a stored profile is account data
+     this visitor hasn't claimed — the offer stays hidden (the ward
+     itself resolves through demeProfileWard everywhere below). */
+  if (typeof demeSignedOut === "function" && demeSignedOut()) return;
   if (params.has("q") || params.has("year") || params.has("vote")) return;
   if (profileDismissed()) return;
   const labels = {};
@@ -305,7 +311,7 @@ function fillSelect(el, values, allLabel) {
 function parseCurrentQuery() {
   const q = $("q").value;
   parsed = q.trim()
-    ? parseAsk(q, { members: councillors, storedWard: VoteStore.getWard() })
+    ? parseAsk(q, { members: councillors, storedWard: (typeof demeProfileWard === "function" ? demeProfileWard() : null) })
     : null;
 }
 /* D1: the search index arrives per year. 2026 + 2025 land first
@@ -391,7 +397,7 @@ async function init() {
   $("f-body").addEventListener("change", applyFilters);
   const myward = $("myward");
   if (myward) myward.addEventListener("click", () => {
-    const w = VoteStore.getWard();
+    const w = (typeof demeProfileWard === "function") ? demeProfileWard() : null;
     if (w == null) return;
     if (parsed) parsed.ward = null;
     $("f-ward").value = String(w);
@@ -399,6 +405,7 @@ async function init() {
   });
   const useProfile = $("use-profile");
   if (useProfile) useProfile.addEventListener("click", async () => {
+    if (typeof demeSignedOut === "function" && demeSignedOut()) return;
     const ward = VoteStore.getWard(), watchWard = VoteStore.getWatchWard();
     const ints = VoteStore.getInterests();
     /* The profile replaces the ward control while it is active: reset

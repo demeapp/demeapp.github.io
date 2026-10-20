@@ -499,6 +499,52 @@ const VoteStore = (() => {
   };
 })();
 
+/* ---------------- whose ward? (owner rule, Oct 20, 2026) --------
+   A ward belongs to the account profile: it is set when the account
+   is created and edited in the account form on My Record. There is
+   no device-level ward, and finding a councillor without one is the
+   directory's postal-code lookup, which saves nothing. Pages
+   personalize from the profile ward only, resolved as:
+   - accounts live + signed in: the VoteStore ward, which the
+     account layer (account.js) keeps mirrored from the profile row;
+   - accounts live + signed out: NO ward — no personalization, no
+     rep tag, no snapshot read or written, whatever an older build
+     left stored on this device (it stays untouched, as the sign-in
+     merge's raw material);
+   - accounts not live (the constants above are empty — the staged
+     or kill-switch state): the on-device profile remains the whole
+     product, exactly as before accounts existed.
+   Pages that do not load account.js read the session record the
+   account layer persists (deme.account.v1) — the same presence
+   test account.js itself applies when it loads a session. */
+function demeAccountsLive() {
+  if (window.DemeAccount && typeof window.DemeAccount.enabled === "function") {
+    return window.DemeAccount.enabled();
+  }
+  return Boolean(DEME_SUPABASE_URL && DEME_SUPABASE_ANON_KEY);
+}
+function demeSignedIn() {
+  if (window.DemeAccount && typeof window.DemeAccount.isSignedIn === "function") {
+    return window.DemeAccount.isSignedIn();
+  }
+  try {
+    const raw = localStorage.getItem("deme.account.v1");
+    if (!raw) return false;
+    const s = JSON.parse(raw);
+    return Boolean(s && s.access_token && s.user);
+  } catch (e) { return false; }
+}
+/* True only in the one state with no profile to personalize from:
+   accounts live and the visitor signed out. */
+function demeSignedOut() {
+  return demeAccountsLive() && !demeSignedIn();
+}
+/* The ward pages may personalize from, or null. */
+function demeProfileWard() {
+  if (demeSignedOut()) return null;
+  return typeof VoteStore !== "undefined" ? VoteStore.getWard() : null;
+}
+
 /* TMMIS (City of Toronto agenda) record link for an item reference. */
 const tmmisUrl = (ref) =>
   `https://secure.toronto.ca/tmmis/viewAgendaItemHistory.do?item=${encodeURIComponent(ref)}`;

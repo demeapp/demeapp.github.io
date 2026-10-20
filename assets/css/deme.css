@@ -1028,6 +1028,7 @@ ul.history-rows .h-badge { padding-top: .1rem; }
 }
 .search-panel .searchbox { margin: 0; max-width: none; }
 .search-panel .searchbox input[type="search"] {
+  min-width: 0;
   border-radius: 12px 0 0 12px; border-right: 0;
 }
 .search-panel .searchbox .btn { border-radius: 0 12px 12px 0; }

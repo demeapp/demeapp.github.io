@@ -237,9 +237,9 @@ async function renderExtras(person) {
       .map(([k, n]) => `<li><span>${esc(k)}</span><b>${fmtNum(n)}</b></li>`).join("");
     const maxYear = Math.max(...lobbying.years.map((y) => y.count), 1);
     html += `<section class="lobbying" aria-labelledby="lobbying-h">
-      <h2 id="lobbying-h" class="visually-hidden">Lobbying record</h2>
+      <h2 id="lobbying-h" class="visually-hidden">Lobbying Record</h2>
       <details>
-        <summary>Lobbying contact
+        <summary>Lobbying Record
           <span class="pill">${fmtNum(lobbying.total)} communications</span></summary>
         <p class="lob-lede">Lobbyists must file every communication with a
         member of Council. This is the filed record for ${esc(person.name)} —
@@ -275,7 +275,7 @@ async function renderExtras(person) {
       </details></section>`;
   } else if (lobbying) {
     html += `<section class="lobbying" aria-labelledby="lobbying-h">
-      <h2 id="lobbying-h">Lobbying contact</h2><hr class="rule">
+      <h2 id="lobbying-h">Lobbying Record</h2><hr class="rule">
       <p class="small" style="max-width:44rem">No recorded lobbying
       communications for ${esc(person.name)} in the City of Toronto Lobbyist
       Registry filings gathered on October 8, 2026.</p></section>`;

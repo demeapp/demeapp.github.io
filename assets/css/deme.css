@@ -1256,3 +1256,38 @@ dialog.record-dialog::backdrop { background: rgba(10,20,36,.55); }
 .comp-seg.absent { background: var(--line); }
 .comp-seg.interest { background: var(--conflict); }
 .comp-legend { font-size: .9rem; color: var(--ink-soft); margin: .5rem 0 0; }
+
+/* ---------- Account feature panel + directory lookup
+   (account/directory bundle, Oct 20, 2026) ----------
+   The accounts pitch on My Record is a navy feature band, not a
+   pale form box: navy ground, mint accents, the three value points
+   as bold feature rows. The forms below it keep the standard
+   account-form treatment, untouched. */
+.acct-feature {
+  background: linear-gradient(160deg, var(--navy) 0%, var(--navy-deep) 100%);
+  color: #fff;
+  border-radius: var(--radius);
+  padding: 1.3rem 1.4rem 1.4rem;
+  margin-bottom: 1.2rem;
+}
+.acct-feature .kicker { color: var(--bronze); margin: 0 0 .35rem; }
+.acct-feature h2 {
+  color: #fff; font-size: 1.45rem; line-height: 1.25; margin: 0 0 1rem;
+  max-width: 34rem;
+}
+.acct-points { list-style: none; margin: 0 0 1.05rem; padding: 0; max-width: 44rem; }
+.acct-point {
+  padding: .65rem 0 .65rem .95rem;
+  border-left: 3px solid var(--bronze);
+  color: #DCE7F2;
+}
+.acct-point + .acct-point { margin-top: .35rem; }
+.acct-point strong { color: #fff; }
+.acct-privacy {
+  margin: 0; padding-top: .85rem; max-width: 44rem;
+  border-top: 1px solid rgba(255, 255, 255, .22);
+  color: var(--mint-light); font-size: .95rem;
+}
+/* Directory postal lookup: the matched card gets a mint outline so
+   the eye lands on it after the scroll. */
+.person.lookup-hit { outline: 3px solid var(--bronze); outline-offset: 3px; }

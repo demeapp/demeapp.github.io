@@ -208,21 +208,34 @@ const DemeAccount = (() => {
       try { localStorage.removeItem(PENDING_KEY); } catch (e) {}
       return;
     }
-    const ward = VoteStore.getWard();
+    /* New account: the wards picked in the sign-up ward step are
+       the profile's wards (owner decision, Oct 20, 2026). A ward
+       the sign-up didn't set falls back to this device's, as
+       before; a watched ward equal to the home ward is no watch. */
+    const ward = pend.ward != null ? pend.ward : VoteStore.getWard();
+    let watch = pend.watch != null ? pend.watch : VoteStore.getWatchWard();
+    if (watch != null && watch === ward) watch = null;
     await upsertRow({
       name: pend.name,
       alerts_opt_in: pend.alerts,
       alerts_consent_at: pend.alerts ? new Date().toISOString() : null,
       ward,
-      watch_ward: VoteStore.getWatchWard(),
+      watch_ward: watch,
       interests: VoteStore.getInterests(),
     });
     if (ward !== VoteStore.getWard()) VoteStore.setWard(ward);
+    if (watch !== VoteStore.getWatchWard()) VoteStore.setWatchWard(watch);
     try { localStorage.removeItem(PENDING_KEY); } catch (e) {}
   }
   function pending() {
     try { return JSON.parse(localStorage.getItem(PENDING_KEY)) || {}; }
     catch (e) { return {}; }
+  }
+  /* A ward carried in a pending record counts only as a whole
+     Toronto ward number; anything else is treated as unset. */
+  function pendingWard(v) {
+    const n = Number(v);
+    return Number.isInteger(n) && n >= 1 && n <= 25 ? n : null;
   }
   /* RT-01: the pending record holds details typed at sign-up on
      this browser — possibly by somebody else, on a shared
@@ -248,9 +261,11 @@ const DemeAccount = (() => {
       return {
         name: p.name || "",
         alerts: Boolean(p.alerts_opt_in),
+        ward: pendingWard(p.ward),
+        watch: pendingWard(p.watch_ward),
       };
     }
-    return { name: "", alerts: false };
+    return { name: "", alerts: false, ward: null, watch: null };
   }
 
   /* Push local profile edits up while signed in (wards / interests
@@ -558,20 +573,40 @@ const DemeAccount = (() => {
   }
 
   /* ---------------- rendering ---------------- */
+  /* The accounts value pitch (owner-reviewed copy, Oct 20, 2026):
+     a navy feature panel with the three points as bold feature
+     rows. One source for the signed-out panel, the opening-soon
+     panel, and (mirrored as static HTML) the pre-JS placeholder in
+     my-record.html — keep all three in step. */
+  function featurePanelHTML() {
+    return `<div class="acct-feature">
+      <p class="kicker">Accounts</p>
+      <h2>Make your voice heard — before the vote, not after it.</h2>
+      <ul class="acct-points">
+        <li class="acct-point"><strong>Have your say</strong> — weigh in
+        on what's coming up at Council, decision by decision, on the
+        matters that affect you.</li>
+        <li class="acct-point"><strong>Stay informed</strong> — get
+        alerted when your ward or the issues you follow hit the agenda,
+        so nothing slips by you.</li>
+        <li class="acct-point"><strong>See where you stand</strong> —
+        after the vote, your voting card lines your picks up against
+        how your representative actually voted.</li>
+      </ul>
+      <p class="acct-privacy">Reading the record never needs an
+      account. Your picks are yours alone — only you can see them,
+      and Deme never totals visitors' positions.</p>
+    </div>`;
+  }
+
   function renderDisabled() {
     if (!zone) return;
     zone.innerHTML = `<div class="card record-card account-card">
-      <p class="kicker">Accounts</p>
-      <h2 style="font-size:1.25rem">An account gives you a say — not just a login.</h2>
-      <p>Accounts are opening soon. With a free account you can weigh
-      in on what's coming up and have your picks saved to your
-      account, get alerts for your ward and the topics you follow,
-      and see your voting card — your picks lined up against the real
-      record — on any device.</p>
-      <p class="small" style="margin:0">Nothing is missing today: the
-      full record is open to everyone, and reading it never needs an
-      account. An account is how you weigh in and keep your picks —
-      never a toll on the record.</p>
+      ${featurePanelHTML()}
+      <p style="margin:0">Accounts are opening soon. Nothing is
+      missing today: the full record is open to everyone — an account
+      is how you weigh in and keep your picks, never a toll on the
+      record.</p>
       <p class="small" style="margin:.8rem 0 0">What Deme holds, where,
       and how to delete it: the
       <a href="privacy.html">privacy policy</a>.</p>
@@ -613,21 +648,7 @@ const DemeAccount = (() => {
   function renderSignedOut(note = "", opts = {}) {
     if (!zone) return;
     zone.innerHTML = `<div class="card record-card account-card">
-      <p class="kicker">Accounts</p>
-      <h2 style="font-size:1.25rem">An account gives you a say — not just a login.</h2>
-      <ul style="margin:.4rem 0 .8rem;padding-left:1.2rem">
-        <li><strong>Have your say before the vote</strong> — weigh in
-        on what's coming up, decision by decision. Your picks save to
-        your account.</li>
-        <li><strong>Never miss a vote that affects you</strong> —
-        alerts for your ward and the topics you follow.</li>
-        <li><strong>See how it went</strong> — after the meeting, your
-        voting card lines your picks up against the real record, on
-        any device.</li>
-      </ul>
-      <p>Reading the record never needs an account. Signing in is
-      for weighing in and saving your picks — only you can see them,
-      and Deme never totals visitors' positions.</p>
+      ${featurePanelHTML()}
       ${note ? `<p class="wf-note">${esc(note)}</p>` : ""}
       ${opts.resend ? `<div id="rs-zone">
         <div class="field"><label for="rs-email">Didn't get the confirmation email?</label>
@@ -650,6 +671,8 @@ const DemeAccount = (() => {
             <input type="password" id="su-pass" autocomplete="new-password" required>
             <p class="small">Set and checked by our sign-in provider —
             Deme never sees or stores it.</p></div>
+          <div class="profile-field"><div id="su-ward"></div></div>
+          <div class="profile-field"><div id="su-watch"></div></div>
           <label class="checkline"><input type="checkbox" id="su-alerts">
             Email me the Council alerts digest for my wards and topics</label>
           <div class="captcha-slot" id="su-captcha"></div>
@@ -685,6 +708,23 @@ const DemeAccount = (() => {
     const suCaptcha = mountCaptcha(zone.querySelector("#su-captcha"));
     const siCaptcha = mountCaptcha(zone.querySelector("#si-captcha"));
 
+    /* The ward step (owner decision, Oct 20, 2026): a ward belongs
+       to the profile and is set when the account is made — here,
+       with the same postal-code finder (first 3 characters only,
+       in-browser) and the ward list as its fallback. The picks are
+       carried in the pending record and land on the profiles row
+       at first sign-in (bootstrapProfile), exactly like the name
+       and the alerts opt-in typed alongside them. */
+    const suWardFinder = WardFinder.mount(zone.querySelector("#su-ward"), {
+      idPrefix: "su1", people, label: "Your ward",
+      current: null, noneLabel: "No ward set",
+    });
+    const suWatchFinder = WardFinder.mount(zone.querySelector("#su-watch"), {
+      idPrefix: "su2", people, label: "Also watch a second ward (optional)",
+      current: null, noneLabel: "No second ward",
+      inputLabel: "Postal code of the area to watch",
+    });
+
     zone.querySelector("#acc-signup").addEventListener("submit", async (e) => {
       e.preventDefault();
       const err = zone.querySelector("#su-err");
@@ -702,10 +742,16 @@ const DemeAccount = (() => {
       try {
         /* RT-01: the pending record carries the address it was
            typed for; bootstrapProfile consumes it only for that
-           same address (see pendingForSession). */
+           same address (see pendingForSession). The wards are the
+           ones picked in the ward step above; a watched ward equal
+           to the home ward is no watch at all. */
+        let suWatch = suWatchFinder.value();
+        if (suWatch != null && suWatch === suWardFinder.value()) suWatch = null;
         localStorage.setItem(PENDING_KEY, JSON.stringify({
           email, name,
           alerts_opt_in: zone.querySelector("#su-alerts").checked,
+          ward: suWardFinder.value(),
+          watch_ward: suWatch,
         }));
       } catch (e2) {}
       errLine(err, "");
@@ -908,8 +954,9 @@ const DemeAccount = (() => {
       <p class="kicker">Accounts</p>
       <h2 style="font-size:1.25rem">Your Deme account</h2>
       <p>Signed in as <strong>${esc(session.user.email || "")}</strong>.
-      The form below is Your Deme, held on your account — saving it
-      updates this device too, and the editors below stay in step.</p>
+      The form below is your account profile — your name, your wards,
+      the topics you follow and your Council alerts. Saving it updates
+      this device too.</p>
       <p class="small">On a shared computer? Sign out when you're done.</p>
       <p class="small" id="acc-sync"></p>
       <form id="acc-profile" novalidate>
@@ -1002,7 +1049,7 @@ const DemeAccount = (() => {
         zone.querySelector("#acc-sync").textContent =
           "Saved — your account and this device now match.";
         refreshAlertsBox();
-        if (typeof mountFinders === "function") mountFinders();
+        notifyRecord();
       } catch (e2) {
         errLine(err, e2.message || "Saving didn't go through. Please try again.");
       }
@@ -1124,7 +1171,6 @@ const DemeAccount = (() => {
     try {
       await bootstrapProfile();
     } catch (e) { /* profile loads on next visit; session still valid */ }
-    if (typeof mountFinders === "function") mountFinders();
     await renderSignedIn();
     refreshAlertsBox();
     await bootstrapPicks();
@@ -1163,7 +1209,8 @@ const DemeAccount = (() => {
            <p class="small">Or <a href="#account-zone">create a Deme
            account</a> and manage alerts from your account instead.</p>`
         : `<p class="small">Sign-ups are not open right now. When they
-           open, alerts will follow the wards and topics in Your Deme.</p>`}`;
+           open, alerts will follow the wards and topics on your
+           profile.</p>`}`;
   }
   function refreshAlertsBox() {
     const box = document.getElementById("profile-alerts");

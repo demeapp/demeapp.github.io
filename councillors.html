@@ -43,9 +43,6 @@
           <select id="dir-sort">
             <option value="ward">Current first, by ward</option>
             <option value="name">Name, A to Z</option>
-            <option value="votes">Most votes cast</option>
-            <option value="terms">Most terms served</option>
-            <option value="absence">Absence — highest first</option>
           </select>
         </label>
       </div>
@@ -53,6 +50,24 @@
         votes cast, tenure, and declared interests. Open a member for the
         full record. Portraits are the members’ official photos; where
         none is published, the card shows initials instead.</p>
+
+      <div class="card" id="ward-lookup" style="margin-top:1.4rem">
+        <h2 style="font-size:1.15rem;margin-top:0">Find your councillor</h2>
+        <p class="small" style="max-width:44rem;margin-top:0">Enter your
+          postal code and Deme will point you to your councillor and
+          their record.</p>
+        <form class="wf-row" id="lookup-form">
+          <label class="visually-hidden" for="lookup-pc">Your postal code</label>
+          <input type="text" id="lookup-pc" autocomplete="postal-code"
+            autocapitalize="characters" spellcheck="false" placeholder="M5V 1J1">
+          <button class="btn" type="submit">Find my councillor</button>
+        </form>
+        <p class="wf-privacy">Only the first 3 characters are used, right
+          here in your browser — your full postal code is never stored or
+          sent anywhere. This is a lookup only: nothing is saved, and it
+          doesn't set anything on your profile.</p>
+        <div id="lookup-result" aria-live="polite"></div>
+      </div>
 
       <p style="margin-top:1.2rem"><a class="btn secondary" href="compare.html">Compare two councillors →</a></p>
 
@@ -74,6 +89,7 @@
 </main>
 <footer class="site-footer"></footer>
 <script src="assets/js/common.js"></script>
+<script src="assets/js/ward-finder.js"></script>
 <script>
 renderChrome("councillors.html");
 let all = [];
@@ -95,10 +111,6 @@ function render(filter) {
   const q = (filter || "").toLowerCase();
   const cur = all.filter((c) => c.current && c.name.toLowerCase().includes(q));
   if (currentSort === "name") cur.sort((a, b) => a.name.localeCompare(b.name));
-  else if (currentSort === "votes") cur.sort((a, b) => (b.votesCast || 0) - (a.votesCast || 0));
-  else if (currentSort === "terms") cur.sort((a, b) => (b.terms || []).length - (a.terms || []).length);
-  else if (currentSort === "absence") cur.sort((a, b) =>
-    (a.attendance == null ? -1 : a.attendance) - (b.attendance == null ? -1 : b.attendance));
   else cur.sort((a, b) => (a.mayor ? -1 : b.mayor ? 1 : a.ward - b.ward));
   document.getElementById("current").innerHTML = cur.length
     ? cur.map(personCard).join("")
@@ -121,10 +133,109 @@ loadJSON(dataPath("councillors.json")).then((people) => {
     clearTimeout(t); t = setTimeout(() => render(e.target.value), 150);
   });
   document.getElementById("filterform").addEventListener("submit", (e) => e.preventDefault());
+  initLookup();
 }).catch(() => {
   document.getElementById("current").innerHTML =
     `<p class="small">The member list could not be loaded. Please reload.</p>`;
 });
+
+/* Postal-code lookup — a finder, not a profile tool. It reuses the
+   ward finder's FSA map (first 3 characters only, computed here in
+   the browser); it writes nothing anywhere: no device profile, no
+   saved ward, nothing sent. Single-ward areas surface the member
+   and highlight their card below; boundary areas list every
+   candidate and let the visitor choose. */
+function initLookup() {
+  const form = document.getElementById("lookup-form");
+  const input = document.getElementById("lookup-pc");
+  const result = document.getElementById("lookup-result");
+  if (!form || !input || !result) return;
+  let cues = null;
+  function memberFor(n) {
+    return all.find((c) => c.current && !c.mayor && c.ward === n) || null;
+  }
+  function highlight(slug, scroll) {
+    document.querySelectorAll(".person.lookup-hit")
+      .forEach((el) => el.classList.remove("lookup-hit"));
+    const link = document.querySelector(
+      `#current article.person h3 a[href="councillor.html?m=${encodeURIComponent(slug)}"]`);
+    const card = link ? link.closest("article.person") : null;
+    if (card) {
+      card.classList.add("lookup-hit");
+      if (scroll) card.scrollIntoView({ block: "center", behavior: "smooth" });
+    }
+  }
+  async function lookup() {
+    const fsa = input.value.toUpperCase().replace(/[^A-Z0-9]/g, "").slice(0, 3);
+    if (!/^[A-Z]\d[A-Z]$/.test(fsa)) {
+      result.innerHTML = `<p class="wf-note">That doesn't look like a postal
+        code yet — the first three characters are enough (a letter, a
+        number, a letter — like M5V).</p>`;
+      input.focus();
+      return;
+    }
+    result.innerHTML = `<p class="wf-note">Looking up ${esc(fsa)}…</p>`;
+    let wards = null;
+    try {
+      if (!cues) {
+        try { cues = await loadJSON(dataPath("ward-cues.json")); }
+        catch (e) { cues = {}; }
+      }
+      wards = await WardFinder.wardsFor(fsa);
+    } catch (e) { wards = null; }
+    if (wards === null || !wards.length) {
+      result.innerHTML = `<p class="wf-note"><strong>That postal code isn't
+        in Toronto</strong> — Deme covers Toronto City Council. If you do
+        live in Toronto, check the first three characters, or find your
+        member by name in the search above.</p>`;
+      return;
+    }
+    if (wards.length === 1) {
+      const c = memberFor(wards[0]);
+      if (!c) {
+        result.innerHTML = `<p class="wf-note">That's Ward ${wards[0]} —
+          its seat is vacant in the current record.</p>`;
+        return;
+      }
+      result.innerHTML = `<div class="wf-confirm">
+        <p><strong>Ward ${c.ward} — ${esc(c.wardName)}.</strong>
+        Your councillor is ${esc(c.name)}.</p>
+        <p class="wf-actions">
+          <a class="btn bronze" href="councillor.html?m=${encodeURIComponent(c.slug)}">See ${esc(c.name)}'s record</a>
+          <button class="btn secondary" type="button" id="lookup-show">Show their card below</button>
+        </p></div>`;
+      const show = result.querySelector("#lookup-show");
+      if (show) show.addEventListener("click", () => {
+        const pq = document.getElementById("pq");
+        if (pq && pq.value) { pq.value = ""; render(""); }
+        highlight(c.slug, true);
+      });
+      highlight(c.slug, false);
+      return;
+    }
+    result.innerHTML = `<div class="wf-confirm">
+      <p><strong>${esc(fsa)} straddles a ward boundary</strong> — parts
+      of it sit in ${wards.length} wards, so Deme won't guess.
+      Which part is yours?</p>
+      <div class="wf-candidates">
+        ${wards.map((n) => {
+          const c = memberFor(n);
+          if (!c) return "";
+          return `<button type="button" class="wf-candidate" data-slug="${esc(c.slug)}">
+            <span class="wf-cand-ward">Ward ${n} — ${esc(c.wardName)}</span>
+            <span class="wf-cand-who">Councillor ${esc(c.name)}</span>
+            <span class="wf-cand-cue">${esc((cues && (cues[n] || cues[String(n)])) || "")}</span>
+          </button>`;
+        }).join("")}
+      </div></div>`;
+    result.querySelectorAll("[data-slug]").forEach((b) =>
+      b.addEventListener("click", () => {
+        window.location.href =
+          `councillor.html?m=${encodeURIComponent(b.dataset.slug)}`;
+      }));
+  }
+  form.addEventListener("submit", (e) => { e.preventDefault(); lookup(); });
+}
 </script>
 <script data-goatcounter="https://demecivic.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </body>

@@ -154,59 +154,26 @@ async function findCard(ref) {
   }
   return null;
 }
+/* The ward this page personalizes from. Owner decision (Oct 20,
+   2026): a ward belongs to the account profile — it is set when
+   the account is created and edited in the account form above,
+   never in a device-level editor on this page. The account layer
+   mirrors the profile row into VoteStore, so a signed-in visitor's
+   VoteStore ward IS their profile ward. Signed out, this page has
+   no ward: no councillor lines, no alignment, no rep snapshot —
+   the directory's postal-code lookup is the signed-out route to a
+   councillor. While accounts are not enabled at all, the
+   on-device profile remains the whole product and this simply
+   reads it, as before. */
+function profileWard() {
+  if (window.DemeAccount && window.DemeAccount.enabled()
+      && !window.DemeAccount.isSignedIn()) return null;
+  return VoteStore.getWard();
+}
 function myCouncillor() {
-  const w = VoteStore.getWard();
+  const w = profileWard();
   if (!w) return null;
   return people.find((p) => p.current && p.ward === w) || null;
-}
-/* Ward picking is postal-code-first (WardFinder): the finder owns
-   the input, the confirm/picker states, its summary state when a
-   ward is set (ward name + councillor + Change), and its built-in
-   list fallback. Both finders re-mount on any change so what they
-   show is always the stored truth. Each finder carries its own
-   postal-code privacy note (the card-level explainer was removed
-   with the postal-area profile field, Oct 20, 2026). */
-function mountFinders() {
-  const primaryEl = document.getElementById("ward-finder-primary");
-  if (primaryEl) {
-    WardFinder.mount(primaryEl, {
-      idPrefix: "rec1",
-      people,
-      label: "Find your ward by postal code",
-      current: VoteStore.getWard(),
-      exclude: null,
-      noneLabel: "No ward set",
-      onChoose(n) {
-        VoteStore.setWard(n);
-        /* The watched ward can never be the primary ward — if the new
-           primary is the watched one, the watch simply ends. */
-        if (VoteStore.getWatchWard() != null
-          && VoteStore.getWatchWard() === VoteStore.getWard()) {
-          VoteStore.setWatchWard(null);
-        }
-        renderContinuity();
-        mountFinders();
-        renderPicks();
-      },
-    });
-  }
-  const watchEl = document.getElementById("ward-finder-watch");
-  if (watchEl) {
-    WardFinder.mount(watchEl, {
-      idPrefix: "rec2",
-      people,
-      label: "Also watch a second ward",
-      current: VoteStore.getWatchWard(),
-      exclude: VoteStore.getWard(),
-      noneLabel: "No second ward",
-      inputLabel: "Postal code of the area to watch",
-      onChoose(n) {
-        VoteStore.setWatchWard(n === VoteStore.getWard() ? null : n);
-        mountFinders();
-      },
-    });
-  }
-  renderProfileChrome();
 }
 
 /* Topic chips: the 11 threads, toggles save the full set on every tap.
@@ -247,64 +214,67 @@ function renderInterests() {
   renderProfileChrome();
 }
 
-/* Profile chrome (owner direction, Oct 20): the Your Deme setup
-   blocks are a setup/edit surface, not permanent furniture. Until
-   a home ward exists on this device, the full setup shows exactly
-   as before. Once one does, the setup rests as a compact summary —
-   home ward, watched ward, topics count, Council alerts state —
-   and Edit profile reopens the full form in place; every control
-   in it saves exactly as it always has (each on the spot), and the
-   form's Done rests the card as the summary again. This only ever
-   shows or hides the two regions and reads stored state — it
-   writes nothing, and the account panel leads the card. The
-   alerts segment reads the account layer's opt-in when accounts
-   are enabled (false signed out; omitted while a signed-in row
-   is still loading, then filled in when the account layer next
-   refreshes — see DemeAccount.alertsOptIn). */
-let profileEditing = false;
+/* Profile summary (owner decision, Oct 20, 2026): the ward editors
+   that used to live here are gone — a ward is set when the account
+   is created and changed in the account form above, which is the
+   profile's one edit path. This block only ever READS state.
+   Signed in, it states the profile facts: home ward, watched
+   ward, topics count, Council alerts state (the alerts segment
+   reads the account layer's opt-in — false signed out, omitted
+   while a signed-in row is still loading; see
+   DemeAccount.alertsOptIn). Signed out, it says plainly where a
+   ward lives and where to find a councillor without one. The
+   topics/alerts editors below stay visible in both states, as
+   they always have. */
+function accountSignedInNow() {
+  return Boolean(window.DemeAccount
+    && typeof window.DemeAccount.isSignedIn === "function"
+    && window.DemeAccount.isSignedIn());
+}
 function renderProfileChrome() {
-  const setup = document.getElementById("profile-setup");
   const summary = document.getElementById("profile-summary");
-  if (!setup || !summary) return;
-  const doneRow = document.getElementById("profile-done");
-  const ward = VoteStore.getWard();
-  if (ward == null) profileEditing = false;
-  if (ward != null && !profileEditing) {
-    const wi = WardFinder.info(people, ward);
-    const parts = [`<strong>Ward ${ward}${wi.name ? ` — ${esc(wi.name)}` : ""}</strong>`];
-    const watch = VoteStore.getWatchWard();
-    if (watch != null) {
-      const wwi = WardFinder.info(people, watch);
-      parts.push(`Watching Ward ${watch}${wwi.name ? ` — ${esc(wwi.name)}` : ""}`);
-    }
-    const ints = VoteStore.getInterests();
-    parts.push(ints.length
-      ? `${ints.length} topic${ints.length === 1 ? "" : "s"} followed`
-      : "No topics followed");
-    let alertsVal = false;
-    if (window.DemeAccount && window.DemeAccount.enabled()
-      && typeof window.DemeAccount.alertsOptIn === "function") {
-      alertsVal = window.DemeAccount.alertsOptIn();
-    }
-    if (alertsVal != null) {
-      parts.push(`Council alerts ${alertsVal ? "on" : "off"}`);
-    }
-    summary.innerHTML = `<h2 style="font-size:1.25rem">Your Deme</h2>
-      <p class="wf-set"><span>${parts.join(" · ")}</span>
-      <button class="wf-listtoggle" type="button" id="profile-edit">Edit profile</button></p>`;
-    summary.querySelector("#profile-edit").addEventListener("click", () => {
-      profileEditing = true;
-      renderProfileChrome();
-    });
-    summary.hidden = false;
-    setup.hidden = true;
-    if (doneRow) doneRow.hidden = true;
+  if (!summary) return;
+  summary.hidden = false;
+  if (!accountSignedInNow()) {
+    summary.innerHTML = `<h2 style="font-size:1.25rem">Your profile</h2>
+      <p style="max-width:44rem;margin:0">Your ward is part of your
+      account profile — it's set when you create your account, so
+      your councillor's votes can be lined up against your picks.
+      Looking for your councillor right now?
+      <a href="councillors.html#ward-lookup">Find them by postal
+      code in the directory</a>.</p>`;
     return;
   }
-  summary.hidden = true;
-  summary.innerHTML = "";
-  setup.hidden = false;
-  if (doneRow) doneRow.hidden = !(ward != null && profileEditing);
+  const ward = VoteStore.getWard();
+  const parts = [];
+  if (ward != null) {
+    const wi = WardFinder.info(people, ward);
+    parts.push(`<strong>Home ward: Ward ${ward}${wi.name ? ` — ${esc(wi.name)}` : ""}</strong>${wi.councillor ? ` · Councillor ${esc(wi.councillor)}` : ""}`);
+  } else {
+    parts.push(`<strong>No home ward set</strong>`);
+  }
+  const watch = VoteStore.getWatchWard();
+  if (watch != null) {
+    const wwi = WardFinder.info(people, watch);
+    parts.push(`Watching Ward ${watch}${wwi.name ? ` — ${esc(wwi.name)}` : ""}`);
+  }
+  const ints = VoteStore.getInterests();
+  parts.push(ints.length
+    ? `${ints.length} topic${ints.length === 1 ? "" : "s"} followed`
+    : "No topics followed");
+  let alertsVal = false;
+  if (window.DemeAccount && window.DemeAccount.enabled()
+    && typeof window.DemeAccount.alertsOptIn === "function") {
+    alertsVal = window.DemeAccount.alertsOptIn();
+  }
+  if (alertsVal != null) {
+    parts.push(`Council alerts ${alertsVal ? "on" : "off"}`);
+  }
+  summary.innerHTML = `<h2 style="font-size:1.25rem">Your profile</h2>
+    <p class="wf-set"><span>${parts.join(" · ")}</span></p>
+    <p class="small" style="margin:.3rem 0 0">Your wards were set when
+    you created your account — change them any time in
+    <a href="#account-zone">your account</a> above.</p>`;
 }
 window.DemeRecord = { refreshProfileSummary: renderProfileChrome,
   refreshWeighIn: renderUpcoming, refreshPicks: renderPicks };
@@ -568,7 +538,7 @@ async function renderPicks() {
   }
   /* The tally lives only in this render pass — never stored (§9). */
   const tally = councillor
-    ? tallyAlignment(picks, VoteStore.getWard(), people, detailByRef)
+    ? tallyAlignment(picks, councillor.ward, people, detailByRef)
     : null;
   const blocks = [];
   for (const ref of refs) {
@@ -647,7 +617,7 @@ async function init() {
     const td = await loadJSON(dataPath("threads-summary.json"));
     threadThreads = td.threads || [];
   } catch (e) { threadThreads = []; }
-  mountFinders();
+  renderProfileChrome();
   renderContinuity();
   renderInterests();
   renderAlerts();
@@ -666,13 +636,6 @@ async function init() {
     topicsEditing = false;
     renderInterests();
   });
-  const profileDoneBtn = document.getElementById("profile-done-btn");
-  if (profileDoneBtn) profileDoneBtn.addEventListener("click", () => {
-    profileEditing = false;
-    topicsEditing = false;
-    renderInterests();
-    renderProfileChrome();
-  });
   document.getElementById("export").addEventListener("click", () => {
     const blob = new Blob(
       [JSON.stringify(VoteStore.exportAll(), null, 2)],
@@ -688,7 +651,7 @@ async function init() {
       VoteStore.resetAll();
       topicsEditing = false;
       renderContinuity();
-      mountFinders();
+      renderProfileChrome();
       renderInterests();
       renderPicks();
     }

@@ -49,7 +49,7 @@
         <div class="profile-block" id="profile-summary" hidden></div>
         <div id="profile-setup">
           <h2 style="font-size:1.25rem">Your Deme</h2>
-          <p class="small">Set your ward so Deme can put your councillor's
+          <p style="max-width:44rem">Set your ward so Deme can put your councillor's
           actual votes beside your picks. Everything on this card is kept
           on this device. Find a ward by postal code: only the first 3
           characters are used, right here in your browser — your full
@@ -62,7 +62,7 @@
             <div id="ward-finder-watch"></div>
           </div>
           <div class="profile-block">
-            <label id="record-topics-l">Topics you follow</label>
+            <label id="record-topics-l" style="display:block;font-weight:600;font-size:.92rem;margin:0 0 .45rem">Topics you follow</label>
             <div id="topics-summary"></div>
             <div class="chips" id="interests" role="group" aria-labelledby="record-topics-l"></div>
             <p class="profile-done" id="topics-done" hidden><button class="wf-listtoggle" type="button" id="topics-done-btn">Done</button></p>
@@ -72,18 +72,17 @@
         </div>
       </div>
 
-      <div id="agreement" style="margin-top:1.6rem"></div>
-
-      <h2 style="margin-top:2.6rem">Your picks</h2>
+      <h2 style="margin-top:2.4rem">Your picks</h2>
       <hr class="rule">
       <div id="picks"><span class="visually-hidden">Loading…</span>
         <div class="skel-card" aria-hidden="true"><span class="skel-el sm"></span><span class="skel-el title"></span><span class="skel-el"></span><span class="skel-el short"></span></div></div>
+      <div id="agreement"></div>
 
-      <div class="toolbar" style="margin-top:2.2rem">
+      <div class="toolbar" style="margin-top:1.6rem">
         <button class="btn secondary small" id="export">Download my data (JSON)</button>
         <button class="btn secondary small" id="reset">Erase my picks, ward and Your Deme</button>
       </div>
-      <p class="small" id="local-note">Your picks never leave this browser, and
+      <p class="small" id="local-note" style="max-width:44rem">Your picks never leave this browser, and
       Deme keeps no tally of visitors' positions. Your local profile
       lives in this browser's storage; if you create an account, your
       name, email, postal area (first 3 characters), wards and topics

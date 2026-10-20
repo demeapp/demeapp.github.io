@@ -456,6 +456,15 @@ html.js .statband:empty { min-height: 8.2rem; }
 .votebars .fill.n { background: var(--no); }
 .votebars .n { font-weight: 700; text-align: right; }
 .recordExpander { margin-top: 1.6rem; }
+.alignment-why { margin-top: .8rem; }
+.alignment-why > summary {
+  cursor: pointer; font-weight: 700; font-size: .92rem; min-height: 44px;
+  display: flex; align-items: center; list-style: none; gap: .5rem;
+}
+.alignment-why > summary::-webkit-details-marker { display: none; }
+.alignment-why > summary::after { content: "+"; margin-left: auto; font-size: 1.2rem; color: var(--bronze-dark); }
+.alignment-why[open ] > summary::after { content: "–"; }
+.alignment-why p { margin: .35rem 0 0; }
 table.record { width: 100%; border-collapse: collapse; font-size: .98rem; }
 table.record th, table.record td {
   text-align: left; padding: .5rem .6rem; border-bottom: 1px solid var(--line-soft);

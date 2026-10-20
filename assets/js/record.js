@@ -4,11 +4,133 @@
    against the archive: is the item decided yet? What was the outcome?
    If a recorded vote exists and the visitor set a ward, how did their
    councillor vote on the first recorded vote of the item, next to the
-   visitor's own pick? Weighing in requires sign-in: picks save to the
+   visitor's own pick? Below the picks, the alignment block sums
+   the decided picks up in this browser, from the picks and the
+   public record — the tally is computed on each render and is
+   never stored or sent. Weighing in requires sign-in: picks save to the
    account (account.js keeps the account copy in step with the
    VoteStore cache this page renders from). Reading never does. */
 "use strict";
 renderChrome("my-record.html");
+
+/* === ALIGNMENT CORE (pure — no DOM, no storage, no network) ===
+   The computation core of the alignment block (ALIGNMENT-FEATURE-SPEC
+   §§3–6). These functions are deliberately free of every browser
+   dependency so the spec's §10 fixtures run against them in Node with
+   no DOM (the fixture runner extracts exactly this marked section).
+
+   comparableVote(detail, memberName): the member's value in the FIRST
+   motion whose stage is exactly "City Council" (Decision S-1 — a
+   committee vote is a recommendation, never the decision). Name match
+   is exact string equality (S-4); an unrecognized value is "none",
+   never coerced. Returns one of:
+     {kind:"vote", value:"Yes"|"No"} | {kind:"absent"} |
+     {kind:"interest"} | {kind:"none", reason:"no-council-vote"|"no-row"}
+   ("no-council-vote": no City Council-stage motion in the file;
+    "no-row": a Council vote exists but the member has no usable row.)
+
+   tallyAlignment(picks, ward, people, detailByRef): the §4 tally.
+   picks is the VoteStore.allPicks() shape {ref:{choice, ts}}; ward is
+   the visitor's ward number; people is councillors.json. detailByRef
+   maps a ref to what the page holds for it:
+     - missing / null / {unknown:true} / {undecided:true}
+         → the pick enters NO count (still awaiting a decision, or
+           the detail file failed to load — a network failure is not
+           evidence about the record);
+     - {hasVote:false} (the index card's flag)
+         → decided, bucket B3, no detail needed;
+     - {detail:<d/{ref}.json>} or a raw detail object
+         → decided; classified by comparableVote.
+   Returns {matched, comparable, B1, B2, B3, B4, decided, member}
+   where decided = comparable+B1+B2+B3+B4 and member is the resolved
+   current councillor's name (null when the ward has none). Counts
+   only — no percentage is ever computed (S-2), and nothing here is
+   persisted (S-5): the caller keeps the result in render scope only.
+
+   alignmentCopy(tally, memberName, ward): the §6 display strings —
+   headline (comparable ≥ 5, S-3), progress state, and the not-counted
+   explainer lines for the non-zero buckets, in B1–B4 order. */
+function comparableVote(detail, memberName) {
+  if (!detail || !Array.isArray(detail.motions)) {
+    return { kind: "none", reason: "no-council-vote" };
+  }
+  const motion = detail.motions.find((m) => m && m.stage === "City Council");
+  if (!motion) return { kind: "none", reason: "no-council-vote" };
+  if (!Array.isArray(motion.votes)) return { kind: "none", reason: "no-row" };
+  const row = motion.votes.find((v) => Array.isArray(v) && v[0] === memberName);
+  if (!row) return { kind: "none", reason: "no-row" };
+  const value = row[1];
+  if (value === "Yes" || value === "No") return { kind: "vote", value };
+  if (value === "Absent") return { kind: "absent" };
+  if (typeof value === "string" && value.startsWith("Absent(Interest")) {
+    return { kind: "interest" };
+  }
+  return { kind: "none", reason: "no-row" };
+}
+
+function tallyAlignment(picks, ward, people, detailByRef) {
+  const out = { matched: 0, comparable: 0, B1: 0, B2: 0, B3: 0, B4: 0,
+    decided: 0, member: null };
+  const member = (Array.isArray(people) && ward != null)
+    ? people.find((p) => p && p.current && p.ward === ward) || null
+    : null;
+  if (!member) return out;
+  out.member = member.name;
+  for (const ref of Object.keys(picks || {})) {
+    const raw = detailByRef ? detailByRef[ref] : undefined;
+    if (!raw || typeof raw !== "object" || raw.unknown || raw.undecided) {
+      continue; /* undecided or unknown — enters no count (§4) */
+    }
+    let detail = null, hasVote;
+    if ("detail" in raw || "hasVote" in raw || "card" in raw) {
+      detail = raw.detail || null;
+      hasVote = raw.hasVote !== undefined ? raw.hasVote
+        : (raw.card ? raw.card.hasVote : undefined);
+    } else {
+      detail = raw; /* a raw detail object */
+    }
+    if (hasVote === false) { out.B3 += 1; continue; }
+    const pick = picks[ref];
+    const choice = typeof pick === "string" ? pick : (pick && pick.choice);
+    const cv = comparableVote(detail, member.name);
+    if (cv.kind === "vote") {
+      out.comparable += 1;
+      if ((choice === "support" && cv.value === "Yes")
+        || (choice === "oppose" && cv.value === "No")) out.matched += 1;
+    } else if (cv.kind === "absent") out.B1 += 1;
+    else if (cv.kind === "interest") out.B2 += 1;
+    else if (cv.reason === "no-council-vote") out.B3 += 1;
+    else out.B4 += 1;
+  }
+  out.decided = out.comparable + out.B1 + out.B2 + out.B3 + out.B4;
+  return out;
+}
+
+function alignmentCopy(tally, memberName, ward) {
+  const none = { headline: null, progress: null, explainer: [] };
+  if (!tally || !memberName) return none;
+  if (!(tally.decided >= 1 || tally.comparable >= 1)) return none;
+  const explainer = [];
+  if (tally.B1) explainer.push(
+    `${tally.B1} where ${memberName} was absent — there was no vote to compare.`);
+  if (tally.B2) explainer.push(
+    `${tally.B2} where ${memberName} declared an interest and did not vote — stepping back on a conflict is a duty, not a position, so these are never counted for or against.`);
+  if (tally.B3) explainer.push(
+    `${tally.B3} decided without a recorded vote at City Council — most Council decisions are not taken name-by-name.`);
+  if (tally.B4) explainer.push(
+    `${tally.B4} where ${memberName} has no recorded vote on the item — for example, it was decided before they took office.`);
+  if (tally.comparable >= 5) {
+    return { explainer,
+      progress: null,
+      headline: {
+        num: `${tally.matched} of ${tally.comparable}`,
+        lab: `decided picks where ${memberName} voted the same way you did. ${memberName} is your Ward ${ward} councillor, and each pick is compared with the first recorded vote they cast at City Council on that item. Counted here, on this device, from your picks and the public record — a record, not a score; what you do with it is up to you.`,
+      } };
+  }
+  return { explainer, headline: null,
+    progress: `How you line up with ${memberName} will be summed up here once more of your decided picks have a recorded Council vote from them — so far ${tally.comparable} of the 5 needed are counted. Every pick is already lined up against the record below.` };
+}
+/* === END ALIGNMENT CORE === */
 
 const interestsBox = document.getElementById("interests");
 const continuityBox = document.getElementById("continuity");
@@ -422,11 +544,36 @@ async function renderPicks() {
     return;
   }
   const councillor = myCouncillor();
-  let comparable = 0, matched = 0;
+  /* Resolve every pick's card once, and — only when a councillor exists
+     to compare against — the detail files for decided picks that carry
+     a recorded vote. These are the same loadJSON() calls this page has
+     always made for the per-pick cards; the alignment tally below is
+     computed from their results and adds zero fetches (spec §9). A
+     detail file that fails to load marks the pick unknown: it enters
+     no count at all. */
+  const cards = {};
+  const detailByRef = {};
+  for (const ref of refs) {
+    const card = await findCard(ref);
+    cards[ref] = card;
+    if (!card || !councillor) continue;
+    if (!card.hasVote) {
+      detailByRef[ref] = { hasVote: false, detail: null };
+      continue;
+    }
+    try {
+      detailByRef[ref] = { hasVote: true,
+        detail: await loadJSON(dataPath(`d/${encodeURIComponent(ref)}.json`)) };
+    } catch (e) { detailByRef[ref] = { unknown: true }; }
+  }
+  /* The tally lives only in this render pass — never stored (§9). */
+  const tally = councillor
+    ? tallyAlignment(picks, VoteStore.getWard(), people, detailByRef)
+    : null;
   const blocks = [];
   for (const ref of refs) {
     const pick = picks[ref];
-    const card = await findCard(ref);
+    const card = cards[ref];
     const pickLabel = pick.choice === "support" ? "Support" : "Oppose";
     if (!card) {
       blocks.push(`<article class="card" style="margin-bottom:1rem">
@@ -438,22 +585,26 @@ async function renderPicks() {
       continue;
     }
     let councillorLine = "";
-    if (card.hasVote && councillor) {
-      try {
-        const d = await loadJSON(dataPath(`d/${encodeURIComponent(ref)}.json`));
-        const first = d.motions && d.motions[0];
-        const mine = first && first.votes.find(([n]) => n === councillor.name);
-        if (mine) {
-          comparable += 1;
-          const aligned = (pick.choice === "support" && mine[1] === "Yes") ||
-                          (pick.choice === "oppose" && mine[1] === "No");
-          if (aligned) matched += 1;
-          councillorLine = `<p style="margin:.4rem 0 0">On the first recorded
-            vote on this item, ${esc(councillor.name)} voted
-            <strong>${esc(mine[1])}</strong> — ${aligned
-              ? "the same way you picked." : "differently from your pick."}</p>`;
-        }
-      } catch (e) { /* vote detail unavailable */ }
+    const entry = detailByRef[ref];
+    if (councillor && entry && entry.hasVote && entry.detail) {
+      const cv = comparableVote(entry.detail, councillor.name);
+      if (cv.kind === "vote") {
+        const aligned = (pick.choice === "support" && cv.value === "Yes") ||
+                        (pick.choice === "oppose" && cv.value === "No");
+        councillorLine = `<p style="margin:.4rem 0 0">On the first recorded
+          Council vote on this item, ${esc(councillor.name)} voted
+          <strong>${esc(cv.value)}</strong> — ${aligned
+            ? "the same way you picked." : "differently from your pick."}</p>`;
+      } else if (cv.kind === "absent") {
+        councillorLine = `<p style="margin:.4rem 0 0">On the first recorded
+          Council vote on this item, ${esc(councillor.name)} was absent, so
+          there is nothing to line your pick up against.</p>`;
+      } else if (cv.kind === "interest") {
+        councillorLine = `<p style="margin:.4rem 0 0">${esc(councillor.name)}
+          declared an interest in this item and did not vote.</p>`;
+      }
+      /* kind "none" (B3/B4): no per-pick line — the reason surfaces
+         only in the aggregate explainer below (spec §6.5). */
     }
     blocks.push(`<article class="card" style="margin-bottom:1rem">
       <div class="meta"><span>${esc(fmtDate(card.date))}</span>
@@ -464,12 +615,28 @@ async function renderPicks() {
       ${councillorLine}</article>`);
   }
   picksBox.innerHTML = blocks.join("");
-  agreeBox.innerHTML = comparable
-    ? `<div class="stat"><span class="num">${matched} of ${comparable}</span>
-       <span class="lab">decided picks where your councillor's first recorded
-       vote matched the position you took. A record, not a score — what you
-       do with it is up to you.</span></div>`
-    : "";
+  /* Alignment block (§6): headline at comparable ≥ 5, the progress
+     state below that, nothing when nothing is decided — plus the
+     not-counted explainer whenever a bucket is non-zero. With no
+     councillor (no ward set, or a vacant seat) the block renders
+     nothing, exactly as the per-pick cards omit councillor lines. */
+  if (!councillor || !tally) { agreeBox.innerHTML = ""; return; }
+  const copy = alignmentCopy(tally, councillor.name, councillor.ward);
+  let html = "";
+  if (copy.headline) {
+    html += `<div class="stat"><span class="num">${esc(copy.headline.num)}</span>
+      <span class="lab">${esc(copy.headline.lab)}</span></div>`;
+  } else if (copy.progress) {
+    html += `<div class="stat"><span class="lab">${esc(copy.progress)}</span></div>`;
+  }
+  if (copy.explainer.length) {
+    html += `<details class="recordExpander alignment-why">
+      <summary>Why some picks aren't counted</summary>
+      ${copy.explainer.map((line) =>
+        `<p class="small">${esc(line)}</p>`).join("")}
+      </details>`;
+  }
+  agreeBox.innerHTML = html;
 }
 
 async function init() {

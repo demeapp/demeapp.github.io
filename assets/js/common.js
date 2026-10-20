@@ -186,7 +186,7 @@ function decisionCard(c, opts = {}) {
    a static site has no other visitors' data, and Deme never implies
    otherwise. */
 /* Council alerts (staged) — single config point. Empty string = sign-ups not open yet; the parent will supply the Google Form URL here. */
-const DEME_ALERTS_FORM_URL = "";
+const DEME_ALERTS_FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLSejGu1-j2a0-OfU_gxwjd5Y0WHnhgV-NWxriF-Lh-RU_cUx4A/viewform";
 const VoteStore = (() => {
   const KEY = "deme.votes.v2", OLD = "deme.votes.v1";
   let mem = null; /* session-only state if a migration cannot persist */

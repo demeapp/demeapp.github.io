@@ -182,7 +182,7 @@ const PHOTO_SLUGS = new Set(["alejandra-bravo", "amber-morley",
   "anthony-perruzza", "ausma-malik", "brad-bradford", "chris-moise",
   "dianne-saxe", "frances-nunziata", "gord-perks", "jamaal-myers",
   "james-pasternak", "jon-burnside", "josh-matlow", "lily-cheng",
-  "mike-colle", "neethan-shan", "nick-mantas", "olivia-chow",
+  "michael-thompson", "mike-colle", "neethan-shan", "nick-mantas", "olivia-chow",
   "parthi-kandavel", "paul-ainslie", "paula-fletcher",
   "rachel-chernos-lin", "shelley-carroll", "stephen-holyday",
   "vincent-crisanti"]);

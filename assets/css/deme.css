@@ -901,6 +901,9 @@ html.js .entry-shell { min-height: 26.6rem; }
 .profile-grid {
   display: grid; gap: 1rem; grid-template-columns: 1fr; margin-top: 1.6rem;
 }
+/* The global section margin must not leak into the grid: on a panel it
+   offsets the tile from the row top and breaks the equal-height stretch. */
+.profile-grid > .profile-panel { margin-top: 0; }
 @media (min-width: 820px) { .profile-grid { grid-template-columns: 1.6fr 1fr; } }
 .profile-panel {
   background: var(--card); border: 1px solid var(--line-soft);

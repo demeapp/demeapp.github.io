@@ -15,6 +15,7 @@ const STATUS_LABELS = {
   NOQUORUM: "Not decided — no quorum", RESCIND: "Rescinded",
   DEFERIND: "Deferred indefinitely", NOTADOPT: "Not adopted",
   DEEMADPT: "Deemed adopted", WO_RECS: "Forwarded without a recommendation",
+  INT_FAIL: "Not introduced", OOORDER: "Ruled out of order",
 };
 const PAGE = 25;
 let rows = [], councillors = [], filtered = [], shown = 0;

@@ -7,7 +7,7 @@
 <meta name="description" content="Deme makes Toronto's council record readable: 33,796 decisions in plain language, searchable by topic, ward, and councillor.">
 <link rel="stylesheet" href="assets/css/deme.css">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
-<meta name="theme-color" content="#F6F1E7">
+<meta name="theme-color" content="#0E2A47">
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Deme">
@@ -159,6 +159,54 @@
       voted. <a href="about.html">How Deme works →</a></p>
     </section>
 
+    <section class="reveal" aria-labelledby="gap-h">
+      <p class="kicker">The gap Deme fills</p>
+      <h2 id="gap-h">Built to complete the record, not just cover it</h2>
+      <hr class="rule">
+      <p style="max-width:44rem">Existing tools do part of the job. Deme
+      picks up where they stop — a plain-language record matched to your
+      ward, with your own positions kept on your own device.</p>
+      <ul class="gap-list">
+        <li class="gap-row">
+          <p class="who">GovTrack<small>United States</small></p>
+          <p><strong>What it does well:</strong> tracks US Congress bills and member voting records.</p>
+          <p><strong>What's missing:</strong> US federal only — nothing for Canadian municipal voters.</p>
+        </li>
+        <li class="gap-row">
+          <p class="who">Countable<small>United States</small></p>
+          <p><strong>What it does well:</strong> plain-language summaries, polls, contact your lawmaker.</p>
+          <p><strong>What's missing:</strong> US federal &amp; state only; contact tool is US-only. No Canadian coverage.</p>
+        </li>
+        <li class="gap-row">
+          <p class="who">VoteSpotter<small>United States</small></p>
+          <p><strong>What it does well:</strong> clean mobile app, push alerts, rep voting records.</p>
+          <p><strong>What's missing:</strong> US only; advocacy-driven priorities, not a neutral record.</p>
+        </li>
+        <li class="gap-row">
+          <p class="who">openparliament.ca<small>Canada (federal)</small></p>
+          <p><strong>What it does well:</strong> excellent, searchable Hansard and House of Commons votes.</p>
+          <p><strong>What's missing:</strong> stops at the federal level — no municipal or ward-level view.</p>
+        </li>
+      </ul>
+      <p class="gap-close">Deme is built for Canada's cities:
+      matched to your ward · your positions stay on your device, never
+      tallied · a permanent public record that holds representatives
+      accountable. <a href="explore.html">Start searching the record →</a></p>
+    </section>
+
+    <section class="reveal" aria-labelledby="vision-h">
+      <h2 id="vision-h" class="visually-hidden">Our vision</h2>
+      <div class="vision-band">
+        <div class="bar" aria-hidden="true"></div>
+        <blockquote>A world where no vote happens in the dark — and every representative answers for their record.</blockquote>
+        <p>This is the record behind that vision: every decision, every
+        recorded vote, every promise — public, permanent and plain. Every
+        representative is shown fairly and without favour. Every resident
+        is trusted to judge the record for themselves. When people can see
+        the record, democracy works.</p>
+      </div>
+    </section>
+
   </div>
 </main>
 <footer class="site-footer"></footer>
@@ -185,11 +233,11 @@ Promise.all([loadJSON(dataPath("stats.json")), loadJSON(dataPath("latest.json"))
   document.getElementById("statband").innerHTML = `
     <div class="stat"><span class="num" data-count="${stats.decisions}">${fmtNum(stats.decisions)}</span>
       <span class="lab">decisions in the archive — City Council, its committees and boards — in plain language (${stats.decisionsFrom}–${stats.decisionsTo})</span></div>
-    <div class="stat"><span class="num">1 in 11</span>
+    <div class="stat"><span class="num">9 in 100</span>
       <span class="lab">decisions carry a recorded vote — ${fmtNum(stats.recordedVoteDecisions)} where every name is on the record</span></div>
     <div class="stat"><span class="num" data-count="${stats.votesCast}">${fmtNum(stats.votesCast)}</span>
       <span class="lab">individual votes cast — yes or no — by ${stats.members} members across five terms, back to ${stats.votesFrom}</span></div>`;
-  /* Animate the two numeric stats; the "1 in 11" stat stays static text.
+  /* Animate the two numeric stats; the "9 in 100" stat stays static text.
      animateCount always lands on exactly fmtNum(target). */
   document.querySelectorAll("#statband .num[data-count]").forEach((el) =>
     animateCount(el, Number(el.dataset.count)));

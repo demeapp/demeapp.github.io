@@ -223,9 +223,9 @@ async function setupProfileRow(params) {
   } catch (e) { /* labels fall back to the thread ids themselves */ }
   const ward = VoteStore.getWard(), watchWard = VoteStore.getWatchWard();
   const ints = VoteStore.getInterests();
-  let summary = "Your Deme profile:";
-  if (ward != null) summary += ` Ward ${ward}`;
-  if (watchWard != null) summary += (ward != null ? " + Ward " : " Ward ") + watchWard;
+  let summary = "";
+  if (ward != null) summary += `Ward ${ward}`;
+  if (watchWard != null) summary += (ward != null ? " + Ward " : "Ward ") + watchWard;
   if (ints.length) summary += ` · ${ints.map((id) => labels[id] || id).join(", ")}`;
   profileSummaryBase = summary;
   renderProfileState();

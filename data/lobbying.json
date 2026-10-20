@@ -1,0 +1,6492 @@
+{
+ "a-a-heaps": {
+  "total": 53,
+  "term": 0,
+  "first": "2010-08-24",
+  "last": "2010-08-26",
+  "lobbyists": 28,
+  "clients": 17,
+  "subjects": 47,
+  "methods": {
+   "Meetings": 17,
+   "Emails": 15,
+   "Phone calls": 5,
+   "Written": 15,
+   "Other or unreported": 1
+  },
+  "top": [
+   {
+    "label": "Garbage / Recycling",
+    "count": 4
+   },
+   {
+    "label": "Public Health",
+    "count": 4
+   },
+   {
+    "label": "Budget",
+    "count": 3
+   },
+   {
+    "label": "Environment, By-law / Regulation",
+    "count": 2
+   },
+   {
+    "label": "By-law / Regulation",
+    "count": 2
+   }
+  ],
+  "years": [
+   {
+    "year": 2010,
+    "count": 2
+   }
+  ],
+  "snapshot": "2026-10-08"
+ },
+ "adam-giambrone": {
+  "total": 95,
+  "term": 0,
+  "first": "2010-08-24",
+  "last": "2010-10-03",
+  "lobbyists": 44,
+  "clients": 33,
+  "subjects": 81,
+  "methods": {
+   "Meetings": 43,
+   "Emails": 18,
+   "Phone calls": 10,
+   "Written": 20,
+   "Other or unreported": 4
+  },
+  "top": [
+   {
+    "label": "Transit / TTC",
+    "count": 9
+   },
+   {
+    "label": "Planning and Development, Planning Policy / Study",
+    "count": 7
+   },
+   {
+    "label": "Garbage / Recycling",
+    "count": 5
+   },
+   {
+    "label": "Budget",
+    "count": 4
+   },
+   {
+    "label": "Transit/TTC",
+    "count": 4
+   }
+  ],
+  "years": [
+   {
+    "year": 2010,
+    "count": 3
+   }
+  ],
+  "snapshot": "2026-10-08"
+ },
+ "adam-vaughan": {
+  "total": 713,
+  "term": 0,
+  "first": "2009-12-14",
+  "last": "2014-05-08",
+  "lobbyists": 134,
+  "clients": 195,
+  "subjects": 379,
+  "methods": {
+   "Meetings": 466,
+   "Emails": 127,
+   "Phone calls": 55,
+   "Written": 49,
+   "Other or unreported": 16
+  },
+  "top": [
+   {
+    "label": "Planning and Development Application, Zoning By-law",
+    "count": 177
+   },
+   {
+    "label": "Planning and Development, Combined Application",
+    "count": 114
+   },
+   {
+    "label": "Economic Development",
+    "count": 67
+   },
+   {
+    "label": "Planning and Development Application, Site Plan",
+    "count": 49
+   },
+   {
+    "label": "Planning and Development, Planning Policy / Study",
+    "count": 45
+   }
+  ],
+  "years": [
+   {
+    "year": 2009,
+    "count": 1
+   },
+   {
+    "year": 2010,
+    "count": 22
+   },
+   {
+    "year": 2011,
+    "count": 95
+   },
+   {
+    "year": 2012,
+    "count": 157
+   },
+   {
+    "year": 2013,
+    "count": 231
+   },
+   {
+    "year": 2014,
+    "count": 77
+   }
+  ],
+  "snapshot": "2026-10-08"
+ },
+ "alejandra-bravo": {
+  "total": 267,
+  "term": 267,
+  "first": "2022-11-17",
+  "last": "2026-09-03",
+  "lobbyists": 71,
+  "clients": 59,
+  "subjects": 114,
+  "methods": {
+   "Meetings": 84,
+   "Emails": 158,
+   "Phone calls": 15,
+   "Written": 7,
+   "Other or unreported": 3
+  },
+  "top": [
+   {
+    "label": "Affordable Housing",
+    "count": 58
+   },
+   {
+    "label": "Economic Development",
+    "count": 53
+   },
+   {
+    "label": "Planning and Development",
+    "count": 45
+   },
+   {
+    "label": "By-law / Regulation",
+    "count": 44
+   },
+   {
+    "label": "Planning and Development, Combined Application",
+    "count": 42
+   }
+  ],
+  "years": [
+   {
+    "year": 2022,
+    "count": 10
+   },
+   {
+    "year": 2023,
+    "count": 82
+   },
+   {
+    "year": 2024,
+    "count": 97
+   },
+   {
+    "year": 2025,
+    "count": 56
+   },
+   {
+    "year": 2026,
+    "count": 22
+   }
+  ],
+  "snapshot": "2026-10-08"
+ },
+ "amber-morley": {
+  "total": 377,
+  "term": 377,
+  "first": "2022-11-16",
+  "last": "2026-09-03",
+  "lobbyists": 80,
+  "clients": 83,
+  "subjects": 157,
+  "methods": {
+   "Meetings": 101,
+   "Emails": 243,
+   "Phone calls": 9,
+   "Written": 9,
+   "Other or unreported": 15
+  },
+  "top": [
+   {
+    "label": "Affordable Housing",
+    "count": 77
+   },
+   {
+    "label": "Economic Development",
+    "count": 73
+   },
+   {
+    "label": "Planning and Development, Combined Application",
+    "count": 59
+   },
+   {
+    "label": "By-law / Regulation",
+    "count": 52
+   },
+   {
+    "label": "Planning and Development Application, Official Plan",
+    "count": 52
+   }
+  ],
+  "years": [
+   {
+    "year": 2022,
+    "count": 19
+   },
+   {
+    "year": 2023,
+    "count": 155
+   },
+   {
+    "year": 2024,
+    "count": 80
+   },
+   {
+    "year": 2025,
+    "count": 85
+   },
+   {
+    "year": 2026,
+    "count": 38
+   }
+  ],
+  "snapshot": "2026-10-08"
+ },
+ "ana-bailao": {
+  "total": 1565,
+  "term": 0,
+  "first": "2011-01-24",
+  "last": "2022-10-31",
+  "lobbyists": 314,
+  "clients": 267,
+  "subjects": 616,
+  "methods": {
+   "Meetings": 717,
+   "Emails": 545,
+   "Phone calls": 156,
+   "Written": 91,
+   "Other or unreported": 56
+  },
+  "top": [
+   {
+    "label": "Economic Development",
+    "count": 280
+   },
+   {
+    "label": "By-law / Regulation",
+    "count": 230
+   },
+   {
+    "label": "Licences / Licensing",
+    "count": 219
+   },
+   {
+    "label": "Planning and Development Application, Zoning By-law",
+    "count": 168
+   },
+   {
+    "label": "Planning and Development, Planning Policy / Study",
+    "count": 154
+   }
+  ],
+  "years": [
+   {
+    "year": 2011,
+    "count": 70
+   },
+   {
+    "year": 2012,
+    "count": 112
+   },
+   {
+    "year": 2013,
+    "count": 129
+   },
+   {
+    "year": 2014,
+    "count": 94
+   },
+   {
+    "year": 2015,
+    "count": 139
+   },
+   {
+    "year": 2016,
+    "count": 181
+   },
+   {
+    "year": 2017,
+    "count": 158
+   },
+   {
+    "year": 2018,
+    "count": 79
+   },
+   {
+    "year": 2019,
+    "count": 171
+   },
+   {
+    "year": 2020,
+    "count": 135
+   },
+   {
+    "year": 2021,
+    "count": 183
+   },
+   {
+    "year": 2022,
+    "count": 112
+   }
+  ],
+  "snapshot": "2026-10-08"
+ },
+ "anthony-perruzza": {
+  "total": 896,
+  "term": 197,
+  "first": "2010-08-24",
+  "last": "2026-09-03",
+  "lobbyists": 233,
+  "clients": 197,
+  "subjects": 444,
+  "methods": {
+   "Meetings": 254,
+   "Emails": 476,
+   "Phone calls": 49,
+   "Written": 84,
+   "Other or unreported": 33
+  },
+  "top": [
+   {
+    "label": "Economic Development",
+    "count": 172
+   },
+   {
+    "label": "By-law / Regulation",
+    "count": 147
+   },
+   {
+    "label": "Licences / Licensing",
+    "count": 128
+   },
+   {
+    "label": "Transportation - Cycling / Bicycle Lanes",
+    "count": 83
+   },
+   {
+    "label": "Garbage / Recycling",
+    "count": 80
+   }
+  ],
+  "years": [
+   {
+    "year": 2010,
+    "count": 3
+   },
+   {
+    "year": 2011,
+    "count": 12
+   },
+   {
+    "year": 2012,
+    "count": 43
+   },
+   {
+    "year": 2013,
+    "count": 76
+   },
+   {
+    "year": 2014,
+    "count": 56
+   },
+   {
+    "year": 2015,
+    "count": 84
+   },
+   {
+    "year": 2016,
+    "count": 62
+   },
+   {
+    "year": 2017,
+    "count": 45
+   },
+   {
+    "year": 2018,
+    "count": 33
+   },
+   {
+    "year": 2019,
+    "count": 88
+   },
+   {
+    "year": 2020,
+    "count": 58
+   },
+   {
+    "year": 2021,
+    "count": 61
+   },
+   {
+    "year": 2022,
+    "count": 38
+   },
+   {
+    "year": 2023,
+    "count": 61
+   },
+   {
+    "year": 2024,
+    "count": 56
+   },
+   {
+    "year": 2025,
+    "count": 47
+   },
+   {
+    "year": 2026,
+    "count": 22
+   }
+  ],
+  "snapshot": "2026-10-08"
+ },
+ "ausma-malik": {
+  "total": 318,
+  "term": 318,
+  "first": "2022-11-16",
+  "last": "2026-09-03",
+  "lobbyists": 90,
+  "clients": 63,
+  "subjects": 152,
+  "methods": {
+   "Meetings": 75,
+   "Emails": 227,
+   "Phone calls": 7,
+   "Written": 6,
+   "Other or unreported": 3
+  },
+  "top": [
+   {
+    "label": "Economic Development",
+    "count": 95
+   },
+   {
+    "label": "Attractions / Tourism",
+    "count": 73
+   },
+   {
+    "label": "By-law / Regulation",
+    "count": 51
+   },
+   {
+    "label": "Transportation",
+    "count": 44
+   },
+   {
+    "label": "Licences / Licensing",
+    "count": 42
+   }
+  ],
+  "years": [
+   {
+    "year": 2022,
+    "count": 18
+   },
+   {
+    "year": 2023,
+    "count": 114
+   },
+   {
+    "year": 2024,
+    "count": 75
+   },
+   {
+    "year": 2025,
+    "count": 74
+   },
+   {
+    "year": 2026,
+    "count": 37
+   }
+  ],
+  "snapshot": "2026-10-08"
+ },
+ "bill-saundercook": {
+  "total": 91,
+  "term": 0,
+  "first": "2010-07-20",
+  "last": "2010-08-27",
+  "lobbyists": 39,
+  "clients": 36,
+  "subjects": 75,
+  "methods": {
+   "Meetings": 45,
+   "Emails": 19,
+   "Phone calls": 11,
+   "Written": 14,
+   "Other or unreported": 2
+  },
+  "top": [
+   {
+    "label": "Planning Applications (Zoning By-law, Site Plan)",
+    "count": 6
+   },
+   {
+    "label": "Signs",
+    "count": 5
+   },
+   {
+    "label": "Garbage / Recycling",
+    "count": 5
+   },
+   {
+    "label": "Transit / TTC",
+    "count": 5
+   },
+   {
+    "label": "Planning and Development, Planning Policy / Study",
+    "count": 5
+   }
+  ],
+  "years": [
+   {
+    "year": 2010,
+    "count": 10
+   }
+  ],
+  "snapshot": "2026-10-08"
+ },
+ "brad-bradford": {
+  "total": 803,
+  "term": 461,
+  "first": "2018-12-04",
+  "last": "2026-09-03",
+  "lobbyists": 197,
+  "clients": 150,
+  "subjects": 336,
+  "methods": {
+   "Meetings": 328,
+   "Emails": 354,
+   "Phone calls": 72,
+   "Written": 22,
+   "Other or unreported": 27
+  },
+  "top": [
+   {
+    "label": "Economic Development",
+    "count": 177
+   },
+   {
+    "label": "By-law / Regulation",
+    "count": 132
+   },
+   {
+    "label": "Planning and Development",
+    "count": 116
+   },
+   {
+    "label": "Planning and Development, Planning Policy / Study",
+    "count": 84
+   },
+   {
+    "label": "Planning and Development Application, Zoning By-law",
+    "count": 83
+   }
+  ],
+  "years": [
+   {
+    "year": 2018,
+    "count": 10
+   },
+   {
+    "year": 2019,
+    "count": 116
+   },
+   {
+    "year": 2020,
+    "count": 84
+   },
+   {
+    "year": 2021,
+    "count": 87
+   },
+   {
+    "year": 2022,
+    "count": 68
+   },
+   {
+    "year": 2023,
+    "count": 148
+   },
+   {
+    "year": 2024,
+    "count": 192
+   },
+   {
+    "year": 2025,
+    "count": 76
+   },
+   {
+    "year": 2026,
+    "count": 22
+   }
+  ],
+  "snapshot": "2026-10-08"
+ },
+ "brian-ashton": {
+  "total": 84,
+  "term": 0,
+  "first": "2010-07-30",
+  "last": "2010-08-24",
+  "lobbyists": 39,
+  "clients": 19,
+  "subjects": 49,
+  "methods": {
+   "Meetings": 43,
+   "Emails": 16,
+   "Phone calls": 8,
+   "Written": 14,
+   "Other or unreported": 3
+  },
+  "top": [
+   {
+    "label": "Budget",
+    "count": 16
+   },
+   {
+    "label": "Planning Policy",
+    "count": 16
+   },
+   {
+    "label": "Recreation",
+    "count": 4
+   },
+   {
+    "label": "Garbage / Recycling",
+    "count": 4
+   },
+   {
+    "label": "Public Health",
+    "count": 4
+   }
+  ],
+  "years": [
+   {
+    "year": 2010,
+    "count": 2
+   }
+  ],
+  "snapshot": "2026-10-08"
+ },
+ "case-ootes": {
+  "total": 79,
+  "term": 0,
+  "first": "2010-08-23",
+  "last": "2010-08-27",
+  "lobbyists": 29,
+  "clients": 29,
+  "subjects": 71,
+  "methods": {
+   "Meetings": 26,
+   "Emails": 19,
+   "Phone calls": 9,
+   "Written": 13,
+   "Other or unreported": 12
+  },
+  "top": [
+   {
+    "label": "Signs",
+    "count": 11
+   },
+   {
+    "label": "Recreation",
+    "count": 5
+   },
+   {
+    "label": "Garbage / Recycling",
+    "count": 5
+   },
+   {
+    "label": "Planning and Development, Planning Policy / Study",
+    "count": 5
+   },
+   {
+    "label": "Public Health",
+    "count": 4
+   }
+  ],
+  "years": [
+   {
+    "year": 2010,
+    "count": 7
+   }
+  ],
+  "snapshot": "2026-10-08"
+ },
+ "cesar-palacio": {
+  "total": 740,
+  "term": 0,
+  "first": "2010-08-24",
+  "last": "2018-10-09",
+  "lobbyists": 158,
+  "clients": 123,
+  "subjects": 316,
+  "methods": {
+   "Meetings": 303,
+   "Emails": 292,
+   "Phone calls": 52,
+   "Written": 83,
+   "Other or unreported": 10
+  },
+  "top": [
+   {
+    "label": "Licences / Licensing",
+    "count": 198
+   },
+   {
+    "label": "Economic Development",
+    "count": 162
+   },
+   {
+    "label": "By-law / Regulation",
+    "count": 134
+   },
+   {
+    "label": "Planning and Development Application, Zoning By-law",
+    "count": 92
+   },
+   {
+    "label": "Planning and Development, Combined Application",
+    "count": 61
+   }
+  ],
+  "years": [
+   {
+    "year": 2010,
+    "count": 4
+   },
+   {
+    "year": 2011,
+    "count": 22
+   },
+   {
+    "year": 2012,
+    "count": 59
+   },
+   {
+    "year": 2013,
+    "count": 96
+   },
+   {
+    "year": 2014,
+    "count": 84
+   },
+   {
+    "year": 2015,
+    "count": 90
+   },
+   {
+    "year": 2016,
+    "count": 129
+   },
+   {
+    "year": 2017,
+    "count": 146
+   },
+   {
+    "year": 2018,
+    "count": 50
+   }
+  ],
+  "snapshot": "2026-10-08"
+ },
+ "ceta-ramkhalawansingh": {
+  "total": 23,
+  "term": 0,
+  "first": "2014-07-08",
+  "last": "2014-11-17",
+  "lobbyists": 3,
+  "clients": 10,
+  "subjects": 15,
+  "methods": {
+   "Meetings": 10,
+   "Emails": 5,
+   "Phone calls": 3,
+   "Written": 5,
+   "Other or unreported": 0
+  },
+  "top": [
+   {
+    "label": "Planning and Development Application, Site Plan",
+    "count": 7
+   },
+   {
+    "label": "Planning and Development, Combined Application",
+    "count": 6
+   },
+   {
+    "label": "Planning and Development Application, Zoning By-law",
+    "count": 5
+   },
+   {
+    "label": "Arts / Culture",
+    "count": 4
+   },
+   {
+    "label": "Attractions / Tourism",
+    "count": 4
+   }
+  ],
+  "years": [
+   {
+    "year": 2014,
+    "count": 23
+   }
+  ],
+  "snapshot": "2026-10-08"
+ },
+ "chin-lee": {
+  "total": 592,
+  "term": 0,
+  "first": "2010-08-24",
+  "last": "2018-04-23",
+  "lobbyists": 161,
+  "clients": 115,
+  "subjects": 302,
+  "methods": {
+   "Meetings": 254,
+   "Emails": 240,
+   "Phone calls": 24,
+   "Written": 60,
+   "Other or unreported": 14
+  },
+  "top": [
+   {
+    "label": "Economic Development",
+    "count": 156
+   },
+   {
+    "label": "Licences / Licensing",
+    "count": 118
+   },
+   {
+    "label": "By-law / Regulation",
+    "count": 106
+   },
+   {
+    "label": "Garbage / Recycling",
+    "count": 46
+   },
+   {
+    "label": "Planning and Development Application, Zoning By-law",
+    "count": 44
+   }
+  ],
+  "years": [
+   {
+    "year": 2010,
+    "count": 3
+   },
+   {
+    "year": 2011,
+    "count": 31
+   },
+   {
+    "year": 2012,
+    "count": 67
+   },
+   {
+    "year": 2013,
+    "count": 81
+   },
+   {
+    "year": 2014,
+    "count": 55
+   },
+   {
+    "year": 2015,
+    "count": 106
+   },
+   {
+    "year": 2016,
+    "count": 110
+   },
+   {
+    "year": 2017,
+    "count": 58
+   },
+   {
+    "year": 2018,
+    "count": 10
+   }
+  ],
+  "snapshot": "2026-10-08"
+ },
+ "chris-moise": {
+  "total": 488,
+  "term": 488,
+  "first": "2022-11-17",
+  "last": "2026-09-03",
+  "lobbyists": 119,
+  "clients": 98,
+  "subjects": 201,
+  "methods": {
+   "Meetings": 258,
+   "Emails": 188,
+   "Phone calls": 19,
+   "Written": 10,
+   "Other or unreported": 13
+  },
+  "top": [
+   {
+    "label": "Planning and Development Application",
+    "count": 148
+   },
+   {
+    "label": "By-law / Regulation",
+    "count": 112
+   },
+   {
+    "label": "Affordable Housing",
+    "count": 91
+   },
+   {
+    "label": "Planning and Development",
+    "count": 78
+   },
+   {
+    "label": "Economic Development",
+    "count": 74
+   }
+  ],
+  "years": [
+   {
+    "year": 2022,
+    "count": 31
+   },
+   {
+    "year": 2023,
+    "count": 211
+   },
+   {
+    "year": 2024,
+    "count": 127
+   },
+   {
+    "year": 2025,
+    "count": 77
+   },
+   {
+    "year": 2026,
+    "count": 42
+   }
+  ],
+  "snapshot": "2026-10-08"
+ },
+ "christin-carmichael-greb": {
+  "total": 388,
+  "term": 0,
+  "first": "2014-12-02",
+  "last": "2018-10-31",
+  "lobbyists": 108,
+  "clients": 71,
+  "subjects": 188,
+  "methods": {
+   "Meetings": 204,
+   "Emails": 137,
+   "Phone calls": 15,
+   "Written": 24,
+   "Other or unreported": 8
+  },
+  "top": [
+   {
+    "label": "Economic Development",
+    "count": 125
+   },
+   {
+    "label": "Licences / Licensing",
+    "count": 93
+   },
+   {
+    "label": "By-law / Regulation",
+    "count": 87
+   },
+   {
+    "label": "Planning and Development Application, Zoning By-law",
+    "count": 40
+   },
+   {
+    "label": "Signs",
+    "count": 36
+   }
+  ],
+  "years": [
+   {
+    "year": 2014,
+    "count": 5
+   },
+   {
+    "year": 2015,
+    "count": 154
+   },
+   {
+    "year": 2016,
+    "count": 106
+   },
+   {
+    "year": 2017,
+    "count": 85
+   },
+   {
+    "year": 2018,
+    "count": 38
+   }
+  ],
+  "snapshot": "2026-10-08"
+ },
+ "cliff-jenkins": {
+  "total": 88,
+  "term": 0,
+  "first": "2010-06-03",
+  "last": "2010-10-21",
+  "lobbyists": 29,
+  "clients": 33,
+  "subjects": 73,
+  "methods": {
+   "Meetings": 29,
+   "Emails": 24,
+   "Phone calls": 12,
+   "Written": 13,
+   "Other or unreported": 10
+  },
+  "top": [
+   {
+    "label": "Signs",
+    "count": 12
+   },
+   {
+    "label": "Planning and Development, Heritage",
+    "count": 6
+   },
+   {
+    "label": "Garbage / Recycling",
+    "count": 5
+   },
+   {
+    "label": "Planning and Development, Planning Policy / Study",
+    "count": 5
+   },
+   {
+    "label": "Planning and Development Application, Part Lot",
+    "count": 4
+   }
+  ],
+  "years": [
+   {
+    "year": 2010,
+    "count": 14
+   }
+  ],
+  "snapshot": "2026-10-08"
+ },
+ "cynthia-lai": {
+  "total": 196,
+  "term": 0,
+  "first": "2018-12-11",
+  "last": "2022-08-31",
+  "lobbyists": 59,
+  "clients": 42,
+  "subjects": 103,
+  "methods": {
+   "Meetings": 41,
+   "Emails": 119,
+   "Phone calls": 13,
+   "Written": 10,
+   "Other or unreported": 13
+  },
+  "top": [
+   {
+    "label": "By-law / Regulation",
+    "count": 49
+   },
+   {
+    "label": "Economic Development",
+    "count": 41
+   },
+   {
+    "label": "Licences / Licensing",
+    "count": 22
+   },
+   {
+    "label": "Planning and Development Application, Zoning By-law",
+    "count": 21
+   },
+   {
+    "label": "Planning and Development, Planning Policy / Study",
+    "count": 20
+   }
+  ],
+  "years": [
+   {
+    "year": 2018,
+    "count": 4
+   },
+   {
+    "year": 2019,
+    "count": 72
+   },
+   {
+    "year": 2020,
+    "count": 47
+   },
+   {
+    "year": 2021,
+    "count": 56
+   },
+   {
+    "year": 2022,
+    "count": 17
+   }
+  ],
+  "snapshot": "2026-10-08"
+ },
+ "david-miller": {
+  "total": 58,
+  "term": 0,
+  "first": "2010-08-24",
+  "last": "2010-08-27",
+  "lobbyists": 42,
+  "clients": 12,
+  "subjects": 49,
+  "methods": {
+   "Meetings": 22,
+   "Emails": 13,
+   "Phone calls": 6,
+   "Written": 16,
+   "Other or unreported": 1
+  },
+  "top": [
+   {
+    "label": "Garbage / Recycling",
+    "count": 5
+   },
+   {
+    "label": "Public Health",
+    "count": 4
+   },
+   {
+    "label": "Recreation",
+    "count": 3
+   },
+   {
+    "label": "Technology",
+    "count": 3
+   },
+   {
+    "label": "By-law / Regulation",
+    "count": 2
+   }
+  ],
+  "years": [
+   {
+    "year": 2010,
+    "count": 3
+   }
+  ],
+  "snapshot": "2026-10-08"
+ },
+ "david-shiner": {
+  "total": 699,
+  "term": 0,
+  "first": "2010-08-24",
+  "last": "2018-11-13",
+  "lobbyists": 152,
+  "clients": 150,
+  "subjects": 332,
+  "methods": {
+   "Meetings": 240,
+   "Emails": 316,
+   "Phone calls": 48,
+   "Written": 71,
+   "Other or unreported": 24
+  },
+  "top": [
+   {
+    "label": "Economic Development",
+    "count": 163
+   },
+   {
+    "label": "Planning and Development Application, Zoning By-law",
+    "count": 136
+   },
+   {
+    "label": "By-law / Regulation",
+    "count": 107
+   },
+   {
+    "label": "Licences / Licensing",
+    "count": 101
+   },
+   {
+    "label": "Planning and Development, Combined Application",
+    "count": 81
+   }
+  ],
+  "years": [
+   {
+    "year": 2010,
+    "count": 7
+   },
+   {
+    "year": 2011,
+    "count": 31
+   },
+   {
+    "year": 2012,
+    "count": 51
+   },
+   {
+    "year": 2013,
+    "count": 67
+   },
+   {
+    "year": 2014,
+    "count": 60
+   },
+   {
+    "year": 2015,
+    "count": 135
+   },
+   {
+    "year": 2016,
+    "count": 126
+   },
+   {
+    "year": 2017,
+    "count": 98
+   },
+   {
+    "year": 2018,
+    "count": 67
+   }
+  ],
+  "snapshot": "2026-10-08"
+ },
+ "denzil-minnan-wong": {
+  "total": 1345,
+  "term": 0,
+  "first": "2010-08-24",
+  "last": "2022-09-16",
+  "lobbyists": 301,
+  "clients": 255,
+  "subjects": 628,
+  "methods": {
+   "Meetings": 526,
+   "Emails": 480,
+   "Phone calls": 224,
+   "Written": 89,
+   "Other or unreported": 26
+  },
+  "top": [
+   {
+    "label": "Economic Development",
+    "count": 261
+   },
+   {
+    "label": "By-law / Regulation",
+    "count": 202
+   },
+   {
+    "label": "Planning and Development Application, Zoning By-law",
+    "count": 174
+   },
+   {
+    "label": "Licences / Licensing",
+    "count": 152
+   },
+   {
+    "label": "Transit / TTC",
+    "count": 135
+   }
+  ],
+  "years": [
+   {
+    "year": 2010,
+    "count": 4
+   },
+   {
+    "year": 2011,
+    "count": 53
+   },
+   {
+    "year": 2012,
+    "count": 95
+   },
+   {
+    "year": 2013,
+    "count": 150
+   },
+   {
+    "year": 2014,
+    "count": 103
+   },
+   {
+    "year": 2015,
+    "count": 155
+   },
+   {
+    "year": 2016,
+    "count": 139
+   },
+   {
+    "year": 2017,
+    "count": 99
+   },
+   {
+    "year": 2018,
+    "count": 74
+   },
+   {
+    "year": 2019,
+    "count": 163
+   },
+   {
+    "year": 2020,
+    "count": 78
+   },
+   {
+    "year": 2021,
+    "count": 123
+   },
+   {
+    "year": 2022,
+    "count": 29
+   }
+  ],
+  "snapshot": "2026-10-08"
+ },
+ "dianne-saxe": {
+  "total": 740,
+  "term": 740,
+  "first": "2022-11-17",
+  "last": "2026-07-29",
+  "lobbyists": 104,
+  "clients": 101,
+  "subjects": 229,
+  "methods": {
+   "Meetings": 189,
+   "Emails": 415,
+   "Phone calls": 85,
+   "Written": 12,
+   "Other or unreported": 39
+  },
+  "top": [
+   {
+    "label": "Building Permits",
+    "count": 188
+   },
+   {
+    "label": "Planning and Development",
+    "count": 183
+   },
+   {
+    "label": "Planning and Development Application",
+    "count": 148
+   },
+   {
+    "label": "Economic Development",
+    "count": 109
+   },
+   {
+    "label": "Planning and Development Application, Zoning By-law",
+    "count": 106
+   }
+  ],
+  "years": [
+   {
+    "year": 2022,
+    "count": 30
+   },
+   {
+    "year": 2023,
+    "count": 294
+   },
+   {
+    "year": 2024,
+    "count": 222
+   },
+   {
+    "year": 2025,
+    "count": 135
+   },
+   {
+    "year": 2026,
+    "count": 59
+   }
+  ],
+  "snapshot": "2026-10-08"
+ },
+ "doug-ford": {
+  "total": 465,
+  "term": 0,
+  "first": "2010-12-13",
+  "last": "2014-12-18",
+  "lobbyists": 148,
+  "clients": 74,
+  "subjects": 186,
+  "methods": {
+   "Meetings": 266,
+   "Emails": 138,
+   "Phone calls": 26,
+   "Written": 32,
+   "Other or unreported": 3
+  },
+  "top": [
+   {
+    "label": "Economic Development",
+    "count": 105
+   },
+   {
+    "label": "Transit / TTC",
+    "count": 74
+   },
+   {
+    "label": "Transportation - Metrolinx",
+    "count": 55
+   },
+   {
+    "label": "Transportation - Cycling / Bicycle Lanes",
+    "count": 53
+   },
+   {
+    "label": "Waterfront Revitalization",
+    "count": 52
+   }
+  ],
+  "years": [
+   {
+    "year": 2010,
+    "count": 2
+   },
+   {
+    "year": 2011,
+    "count": 108
+   },
+   {
+    "year": 2012,
+    "count": 122
+   },
+   {
+    "year": 2013,
+    "count": 153
+   },
+   {
+    "year": 2014,
+    "count": 80
+   }
+  ],
+  "snapshot": "2026-10-08"
+ },
+ "doug-holyday": {
+  "total": 230,
+  "term": 0,
+  "first": "2010-07-20",
+  "last": "2013-08-06",
+  "lobbyists": 71,
+  "clients": 56,
+  "subjects": 141,
+  "methods": {
+   "Meetings": 82,
+   "Emails": 77,
+   "Phone calls": 23,
+   "Written": 32,
+   "Other or unreported": 16
+  },
+  "top": [
+   {
+    "label": "Signs",
+    "count": 26
+   },
+   {
+    "label": "Economic Development",
+    "count": 21
+   },
+   {
+    "label": "Garbage / Recycling",
+    "count": 18
+   },
+   {
+    "label": "Planning and Development Application, Zoning By-law",
+    "count": 17
+   },
+   {
+    "label": "Environment",
+    "count": 17
+   }
+  ],
+  "years": [
+   {
+    "year": 2010,
+    "count": 9
+   },
+   {
+    "year": 2011,
+    "count": 30
+   },
+   {
+    "year": 2012,
+    "count": 44
+   },
+   {
+    "year": 2013,
+    "count": 71
+   }
+  ],
+  "snapshot": "2026-10-08"
+ },
+ "frances-nunziata": {
+  "total": 1084,
+  "term": 223,
+  "first": "2010-07-22",
+  "last": "2026-09-03",
+  "lobbyists": 248,
+  "clients": 238,
+  "subjects": 526,
+  "methods": {
+   "Meetings": 387,
+   "Emails": 485,
+   "Phone calls": 98,
+   "Written": 85,
+   "Other or unreported": 29
+  },
+  "top": [
+   {
+    "label": "Economic Development",
+    "count": 222
+   },
+   {
+    "label": "By-law / Regulation",
+    "count": 205
+   },
+   {
+    "label": "Planning and Development Application, Zoning By-law",
+    "count": 174
+   },
+   {
+    "label": "Licences / Licensing",
+    "count": 134
+   },
+   {
+    "label": "Planning and Development Application, Official Plan",
+    "count": 84
+   }
+  ],
+  "years": [
+   {
+    "year": 2010,
+    "count": 9
+   },
+   {
+    "year": 2011,
+    "count": 34
+   },
+   {
+    "year": 2012,
+    "count": 51
+   },
+   {
+    "year": 2013,
+    "count": 87
+   },
+   {
+    "year": 2014,
+    "count": 44
+   },
+   {
+    "year": 2015,
+    "count": 69
+   },
+   {
+    "year": 2016,
+    "count": 76
+   },
+   {
+    "year": 2017,
+    "count": 77
+   },
+   {
+    "year": 2018,
+    "count": 49
+   },
+   {
+    "year": 2019,
+    "count": 99
+   },
+   {
+    "year": 2020,
+    "count": 49
+   },
+   {
+    "year": 2021,
+    "count": 99
+   },
+   {
+    "year": 2022,
+    "count": 63
+   },
+   {
+    "year": 2023,
+    "count": 55
+   },
+   {
+    "year": 2024,
+    "count": 63
+   },
+   {
+    "year": 2025,
+    "count": 75
+   },
+   {
+    "year": 2026,
+    "count": 21
+   }
+  ],
+  "snapshot": "2026-10-08"
+ },
+ "frank-di-giorgio": {
+  "total": 735,
+  "term": 0,
+  "first": "2010-08-11",
+  "last": "2018-08-03",
+  "lobbyists": 168,
+  "clients": 151,
+  "subjects": 356,
+  "methods": {
+   "Meetings": 312,
+   "Emails": 277,
+   "Phone calls": 53,
+   "Written": 76,
+   "Other or unreported": 17
+  },
+  "top": [
+   {
+    "label": "Economic Development",
+    "count": 170
+   },
+   {
+    "label": "Licences / Licensing",
+    "count": 132
+   },
+   {
+    "label": "By-law / Regulation",
+    "count": 91
+   },
+   {
+    "label": "Signs",
+    "count": 71
+   },
+   {
+    "label": "Planning and Development Application, Zoning By-law",
+    "count": 58
+   }
+  ],
+  "years": [
+   {
+    "year": 2010,
+    "count": 5
+   },
+   {
+    "year": 2011,
+    "count": 33
+   },
+   {
+    "year": 2012,
+    "count": 70
+   },
+   {
+    "year": 2013,
+    "count": 149
+   },
+   {
+    "year": 2014,
+    "count": 72
+   },
+   {
+    "year": 2015,
+    "count": 120
+   },
+   {
+    "year": 2016,
+    "count": 104
+   },
+   {
+    "year": 2017,
+    "count": 66
+   },
+   {
+    "year": 2018,
+    "count": 38
+   }
+  ],
+  "snapshot": "2026-10-08"
+ },
+ "gary-crawford": {
+  "total": 989,
+  "term": 64,
+  "first": "2011-02-14",
+  "last": "2023-07-18",
+  "lobbyists": 239,
+  "clients": 179,
+  "subjects": 445,
+  "methods": {
+   "Meetings": 351,
+   "Emails": 461,
+   "Phone calls": 56,
+   "Written": 88,
+   "Other or unreported": 33
+  },
+  "top": [
+   {
+    "label": "Economic Development",
+    "count": 286
+   },
+   {
+    "label": "Licences / Licensing",
+    "count": 153
+   },
+   {
+    "label": "By-law / Regulation",
+    "count": 152
+   },
+   {
+    "label": "Planning and Development Application, Zoning By-law",
+    "count": 109
+   },
+   {
+    "label": "Budget",
+    "count": 73
+   }
+  ],
+  "years": [
+   {
+    "year": 2011,
+    "count": 44
+   },
+   {
+    "year": 2012,
+    "count": 62
+   },
+   {
+    "year": 2013,
+    "count": 116
+   },
+   {
+    "year": 2014,
+    "count": 67
+   },
+   {
+    "year": 2015,
+    "count": 132
+   },
+   {
+    "year": 2016,
+    "count": 94
+   },
+   {
+    "year": 2017,
+    "count": 82
+   },
+   {
+    "year": 2018,
+    "count": 30
+   },
+   {
+    "year": 2019,
+    "count": 83
+   },
+   {
+    "year": 2020,
+    "count": 67
+   },
+   {
+    "year": 2021,
+    "count": 90
+   },
+   {
+    "year": 2022,
+    "count": 73
+   },
+   {
+    "year": 2023,
+    "count": 48
+   }
+  ],
+  "snapshot": "2026-10-08"
+ },
+ "giorgio-mammoliti": {
+  "total": 524,
+  "term": 0,
+  "first": "2010-08-24",
+  "last": "2018-07-23",
+  "lobbyists": 116,
+  "clients": 126,
+  "subjects": 285,
+  "methods": {
+   "Meetings": 192,
+   "Emails": 215,
+   "Phone calls": 37,
+   "Written": 69,
+   "Other or unreported": 11
+  },
+  "top": [
+   {
+    "label": "Licences / Licensing",
+    "count": 115
+   },
+   {
+    "label": "Economic Development",
+    "count": 109
+   },
+   {
+    "label": "By-law / Regulation",
+    "count": 64
+   },
+   {
+    "label": "Transit / TTC",
+    "count": 39
+   },
+   {
+    "label": "Waterfront Revitalization",
+    "count": 37
+   }
+  ],
+  "years": [
+   {
+    "year": 2010,
+    "count": 5
+   },
+   {
+    "year": 2011,
+    "count": 39
+   },
+   {
+    "year": 2012,
+    "count": 55
+   },
+   {
+    "year": 2013,
+    "count": 55
+   },
+   {
+    "year": 2014,
+    "count": 80
+   },
+   {
+    "year": 2015,
+    "count": 78
+   },
+   {
+    "year": 2016,
+    "count": 76
+   },
+   {
+    "year": 2017,
+    "count": 58
+   },
+   {
+    "year": 2018,
+    "count": 14
+   }
+  ],
+  "snapshot": "2026-10-08"
+ },
+ "glenn-de-baeremaeker": {
+  "total": 857,
+  "term": 0,
+  "first": "2010-08-04",
+  "last": "2018-08-03",
+  "lobbyists": 170,
+  "clients": 187,
+  "subjects": 407,
+  "methods": {
+   "Meetings": 404,
+   "Emails": 297,
+   "Phone calls": 71,
+   "Written": 64,
+   "Other or unreported": 21
+  },
+  "top": [
+   {
+    "label": "Licences / Licensing",
+    "count": 205
+   },
+   {
+    "label": "Transit / TTC",
+    "count": 153
+   },
+   {
+    "label": "By-law / Regulation",
+    "count": 133
+   },
+   {
+    "label": "Economic Development",
+    "count": 128
+   },
+   {
+    "label": "Planning and Development Application, Zoning By-law",
+    "count": 53
+   }
+  ],
+  "years": [
+   {
+    "year": 2010,
+    "count": 8
+   },
+   {
+    "year": 2011,
+    "count": 27
+   },
+   {
+    "year": 2012,
+    "count": 72
+   },
+   {
+    "year": 2013,
+    "count": 99
+   },
+   {
+    "year": 2014,
+    "count": 76
+   },
+   {
+    "year": 2015,
+    "count": 174
+   },
+   {
+    "year": 2016,
+    "count": 139
+   },
+   {
+    "year": 2017,
+    "count": 125
+   },
+   {
+    "year": 2018,
+    "count": 30
+   }
+  ],
+  "snapshot": "2026-10-08"
+ },
+ "gloria-lindsay-luby": {
+  "total": 272,
+  "term": 0,
+  "first": "2010-08-24",
+  "last": "2014-11-17",
+  "lobbyists": 82,
+  "clients": 77,
+  "subjects": 175,
+  "methods": {
+   "Meetings": 100,
+   "Emails": 102,
+   "Phone calls": 28,
+   "Written": 36,
+   "Other or unreported": 6
+  },
+  "top": [
+   {
+    "label": "Economic Development",
+    "count": 55
+   },
+   {
+    "label": "Waterfront Revitalization",
+    "count": 30
+   },
+   {
+    "label": "Attractions / Tourism",
+    "count": 26
+   },
+   {
+    "label": "Licences / Licensing",
+    "count": 25
+   },
+   {
+    "label": "By-law / Regulation",
+    "count": 17
+   }
+  ],
+  "years": [
+   {
+    "year": 2010,
+    "count": 3
+   },
+   {
+    "year": 2011,
+    "count": 26
+   },
+   {
+    "year": 2012,
+    "count": 60
+   },
+   {
+    "year": 2013,
+    "count": 72
+   },
+   {
+    "year": 2014,
+    "count": 47
+   }
+  ],
+  "snapshot": "2026-10-08"
+ },
+ "gord-perks": {
+  "total": 942,
+  "term": 243,
+  "first": "2010-08-24",
+  "last": "2026-09-03",
+  "lobbyists": 268,
+  "clients": 204,
+  "subjects": 494,
+  "methods": {
+   "Meetings": 354,
+   "Emails": 442,
+   "Phone calls": 35,
+   "Written": 77,
+   "Other or unreported": 34
+  },
+  "top": [
+   {
+    "label": "Economic Development",
+    "count": 199
+   },
+   {
+    "label": "By-law / Regulation",
+    "count": 142
+   },
+   {
+    "label": "Licences / Licensing",
+    "count": 136
+   },
+   {
+    "label": "Planning and Development Application, Zoning By-law",
+    "count": 72
+   },
+   {
+    "label": "Planning and Development",
+    "count": 65
+   }
+  ],
+  "years": [
+   {
+    "year": 2010,
+    "count": 4
+   },
+   {
+    "year": 2011,
+    "count": 36
+   },
+   {
+    "year": 2012,
+    "count": 46
+   },
+   {
+    "year": 2013,
+    "count": 74
+   },
+   {
+    "year": 2014,
+    "count": 62
+   },
+   {
+    "year": 2015,
+    "count": 72
+   },
+   {
+    "year": 2016,
+    "count": 60
+   },
+   {
+    "year": 2017,
+    "count": 47
+   },
+   {
+    "year": 2018,
+    "count": 47
+   },
+   {
+    "year": 2019,
+    "count": 89
+   },
+   {
+    "year": 2020,
+    "count": 23
+   },
+   {
+    "year": 2021,
+    "count": 38
+   },
+   {
+    "year": 2022,
+    "count": 36
+   },
+   {
+    "year": 2023,
+    "count": 73
+   },
+   {
+    "year": 2024,
+    "count": 82
+   },
+   {
+    "year": 2025,
+    "count": 56
+   },
+   {
+    "year": 2026,
+    "count": 19
+   }
+  ],
+  "snapshot": "2026-10-08"
+ },
+ "howard-moscoe": {
+  "total": 82,
+  "term": 0,
+  "first": "2010-07-19",
+  "last": "2010-10-20",
+  "lobbyists": 33,
+  "clients": 33,
+  "subjects": 73,
+  "methods": {
+   "Meetings": 35,
+   "Emails": 16,
+   "Phone calls": 7,
+   "Written": 11,
+   "Other or unreported": 13
+  },
+  "top": [
+   {
+    "label": "Signs",
+    "count": 13
+   },
+   {
+    "label": "Planning and Development Application, Zoning By-law",
+    "count": 5
+   },
+   {
+    "label": "Garbage / Recycling",
+    "count": 4
+   },
+   {
+    "label": "Planning and Development, Combined Application",
+    "count": 4
+   },
+   {
+    "label": "Public Health",
+    "count": 4
+   }
+  ],
+  "years": [
+   {
+    "year": 2010,
+    "count": 5
+   }
+  ],
+  "snapshot": "2026-10-08"
+ },
+ "jamaal-myers": {
+  "total": 310,
+  "term": 310,
+  "first": "2022-11-17",
+  "last": "2026-09-03",
+  "lobbyists": 83,
+  "clients": 77,
+  "subjects": 147,
+  "methods": {
+   "Meetings": 107,
+   "Emails": 161,
+   "Phone calls": 24,
+   "Written": 7,
+   "Other or unreported": 11
+  },
+  "top": [
+   {
+    "label": "Economic Development",
+    "count": 75
+   },
+   {
+    "label": "Transportation",
+    "count": 60
+   },
+   {
+    "label": "Transit / TTC",
+    "count": 56
+   },
+   {
+    "label": "By-law / Regulation",
+    "count": 47
+   },
+   {
+    "label": "Planning and Development",
+    "count": 31
+   }
+  ],
+  "years": [
+   {
+    "year": 2022,
+    "count": 14
+   },
+   {
+    "year": 2023,
+    "count": 94
+   },
+   {
+    "year": 2024,
+    "count": 101
+   },
+   {
+    "year": 2025,
+    "count": 64
+   },
+   {
+    "year": 2026,
+    "count": 37
+   }
+  ],
+  "snapshot": "2026-10-08"
+ },
+ "james-maloney": {
+  "total": 26,
+  "term": 0,
+  "first": "2014-07-31",
+  "last": "2014-11-24",
+  "lobbyists": 7,
+  "clients": 5,
+  "subjects": 11,
+  "methods": {
+   "Meetings": 17,
+   "Emails": 5,
+   "Phone calls": 1,
+   "Written": 3,
+   "Other or unreported": 0
+  },
+  "top": [
+   {
+    "label": "Planning and Development Application, Zoning By-law",
+    "count": 17
+   },
+   {
+    "label": "Planning and Development, Rental Housing Demolition or Conversion",
+    "count": 14
+   },
+   {
+    "label": "Planning and Development Application, Site Plan",
+    "count": 14
+   },
+   {
+    "label": "Health & Safety",
+    "count": 3
+   },
+   {
+    "label": "Public Health",
+    "count": 2
+   }
+  ],
+  "years": [
+   {
+    "year": 2014,
+    "count": 26
+   }
+  ],
+  "snapshot": "2026-10-08"
+ },
+ "james-pasternak": {
+  "total": 1397,
+  "term": 331,
+  "first": "2011-02-14",
+  "last": "2026-09-16",
+  "lobbyists": 245,
+  "clients": 241,
+  "subjects": 528,
+  "methods": {
+   "Meetings": 411,
+   "Emails": 715,
+   "Phone calls": 122,
+   "Written": 80,
+   "Other or unreported": 69
+  },
+  "top": [
+   {
+    "label": "Economic Development",
+    "count": 328
+   },
+   {
+    "label": "By-law / Regulation",
+    "count": 240
+   },
+   {
+    "label": "Planning and Development",
+    "count": 148
+   },
+   {
+    "label": "Planning and Development Application, Zoning By-law",
+    "count": 137
+   },
+   {
+    "label": "Licences / Licensing",
+    "count": 136
+   }
+  ],
+  "years": [
+   {
+    "year": 2011,
+    "count": 28
+   },
+   {
+    "year": 2012,
+    "count": 62
+   },
+   {
+    "year": 2013,
+    "count": 65
+   },
+   {
+    "year": 2014,
+    "count": 62
+   },
+   {
+    "year": 2015,
+    "count": 93
+   },
+   {
+    "year": 2016,
+    "count": 122
+   },
+   {
+    "year": 2017,
+    "count": 88
+   },
+   {
+    "year": 2018,
+    "count": 42
+   },
+   {
+    "year": 2019,
+    "count": 143
+   },
+   {
+    "year": 2020,
+    "count": 131
+   },
+   {
+    "year": 2021,
+    "count": 148
+   },
+   {
+    "year": 2022,
+    "count": 96
+   },
+   {
+    "year": 2023,
+    "count": 88
+   },
+   {
+    "year": 2024,
+    "count": 142
+   },
+   {
+    "year": 2025,
+    "count": 63
+   },
+   {
+    "year": 2026,
+    "count": 24
+   }
+  ],
+  "snapshot": "2026-10-08"
+ },
+ "janet-davis": {
+  "total": 406,
+  "term": 0,
+  "first": "2010-02-14",
+  "last": "2018-11-02",
+  "lobbyists": 120,
+  "clients": 69,
+  "subjects": 192,
+  "methods": {
+   "Meetings": 90,
+   "Emails": 211,
+   "Phone calls": 29,
+   "Written": 66,
+   "Other or unreported": 10
+  },
+  "top": [
+   {
+    "label": "Licences / Licensing",
+    "count": 110
+   },
+   {
+    "label": "Economic Development",
+    "count": 87
+   },
+   {
+    "label": "By-law / Regulation",
+    "count": 69
+   },
+   {
+    "label": "Planning and Development Application, Zoning By-law",
+    "count": 45
+   },
+   {
+    "label": "Planning and Development, Combined Application",
+    "count": 32
+   }
+  ],
+  "years": [
+   {
+    "year": 2010,
+    "count": 2
+   },
+   {
+    "year": 2011,
+    "count": 23
+   },
+   {
+    "year": 2012,
+    "count": 51
+   },
+   {
+    "year": 2013,
+    "count": 50
+   },
+   {
+    "year": 2014,
+    "count": 54
+   },
+   {
+    "year": 2015,
+    "count": 75
+   },
+   {
+    "year": 2016,
+    "count": 62
+   },
+   {
+    "year": 2017,
+    "count": 31
+   },
+   {
+    "year": 2018,
+    "count": 10
+   }
+  ],
+  "snapshot": "2026-10-08"
+ },
+ "jaye-robinson": {
+  "total": 875,
+  "term": 64,
+  "first": "2011-01-17",
+  "last": "2024-05-13",
+  "lobbyists": 229,
+  "clients": 171,
+  "subjects": 419,
+  "methods": {
+   "Meetings": 196,
+   "Emails": 509,
+   "Phone calls": 64,
+   "Written": 80,
+   "Other or unreported": 26
+  },
+  "top": [
+   {
+    "label": "Economic Development",
+    "count": 218
+   },
+   {
+    "label": "By-law / Regulation",
+    "count": 168
+   },
+   {
+    "label": "Licences / Licensing",
+    "count": 129
+   },
+   {
+    "label": "Garbage / Recycling",
+    "count": 69
+   },
+   {
+    "label": "Planning and Development Application, Zoning By-law",
+    "count": 68
+   }
+  ],
+  "years": [
+   {
+    "year": 2011,
+    "count": 44
+   },
+   {
+    "year": 2012,
+    "count": 58
+   },
+   {
+    "year": 2013,
+    "count": 54
+   },
+   {
+    "year": 2014,
+    "count": 60
+   },
+   {
+    "year": 2015,
+    "count": 140
+   },
+   {
+    "year": 2016,
+    "count": 122
+   },
+   {
+    "year": 2017,
+    "count": 64
+   },
+   {
+    "year": 2018,
+    "count": 50
+   },
+   {
+    "year": 2019,
+    "count": 99
+   },
+   {
+    "year": 2020,
+    "count": 33
+   },
+   {
+    "year": 2021,
+    "count": 73
+   },
+   {
+    "year": 2022,
+    "count": 23
+   },
+   {
+    "year": 2023,
+    "count": 46
+   },
+   {
+    "year": 2024,
+    "count": 9
+   }
+  ],
+  "snapshot": "2026-10-08"
+ },
+ "jennifer-mckelvie": {
+  "total": 726,
+  "term": 312,
+  "first": "2018-12-10",
+  "last": "2025-05-06",
+  "lobbyists": 179,
+  "clients": 143,
+  "subjects": 311,
+  "methods": {
+   "Meetings": 254,
+   "Emails": 359,
+   "Phone calls": 71,
+   "Written": 20,
+   "Other or unreported": 22
+  },
+  "top": [
+   {
+    "label": "Economic Development",
+    "count": 175
+   },
+   {
+    "label": "By-law / Regulation",
+    "count": 124
+   },
+   {
+    "label": "Transportation",
+    "count": 100
+   },
+   {
+    "label": "Environment",
+    "count": 93
+   },
+   {
+    "label": "Garbage / Recycling",
+    "count": 78
+   }
+  ],
+  "years": [
+   {
+    "year": 2018,
+    "count": 10
+   },
+   {
+    "year": 2019,
+    "count": 136
+   },
+   {
+    "year": 2020,
+    "count": 99
+   },
+   {
+    "year": 2021,
+    "count": 128
+   },
+   {
+    "year": 2022,
+    "count": 54
+   },
+   {
+    "year": 2023,
+    "count": 134
+   },
+   {
+    "year": 2024,
+    "count": 143
+   },
+   {
+    "year": 2025,
+    "count": 22
+   }
+  ],
+  "snapshot": "2026-10-08"
+ },
+ "jim-hart": {
+  "total": 54,
+  "term": 0,
+  "first": "2017-07-05",
+  "last": "2018-11-09",
+  "lobbyists": 19,
+  "clients": 16,
+  "subjects": 27,
+  "methods": {
+   "Meetings": 22,
+   "Emails": 23,
+   "Phone calls": 6,
+   "Written": 3,
+   "Other or unreported": 0
+  },
+  "top": [
+   {
+    "label": "Economic Development",
+    "count": 28
+   },
+   {
+    "label": "Planning and Development Application, Zoning By-law",
+    "count": 26
+   },
+   {
+    "label": "Licences / Licensing",
+    "count": 20
+   },
+   {
+    "label": "Attractions / Tourism",
+    "count": 9
+   },
+   {
+    "label": "By-law / Regulation",
+    "count": 7
+   }
+  ],
+  "years": [
+   {
+    "year": 2017,
+    "count": 35
+   },
+   {
+    "year": 2018,
+    "count": 19
+   }
+  ],
+  "snapshot": "2026-10-08"
+ },
+ "jim-karygiannis": {
+  "total": 867,
+  "term": 0,
+  "first": "2014-12-02",
+  "last": "2020-09-23",
+  "lobbyists": 155,
+  "clients": 94,
+  "subjects": 276,
+  "methods": {
+   "Meetings": 404,
+   "Emails": 271,
+   "Phone calls": 148,
+   "Written": 33,
+   "Other or unreported": 11
+  },
+  "top": [
+   {
+    "label": "Planning and Development, Combined Application",
+    "count": 207
+   },
+   {
+    "label": "Licences / Licensing",
+    "count": 197
+   },
+   {
+    "label": "Economic Development",
+    "count": 128
+   },
+   {
+    "label": "By-law / Regulation",
+    "count": 126
+   },
+   {
+    "label": "Planning and Development Application, Zoning By-law",
+    "count": 105
+   }
+  ],
+  "years": [
+   {
+    "year": 2014,
+    "count": 6
+   },
+   {
+    "year": 2015,
+    "count": 264
+   },
+   {
+    "year": 2016,
+    "count": 204
+   },
+   {
+    "year": 2017,
+    "count": 135
+   },
+   {
+    "year": 2018,
+    "count": 103
+   },
+   {
+    "year": 2019,
+    "count": 128
+   },
+   {
+    "year": 2020,
+    "count": 27
+   }
+  ],
+  "snapshot": "2026-10-08"
+ },
+ "joe-cressy": {
+  "total": 896,
+  "term": 0,
+  "first": "2014-12-02",
+  "last": "2022-04-21",
+  "lobbyists": 212,
+  "clients": 204,
+  "subjects": 430,
+  "methods": {
+   "Meetings": 374,
+   "Emails": 389,
+   "Phone calls": 53,
+   "Written": 45,
+   "Other or unreported": 35
+  },
+  "top": [
+   {
+    "label": "Planning and Development Application, Zoning By-law",
+    "count": 240
+   },
+   {
+    "label": "Planning and Development, Combined Application",
+    "count": 158
+   },
+   {
+    "label": "Economic Development",
+    "count": 147
+   },
+   {
+    "label": "By-law / Regulation",
+    "count": 116
+   },
+   {
+    "label": "Licences / Licensing",
+    "count": 102
+   }
+  ],
+  "years": [
+   {
+    "year": 2014,
+    "count": 16
+   },
+   {
+    "year": 2015,
+    "count": 136
+   },
+   {
+    "year": 2016,
+    "count": 147
+   },
+   {
+    "year": 2017,
+    "count": 154
+   },
+   {
+    "year": 2018,
+    "count": 112
+   },
+   {
+    "year": 2019,
+    "count": 162
+   },
+   {
+    "year": 2020,
+    "count": 75
+   },
+   {
+    "year": 2021,
+    "count": 81
+   },
+   {
+    "year": 2022,
+    "count": 13
+   }
+  ],
+  "snapshot": "2026-10-08"
+ },
+ "joe-mihevc": {
+  "total": 658,
+  "term": 0,
+  "first": "2010-02-02",
+  "last": "2022-11-03",
+  "lobbyists": 154,
+  "clients": 148,
+  "subjects": 331,
+  "methods": {
+   "Meetings": 269,
+   "Emails": 252,
+   "Phone calls": 55,
+   "Written": 62,
+   "Other or unreported": 20
+  },
+  "top": [
+   {
+    "label": "Economic Development",
+    "count": 110
+   },
+   {
+    "label": "Licences / Licensing",
+    "count": 110
+   },
+   {
+    "label": "By-law / Regulation",
+    "count": 100
+   },
+   {
+    "label": "Planning and Development Application, Zoning By-law",
+    "count": 78
+   },
+   {
+    "label": "Transit / TTC",
+    "count": 54
+   }
+  ],
+  "years": [
+   {
+    "year": 2010,
+    "count": 3
+   },
+   {
+    "year": 2011,
+    "count": 31
+   },
+   {
+    "year": 2012,
+    "count": 52
+   },
+   {
+    "year": 2013,
+    "count": 91
+   },
+   {
+    "year": 2014,
+    "count": 84
+   },
+   {
+    "year": 2015,
+    "count": 78
+   },
+   {
+    "year": 2016,
+    "count": 101
+   },
+   {
+    "year": 2017,
+    "count": 71
+   },
+   {
+    "year": 2018,
+    "count": 47
+   },
+   {
+    "year": 2022,
+    "count": 23
+   }
+  ],
+  "snapshot": "2026-10-08"
+ },
+ "joe-pantalone": {
+  "total": 174,
+  "term": 0,
+  "first": "2010-04-28",
+  "last": "2010-09-13",
+  "lobbyists": 52,
+  "clients": 42,
+  "subjects": 113,
+  "methods": {
+   "Meetings": 115,
+   "Emails": 20,
+   "Phone calls": 6,
+   "Written": 19,
+   "Other or unreported": 14
+  },
+  "top": [
+   {
+    "label": "Planning and Development, Planning Policy / Study",
+    "count": 38
+   },
+   {
+    "label": "Signs",
+    "count": 17
+   },
+   {
+    "label": "Financial Services",
+    "count": 8
+   },
+   {
+    "label": "Planning and Development: Planning Policies/ Studies",
+    "count": 8
+   },
+   {
+    "label": "Planning and Development: Planning Policies/Studies",
+    "count": 7
+   }
+  ],
+  "years": [
+   {
+    "year": 2010,
+    "count": 71
+   }
+  ],
+  "snapshot": "2026-10-08"
+ },
+ "john-campbell": {
+  "total": 385,
+  "term": 0,
+  "first": "2014-12-02",
+  "last": "2019-03-25",
+  "lobbyists": 103,
+  "clients": 68,
+  "subjects": 174,
+  "methods": {
+   "Meetings": 179,
+   "Emails": 157,
+   "Phone calls": 18,
+   "Written": 26,
+   "Other or unreported": 5
+  },
+  "top": [
+   {
+    "label": "Economic Development",
+    "count": 130
+   },
+   {
+    "label": "Licences / Licensing",
+    "count": 111
+   },
+   {
+    "label": "By-law / Regulation",
+    "count": 94
+   },
+   {
+    "label": "Planning and Development Application, Zoning By-law",
+    "count": 65
+   },
+   {
+    "label": "Transit / TTC",
+    "count": 51
+   }
+  ],
+  "years": [
+   {
+    "year": 2014,
+    "count": 9
+   },
+   {
+    "year": 2015,
+    "count": 125
+   },
+   {
+    "year": 2016,
+    "count": 111
+   },
+   {
+    "year": 2017,
+    "count": 108
+   },
+   {
+    "year": 2018,
+    "count": 31
+   },
+   {
+    "year": 2019,
+    "count": 1
+   }
+  ],
+  "snapshot": "2026-10-08"
+ },
+ "john-filion": {
+  "total": 803,
+  "term": 0,
+  "first": "2010-08-24",
+  "last": "2022-10-11",
+  "lobbyists": 163,
+  "clients": 131,
+  "subjects": 314,
+  "methods": {
+   "Meetings": 232,
+   "Emails": 313,
+   "Phone calls": 162,
+   "Written": 72,
+   "Other or unreported": 24
+  },
+  "top": [
+   {
+    "label": "Planning and Development Application, Zoning By-law",
+    "count": 132
+   },
+   {
+    "label": "Economic Development",
+    "count": 129
+   },
+   {
+    "label": "Planning and Development, Combined Application",
+    "count": 108
+   },
+   {
+    "label": "Licences / Licensing",
+    "count": 105
+   },
+   {
+    "label": "By-law / Regulation",
+    "count": 103
+   }
+  ],
+  "years": [
+   {
+    "year": 2010,
+    "count": 4
+   },
+   {
+    "year": 2011,
+    "count": 38
+   },
+   {
+    "year": 2012,
+    "count": 49
+   },
+   {
+    "year": 2013,
+    "count": 67
+   },
+   {
+    "year": 2014,
+    "count": 88
+   },
+   {
+    "year": 2015,
+    "count": 87
+   },
+   {
+    "year": 2016,
+    "count": 85
+   },
+   {
+    "year": 2017,
+    "count": 73
+   },
+   {
+    "year": 2018,
+    "count": 17
+   },
+   {
+    "year": 2019,
+    "count": 58
+   },
+   {
+    "year": 2020,
+    "count": 49
+   },
+   {
+    "year": 2021,
+    "count": 92
+   },
+   {
+    "year": 2022,
+    "count": 33
+   }
+  ],
+  "snapshot": "2026-10-08"
+ },
+ "john-parker": {
+  "total": 465,
+  "term": 0,
+  "first": "2010-07-14",
+  "last": "2014-11-17",
+  "lobbyists": 127,
+  "clients": 116,
+  "subjects": 264,
+  "methods": {
+   "Meetings": 248,
+   "Emails": 110,
+   "Phone calls": 46,
+   "Written": 40,
+   "Other or unreported": 21
+  },
+  "top": [
+   {
+    "label": "Economic Development",
+    "count": 81
+   },
+   {
+    "label": "By-law / Regulation",
+    "count": 46
+   },
+   {
+    "label": "Garbage / Recycling",
+    "count": 44
+   },
+   {
+    "label": "Licences / Licensing",
+    "count": 42
+   },
+   {
+    "label": "Planning and Development Application, Zoning By-law",
+    "count": 38
+   }
+  ],
+  "years": [
+   {
+    "year": 2010,
+    "count": 8
+   },
+   {
+    "year": 2011,
+    "count": 56
+   },
+   {
+    "year": 2012,
+    "count": 95
+   },
+   {
+    "year": 2013,
+    "count": 134
+   },
+   {
+    "year": 2014,
+    "count": 86
+   }
+  ],
+  "snapshot": "2026-10-08"
+ },
+ "john-tory": {
+  "total": 976,
+  "term": 25,
+  "first": "2014-12-02",
+  "last": "2023-02-02",
+  "lobbyists": 321,
+  "clients": 106,
+  "subjects": 386,
+  "methods": {
+   "Meetings": 439,
+   "Emails": 365,
+   "Phone calls": 45,
+   "Written": 95,
+   "Other or unreported": 32
+  },
+  "top": [
+   {
+    "label": "Economic Development",
+    "count": 286
+   },
+   {
+    "label": "By-law / Regulation",
+    "count": 131
+   },
+   {
+    "label": "Licences / Licensing",
+    "count": 127
+   },
+   {
+    "label": "Planning and Development, Planning Policy / Study",
+    "count": 116
+   },
+   {
+    "label": "Transit / TTC",
+    "count": 95
+   }
+  ],
+  "years": [
+   {
+    "year": 2014,
+    "count": 14
+   },
+   {
+    "year": 2015,
+    "count": 179
+   },
+   {
+    "year": 2016,
+    "count": 108
+   },
+   {
+    "year": 2017,
+    "count": 137
+   },
+   {
+    "year": 2018,
+    "count": 77
+   },
+   {
+    "year": 2019,
+    "count": 86
+   },
+   {
+    "year": 2020,
+    "count": 149
+   },
+   {
+    "year": 2021,
+    "count": 141
+   },
+   {
+    "year": 2022,
+    "count": 77
+   },
+   {
+    "year": 2023,
+    "count": 8
+   }
+  ],
+  "snapshot": "2026-10-08"
+ },
+ "jon-burnside": {
+  "total": 692,
+  "term": 261,
+  "first": "2014-12-02",
+  "last": "2026-09-03",
+  "lobbyists": 157,
+  "clients": 133,
+  "subjects": 301,
+  "methods": {
+   "Meetings": 261,
+   "Emails": 300,
+   "Phone calls": 75,
+   "Written": 43,
+   "Other or unreported": 13
+  },
+  "top": [
+   {
+    "label": "Economic Development",
+    "count": 187
+   },
+   {
+    "label": "By-law / Regulation",
+    "count": 153
+   },
+   {
+    "label": "Licences / Licensing",
+    "count": 146
+   },
+   {
+    "label": "Planning and Development Application, Zoning By-law",
+    "count": 108
+   },
+   {
+    "label": "Signs",
+    "count": 75
+   }
+  ],
+  "years": [
+   {
+    "year": 2014,
+    "count": 7
+   },
+   {
+    "year": 2015,
+    "count": 115
+   },
+   {
+    "year": 2016,
+    "count": 142
+   },
+   {
+    "year": 2017,
+    "count": 118
+   },
+   {
+    "year": 2018,
+    "count": 49
+   },
+   {
+    "year": 2022,
+    "count": 20
+   },
+   {
+    "year": 2023,
+    "count": 99
+   },
+   {
+    "year": 2024,
+    "count": 68
+   },
+   {
+    "year": 2025,
+    "count": 39
+   },
+   {
+    "year": 2026,
+    "count": 35
+   }
+  ],
+  "snapshot": "2026-10-08"
+ },
+ "jonathan-tsao": {
+  "total": 4,
+  "term": 0,
+  "first": "2018-07-03",
+  "last": "2018-10-31",
+  "lobbyists": 3,
+  "clients": 0,
+  "subjects": 2,
+  "methods": {
+   "Meetings": 0,
+   "Emails": 1,
+   "Phone calls": 3,
+   "Written": 0,
+   "Other or unreported": 0
+  },
+  "top": [
+   {
+    "label": "Planning and Development Application, Official Plan",
+    "count": 3
+   },
+   {
+    "label": "Planning and Development Application, Site Plan",
+    "count": 3
+   },
+   {
+    "label": "Planning and Development, Combined Application",
+    "count": 3
+   },
+   {
+    "label": "Transportation - Roads / Bridges",
+    "count": 1
+   }
+  ],
+  "years": [
+   {
+    "year": 2018,
+    "count": 4
+   }
+  ],
+  "snapshot": "2026-10-08"
+ },
+ "josh-colle": {
+  "total": 722,
+  "term": 0,
+  "first": "2011-01-07",
+  "last": "2018-11-15",
+  "lobbyists": 157,
+  "clients": 149,
+  "subjects": 321,
+  "methods": {
+   "Meetings": 297,
+   "Emails": 320,
+   "Phone calls": 34,
+   "Written": 62,
+   "Other or unreported": 9
+  },
+  "top": [
+   {
+    "label": "Economic Development",
+    "count": 248
+   },
+   {
+    "label": "Licences / Licensing",
+    "count": 134
+   },
+   {
+    "label": "Transit / TTC",
+    "count": 99
+   },
+   {
+    "label": "By-law / Regulation",
+    "count": 94
+   },
+   {
+    "label": "Attractions / Tourism",
+    "count": 56
+   }
+  ],
+  "years": [
+   {
+    "year": 2011,
+    "count": 41
+   },
+   {
+    "year": 2012,
+    "count": 78
+   },
+   {
+    "year": 2013,
+    "count": 168
+   },
+   {
+    "year": 2014,
+    "count": 99
+   },
+   {
+    "year": 2015,
+    "count": 114
+   },
+   {
+    "year": 2016,
+    "count": 113
+   },
+   {
+    "year": 2017,
+    "count": 74
+   },
+   {
+    "year": 2018,
+    "count": 34
+   }
+  ],
+  "snapshot": "2026-10-08"
+ },
+ "josh-matlow": {
+  "total": 1236,
+  "term": 328,
+  "first": "2010-12-22",
+  "last": "2026-08-28",
+  "lobbyists": 265,
+  "clients": 284,
+  "subjects": 584,
+  "methods": {
+   "Meetings": 419,
+   "Emails": 585,
+   "Phone calls": 120,
+   "Written": 75,
+   "Other or unreported": 37
+  },
+  "top": [
+   {
+    "label": "Economic Development",
+    "count": 242
+   },
+   {
+    "label": "By-law / Regulation",
+    "count": 220
+   },
+   {
+    "label": "Planning and Development Application, Zoning By-law",
+    "count": 205
+   },
+   {
+    "label": "Licences / Licensing",
+    "count": 154
+   },
+   {
+    "label": "Planning and Development Application, Site Plan",
+    "count": 95
+   }
+  ],
+  "years": [
+   {
+    "year": 2010,
+    "count": 1
+   },
+   {
+    "year": 2011,
+    "count": 57
+   },
+   {
+    "year": 2012,
+    "count": 88
+   },
+   {
+    "year": 2013,
+    "count": 102
+   },
+   {
+    "year": 2014,
+    "count": 81
+   },
+   {
+    "year": 2015,
+    "count": 79
+   },
+   {
+    "year": 2016,
+    "count": 66
+   },
+   {
+    "year": 2017,
+    "count": 88
+   },
+   {
+    "year": 2018,
+    "count": 55
+   },
+   {
+    "year": 2019,
+    "count": 111
+   },
+   {
+    "year": 2020,
+    "count": 63
+   },
+   {
+    "year": 2021,
+    "count": 72
+   },
+   {
+    "year": 2022,
+    "count": 55
+   },
+   {
+    "year": 2023,
+    "count": 69
+   },
+   {
+    "year": 2024,
+    "count": 115
+   },
+   {
+    "year": 2025,
+    "count": 89
+   },
+   {
+    "year": 2026,
+    "count": 44
+   }
+  ],
+  "snapshot": "2026-10-08"
+ },
+ "justin-j-di-ciano": {
+  "total": 600,
+  "term": 0,
+  "first": "2014-12-02",
+  "last": "2018-09-13",
+  "lobbyists": 124,
+  "clients": 89,
+  "subjects": 223,
+  "methods": {
+   "Meetings": 341,
+   "Emails": 169,
+   "Phone calls": 44,
+   "Written": 33,
+   "Other or unreported": 13
+  },
+  "top": [
+   {
+    "label": "Economic Development",
+    "count": 155
+   },
+   {
+    "label": "Signs",
+    "count": 129
+   },
+   {
+    "label": "By-law / Regulation",
+    "count": 121
+   },
+   {
+    "label": "Licences / Licensing",
+    "count": 116
+   },
+   {
+    "label": "Planning and Development Application, Zoning By-law",
+    "count": 94
+   }
+  ],
+  "years": [
+   {
+    "year": 2014,
+    "count": 10
+   },
+   {
+    "year": 2015,
+    "count": 209
+   },
+   {
+    "year": 2016,
+    "count": 166
+   },
+   {
+    "year": 2017,
+    "count": 163
+   },
+   {
+    "year": 2018,
+    "count": 52
+   }
+  ],
+  "snapshot": "2026-10-08"
+ },
+ "karen-stintz": {
+  "total": 616,
+  "term": 0,
+  "first": "2010-07-23",
+  "last": "2014-11-17",
+  "lobbyists": 158,
+  "clients": 150,
+  "subjects": 317,
+  "methods": {
+   "Meetings": 368,
+   "Emails": 141,
+   "Phone calls": 55,
+   "Written": 40,
+   "Other or unreported": 12
+  },
+  "top": [
+   {
+    "label": "Economic Development",
+    "count": 81
+   },
+   {
+    "label": "Transit / TTC",
+    "count": 75
+   },
+   {
+    "label": "Planning and Development, Planning Policy / Study",
+    "count": 70
+   },
+   {
+    "label": "Signs",
+    "count": 39
+   },
+   {
+    "label": "By-law / Regulation",
+    "count": 36
+   }
+  ],
+  "years": [
+   {
+    "year": 2010,
+    "count": 17
+   },
+   {
+    "year": 2011,
+    "count": 105
+   },
+   {
+    "year": 2012,
+    "count": 138
+   },
+   {
+    "year": 2013,
+    "count": 152
+   },
+   {
+    "year": 2014,
+    "count": 106
+   }
+  ],
+  "snapshot": "2026-10-08"
+ },
+ "kristyn-wong-tam": {
+  "total": 1653,
+  "term": 0,
+  "first": "2010-12-03",
+  "last": "2022-04-27",
+  "lobbyists": 322,
+  "clients": 292,
+  "subjects": 651,
+  "methods": {
+   "Meetings": 820,
+   "Emails": 547,
+   "Phone calls": 129,
+   "Written": 88,
+   "Other or unreported": 69
+  },
+  "top": [
+   {
+    "label": "Planning and Development Application, Zoning By-law",
+    "count": 480
+   },
+   {
+    "label": "Economic Development",
+    "count": 277
+   },
+   {
+    "label": "By-law / Regulation",
+    "count": 205
+   },
+   {
+    "label": "Planning and Development, Combined Application",
+    "count": 201
+   },
+   {
+    "label": "Licences / Licensing",
+    "count": 183
+   }
+  ],
+  "years": [
+   {
+    "year": 2010,
+    "count": 8
+   },
+   {
+    "year": 2011,
+    "count": 123
+   },
+   {
+    "year": 2012,
+    "count": 143
+   },
+   {
+    "year": 2013,
+    "count": 183
+   },
+   {
+    "year": 2014,
+    "count": 162
+   },
+   {
+    "year": 2015,
+    "count": 152
+   },
+   {
+    "year": 2016,
+    "count": 192
+   },
+   {
+    "year": 2017,
+    "count": 133
+   },
+   {
+    "year": 2018,
+    "count": 106
+   },
+   {
+    "year": 2019,
+    "count": 119
+   },
+   {
+    "year": 2020,
+    "count": 88
+   },
+   {
+    "year": 2021,
+    "count": 190
+   },
+   {
+    "year": 2022,
+    "count": 53
+   }
+  ],
+  "snapshot": "2026-10-08"
+ },
+ "kyle-rae": {
+  "total": 116,
+  "term": 0,
+  "first": "2010-08-12",
+  "last": "2010-09-16",
+  "lobbyists": 45,
+  "clients": 54,
+  "subjects": 107,
+  "methods": {
+   "Meetings": 66,
+   "Emails": 18,
+   "Phone calls": 7,
+   "Written": 19,
+   "Other or unreported": 6
+  },
+  "top": [
+   {
+    "label": "Planning and Development Application, Zoning By-law",
+    "count": 8
+   },
+   {
+    "label": "Signs",
+    "count": 6
+   },
+   {
+    "label": "Garbage / Recycling",
+    "count": 5
+   },
+   {
+    "label": "Planning and Development, Planning Policy / Study",
+    "count": 5
+   },
+   {
+    "label": "signs",
+    "count": 4
+   }
+  ],
+  "years": [
+   {
+    "year": 2010,
+    "count": 3
+   }
+  ],
+  "snapshot": "2026-10-08"
+ },
+ "lily-cheng": {
+  "total": 389,
+  "term": 389,
+  "first": "2022-11-17",
+  "last": "2026-10-01",
+  "lobbyists": 74,
+  "clients": 63,
+  "subjects": 143,
+  "methods": {
+   "Meetings": 153,
+   "Emails": 195,
+   "Phone calls": 25,
+   "Written": 10,
+   "Other or unreported": 6
+  },
+  "top": [
+   {
+    "label": "Planning and Development Application, Zoning By-law",
+    "count": 143
+   },
+   {
+    "label": "Planning and Development Application, Official Plan",
+    "count": 129
+   },
+   {
+    "label": "Planning and Development Application",
+    "count": 60
+   },
+   {
+    "label": "Planning and Development",
+    "count": 50
+   },
+   {
+    "label": "By-law / Regulation",
+    "count": 42
+   }
+  ],
+  "years": [
+   {
+    "year": 2022,
+    "count": 20
+   },
+   {
+    "year": 2023,
+    "count": 112
+   },
+   {
+    "year": 2024,
+    "count": 81
+   },
+   {
+    "year": 2025,
+    "count": 115
+   },
+   {
+    "year": 2026,
+    "count": 61
+   }
+  ],
+  "snapshot": "2026-10-08"
+ },
+ "lucy-troisi": {
+  "total": 106,
+  "term": 0,
+  "first": "2017-11-13",
+  "last": "2018-11-21",
+  "lobbyists": 31,
+  "clients": 27,
+  "subjects": 56,
+  "methods": {
+   "Meetings": 56,
+   "Emails": 39,
+   "Phone calls": 6,
+   "Written": 3,
+   "Other or unreported": 2
+  },
+  "top": [
+   {
+    "label": "Planning and Development, Combined Application",
+    "count": 32
+   },
+   {
+    "label": "Planning and Development Application, Site Plan",
+    "count": 24
+   },
+   {
+    "label": "Signs",
+    "count": 20
+   },
+   {
+    "label": "Planning and Development Application, Zoning By-law",
+    "count": 19
+   },
+   {
+    "label": "Economic Development",
+    "count": 17
+   }
+  ],
+  "years": [
+   {
+    "year": 2017,
+    "count": 16
+   },
+   {
+    "year": 2018,
+    "count": 90
+   }
+  ],
+  "snapshot": "2026-10-08"
+ },
+ "maria-augimeri": {
+  "total": 549,
+  "term": 0,
+  "first": "2010-07-14",
+  "last": "2018-10-31",
+  "lobbyists": 135,
+  "clients": 129,
+  "subjects": 290,
+  "methods": {
+   "Meetings": 212,
+   "Emails": 209,
+   "Phone calls": 41,
+   "Written": 69,
+   "Other or unreported": 18
+  },
+  "top": [
+   {
+    "label": "Economic Development",
+    "count": 121
+   },
+   {
+    "label": "Licences / Licensing",
+    "count": 118
+   },
+   {
+    "label": "Transit / TTC",
+    "count": 77
+   },
+   {
+    "label": "By-law / Regulation",
+    "count": 75
+   },
+   {
+    "label": "Signs",
+    "count": 39
+   }
+  ],
+  "years": [
+   {
+    "year": 2010,
+    "count": 7
+   },
+   {
+    "year": 2011,
+    "count": 21
+   },
+   {
+    "year": 2012,
+    "count": 69
+   },
+   {
+    "year": 2013,
+    "count": 96
+   },
+   {
+    "year": 2014,
+    "count": 83
+   },
+   {
+    "year": 2015,
+    "count": 85
+   },
+   {
+    "year": 2016,
+    "count": 63
+   },
+   {
+    "year": 2017,
+    "count": 47
+   },
+   {
+    "year": 2018,
+    "count": 17
+   }
+  ],
+  "snapshot": "2026-10-08"
+ },
+ "mark-grimes": {
+  "total": 1030,
+  "term": 0,
+  "first": "2010-08-24",
+  "last": "2022-10-12",
+  "lobbyists": 225,
+  "clients": 234,
+  "subjects": 527,
+  "methods": {
+   "Meetings": 355,
+   "Emails": 388,
+   "Phone calls": 174,
+   "Written": 87,
+   "Other or unreported": 26
+  },
+  "top": [
+   {
+    "label": "Economic Development",
+    "count": 260
+   },
+   {
+    "label": "By-law / Regulation",
+    "count": 141
+   },
+   {
+    "label": "Licences / Licensing",
+    "count": 132
+   },
+   {
+    "label": "Signs",
+    "count": 128
+   },
+   {
+    "label": "Planning and Development Application, Zoning By-law",
+    "count": 106
+   }
+  ],
+  "years": [
+   {
+    "year": 2010,
+    "count": 12
+   },
+   {
+    "year": 2011,
+    "count": 46
+   },
+   {
+    "year": 2012,
+    "count": 95
+   },
+   {
+    "year": 2013,
+    "count": 143
+   },
+   {
+    "year": 2014,
+    "count": 95
+   },
+   {
+    "year": 2015,
+    "count": 86
+   },
+   {
+    "year": 2016,
+    "count": 80
+   },
+   {
+    "year": 2017,
+    "count": 72
+   },
+   {
+    "year": 2018,
+    "count": 45
+   },
+   {
+    "year": 2019,
+    "count": 92
+   },
+   {
+    "year": 2020,
+    "count": 64
+   },
+   {
+    "year": 2021,
+    "count": 81
+   },
+   {
+    "year": 2022,
+    "count": 42
+   }
+  ],
+  "snapshot": "2026-10-08"
+ },
+ "mary-fragedakis": {
+  "total": 436,
+  "term": 0,
+  "first": "2010-12-13",
+  "last": "2018-08-08",
+  "lobbyists": 106,
+  "clients": 74,
+  "subjects": 178,
+  "methods": {
+   "Meetings": 99,
+   "Emails": 254,
+   "Phone calls": 30,
+   "Written": 47,
+   "Other or unreported": 6
+  },
+  "top": [
+   {
+    "label": "Licences / Licensing",
+    "count": 109
+   },
+   {
+    "label": "Economic Development",
+    "count": 103
+   },
+   {
+    "label": "Attractions / Tourism",
+    "count": 97
+   },
+   {
+    "label": "By-law / Regulation",
+    "count": 84
+   },
+   {
+    "label": "Planning and Development Application, Zoning By-law",
+    "count": 38
+   }
+  ],
+  "years": [
+   {
+    "year": 2010,
+    "count": 1
+   },
+   {
+    "year": 2011,
+    "count": 20
+   },
+   {
+    "year": 2012,
+    "count": 36
+   },
+   {
+    "year": 2013,
+    "count": 62
+   },
+   {
+    "year": 2014,
+    "count": 50
+   },
+   {
+    "year": 2015,
+    "count": 76
+   },
+   {
+    "year": 2016,
+    "count": 110
+   },
+   {
+    "year": 2017,
+    "count": 65
+   },
+   {
+    "year": 2018,
+    "count": 15
+   }
+  ],
+  "snapshot": "2026-10-08"
+ },
+ "mary-margaret-mcmahon": {
+  "total": 580,
+  "term": 0,
+  "first": "2011-02-03",
+  "last": "2018-10-17",
+  "lobbyists": 148,
+  "clients": 111,
+  "subjects": 268,
+  "methods": {
+   "Meetings": 217,
+   "Emails": 258,
+   "Phone calls": 37,
+   "Written": 55,
+   "Other or unreported": 13
+  },
+  "top": [
+   {
+    "label": "Economic Development",
+    "count": 166
+   },
+   {
+    "label": "Licences / Licensing",
+    "count": 145
+   },
+   {
+    "label": "By-law / Regulation",
+    "count": 104
+   },
+   {
+    "label": "Planning and Development Application, Zoning By-law",
+    "count": 84
+   },
+   {
+    "label": "Attractions / Tourism",
+    "count": 55
+   }
+  ],
+  "years": [
+   {
+    "year": 2011,
+    "count": 46
+   },
+   {
+    "year": 2012,
+    "count": 38
+   },
+   {
+    "year": 2013,
+    "count": 73
+   },
+   {
+    "year": 2014,
+    "count": 69
+   },
+   {
+    "year": 2015,
+    "count": 88
+   },
+   {
+    "year": 2016,
+    "count": 95
+   },
+   {
+    "year": 2017,
+    "count": 112
+   },
+   {
+    "year": 2018,
+    "count": 58
+   }
+  ],
+  "snapshot": "2026-10-08"
+ },
+ "michael-ford": {
+  "total": 411,
+  "term": 0,
+  "first": "2016-08-08",
+  "last": "2022-06-14",
+  "lobbyists": 116,
+  "clients": 83,
+  "subjects": 196,
+  "methods": {
+   "Meetings": 167,
+   "Emails": 190,
+   "Phone calls": 29,
+   "Written": 17,
+   "Other or unreported": 8
+  },
+  "top": [
+   {
+    "label": "Economic Development",
+    "count": 127
+   },
+   {
+    "label": "By-law / Regulation",
+    "count": 69
+   },
+   {
+    "label": "Attractions / Tourism",
+    "count": 52
+   },
+   {
+    "label": "Licences / Licensing",
+    "count": 50
+   },
+   {
+    "label": "Planning and Development Application, Zoning By-law",
+    "count": 40
+   }
+  ],
+  "years": [
+   {
+    "year": 2016,
+    "count": 42
+   },
+   {
+    "year": 2017,
+    "count": 95
+   },
+   {
+    "year": 2018,
+    "count": 46
+   },
+   {
+    "year": 2019,
+    "count": 98
+   },
+   {
+    "year": 2020,
+    "count": 35
+   },
+   {
+    "year": 2021,
+    "count": 76
+   },
+   {
+    "year": 2022,
+    "count": 19
+   }
+  ],
+  "snapshot": "2026-10-08"
+ },
+ "michael-thompson": {
+  "total": 1579,
+  "term": 195,
+  "first": "2010-07-09",
+  "last": "2026-09-03",
+  "lobbyists": 428,
+  "clients": 295,
+  "subjects": 725,
+  "methods": {
+   "Meetings": 629,
+   "Emails": 635,
+   "Phone calls": 159,
+   "Written": 111,
+   "Other or unreported": 45
+  },
+  "top": [
+   {
+    "label": "Economic Development",
+    "count": 533
+   },
+   {
+    "label": "By-law / Regulation",
+    "count": 229
+   },
+   {
+    "label": "Licences / Licensing",
+    "count": 163
+   },
+   {
+    "label": "Planning and Development Application, Zoning By-law",
+    "count": 158
+   },
+   {
+    "label": "Attractions / Tourism",
+    "count": 136
+   }
+  ],
+  "years": [
+   {
+    "year": 2010,
+    "count": 12
+   },
+   {
+    "year": 2011,
+    "count": 60
+   },
+   {
+    "year": 2012,
+    "count": 94
+   },
+   {
+    "year": 2013,
+    "count": 132
+   },
+   {
+    "year": 2014,
+    "count": 105
+   },
+   {
+    "year": 2015,
+    "count": 151
+   },
+   {
+    "year": 2016,
+    "count": 130
+   },
+   {
+    "year": 2017,
+    "count": 115
+   },
+   {
+    "year": 2018,
+    "count": 53
+   },
+   {
+    "year": 2019,
+    "count": 117
+   },
+   {
+    "year": 2020,
+    "count": 127
+   },
+   {
+    "year": 2021,
+    "count": 131
+   },
+   {
+    "year": 2022,
+    "count": 88
+   },
+   {
+    "year": 2023,
+    "count": 67
+   },
+   {
+    "year": 2024,
+    "count": 57
+   },
+   {
+    "year": 2025,
+    "count": 37
+   },
+   {
+    "year": 2026,
+    "count": 25
+   }
+  ],
+  "snapshot": "2026-10-08"
+ },
+ "michael-walker": {
+  "total": 84,
+  "term": 0,
+  "first": "2009-06-14",
+  "last": "2010-08-24",
+  "lobbyists": 36,
+  "clients": 27,
+  "subjects": 75,
+  "methods": {
+   "Meetings": 32,
+   "Emails": 15,
+   "Phone calls": 8,
+   "Written": 15,
+   "Other or unreported": 14
+  },
+  "top": [
+   {
+    "label": "Signs",
+    "count": 15
+   },
+   {
+    "label": "Garbage / Recycling",
+    "count": 4
+   },
+   {
+    "label": "Planning and Development Application, Zoning By-law",
+    "count": 4
+   },
+   {
+    "label": "Public Health",
+    "count": 4
+   },
+   {
+    "label": "Parking",
+    "count": 3
+   }
+  ],
+  "years": [
+   {
+    "year": 2009,
+    "count": 1
+   },
+   {
+    "year": 2010,
+    "count": 1
+   }
+  ],
+  "snapshot": "2026-10-08"
+ },
+ "michelle-berardinetti": {
+  "total": 374,
+  "term": 0,
+  "first": "2010-12-13",
+  "last": "2016-12-12",
+  "lobbyists": 86,
+  "clients": 81,
+  "subjects": 194,
+  "methods": {
+   "Meetings": 124,
+   "Emails": 167,
+   "Phone calls": 29,
+   "Written": 47,
+   "Other or unreported": 7
+  },
+  "top": [
+   {
+    "label": "Economic Development",
+    "count": 102
+   },
+   {
+    "label": "By-law / Regulation",
+    "count": 61
+   },
+   {
+    "label": "Licences / Licensing",
+    "count": 55
+   },
+   {
+    "label": "Waterfront Revitalization",
+    "count": 39
+   },
+   {
+    "label": "Environment",
+    "count": 30
+   }
+  ],
+  "years": [
+   {
+    "year": 2010,
+    "count": 1
+   },
+   {
+    "year": 2011,
+    "count": 43
+   },
+   {
+    "year": 2012,
+    "count": 56
+   },
+   {
+    "year": 2013,
+    "count": 83
+   },
+   {
+    "year": 2014,
+    "count": 75
+   },
+   {
+    "year": 2015,
+    "count": 98
+   },
+   {
+    "year": 2016,
+    "count": 17
+   }
+  ],
+  "snapshot": "2026-10-08"
+ },
+ "michelle-holland": {
+  "total": 172,
+  "term": 0,
+  "first": "2016-03-30",
+  "last": "2018-08-03",
+  "lobbyists": 43,
+  "clients": 32,
+  "subjects": 78,
+  "methods": {
+   "Meetings": 36,
+   "Emails": 104,
+   "Phone calls": 17,
+   "Written": 12,
+   "Other or unreported": 3
+  },
+  "top": [
+   {
+    "label": "Economic Development",
+    "count": 82
+   },
+   {
+    "label": "Licences / Licensing",
+    "count": 74
+   },
+   {
+    "label": "Planning and Development Application, Zoning By-law",
+    "count": 43
+   },
+   {
+    "label": "By-law / Regulation",
+    "count": 37
+   },
+   {
+    "label": "Budget",
+    "count": 15
+   }
+  ],
+  "years": [
+   {
+    "year": 2016,
+    "count": 74
+   },
+   {
+    "year": 2017,
+    "count": 78
+   },
+   {
+    "year": 2018,
+    "count": 20
+   }
+  ],
+  "snapshot": "2026-10-08"
+ },
+ "miganoush-megardichian": {
+  "total": 1,
+  "term": 0,
+  "first": "2018-08-03",
+  "last": "2018-08-03",
+  "lobbyists": 0,
+  "clients": 1,
+  "subjects": 1,
+  "methods": {
+   "Meetings": 0,
+   "Emails": 0,
+   "Phone calls": 1,
+   "Written": 0,
+   "Other or unreported": 0
+  },
+  "top": [
+   {
+    "label": "Arts / Culture",
+    "count": 1
+   },
+   {
+    "label": "Attractions / Tourism",
+    "count": 1
+   },
+   {
+    "label": "Economic Development",
+    "count": 1
+   }
+  ],
+  "years": [
+   {
+    "year": 2018,
+    "count": 1
+   }
+  ],
+  "snapshot": "2026-10-08"
+ },
+ "mike-colle": {
+  "total": 644,
+  "term": 289,
+  "first": "2018-12-07",
+  "last": "2026-09-03",
+  "lobbyists": 169,
+  "clients": 128,
+  "subjects": 281,
+  "methods": {
+   "Meetings": 147,
+   "Emails": 392,
+   "Phone calls": 75,
+   "Written": 18,
+   "Other or unreported": 12
+  },
+  "top": [
+   {
+    "label": "Planning and Development Application, Zoning By-law",
+    "count": 103
+   },
+   {
+    "label": "By-law / Regulation",
+    "count": 95
+   },
+   {
+    "label": "Economic Development",
+    "count": 90
+   },
+   {
+    "label": "Planning and Development Application",
+    "count": 87
+   },
+   {
+    "label": "Transportation - Cycling / Bicycle Lanes",
+    "count": 69
+   }
+  ],
+  "years": [
+   {
+    "year": 2018,
+    "count": 8
+   },
+   {
+    "year": 2019,
+    "count": 155
+   },
+   {
+    "year": 2020,
+    "count": 69
+   },
+   {
+    "year": 2021,
+    "count": 82
+   },
+   {
+    "year": 2022,
+    "count": 54
+   },
+   {
+    "year": 2023,
+    "count": 97
+   },
+   {
+    "year": 2024,
+    "count": 78
+   },
+   {
+    "year": 2025,
+    "count": 78
+   },
+   {
+    "year": 2026,
+    "count": 23
+   }
+  ],
+  "snapshot": "2026-10-08"
+ },
+ "mike-del-grande": {
+  "total": 218,
+  "term": 0,
+  "first": "2010-08-05",
+  "last": "2014-11-17",
+  "lobbyists": 78,
+  "clients": 54,
+  "subjects": 135,
+  "methods": {
+   "Meetings": 51,
+   "Emails": 111,
+   "Phone calls": 10,
+   "Written": 44,
+   "Other or unreported": 2
+  },
+  "top": [
+   {
+    "label": "Economic Development",
+    "count": 45
+   },
+   {
+    "label": "Waterfront Revitalization",
+    "count": 24
+   },
+   {
+    "label": "Environment",
+    "count": 18
+   },
+   {
+    "label": "Garbage / Recycling",
+    "count": 18
+   },
+   {
+    "label": "Transit / TTC",
+    "count": 15
+   }
+  ],
+  "years": [
+   {
+    "year": 2010,
+    "count": 4
+   },
+   {
+    "year": 2011,
+    "count": 22
+   },
+   {
+    "year": 2012,
+    "count": 52
+   },
+   {
+    "year": 2013,
+    "count": 48
+   },
+   {
+    "year": 2014,
+    "count": 38
+   }
+  ],
+  "snapshot": "2026-10-08"
+ },
+ "mike-feldman": {
+  "total": 82,
+  "term": 0,
+  "first": "2010-08-23",
+  "last": "2010-08-26",
+  "lobbyists": 35,
+  "clients": 29,
+  "subjects": 72,
+  "methods": {
+   "Meetings": 27,
+   "Emails": 18,
+   "Phone calls": 10,
+   "Written": 14,
+   "Other or unreported": 13
+  },
+  "top": [
+   {
+    "label": "Signs",
+    "count": 14
+   },
+   {
+    "label": "Public Health",
+    "count": 5
+   },
+   {
+    "label": "Garbage / Recycling",
+    "count": 4
+   },
+   {
+    "label": "Planning and Development, Planning Policy / Study",
+    "count": 4
+   },
+   {
+    "label": "Environment, By-law / Regulation",
+    "count": 3
+   }
+  ],
+  "years": [
+   {
+    "year": 2010,
+    "count": 6
+   }
+  ],
+  "snapshot": "2026-10-08"
+ },
+ "mike-layton": {
+  "total": 1559,
+  "term": 0,
+  "first": "2010-12-20",
+  "last": "2022-10-27",
+  "lobbyists": 311,
+  "clients": 264,
+  "subjects": 593,
+  "methods": {
+   "Meetings": 663,
+   "Emails": 619,
+   "Phone calls": 151,
+   "Written": 59,
+   "Other or unreported": 67
+  },
+  "top": [
+   {
+    "label": "By-law / Regulation",
+    "count": 316
+   },
+   {
+    "label": "Economic Development",
+    "count": 264
+   },
+   {
+    "label": "Planning and Development Application, Zoning By-law",
+    "count": 247
+   },
+   {
+    "label": "Licences / Licensing",
+    "count": 183
+   },
+   {
+    "label": "Planning and Development, Combined Application",
+    "count": 137
+   }
+  ],
+  "years": [
+   {
+    "year": 2010,
+    "count": 2
+   },
+   {
+    "year": 2011,
+    "count": 60
+   },
+   {
+    "year": 2012,
+    "count": 193
+   },
+   {
+    "year": 2013,
+    "count": 129
+   },
+   {
+    "year": 2014,
+    "count": 149
+   },
+   {
+    "year": 2015,
+    "count": 100
+   },
+   {
+    "year": 2016,
+    "count": 102
+   },
+   {
+    "year": 2017,
+    "count": 142
+   },
+   {
+    "year": 2018,
+    "count": 87
+   },
+   {
+    "year": 2019,
+    "count": 192
+   },
+   {
+    "year": 2020,
+    "count": 115
+   },
+   {
+    "year": 2021,
+    "count": 192
+   },
+   {
+    "year": 2022,
+    "count": 94
+   }
+  ],
+  "snapshot": "2026-10-08"
+ },
+ "neethan-shan": {
+  "total": 76,
+  "term": 29,
+  "first": "2017-03-01",
+  "last": "2026-09-03",
+  "lobbyists": 18,
+  "clients": 34,
+  "subjects": 53,
+  "methods": {
+   "Meetings": 23,
+   "Emails": 42,
+   "Phone calls": 4,
+   "Written": 3,
+   "Other or unreported": 4
+  },
+  "top": [
+   {
+    "label": "Economic Development",
+    "count": 24
+   },
+   {
+    "label": "Planning and Development Application, Zoning By-law",
+    "count": 22
+   },
+   {
+    "label": "Licences / Licensing",
+    "count": 16
+   },
+   {
+    "label": "By-law / Regulation",
+    "count": 14
+   },
+   {
+    "label": "Attractions / Tourism",
+    "count": 10
+   }
+  ],
+  "years": [
+   {
+    "year": 2017,
+    "count": 39
+   },
+   {
+    "year": 2018,
+    "count": 8
+   },
+   {
+    "year": 2025,
+    "count": 5
+   },
+   {
+    "year": 2026,
+    "count": 24
+   }
+  ],
+  "snapshot": "2026-10-08"
+ },
+ "nick-mantas": {
+  "total": 593,
+  "term": 390,
+  "first": "2021-01-21",
+  "last": "2026-09-03",
+  "lobbyists": 72,
+  "clients": 123,
+  "subjects": 206,
+  "methods": {
+   "Meetings": 128,
+   "Emails": 216,
+   "Phone calls": 199,
+   "Written": 10,
+   "Other or unreported": 40
+  },
+  "top": [
+   {
+    "label": "Planning and Development",
+    "count": 136
+   },
+   {
+    "label": "Planning and Development Application, Official Plan",
+    "count": 115
+   },
+   {
+    "label": "Economic Development",
+    "count": 82
+   },
+   {
+    "label": "Transportation",
+    "count": 60
+   },
+   {
+    "label": "Planning and Development Application, Site Plan",
+    "count": 52
+   }
+  ],
+  "years": [
+   {
+    "year": 2021,
+    "count": 135
+   },
+   {
+    "year": 2022,
+    "count": 81
+   },
+   {
+    "year": 2023,
+    "count": 125
+   },
+   {
+    "year": 2024,
+    "count": 131
+   },
+   {
+    "year": 2025,
+    "count": 78
+   },
+   {
+    "year": 2026,
+    "count": 43
+   }
+  ],
+  "snapshot": "2026-10-08"
+ },
+ "norman-kelly": {
+  "total": 487,
+  "term": 0,
+  "first": "2010-07-22",
+  "last": "2018-07-30",
+  "lobbyists": 142,
+  "clients": 97,
+  "subjects": 238,
+  "methods": {
+   "Meetings": 248,
+   "Emails": 149,
+   "Phone calls": 29,
+   "Written": 53,
+   "Other or unreported": 8
+  },
+  "top": [
+   {
+    "label": "Economic Development",
+    "count": 129
+   },
+   {
+    "label": "Waterfront Revitalization",
+    "count": 56
+   },
+   {
+    "label": "Attractions / Tourism",
+    "count": 49
+   },
+   {
+    "label": "Transit / TTC",
+    "count": 48
+   },
+   {
+    "label": "Transportation - Cycling / Bicycle Lanes",
+    "count": 34
+   }
+  ],
+  "years": [
+   {
+    "year": 2010,
+    "count": 8
+   },
+   {
+    "year": 2011,
+    "count": 33
+   },
+   {
+    "year": 2012,
+    "count": 56
+   },
+   {
+    "year": 2013,
+    "count": 138
+   },
+   {
+    "year": 2014,
+    "count": 151
+   },
+   {
+    "year": 2015,
+    "count": 20
+   },
+   {
+    "year": 2016,
+    "count": 4
+   },
+   {
+    "year": 2017,
+    "count": 3
+   },
+   {
+    "year": 2018,
+    "count": 1
+   }
+  ],
+  "snapshot": "2026-10-08"
+ },
+ "olivia-chow": {
+  "total": 283,
+  "term": 283,
+  "first": "2023-07-12",
+  "last": "2026-09-23",
+  "lobbyists": 103,
+  "clients": 56,
+  "subjects": 156,
+  "methods": {
+   "Meetings": 88,
+   "Emails": 162,
+   "Phone calls": 13,
+   "Written": 16,
+   "Other or unreported": 4
+  },
+  "top": [
+   {
+    "label": "Economic Development",
+    "count": 67
+   },
+   {
+    "label": "By-law / Regulation",
+    "count": 40
+   },
+   {
+    "label": "Planning and Development",
+    "count": 37
+   },
+   {
+    "label": "Transportation",
+    "count": 36
+   },
+   {
+    "label": "Transit / TTC",
+    "count": 35
+   }
+  ],
+  "years": [
+   {
+    "year": 2023,
+    "count": 85
+   },
+   {
+    "year": 2024,
+    "count": 95
+   },
+   {
+    "year": 2025,
+    "count": 70
+   },
+   {
+    "year": 2026,
+    "count": 33
+   }
+  ],
+  "snapshot": "2026-10-08"
+ },
+ "pam-mcconnell": {
+  "total": 545,
+  "term": 0,
+  "first": "2010-08-20",
+  "last": "2017-06-22",
+  "lobbyists": 153,
+  "clients": 124,
+  "subjects": 284,
+  "methods": {
+   "Meetings": 228,
+   "Emails": 208,
+   "Phone calls": 26,
+   "Written": 64,
+   "Other or unreported": 19
+  },
+  "top": [
+   {
+    "label": "Planning and Development Application, Zoning By-law",
+    "count": 122
+   },
+   {
+    "label": "Licences / Licensing",
+    "count": 93
+   },
+   {
+    "label": "Economic Development",
+    "count": 83
+   },
+   {
+    "label": "By-law / Regulation",
+    "count": 69
+   },
+   {
+    "label": "Planning and Development, Combined Application",
+    "count": 54
+   }
+  ],
+  "years": [
+   {
+    "year": 2010,
+    "count": 11
+   },
+   {
+    "year": 2011,
+    "count": 38
+   },
+   {
+    "year": 2012,
+    "count": 65
+   },
+   {
+    "year": 2013,
+    "count": 83
+   },
+   {
+    "year": 2014,
+    "count": 83
+   },
+   {
+    "year": 2015,
+    "count": 78
+   },
+   {
+    "year": 2016,
+    "count": 89
+   },
+   {
+    "year": 2017,
+    "count": 20
+   }
+  ],
+  "snapshot": "2026-10-08"
+ },
+ "parthi-kandavel": {
+  "total": 254,
+  "term": 254,
+  "first": "2023-12-14",
+  "last": "2026-09-03",
+  "lobbyists": 44,
+  "clients": 47,
+  "subjects": 91,
+  "methods": {
+   "Meetings": 121,
+   "Emails": 97,
+   "Phone calls": 31,
+   "Written": 2,
+   "Other or unreported": 3
+  },
+  "top": [
+   {
+    "label": "Economic Development",
+    "count": 61
+   },
+   {
+    "label": "Planning and Development Application",
+    "count": 58
+   },
+   {
+    "label": "Planning and Development",
+    "count": 51
+   },
+   {
+    "label": "Planning and Development Application, Site Plan",
+    "count": 43
+   },
+   {
+    "label": "Planning and Development, Planning Policy / Study",
+    "count": 39
+   }
+  ],
+  "years": [
+   {
+    "year": 2023,
+    "count": 5
+   },
+   {
+    "year": 2024,
+    "count": 149
+   },
+   {
+    "year": 2025,
+    "count": 77
+   },
+   {
+    "year": 2026,
+    "count": 23
+   }
+  ],
+  "snapshot": "2026-10-08"
+ },
+ "paul-ainslie": {
+  "total": 982,
+  "term": 210,
+  "first": "2010-08-24",
+  "last": "2026-09-03",
+  "lobbyists": 210,
+  "clients": 228,
+  "subjects": 488,
+  "methods": {
+   "Meetings": 171,
+   "Emails": 601,
+   "Phone calls": 72,
+   "Written": 98,
+   "Other or unreported": 40
+  },
+  "top": [
+   {
+    "label": "Economic Development",
+    "count": 254
+   },
+   {
+    "label": "By-law / Regulation",
+    "count": 177
+   },
+   {
+    "label": "Licences / Licensing",
+    "count": 141
+   },
+   {
+    "label": "Planning and Development Application, Zoning By-law",
+    "count": 95
+   },
+   {
+    "label": "Attractions / Tourism",
+    "count": 72
+   }
+  ],
+  "years": [
+   {
+    "year": 2010,
+    "count": 3
+   },
+   {
+    "year": 2011,
+    "count": 36
+   },
+   {
+    "year": 2012,
+    "count": 61
+   },
+   {
+    "year": 2013,
+    "count": 84
+   },
+   {
+    "year": 2014,
+    "count": 42
+   },
+   {
+    "year": 2015,
+    "count": 60
+   },
+   {
+    "year": 2016,
+    "count": 82
+   },
+   {
+    "year": 2017,
+    "count": 46
+   },
+   {
+    "year": 2018,
+    "count": 29
+   },
+   {
+    "year": 2019,
+    "count": 88
+   },
+   {
+    "year": 2020,
+    "count": 68
+   },
+   {
+    "year": 2021,
+    "count": 65
+   },
+   {
+    "year": 2022,
+    "count": 62
+   },
+   {
+    "year": 2023,
+    "count": 59
+   },
+   {
+    "year": 2024,
+    "count": 60
+   },
+   {
+    "year": 2025,
+    "count": 46
+   },
+   {
+    "year": 2026,
+    "count": 33
+   }
+  ],
+  "snapshot": "2026-10-08"
+ },
+ "paula-fletcher": {
+  "total": 873,
+  "term": 191,
+  "first": "2010-08-24",
+  "last": "2026-08-13",
+  "lobbyists": 211,
+  "clients": 190,
+  "subjects": 421,
+  "methods": {
+   "Meetings": 158,
+   "Emails": 486,
+   "Phone calls": 99,
+   "Written": 86,
+   "Other or unreported": 44
+  },
+  "top": [
+   {
+    "label": "Economic Development",
+    "count": 179
+   },
+   {
+    "label": "By-law / Regulation",
+    "count": 126
+   },
+   {
+    "label": "Licences / Licensing",
+    "count": 111
+   },
+   {
+    "label": "Affordable Housing",
+    "count": 92
+   },
+   {
+    "label": "Planning and Development Application, Zoning By-law",
+    "count": 86
+   }
+  ],
+  "years": [
+   {
+    "year": 2010,
+    "count": 2
+   },
+   {
+    "year": 2011,
+    "count": 24
+   },
+   {
+    "year": 2012,
+    "count": 34
+   },
+   {
+    "year": 2013,
+    "count": 60
+   },
+   {
+    "year": 2014,
+    "count": 53
+   },
+   {
+    "year": 2015,
+    "count": 60
+   },
+   {
+    "year": 2016,
+    "count": 73
+   },
+   {
+    "year": 2017,
+    "count": 58
+   },
+   {
+    "year": 2018,
+    "count": 29
+   },
+   {
+    "year": 2019,
+    "count": 57
+   },
+   {
+    "year": 2020,
+    "count": 57
+   },
+   {
+    "year": 2021,
+    "count": 65
+   },
+   {
+    "year": 2022,
+    "count": 57
+   },
+   {
+    "year": 2023,
+    "count": 62
+   },
+   {
+    "year": 2024,
+    "count": 53
+   },
+   {
+    "year": 2025,
+    "count": 49
+   },
+   {
+    "year": 2026,
+    "count": 18
+   }
+  ],
+  "snapshot": "2026-10-08"
+ },
+ "peter-leon": {
+  "total": 80,
+  "term": 0,
+  "first": "2013-10-10",
+  "last": "2014-11-17",
+  "lobbyists": 30,
+  "clients": 17,
+  "subjects": 42,
+  "methods": {
+   "Meetings": 32,
+   "Emails": 27,
+   "Phone calls": 8,
+   "Written": 13,
+   "Other or unreported": 0
+  },
+  "top": [
+   {
+    "label": "Economic Development",
+    "count": 35
+   },
+   {
+    "label": "Waterfront Revitalization",
+    "count": 18
+   },
+   {
+    "label": "Licences / Licensing",
+    "count": 12
+   },
+   {
+    "label": "Budget",
+    "count": 10
+   },
+   {
+    "label": "Planning and Development Application, Zoning By-law",
+    "count": 7
+   }
+  ],
+  "years": [
+   {
+    "year": 2013,
+    "count": 23
+   },
+   {
+    "year": 2014,
+    "count": 57
+   }
+  ],
+  "snapshot": "2026-10-08"
+ },
+ "peter-milczyn": {
+  "total": 745,
+  "term": 0,
+  "first": "2010-07-21",
+  "last": "2014-06-18",
+  "lobbyists": 170,
+  "clients": 195,
+  "subjects": 382,
+  "methods": {
+   "Meetings": 442,
+   "Emails": 162,
+   "Phone calls": 68,
+   "Written": 52,
+   "Other or unreported": 21
+  },
+  "top": [
+   {
+    "label": "Economic Development",
+    "count": 114
+   },
+   {
+    "label": "Planning and Development, Planning Policy / Study",
+    "count": 104
+   },
+   {
+    "label": "Planning and Development Application, Zoning By-law",
+    "count": 69
+   },
+   {
+    "label": "Planning and Development, Combined Application",
+    "count": 58
+   },
+   {
+    "label": "Signs",
+    "count": 58
+   }
+  ],
+  "years": [
+   {
+    "year": 2010,
+    "count": 16
+   },
+   {
+    "year": 2011,
+    "count": 135
+   },
+   {
+    "year": 2012,
+    "count": 167
+   },
+   {
+    "year": 2013,
+    "count": 219
+   },
+   {
+    "year": 2014,
+    "count": 79
+   }
+  ],
+  "snapshot": "2026-10-08"
+ },
+ "rachel-chernos-lin": {
+  "total": 103,
+  "term": 103,
+  "first": "2024-11-11",
+  "last": "2026-09-03",
+  "lobbyists": 29,
+  "clients": 31,
+  "subjects": 56,
+  "methods": {
+   "Meetings": 39,
+   "Emails": 56,
+   "Phone calls": 7,
+   "Written": 1,
+   "Other or unreported": 0
+  },
+  "top": [
+   {
+    "label": "Planning and Development Application, Zoning By-law",
+    "count": 26
+   },
+   {
+    "label": "Transportation",
+    "count": 21
+   },
+   {
+    "label": "Planning and Development",
+    "count": 19
+   },
+   {
+    "label": "Planning and Development Application",
+    "count": 17
+   },
+   {
+    "label": "Economic Development",
+    "count": 14
+   }
+  ],
+  "years": [
+   {
+    "year": 2024,
+    "count": 9
+   },
+   {
+    "year": 2025,
+    "count": 54
+   },
+   {
+    "year": 2026,
+    "count": 40
+   }
+  ],
+  "snapshot": "2026-10-08"
+ },
+ "raymond-cho": {
+  "total": 367,
+  "term": 0,
+  "first": "2010-08-24",
+  "last": "2017-11-27",
+  "lobbyists": 109,
+  "clients": 67,
+  "subjects": 183,
+  "methods": {
+   "Meetings": 105,
+   "Emails": 177,
+   "Phone calls": 19,
+   "Written": 61,
+   "Other or unreported": 5
+  },
+  "top": [
+   {
+    "label": "Economic Development",
+    "count": 98
+   },
+   {
+    "label": "Licences / Licensing",
+    "count": 76
+   },
+   {
+    "label": "By-law / Regulation",
+    "count": 62
+   },
+   {
+    "label": "Waterfront Revitalization",
+    "count": 33
+   },
+   {
+    "label": "Transit / TTC",
+    "count": 27
+   }
+  ],
+  "years": [
+   {
+    "year": 2010,
+    "count": 1
+   },
+   {
+    "year": 2011,
+    "count": 20
+   },
+   {
+    "year": 2012,
+    "count": 36
+   },
+   {
+    "year": 2013,
+    "count": 59
+   },
+   {
+    "year": 2014,
+    "count": 56
+   },
+   {
+    "year": 2015,
+    "count": 96
+   },
+   {
+    "year": 2016,
+    "count": 59
+   },
+   {
+    "year": 2017,
+    "count": 1
+   }
+  ],
+  "snapshot": "2026-10-08"
+ },
+ "rob-ford": {
+  "total": 601,
+  "term": 0,
+  "first": "2010-05-19",
+  "last": "2016-07-06",
+  "lobbyists": 185,
+  "clients": 73,
+  "subjects": 230,
+  "methods": {
+   "Meetings": 230,
+   "Emails": 242,
+   "Phone calls": 52,
+   "Written": 68,
+   "Other or unreported": 9
+  },
+  "top": [
+   {
+    "label": "Economic Development",
+    "count": 112
+   },
+   {
+    "label": "Transit / TTC",
+    "count": 89
+   },
+   {
+    "label": "Transportation - Metrolinx",
+    "count": 78
+   },
+   {
+    "label": "Transportation - Cycling / Bicycle Lanes",
+    "count": 74
+   },
+   {
+    "label": "Planning and Development, Planning Policy / Study",
+    "count": 62
+   }
+  ],
+  "years": [
+   {
+    "year": 2010,
+    "count": 82
+   },
+   {
+    "year": 2011,
+    "count": 118
+   },
+   {
+    "year": 2012,
+    "count": 69
+   },
+   {
+    "year": 2013,
+    "count": 117
+   },
+   {
+    "year": 2014,
+    "count": 66
+   },
+   {
+    "year": 2015,
+    "count": 61
+   },
+   {
+    "year": 2016,
+    "count": 9
+   }
+  ],
+  "snapshot": "2026-10-08"
+ },
+ "robin-buxton-potts": {
+  "total": 17,
+  "term": 0,
+  "first": "2022-06-02",
+  "last": "2022-10-13",
+  "lobbyists": 6,
+  "clients": 6,
+  "subjects": 10,
+  "methods": {
+   "Meetings": 4,
+   "Emails": 10,
+   "Phone calls": 2,
+   "Written": 0,
+   "Other or unreported": 1
+  },
+  "top": [
+   {
+    "label": "By-law / Regulation",
+    "count": 6
+   },
+   {
+    "label": "Licences / Licensing",
+    "count": 6
+   },
+   {
+    "label": "Transportation",
+    "count": 6
+   },
+   {
+    "label": "Economic Development",
+    "count": 5
+   },
+   {
+    "label": "Arts / Culture",
+    "count": 4
+   }
+  ],
+  "years": [
+   {
+    "year": 2022,
+    "count": 17
+   }
+  ],
+  "snapshot": "2026-10-08"
+ },
+ "ron-moeser": {
+  "total": 294,
+  "term": 0,
+  "first": "2010-07-30",
+  "last": "2017-04-12",
+  "lobbyists": 96,
+  "clients": 58,
+  "subjects": 169,
+  "methods": {
+   "Meetings": 53,
+   "Emails": 164,
+   "Phone calls": 8,
+   "Written": 62,
+   "Other or unreported": 7
+  },
+  "top": [
+   {
+    "label": "Economic Development",
+    "count": 78
+   },
+   {
+    "label": "Licences / Licensing",
+    "count": 63
+   },
+   {
+    "label": "By-law / Regulation",
+    "count": 60
+   },
+   {
+    "label": "Waterfront Revitalization",
+    "count": 24
+   },
+   {
+    "label": "Transit / TTC",
+    "count": 18
+   }
+  ],
+  "years": [
+   {
+    "year": 2010,
+    "count": 5
+   },
+   {
+    "year": 2011,
+    "count": 19
+   },
+   {
+    "year": 2012,
+    "count": 28
+   },
+   {
+    "year": 2013,
+    "count": 49
+   },
+   {
+    "year": 2014,
+    "count": 45
+   },
+   {
+    "year": 2015,
+    "count": 50
+   },
+   {
+    "year": 2016,
+    "count": 43
+   },
+   {
+    "year": 2017,
+    "count": 6
+   }
+  ],
+  "snapshot": "2026-10-08"
+ },
+ "rose-milczyn": {
+  "total": 6,
+  "term": 0,
+  "first": "2022-09-21",
+  "last": "2022-11-09",
+  "lobbyists": 0,
+  "clients": 3,
+  "subjects": 4,
+  "methods": {
+   "Meetings": 3,
+   "Emails": 1,
+   "Phone calls": 2,
+   "Written": 0,
+   "Other or unreported": 0
+  },
+  "top": [
+   {
+    "label": "Planning and Development Application",
+    "count": 3
+   },
+   {
+    "label": "Planning and Development Application, Zoning By-law",
+    "count": 3
+   },
+   {
+    "label": "Attractions / Tourism",
+    "count": 2
+   },
+   {
+    "label": "Economic Development",
+    "count": 2
+   },
+   {
+    "label": "Budget",
+    "count": 1
+   }
+  ],
+  "years": [
+   {
+    "year": 2022,
+    "count": 6
+   }
+  ],
+  "snapshot": "2026-10-08"
+ },
+ "sandra-bussin": {
+  "total": 69,
+  "term": 0,
+  "first": "2009-03-18",
+  "last": "2010-08-24",
+  "lobbyists": 31,
+  "clients": 22,
+  "subjects": 64,
+  "methods": {
+   "Meetings": 15,
+   "Emails": 19,
+   "Phone calls": 6,
+   "Written": 18,
+   "Other or unreported": 11
+  },
+  "top": [
+   {
+    "label": "Signs",
+    "count": 10
+   },
+   {
+    "label": "Garbage / Recycling",
+    "count": 5
+   },
+   {
+    "label": "Public Health",
+    "count": 4
+   },
+   {
+    "label": "Environment, By-law / Regulation",
+    "count": 2
+   },
+   {
+    "label": "By-law / Regulation",
+    "count": 2
+   }
+  ],
+  "years": [
+   {
+    "year": 2009,
+    "count": 1
+   },
+   {
+    "year": 2010,
+    "count": 1
+   }
+  ],
+  "snapshot": "2026-10-08"
+ },
+ "sarah-doucette": {
+  "total": 434,
+  "term": 0,
+  "first": "2011-01-06",
+  "last": "2018-11-09",
+  "lobbyists": 114,
+  "clients": 78,
+  "subjects": 203,
+  "methods": {
+   "Meetings": 142,
+   "Emails": 207,
+   "Phone calls": 22,
+   "Written": 49,
+   "Other or unreported": 14
+  },
+  "top": [
+   {
+    "label": "Licences / Licensing",
+    "count": 116
+   },
+   {
+    "label": "Economic Development",
+    "count": 112
+   },
+   {
+    "label": "By-law / Regulation",
+    "count": 87
+   },
+   {
+    "label": "Planning and Development Application, Zoning By-law",
+    "count": 74
+   },
+   {
+    "label": "Attractions / Tourism",
+    "count": 27
+   }
+  ],
+  "years": [
+   {
+    "year": 2011,
+    "count": 42
+   },
+   {
+    "year": 2012,
+    "count": 42
+   },
+   {
+    "year": 2013,
+    "count": 56
+   },
+   {
+    "year": 2014,
+    "count": 73
+   },
+   {
+    "year": 2015,
+    "count": 69
+   },
+   {
+    "year": 2016,
+    "count": 71
+   },
+   {
+    "year": 2017,
+    "count": 59
+   },
+   {
+    "year": 2018,
+    "count": 20
+   }
+  ],
+  "snapshot": "2026-10-08"
+ },
+ "shelley-carroll": {
+  "total": 1217,
+  "term": 341,
+  "first": "2010-07-13",
+  "last": "2026-09-03",
+  "lobbyists": 286,
+  "clients": 241,
+  "subjects": 540,
+  "methods": {
+   "Meetings": 441,
+   "Emails": 538,
+   "Phone calls": 86,
+   "Written": 85,
+   "Other or unreported": 67
+  },
+  "top": [
+   {
+    "label": "Economic Development",
+    "count": 294
+   },
+   {
+    "label": "By-law / Regulation",
+    "count": 271
+   },
+   {
+    "label": "Licences / Licensing",
+    "count": 192
+   },
+   {
+    "label": "Planning and Development Application, Zoning By-law",
+    "count": 151
+   },
+   {
+    "label": "Planning and Development, Planning Policy / Study",
+    "count": 88
+   }
+  ],
+  "years": [
+   {
+    "year": 2010,
+    "count": 7
+   },
+   {
+    "year": 2011,
+    "count": 31
+   },
+   {
+    "year": 2012,
+    "count": 48
+   },
+   {
+    "year": 2013,
+    "count": 81
+   },
+   {
+    "year": 2014,
+    "count": 61
+   },
+   {
+    "year": 2015,
+    "count": 78
+   },
+   {
+    "year": 2016,
+    "count": 87
+   },
+   {
+    "year": 2017,
+    "count": 59
+   },
+   {
+    "year": 2018,
+    "count": 13
+   },
+   {
+    "year": 2019,
+    "count": 97
+   },
+   {
+    "year": 2020,
+    "count": 83
+   },
+   {
+    "year": 2021,
+    "count": 95
+   },
+   {
+    "year": 2022,
+    "count": 66
+   },
+   {
+    "year": 2023,
+    "count": 105
+   },
+   {
+    "year": 2024,
+    "count": 134
+   },
+   {
+    "year": 2025,
+    "count": 59
+   },
+   {
+    "year": 2026,
+    "count": 28
+   }
+  ],
+  "snapshot": "2026-10-08"
+ },
+ "stephen-holyday": {
+  "total": 997,
+  "term": 261,
+  "first": "2014-12-02",
+  "last": "2026-08-27",
+  "lobbyists": 232,
+  "clients": 178,
+  "subjects": 427,
+  "methods": {
+   "Meetings": 363,
+   "Emails": 457,
+   "Phone calls": 95,
+   "Written": 45,
+   "Other or unreported": 37
+  },
+  "top": [
+   {
+    "label": "Economic Development",
+    "count": 235
+   },
+   {
+    "label": "By-law / Regulation",
+    "count": 198
+   },
+   {
+    "label": "Licences / Licensing",
+    "count": 157
+   },
+   {
+    "label": "Planning and Development Application, Zoning By-law",
+    "count": 103
+   },
+   {
+    "label": "Attractions / Tourism",
+    "count": 76
+   }
+  ],
+  "years": [
+   {
+    "year": 2014,
+    "count": 5
+   },
+   {
+    "year": 2015,
+    "count": 116
+   },
+   {
+    "year": 2016,
+    "count": 107
+   },
+   {
+    "year": 2017,
+    "count": 82
+   },
+   {
+    "year": 2018,
+    "count": 49
+   },
+   {
+    "year": 2019,
+    "count": 145
+   },
+   {
+    "year": 2020,
+    "count": 70
+   },
+   {
+    "year": 2021,
+    "count": 113
+   },
+   {
+    "year": 2022,
+    "count": 70
+   },
+   {
+    "year": 2023,
+    "count": 68
+   },
+   {
+    "year": 2024,
+    "count": 71
+   },
+   {
+    "year": 2025,
+    "count": 55
+   },
+   {
+    "year": 2026,
+    "count": 46
+   }
+  ],
+  "snapshot": "2026-10-08"
+ },
+ "suzan-hall": {
+  "total": 53,
+  "term": 0,
+  "first": "2010-08-11",
+  "last": "2010-08-24",
+  "lobbyists": 26,
+  "clients": 19,
+  "subjects": 48,
+  "methods": {
+   "Meetings": 8,
+   "Emails": 20,
+   "Phone calls": 8,
+   "Written": 15,
+   "Other or unreported": 2
+  },
+  "top": [
+   {
+    "label": "Garbage / Recycling",
+    "count": 4
+   },
+   {
+    "label": "Public Health",
+    "count": 4
+   },
+   {
+    "label": "Environment, By-law / Regulation",
+    "count": 2
+   },
+   {
+    "label": "By-law / Regulation",
+    "count": 2
+   },
+   {
+    "label": "Signs",
+    "count": 2
+   }
+  ],
+  "years": [
+   {
+    "year": 2010,
+    "count": 3
+   }
+  ],
+  "snapshot": "2026-10-08"
+ },
+ "vincent-crisanti": {
+  "total": 833,
+  "term": 258,
+  "first": "2010-12-13",
+  "last": "2026-09-03",
+  "lobbyists": 174,
+  "clients": 162,
+  "subjects": 372,
+  "methods": {
+   "Meetings": 322,
+   "Emails": 368,
+   "Phone calls": 71,
+   "Written": 64,
+   "Other or unreported": 8
+  },
+  "top": [
+   {
+    "label": "Economic Development",
+    "count": 221
+   },
+   {
+    "label": "Licences / Licensing",
+    "count": 150
+   },
+   {
+    "label": "By-law / Regulation",
+    "count": 138
+   },
+   {
+    "label": "Attractions / Tourism",
+    "count": 100
+   },
+   {
+    "label": "Transit / TTC",
+    "count": 72
+   }
+  ],
+  "years": [
+   {
+    "year": 2010,
+    "count": 1
+   },
+   {
+    "year": 2011,
+    "count": 23
+   },
+   {
+    "year": 2012,
+    "count": 52
+   },
+   {
+    "year": 2013,
+    "count": 91
+   },
+   {
+    "year": 2014,
+    "count": 76
+   },
+   {
+    "year": 2015,
+    "count": 132
+   },
+   {
+    "year": 2016,
+    "count": 89
+   },
+   {
+    "year": 2017,
+    "count": 71
+   },
+   {
+    "year": 2018,
+    "count": 40
+   },
+   {
+    "year": 2022,
+    "count": 16
+   },
+   {
+    "year": 2023,
+    "count": 83
+   },
+   {
+    "year": 2024,
+    "count": 73
+   },
+   {
+    "year": 2025,
+    "count": 66
+   },
+   {
+    "year": 2026,
+    "count": 20
+   }
+  ],
+  "snapshot": "2026-10-08"
+ }
+}

@@ -7,7 +7,7 @@
 <meta name="description" content="Search 33,796 decisions from Toronto's council record in plain language. Filter by year, topic, ward, outcome — and find every decision with a recorded vote.">
 <link rel="stylesheet" href="assets/css/deme.css">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
-<meta name="theme-color" content="#F6F1E7">
+<meta name="theme-color" content="#0E2A47">
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Deme">
@@ -32,48 +32,54 @@
       <p class="lede">Every decision in the archive, in plain language.
       Search words from the title or topic — or open the filters to narrow
       by year, ward, or outcome.</p>
-      <form class="searchbox" id="searchform" role="search">
-        <label class="visually-hidden" for="q">Search decisions</label>
-        <input type="search" id="q" name="q" placeholder="Search decisions, topics, places…" autocomplete="off">
-        <button class="btn" type="submit">Search</button>
-      </form>
-
-      <details class="filters" id="filters">
-        <summary>Filters</summary>
-        <div class="grid">
-          <div>
-            <label for="f-year">Year</label>
-            <select id="f-year"></select>
+      <div class="search-panel">
+        <form class="searchbox" id="searchform" role="search">
+          <label class="visually-hidden" for="q">Search decisions</label>
+          <input type="search" id="q" name="q" placeholder="Search decisions, topics, places…" autocomplete="off">
+          <button class="btn" type="submit">Search</button>
+        </form>
+        <div class="filters-in">
+          <div class="grid">
+            <div>
+              <label for="f-year">Year</label>
+              <select id="f-year"></select>
+            </div>
+            <div>
+              <label for="f-body">Decided by</label>
+              <select id="f-body"></select>
+            </div>
+            <div>
+              <label for="f-status">Outcome</label>
+              <select id="f-status"></select>
+            </div>
+            <div>
+              <label for="f-ward">Ward</label>
+              <select id="f-ward"></select>
+            </div>
+            <div>
+              <label class="checkline">
+                <input type="checkbox" id="f-vote">
+                <span>Only decisions with a recorded vote</span>
+              </label>
+            </div>
           </div>
-          <div>
-            <label for="f-body">Decided by</label>
-            <select id="f-body"></select>
-          </div>
-          <div>
-            <label for="f-status">Outcome</label>
-            <select id="f-status"></select>
-          </div>
-          <div>
-            <label for="f-ward">Ward</label>
-            <select id="f-ward"></select>
-          </div>
-          <div>
-            <label class="checkline" style="margin-top:1.55rem">
-              <input type="checkbox" id="f-vote">
-              <span>Only decisions with a recorded vote</span>
-            </label>
-          </div>
+          <p class="small" style="margin-top:.8rem">A <strong>recorded vote</strong>
+          is the public list of who voted yes and who voted no. Most decisions
+          don't have one — this filter finds the ones that do.</p>
         </div>
-        <p class="small" style="margin-top:.8rem">A <strong>recorded vote</strong>
-        is the public list of who voted yes and who voted no. Most decisions
-        don't have one — this filter finds the ones that do.</p>
-      </details>
-
-      <div class="toolbar" id="myward-row" hidden>
-        <button type="button" class="chip" id="myward" aria-pressed="false">My ward</button>
+        <div class="profile-strip" id="myward-row" hidden>
+          <p class="ps-text"><strong>Your ward</strong>
+            Narrow the record to decisions for the ward you saved.</p>
+          <button type="button" class="chip" id="myward" aria-pressed="false">My ward</button>
+        </div>
+        <div class="profile-strip" id="profile-row" hidden>
+          <p class="ps-text"><strong>Your Deme profile</strong>
+            <span id="profile-summary"></span></p>
+          <button type="button" class="chip" id="use-profile">Use my profile</button>
+          <button type="button" class="chip" id="clear-profile" hidden>Clear profile filter</button>
+          <button type="button" class="chip" id="dismiss-profile">Dismiss</button>
+        </div>
       </div>
-
-      <div class="toolbar" id="profile-row" hidden><span class="small" id="profile-summary"></span><button type="button" class="chip" id="use-profile">Use my profile</button><button type="button" class="chip" id="clear-profile" hidden>Clear profile filter</button><button type="button" class="chip" id="dismiss-profile">Not now</button></div>
 
       <div id="interpretation" class="interpretation" hidden></div>
       <div id="memberhit"></div>

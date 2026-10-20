@@ -58,8 +58,12 @@ const HomeStore = (() => {
     const role = c.mayor ? "Mayor of Toronto"
       : `Councillor · Ward ${c.ward} — ${esc(c.wardName)}`;
     return `<article class="person">
-      <h3><a href="councillor.html?m=${encodeURIComponent(c.slug)}">${esc(c.name)}</a></h3>
-      <p class="ward">${role}</p>
+      <div class="person-top">${avatarHTML(c)}
+        <div>
+          <h3><a href="councillor.html?m=${encodeURIComponent(c.slug)}">${esc(c.name)}</a></h3>
+          <p class="ward">${role}</p>
+        </div>
+      </div>
       <p class="onestat">Attendance ${c.attendance == null ? "—" : c.attendance + "%"} ·
         ${fmtNum(c.votesCast)} votes cast</p>
     </article>`;
@@ -185,14 +189,17 @@ const HomeStore = (() => {
               .forEach((ys) => ys.forEach((r) => refSet.add(r))));
         } catch (e) { /* fall back to the ward matches alone */ }
       }
+      /* For You is the EXTRA view: the primary ward already has its
+         own section above, so a decision qualifies here only through
+         the watched ward or a followed topic — never through the
+         primary ward alone. (The launch-day visual audit caught the
+         two sections showing the same four cards.) */
       const rows = search.filter((r) => refSet.has(r.ref)
-        || (r.w && ((ward != null && r.w.includes(ward))
-          || (ww != null && r.w.includes(ww)))))
+        || (r.w && ww != null && r.w.includes(ww)))
         .sort((a, b) => (a.date < b.date ? 1 : a.date > b.date ? -1 : 0)).slice(0, 12);
       const cards = (await hydrateCards(rows)).filter(Boolean).slice(0, 4);
       const basis = [];
-      if (ward != null) basis.push(`Ward ${ward}`);
-      if (ww != null && ww !== ward) basis.push(`Ward ${ww}`);
+      if (ww != null) basis.push(`Ward ${ww} (watched)`);
       if (ints.length) {
         const labels = await threadLabels();
         ints.forEach((id) => basis.push(labels[id] || id));
@@ -335,7 +342,16 @@ const HomeStore = (() => {
       let cards = [];
       if (isMayor) {
         const latest = await loadJSON(dataPath("latest.json"));
-        cards = (latest.council || []).slice(0, 4);
+        /* The homepage's own "Latest decisions" section shows the
+           newest Council decisions; repeating the identical four
+           cards here helps no one. Skip anything already on the
+           page and take the next decisions in line. */
+        const shownRefs = new Set([...document.querySelectorAll(
+          '#latest a[href*="decision.html?ref="]')]
+          .map((a) => new URL(a.href).searchParams.get("ref")));
+        cards = (latest.council || [])
+          .filter((c) => !shownRefs.has(c.ref)).slice(0, 4);
+        if (!cards.length) cards = (latest.council || []).slice(0, 4);
       } else {
         const search = await loadJSON(dataPath("search.json"));
         const mine = search

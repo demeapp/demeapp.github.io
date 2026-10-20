@@ -78,21 +78,41 @@ async function init() {
   }
   const { card, year } = found;
   document.title = `${card.title} — Deme`;
-  const topics = (card.topics || []).slice(0, 4).map((t) =>
-    `<a class="chip" href="explore.html?q=${encodeURIComponent(t.split(",")[0])}">${esc(t)}</a>`).join("");
+  /* Topic terms arrive comma-stuffed ("ferries, ferry tickets" as one
+     string). Split them into single chips and drop near-duplicates
+     ("ferry boats" / "ferryboats") — render-time only; the data and
+     the search it feeds stay exactly as published. */
+  const normTopic = (t) => t.toLowerCase().replace(/\s+/g, "")
+    .replace(/ies$/, "y").replace(/s$/, "");
+  const seenT = new Set();
+  const topicTerms = [];
+  for (const t of card.topics || []) {
+    for (const part of String(t).split(",")) {
+      const term = part.trim();
+      if (!term) continue;
+      const key = normTopic(term);
+      if (seenT.has(key)) continue;
+      seenT.add(key);
+      topicTerms.push(term);
+      if (topicTerms.length >= 8) break;
+    }
+    if (topicTerms.length >= 8) break;
+  }
+  const topics = topicTerms.map((t) =>
+    `<a class="chip" href="explore.html?q=${encodeURIComponent(t)}">${esc(t)}</a>`).join("");
   const wards = (card.wards && card.wards.length)
     ? `<p class="small">Ward${card.wards.length > 1 ? "s" : ""} affected: ${card.wards.join(", ")}</p>`
     : (card.citywide
       ? `<p class="small">Citywide — this decision applies across Toronto.</p>` : "");
 
   box.innerHTML = `
-    <p class="kicker">${esc(card.body)} · Item ${esc(card.ref)}</p>
+    <p class="kicker">${esc(card.body)}</p>
     <h1 style="font-size:clamp(1.6rem,4vw,2.4rem)">${esc(card.title)}</h1>
     <div class="outcomeRow">
       <span class="pill">${esc(card.statusLabel)}</span>
       <span class="small">${esc(fmtDate(card.date))}</span>
     </div>
-    ${card.brief ? `<p class="briefBig">${esc(pastVoice(card.brief))}</p>` : ""}
+    ${card.brief ? `<p class="briefBig" id="brief-main">${esc(pastVoice(card.brief))}</p>` : ""}
     ${card.stake ? `<p class="stake stake-prominent">${esc(card.stake)}</p>` : ""}
     ${wards}
     ${topics ? `<div class="chips" style="margin:1rem 0">${topics}</div>` : ""}
@@ -102,6 +122,35 @@ async function init() {
     <p style="margin-top:2rem"><a class="ext" href="${tmmisUrl(card.ref)}"
       target="_blank" rel="noopener">Read the full official record at the
       City of Toronto →</a></p>`;
+
+  /* Keep it simple (restored): where the simpler-worded summary
+     corpus covers this decision (the 2025–2026 items carried from
+     the earlier build), offer the toggle the old build had. The
+     standard brief stays the default; the simple text swaps in
+     place, nothing is re-fetched per toggle. */
+  if (card.brief) {
+    loadJSON(dataPath(`simple-${year}.json`)).then((shard) => {
+      const simple = shard && shard[card.ref];
+      const briefEl = document.getElementById("brief-main");
+      if (!simple || !briefEl) return;
+      briefEl.insertAdjacentHTML("beforebegin", `
+        <div class="brief-head">
+          <span class="bh-lab" id="brief-mode-label">Plain-language summary</span>
+          <button class="simple-toggle" id="simple-toggle" type="button"
+            role="switch" aria-checked="false">
+            <span class="track" aria-hidden="true"></span>Keep it simple</button>
+        </div>`);
+      const toggle = document.getElementById("simple-toggle");
+      const label = document.getElementById("brief-mode-label");
+      let simpleOn = false;
+      toggle.addEventListener("click", () => {
+        simpleOn = !simpleOn;
+        toggle.setAttribute("aria-checked", String(simpleOn));
+        briefEl.textContent = simpleOn ? simple : pastVoice(card.brief);
+        label.textContent = simpleOn ? "Simple summary" : "Plain-language summary";
+      });
+    }).catch(() => { /* no simple corpus for this year — standard brief only */ });
+  }
 
   /* Story threads this decision belongs to. Membership rides on the
      card itself (exporter's `th`); labels come from the tiny summary
@@ -150,8 +199,8 @@ async function init() {
   } else {
     vz.innerHTML = `<div class="notice"><strong>No recorded vote.</strong>
       This decision was made without a name-by-name vote, so no member's
-      position is attached to it in the public record. Only about 1 in 11
-      Council decisions has one.</div>`;
+      position is attached to it in the public record. Only about 9 in
+      every 100 Council decisions has one.</div>`;
   }
 
   const t = detail && detail.text;

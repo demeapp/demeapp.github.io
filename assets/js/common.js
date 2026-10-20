@@ -89,13 +89,14 @@ const NAV = [
 const COLUMN_MARK = `
 <svg class="mark" width="30" height="38" viewBox="0 0 30 38" role="img"
      aria-label="Deme column mark">
-  <rect x="3" y="2" width="24" height="4" rx="1" fill="#B08A4A"/>
-  <rect x="6" y="9" width="3.6" height="19" fill="#101E38"/>
-  <rect x="13.2" y="9" width="3.6" height="19" fill="#101E38"/>
-  <rect x="20.4" y="9" width="3.6" height="19" fill="#101E38"/>
-  <rect x="3" y="31" width="24" height="4" rx="1" fill="#B08A4A"/>
+  <rect x="3" y="2" width="24" height="4" rx="1" fill="#2FBF8F"/>
+  <rect x="6" y="9" width="3.6" height="19" fill="#0E2A47"/>
+  <rect x="13.2" y="9" width="3.6" height="19" fill="#0E2A47"/>
+  <rect x="20.4" y="9" width="3.6" height="19" fill="#0E2A47"/>
+  <rect x="3" y="31" width="24" height="4" rx="1" fill="#2FBF8F"/>
 </svg>`;
 function renderChrome(active) {
+  renderElectionBanner();
   const header = document.querySelector(".site-header");
   if (header) {
     header.innerHTML = `<div class="wrap">
@@ -126,7 +127,7 @@ function renderChrome(active) {
         <nav class="footer-group" aria-label="How it works">
           <p class="footer-h">How it works</p>
           <ul>
-            <li><a href="about.html">About</a></li>
+            <li><a href="about.html">About &amp; method</a></li>
             <li><a href="open-data.html">Open data</a></li>
             <li><a href="my-record.html">My Record</a></li>
             <li><a href="my-record.html#your-deme">Your Deme profile</a></li>
@@ -136,9 +137,62 @@ function renderChrome(active) {
       </div>
       <p class="fineprint">Built from the City of Toronto's published council
       records. Decision archive: 2018–2026 · Voting record: 2006–2026 ·
-      Archive current to Oct 19, 2026. <a href="about.html">How Deme works</a></p>
+      Archive current to Oct 19, 2026 — see
+      <a href="about.html">About &amp; method</a>.</p>
       </div>`;
   }
+}
+
+/* ---------------- member avatars ----------------
+   Official portraits exist for the 25 members in PHOTO_SLUGS (the
+   files live in assets/headshots/, named by slug). Everyone else —
+   and any photo that fails to load — falls back to the member's
+   initials on a navy disc, the old build's pattern. */
+const PHOTO_SLUGS = new Set(["alejandra-bravo", "amber-morley",
+  "anthony-perruzza", "ausma-malik", "brad-bradford", "chris-moise",
+  "dianne-saxe", "frances-nunziata", "gord-perks", "jamaal-myers",
+  "james-pasternak", "jon-burnside", "josh-matlow", "lily-cheng",
+  "mike-colle", "neethan-shan", "nick-mantas", "olivia-chow",
+  "parthi-kandavel", "paul-ainslie", "paula-fletcher",
+  "rachel-chernos-lin", "shelley-carroll", "stephen-holyday",
+  "vincent-crisanti"]);
+const initialsOf = (name) => String(name || "").split(/\s+/)
+  .filter(Boolean).slice(0, 2).map((w) => w.charAt(0)).join("").toUpperCase();
+function avatarHTML(person, size = "") {
+  const img = PHOTO_SLUGS.has(person.slug)
+    ? `<img src="assets/headshots/${encodeURIComponent(person.slug)}.jpg"
+        alt="" loading="lazy" decoding="async" onerror="this.remove()">`
+    : "";
+  return `<span class="avatar ${size}" aria-hidden="true"><span>${esc(initialsOf(person.name))}</span>${img}</span>`;
+}
+/* Term strings in the data use ASCII hyphens ("2022-2026"); display
+   copy everywhere else uses en dashes. Normalise at render. */
+const fmtTerm = (t) => String(t).replace(/(\d{4})-(\d{4})/g, "$1–$2");
+
+/* ---------------- election banner ----------------
+   Dismissible, factual, and self-expiring: it renders only until
+   the Oct 26, 2026 municipal election is over, and a dismissal
+   lasts the session. Injected ahead of the header by renderChrome. */
+function renderElectionBanner() {
+  if (document.getElementById("election-banner")) return;
+  if (new Date() > new Date("2026-10-27T23:59:59")) return;
+  try {
+    if (sessionStorage.getItem("deme.electionBanner") === "off") return;
+  } catch (e) { /* storage unavailable — show it */ }
+  const aside = document.createElement("aside");
+  aside.className = "election-banner";
+  aside.id = "election-banner";
+  aside.setAttribute("aria-label", "Municipal election reminder");
+  aside.innerHTML = `<div class="wrap">
+    <a href="councillors.html">Municipal election October 26 — check your
+      councillor’s record before you vote.</a>
+    <button class="election-close" type="button"
+      aria-label="Dismiss election reminder">×</button></div>`;
+  document.body.insertBefore(aside, document.body.firstChild);
+  aside.querySelector(".election-close").addEventListener("click", () => {
+    aside.hidden = true;
+    try { sessionStorage.setItem("deme.electionBanner", "off"); } catch (e) {}
+  });
 }
 
 /* ---------------- past-voice briefs (W1) ----------------
@@ -237,7 +291,7 @@ function decisionCard(c, opts = {}) {
     <h3><a href="decision.html?ref=${encodeURIComponent(c.ref)}">${esc(c.title)}</a></h3>
     ${c.brief ? `<p class="brief">${esc(pastVoice(c.brief))}</p>` : ""}
     ${c.stake ? `<p class="stake">${esc(c.stake)}</p>` : ""}
-    <p class="more">${more}<span class="muted">${wards}</span></p>
+    <p class="more">${more}${wards ? `<span class="wardtag">${esc(wards.replace(/^ · /, ""))}</span>` : ""}</p>
   </article>`;
 }
 

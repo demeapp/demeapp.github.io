@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Compare councillors — Deme</title>
+<meta name="description" content="Put two Toronto City Council members' recorded votes side by side: how often they voted the same way, and the decisions where they differed.">
+<link rel="stylesheet" href="assets/css/deme.css">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#0E2A47">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Deme">
+<meta property="og:title" content="Compare councillors — Deme">
+<meta property="og:description" content="Put two Toronto City Council members' recorded votes side by side: how often they voted the same way, and the decisions where they differed.">
+<meta property="og:image" content="https://demeapp.github.io/assets/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Compare councillors — Deme">
+<meta name="twitter:description" content="Put two Toronto City Council members' recorded votes side by side: how often they voted the same way, and the decisions where they differed.">
+<meta name="twitter:image" content="https://demeapp.github.io/assets/og-image.png">
+<link rel="apple-touch-icon" href="assets/icon-180.png">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to main content</a>
+<header class="site-header"></header>
+<main id="main">
+  <div class="wrap">
+    <section aria-labelledby="compare-h">
+      <p class="kicker">Councillors</p>
+      <h1 id="compare-h">Compare two councillors</h1>
+      <hr class="rule">
+      <p class="lede">Choose any two members. Deme lines up the recorded
+      votes where both voted yes or no on the same motion — how often they
+      landed on the same side, and the decisions where they differed.</p>
+      <p class="small" style="max-width:44rem">Agreement here is arithmetic,
+      not a grade: members are compared only on shared recorded votes.
+      Absences and declared interests are left out of the comparison —
+      a declared interest is a duty, not a position.</p>
+      <div class="compare-controls">
+        <label>First member
+          <select id="compare-a"><option value="">Loading members…</option></select>
+        </label>
+        <label>Second member
+          <select id="compare-b"><option value="">Choose a second member</option></select>
+        </label>
+      </div>
+      <div id="compare-out" aria-live="polite">
+        <p class="small">Pick two members to see their shared record.</p>
+      </div>
+    </section>
+  </div>
+</main>
+<footer class="site-footer"></footer>
+<script src="assets/js/common.js"></script>
+<script src="assets/js/compare.js"></script>
+<script data-goatcounter="https://demecivic.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>

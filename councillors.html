@@ -7,7 +7,7 @@
 <meta name="description" content="Every Toronto City Council member in the record: who they are, their ward, and their voting record — facts only, no grades.">
 <link rel="stylesheet" href="assets/css/deme.css">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
-<meta name="theme-color" content="#F6F1E7">
+<meta name="theme-color" content="#0E2A47">
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Deme">
@@ -34,10 +34,26 @@
       voting. When a member declares a personal interest in an item, they
       must step back — a duty, not an absence — and those votes never
       count against their attendance.</p>
-      <form class="searchbox" id="filterform" role="search">
-        <label class="visually-hidden" for="pq">Find a member</label>
-        <input type="search" id="pq" placeholder="Find a member by name…" autocomplete="off">
-      </form>
+      <div class="directory-bar">
+        <form class="searchbox" id="filterform" role="search">
+          <label class="visually-hidden" for="pq">Find a member</label>
+          <input type="search" id="pq" placeholder="Find a member by name…" autocomplete="off">
+        </form>
+        <label class="sortlab" for="dir-sort">Sort councillors
+          <select id="dir-sort">
+            <option value="ward">Current first, by ward</option>
+            <option value="name">Name, A to Z</option>
+            <option value="votes">Most votes cast</option>
+            <option value="terms">Most terms served</option>
+            <option value="absence">Absence — highest first</option>
+          </select>
+        </label>
+      </div>
+      <p class="small">Current members show their five most recent recorded
+        votes. Portraits are the members’ official photos; where none is
+        published, the card shows initials instead.</p>
+
+      <p style="margin-top:1.2rem"><a class="btn secondary" href="compare.html">Compare two councillors →</a></p>
 
       <h2 style="margin-top:2.4rem">Council today</h2>
       <div class="people" id="current"><span class="visually-hidden">Loading…</span>
@@ -60,32 +76,64 @@
 <script>
 renderChrome("councillors.html");
 let all = [];
+let recentVotes = {};
+let currentSort = "ward";
+const chipFor = (v) => v === "Yes" ? '<span class="voteYes">Yes</span>'
+  : v === "No" ? '<span class="voteNo">No</span>'
+  : v === "Declared Interest" ? '<span class="voteInt">Declared</span>'
+  : '<span class="voteAbs">Absent</span>';
+function recentList(c) {
+  const rows = recentVotes[c.slug] || [];
+  if (!rows.length) return "";
+  const items = rows.map((r) => `<li>
+      <a href="decision.html?ref=${encodeURIComponent(r.ref)}">${esc(r.title)}
+        <span class="rv-date">${esc(r.date)}</span></a>${chipFor(r.vote)}</li>`).join("");
+  return `<ul class="recent-votes" aria-label="Most recent recorded votes">${items}</ul>`;
+}
 function personCard(c) {
   const role = c.mayor ? "Mayor of Toronto"
     : `Councillor · Ward ${c.ward} — ${esc(c.wardName)}`;
   return `<article class="person">
-    <h3><a href="councillor.html?m=${encodeURIComponent(c.slug)}">${esc(c.name)}</a></h3>
-    <p class="ward">${role}</p>
+    <div class="person-top">${avatarHTML(c)}
+      <div>
+        <h3><a href="councillor.html?m=${encodeURIComponent(c.slug)}">${esc(c.name)}</a></h3>
+        <p class="ward">${role}</p>
+      </div>
+    </div>
     <p class="onestat">Attendance ${c.attendance == null ? "—" : c.attendance + "%"} ·
       ${fmtNum(c.votesCast)} votes cast</p>
+    ${recentList(c)}
   </article>`;
 }
 function render(filter) {
   const q = (filter || "").toLowerCase();
   const cur = all.filter((c) => c.current && c.name.toLowerCase().includes(q));
-  cur.sort((a, b) => (a.mayor ? -1 : b.mayor ? 1 : a.ward - b.ward));
+  if (currentSort === "name") cur.sort((a, b) => a.name.localeCompare(b.name));
+  else if (currentSort === "votes") cur.sort((a, b) => (b.votesCast || 0) - (a.votesCast || 0));
+  else if (currentSort === "terms") cur.sort((a, b) => (b.terms || []).length - (a.terms || []).length);
+  else if (currentSort === "absence") cur.sort((a, b) =>
+    (a.attendance == null ? -1 : a.attendance) - (b.attendance == null ? -1 : b.attendance));
+  else cur.sort((a, b) => (a.mayor ? -1 : b.mayor ? 1 : a.ward - b.ward));
   document.getElementById("current").innerHTML = cur.length
     ? cur.map(personCard).join("")
     : `<p class="small">No current member matches.</p>`;
   const old = all.filter((c) => !c.current && c.name.toLowerCase().includes(q));
   old.sort((a, b) => a.name.localeCompare(b.name));
   document.getElementById("earlier").innerHTML = old.map((c) =>
-    `<li><a href="councillor.html?m=${encodeURIComponent(c.slug)}">${esc(c.name)}</a>
-     <span class="terms">${esc(c.terms.join(" · "))} · ${fmtNum(c.votesCast)} votes cast</span></li>`).join("");
+    `<li>${avatarHTML(c, "sm")}<span><a href="councillor.html?m=${encodeURIComponent(c.slug)}">${esc(c.name)}</a>
+     <span class="terms">${esc(c.terms.map(fmtTerm).join(" · "))} · ${fmtNum(c.votesCast)} votes cast</span></span></li>`).join("");
 }
 loadJSON(dataPath("councillors.json")).then((people) => {
   all = people;
   render("");
+  loadJSON(dataPath("recent-votes.json")).then((rv) => {
+    recentVotes = rv || {};
+    render(document.getElementById("pq").value);
+  }).catch(() => {});
+  document.getElementById("dir-sort").addEventListener("change", (e) => {
+    currentSort = e.target.value;
+    render(document.getElementById("pq").value);
+  });
   let t;
   document.getElementById("pq").addEventListener("input", (e) => {
     clearTimeout(t); t = setTimeout(() => render(e.target.value), 150);

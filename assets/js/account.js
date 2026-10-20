@@ -306,8 +306,20 @@ const DemeAccount = (() => {
   function mountCaptcha(el) {
     if (!DEME_CAPTCHA_KEY || !el) return null;
     const state = { token: "", widgetId: null };
+    /* Loading treatment (restore pass): the slot explains itself
+       while the widget loads, instead of sitting on the widget's
+       own bare "Verifying…" spinner. The token flow is unchanged —
+       tokens still arrive only through the render callback below. */
+    el.innerHTML = `<div class="captcha-wait" role="status">
+      <span class="spin" aria-hidden="true"></span>
+      <span>Loading the security check…</span></div>`;
     loadCaptchaScript().then(() => {
-      if (!window.turnstile) return;
+      if (!window.turnstile) {
+        el.innerHTML = `<div class="captcha-wait"><span>The security
+          check couldn't load — reload the page to try again.</span></div>`;
+        return;
+      }
+      el.innerHTML = "";
       state.widgetId = window.turnstile.render(el, {
         sitekey: DEME_CAPTCHA_KEY,
         theme: "light",
@@ -315,7 +327,12 @@ const DemeAccount = (() => {
         "expired-callback": () => { state.token = ""; },
         "error-callback": () => { state.token = ""; },
       });
-    }).catch(() => { /* the submit handlers report the missing token */ });
+    }).catch(() => {
+      el.innerHTML = `<div class="captcha-wait"><span>The security
+        check couldn't load — check your connection and reload the
+        page.</span></div>`;
+      /* the submit handlers also report the missing token */
+    });
     return state;
   }
 

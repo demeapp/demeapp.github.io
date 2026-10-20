@@ -35,9 +35,9 @@ function myCouncillor() {
    the input, the confirm/picker states, its summary state when a
    ward is set (ward name + councillor + Change), and its built-in
    list fallback. Both finders re-mount on any change so what they
-   show is always the stored truth. The profile card carries the
-   postal-code privacy note once for the whole area, so the finders
-   here suppress their per-finder copy (privacyNote: false). */
+   show is always the stored truth. Each finder carries its own
+   postal-code privacy note (the card-level explainer was removed
+   with the postal-area profile field, Oct 20, 2026). */
 function mountFinders() {
   const primaryEl = document.getElementById("ward-finder-primary");
   if (primaryEl) {
@@ -45,7 +45,6 @@ function mountFinders() {
       idPrefix: "rec1",
       people,
       label: "Find your ward by postal code",
-      privacyNote: false,
       current: VoteStore.getWard(),
       exclude: null,
       noneLabel: "No ward set",
@@ -69,7 +68,6 @@ function mountFinders() {
       idPrefix: "rec2",
       people,
       label: "Also watch a second ward",
-      privacyNote: false,
       current: VoteStore.getWatchWard(),
       exclude: VoteStore.getWard(),
       noneLabel: "No second ward",

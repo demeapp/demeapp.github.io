@@ -11,9 +11,12 @@
    Design rules that hold at activation:
    - Passwords go only to the auth provider's HTTPS endpoint. No Deme
      code stores them, logs them, or sends them anywhere else.
-   - The account profile is: name, postal FSA (first 3 chars
-     only — the same rule as the ward finder), primary ward, watched
-     ward, interests, alerts opt-in. The email address of record
+   - The account profile is: name, primary ward, watched ward,
+     interests, alerts opt-in. (A postal area was briefly part of
+     the profile; the owner dropped it Oct 20, 2026 — ward only.
+     The profiles.fsa column remains in the schema, unused, and a
+     value stored there by an earlier build is never read,
+     written, or exported.) The email address of record
      lives only with the auth provider (auth.users) — it is never
      written into the profiles row (F-4). Picks are NOT in the account
      payload and never leave the device; there is deliberately no
@@ -187,7 +190,6 @@ const DemeAccount = (() => {
       } else {
         await upsertRow({
           name: row.name || pend.name,
-          fsa: row.fsa || pend.fsa,
           alerts_opt_in: Boolean(row.alerts_opt_in),
           ...localPayload(),
         });
@@ -195,17 +197,9 @@ const DemeAccount = (() => {
       try { localStorage.removeItem(PENDING_KEY); } catch (e) {}
       return;
     }
-    let ward = VoteStore.getWard();
-    const fsa = pend.fsa;
-    if (ward == null && fsa) {
-      try {
-        const wards = await WardFinder.wardsFor(fsa);
-        if (wards && wards.length === 1) ward = wards[0];
-      } catch (e) { /* ward stays unset; the editor offers the finder */ }
-    }
+    const ward = VoteStore.getWard();
     await upsertRow({
       name: pend.name,
-      fsa,
       alerts_opt_in: pend.alerts,
       alerts_consent_at: pend.alerts ? new Date().toISOString() : null,
       ward,
@@ -236,24 +230,27 @@ const DemeAccount = (() => {
     const email = session && session.user && session.user.email;
     if (p && p.email && email
         && String(p.email).toLowerCase() === String(email).toLowerCase()) {
+      /* A pending record written before the postal area was
+         dropped may still carry an fsa key — it is ignored here
+         (never read into the account), and bootstrapProfile
+         removes the record on every path, as always. */
       return {
         name: p.name || "",
-        fsa: p.fsa || null,
         alerts: Boolean(p.alerts_opt_in),
       };
     }
-    return { name: "", fsa: null, alerts: false };
+    return { name: "", alerts: false };
   }
 
   /* Push local profile edits up while signed in (wards / interests
-     changed in the editors below). Name, FSA and the alerts opt-in
+     changed in the editors below). Name and the alerts opt-in
      are account-side fields and are preserved from the row. */
   async function syncFromLocal() {
     if (!session || !accountProfile) return;
     const stamp = VoteStore.exportAll().profileUpdatedAt;
     if (!stamp || stamp === lastSyncedStamp) return;
     try {
-      /* RT-02: name, FSA and the alerts opt-in are account-side
+      /* RT-02: name and the alerts opt-in are account-side
          fields — never push them from this device's in-memory
          copy of the row, which can be hours stale. Pushed over
          a fresher server row, a stale opt-in would let an
@@ -267,7 +264,6 @@ const DemeAccount = (() => {
       accountProfile = fresh;
       await upsertRow({
         name: fresh.name || "",
-        fsa: fresh.fsa || null,
         alerts_opt_in: Boolean(fresh.alerts_opt_in),
         ...localPayload(),
       });
@@ -314,6 +310,7 @@ const DemeAccount = (() => {
       if (!window.turnstile) return;
       state.widgetId = window.turnstile.render(el, {
         sitekey: DEME_CAPTCHA_KEY,
+        theme: "light",
         callback: (t) => { state.token = t; },
         "expired-callback": () => { state.token = ""; },
         "error-callback": () => { state.token = ""; },
@@ -433,12 +430,6 @@ const DemeAccount = (() => {
             <input type="password" id="su-pass" autocomplete="new-password" required>
             <p class="small">Set and checked by our sign-in provider —
             Deme never sees or stores it.</p></div>
-          <div class="field"><label for="su-pc">Postal code <span class="muted">(optional — only the first 3 characters are kept)</span></label>
-            <input type="text" id="su-pc" autocomplete="postal-code"
-              autocapitalize="characters" spellcheck="false"
-              placeholder="First 3 characters is enough">
-            <p class="small">Used once to find your ward. Only the first
-            three characters are stored — never the full code.</p></div>
           <label class="checkline"><input type="checkbox" id="su-alerts">
             Email me the Council alerts digest for my wards and topics</label>
           <div class="captcha-slot" id="su-captcha"></div>
@@ -480,8 +471,6 @@ const DemeAccount = (() => {
       const name = zone.querySelector("#su-name").value.trim();
       const email = zone.querySelector("#su-email").value.trim();
       const pass = zone.querySelector("#su-pass").value;
-      const pc = zone.querySelector("#su-pc").value.toUpperCase()
-        .replace(/[^A-Z0-9]/g, "").slice(0, 3);
       if (!name || !email || !pass) {
         errLine(err, "Name, email and a password are all needed to create the account.");
         return;
@@ -490,16 +479,12 @@ const DemeAccount = (() => {
         errLine(err, "That password is too short — passwords need at least 10 characters.");
         return;
       }
-      if (pc && !/^[A-Z]\d[A-Z]$/.test(pc)) {
-        errLine(err, "That postal code doesn't look right yet — the first three characters are enough (like M5V), or leave it blank.");
-        return;
-      }
       try {
         /* RT-01: the pending record carries the address it was
            typed for; bootstrapProfile consumes it only for that
            same address (see pendingForSession). */
         localStorage.setItem(PENDING_KEY, JSON.stringify({
-          email, name, fsa: pc || null,
+          email, name,
           alerts_opt_in: zone.querySelector("#su-alerts").checked,
         }));
       } catch (e2) {}
@@ -607,9 +592,10 @@ const DemeAccount = (() => {
       if (res.ok) {
         resetBlock.innerHTML = `<p class="wf-note">If an account exists
           for that email, a reset link is on its way. Check your inbox
-          and use it soon — reset links expire. If you didn't ask for
-          a reset, you can ignore the email; your password hasn't
-          changed.</p>`;
+          and use it soon — reset links expire — and check your spam
+          folder if it doesn't show up in a few minutes. If you didn't
+          ask for a reset, you can ignore the email; your password
+          hasn't changed.</p>`;
         return;
       }
       let msg = "";
@@ -710,14 +696,6 @@ const DemeAccount = (() => {
         <div class="field"><label for="ap-name">Name</label>
           <input type="text" id="ap-name" autocomplete="name"
             value="${esc(row.name || "")}"></div>
-        <div class="field"><label for="ap-pc">Postal area <span class="muted">(first 3 characters only — what's stored)</span></label>
-          <input type="text" id="ap-pc" autocapitalize="characters"
-            spellcheck="false" value="${esc(row.fsa || "")}"
-            placeholder="e.g. M5V">
-          <p class="small">Changing this re-derives your ward below when
-          the area sits in a single ward; where it straddles a boundary,
-          pick your ward with the finder.</p></div>
-        ${row.fsa && row.ward == null ? `<p class="wf-note">Your postal area spans more than one ward — pick yours so your record and alerts line up.</p>` : ""}
         <div class="profile-field"><div id="ap-ward"></div></div>
         <div class="profile-field"><div id="ap-watch"></div></div>
         <div class="profile-field">
@@ -738,7 +716,7 @@ const DemeAccount = (() => {
       <div class="account-export">
         <h3>Your account data</h3>
         <p class="small">Download the record Deme holds on its server
-        for your account — your name, email of record, postal area,
+        for your account — your name, email of record,
         wards, topics, and your alerts opt-in and consent record — as
         a JSON file. This is the server record only; your picks and
         this device's profile are exported separately, with the
@@ -751,7 +729,7 @@ const DemeAccount = (() => {
       <div class="account-danger">
         <h3>Delete your account</h3>
         <p class="small">Deletes your account and everything Deme holds
-        on its server for you — name, email, postal area, wards, topics
+        on its server for you — name, email, wards, topics
         and your alerts opt-in. Your picks and profile on this device
         are yours and stay unless you erase them below.</p>
         <div id="del-zone">
@@ -765,12 +743,11 @@ const DemeAccount = (() => {
     refreshSyncLine();
 
     const wardFinder = WardFinder.mount(zone.querySelector("#ap-ward"), {
-      idPrefix: "ap1", people, label: "Your ward", privacyNote: false,
+      idPrefix: "ap1", people, label: "Your ward",
       current: row.ward ?? VoteStore.getWard(), noneLabel: "No ward set",
     });
     const watchFinder = WardFinder.mount(zone.querySelector("#ap-watch"), {
       idPrefix: "ap2", people, label: "Also watch a second ward",
-      privacyNote: false,
       current: row.watch_ward ?? VoteStore.getWatchWard(),
       exclude: row.ward ?? VoteStore.getWard(), noneLabel: "No second ward",
       inputLabel: "Postal code of the area to watch",
@@ -779,29 +756,11 @@ const DemeAccount = (() => {
       b.addEventListener("click", () => b.setAttribute("aria-pressed",
         b.getAttribute("aria-pressed") === "true" ? "false" : "true")));
 
-    zone.querySelector("#ap-pc").addEventListener("change", async (e) => {
-      const fsa = e.target.value.toUpperCase().replace(/[^A-Z0-9]/g, "").slice(0, 3);
-      e.target.value = fsa;
-      if (/^[A-Z]\d[A-Z]$/.test(fsa)) {
-        try {
-          const wards = await WardFinder.wardsFor(fsa);
-          if (wards && wards.length === 1) wardFinder.set(wards[0]);
-        } catch (e2) { /* finder remains for manual picking */ }
-      }
-    });
-
     zone.querySelector("#acc-profile").addEventListener("submit", async (e) => {
       e.preventDefault();
       const err = zone.querySelector("#ap-err");
-      const fsaRaw = zone.querySelector("#ap-pc").value.toUpperCase()
-        .replace(/[^A-Z0-9]/g, "").slice(0, 3);
-      if (fsaRaw && !/^[A-Z]\d[A-Z]$/.test(fsaRaw)) {
-        errLine(err, "The postal area should be three characters — a letter, a number, a letter — or blank.");
-        return;
-      }
       const fields = {
         name: zone.querySelector("#ap-name").value.trim(),
-        fsa: fsaRaw || null,
         ward: wardFinder.value(),
         watch_ward: watchFinder.value(),
         interests: [...zone.querySelectorAll('#ap-ints .chip[aria-pressed="true"]')]
@@ -839,6 +798,11 @@ const DemeAccount = (() => {
            device beyond what sync already placed in the row. */
         const row = (await fetchRow()) || accountProfile || {};
         const payload = { ...row, email: session.user.email || "" };
+        /* The postal area was dropped from the profile (owner
+           decision, Oct 20, 2026); a row written by an earlier
+           build may still carry the retired fsa column — it is
+           never part of the export. */
+        delete payload.fsa;
         const blob = new Blob(
           [JSON.stringify(payload, null, 2)],
           { type: "application/json" });
@@ -1100,7 +1064,7 @@ const DemeAccount = (() => {
       note.textContent = "Your picks never leave this browser, and "
         + "Deme keeps no tally of visitors' positions. Your local "
         + "profile lives in this browser's storage; if you create an "
-        + "account, your name, email, postal area (first 3 characters), "
+        + "account, your name, email, "
         + "wards and topics are also held on our server so they can "
         + "follow you — see the privacy policy for exactly what's held "
         + "and how to delete it.";

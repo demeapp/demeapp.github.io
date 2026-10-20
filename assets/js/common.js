@@ -127,8 +127,10 @@ function renderChrome(active) {
           <p class="footer-h">How it works</p>
           <ul>
             <li><a href="about.html">About</a></li>
+            <li><a href="open-data.html">Open data</a></li>
             <li><a href="my-record.html">My Record</a></li>
             <li><a href="my-record.html#your-deme">Your Deme profile</a></li>
+            <li><a href="privacy.html">Privacy policy</a></li>
           </ul>
         </nav>
       </div>
@@ -276,8 +278,18 @@ const DEME_ALERTS_FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLSejGu1-j2
    anon key is a public client key by design; row-level security, not
    secrecy, protects the data). Passwords are handled only by the auth
    provider; no Deme code ever stores or transmits one anywhere else. */
-const DEME_SUPABASE_URL = "";
-const DEME_SUPABASE_ANON_KEY = "";
+const DEME_SUPABASE_URL = "https://pesvnphmgbzejkoqbmzt.supabase.co";
+const DEME_SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InBlc3ZucGhtZ2J6ZWprb3FibXp0Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTI0NjM1MjYsImV4cCI6MjEwODAzOTUyNn0.CaZpwARN1TsRDCrAq6wbYFQ_VLZn-AkUjHK0ujn0gIk";
+
+/* Sign-up abuse protection (CAPTCHA), staged the same way: empty =
+   no widget renders, no third-party script is loaded, and auth
+   requests are exactly as before. At activation the parent sets
+   this to the Cloudflare Turnstile SITE key (public by design) and
+   enables Turnstile in the Supabase dashboard (Authentication →
+   Bot and Abuse Protection), where the matching SECRET key lives —
+   that dashboard half is a publish-step item, not code. See
+   ACTIVATION-AUDIT-PROTOCOL.md F-6 / gate G-10. */
+const DEME_CAPTCHA_KEY = "0x4AAAAAAFeAvARA30IkxZms";
 const VoteStore = (() => {
   const KEY = "deme.votes.v2", OLD = "deme.votes.v1";
   let mem = null; /* session-only state if a migration cannot persist */

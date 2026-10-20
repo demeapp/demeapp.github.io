@@ -688,10 +688,35 @@ html.js .entry-shell { min-height: 26.6rem; }
 }
 .account-form h3 { margin-bottom: .8rem; }
 .account-danger { margin-top: 1.8rem; border-top: 1px solid var(--line-soft); padding-top: 1.2rem; }
+.account-export { margin-top: 1.8rem; border-top: 1px solid var(--line-soft); padding-top: 1.2rem; }
+.captcha-slot { margin-top: .8rem; }
+.captcha-slot:empty { display: none; }
 .btn.danger {
   background: transparent; color: var(--no); border-color: var(--no);
 }
 .btn.danger:hover { background: rgba(122,59,46,.08); }
+
+/* Unified profile card (My Record, activation finish): the ward
+   finders, topics, alerts and the account panel live in ONE card.
+   Blocks are separated by hairlines rather than stacked cards, and
+   the account panel's own card chrome is flattened into the card so
+   the whole area reads as a single system. */
+.profile-block {
+  margin-top: 1.05rem; padding-top: 1.05rem;
+  border-top: 1px solid var(--line-soft);
+}
+.profile-done { margin: .4rem 0 0; }
+.profile-card #account-zone {
+  margin-top: 1.05rem; padding-top: 1.05rem;
+  border-top: 1px solid var(--line-soft);
+}
+.profile-card #account-zone:empty {
+  margin-top: 0; padding-top: 0; border-top: 0;
+}
+.profile-card #account-zone .account-card {
+  border: 0; border-radius: 0; box-shadow: none;
+  background: transparent; padding: 0;
+}
 
 /* ---------- print (decision pages especially) ---------- */
 @media print {

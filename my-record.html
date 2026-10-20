@@ -31,27 +31,29 @@
       <p class="lede">Everything here is computed on this device, from your
       saved picks and the public record. Nothing leaves your browser.</p>
 
-      <div id="account-zone" style="margin-top:1.6rem"></div>
-
-      <div class="card record-card" style="margin-top:1.6rem">
-        <h2 style="font-size:1.25rem">Your ward</h2>
-        <p class="small">Set your ward so Deme can put your councillor's
-        actual votes beside your picks.</p>
-        <div id="ward-finder-primary"></div>
-        <p id="wardwho" class="small" style="margin-top:.6rem"></p>
-      </div>
-
-      <div class="card record-card" id="your-deme" style="margin-top:1.6rem">
+      <div class="card record-card profile-card" id="your-deme" style="margin-top:1.6rem">
         <h2 style="font-size:1.25rem">Your Deme</h2>
+        <p class="small">Set your ward so Deme can put your councillor's
+        actual votes beside your picks. Everything on this card is kept
+        on this device. Find a ward by postal code: only the first 3
+        characters are used, right here in your browser — your full
+        postal code is never stored or sent anywhere. Only the ward
+        you choose is saved.</p>
         <div id="continuity"></div>
-        <div class="profile-field">
+        <div class="profile-block">
+          <div id="ward-finder-primary"></div>
+        </div>
+        <div class="profile-block">
           <div id="ward-finder-watch"></div>
         </div>
-        <div class="profile-field">
+        <div class="profile-block">
           <label id="record-topics-l">Topics you follow</label>
+          <div id="topics-summary"></div>
           <div class="chips" id="interests" role="group" aria-labelledby="record-topics-l"></div>
+          <p class="profile-done" id="topics-done" hidden><button class="wf-listtoggle" type="button" id="topics-done-btn">Done</button></p>
         </div>
-        <div id="profile-alerts"></div>
+        <div class="profile-block" id="profile-alerts"></div>
+        <div id="account-zone"></div>
       </div>
 
       <div id="agreement" style="margin-top:1.6rem"></div>

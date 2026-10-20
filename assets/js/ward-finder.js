@@ -12,7 +12,11 @@
 
    An FSA that straddles a ward boundary is never guessed: the finder
    presents every candidate ward with its councillor and a street /
-   landmark cue, and the visitor's pick is what's used. */
+   landmark cue, and the visitor's pick is what's used.
+
+   Callers that carry the privacy note once for a whole area (the
+   My Record profile card) pass privacyNote: false to suppress the
+   per-finder note; every other caller gets the note as before. */
 "use strict";
 
 /* Ward cues live in data/ward-cues.json, loaded lazily on first lookup —
@@ -66,9 +70,9 @@ const WardFinder = (() => {
               aria-label="${esc(opts.inputLabel || "Your postal code")}">
             <button class="${esc(opts.btnClass || "btn")}" type="button" id="${p}-find">Find my ward</button>
           </div>
-          <p class="wf-privacy">Only the first 3 characters are used, right
+          ${opts.privacyNote === false ? "" : `<p class="wf-privacy">Only the first 3 characters are used, right
           here in your browser — your full postal code is never stored or
-          sent anywhere. Only the ward you choose is saved.</p>
+          sent anywhere. Only the ward you choose is saved.</p>`}
           <div class="wf-result" id="${p}-result" aria-live="polite"></div>
           <p class="wf-listline"><button class="wf-listtoggle" type="button"
             id="${p}-lt" aria-expanded="false">or find your ward in the list</button></p>

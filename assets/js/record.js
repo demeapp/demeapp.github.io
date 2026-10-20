@@ -5,7 +5,6 @@
 "use strict";
 renderChrome("my-record.html");
 
-const wardWho = document.getElementById("wardwho");
 const interestsBox = document.getElementById("interests");
 const continuityBox = document.getElementById("continuity");
 const alertsBox = document.getElementById("profile-alerts");
@@ -32,18 +31,13 @@ function myCouncillor() {
   if (!w) return null;
   return people.find((p) => p.current && p.ward === w) || null;
 }
-function renderWardWho() {
-  const c = myCouncillor();
-  wardWho.innerHTML = c
-    ? `Your councillor: <a href="councillor.html?m=${encodeURIComponent(c.slug)}">
-       <strong>${esc(c.name)}</strong></a> — Ward ${c.ward}, ${esc(c.wardName)}`
-    : (VoteStore.getWard() ? "" : "No ward set yet.");
-}
-
 /* Ward picking is postal-code-first (WardFinder): the finder owns
-   the input, the confirm/picker states, and its built-in list
-   fallback. Both finders re-mount on any change so what they show is
-   always the stored truth. */
+   the input, the confirm/picker states, its summary state when a
+   ward is set (ward name + councillor + Change), and its built-in
+   list fallback. Both finders re-mount on any change so what they
+   show is always the stored truth. The profile card carries the
+   postal-code privacy note once for the whole area, so the finders
+   here suppress their per-finder copy (privacyNote: false). */
 function mountFinders() {
   const primaryEl = document.getElementById("ward-finder-primary");
   if (primaryEl) {
@@ -51,6 +45,7 @@ function mountFinders() {
       idPrefix: "rec1",
       people,
       label: "Find your ward by postal code",
+      privacyNote: false,
       current: VoteStore.getWard(),
       exclude: null,
       noneLabel: "No ward set",
@@ -62,7 +57,6 @@ function mountFinders() {
           && VoteStore.getWatchWard() === VoteStore.getWard()) {
           VoteStore.setWatchWard(null);
         }
-        renderWardWho();
         renderContinuity();
         mountFinders();
         renderPicks();
@@ -75,6 +69,7 @@ function mountFinders() {
       idPrefix: "rec2",
       people,
       label: "Also watch a second ward",
+      privacyNote: false,
       current: VoteStore.getWatchWard(),
       exclude: VoteStore.getWard(),
       noneLabel: "No second ward",
@@ -87,12 +82,40 @@ function mountFinders() {
   }
 }
 
-/* Topic chips: the 11 threads, toggles save the full set on every tap. */
+/* Topic chips: the 11 threads, toggles save the full set on every tap.
+   Once topics are chosen, the block rests as a one-line summary —
+   the same compact summary state the finders use when a ward is
+   set — until Change reopens the editor. */
+let topicsEditing = false;
 function renderInterests() {
   if (!interestsBox) return;
   const ints = VoteStore.getInterests();
+  const summaryBox = document.getElementById("topics-summary");
+  const doneRow = document.getElementById("topics-done");
+  if (ints.length && !topicsEditing) {
+    const names = ints.map((id) => {
+      const t = threadThreads.find((x) => x.id === id);
+      return t ? t.label : id;
+    });
+    if (summaryBox) {
+      summaryBox.innerHTML = `<p class="wf-set"><span><strong>Following:</strong>
+        ${esc(names.join(", "))}</span>
+        <button class="wf-listtoggle" type="button" id="topics-change">Change</button></p>`;
+      summaryBox.querySelector("#topics-change").addEventListener("click", () => {
+        topicsEditing = true;
+        renderInterests();
+      });
+    }
+    interestsBox.innerHTML = "";
+    interestsBox.style.display = "none";
+    if (doneRow) doneRow.hidden = true;
+    return;
+  }
+  if (summaryBox) summaryBox.innerHTML = "";
+  interestsBox.style.display = "";
   interestsBox.innerHTML = threadThreads.map((t) =>
     `<button type="button" class="chip" data-id="${esc(t.id)}" aria-pressed="${ints.includes(t.id)}">${esc(t.label)}</button>`).join("");
+  if (doneRow) doneRow.hidden = !ints.length;
 }
 
 /* Continuity, same snapshot discipline as Home: no snapshot + a known
@@ -220,7 +243,6 @@ async function init() {
     threadThreads = td.threads || [];
   } catch (e) { threadThreads = []; }
   mountFinders();
-  renderWardWho();
   renderContinuity();
   renderInterests();
   renderAlerts();
@@ -231,6 +253,13 @@ async function init() {
       btn.getAttribute("aria-pressed") === "true" ? "false" : "true");
     VoteStore.setInterests([...interestsBox.querySelectorAll(
       '.chip[aria-pressed="true"]')].map((b) => b.dataset.id));
+    const doneRow = document.getElementById("topics-done");
+    if (doneRow) doneRow.hidden = !VoteStore.getInterests().length;
+  });
+  const topicsDoneBtn = document.getElementById("topics-done-btn");
+  if (topicsDoneBtn) topicsDoneBtn.addEventListener("click", () => {
+    topicsEditing = false;
+    renderInterests();
   });
   document.getElementById("export").addEventListener("click", () => {
     const blob = new Blob(
@@ -245,7 +274,7 @@ async function init() {
   document.getElementById("reset").addEventListener("click", () => {
     if (confirm("Erase all your Deme picks, your ward and Your Deme from this browser?")) {
       VoteStore.resetAll();
-      renderWardWho();
+      topicsEditing = false;
       renderContinuity();
       mountFinders();
       renderInterests();

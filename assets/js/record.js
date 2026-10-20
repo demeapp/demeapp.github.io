@@ -80,6 +80,7 @@ function mountFinders() {
       },
     });
   }
+  renderProfileChrome();
 }
 
 /* Topic chips: the 11 threads, toggles save the full set on every tap.
@@ -109,6 +110,7 @@ function renderInterests() {
     interestsBox.innerHTML = "";
     interestsBox.style.display = "none";
     if (doneRow) doneRow.hidden = true;
+    renderProfileChrome();
     return;
   }
   if (summaryBox) summaryBox.innerHTML = "";
@@ -116,7 +118,69 @@ function renderInterests() {
   interestsBox.innerHTML = threadThreads.map((t) =>
     `<button type="button" class="chip" data-id="${esc(t.id)}" aria-pressed="${ints.includes(t.id)}">${esc(t.label)}</button>`).join("");
   if (doneRow) doneRow.hidden = !ints.length;
+  renderProfileChrome();
 }
+
+/* Profile chrome (owner direction, Oct 20): the Your Deme setup
+   blocks are a setup/edit surface, not permanent furniture. Until
+   a home ward exists on this device, the full setup shows exactly
+   as before. Once one does, the setup rests as a compact summary —
+   home ward, watched ward, topics count, Council alerts state —
+   and Edit profile reopens the full form in place; every control
+   in it saves exactly as it always has (each on the spot), and the
+   form's Done rests the card as the summary again. This only ever
+   shows or hides the two regions and reads stored state — it
+   writes nothing, and the account panel leads the card. The
+   alerts segment reads the account layer's opt-in when accounts
+   are enabled (false signed out; omitted while a signed-in row
+   is still loading, then filled in when the account layer next
+   refreshes — see DemeAccount.alertsOptIn). */
+let profileEditing = false;
+function renderProfileChrome() {
+  const setup = document.getElementById("profile-setup");
+  const summary = document.getElementById("profile-summary");
+  if (!setup || !summary) return;
+  const doneRow = document.getElementById("profile-done");
+  const ward = VoteStore.getWard();
+  if (ward == null) profileEditing = false;
+  if (ward != null && !profileEditing) {
+    const wi = WardFinder.info(people, ward);
+    const parts = [`<strong>Ward ${ward}${wi.name ? ` — ${esc(wi.name)}` : ""}</strong>`];
+    const watch = VoteStore.getWatchWard();
+    if (watch != null) {
+      const wwi = WardFinder.info(people, watch);
+      parts.push(`Watching Ward ${watch}${wwi.name ? ` — ${esc(wwi.name)}` : ""}`);
+    }
+    const ints = VoteStore.getInterests();
+    parts.push(ints.length
+      ? `${ints.length} topic${ints.length === 1 ? "" : "s"} followed`
+      : "No topics followed");
+    let alertsVal = false;
+    if (window.DemeAccount && window.DemeAccount.enabled()
+      && typeof window.DemeAccount.alertsOptIn === "function") {
+      alertsVal = window.DemeAccount.alertsOptIn();
+    }
+    if (alertsVal != null) {
+      parts.push(`Council alerts ${alertsVal ? "on" : "off"}`);
+    }
+    summary.innerHTML = `<h2 style="font-size:1.25rem">Your Deme</h2>
+      <p class="wf-set"><span>${parts.join(" · ")}</span>
+      <button class="wf-listtoggle" type="button" id="profile-edit">Edit profile</button></p>`;
+    summary.querySelector("#profile-edit").addEventListener("click", () => {
+      profileEditing = true;
+      renderProfileChrome();
+    });
+    summary.hidden = false;
+    setup.hidden = true;
+    if (doneRow) doneRow.hidden = true;
+    return;
+  }
+  summary.hidden = true;
+  summary.innerHTML = "";
+  setup.hidden = false;
+  if (doneRow) doneRow.hidden = !(ward != null && profileEditing);
+}
+window.DemeRecord = { refreshProfileSummary: renderProfileChrome };
 
 /* Continuity, same snapshot discipline as Home: no snapshot + a known
    current rep primes the snapshot silently; a snapshot naming someone
@@ -260,6 +324,13 @@ async function init() {
   if (topicsDoneBtn) topicsDoneBtn.addEventListener("click", () => {
     topicsEditing = false;
     renderInterests();
+  });
+  const profileDoneBtn = document.getElementById("profile-done-btn");
+  if (profileDoneBtn) profileDoneBtn.addEventListener("click", () => {
+    profileEditing = false;
+    topicsEditing = false;
+    renderInterests();
+    renderProfileChrome();
   });
   document.getElementById("export").addEventListener("click", () => {
     const blob = new Blob(

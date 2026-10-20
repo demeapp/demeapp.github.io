@@ -717,6 +717,17 @@ html.js .entry-shell { min-height: 26.6rem; }
   border: 0; border-radius: 0; box-shadow: none;
   background: transparent; padding: 0;
 }
+/* The account panel leads the card, so it carries no separator of
+   its own; the setup region below it takes the standard block
+   separation instead (its summary rest state is a .profile-block
+   and already carries one). */
+.profile-card #account-zone:first-child {
+  margin-top: 0; padding-top: 0; border-top: 0;
+}
+.profile-card #profile-setup {
+  margin-top: 1.05rem; padding-top: 1.05rem;
+  border-top: 1px solid var(--line-soft);
+}
 
 /* ---------- print (decision pages especially) ---------- */
 @media print {

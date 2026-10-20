@@ -333,6 +333,17 @@ const DemeAccount = (() => {
     } catch (e) { /* a re-render remounts the widget anyway */ }
   }
 
+  /* Read-only Council alerts state for My Record's profile
+     summary (record.js): false when signed out, null while
+     signed in but the profile row hasn't loaded yet, otherwise
+     the row's opt-in. Pure read — the summary re-renders at the
+     same points the alerts box does (refreshAlertsBox). */
+  function alertsOptIn() {
+    if (!session) return false;
+    if (!accountProfile) return null;
+    return Boolean(accountProfile.alerts_opt_in);
+  }
+
   /* ---------------- rendering ---------------- */
   function renderDisabled() {
     if (!zone) return;
@@ -959,6 +970,9 @@ const DemeAccount = (() => {
   function refreshAlertsBox() {
     const box = document.getElementById("profile-alerts");
     if (box && enabled()) renderAlerts(box);
+    if (window.DemeRecord && window.DemeRecord.refreshProfileSummary) {
+      window.DemeRecord.refreshProfileSummary();
+    }
   }
 
   /* ---------------- password reset — landing (F-8) ----------------
@@ -1154,7 +1168,7 @@ const DemeAccount = (() => {
     boot();
   }
 
-  return { enabled, renderAlerts };
+  return { enabled, renderAlerts, alertsOptIn };
 })();
 
 window.DemeAccount = DemeAccount;

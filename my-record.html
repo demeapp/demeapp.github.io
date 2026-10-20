@@ -32,27 +32,6 @@
       saved picks and the public record. Nothing leaves your browser.</p>
 
       <div class="card record-card profile-card" id="your-deme" style="margin-top:1.6rem">
-        <h2 style="font-size:1.25rem">Your Deme</h2>
-        <p class="small">Set your ward so Deme can put your councillor's
-        actual votes beside your picks. Everything on this card is kept
-        on this device. Find a ward by postal code: only the first 3
-        characters are used, right here in your browser — your full
-        postal code is never stored or sent anywhere. Only the ward
-        you choose is saved.</p>
-        <div id="continuity"></div>
-        <div class="profile-block">
-          <div id="ward-finder-primary"></div>
-        </div>
-        <div class="profile-block">
-          <div id="ward-finder-watch"></div>
-        </div>
-        <div class="profile-block">
-          <label id="record-topics-l">Topics you follow</label>
-          <div id="topics-summary"></div>
-          <div class="chips" id="interests" role="group" aria-labelledby="record-topics-l"></div>
-          <p class="profile-done" id="topics-done" hidden><button class="wf-listtoggle" type="button" id="topics-done-btn">Done</button></p>
-        </div>
-        <div class="profile-block" id="profile-alerts"></div>
         <div id="account-zone">
           <div class="card record-card account-card">
             <p class="kicker">Accounts</p>
@@ -65,6 +44,31 @@
             appear, everything on this page still works in full on this
             device.</p>
           </div>
+        </div>
+        <div id="continuity"></div>
+        <div class="profile-block" id="profile-summary" hidden></div>
+        <div id="profile-setup">
+          <h2 style="font-size:1.25rem">Your Deme</h2>
+          <p class="small">Set your ward so Deme can put your councillor's
+          actual votes beside your picks. Everything on this card is kept
+          on this device. Find a ward by postal code: only the first 3
+          characters are used, right here in your browser — your full
+          postal code is never stored or sent anywhere. Only the ward
+          you choose is saved.</p>
+          <div class="profile-block">
+            <div id="ward-finder-primary"></div>
+          </div>
+          <div class="profile-block">
+            <div id="ward-finder-watch"></div>
+          </div>
+          <div class="profile-block">
+            <label id="record-topics-l">Topics you follow</label>
+            <div id="topics-summary"></div>
+            <div class="chips" id="interests" role="group" aria-labelledby="record-topics-l"></div>
+            <p class="profile-done" id="topics-done" hidden><button class="wf-listtoggle" type="button" id="topics-done-btn">Done</button></p>
+          </div>
+          <div class="profile-block" id="profile-alerts"></div>
+          <p class="profile-done" id="profile-done" hidden><button class="wf-listtoggle" type="button" id="profile-done-btn">Done</button></p>
         </div>
       </div>
 

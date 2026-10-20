@@ -893,13 +893,13 @@ html.js .entry-shell { min-height: 26.6rem; }
 /* Member profile — header, panels, promises, lobbying */
 .profile-head { display: flex; gap: 1.3rem; align-items: center; flex-wrap: wrap; }
 .attendance-bar {
+  display: block;
   height: 10px; border-radius: 6px; background: var(--marble-2);
   overflow: hidden; max-width: 34rem; margin: .4rem 0 .2rem;
 }
 .attendance-bar span { display: block; height: 100%; background: var(--bronze); }
 .profile-grid {
   display: grid; gap: 1rem; grid-template-columns: 1fr; margin-top: 1.6rem;
-  align-items: start;
 }
 @media (min-width: 820px) { .profile-grid { grid-template-columns: 1.6fr 1fr; } }
 .profile-panel {
@@ -925,7 +925,14 @@ html.js .entry-shell { min-height: 26.6rem; }
 .promise-num { font-size: .8rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--bronze-dark); }
 .promise-source { font-weight: 600; font-size: .95rem; }
 .related-votes { margin-top: .7rem; border-top: 1px solid var(--line-soft); padding-top: .6rem; }
-.related-votes h4 { margin: 0 0 .45rem; font-size: .92rem; }
+.related-votes summary {
+  cursor: pointer; font-weight: 700; font-size: .92rem; min-height: 44px;
+  display: flex; align-items: center; list-style: none; gap: .5rem;
+}
+.related-votes summary::-webkit-details-marker { display: none; }
+.related-votes summary::after { content: "+"; margin-left: auto; font-size: 1.2rem; color: var(--bronze-dark); }
+.related-votes[open ] summary::after { content: "–"; }
+.related-votes .related-list { margin-top: .45rem; }
 .related-vote {
   display: flex; width: 100%; gap: .7rem; align-items: center; justify-content: space-between;
   text-align: left; background: var(--card); border: 1px solid var(--line-soft);

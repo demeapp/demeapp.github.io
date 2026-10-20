@@ -204,13 +204,15 @@ async function renderExtras(person) {
           <p>${esc(pr.text)}</p>
           ${pr.source ? `<a class="promise-source" href="${esc(pr.source)}"
             target="_blank" rel="noopener noreferrer">View campaign source ↗</a>` : ""}
-          ${related.length ? `<div class="related-votes">
-            <h4>Related votes in the record</h4>
+          ${related.length ? `<details class="related-votes">
+            <summary>Related votes in the record (${related.length})</summary>
+            <div class="related-list">
             ${related.map((r) => `<button class="related-vote" type="button"
               data-ref="${esc(r.ref)}"><span>${esc(r.title || r.ref)}
               <span class="rv-ref">${esc(r.ref)} · ${esc(fmtDate(r.date))}</span></span>
               ${voteChip(r.vote)}</button>`).join("")}
-          </div>` : ""}
+            </div>
+          </details>` : ""}
         </article>`;
       }).join("");
       html += `<section style="margin-top:2.4rem" aria-labelledby="promises-h">

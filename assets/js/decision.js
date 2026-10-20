@@ -41,17 +41,82 @@ function voteCell(v) {
   return `<span class="voteAbs">Absent</span>`;
 }
 
+/* The clerk's motion line ("Majority required - MM43.128 - Adopt the
+   Item") is composed into plain words: the threshold to pass plus,
+   where the line carries more than the item's own reference, what the
+   motion was for. The raw item reference never shows in the vote card —
+   it lives in the decision header where it belongs. */
+/* Trailing clerk qualifiers ride behind a spaced dash ("- REVOTE",
+   "- Part 1 only"); in the composed line they read as plain words. */
+function finTail(s) {
+  return s.replace(/\s+-\s+REVOTE\b/g, " (revote)").replace(/\s+-\s+/g, ", ");
+}
+
+function descLine(m) {
+  const d = (m.desc || "").trim();
+  if (!d) return "";
+  const t = /^(Majority|Two-Thirds)( full Council)? required\s*(.*)$/.exec(d);
+  if (!t) {
+    return d.replace(/\b\d{4}\.[A-Z]{2}\d+\.\d+\b/g, "")
+      .replace(/\s{2,}/g, " ").trim();
+  }
+  const thr = t[1] === "Majority"
+    ? "Majority required to pass"
+    : (t[2] ? "Two-thirds of full Council required to pass"
+            : "Two-thirds majority required to pass");
+  let rest = (t[3] || "")
+    .replace(/^\s*-\s*[A-Z]{2}\d+\.\d+\s*-\s*/, "")
+    .replace(/^\s*-\s*/, "").trim();
+  /* A reference can also ride inside the motion's subject ("Reconsider
+     Item CC44.30", "remove EX21.17 from committee") — it never shows. */
+  rest = rest
+    .replace(/^[A-Z]{2}\d+\.\d+\s+/, "")
+    .replace(/\bitem\s+[A-Z]{2}\d+\.\d+\b/gi, "the item")
+    .replace(/\b[A-Z]{2}\d+\.\d+\b/g, "the item")
+    .replace(/\s{2,}/g, " ").trim();
+  if (!rest) return thr + ".";
+  let mm;
+  const am = /^adopt (?:the )?item,?( as amended)?( - REVOTE)?$/i.exec(rest);
+  if (am) {
+    return thr + " — to adopt the item"
+      + (am[1] ? " as amended" : "") + (am[2] ? " (revote)" : "") + ".";
+  }
+  if ((mm = /^item( as amended)?$/i.exec(rest))) {
+    return thr + " — to adopt the item" + (mm[1] ? " as amended" : "") + ".";
+  }
+  if (/^waive (the )?referral$/i.test(rest)) return thr + " — to waive referral.";
+  if (/^waive notice$/i.test(rest)) return thr + " — to waive notice.";
+  if ((mm = /^([A-ZÀ-Þ][\wÀ-ÿ'’.-]*(?: [A-ZÀ-Þ][\wÀ-ÿ'’.-]*)*) - motion (\d+[a-z]?)( as amended)?(?: - (.+))?$/.exec(rest))) {
+    return thr + ` — ${mm[1]}, motion ${mm[2]}${mm[3] || ""}`
+      + (mm[4] ? `, ${finTail(mm[4].charAt(0).toLowerCase() + mm[4].slice(1))}` : "") + ".";
+  }
+  if ((mm = /^Add (urgent )?motion - (.+)$/.exec(rest))) {
+    return thr + ` — to add ${mm[1] ? "an urgent " : "a "}motion (${mm[2]}).`;
+  }
+  if ((mm = /^(.+?) - add (urgent )?motion on (.+)$/.exec(rest))) {
+    return thr + ` — ${mm[1]}, to add ${mm[2] ? "an urgent " : "a "}motion on ${finTail(mm[3])}.`;
+  }
+  if ((mm = /^([A-ZÀ-Þ][\wÀ-ÿ'’.-]*(?: [A-ZÀ-Þ][\wÀ-ÿ'’.-]*)*) - (.+)$/.exec(rest))) {
+    return thr + ` — ${mm[1]}, ${finTail(mm[2].charAt(0).toLowerCase() + mm[2].slice(1))}.`;
+  }
+  if (/^(Introduce|Enact|Adopt|Waive|Receive|Refer|Defer)\b/.test(rest)) {
+    return thr + " — to " + finTail(rest.charAt(0).toLowerCase() + rest.slice(1)) + ".";
+  }
+  return thr + " — " + finTail(rest) + ".";
+}
+
 function motionBlock(m, idx) {
   const absent = m.votes.filter(([, v]) => v === "Absent").length;
   const interest = m.votes.filter(([, v]) => v && v.startsWith("Absent(Interest")).length;
   const rows = m.votes.map(([name, v]) =>
     `<tr><td><a href="councillor.html?name=${encodeURIComponent(name)}">${esc(name)}</a></td>
      <td>${voteCell(v)}</td></tr>`).join("");
+  const dl = descLine(m);
   return `<div class="card" style="margin-top:1rem">
     <h3>${esc(m.type || "Motion")}${m.result ? ` — ${esc(m.result)}` : ""}</h3>
     <p class="small" style="margin:.1rem 0 .5rem">Vote taken at:
       <strong>${esc(m.stage || "City Council")}</strong></p>
-    ${m.desc ? `<p class="small">${esc(m.desc)}</p>` : ""}
+    ${dl ? `<p class="small">${esc(dl)}</p>` : ""}
     ${bars(m.yes, m.no)}
     <p class="small">${m.yes + m.no} members voted ·
       ${absent} absent${interest ? ` · ${interest} declared an interest and did not vote` : ""}.</p>

@@ -221,6 +221,11 @@ async function renderExtras(person) {
         member’s recorded votes — a finding aid, not a verdict on whether
         a promise was kept.</p>
         <div class="promise-list">${cards}</div></section>`;
+    } else {
+      html += `<section style="margin-top:2.4rem" aria-labelledby="promises-h">
+        <h2 id="promises-h">Campaign promises</h2><hr class="rule">
+        <p class="small">No campaign promises on record for this member.</p>
+        </section>`;
     }
   }
   /* ---------- lobbying record (public registry exports only) ------ */

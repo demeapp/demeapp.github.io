@@ -184,8 +184,8 @@ function renderElectionBanner() {
   aside.id = "election-banner";
   aside.setAttribute("aria-label", "Municipal election reminder");
   aside.innerHTML = `<div class="wrap">
-    <a href="councillors.html">Municipal election October 26 — check your
-      councillor’s record before you vote.</a>
+    <a href="councillors.html">Municipal election — Monday, October 26,
+      2026 — check your councillor’s record before you vote.</a>
     <button class="election-close" type="button"
       aria-label="Dismiss election reminder">×</button></div>`;
   document.body.insertBefore(aside, document.body.firstChild);

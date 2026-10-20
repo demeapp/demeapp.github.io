@@ -666,11 +666,13 @@ footer .fineprint { font-size: .82rem; color: var(--ink-faint); }
   margin-top: 1.2rem;
 }
 .entry-slim { border-top: 3px solid var(--bronze); padding: 1.4rem 1.6rem 1.2rem; }
-/* The static shell reserves the live panel's height (measured:
-   425px desktop / 637px mobile) so the JS render lands without
-   moving the page. JS-off keeps the shell at natural height. */
-html.js .entry-shell { min-height: 26.6rem; }
-@media (max-width: 640px) { html.js .entry-shell { min-height: 39.8rem; } }
+/* The static shell reserves the live panel's height (re-measured
+   Oct 20, 2026 on the compact strip: picker panel 406px desktop /
+   620px mobile, headless Chromium at 1280px and 390px) so the JS
+   render lands without moving the page. JS-off keeps the shell at
+   natural height. */
+html.js .entry-shell { min-height: 25.4rem; }
+@media (max-width: 640px) { html.js .entry-shell { min-height: 38.8rem; } }
 .entry-slim p { max-width: 38rem; }
 .entry-actions { display: flex; gap: .7rem; flex-wrap: wrap; margin: 0; }
 
@@ -1187,3 +1189,32 @@ dialog.record-dialog::backdrop { background: rgba(10,20,36,.55); }
   body.printing-card #print-card { display: block !important; }
   body.printing-card .record-card-doc { border: 0; padding: 0; }
 }
+
+/* ---------- perf/data package (Oct 20, 2026) ----------
+   D6: the vote bars' share is OF the members who voted — the caption
+   sits directly under the bars in the same small type as the counts
+   line that follows it. */
+.votecaption {
+  margin: -.4rem 0 .1rem; font-size: .85rem; color: var(--ink-faint);
+}
+/* D3: the share / copy-link row on decision pages. */
+.share-row { margin: .9rem 0 0; }
+/* W2: the visitor's own representative in the vote table — a label,
+   never a score. */
+.pill.yourrep {
+  background: var(--mint-light); color: var(--bronze-dark);
+  margin-left: .45rem; white-space: nowrap;
+}
+/* W1: member composition strip — three published counts as one slim
+   bar (navy = cast, pale = absent, muted violet = declared interest,
+   the site's existing absent/interest hues). No ranking, no grade. */
+.composition { max-width: 44rem; margin-top: 1.1rem; }
+.comp-bar {
+  display: flex; height: 12px; border-radius: 6px; overflow: hidden;
+  background: var(--marble-2);
+}
+.comp-seg { display: block; height: 100%; }
+.comp-seg.cast { background: var(--navy); }
+.comp-seg.absent { background: var(--line); }
+.comp-seg.interest { background: var(--conflict); }
+.comp-legend { font-size: .9rem; color: var(--ink-soft); margin: .5rem 0 0; }

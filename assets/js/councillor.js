@@ -287,6 +287,42 @@ async function renderExtras(person) {
     }));
 }
 
+/* ---------- W1: recorded-vote composition strip ----------
+   One slim stacked bar under the stat tiles: of every recorded vote
+   in this member's record, the share they cast (yes or no), the
+   share they were absent for, and the share where they declared an
+   interest. Computed inline from the councillors.json person object
+   the page already loads — the same three published counts as the
+   tiles (verified reference: enhancements-prep/member-composition.json;
+   the member/<slug> row files undercount pre-2018 service and are
+   never the source). Presentation of published facts only: unranked,
+   ungraded, in the site's neutral colours. */
+function compositionStrip(person) {
+  const cast = person.votesCast || 0, absent = person.absent || 0,
+    interest = person.interest || 0;
+  const total = cast + absent + interest;
+  if (!total) return "";
+  const pct = (n) => (100 * n / total);
+  const pctTxt = (n) => {
+    const p = pct(n);
+    return p > 0 && p < 0.05 ? "<0.1" : (Math.round(p * 10) / 10).toString();
+  };
+  const seg = (n, cls) => n > 0
+    ? `<span class="comp-seg ${cls}" style="width:${pct(n).toFixed(2)}%"></span>` : "";
+  return `<div class="composition">
+    <div class="comp-bar" role="img" aria-label="Of ${fmtNum(total)} recorded
+      votes in this member's record: ${fmtNum(cast)} cast, ${fmtNum(absent)}
+      absent, ${fmtNum(interest)} with an interest declared.">
+      ${seg(cast, "cast")}${seg(absent, "absent")}${seg(interest, "interest")}
+    </div>
+    <p class="comp-legend">Of the ${fmtNum(total)} recorded votes in their
+      record: <strong>${pctTxt(cast)}%</strong> cast ·
+      <strong>${pctTxt(absent)}%</strong> absent ·
+      <strong>${pctTxt(interest)}%</strong> declared an interest — a duty,
+      not an absence.</p>
+  </div>`;
+}
+
 /* ---------- record card: preview dialog, download, print ----------
    The earlier build's shareable card, rebranded: Column-D mark, navy
    and green, the member's own numbers and five most recent votes. */
@@ -445,14 +481,19 @@ async function init() {
     votes — the name-by-name kind. When a member declares an interest in an
     item, stepping back is required, so those are never counted against
     attendance here.</p>
+    ${compositionStrip(person)}
     <p style="margin-top:1rem"><button class="btn secondary" id="record-card-btn"
-      type="button">Print / download record card</button></p>
+      type="button">Print / download record card</button>
+    <button class="btn secondary" id="share-btn" type="button">Copy link</button></p>
     <div id="profile-extra"></div>
     <h2 style="margin-top:2.6rem">Recorded votes</h2>
     <hr class="rule">
-    <div id="historyWrap"><p class="small">Loading…</p></div>`;
+    <div id="historyWrap"><div class="skel-card" aria-hidden="true">
+      <span class="skel-el sm"></span><span class="skel-el title"></span>
+      <span class="skel-el"></span><span class="skel-el short"></span></div></div>`;
   document.getElementById("record-card-btn")
     .addEventListener("click", () => openRecordCard(person));
+  setupShareButton(document.getElementById("share-btn"));
 
   const wrap = document.getElementById("historyWrap");
   try {

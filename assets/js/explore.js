@@ -19,6 +19,7 @@ const STATUS_LABELS = {
 };
 const PAGE = 25;
 let rows = [], councillors = [], filtered = [], shown = 0;
+let archiveLoading = false; // D1: true until every search-<year> shard lands
 let parsed = null; // parseAsk result for the current query text, or null
 let profileFilter = null; // "Use my profile" filter, or null when off
 let profileSummaryBase = ""; // profile-row summary without " — filter on"
@@ -101,7 +102,16 @@ function applyFilters() {
     (!profileActive
       || (r.w && r.w.some((w) => profileFilter.wards.includes(w)))
       || (profileFilter.interestRefs && profileFilter.interestRefs.has(r.ref))));
-  filtered.sort((a, b) => (a.date < b.date ? 1 : -1));
+  /* W3 closest-calls lens: with the close filter on, browse by the
+     principal margin — closest calls first, ties newest first. The
+     margins are the regenerated ones (data/closest-calls.json is the
+     published dataset behind them), so the lens and the decision
+     pages' own bars can never disagree. */
+  if (eff.closeOnly) {
+    filtered.sort((a, b) => (a.mg - b.mg) || (a.date < b.date ? 1 : -1));
+  } else {
+    filtered.sort((a, b) => (a.date < b.date ? 1 : -1));
+  }
   shown = 0;
   $("results").innerHTML = "";
   memberHit(eff);
@@ -269,9 +279,12 @@ async function renderMore() {
     </article>`;
   }).join("");
   $("results").insertAdjacentHTML("beforeend", html);
-  $("count").textContent = filtered.length
+  $("count").textContent = (filtered.length
     ? `${fmtNum(filtered.length)} decision${filtered.length === 1 ? "" : "s"} found`
-    : "No decisions match. Try fewer words, or clear a filter.";
+    : (archiveLoading
+      ? "No decisions in the years loaded so far"
+      : "No decisions match. Try fewer words, or clear a filter."))
+    + (archiveLoading ? " — the full archive is still loading; older years are on the way." : "");
   $("pager").innerHTML = shown < filtered.length
     ? `<button class="btn secondary" id="more">Show more (${fmtNum(filtered.length - shown)} remaining)</button>`
     : "";
@@ -295,20 +308,49 @@ function parseCurrentQuery() {
     ? parseAsk(q, { members: councillors, storedWard: VoteStore.getWard() })
     : null;
 }
-async function init() {
-  const [search, people] = await Promise.all([
-    loadJSON(dataPath("search.json")), loadJSON(dataPath("councillors.json")),
-  ]);
-  rows = search; councillors = people;
-  const years = [...new Set(rows.map((r) => r.year))].sort().reverse();
-  fillSelect($("f-year"), years.map((y) => [y, y]), "All years");
+/* D1: the search index arrives per year. 2026 + 2025 land first
+   (~0.41 MB gzip, a ~79% cut in the old blocking payload) and the
+   page works; the older years stream in behind it, re-running the
+   filters as each lands. The body/outcome selects are derived from
+   the full archive, so they fill when the stream completes — a
+   selection made mid-stream is preserved across the refill. */
+const SEARCH_YEARS = ["2026", "2025", "2024", "2023", "2022", "2021",
+  "2020", "2019", "2018"];
+function fillBodyStatus() {
+  const bodySel = $("f-body"), statusSel = $("f-status");
+  const bodyVal = bodySel.value, statusVal = statusSel.value;
   const bodyCounts = new Map();
   rows.forEach((r) => bodyCounts.set(r.body, (bodyCounts.get(r.body) || 0) + 1));
   const bodies = [...bodyCounts.entries()].sort((a, b) => b[1] - a[1]).slice(0, 16);
-  fillSelect($("f-body"), bodies.map(([b, n]) => [b, `${b} (${fmtNum(n)})`]), "All bodies");
+  fillSelect(bodySel, bodies.map(([b, n]) => [b, `${b} (${fmtNum(n)})`]), "All bodies");
   const statuses = [...new Set(rows.map((r) => r.status))].sort();
-  fillSelect($("f-status"),
+  fillSelect(statusSel,
     statuses.map((s) => [s, STATUS_LABELS[s] || s]), "All outcomes");
+  if (bodyVal) bodySel.value = bodyVal;
+  if (statusVal) statusSel.value = statusVal;
+}
+async function streamRest() {
+  for (const y of SEARCH_YEARS.slice(2)) {
+    try {
+      const part = await loadJSON(dataPath(`search-${y}.json`));
+      rows = rows.concat(part);
+    } catch (e) { /* a missing year simply never joins the archive */ }
+    applyFilters();
+  }
+  archiveLoading = false;
+  fillBodyStatus();
+  applyFilters();
+}
+async function init() {
+  councillors = await loadJSON(dataPath("councillors.json"));
+  archiveLoading = true;
+  const first = await Promise.all(SEARCH_YEARS.slice(0, 2).map((y) =>
+    loadJSON(dataPath(`search-${y}.json`)).catch(() => [])));
+  rows = first.flat();
+  const years = SEARCH_YEARS.slice();
+  fillSelect($("f-year"), years.map((y) => [y, y]), "All years");
+  fillSelect($("f-body"), [], "All bodies");
+  fillSelect($("f-status"), [], "All outcomes");
   fillSelect($("f-ward"),
     Array.from({ length: 25 }, (_, i) => {
       const n = i + 1;
@@ -400,6 +442,7 @@ async function init() {
     e.preventDefault(); parseCurrentQuery(); applyFilters();
   });
   applyFilters();
+  streamRest();
 }
 init().catch(() => {
   $("count").textContent = "The archive could not be loaded. Please reload the page.";

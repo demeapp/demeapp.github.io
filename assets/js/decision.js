@@ -8,6 +8,20 @@ const ref = new URLSearchParams(location.search).get("ref");
 const box = document.getElementById("decision");
 
 async function findCard(ref) {
+  /* D2: consult the ref→year manifest first — a hit costs exactly one
+     shard fetch, and a miss goes straight to the honest not-in-archive
+     answer instead of burning every year's shard. The sequential hunt
+     below remains as the fallback if the manifest cannot load. */
+  try {
+    const manifest = await loadJSON(dataPath("ref-years.json"));
+    const y = manifest && manifest[ref];
+    if (y) {
+      const cards = await loadJSON(dataPath(`index-${y}.json`));
+      const hit = cards.find((c) => c.ref === ref);
+      if (hit) return { card: hit, year: y };
+      return null; /* the manifest is complete: a miss is a true miss */
+    }
+  } catch (e) { /* manifest unavailable — fall through to the hunt */ }
   const prefixYear = ref.slice(0, 4);
   const years = [prefixYear, "2026", "2025", "2024", "2023", "2022", "2021",
     "2020", "2019", "2018"].filter((v, i, a) => a.indexOf(v) === i);
@@ -108,8 +122,19 @@ function descLine(m) {
 function motionBlock(m, idx) {
   const absent = m.votes.filter(([, v]) => v === "Absent").length;
   const interest = m.votes.filter(([, v]) => v && v.startsWith("Absent(Interest")).length;
+  /* W2: tag the visitor's own representatives in the name-by-name
+     table — a label only, read from the on-device VoteStore snapshots
+     (the same source the alignment feature reads). No tag exists when
+     no ward is set, and nothing is sent anywhere. */
+  const wardRep = (typeof VoteStore !== "undefined") ? VoteStore.getWardRep() : null;
+  const mayorRep = (typeof VoteStore !== "undefined") ? VoteStore.getMayorRep() : null;
+  const repTag = (name) => {
+    if (wardRep && name === wardRep.name) return ` <span class="pill yourrep">Your councillor</span>`;
+    if (mayorRep && name === mayorRep.name) return ` <span class="pill yourrep">Your mayor</span>`;
+    return "";
+  };
   const rows = m.votes.map(([name, v]) =>
-    `<tr><td><a href="councillor.html?name=${encodeURIComponent(name)}">${esc(name)}</a></td>
+    `<tr><td><a href="councillor.html?name=${encodeURIComponent(name)}">${esc(name)}</a>${repTag(name)}</td>
      <td>${voteCell(v)}</td></tr>`).join("");
   const dl = descLine(m);
   return `<div class="card" style="margin-top:1rem">
@@ -118,6 +143,7 @@ function motionBlock(m, idx) {
       <strong>${esc(m.stage || "City Council")}</strong></p>
     ${dl ? `<p class="small">${esc(dl)}</p>` : ""}
     ${bars(m.yes, m.no)}
+    <p class="votecaption">of the ${m.yes + m.no} members who voted</p>
     <p class="small">${m.yes + m.no} members voted ·
       ${absent} absent${interest ? ` · ${interest} declared an interest and did not vote` : ""}.</p>
     <details class="recordExpander">
@@ -177,16 +203,22 @@ async function init() {
       <span class="pill">${esc(card.statusLabel)}</span>
       <span class="small">${esc(fmtDate(card.date))}</span>
     </div>
+    <p class="share-row"><button class="btn secondary small" id="share-btn"
+      type="button">Copy link</button></p>
     ${card.brief ? `<p class="briefBig" id="brief-main">${esc(pastVoice(card.brief))}</p>` : ""}
     ${card.stake ? `<p class="stake stake-prominent">${esc(card.stake)}</p>` : ""}
     ${wards}
     ${topics ? `<div class="chips" style="margin:1rem 0">${topics}</div>` : ""}
     <div id="threadlinks"></div>
-    <div id="votezone"></div>
+    <div id="votezone"><div class="skel-card" aria-hidden="true">
+      <span class="skel-el sm"></span><span class="skel-el title"></span>
+      <span class="skel-el"></span><span class="skel-el short"></span></div></div>
     <div id="official"></div>
     <p style="margin-top:2rem"><a class="ext" href="${tmmisUrl(card.ref)}"
       target="_blank" rel="noopener">Read the full official record at the
       City of Toronto →</a></p>`;
+
+  setupShareButton(document.getElementById("share-btn"));
 
   /* Keep it simple (restored): where the simpler-worded summary
      corpus covers this decision (the 2025–2026 items carried from

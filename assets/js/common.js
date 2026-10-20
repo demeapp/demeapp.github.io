@@ -496,6 +496,44 @@ const VoteStore = (() => {
 const tmmisUrl = (ref) =>
   `https://secure.toronto.ca/tmmis/viewAgendaItemHistory.do?item=${encodeURIComponent(ref)}`;
 
+/* ---------------- "/" focuses search (D7) ----------------
+   The search-first shortcut: pressing "/" anywhere on a page with a
+   search box (#q — Home hero, Explore) focuses it. Never fires while
+   typing in a field, and modifier combos are left to the browser. */
+document.addEventListener("keydown", (e) => {
+  if (e.key !== "/" || e.metaKey || e.ctrlKey || e.altKey) return;
+  const t = e.target;
+  if (t && (t.tagName === "INPUT" || t.tagName === "TEXTAREA"
+    || t.tagName === "SELECT" || t.isContentEditable)) return;
+  const q = document.getElementById("q");
+  if (q) { e.preventDefault(); q.focus(); }
+});
+
+/* ---------------- share / copy link (D3) ----------------
+   One quiet affordance for decision and member pages: native share
+   where the platform offers it, clipboard copy elsewhere. Static
+   hosting cannot mint per-page preview cards — the button shares
+   the link itself, nothing more is promised. */
+function setupShareButton(btn) {
+  if (!btn) return;
+  if (typeof navigator !== "undefined" && navigator.share) {
+    btn.textContent = "Share";
+  }
+  btn.addEventListener("click", async () => {
+    if (typeof navigator !== "undefined" && navigator.share) {
+      try { await navigator.share({ title: document.title, url: location.href }); }
+      catch (e) { /* the visitor dismissed the share sheet */ }
+      return;
+    }
+    try {
+      await navigator.clipboard.writeText(location.href);
+      const old = btn.textContent;
+      btn.textContent = "Link copied";
+      setTimeout(() => { btn.textContent = old; }, 2000);
+    } catch (e) { /* clipboard unavailable — the address bar still works */ }
+  });
+}
+
 /* Static sections are already parsed when this script runs (it sits at
    the end of <body> on every page), so reveal can be wired up now. */
 setupReveal();

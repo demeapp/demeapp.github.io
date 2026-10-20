@@ -14,6 +14,7 @@ const STATUS_LABELS = {
   CONFRMED: "Confirmed", NO_ACTN: "No action taken",
   NOQUORUM: "Not decided — no quorum", RESCIND: "Rescinded",
   DEFERIND: "Deferred indefinitely", NOTADOPT: "Not adopted",
+  DEEMADPT: "Deemed adopted", WO_RECS: "Forwarded without a recommendation",
 };
 const PAGE = 25;
 let rows = [], councillors = [], filtered = [], shown = 0;
@@ -247,6 +248,10 @@ async function hydrate(refs) {
   }));
 }
 async function renderMore() {
+  /* The pager rewrite below destroys the focused button — remember
+     whether it held focus so its replacement can take it back. */
+  const wasFocused = document.activeElement
+    && document.activeElement.id === "more";
   const slice = filtered.slice(shown, shown + PAGE);
   shown += slice.length;
   await hydrate(slice);
@@ -270,7 +275,13 @@ async function renderMore() {
     ? `<button class="btn secondary" id="more">Show more (${fmtNum(filtered.length - shown)} remaining)</button>`
     : "";
   const more = $("more");
-  if (more) more.addEventListener("click", renderMore);
+  if (more) {
+    more.addEventListener("click", renderMore);
+    if (wasFocused) more.focus();
+  } else if (wasFocused) {
+    $("pager").setAttribute("tabindex", "-1");
+    $("pager").focus();
+  }
 }
 
 function fillSelect(el, values, allLabel) {

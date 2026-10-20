@@ -88,6 +88,10 @@ async function init() {
 }
 
 async function renderMoreInto(listBox) {
+  /* The pager rewrite below destroys the focused button — remember
+     whether it held focus so its replacement can take it back. */
+  const wasFocused = document.activeElement
+    && document.activeElement.id === "thread-more";
   const slice = flat.slice(shown, shown + PAGE);
   shown += slice.length;
   await hydrate(slice);
@@ -110,6 +114,12 @@ async function renderMoreInto(listBox) {
     ? `<button class="btn secondary" id="thread-more">Show more (${fmtNum(flat.length - shown)} remaining)</button>`
     : "";
   const more = document.getElementById("thread-more");
-  if (more) more.addEventListener("click", () => renderMoreInto(listBox));
+  if (more) {
+    more.addEventListener("click", () => renderMoreInto(listBox));
+    if (wasFocused) more.focus();
+  } else if (wasFocused) {
+    pager.setAttribute("tabindex", "-1");
+    pager.focus();
+  }
 }
 init();

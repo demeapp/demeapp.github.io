@@ -7,7 +7,24 @@ renderChrome("councillors.html");
 const params = new URLSearchParams(location.search);
 const box = document.getElementById("profile");
 const PAGE = 25;
+const SLICE = 100;
 let memberRows = [], shown = 0;
+let memberTotal = 0, memberSlug = null, restLoaded = false, restLoading = null;
+
+/* The member file now ships only the first SLICE rows (Wave 2); the
+   remainder lives in member/<slug>.more.json and is fetched only when
+   the visitor pages close to the end of the slice. Row order and the
+   published totals are unchanged. */
+async function ensureRest() {
+  if (restLoaded || !memberSlug) return;
+  if (!restLoading) {
+    restLoading = loadJSON(dataPath(`member/${memberSlug}.more.json`))
+      .then((d) => { memberRows = memberRows.concat(d.rows || []); })
+      .catch(() => { memberTotal = memberRows.length; })
+      .then(() => { restLoaded = true; });
+  }
+  await restLoading;
+}
 
 function voteChip(v) {
   if (v === "Yes") return `<span class="voteYes">Yes</span>`;
@@ -21,17 +38,32 @@ function rowHTML(r) {
     <span class="terms"> · ${esc(fmtDate(r.date))}${r.motion ? ` · ${esc(r.motion)}` : ""}${r.result ? ` · ${esc(r.result)}` : ""}${r.stage && r.stage !== "City Council" ? ` · at ${esc(r.stage)}` : ""}</span></span>
     <span>${voteChip(r.vote)}</span></li>`;
 }
-function renderMore() {
+async function renderMore() {
+  /* Fetch the remainder before the visitor runs out of sliced rows. */
+  if (!restLoaded && memberTotal > memberRows.length
+      && shown + PAGE > memberRows.length - PAGE) {
+    await ensureRest();
+  }
+  /* The pager rewrite below destroys the focused button — remember
+     whether it held focus so the new one can take it back. */
+  const wasFocused = document.activeElement
+    && document.activeElement.id === "more";
   const slice = memberRows.slice(shown, shown + PAGE);
   shown += slice.length;
   document.getElementById("history").insertAdjacentHTML(
     "beforeend", slice.map(rowHTML).join(""));
   const pager = document.getElementById("pager");
-  pager.innerHTML = shown < memberRows.length
-    ? `<button class="btn secondary" id="more">Show more (${fmtNum(memberRows.length - shown)} remaining)</button>`
+  pager.innerHTML = shown < memberTotal
+    ? `<button class="btn secondary" id="more">Show more (${fmtNum(memberTotal - shown)} remaining)</button>`
     : "";
   const b = document.getElementById("more");
-  if (b) b.addEventListener("click", renderMore);
+  if (b) {
+    b.addEventListener("click", renderMore);
+    if (wasFocused) b.focus();
+  } else if (wasFocused) {
+    pager.setAttribute("tabindex", "-1");
+    pager.focus();
+  }
 }
 
 async function init() {
@@ -79,6 +111,9 @@ async function init() {
   try {
     const data = await loadJSON(dataPath(`member/${person.slug}.json`));
     memberRows = data.rows || [];
+    memberTotal = data.total != null ? data.total : memberRows.length;
+    memberSlug = person.slug;
+    restLoaded = memberTotal <= memberRows.length;
     if (!memberRows.length) {
       wrap.innerHTML = `<div class="notice">This member's recorded votes
         predate the searchable decision archive, which begins in 2018.
@@ -86,7 +121,7 @@ async function init() {
         record starts with the 2018 term.</div>`;
       return;
     }
-    wrap.innerHTML = `<p class="small">${fmtNum(memberRows.length)} recorded
+    wrap.innerHTML = `<p class="small">${fmtNum(memberTotal)} recorded
       votes on decisions in the archive, newest first. Every row links to
       the decision itself.</p>
       <ul class="personlist" id="history"></ul><div class="pager" id="pager"></div>`;

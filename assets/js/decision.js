@@ -1,5 +1,6 @@
 /* Decision detail — brief first, outcome next, the named vote one tap
-   deeper. Official record text loads from the year's text shard. */
+   deeper. The vote and the official wording ride in the per-decision
+   file data/d/<ref>.json. */
 "use strict";
 renderChrome("explore.html");
 
@@ -120,21 +121,28 @@ async function init() {
     }
   } catch (e) { /* threads are an enhancement, not a requirement */ }
 
+  /* One per-decision file now carries both the recorded vote and the
+     official wording (Wave 2): data/d/<ref>.json has "motions" when a
+     recorded vote exists and a "text" pair — what the item proposed /
+     what was decided — folded in from the old per-year text shards,
+     which decision pages no longer download. */
+  let detail = null;
+  try {
+    detail = await loadJSON(dataPath(`d/${encodeURIComponent(ref)}.json`));
+  } catch (e) { /* both blocks below degrade gracefully */ }
+
   const vz = document.getElementById("votezone");
   if (card.hasVote) {
-    vz.innerHTML = `<h2 style="margin-top:2.2rem">How the vote went</h2>
-      <hr class="rule"><p class="small">Loading the recorded vote…</p>`;
-    try {
-      const d = await loadJSON(dataPath(`d/${encodeURIComponent(ref)}.json`));
+    if (detail && detail.motions) {
       vz.innerHTML = `<h2 style="margin-top:2.2rem">How the vote went</h2>
         <hr class="rule">
         <p class="small">This decision has a <strong>recorded vote</strong> —
         the public list of who voted yes and who voted no.
-        ${d.motions.length > 1 ? `There were ${d.motions.length} recorded votes on this item. ` : ""}Some
+        ${detail.motions.length > 1 ? `There were ${detail.motions.length} recorded votes on this item. ` : ""}Some
         items are voted on at a committee before reaching Council — every
         vote below is labelled with the body that took it.</p>
-        ${d.motions.map(motionBlock).join("")}`;
-    } catch (e) {
+        ${detail.motions.map(motionBlock).join("")}`;
+    } else {
       vz.innerHTML = `<h2 style="margin-top:2.2rem">How the vote went</h2>
         <hr class="rule"><p class="small">The vote record could not be
         loaded. The official record is linked below.</p>`;
@@ -146,18 +154,15 @@ async function init() {
       Council decisions has one.</div>`;
   }
 
-  try {
-    const texts = await loadJSON(dataPath(`text-${year}.json`));
-    const t = texts[ref];
-    if (t && (t[0] || t[1])) {
-      document.getElementById("official").innerHTML = `
-        <details class="recordExpander">
-          <summary class="btn secondary small" style="display:inline-flex">Read the official wording</summary>
-          ${t[0] ? `<h3 style="margin-top:1.2rem">What the item proposed</h3><p style="max-width:44rem">${esc(t[0])}</p>` : ""}
-          ${t[1] ? `<h3>What was decided</h3><p style="max-width:44rem">${esc(t[1])}</p>` : ""}
-        </details>`;
-    }
-  } catch (e) { /* official wording is an enhancement, not a requirement */ }
+  const t = detail && detail.text;
+  if (t && (t[0] || t[1])) {
+    document.getElementById("official").innerHTML = `
+      <details class="recordExpander">
+        <summary class="btn secondary small" style="display:inline-flex">Read the official wording</summary>
+        ${t[0] ? `<h3 style="margin-top:1.2rem">What the item proposed</h3><p style="max-width:44rem">${esc(t[0])}</p>` : ""}
+        ${t[1] ? `<h3>What was decided</h3><p style="max-width:44rem">${esc(t[1])}</p>` : ""}
+      </details>`;
+  }
 }
 /* Print (D4): Chromium does not render the children of a CLOSED
    <details> in print, whatever the CSS says — so for printing, open

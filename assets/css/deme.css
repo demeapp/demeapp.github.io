@@ -730,6 +730,29 @@ html.js .entry-shell { min-height: 26.6rem; }
   border-top: 1px solid var(--line-soft);
 }
 
+/* ---------- forced colors (Windows High Contrast) ----------
+   In forced-colors mode the OS strips the fills and tints that mark
+   the vote bars, pills, chips and pick buttons as distinct controls.
+   This additive block restates their outlines in system colours and
+   gives the two bar fills forced-color-safe system fills, so the
+   Yes/No distinction survives. Normal-mode presentation is untouched. */
+@media (forced-colors: active) {
+  .votebars .bar { border: 1px solid CanvasText; background: Canvas; }
+  .votebars .fill.y { background: Highlight; }
+  .votebars .fill.n { background: CanvasText; }
+  .pill, .pill.ink, .pill.plain { border-color: CanvasText; }
+  .chip { border-color: ButtonText; }
+  .chip[aria-pressed="true"] {
+    background: Highlight; color: HighlightText; border-color: Highlight;
+  }
+  .choice { border-color: ButtonText; }
+  .choice[aria-pressed="true"],
+  .choice.support[aria-pressed="true"],
+  .choice.oppose[aria-pressed="true"] {
+    background: Highlight; color: HighlightText; border-color: Highlight;
+  }
+}
+
 /* ---------- print (decision pages especially) ---------- */
 @media print {
   .site-header, .site-footer, .site-nav, .searchbox, .chips, .pager,

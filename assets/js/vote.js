@@ -45,6 +45,9 @@ function bindWeighIns() {
     const btn = e.target.closest(".choice");
     if (!btn) return;
     const ref = btn.dataset.ref, choice = btn.dataset.choice;
+    /* The re-render below replaces the weigh-in block, destroying this
+       button — if it held keyboard focus, give it to its replacement. */
+    const hadFocus = document.activeElement === btn;
     const current = VoteStore.getPick(ref);
     if (current && current.choice === choice) {
       VoteStore.clearPick(ref);
@@ -60,7 +63,12 @@ function bindWeighIns() {
          pressed .choice) under no-preference motion. Logic unchanged. */
       const note = fresh.querySelector(".savedNote");
       if (note) note.classList.add("pop");
-      wrap.replaceWith(fresh.firstElementChild);
+      const newWrap = fresh.firstElementChild;
+      wrap.replaceWith(newWrap);
+      if (hadFocus) {
+        const eq = newWrap.querySelector(`.choice[data-choice="${choice}"]`);
+        if (eq) eq.focus();
+      }
     }
   });
 }

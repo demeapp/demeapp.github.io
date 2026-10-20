@@ -58,7 +58,7 @@ const HomeStore = (() => {
   function personCard(c) {
     const role = c.mayor ? "Mayor of Toronto"
       : `Councillor · Ward ${c.ward} — ${esc(c.wardName)}`;
-    return `<article class="person">
+    return `<article class="person${c.mayor ? " is-mayor" : ""}">
       <div class="person-top">${avatarHTML(c)}
         <div>
           <h3><a href="councillor.html?m=${encodeURIComponent(c.slug)}">${esc(c.name)}</a></h3>

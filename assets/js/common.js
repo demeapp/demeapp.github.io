@@ -158,8 +158,15 @@ function memberTenure(person) {
 }
 function memberStatsHTML(person) {
   const interest = Number(person.interest) || 0;
+  /* Decorative attendance meter (the percentage figure beside it is
+     the value; the meter is aria-hidden and purely visual). Null or
+     non-numeric attendance renders the em dash with no meter. */
+  const att = Number(person.attendance);
+  const meter = person.attendance != null && Number.isFinite(att)
+    ? `<span class="att-meter" aria-hidden="true"><span class="att-fill" style="width:${Math.max(0, Math.min(100, att))}%"></span></span>`
+    : "";
   return `<div class="member-stats" aria-label="Record summary">
-    <div><span>Attendance</span><strong>${person.attendance == null ? "—" : `${person.attendance}%`}</strong></div>
+    <div><span>Attendance</span><strong>${person.attendance == null ? "—" : `${person.attendance}%`}</strong>${meter}</div>
     <div><span>Votes cast</span><strong>${fmtNum(person.votesCast)}</strong></div>
     <div><span>Tenure</span><strong>${esc(memberTenure(person))}</strong></div>
     <div><span>Interests declared</span><strong>${fmtNum(interest)}</strong></div>

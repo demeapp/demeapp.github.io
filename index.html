@@ -18,6 +18,36 @@
 <meta name="twitter:description" content="Deme makes Toronto's council record readable: 33,796 decisions in plain language, searchable by topic, ward, and councillor.">
 <meta name="twitter:image" content="https://demeapp.github.io/assets/og-image.png">
 <link rel="apple-touch-icon" href="assets/icon-180.png">
+<style>
+/* Homepage cleanup (owner direction, Oct 20): the record leads,
+   personalization sits lower as a compact strip, the Upcoming empty
+   state is one line in a slim band, and the hero carries a clear
+   account entry. Homepage-local overrides only — no other page's
+   styles change, and every class/id hook the scripts use is kept. */
+.account-entry {
+  display: flex; gap: 1rem; flex-wrap: wrap; align-items: center;
+  margin-top: 1.35rem;
+}
+.account-entry .signin-link { font-weight: 600; color: var(--bronze-dark); }
+.upcoming-sec { margin-top: var(--sp-4); }
+.upcoming-line {
+  background: var(--card); border: 1px solid var(--line-soft);
+  border-left: 3px solid var(--bronze); border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+  padding: .85rem 1.15rem; margin: 0; max-width: 52rem;
+}
+.upcoming-line a { font-weight: 600; }
+/* Personalization as a quiet strip, below the lead content. */
+#starthere { margin-top: var(--sp-4); }
+#starthere h2 { font-size: 1.3rem; margin-bottom: .35rem; }
+#starthere .rule { margin-bottom: .9rem; }
+#starthere .entry-panel,
+#starthere .entry-slim {
+  padding: 1.05rem 1.2rem .95rem; box-shadow: var(--shadow-sm);
+}
+#starthere .entry-lede { font-size: 1.02rem; margin-bottom: .8rem; }
+#starthere .starthere-card { padding-top: 1.05rem; padding-bottom: .95rem; }
+</style>
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to main content</a>
@@ -48,17 +78,42 @@
         <a href="explore.html">year and topic</a>,
         <a href="councillors.html">councillor</a>, or
         <a href="vote.html">weigh in on what's next</a>.</p>
+      <div class="account-entry">
+        <a class="btn bronze" href="my-record.html">Create an account</a>
+        <a class="signin-link" href="my-record.html">Sign in</a>
+      </div>
 
       <div class="statband" id="statband" aria-label="The archive in numbers">
         <!-- filled from data/stats.json -->
       </div>
     </section>
 
+    <section class="reveal upcoming-sec" aria-labelledby="upcoming-h">
+      <p class="kicker">Before the vote</p>
+      <h2 id="upcoming-h">Upcoming at City Council</h2>
+      <hr class="rule">
+      <div id="upcoming"><span class="visually-hidden">Loading…</span>
+        <p class="upcoming-line" aria-hidden="true"><span class="skel-el" style="max-width:24rem;margin-bottom:0"></span></p></div>
+    </section>
+
+    <section class="reveal" aria-labelledby="latest-h">
+      <p class="kicker">Catch up</p>
+      <h2 id="latest-h">Latest at City Hall</h2>
+      <hr class="rule">
+      <div class="cards two" id="latest"><span class="visually-hidden">Loading…</span>
+        <div class="skel-card" aria-hidden="true"><span class="skel-el sm"></span><span class="skel-el title"></span><span class="skel-el"></span><span class="skel-el short"></span></div>
+        <div class="skel-card" aria-hidden="true"><span class="skel-el sm"></span><span class="skel-el title"></span><span class="skel-el"></span><span class="skel-el short"></span></div></div>
+      <p style="margin-top:1.2rem"><a class="btn secondary" href="explore.html">Explore all decisions</a></p>
+    </section>
+
     <section class="reveal" id="starthere" aria-labelledby="starthere-h">
       <!-- Static shell: the entry panel is in the served page (and works
            without JavaScript, via My Record). personalize.js replaces it
            in place with the live postal-code finder / your-ward view,
-           which also keeps the layout from shifting when it renders. -->
+           which also keeps the layout from shifting when it renders.
+           The section now sits below the lead content as a compact
+           strip (homepage-local styles above) — same panel, same
+           behaviour, quieter place on the page. -->
       <div id="starthere-body">
         <p class="kicker">Your Deme</p>
         <h2 id="starthere-h">Make Deme yours</h2>
@@ -72,24 +127,6 @@
     </section>
 
     <section class="reveal" id="foryou" hidden><div id="foryou-body"></div></section>
-
-    <section class="reveal" aria-labelledby="upcoming-h">
-      <p class="kicker">Before the vote</p>
-      <h2 id="upcoming-h">Upcoming at City Council</h2>
-      <hr class="rule">
-      <div id="upcoming"><span class="visually-hidden">Loading…</span>
-        <div class="skel-card" aria-hidden="true"><span class="skel-el sm"></span><span class="skel-el title"></span><span class="skel-el"></span><span class="skel-el short"></span></div></div>
-    </section>
-
-    <section class="reveal" aria-labelledby="latest-h">
-      <p class="kicker">Catch up</p>
-      <h2 id="latest-h">Latest at City Hall</h2>
-      <hr class="rule">
-      <div class="cards two" id="latest"><span class="visually-hidden">Loading…</span>
-        <div class="skel-card" aria-hidden="true"><span class="skel-el sm"></span><span class="skel-el title"></span><span class="skel-el"></span><span class="skel-el short"></span></div>
-        <div class="skel-card" aria-hidden="true"><span class="skel-el sm"></span><span class="skel-el title"></span><span class="skel-el"></span><span class="skel-el short"></span></div></div>
-      <p style="margin-top:1.2rem"><a class="btn secondary" href="explore.html">Explore all decisions</a></p>
-    </section>
 
     <section class="reveal" aria-labelledby="topics-h">
       <p class="kicker">Start anywhere</p>
@@ -165,11 +202,13 @@ Promise.all([loadJSON(dataPath("stats.json")), loadJSON(dataPath("latest.json"))
     up.innerHTML = `<div class="cards two">${councilItems.slice(0, 4).map(voteCard).join("")}</div>
       <p style="margin-top:1.1rem"><a class="btn bronze" href="vote.html">Weigh in before the meeting</a></p>`;
   } else {
-    up.innerHTML = `<div class="calm"><h3>No Council votes are scheduled in the published agenda right now.</h3>
-      <p>When City Council publishes its next agenda, the items coming up for
-      a vote will appear here first — with a plain-language brief for each
-      one, so you can weigh in before the meeting, not after.
-      <a href="vote.html">See how weighing in works →</a></p></div>`;
+    /* Empty state: one honest line in a slim band — same true wording,
+       no big empty box. The items path above is untouched. */
+    up.innerHTML = `<p class="upcoming-line">No Council votes are scheduled
+      in the published agenda right now. When City Council publishes its
+      next agenda, the items coming up for a vote will appear here first,
+      each with a plain-language brief.
+      <a href="vote.html">See how weighing in works →</a></p>`;
   }
 
   document.getElementById("latest").innerHTML =

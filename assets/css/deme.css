@@ -102,8 +102,8 @@ section:first-child { margin-top: 0; }
    Cross-document transitions where the browser supports them
    (common.js adds html.vt when startViewTransition exists); otherwise
    a gentle page-in on <main>, gated behind html:not(.vt). */
-@view-transition { navigation: auto; }
 @media (prefers-reduced-motion: no-preference) {
+  @view-transition { navigation: auto; }
   ::view-transition-old(root) { animation: vt-out .26s ease both; }
   ::view-transition-new(root) { animation: vt-in .32s ease both; }
   @keyframes vt-out { to { opacity: 0; transform: translateY(-6px); } }
@@ -207,7 +207,7 @@ p { margin: 0 0 1rem; }
   text-transform: uppercase; color: var(--bronze-dark); margin: 0 0 .55rem;
 }
 .rule { width: 56px; height: 3px; background: var(--bronze); border: 0; margin: 0 0 1.1rem; }
-.small { font-size: .9rem; color: var(--ink-soft); }
+.small { font-size: .98rem; color: var(--ink-soft); }
 .muted { color: var(--ink-faint); }
 
 /* ---------- hero / search ---------- */
@@ -256,7 +256,7 @@ p { margin: 0 0 1rem; }
 .btn.secondary:hover { background: var(--marble-2); }
 .btn.bronze { background: var(--bronze-dark); border-color: var(--bronze-dark); color: #fff; }
 .btn.bronze:hover { background: #6E5426; }
-.btn.small { min-height: 44px; padding: .45rem 1rem; font-size: .95rem; }
+.btn.small { min-height: 44px; padding: .45rem 1rem; font-size: .98rem; }
 .btn[disabled] { opacity: .55; cursor: default; }
 @media (prefers-reduced-motion: no-preference) {
   .btn, .chip, .choice, .site-nav a {
@@ -309,14 +309,15 @@ html.js .statband:empty { min-height: 8.2rem; }
   display: flex; flex-wrap: wrap; gap: .45rem .9rem; align-items: center;
   font-size: .875rem; color: var(--ink-faint); margin-bottom: .5rem;
 }
-.card .more { margin-top: .8rem; font-size: .95rem; }
+.card .more { margin-top: .8rem; font-size: .98rem; }
 .card .more a { color: var(--bronze-dark); font-weight: 600; text-decoration: none; }
 .card .more a:hover { text-decoration: underline; }
 @media (hover: hover) and (prefers-reduced-motion: no-preference) {
-  .card, .person, .step {
+  .card, .person, .step, .stat, .weighin, .entry-panel, .record-card {
     transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
   }
-  .card:hover, .person:hover, .step:hover {
+  .card:hover, .person:hover, .step:hover, .stat:hover, .weighin:hover,
+  .entry-panel:hover, .record-card:hover {
     transform: translateY(-3px); box-shadow: var(--shadow); border-color: var(--line);
   }
   .chip:hover { background: var(--marble-2); transform: translateY(-1px); }
@@ -337,7 +338,7 @@ html.js .statband:empty { min-height: 8.2rem; }
   display: inline-flex; align-items: center; min-height: 44px;
   padding: .4rem .95rem; border-radius: 999px; border: 1px solid var(--line);
   background: var(--card); color: var(--ink); text-decoration: none;
-  font-size: .95rem; cursor: pointer; font-family: inherit;
+  font-size: .98rem; cursor: pointer; font-family: inherit;
 }
 .chip:hover { border-color: var(--bronze-dark); background: var(--marble-2); }
 .chip[aria-pressed="true"] { background: var(--ink); color: var(--marble); border-color: var(--ink); }
@@ -359,10 +360,10 @@ html.js .statband:empty { min-height: 8.2rem; }
   display: grid; gap: 1rem; grid-template-columns: 1fr; margin-top: .6rem;
 }
 @media (min-width: 720px) { .filters .grid { grid-template-columns: 1fr 1fr 1fr; } }
-.filters label { display: block; font-size: .88rem; font-weight: 600; margin-bottom: .35rem; }
+.filters label { display: block; font-size: .92rem; font-weight: 600; margin-bottom: .35rem; }
 .filters select {
   width: 100%; min-height: 48px; padding: .5rem .7rem; font: inherit;
-  border: 1.5px solid var(--line); border-radius: 10px; background: #fff; color: var(--ink);
+  border: 1.5px solid var(--line); border-radius: 12px; background: #fff; color: var(--ink);
 }
 .checkline { display: flex; gap: .6rem; align-items: center; min-height: 44px; font-size: .98rem; }
 .checkline input { width: 22px; height: 22px; accent-color: var(--bronze-dark); }
@@ -380,8 +381,8 @@ html.js .statband:empty { min-height: 8.2rem; }
 .person h3 { margin: 0 0 .15rem; }
 .person h3 a { color: var(--ink); text-decoration: none; }
 .person h3 a:hover { text-decoration: underline; text-decoration-color: var(--bronze); }
-.person .ward { color: var(--bronze-dark); font-weight: 600; font-size: .93rem; margin: 0 0 .55rem; }
-.person .onestat { color: var(--ink-soft); font-size: .95rem; margin: 0; }
+.person .ward { color: var(--bronze-dark); font-weight: 600; font-size: .92rem; margin: 0 0 .55rem; }
+.person .onestat { color: var(--ink-soft); font-size: .98rem; margin: 0; }
 .personlist { list-style: none; margin: 0; padding: 0; }
 .personlist li {
   display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap;
@@ -389,7 +390,7 @@ html.js .statband:empty { min-height: 8.2rem; }
 }
 .personlist a { color: var(--ink); font-weight: 600; text-decoration: none; }
 .personlist a:hover { text-decoration: underline; text-decoration-color: var(--bronze); }
-.personlist .terms { color: var(--ink-faint); font-size: .9rem; }
+.personlist .terms { color: var(--ink-faint); font-size: .875rem; }
 
 .statTiles { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin: 1.4rem 0; }
 @media (max-width: 640px) { .statTiles { grid-template-columns: 1fr; } }
@@ -405,7 +406,7 @@ html.js .statband:empty { min-height: 8.2rem; }
 .votebars .fill.n { background: var(--no); }
 .votebars .n { font-weight: 700; text-align: right; }
 .recordExpander { margin-top: 1.6rem; }
-table.record { width: 100%; border-collapse: collapse; font-size: .95rem; }
+table.record { width: 100%; border-collapse: collapse; font-size: .98rem; }
 table.record th, table.record td {
   text-align: left; padding: .5rem .6rem; border-bottom: 1px solid var(--line-soft);
   vertical-align: top;
@@ -431,7 +432,7 @@ table.record th { font-size: .8rem; letter-spacing: .08em; text-transform: upper
 .choice.support[aria-pressed="true"] { background: var(--yes); border-color: var(--yes); }
 .choice.oppose[aria-pressed="true"] { background: var(--no); border-color: var(--no); }
 .choice[aria-pressed="true"]::before { content: "✓ "; }
-.savedNote { margin-top: .9rem; font-size: .95rem; color: var(--ink-soft); }
+.savedNote { margin-top: .9rem; font-size: .98rem; color: var(--ink-soft); }
 .savedNote strong { color: var(--ink); }
 @media (prefers-reduced-motion: no-preference) {
   .choice[aria-pressed="true"] { animation: choice-pulse .5s ease; }
@@ -495,7 +496,7 @@ table.record th { font-size: .8rem; letter-spacing: .08em; text-transform: upper
 .toolbar { display: flex; gap: .7rem; flex-wrap: wrap; align-items: center; margin: 1.2rem 0; }
 .toolbar select, .toolbar input[type="search"] {
   min-height: 48px; padding: .5rem .7rem; font: inherit; border: 1.5px solid var(--line);
-  border-radius: 10px; background: #fff; color: var(--ink);
+  border-radius: 12px; background: #fff; color: var(--ink);
 }
 .pager { display: flex; gap: .8rem; align-items: center; margin-top: 1.6rem; flex-wrap: wrap; }
 a.ext { color: var(--bronze-dark); font-weight: 600; }
@@ -506,7 +507,7 @@ footer .fineprint { font-size: .82rem; color: var(--ink-faint); }
    Existing design tokens only; no new colours, fonts, or radii. */
 
 /* "why it matters" stake line (decisionCard + decision page) */
-.card .stake { color: var(--ink-soft); font-size: .93rem; margin: .5rem 0 0; }
+.card .stake { color: var(--ink-soft); font-size: .98rem; margin: .5rem 0 0; }
 .stake-prominent {
   font-size: 1.05rem; line-height: 1.6; color: var(--ink);
   max-width: 44rem; margin: 0 0 1rem;
@@ -518,7 +519,7 @@ footer .fineprint { font-size: .82rem; color: var(--ink-faint); }
   display: flex; flex-wrap: wrap; gap: .5rem; align-items: center;
   margin: .4rem 0 .8rem; max-width: 44rem;
 }
-.askchips-label { font-size: .9rem; font-weight: 600; color: var(--ink-soft); }
+.askchips-label { font-size: .92rem; font-weight: 600; color: var(--ink-soft); }
 
 /* Interpretation line on Explore — the parser showing its working */
 .interpretation {
@@ -526,7 +527,7 @@ footer .fineprint { font-size: .82rem; color: var(--ink-faint); }
   background: var(--card); border: 1px solid var(--line-soft);
   border-left: 4px solid var(--bronze); border-radius: 0 var(--radius) var(--radius) 0;
   padding: .85rem 1.1rem; margin: 1.2rem 0 0; max-width: 44rem;
-  box-shadow: var(--shadow-sm); font-size: .97rem; color: var(--ink-soft);
+  box-shadow: var(--shadow-sm); font-size: .98rem; color: var(--ink-soft);
 }
 .interpretation .interp-clear {
   background: none; border: 0; padding: 0; font: inherit; cursor: pointer;
@@ -539,7 +540,7 @@ footer .fineprint { font-size: .82rem; color: var(--ink-faint); }
 .starthere-picker { display: flex; gap: .6rem; flex-wrap: wrap; align-items: center; }
 .starthere-picker select {
   flex: 1 1 16rem; min-height: 48px; padding: .5rem .7rem; font: inherit;
-  border: 1.5px solid var(--line); border-radius: 10px;
+  border: 1.5px solid var(--line); border-radius: 12px;
   background: #fff; color: var(--ink);
 }
 #starthere .person { max-width: 44rem; }
@@ -566,7 +567,7 @@ footer .fineprint { font-size: .82rem; color: var(--ink-faint); }
   display: block; font-family: var(--font-display); font-size: 1.12rem;
   font-weight: 700; line-height: 1.2;
 }
-.thread-card-meta { display: block; margin-top: .3rem; font-size: .9rem; color: var(--ink-soft); }
+.thread-card-meta { display: block; margin-top: .3rem; font-size: .875rem; color: var(--ink-soft); }
 @media (hover: hover) and (prefers-reduced-motion: no-preference) {
   .thread-card { transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease; }
   .thread-card:hover { transform: translateY(-3px); box-shadow: var(--shadow); border-color: var(--line); }
@@ -631,10 +632,10 @@ html.js .entry-shell { min-height: 26.6rem; }
   outline: 3px solid var(--bronze-dark); outline-offset: 2px;
   box-shadow: 0 0 0 3px rgba(176,138,74,.35);
 }
-.wf-privacy { font-size: .88rem; color: var(--ink-soft); margin: .55rem 0 0; }
+.wf-privacy { font-size: .875rem; color: var(--ink-soft); margin: .55rem 0 0; }
 .wf-note {
   background: var(--marble-2); border-radius: 10px;
-  padding: .8rem 1rem; margin: .9rem 0 0; font-size: .97rem;
+  padding: .8rem 1rem; margin: .9rem 0 0; font-size: .98rem;
 }
 .wf-confirm { margin-top: 1rem; }
 .wf-confirm > p { margin: 0 0 .7rem; font-size: 1.05rem; }
@@ -648,30 +649,30 @@ html.js .entry-shell { min-height: 26.6rem; }
 }
 .wf-candidate:hover { border-color: var(--bronze-dark); background: var(--marble-2); }
 .wf-cand-ward { display: block; font-weight: 700; font-size: 1.02rem; }
-.wf-cand-who { display: block; color: var(--bronze-dark); font-weight: 600; font-size: .93rem; margin-top: .1rem; }
-.wf-cand-cue { display: block; color: var(--ink-soft); font-size: .9rem; margin-top: .15rem; }
+.wf-cand-who { display: block; color: var(--bronze-dark); font-weight: 600; font-size: .92rem; margin-top: .1rem; }
+.wf-cand-cue { display: block; color: var(--ink-soft); font-size: .875rem; margin-top: .15rem; }
 .wf-listline { margin: .8rem 0 0; }
 .wf-listtoggle {
   background: none; border: 0; padding: .3rem 0; font: inherit;
-  font-size: .95rem; cursor: pointer; color: var(--bronze-dark);
+  font-size: .98rem; cursor: pointer; color: var(--bronze-dark);
   font-weight: 600; text-decoration: underline; text-underline-offset: 3px;
   min-height: 44px;
 }
 .wf-listrow { margin-top: .5rem; }
 .wf-listrow select {
   width: 100%; min-height: 48px; padding: .5rem .7rem; font: inherit;
-  border: 1.5px solid var(--line); border-radius: 10px;
+  border: 1.5px solid var(--line); border-radius: 12px;
   background: #fff; color: var(--ink);
 }
 .wf-set { display: flex; gap: .6rem; flex-wrap: wrap; align-items: center; margin: 0; font-size: 1.02rem; }
-.wf-set .wf-listtoggle { min-height: 36px; }
+.wf-set .wf-listtoggle { min-height: 44px; }
 
 /* Account forms (My Record) */
 .field { margin-bottom: 1rem; }
 .field label { display: block; font-weight: 600; font-size: .92rem; margin-bottom: .4rem; }
 .field input[type="text"], .field input[type="email"], .field input[type="password"] {
   width: 100%; min-height: 48px; padding: .55rem .8rem; font: inherit;
-  border: 1.5px solid var(--line); border-radius: 10px;
+  border: 1.5px solid var(--line); border-radius: 12px;
   background: #fff; color: var(--ink);
 }
 .field input:focus {

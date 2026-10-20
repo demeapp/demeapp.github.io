@@ -165,44 +165,137 @@ function decisionCard(c, opts = {}) {
      getPick(ref) / setPick(ref, choice) / clearPick(ref)
      allPicks() -> {ref: {choice, ts}}
      exportAll() / resetAll()
+     getWatchWard() / setWatchWard(n|null)
+     getInterests() / setInterests(ids)
+     getWardRep() / setWardRep(slug, name) / clearWardRep()
+     getMayorRep() / setMayorRep(slug, name) / clearMayorRep()
+     hasProfile()
    LocalAdapter below is the production adapter on a static host: picks
-   live in the visitor's own browser (localStorage), versioned schema.
+   and the "Your Deme" profile (ward, an optional second watched
+   ward, followed topics, ward/mayor rep snapshots, last-changed
+   time) live in the visitor's own browser (localStorage), v2.
+   Migration: on read, a valid v2 wins. Otherwise a valid v1 migrates
+   losslessly — ward and every pick (choice + ts) carry over exactly,
+   new fields empty — v2 is persisted, verified by re-reading it
+   (ward + pick count must match), and only then is v1 removed. If
+   persisting/verifying fails, v1 stays and the migrated state is
+   kept in memory for the session. Corrupt JSON counts as absent.
    A future API phase swaps in a RemoteAdapter implementing the same
    methods — no page code changes. There is deliberately NO aggregate,
    tally, or percentage-of-visitors concept anywhere in this interface:
    a static site has no other visitors' data, and Deme never implies
    otherwise. */
+/* Council alerts (staged) — single config point. Empty string = sign-ups not open yet; the parent will supply the Google Form URL here. */
+const DEME_ALERTS_FORM_URL = "";
 const VoteStore = (() => {
-  const KEY = "deme.votes.v1";
-  function read() {
-    try {
-      const raw = localStorage.getItem(KEY);
-      if (raw) {
-        const parsed = JSON.parse(raw);
-        if (parsed && parsed.v === 1 && typeof parsed.picks === "object") {
-          return parsed;
-        }
-      }
-    } catch (e) { /* storage unavailable — fall through to empty */ }
-    return { v: 1, ward: null, picks: {} };
+  const KEY = "deme.votes.v2", OLD = "deme.votes.v1";
+  let mem = null; /* session-only state if a migration cannot persist */
+  const now = () => new Date().toISOString();
+  const fresh = () => ({ v: 2, ward: null, watchWard: null, interests: [],
+    picks: {}, wardRep: null, mayorRep: null, profileUpdatedAt: null });
+  function shape(p) {
+    const s = fresh();
+    s.ward = p.ward ?? null;
+    s.watchWard = p.watchWard ?? null;
+    if (Array.isArray(p.interests)) s.interests = p.interests;
+    s.picks = p.picks;
+    s.wardRep = p.wardRep ?? null;
+    s.mayorRep = p.mayorRep ?? null;
+    s.profileUpdatedAt = p.profileUpdatedAt ?? null;
+    return s;
   }
-  function write(state) {
-    try { localStorage.setItem(KEY, JSON.stringify(state)); } catch (e) {}
+  function parse(key) {
+    try {
+      const raw = localStorage.getItem(key);
+      if (raw) {
+        const p = JSON.parse(raw);
+        if (p && p.picks && typeof p.picks === "object") return p;
+      }
+    } catch (e) { /* corrupt / unavailable — treat as absent */ }
+    return null;
+  }
+  function read() {
+    if (mem) return mem;
+    const p2 = parse(KEY);
+    if (p2 && p2.v === 2) return shape(p2);
+    const p1 = parse(OLD);
+    if (p1 && p1.v === 1) {
+      const s = fresh();
+      s.ward = p1.ward ?? null;
+      s.picks = p1.picks;
+      try {
+        localStorage.setItem(KEY, JSON.stringify(s));
+        const back = parse(KEY);
+        if (!back || back.v !== 2 || back.ward !== s.ward
+          || Object.keys(back.picks).length !== Object.keys(s.picks).length) {
+          throw new Error("verify");
+        }
+        try { localStorage.removeItem(OLD); } catch (e) {}
+        return s;
+      } catch (e) { mem = s; return mem; }
+    }
+    return fresh();
+  }
+  function write(s) {
+    if (mem) mem = s;
+    try { localStorage.setItem(KEY, JSON.stringify(s)); }
+    catch (e) { mem = s; }
   }
   return {
+    storageKey: KEY,
     getWard() { return read().ward; },
-    setWard(n) { const s = read(); s.ward = n; write(s); },
+    setWard(n) {
+      const s = read();
+      if (s.ward !== n) {
+        s.ward = n; s.wardRep = null; s.profileUpdatedAt = now();
+      }
+      write(s);
+    },
+    getWatchWard() { return read().watchWard; },
+    setWatchWard(n) {
+      const s = read();
+      if (s.watchWard !== n) { s.watchWard = n; s.profileUpdatedAt = now(); }
+      write(s);
+    },
+    getInterests() { return read().interests.slice(); },
+    setInterests(ids) {
+      const s = read();
+      const next = Array.isArray(ids) ? ids.slice() : [];
+      if (JSON.stringify(s.interests) !== JSON.stringify(next)) {
+        s.interests = next; s.profileUpdatedAt = now();
+      }
+      write(s);
+    },
+    getWardRep() { return read().wardRep; },
+    setWardRep(slug, name) {
+      const s = read(); s.wardRep = { slug, name }; write(s);
+    },
+    clearWardRep() { const s = read(); s.wardRep = null; write(s); },
+    getMayorRep() { return read().mayorRep; },
+    setMayorRep(slug, name) {
+      const s = read(); s.mayorRep = { slug, name }; write(s);
+    },
+    clearMayorRep() { const s = read(); s.mayorRep = null; write(s); },
+    hasProfile() {
+      const s = read();
+      return s.ward != null || s.watchWard != null || s.interests.length > 0;
+    },
     getPick(ref) { return read().picks[ref] || null; },
     setPick(ref, choice) {
       const s = read();
-      s.picks[ref] = { choice, ts: new Date().toISOString() };
+      s.picks[ref] = { choice, ts: now() };
       write(s);
     },
     clearPick(ref) { const s = read(); delete s.picks[ref]; write(s); },
     allPicks() { return read().picks; },
     exportAll() { return read(); },
-    resetAll() { try { localStorage.removeItem(KEY); } catch (e) {} },
-    storageKey: KEY,
+    resetAll() {
+      mem = null;
+      try {
+        localStorage.removeItem(KEY);
+        localStorage.removeItem(OLD);
+      } catch (e) {}
+    },
   };
 })();
 

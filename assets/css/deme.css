@@ -540,6 +540,13 @@ footer .fineprint { font-size: .82rem; color: var(--ink-faint); }
 #starthere .person { max-width: 44rem; }
 #starthere .cards { max-width: none; }
 
+/* Your Deme profile — step-2 fields + selected topic chips */
+.profile-field { margin-bottom: 1rem; }
+.profile-field label {
+  display: block; font-weight: 600; font-size: .92rem; margin-bottom: .45rem;
+}
+#profile-ints .chip[aria-pressed="true"]::before { content: "✓ "; }
+
 /* Story threads — home cards + thread page */
 .thread-grid { display: grid; gap: 1rem; grid-template-columns: 1fr; }
 @media (min-width: 720px) { .thread-grid { grid-template-columns: 1fr 1fr; } }

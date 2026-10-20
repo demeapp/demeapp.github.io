@@ -1,7 +1,7 @@
 /* Home personalization — the "Start here" section on index.html.
    State: localStorage key deme.home.v1 { welcomed, choice } where
    choice is a ward number, "mayor", or null. A numeric choice is ALSO
-   written through VoteStore (deme.votes.v1) — the ward is never forked
+   written through VoteStore (deme.votes.v2) — the ward is never forked
    into a second store. Nothing here gates any other content: every
    other section of the home page renders whether or not a ward is set,
    and everything stays in this browser. */
@@ -65,6 +65,147 @@ const HomeStore = (() => {
     </article>`;
   }
 
+  /* Thread id -> label, from the summary the page already loads. */
+  async function threadLabels() {
+    try {
+      const d = await loadJSON(dataPath("threads-summary.json"));
+      const m = {};
+      (d.threads || []).forEach((t) => { m[t.id] = t.label; });
+      return m;
+    } catch (e) { return {}; }
+  }
+
+  function currentPerson(state) {
+    return state.choice === "mayor"
+      ? people.find((c) => c.current && c.mayor)
+      : people.find((c) => c.current && !c.mayor && c.ward === state.choice);
+  }
+
+  /* Continuity: prime the rep snapshot when there is none; if the
+     stored one names someone else, return the notice. */
+  function repNotice(state, person) {
+    const isMayor = state.choice === "mayor";
+    const snap = isMayor ? VoteStore.getMayorRep() : VoteStore.getWardRep();
+    if (!snap) {
+      if (isMayor) VoteStore.setMayorRep(person.slug, person.name);
+      else VoteStore.setWardRep(person.slug, person.name);
+      return "";
+    }
+    if (snap.slug === person.slug) return "";
+    const old = esc(snap.name), nm = esc(person.name);
+    const tail = `<p><a href="councillor.html?m=${encodeURIComponent(person.slug)}">See ${nm}'s record →</a>
+      <button class="btn secondary small" type="button" id="rep-gotit">Got it</button></p></div>`;
+    if (isMayor) {
+      return `<div class="notice"><h3>Toronto's mayor changed</h3>
+        <p>When the new Council took office, the mayor's office changed
+        hands. ${old} was mayor when you set your choice; ${nm} is mayor
+        now.</p>${tail}`;
+    }
+    return `<div class="notice"><h3>Your councillor changed</h3>
+      <p>When the new Council took office, Ward ${state.choice}'s seat
+      changed hands. ${old} was the councillor on record when you set
+      your ward; ${nm} represents Ward ${state.choice} now.</p>${tail}`;
+  }
+
+  /* Step 2 (also the "Edit your Deme" editor), kept in VoteStore. */
+  async function renderStep2(state) {
+    section.hidden = false;
+    const isMayor = state.choice === "mayor";
+    const labels = await threadLabels();
+    const ints = VoteStore.getInterests(), ww0 = VoteStore.getWatchWard();
+    const wards = people.filter((c) => c.current && !c.mayor
+      && c.ward !== state.choice).sort((a, b) => a.ward - b.ward);
+    body.innerHTML = `
+      <p class="kicker">Start here</p>
+      <h2 id="starthere-h">Make it yours — optional</h2>
+      <hr class="rule">
+      <div class="card starthere-card">
+        <div class="profile-field">
+          <label for="profile-watch">${isMayor ? "Watch a ward" : "Also watch a second ward"}</label>
+          <div class="starthere-picker"><select id="profile-watch">
+            <option value="">No second ward</option>
+            ${wards.map((c) => `<option value="${c.ward}">Ward ${c.ward} — ${esc(c.wardName)}</option>`).join("")}
+          </select></div>
+        </div>
+        <div class="profile-field">
+          <label id="profile-topics-l">Topics you follow</label>
+          <div class="chips" id="profile-ints" role="group" aria-labelledby="profile-topics-l">
+            ${Object.keys(labels).map((id) => `<button type="button" class="chip" data-id="${esc(id)}" aria-pressed="${ints.includes(id)}">${esc(labels[id])}</button>`).join("")}
+          </div>
+        </div>
+        <p class="toolbar" style="margin:0 0 .8rem">
+          <button class="btn" type="button" id="profile-save">${isMayor ? "Save and show my Deme" : "Save and show my ward"}</button>
+          <button class="btn secondary" type="button" id="profile-skip">Skip this step</button>
+        </p>
+        <p class="small" style="margin:0">Kept only in this browser, like
+        your picks. Change it any time in My Record.</p>
+      </div>`;
+    const sel = document.getElementById("profile-watch");
+    if (ww0 != null && ww0 !== state.choice) sel.value = String(ww0);
+    body.querySelectorAll("#profile-ints .chip").forEach((b) =>
+      b.addEventListener("click", () => b.setAttribute("aria-pressed",
+        b.getAttribute("aria-pressed") === "true" ? "false" : "true")));
+    document.getElementById("profile-save").addEventListener("click", () => {
+      VoteStore.setWatchWard(sel.value ? Number(sel.value) : null);
+      VoteStore.setInterests([...body.querySelectorAll(
+        '#profile-ints .chip[aria-pressed="true"]')].map((b) => b.dataset.id));
+      const person = currentPerson(state);
+      if (person) repNotice(state, person); /* prime the rep snapshot */
+      renderWard(state);
+      renderForYou();
+    });
+    document.getElementById("profile-skip").addEventListener("click", () => {
+      renderWard(state);
+      renderForYou();
+    });
+  }
+
+  /* "For you": only with a watched ward or topics (Start Here
+     already serves a primary-ward-only profile). */
+  async function renderForYou() {
+    const sec = document.getElementById("foryou");
+    const fb = document.getElementById("foryou-body");
+    if (!sec || !fb) return;
+    try {
+      const ward = VoteStore.getWard(), ww = VoteStore.getWatchWard();
+      const ints = VoteStore.getInterests();
+      if (ww == null && !ints.length) { sec.hidden = true; return; }
+      const search = await loadJSON(dataPath("search.json"));
+      const refSet = new Set();
+      if (ints.length) {
+        try {
+          const td = await loadJSON(dataPath("threads.json"));
+          (td.threads || []).filter((t) => ints.includes(t.id))
+            .forEach((t) => Object.values(t.years || {})
+              .forEach((ys) => ys.forEach((r) => refSet.add(r))));
+        } catch (e) { /* fall back to the ward matches alone */ }
+      }
+      const rows = search.filter((r) => refSet.has(r.ref)
+        || (r.w && ((ward != null && r.w.includes(ward))
+          || (ww != null && r.w.includes(ww)))))
+        .sort((a, b) => (a.date < b.date ? 1 : a.date > b.date ? -1 : 0)).slice(0, 12);
+      const cards = (await hydrateCards(rows)).filter(Boolean).slice(0, 4);
+      const basis = [];
+      if (ward != null) basis.push(`Ward ${ward}`);
+      if (ww != null && ww !== ward) basis.push(`Ward ${ww}`);
+      if (ints.length) {
+        const labels = await threadLabels();
+        ints.forEach((id) => basis.push(labels[id] || id));
+      }
+      sec.hidden = false;
+      fb.innerHTML = `
+        <p class="kicker">Your Deme</p>
+        <h2>For you</h2>
+        <hr class="rule">
+        <p class="small">Latest decisions for ${esc(basis.join(" · "))}
+        — from your profile. Edit it in
+        <a href="my-record.html">My Record</a>.</p>
+        ${cards.length
+          ? `<div class="cards two">${cards.map((c) => decisionCard(c)).join("")}</div>`
+          : `<p class="small">Nothing in the archive matches your extra ward and topics yet — the record grows with every Council meeting.</p>`}`;
+    } catch (e) { sec.hidden = true; }
+  }
+
   function renderPicker(state) {
     const wards = people.filter((c) => c.current && !c.mayor)
       .sort((a, b) => a.ward - b.ward);
@@ -99,7 +240,7 @@ const HomeStore = (() => {
       VoteStore.setWard(choice === "mayor" ? null : choice);
       const next = { welcomed: true, choice };
       HomeStore.write(next);
-      render(next);
+      renderStep2(next);
     });
     document.getElementById("starthere-skip").addEventListener("click", () => {
       HomeStore.write({ welcomed: true, choice: null });
@@ -109,23 +250,49 @@ const HomeStore = (() => {
 
   async function renderWard(state) {
     const isMayor = state.choice === "mayor";
-    const person = isMayor
-      ? people.find((c) => c.current && c.mayor)
-      : people.find((c) => c.current && !c.mayor && c.ward === state.choice);
+    const person = currentPerson(state);
+    const notice = person ? repNotice(state, person) : "";
+    const ww = VoteStore.getWatchWard(), ints = VoteStore.getInterests();
+    let summary = "";
+    if (ww != null || ints.length) {
+      const bits = [];
+      if (ww != null) {
+        bits.push(`${isMayor ? "Watching" : "Also watching"} Ward ${ww}`);
+      }
+      if (ints.length) {
+        const labels = await threadLabels();
+        bits.push(`Following: ${ints.map((id) => labels[id] || id).join(", ")}`);
+      }
+      summary = `<p class="small" style="margin-top:.8rem">${esc(bits.join(" · "))}</p>`;
+    }
     body.innerHTML = `
       <p class="kicker">Start here</p>
       <h2 id="starthere-h">${isMayor ? "Your mayor" : "Your ward"}</h2>
       <hr class="rule">
+      ${notice}
       ${person ? personCard(person) : ""}
+      ${summary}
       <div class="cards two" id="starthere-cards" style="margin-top:1rem">
         <p class="small">Loading the latest decisions…</p>
       </div>
       <p style="margin-top:1.1rem">
         <button class="btn secondary small" type="button" id="starthere-change">Change ward</button>
+        <button class="btn secondary small" type="button" id="starthere-edit">Edit your Deme</button>
       </p>`;
     document.getElementById("starthere-change").addEventListener("click", () => {
       renderPicker(state);
     });
+    document.getElementById("starthere-edit").addEventListener("click", () => {
+      renderStep2(state);
+    });
+    const gotit = document.getElementById("rep-gotit");
+    if (gotit) {
+      gotit.addEventListener("click", () => {
+        if (isMayor) VoteStore.setMayorRep(person.slug, person.name);
+        else VoteStore.setWardRep(person.slug, person.name);
+        renderWard(state);
+      });
+    }
     const box = document.getElementById("starthere-cards");
     try {
       let cards = [];
@@ -165,5 +332,6 @@ const HomeStore = (() => {
       state.choice = storedWard;
     }
     render(state);
+    renderForYou();
   }).catch(() => { section.hidden = true; });
 })();

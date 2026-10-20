@@ -42,6 +42,20 @@
         </div>
       </div>
 
+      <div class="card" style="margin-top:1.6rem">
+        <h2 style="font-size:1.25rem">Your Deme</h2>
+        <div id="continuity"></div>
+        <div class="profile-field">
+          <label for="watch-ward">Also watch a second ward</label>
+          <select id="watch-ward"></select>
+        </div>
+        <div class="profile-field">
+          <label id="record-topics-l">Topics you follow</label>
+          <div class="chips" id="interests" role="group" aria-labelledby="record-topics-l"></div>
+        </div>
+        <div id="profile-alerts"></div>
+      </div>
+
       <div id="agreement" style="margin-top:1.6rem"></div>
 
       <h2 style="margin-top:2.6rem">Your picks</h2>
@@ -51,11 +65,12 @@
 
       <div class="toolbar" style="margin-top:2.2rem">
         <button class="btn secondary small" id="export">Download my data (JSON)</button>
-        <button class="btn secondary small" id="reset">Erase my picks and ward</button>
+        <button class="btn secondary small" id="reset">Erase my picks, ward and profile</button>
       </div>
-      <p class="small">Your data is a small file stored by this browser
-      (local storage). Erasing removes it completely; Deme keeps no copy —
-      there is no server and no account.</p>
+      <p class="small">Your data — your picks, your ward and your profile —
+      is a small file stored by this browser (local storage); erasing
+      removes it completely, and Deme keeps no copy — there is no server
+      and no account.</p>
     </section>
   </div>
 </main>

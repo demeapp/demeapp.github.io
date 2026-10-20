@@ -6,6 +6,19 @@ renderChrome("vote.html");
 
 const zone = document.getElementById("upcoming");
 
+/* Council alerts opt-in (BUILD 3) — the link IS the sign-up action;
+   while DEME_ALERTS_FORM_URL is empty, only the "open soon" line shows. */
+const alertsAction = document.getElementById("alerts-action");
+if (alertsAction) {
+  alertsAction.innerHTML = DEME_ALERTS_FORM_URL
+    ? `<p><a class="btn bronze" href="${esc(DEME_ALERTS_FORM_URL)}" target="_blank" rel="noopener">Sign up for Council alerts</a></p>
+       <p class="small">The sign-up form asks for your email address and
+       will ask you to confirm it before anything is sent. Unsubscribe
+       at any time — every alert carries an unsubscribe link.</p>`
+    : `<p class="small">Sign-ups open soon — the form is being set up.
+       Alerts will follow the wards and topics in your profile.</p>`;
+}
+
 function weighInHTML(u) {
   const pick = VoteStore.getPick(u.ref);
   const picked = pick ? pick.choice : null;

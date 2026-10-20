@@ -7,9 +7,15 @@ renderChrome("my-record.html");
 
 const wardSel = document.getElementById("ward");
 const wardWho = document.getElementById("wardwho");
+const watchSel = document.getElementById("watch-ward");
+const interestsBox = document.getElementById("interests");
+const continuityBox = document.getElementById("continuity");
+const alertsBox = document.getElementById("profile-alerts");
 const picksBox = document.getElementById("picks");
 const agreeBox = document.getElementById("agreement");
 let people = [];
+let wardNames = new Map();
+let threadThreads = [];
 
 async function findCard(ref) {
   const years = [ref.slice(0, 4), "2026", "2025", "2024", "2023", "2022",
@@ -34,6 +40,74 @@ function renderWardWho() {
     ? `Your councillor: <a href="councillor.html?m=${encodeURIComponent(c.slug)}">
        <strong>${esc(c.name)}</strong></a> — Ward ${c.ward}, ${esc(c.wardName)}`
     : (VoteStore.getWard() ? "" : "No ward set yet.");
+}
+
+/* Second-ward select: same 25-ward construction as the primary select,
+   with a leading "No second ward" option and the primary ward excluded. */
+function renderWatchWard() {
+  if (!watchSel) return;
+  const primary = VoteStore.getWard();
+  const watch = VoteStore.getWatchWard();
+  watchSel.innerHTML = `<option value="">No second ward</option>` +
+    Array.from({ length: 25 }, (_, i) => i + 1)
+      .filter((n) => n !== primary)
+      .map((n) => {
+        const name = wardNames.get(n);
+        return `<option value="${n}">Ward ${n}${name ? ` — ${esc(name)}` : ""}</option>`;
+      }).join("");
+  watchSel.value = (watch != null && watch !== primary) ? String(watch) : "";
+}
+
+/* Topic chips: the 11 threads, toggles save the full set on every tap. */
+function renderInterests() {
+  if (!interestsBox) return;
+  const ints = VoteStore.getInterests();
+  interestsBox.innerHTML = threadThreads.map((t) =>
+    `<button type="button" class="chip" data-id="${esc(t.id)}" aria-pressed="${ints.includes(t.id)}">${esc(t.label)}</button>`).join("");
+}
+
+/* Continuity, same snapshot discipline as Home: no snapshot + a known
+   current rep primes the snapshot silently; a snapshot naming someone
+   else shows the change notice until the visitor acknowledges it. */
+function renderContinuity() {
+  if (!continuityBox) return;
+  const c = myCouncillor();
+  if (!c) { continuityBox.innerHTML = ""; return; }
+  const snap = VoteStore.getWardRep();
+  if (!snap) {
+    VoteStore.setWardRep(c.slug, c.name);
+    continuityBox.innerHTML = "";
+    return;
+  }
+  if (snap.slug === c.slug) { continuityBox.innerHTML = ""; return; }
+  continuityBox.innerHTML = `<div class="notice"><h3>Your councillor changed</h3>
+    <p>When the new Council took office, Ward ${c.ward}'s seat changed
+    hands. ${esc(snap.name)} was the councillor on record when you set
+    your ward; ${esc(c.name)} represents Ward ${c.ward} now.</p>
+    <p><a href="councillor.html?m=${encodeURIComponent(c.slug)}">See ${esc(c.name)}'s record →</a>
+    <button class="btn secondary small" type="button" id="continuity-gotit">Got it</button></p></div>`;
+  document.getElementById("continuity-gotit").addEventListener("click", () => {
+    VoteStore.setWardRep(c.slug, c.name);
+    continuityBox.innerHTML = "";
+  });
+}
+
+/* Council alerts opt-in (BUILD 3) — the link IS the sign-up action;
+   while DEME_ALERTS_FORM_URL is empty, only the "open soon" line shows. */
+function renderAlerts() {
+  if (!alertsBox) return;
+  alertsBox.innerHTML = `<h3>Council alerts by email</h3>
+    <p>Get an email when items on your wards or topics reach a City
+    Council agenda. Deme sends one digest per Council agenda — never one
+    email per item — and a person reviews every digest before it goes
+    out.</p>
+    ${DEME_ALERTS_FORM_URL
+      ? `<p><a class="btn bronze" href="${esc(DEME_ALERTS_FORM_URL)}" target="_blank" rel="noopener">Sign up for Council alerts</a></p>
+         <p class="small">The sign-up form asks for your email address and
+         will ask you to confirm it before anything is sent. Unsubscribe
+         at any time — every alert carries an unsubscribe link.</p>`
+      : `<p class="small">Sign-ups open soon — the form is being set up.
+         Alerts will follow the wards and topics in your profile.</p>`}`;
 }
 
 async function renderPicks() {
@@ -102,8 +176,12 @@ async function renderPicks() {
 
 async function init() {
   people = await loadJSON(dataPath("councillors.json"));
-  const wardNames = new Map(people.filter((p) => p.current && !p.mayor)
+  wardNames = new Map(people.filter((p) => p.current && !p.mayor)
     .map((p) => [p.ward, p.wardName]));
+  try {
+    const td = await loadJSON(dataPath("threads-summary.json"));
+    threadThreads = td.threads || [];
+  } catch (e) { threadThreads = []; }
   wardSel.innerHTML = `<option value="">Choose your ward…</option>` +
     Array.from({ length: 25 }, (_, i) => {
       const n = i + 1, name = wardNames.get(n);
@@ -112,10 +190,33 @@ async function init() {
   const w = VoteStore.getWard();
   if (w) wardSel.value = String(w);
   renderWardWho();
+  renderContinuity();
+  renderWatchWard();
+  renderInterests();
+  renderAlerts();
   wardSel.addEventListener("change", () => {
     VoteStore.setWard(wardSel.value ? Number(wardSel.value) : null);
+    /* The watched ward can never be the primary ward — if the new
+       primary is the watched one, the watch simply ends. */
+    if (VoteStore.getWatchWard() != null
+      && VoteStore.getWatchWard() === VoteStore.getWard()) {
+      VoteStore.setWatchWard(null);
+    }
     renderWardWho();
+    renderContinuity();
+    renderWatchWard();
     renderPicks();
+  });
+  if (watchSel) watchSel.addEventListener("change", () => {
+    VoteStore.setWatchWard(watchSel.value ? Number(watchSel.value) : null);
+  });
+  if (interestsBox) interestsBox.addEventListener("click", (e) => {
+    const btn = e.target.closest(".chip");
+    if (!btn) return;
+    btn.setAttribute("aria-pressed",
+      btn.getAttribute("aria-pressed") === "true" ? "false" : "true");
+    VoteStore.setInterests([...interestsBox.querySelectorAll(
+      '.chip[aria-pressed="true"]')].map((b) => b.dataset.id));
   });
   document.getElementById("export").addEventListener("click", () => {
     const blob = new Blob(
@@ -128,10 +229,13 @@ async function init() {
     URL.revokeObjectURL(a.href);
   });
   document.getElementById("reset").addEventListener("click", () => {
-    if (confirm("Erase all your Deme picks and your ward from this browser?")) {
+    if (confirm("Erase all your Deme picks, your ward and your profile from this browser?")) {
       VoteStore.resetAll();
       wardSel.value = "";
       renderWardWho();
+      renderContinuity();
+      renderWatchWard();
+      renderInterests();
       renderPicks();
     }
   });

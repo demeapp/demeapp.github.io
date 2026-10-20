@@ -18,6 +18,8 @@ const STATUS_LABELS = {
 const PAGE = 25;
 let rows = [], councillors = [], filtered = [], shown = 0;
 let parsed = null; // parseAsk result for the current query text, or null
+let profileFilter = null; // "Use my profile" filter, or null when off
+let profileSummaryBase = ""; // profile-row summary without " — filter on"
 const briefCache = new Map(); // ref -> card (filled from year shards)
 const $ = (id) => document.getElementById(id);
 
@@ -81,6 +83,10 @@ function effectiveFilters() {
 
 function applyFilters() {
   const eff = effectiveFilters();
+  /* A profile filter with no wards and no interest refs is treated as
+     off — the predicate below is a no-op whenever profileFilter is off. */
+  const profileActive = Boolean(profileFilter
+    && (profileFilter.wards.length || profileFilter.interestRefs));
   filtered = rows.filter((r) =>
     matches(r, eff.freeTokens) &&
     askRowMatchesTopics(r, eff.topicGroups) &&
@@ -89,7 +95,10 @@ function applyFilters() {
     (!eff.statusCodes || eff.statusCodes.includes(r.status)) &&
     (eff.wardNum == null || (r.w && r.w.includes(eff.wardNum))) &&
     (!eff.voteOnly || r.hv === 1) &&
-    (!eff.closeOnly || (r.hv === 1 && r.mg != null && r.mg <= 2)));
+    (!eff.closeOnly || (r.hv === 1 && r.mg != null && r.mg <= 2)) &&
+    (!profileActive
+      || (r.w && r.w.some((w) => profileFilter.wards.includes(w)))
+      || (profileFilter.interestRefs && profileFilter.interestRefs.has(r.ref))));
   filtered.sort((a, b) => (a.date < b.date ? 1 : -1));
   shown = 0;
   $("results").innerHTML = "";
@@ -184,6 +193,43 @@ function renderMyWardChip(eff) {
     String($("f-ward").value === String(eff.storedWard)));
 }
 
+/* "Your Deme" profile offer: shown only with a stored profile, no
+   q/year/vote params in the URL, and no dismissal this session. */
+function profileDismissed() {
+  try { return sessionStorage.getItem("deme.explore.profileDismissed") === "1"; }
+  catch (e) { return false; }
+}
+function renderProfileState() {
+  const summary = $("profile-summary");
+  if (summary) {
+    summary.textContent = profileSummaryBase + (profileFilter ? " — filter on" : "");
+  }
+  const use = $("use-profile"), clear = $("clear-profile");
+  if (use) use.hidden = Boolean(profileFilter);
+  if (clear) clear.hidden = !profileFilter;
+}
+async function setupProfileRow(params) {
+  const row = $("profile-row");
+  if (!row) return;
+  if (typeof VoteStore === "undefined" || !VoteStore.hasProfile()) return;
+  if (params.has("q") || params.has("year") || params.has("vote")) return;
+  if (profileDismissed()) return;
+  const labels = {};
+  try {
+    const d = await loadJSON(dataPath("threads-summary.json"));
+    (d.threads || []).forEach((t) => { labels[t.id] = t.label; });
+  } catch (e) { /* labels fall back to the thread ids themselves */ }
+  const ward = VoteStore.getWard(), watchWard = VoteStore.getWatchWard();
+  const ints = VoteStore.getInterests();
+  let summary = "Your Deme profile:";
+  if (ward != null) summary += ` Ward ${ward}`;
+  if (watchWard != null) summary += (ward != null ? " + Ward " : " Ward ") + watchWard;
+  if (ints.length) summary += ` · ${ints.map((id) => labels[id] || id).join(", ")}`;
+  profileSummaryBase = summary;
+  renderProfileState();
+  row.hidden = false;
+}
+
 async function hydrate(refs) {
   const byYear = new Map();
   refs.forEach((r) => {
@@ -276,6 +322,7 @@ async function init() {
     applyFilters();
   });
   $("f-ward").addEventListener("change", () => {
+    if (profileFilter) { profileFilter = null; renderProfileState(); }
     if (parsed) parsed.ward = null;
     applyFilters();
   });
@@ -292,6 +339,47 @@ async function init() {
     $("f-ward").value = String(w);
     applyFilters();
   });
+  const useProfile = $("use-profile");
+  if (useProfile) useProfile.addEventListener("click", async () => {
+    const ward = VoteStore.getWard(), watchWard = VoteStore.getWatchWard();
+    const ints = VoteStore.getInterests();
+    /* The profile replaces the ward control while it is active: reset
+       the select to All wards so applyFilters unions the profile
+       (wards ∪ interests) instead of ANDing it with a single ward,
+       and clear any parsed ward piece, like the other controls. */
+    if (parsed) parsed.ward = null;
+    $("f-ward").value = "";
+    profileFilter = { wards: [ward, watchWard].filter(Boolean), interestRefs: null };
+    if (ints.length) {
+      try {
+        const td = await loadJSON(dataPath("threads.json"));
+        const refs = new Set();
+        (td.threads || []).filter((t) => ints.includes(t.id))
+          .forEach((t) => Object.values(t.years || {})
+            .forEach((ys) => ys.forEach((r) => refs.add(r))));
+        profileFilter.interestRefs = refs;
+      } catch (e) { /* the ward part of the filter still applies */ }
+    }
+    if (!profileFilter.wards.length && !profileFilter.interestRefs) {
+      profileFilter = null;
+    }
+    renderProfileState();
+    applyFilters();
+  });
+  const clearProfile = $("clear-profile");
+  if (clearProfile) clearProfile.addEventListener("click", () => {
+    profileFilter = null;
+    renderProfileState();
+    applyFilters();
+  });
+  const dismissProfile = $("dismiss-profile");
+  if (dismissProfile) dismissProfile.addEventListener("click", () => {
+    const row = $("profile-row");
+    if (row) row.hidden = true;
+    try { sessionStorage.setItem("deme.explore.profileDismissed", "1"); }
+    catch (e) { /* the row is hidden for this page either way */ }
+  });
+  await setupProfileRow(params);
   $("searchform").addEventListener("submit", (e) => {
     e.preventDefault(); parseCurrentQuery(); applyFilters();
   });

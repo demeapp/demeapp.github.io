@@ -5,9 +5,7 @@
 "use strict";
 renderChrome("my-record.html");
 
-const wardSel = document.getElementById("ward");
 const wardWho = document.getElementById("wardwho");
-const watchSel = document.getElementById("watch-ward");
 const interestsBox = document.getElementById("interests");
 const continuityBox = document.getElementById("continuity");
 const alertsBox = document.getElementById("profile-alerts");
@@ -42,20 +40,51 @@ function renderWardWho() {
     : (VoteStore.getWard() ? "" : "No ward set yet.");
 }
 
-/* Second-ward select: same 25-ward construction as the primary select,
-   with a leading "No second ward" option and the primary ward excluded. */
-function renderWatchWard() {
-  if (!watchSel) return;
-  const primary = VoteStore.getWard();
-  const watch = VoteStore.getWatchWard();
-  watchSel.innerHTML = `<option value="">No second ward</option>` +
-    Array.from({ length: 25 }, (_, i) => i + 1)
-      .filter((n) => n !== primary)
-      .map((n) => {
-        const name = wardNames.get(n);
-        return `<option value="${n}">Ward ${n}${name ? ` — ${esc(name)}` : ""}</option>`;
-      }).join("");
-  watchSel.value = (watch != null && watch !== primary) ? String(watch) : "";
+/* Ward picking is postal-code-first (WardFinder): the finder owns
+   the input, the confirm/picker states, and its built-in list
+   fallback. Both finders re-mount on any change so what they show is
+   always the stored truth. */
+function mountFinders() {
+  const primaryEl = document.getElementById("ward-finder-primary");
+  if (primaryEl) {
+    WardFinder.mount(primaryEl, {
+      idPrefix: "rec1",
+      people,
+      label: "Find your ward by postal code",
+      current: VoteStore.getWard(),
+      exclude: null,
+      noneLabel: "No ward set",
+      onChoose(n) {
+        VoteStore.setWard(n);
+        /* The watched ward can never be the primary ward — if the new
+           primary is the watched one, the watch simply ends. */
+        if (VoteStore.getWatchWard() != null
+          && VoteStore.getWatchWard() === VoteStore.getWard()) {
+          VoteStore.setWatchWard(null);
+        }
+        renderWardWho();
+        renderContinuity();
+        mountFinders();
+        renderPicks();
+      },
+    });
+  }
+  const watchEl = document.getElementById("ward-finder-watch");
+  if (watchEl) {
+    WardFinder.mount(watchEl, {
+      idPrefix: "rec2",
+      people,
+      label: "Also watch a second ward",
+      current: VoteStore.getWatchWard(),
+      exclude: VoteStore.getWard(),
+      noneLabel: "No second ward",
+      inputLabel: "Postal code of the area to watch",
+      onChoose(n) {
+        VoteStore.setWatchWard(n === VoteStore.getWard() ? null : n);
+        mountFinders();
+      },
+    });
+  }
 }
 
 /* Topic chips: the 11 threads, toggles save the full set on every tap. */
@@ -93,9 +122,16 @@ function renderContinuity() {
 }
 
 /* Council alerts opt-in (BUILD 3) — the link IS the sign-up action;
-   while DEME_ALERTS_FORM_URL is empty, only the "open soon" line shows. */
+   while DEME_ALERTS_FORM_URL is empty, only the "open soon" line shows.
+   When Deme accounts are active (account.js, config-gated), the
+   account layer renders this box instead: for a signed-in visitor
+   the account IS the alerts identity and supersedes the form. */
 function renderAlerts() {
   if (!alertsBox) return;
+  if (window.DemeAccount && window.DemeAccount.enabled()) {
+    window.DemeAccount.renderAlerts(alertsBox);
+    return;
+  }
   alertsBox.innerHTML = `<h3>Council alerts by email</h3>
     <p>Get an email when items on your wards or topics reach a City
     Council agenda. Sign-ups are open now — digests haven't started
@@ -104,11 +140,11 @@ function renderAlerts() {
     and a person reviews every digest before it goes out.</p>
     ${DEME_ALERTS_FORM_URL
       ? `<p><a class="btn bronze" href="${esc(DEME_ALERTS_FORM_URL)}" target="_blank" rel="noopener">Sign up for Council alerts</a></p>
-         <p class="small">The sign-up form will ask for your email address, your wards and
-         your topics. Nothing is sent until digests begin. Unsubscribe
-         at any time.</p>`
-      : `<p class="small">Sign-ups open soon — the form is being set up.
-         Alerts will follow the wards and topics in your profile.</p>`}`;
+         <p class="small">The sign-up form will ask for your email
+         address, your wards and your topics. Nothing is sent until
+         digests begin. Unsubscribe at any time.</p>`
+      : `<p class="small">Sign-ups are not open right now. When they
+         open, alerts will follow the wards and topics in Your Deme.</p>`}`;
 }
 
 async function renderPicks() {
@@ -183,34 +219,11 @@ async function init() {
     const td = await loadJSON(dataPath("threads-summary.json"));
     threadThreads = td.threads || [];
   } catch (e) { threadThreads = []; }
-  wardSel.innerHTML = `<option value="">Choose your ward…</option>` +
-    Array.from({ length: 25 }, (_, i) => {
-      const n = i + 1, name = wardNames.get(n);
-      return `<option value="${n}">Ward ${n}${name ? ` — ${esc(name)}` : ""}</option>`;
-    }).join("");
-  const w = VoteStore.getWard();
-  if (w) wardSel.value = String(w);
+  mountFinders();
   renderWardWho();
   renderContinuity();
-  renderWatchWard();
   renderInterests();
   renderAlerts();
-  wardSel.addEventListener("change", () => {
-    VoteStore.setWard(wardSel.value ? Number(wardSel.value) : null);
-    /* The watched ward can never be the primary ward — if the new
-       primary is the watched one, the watch simply ends. */
-    if (VoteStore.getWatchWard() != null
-      && VoteStore.getWatchWard() === VoteStore.getWard()) {
-      VoteStore.setWatchWard(null);
-    }
-    renderWardWho();
-    renderContinuity();
-    renderWatchWard();
-    renderPicks();
-  });
-  if (watchSel) watchSel.addEventListener("change", () => {
-    VoteStore.setWatchWard(watchSel.value ? Number(watchSel.value) : null);
-  });
   if (interestsBox) interestsBox.addEventListener("click", (e) => {
     const btn = e.target.closest(".chip");
     if (!btn) return;
@@ -230,12 +243,11 @@ async function init() {
     URL.revokeObjectURL(a.href);
   });
   document.getElementById("reset").addEventListener("click", () => {
-    if (confirm("Erase all your Deme picks, your ward and your profile from this browser?")) {
+    if (confirm("Erase all your Deme picks, your ward and Your Deme from this browser?")) {
       VoteStore.resetAll();
-      wardSel.value = "";
       renderWardWho();
       renderContinuity();
-      renderWatchWard();
+      mountFinders();
       renderInterests();
       renderPicks();
     }

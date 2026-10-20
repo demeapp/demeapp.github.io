@@ -107,25 +107,22 @@ const HomeStore = (() => {
       your ward; ${nm} represents Ward ${state.choice} now.</p>${tail}`;
   }
 
-  /* Step 2 (also the "Edit your Deme" editor), kept in VoteStore. */
+  /* Step 2 (also the "Edit your Deme" editor), kept in VoteStore.
+     The second ward is picked with the same postal-code finder as
+     step 1 (its built-in list is the fallback); the pick is staged
+     and only written when Save is pressed, as before. */
   async function renderStep2(state) {
     section.hidden = false;
     const isMayor = state.choice === "mayor";
     const labels = await threadLabels();
     const ints = VoteStore.getInterests(), ww0 = VoteStore.getWatchWard();
-    const wards = people.filter((c) => c.current && !c.mayor
-      && c.ward !== state.choice).sort((a, b) => a.ward - b.ward);
     body.innerHTML = `
       <p class="kicker">Start here</p>
-      <h2 id="starthere-h">Make it yours — optional</h2>
+      <h2 id="starthere-h">Your Deme — optional extras</h2>
       <hr class="rule">
       <div class="card starthere-card">
         <div class="profile-field">
-          <label for="profile-watch">${isMayor ? "Watch a ward" : "Also watch a second ward"}</label>
-          <div class="starthere-picker"><select id="profile-watch">
-            <option value="">No second ward</option>
-            ${wards.map((c) => `<option value="${c.ward}">Ward ${c.ward} — ${esc(c.wardName)}</option>`).join("")}
-          </select></div>
+          <div id="profile-watch-finder"></div>
         </div>
         <div class="profile-field">
           <label id="profile-topics-l">Topics you follow</label>
@@ -140,13 +137,21 @@ const HomeStore = (() => {
         <p class="small" style="margin:0">Kept only in this browser, like
         your picks. Change it any time in My Record.</p>
       </div>`;
-    const sel = document.getElementById("profile-watch");
-    if (ww0 != null && ww0 !== state.choice) sel.value = String(ww0);
+    const watchFinder = WardFinder.mount(
+      document.getElementById("profile-watch-finder"), {
+        idPrefix: "sh2",
+        people,
+        label: isMayor ? "Watch a ward" : "Also watch a second ward",
+        current: (ww0 != null && ww0 !== state.choice) ? ww0 : null,
+        exclude: typeof state.choice === "number" ? state.choice : null,
+        noneLabel: "No second ward",
+        inputLabel: "Postal code of the area to watch",
+      });
     body.querySelectorAll("#profile-ints .chip").forEach((b) =>
       b.addEventListener("click", () => b.setAttribute("aria-pressed",
         b.getAttribute("aria-pressed") === "true" ? "false" : "true")));
     document.getElementById("profile-save").addEventListener("click", () => {
-      VoteStore.setWatchWard(sel.value ? Number(sel.value) : null);
+      VoteStore.setWatchWard(watchFinder.value());
       VoteStore.setInterests([...body.querySelectorAll(
         '#profile-ints .chip[aria-pressed="true"]')].map((b) => b.dataset.id));
       const person = currentPerson(state);
@@ -198,7 +203,7 @@ const HomeStore = (() => {
         <h2>For you</h2>
         <hr class="rule">
         <p class="small">Latest decisions for ${esc(basis.join(" · "))}
-        — from your profile. Edit it in
+        — from Your Deme. Edit it in
         <a href="my-record.html">My Record</a>.</p>
         ${cards.length
           ? `<div class="cards two">${cards.map((c) => decisionCard(c)).join("")}</div>`
@@ -206,45 +211,77 @@ const HomeStore = (() => {
     } catch (e) { sec.hidden = true; }
   }
 
+  /* Step 1 — the entry panel. A visitor with no profile always gets
+     this panel (or its slim form after skipping): the ward is found
+     by postal code first, with the ward list as the fallback inside
+     the finder, and the Mayor as the citywide alternative. */
   function renderPicker(state) {
-    const wards = people.filter((c) => c.current && !c.mayor)
-      .sort((a, b) => a.ward - b.ward);
+    section.hidden = false;
     body.innerHTML = `
-      <p class="kicker">Start here</p>
-      <h2 id="starthere-h">Start with your own ward</h2>
+      <p class="kicker">Your Deme</p>
+      <h2 id="starthere-h">Make Deme yours</h2>
       <hr class="rule">
-      <div class="card starthere-card">
-        <p style="margin:0 0 1rem">New here? Start with your own ward.</p>
-        <div class="starthere-picker">
-          <label class="visually-hidden" for="starthere-ward">Your ward</label>
-          <select id="starthere-ward">
-            <option value="">Choose your ward…</option>
-            ${wards.map((c) => `<option value="${c.ward}">Ward ${c.ward} — ${esc(c.wardName)}</option>`).join("")}
-            <option value="mayor">Citywide — the Mayor represents all of Toronto</option>
-          </select>
-          <button class="btn" type="button" id="starthere-go">Show my ward</button>
-          <button class="btn secondary" type="button" id="starthere-skip">Skip — just show me everything</button>
+      <div class="card starthere-card entry-panel">
+        <p class="entry-lede">Set your ward to see your councillor, your
+        area's decisions, and alerts.</p>
+        <div id="sh-finder"></div>
+        <div class="entry-alt">
+          <button class="btn secondary" type="button" id="starthere-mayor">Citywide — show me the Mayor</button>
+          <button class="wf-listtoggle" type="button" id="starthere-skip">Skip — just show me everything</button>
         </div>
-        <p class="small" style="margin:.8rem 0 0">Your choice is kept only
-        in this browser. Nothing else on this page waits on it.</p>
+        <p class="small" style="margin:.9rem 0 0">Nothing else on this page
+        waits on it — the whole record stays open either way.</p>
       </div>`;
-    const sel = document.getElementById("starthere-ward");
-    if (state.choice === "mayor") sel.value = "mayor";
-    else if (typeof state.choice === "number") sel.value = String(state.choice);
-    document.getElementById("starthere-go").addEventListener("click", () => {
-      if (!sel.value) { sel.focus(); return; }
-      const choice = sel.value === "mayor" ? "mayor" : Number(sel.value);
+    WardFinder.mount(document.getElementById("sh-finder"), {
+      idPrefix: "sh",
+      people,
+      label: "Find your ward by postal code",
+      btnClass: "btn bronze",
+      current: null,
+      noneLabel: "Choose your ward…",
+      onChoose(n) {
+        if (n == null) return;
+        VoteStore.setWard(n);
+        const next = { welcomed: true, choice: n };
+        HomeStore.write(next);
+        renderStep2(next);
+      },
+    });
+    document.getElementById("starthere-mayor").addEventListener("click", () => {
       /* One store, one truth (D3): choosing the Mayor CLEARS any
          stored ward, so Home, My Record and Explore all agree there
          is no "my ward" anymore. */
-      VoteStore.setWard(choice === "mayor" ? null : choice);
-      const next = { welcomed: true, choice };
+      VoteStore.setWard(null);
+      const next = { welcomed: true, choice: "mayor" };
       HomeStore.write(next);
       renderStep2(next);
     });
     document.getElementById("starthere-skip").addEventListener("click", () => {
-      HomeStore.write({ welcomed: true, choice: null });
-      section.hidden = true;
+      const next = { welcomed: true, choice: null };
+      HomeStore.write(next);
+      render(next);
+    });
+  }
+
+  /* The persistent slim form of the entry panel: shown to a visitor
+     who skipped setup and still has no ward — the door to the
+     profile never disappears. */
+  function renderEntrySlim(state) {
+    section.hidden = false;
+    body.innerHTML = `
+      <p class="kicker">Your Deme</p>
+      <h2 id="starthere-h">Make Deme yours</h2>
+      <hr class="rule">
+      <div class="card starthere-card entry-slim">
+        <p>Set your ward to see your councillor, your area's decisions,
+        and alerts.</p>
+        <p class="entry-actions">
+          <button class="btn bronze" type="button" id="entry-set">Set your ward</button>
+          <a class="btn secondary" href="my-record.html">Open My Record</a>
+        </p>
+      </div>`;
+    document.getElementById("entry-set").addEventListener("click", () => {
+      renderPicker(state);
     });
   }
 
@@ -316,7 +353,7 @@ const HomeStore = (() => {
   }
 
   function render(state) {
-    if (state.welcomed && state.choice == null) { section.hidden = true; return; }
+    if (state.welcomed && state.choice == null) { renderEntrySlim(state); return; }
     section.hidden = false;
     if (!state.welcomed) renderPicker(state);
     else renderWard(state);

@@ -298,7 +298,11 @@ async function init() {
   fillSelect($("f-status"),
     statuses.map((s) => [s, STATUS_LABELS[s] || s]), "All outcomes");
   fillSelect($("f-ward"),
-    Array.from({ length: 25 }, (_, i) => [String(i + 1), `Ward ${i + 1}`]),
+    Array.from({ length: 25 }, (_, i) => {
+      const n = i + 1;
+      const c = councillors.find((x) => x.current && !x.mayor && x.ward === n);
+      return [String(n), c ? `Ward ${n} — ${c.wardName}` : `Ward ${n}`];
+    }),
     "All wards");
 
   const params = new URLSearchParams(location.search);

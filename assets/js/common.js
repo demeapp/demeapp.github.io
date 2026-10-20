@@ -83,8 +83,8 @@ const NAV = [
   ["explore.html", "Explore"],
   ["councillors.html", "Councillors"],
   ["vote.html", "Vote"],
-  ["my-record.html", "My Record"],
   ["about.html", "About"],
+  ["my-record.html", "My Record"],
 ];
 const COLUMN_MARK = `
 <svg class="mark" width="30" height="38" viewBox="0 0 30 38" role="img"
@@ -104,7 +104,7 @@ function renderChrome(active) {
         <span class="tagline">Where the people meet the vote</span></span></a>
       <nav class="site-nav" aria-label="Main">
         ${NAV.map(([href, label]) =>
-          `<a href="${href}"${href === active ? ' aria-current="page"' : ""}>${label}</a>`).join("")}
+          `<a href="${href}"${href === "my-record.html" ? ' class="nav-record"' : ""}${href === active ? ' aria-current="page"' : ""}>${label}</a>`).join("")}
       </nav></div>`;
   }
   const footer = document.querySelector(".site-footer");
@@ -128,6 +128,7 @@ function renderChrome(active) {
           <ul>
             <li><a href="about.html">About</a></li>
             <li><a href="my-record.html">My Record</a></li>
+            <li><a href="my-record.html#your-deme">Your Deme profile</a></li>
           </ul>
         </nav>
       </div>
@@ -136,6 +137,85 @@ function renderChrome(active) {
       Archive current to Oct 19, 2026. <a href="about.html">How Deme works</a></p>
       </div>`;
   }
+}
+
+/* ---------------- past-voice briefs (W1) ----------------
+   Archive briefs were written in preview voice ("City Council will
+   vote on…", "The committee is asked to…") and are rendered under
+   outcome pills on decided items. pastVoice() rewrites ONLY the
+   brief's lead construction — the first "will <verb>" and/or the
+   first "is/are asked to" starting inside the opening window — into
+   past voice, using a verb map built from the brief corpus itself.
+   A "will" later in the brief (a bylaw that will take effect in
+   2027) describes the proposal's own future and is left untouched,
+   as is any lead verb outside the map: unconverted is safer than
+   corrupted. Applied by decisionCard and the decision page — never
+   to upcoming items, whose future tense is correct. */
+const PAST_VERBS = {
+  decide: "decided", vote: "voted", hear: "heard", give: "gave",
+  receive: "received", provide: "provided", get: "got",
+  consider: "considered", introduce: "introduced", review: "reviewed",
+  present: "presented", hold: "held", approve: "approved",
+  discuss: "discussed", conduct: "conducted", weigh: "weighed",
+  update: "updated", elect: "elected", appoint: "appointed",
+  note: "noted", ask: "asked", confirm: "confirmed",
+  deliver: "delivered", have: "had", declare: "declared",
+  keep: "kept", set: "set", talk: "talked", come: "came",
+  report: "reported", lead: "led", recommend: "recommended",
+  adopt: "adopted", select: "selected", act: "acted",
+  suggest: "suggested", pass: "passed", align: "aligned",
+  guide: "guided", make: "made", bring: "brought",
+  brief: "briefed", continue: "continued", extend: "extended",
+  share: "shared", add: "added", interview: "interviewed",
+  include: "included", allow: "allowed", improve: "improved",
+  cover: "covered", increase: "increased", result: "resulted",
+  rule: "ruled", reopen: "reopened",
+  speak: "spoke", assess: "assessed", launch: "launched",
+  redevelop: "redeveloped", outline: "outlined",
+  facilitate: "facilitated", call: "called", amplify: "amplified",
+  offer: "offered", administer: "administered", recite: "recited",
+  recess: "recessed", train: "trained", post: "posted",
+  cancel: "cancelled", replace: "replaced", explain: "explained",
+  pick: "picked", show: "showed", rename: "renamed",
+  reappoint: "reappointed", raise: "raised", let: "let",
+  reconsider: "reconsidered", redo: "redid", build: "built",
+  take: "took", open: "opened", rehear: "reheard",
+};
+function pastVoice(brief) {
+  if (!brief) return brief;
+  let out = brief;
+  const LEAD = 90; /* the lead construction starts within this window */
+  /* hyphenated re-verbs first: "will re-elect" → "re-elected" */
+  const reVerb = /\bwill\s+re-([a-z]+)/i.exec(out);
+  if (reVerb && reVerb.index < LEAD && PAST_VERBS[reVerb[1].toLowerCase()]) {
+    out = out.replace(reVerb[0], `re-${PAST_VERBS[reVerb[1].toLowerCase()]}`);
+  }
+  const will = /\bwill\s+(not\s+|also\s+|formally\s+|privately\s+|fully\s+|again\s+)?([a-z]+)/i.exec(out);
+  if (will && will.index < LEAD) {
+    const [whole, adv, verbRaw] = will;
+    const verb = verbRaw.toLowerCase();
+    if (adv && adv.trim() === "not") {
+      out = out.replace(whole, `did not ${verbRaw}`);
+    } else if (verb === "be") {
+      /* "will be asked/held/conferring…" — the next word carries the
+         tense: participles and -ing forms both take "was". */
+      const tail = out.slice(will.index + whole.length);
+      const part = /^\s+([a-z]+)/i.exec(tail);
+      if (part && (/(ed|en|ing)$/.test(part[1].toLowerCase())
+        || ["held", "given", "made", "set", "put"].includes(part[1].toLowerCase()))) {
+        out = out.slice(0, will.index) + "was" + tail;
+      }
+    } else if (PAST_VERBS[verb]) {
+      const advText = adv ? `${adv.trim()} ` : "";
+      out = out.replace(whole, `${advText}${PAST_VERBS[verb]}`);
+    }
+  }
+  const asked = /\b(is|are) asked to/i.exec(out);
+  if (asked && asked.index < LEAD) {
+    out = out.replace(asked[0], asked[1].toLowerCase() === "is"
+      ? "was asked to" : "were asked to");
+  }
+  return out;
 }
 
 /* ---------------- decision card renderer ---------------- */
@@ -153,7 +233,7 @@ function decisionCard(c, opts = {}) {
       <span>${esc(c.body)}</span>
       <span class="pill">${esc(c.statusLabel)}</span></div>
     <h3><a href="decision.html?ref=${encodeURIComponent(c.ref)}">${esc(c.title)}</a></h3>
-    ${c.brief ? `<p class="brief">${esc(c.brief)}</p>` : ""}
+    ${c.brief ? `<p class="brief">${esc(pastVoice(c.brief))}</p>` : ""}
     ${c.stake ? `<p class="stake">${esc(c.stake)}</p>` : ""}
     <p class="more">${more}<span class="muted">${wards}</span></p>
   </article>`;
@@ -187,6 +267,17 @@ function decisionCard(c, opts = {}) {
    otherwise. */
 /* Council alerts (staged) — single config point. Empty string = sign-ups not open yet; the parent will supply the Google Form URL here. */
 const DEME_ALERTS_FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLSejGu1-j2a0-OfU_gxwjd5Y0WHnhgV-NWxriF-Lh-RU_cUx4A/viewform";
+
+/* Deme accounts (staged) — same constant pattern as the alerts form.
+   Both values empty = accounts not open: My Record shows an honest
+   "accounts open soon" panel and the local, no-account profile remains
+   the whole product. The parent fills these from the Supabase project
+   created per WARD-FINDER-REPORT.md (project URL + anonymous key — the
+   anon key is a public client key by design; row-level security, not
+   secrecy, protects the data). Passwords are handled only by the auth
+   provider; no Deme code ever stores or transmits one anywhere else. */
+const DEME_SUPABASE_URL = "";
+const DEME_SUPABASE_ANON_KEY = "";
 const VoteStore = (() => {
   const KEY = "deme.votes.v2", OLD = "deme.votes.v1";
   let mem = null; /* session-only state if a migration cannot persist */

@@ -3,7 +3,7 @@
    the decisions, their briefs, and their outcomes are the record's own,
    hydrated from the same per-year shards Explore uses. */
 "use strict";
-renderChrome("index.html");
+renderChrome("");
 
 const PAGE = 50;
 const box = document.getElementById("thread");

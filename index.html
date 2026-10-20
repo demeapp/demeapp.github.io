@@ -55,7 +55,20 @@
     </section>
 
     <section class="reveal" id="starthere" aria-labelledby="starthere-h">
-      <div id="starthere-body"></div>
+      <!-- Static shell: the entry panel is in the served page (and works
+           without JavaScript, via My Record). personalize.js replaces it
+           in place with the live postal-code finder / your-ward view,
+           which also keeps the layout from shifting when it renders. -->
+      <div id="starthere-body">
+        <p class="kicker">Your Deme</p>
+        <h2 id="starthere-h">Make Deme yours</h2>
+        <hr class="rule">
+        <div class="card starthere-card entry-panel entry-shell">
+          <p class="entry-lede">Set your ward to see your councillor,
+          your area's decisions, and alerts.</p>
+          <p style="margin:0"><a class="btn bronze" href="my-record.html">Set your ward in My Record</a></p>
+        </div>
+      </div>
     </section>
 
     <section class="reveal" id="foryou" hidden><div id="foryou-body"></div></section>
@@ -100,11 +113,11 @@
       <p class="kicker">Why Deme exists</p>
       <h2 id="how-h">Most decisions leave no names behind</h2>
       <hr class="rule">
-      <p style="max-width:44rem">Only about <strong>1 in 11</strong> Council
-      decisions comes with a recorded vote — a public list of who voted yes
-      and who voted no. The rest pass without anyone's name attached. Deme
-      keeps the whole record readable, and flags every decision where the
-      names <em>are</em> on it, so you can see exactly how your councillor
+      <p style="max-width:44rem">Most Council decisions come with no
+      recorded vote — no public list of who voted yes and who voted no.
+      They pass without anyone's name attached. Deme keeps the whole
+      record readable, and flags every decision where the names
+      <em>are</em> on it, so you can see exactly how your councillor
       voted. <a href="about.html">How Deme works →</a></p>
     </section>
 
@@ -112,6 +125,7 @@
 </main>
 <footer class="site-footer"></footer>
 <script src="assets/js/common.js"></script>
+<script src="assets/js/ward-finder.js"></script>
 <script src="assets/js/personalize.js"></script>
 <script>
 renderChrome("index.html");

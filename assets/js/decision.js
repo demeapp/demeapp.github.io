@@ -91,7 +91,7 @@ async function init() {
       <span class="pill">${esc(card.statusLabel)}</span>
       <span class="small">${esc(fmtDate(card.date))}</span>
     </div>
-    ${card.brief ? `<p class="briefBig">${esc(card.brief)}</p>` : ""}
+    ${card.brief ? `<p class="briefBig">${esc(pastVoice(card.brief))}</p>` : ""}
     ${card.stake ? `<p class="stake stake-prominent">${esc(card.stake)}</p>` : ""}
     ${wards}
     ${topics ? `<div class="chips" style="margin:1rem 0">${topics}</div>` : ""}

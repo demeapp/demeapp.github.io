@@ -31,23 +31,21 @@
       <p class="lede">Everything here is computed on this device, from your
       saved picks and the public record. Nothing leaves your browser.</p>
 
-      <div class="card" style="margin-top:1.6rem">
+      <div id="account-zone" style="margin-top:1.6rem"></div>
+
+      <div class="card record-card" style="margin-top:1.6rem">
         <h2 style="font-size:1.25rem">Your ward</h2>
         <p class="small">Set your ward so Deme can put your councillor's
         actual votes beside your picks.</p>
-        <div class="toolbar">
-          <label for="ward">Ward
-            <select id="ward"></select></label>
-          <span id="wardwho" class="small"></span>
-        </div>
+        <div id="ward-finder-primary"></div>
+        <p id="wardwho" class="small" style="margin-top:.6rem"></p>
       </div>
 
-      <div class="card" style="margin-top:1.6rem">
+      <div class="card record-card" id="your-deme" style="margin-top:1.6rem">
         <h2 style="font-size:1.25rem">Your Deme</h2>
         <div id="continuity"></div>
         <div class="profile-field">
-          <label for="watch-ward">Also watch a second ward</label>
-          <select id="watch-ward"></select>
+          <div id="ward-finder-watch"></div>
         </div>
         <div class="profile-field">
           <label id="record-topics-l">Topics you follow</label>
@@ -65,9 +63,10 @@
 
       <div class="toolbar" style="margin-top:2.2rem">
         <button class="btn secondary small" id="export">Download my data (JSON)</button>
-        <button class="btn secondary small" id="reset">Erase my picks, ward and profile</button>
+        <button class="btn secondary small" id="reset">Erase my picks, ward and Your Deme</button>
       </div>
-      <p class="small">Your data — your picks, your ward and your profile —
+      <p class="small" id="local-note">Your data — your picks, your ward and
+      the rest of Your Deme —
       is a small file stored by this browser (local storage); erasing
       removes it completely, and Deme keeps no copy — there is no server
       and no account.</p>
@@ -76,6 +75,8 @@
 </main>
 <footer class="site-footer"></footer>
 <script src="assets/js/common.js"></script>
+<script src="assets/js/ward-finder.js"></script>
 <script src="assets/js/record.js"></script>
+<script src="assets/js/account.js"></script>
 </body>
 </html>

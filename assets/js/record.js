@@ -98,14 +98,15 @@ function renderAlerts() {
   if (!alertsBox) return;
   alertsBox.innerHTML = `<h3>Council alerts by email</h3>
     <p>Get an email when items on your wards or topics reach a City
-    Council agenda. Deme sends one digest per Council agenda — never one
-    email per item — and a person reviews every digest before it goes
-    out.</p>
+    Council agenda. Sign-ups are open now — digests haven't started
+    yet, and they begin with the new Council term. When they start, it
+    will be one digest per Council agenda, never one email per item,
+    and a person reviews every digest before it goes out.</p>
     ${DEME_ALERTS_FORM_URL
       ? `<p><a class="btn bronze" href="${esc(DEME_ALERTS_FORM_URL)}" target="_blank" rel="noopener">Sign up for Council alerts</a></p>
-         <p class="small">The sign-up form asks for your email address and
-         will ask you to confirm it before anything is sent. Unsubscribe
-         at any time — every alert carries an unsubscribe link.</p>`
+         <p class="small">The sign-up form will ask for your email address, your wards and
+         your topics. Nothing is sent until digests begin. Unsubscribe
+         at any time.</p>`
       : `<p class="small">Sign-ups open soon — the form is being set up.
          Alerts will follow the wards and topics in your profile.</p>`}`;
 }

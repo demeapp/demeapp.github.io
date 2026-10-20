@@ -286,7 +286,13 @@ const DemeAccount = (() => {
      Turnstile under Authentication → Bot and Abuse Protection
      and storing the secret key there — is a publish-step item,
      not code; the site key here is public by design, the secret
-     never ships. ACTIVATION-AUDIT-PROTOCOL.md F-6 / gate G-10. */
+     never ships. ACTIVATION-AUDIT-PROTOCOL.md F-6 / gate G-10.
+     Wire shape (proved live, Oct 20, 2026): GoTrue reads the
+     token ONLY from the request body's
+     gotrue_meta_security.captcha_token — a top-level
+     captcha_token field is ignored and the request is refused
+     as "no captcha_token found". Every token-carrying body
+     below nests it; do not flatten. */
   let captchaScript = null;
   function loadCaptchaScript() {
     if (!captchaScript) {
@@ -505,7 +511,7 @@ const DemeAccount = (() => {
             errLine(err, "Please complete the verification check above, then try again.");
             return;
           }
-          body.captcha_token = suCaptcha.token;
+          body.gotrue_meta_security = { captcha_token: suCaptcha.token };
         }
         const data = await apiJSON("/auth/v1/signup", {
           method: "POST",
@@ -538,7 +544,7 @@ const DemeAccount = (() => {
             errLine(err, "Please complete the verification check above, then try again.");
             return;
           }
-          body.captcha_token = siCaptcha.token;
+          body.gotrue_meta_security = { captcha_token: siCaptcha.token };
         }
         const data = await apiJSON("/auth/v1/token?grant_type=password", {
           method: "POST",
@@ -584,7 +590,7 @@ const DemeAccount = (() => {
       }
       errLine(err, "");
       const body = { email };
-      if (DEME_CAPTCHA_KEY) body.captcha_token = siCaptcha.token;
+      if (DEME_CAPTCHA_KEY) body.gotrue_meta_security = { captcha_token: siCaptcha.token };
       const back = `${window.location.origin}${window.location.pathname}`;
       let res = null;
       try {
@@ -642,7 +648,7 @@ const DemeAccount = (() => {
         }
         errLine(err, "");
         const body = { type: "signup", email };
-        if (DEME_CAPTCHA_KEY) body.captcha_token = rsCaptcha.token;
+        if (DEME_CAPTCHA_KEY) body.gotrue_meta_security = { captcha_token: rsCaptcha.token };
         let res = null;
         try {
           res = await api("/auth/v1/resend", {
@@ -897,7 +903,7 @@ const DemeAccount = (() => {
         errLine(err, "");
         try {
           const body = { email: session.user.email, password: pw };
-          if (DEME_CAPTCHA_KEY) body.captcha_token = delCaptcha.token;
+          if (DEME_CAPTCHA_KEY) body.gotrue_meta_security = { captcha_token: delCaptcha.token };
           await apiJSON("/auth/v1/token?grant_type=password", {
             method: "POST",
             body: JSON.stringify(body),

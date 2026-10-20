@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>My Record — your picks, your councillor — Deme</title>
+<meta name="description" content="Your own Deme record: the positions you took before Council votes, how those votes went, and how your councillor voted. Stored only in your browser.">
+<link rel="stylesheet" href="assets/css/deme.css">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#F6F1E7">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Deme">
+<meta property="og:title" content="My Record — your picks, your councillor — Deme">
+<meta property="og:description" content="Your own Deme record: the positions you took before Council votes, how those votes went, and how your councillor voted. Stored only in your browser.">
+<meta property="og:image" content="https://demeapp.github.io/assets/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="My Record — your picks, your councillor — Deme">
+<meta name="twitter:description" content="Your own Deme record: the positions you took before Council votes, how those votes went, and how your councillor voted. Stored only in your browser.">
+<meta name="twitter:image" content="https://demeapp.github.io/assets/og-image.png">
+<link rel="apple-touch-icon" href="assets/icon-180.png">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to main content</a>
+<header class="site-header"></header>
+<main id="main">
+  <div class="wrap">
+    <section aria-labelledby="record-h">
+      <p class="kicker">My Record</p>
+      <h1 id="record-h">Your picks, checked against the record</h1>
+      <hr class="rule">
+      <p class="lede">Everything here is computed on this device, from your
+      saved picks and the public record. Nothing leaves your browser.</p>
+
+      <div class="card" style="margin-top:1.6rem">
+        <h2 style="font-size:1.25rem">Your ward</h2>
+        <p class="small">Set your ward so Deme can put your councillor's
+        actual votes beside your picks.</p>
+        <div class="toolbar">
+          <label for="ward">Ward
+            <select id="ward"></select></label>
+          <span id="wardwho" class="small"></span>
+        </div>
+      </div>
+
+      <div id="agreement" style="margin-top:1.6rem"></div>
+
+      <h2 style="margin-top:2.6rem">Your picks</h2>
+      <hr class="rule">
+      <div id="picks"><span class="visually-hidden">Loading…</span>
+        <div class="skel-card" aria-hidden="true"><span class="skel-el sm"></span><span class="skel-el title"></span><span class="skel-el"></span><span class="skel-el short"></span></div></div>
+
+      <div class="toolbar" style="margin-top:2.2rem">
+        <button class="btn secondary small" id="export">Download my data (JSON)</button>
+        <button class="btn secondary small" id="reset">Erase my picks and ward</button>
+      </div>
+      <p class="small">Your data is a small file stored by this browser
+      (local storage). Erasing removes it completely; Deme keeps no copy —
+      there is no server and no account.</p>
+    </section>
+  </div>
+</main>
+<footer class="site-footer"></footer>
+<script src="assets/js/common.js"></script>
+<script src="assets/js/record.js"></script>
+</body>
+</html>

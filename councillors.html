@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Councillors — Deme</title>
+<meta name="description" content="Every Toronto City Council member in the record: who they are, their ward, and their voting record — facts only, no grades.">
+<link rel="stylesheet" href="assets/css/deme.css">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#F6F1E7">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Deme">
+<meta property="og:title" content="Councillors — Deme">
+<meta property="og:description" content="Every Toronto City Council member in the record: who they are, their ward, and their voting record — facts only, no grades.">
+<meta property="og:image" content="https://demeapp.github.io/assets/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Councillors — Deme">
+<meta name="twitter:description" content="Every Toronto City Council member in the record: who they are, their ward, and their voting record — facts only, no grades.">
+<meta name="twitter:image" content="https://demeapp.github.io/assets/og-image.png">
+<link rel="apple-touch-icon" href="assets/icon-180.png">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to main content</a>
+<header class="site-header"></header>
+<main id="main">
+  <div class="wrap">
+    <section aria-labelledby="people-h">
+      <p class="kicker">Councillors</p>
+      <h1 id="people-h">The people on the record</h1>
+      <hr class="rule">
+      <p class="lede">Facts only — no grades, no rankings. Attendance is
+      simply the share of recorded votes where the member was present and
+      voting.</p>
+      <form class="searchbox" id="filterform" role="search">
+        <label class="visually-hidden" for="pq">Find a member</label>
+        <input type="search" id="pq" placeholder="Find a member by name…" autocomplete="off">
+      </form>
+
+      <h2 style="margin-top:2.4rem">Council today</h2>
+      <div class="people" id="current"><span class="visually-hidden">Loading…</span>
+        <div class="skel-card" aria-hidden="true"><span class="skel-el title"></span><span class="skel-el sm"></span><span class="skel-el short"></span></div>
+        <div class="skel-card" aria-hidden="true"><span class="skel-el title"></span><span class="skel-el sm"></span><span class="skel-el short"></span></div>
+        <div class="skel-card" aria-hidden="true"><span class="skel-el title"></span><span class="skel-el sm"></span><span class="skel-el short"></span></div></div>
+
+      <details class="filters" style="margin-top:3rem">
+        <summary>Earlier members (2006–2026)</summary>
+        <p class="small" style="margin-top:.8rem">Members from earlier terms
+        in the record. Their votes are part of the same archive — use the
+        name search above to find someone specific.</p>
+        <ul class="personlist" id="earlier"></ul>
+      </details>
+    </section>
+  </div>
+</main>
+<footer class="site-footer"></footer>
+<script src="assets/js/common.js"></script>
+<script>
+renderChrome("councillors.html");
+let all = [];
+function personCard(c) {
+  const role = c.mayor ? "Mayor of Toronto"
+    : `Councillor · Ward ${c.ward} — ${esc(c.wardName)}`;
+  return `<article class="person">
+    <h3><a href="councillor.html?m=${encodeURIComponent(c.slug)}">${esc(c.name)}</a></h3>
+    <p class="ward">${role}</p>
+    <p class="onestat">Attendance ${c.attendance == null ? "—" : c.attendance + "%"} ·
+      ${fmtNum(c.votesCast)} votes cast</p>
+  </article>`;
+}
+function render(filter) {
+  const q = (filter || "").toLowerCase();
+  const cur = all.filter((c) => c.current && c.name.toLowerCase().includes(q));
+  cur.sort((a, b) => (a.mayor ? -1 : b.mayor ? 1 : a.ward - b.ward));
+  document.getElementById("current").innerHTML = cur.length
+    ? cur.map(personCard).join("")
+    : `<p class="small">No current member matches.</p>`;
+  const old = all.filter((c) => !c.current && c.name.toLowerCase().includes(q));
+  old.sort((a, b) => a.name.localeCompare(b.name));
+  document.getElementById("earlier").innerHTML = old.map((c) =>
+    `<li><a href="councillor.html?m=${encodeURIComponent(c.slug)}">${esc(c.name)}</a>
+     <span class="terms">${esc(c.terms.join(" · "))} · ${fmtNum(c.votesCast)} votes cast</span></li>`).join("");
+}
+loadJSON(dataPath("councillors.json")).then((people) => {
+  all = people;
+  render("");
+  let t;
+  document.getElementById("pq").addEventListener("input", (e) => {
+    clearTimeout(t); t = setTimeout(() => render(e.target.value), 150);
+  });
+  document.getElementById("filterform").addEventListener("submit", (e) => e.preventDefault());
+}).catch(() => {
+  document.getElementById("current").innerHTML =
+    `<p class="small">The member list could not be loaded. Please reload.</p>`;
+});
+</script>
+</body>
+</html>

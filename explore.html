@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Explore the record — Deme</title>
+<meta name="description" content="Search 33,796 decisions from Toronto's council record in plain language. Filter by year, topic, ward, outcome — and find every decision with a recorded vote.">
+<link rel="stylesheet" href="assets/css/deme.css">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#F6F1E7">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Deme">
+<meta property="og:title" content="Explore the record — Deme">
+<meta property="og:description" content="Search 33,796 decisions from Toronto's council record in plain language. Filter by year, topic, ward, outcome — and find every decision with a recorded vote.">
+<meta property="og:image" content="https://demeapp.github.io/assets/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Explore the record — Deme">
+<meta name="twitter:description" content="Search 33,796 decisions from Toronto's council record in plain language. Filter by year, topic, ward, outcome — and find every decision with a recorded vote.">
+<meta name="twitter:image" content="https://demeapp.github.io/assets/og-image.png">
+<link rel="apple-touch-icon" href="assets/icon-180.png">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to main content</a>
+<header class="site-header"></header>
+<main id="main">
+  <div class="wrap">
+    <section aria-labelledby="explore-h">
+      <p class="kicker">Explore</p>
+      <h1 id="explore-h">Search the record</h1>
+      <hr class="rule">
+      <p class="lede">Every decision in the archive, in plain language.
+      Search words from the title or topic — or open the filters to narrow
+      by year, ward, or outcome.</p>
+      <form class="searchbox" id="searchform" role="search">
+        <label class="visually-hidden" for="q">Search decisions</label>
+        <input type="search" id="q" name="q" placeholder="Search decisions, topics, places…" autocomplete="off">
+        <button class="btn" type="submit">Search</button>
+      </form>
+
+      <details class="filters" id="filters">
+        <summary>Filters</summary>
+        <div class="grid">
+          <div>
+            <label for="f-year">Year</label>
+            <select id="f-year"></select>
+          </div>
+          <div>
+            <label for="f-body">Decided by</label>
+            <select id="f-body"></select>
+          </div>
+          <div>
+            <label for="f-status">Outcome</label>
+            <select id="f-status"></select>
+          </div>
+          <div>
+            <label for="f-ward">Ward</label>
+            <select id="f-ward"></select>
+          </div>
+          <div>
+            <label class="checkline" style="margin-top:1.55rem">
+              <input type="checkbox" id="f-vote">
+              <span>Only decisions with a recorded vote</span>
+            </label>
+          </div>
+        </div>
+        <p class="small" style="margin-top:.8rem">A <strong>recorded vote</strong>
+        is the public list of who voted yes and who voted no. Most decisions
+        don't have one — this filter finds the ones that do.</p>
+      </details>
+
+      <div class="toolbar" id="myward-row" hidden>
+        <button type="button" class="chip" id="myward" aria-pressed="false">My ward</button>
+      </div>
+
+      <div id="interpretation" class="interpretation" hidden></div>
+      <div id="memberhit"></div>
+      <p class="resultcount" id="count" role="status">Loading the archive…</p>
+      <div class="cards" id="results"><span class="visually-hidden">Loading…</span>
+        <div class="skel-card" aria-hidden="true"><span class="skel-el sm"></span><span class="skel-el title"></span><span class="skel-el"></span><span class="skel-el short"></span></div>
+        <div class="skel-card" aria-hidden="true"><span class="skel-el sm"></span><span class="skel-el title"></span><span class="skel-el"></span><span class="skel-el short"></span></div>
+        <div class="skel-card" aria-hidden="true"><span class="skel-el sm"></span><span class="skel-el title"></span><span class="skel-el"></span><span class="skel-el short"></span></div></div>
+      <div class="pager" id="pager"></div>
+    </section>
+  </div>
+</main>
+<footer class="site-footer"></footer>
+<script src="assets/js/common.js"></script>
+<script src="assets/js/ask.js"></script>
+<script src="assets/js/explore.js"></script>
+</body>
+</html>

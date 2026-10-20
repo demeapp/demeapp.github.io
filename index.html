@@ -48,6 +48,43 @@
 }
 #starthere .entry-lede { margin-bottom: .8rem; }
 #starthere .starthere-card { padding-top: 1.05rem; padding-bottom: .95rem; }
+/* Hero polish (owner pass, Oct 20): the search reads as ONE joined
+   bar — crisp white field, button flush on its right edge, a single
+   shadow and a single focus ring around the whole unit — followed by
+   one tidy row of uniform example chips under their label, then the
+   account row on one shared line. Even steps between the four rows.
+   Hero-scoped only; the form, input id/name and button are untouched,
+   so search behaviour (and the "/" focus shortcut) is unchanged. */
+.hero .searchbox {
+  flex-wrap: nowrap; gap: 0; margin: 1.75rem 0 0;
+  border-radius: 14px; box-shadow: var(--shadow);
+}
+.hero .searchbox input[type="search"] {
+  flex: 1 1 auto; min-width: 0; min-height: 58px; background: #fff;
+  border: 1.5px solid rgba(255,255,255,.35); border-right: 0;
+  border-radius: 14px 0 0 14px; box-shadow: none;
+}
+.hero .searchbox input[type="search"]:focus {
+  outline: none; box-shadow: none;
+  border-color: rgba(255,255,255,.35);
+}
+.hero .searchbox:focus-within {
+  box-shadow: var(--shadow), 0 0 0 3px rgba(47,191,143,.45);
+}
+.hero .searchbox .btn {
+  flex: 0 0 auto; min-height: 58px; border-radius: 0 14px 14px 0;
+  box-shadow: none;
+}
+.hero .askchips { margin: 1rem 0 0; gap: .5rem; align-items: stretch; }
+.hero .askchips-label { flex: 0 0 100%; }
+.hero .askchips .chip {
+  min-height: 44px; padding: .45rem 1rem;
+  font-size: .95rem; line-height: 1.25;
+}
+.account-entry { margin-top: 1.4rem; gap: 1.1rem; }
+.account-entry .signin-link {
+  display: inline-flex; align-items: center; min-height: 48px;
+}
 </style>
 </head>
 <body>
@@ -75,10 +112,6 @@
         <a class="chip" href="explore.html?q=Close%20votes%20on%20the%20budget">Close votes on the budget</a>
         <a class="chip" href="explore.html?q=What%20did%20council%20decide%20about%20bike%20lanes%20in%202024%3F">What did council decide about bike lanes in 2024?</a>
       </div>
-      <p class="small">Or browse by
-        <a href="explore.html">year and topic</a>,
-        <a href="councillors.html">councillor</a>, or
-        <a href="vote.html">weigh in on what's next</a>.</p>
       <div class="account-entry">
         <a class="btn bronze" href="my-record.html">Create an account</a>
         <a class="signin-link" href="my-record.html">Sign in</a>

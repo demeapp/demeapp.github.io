@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Your ward's record — Deme</title>
+<meta name="description" content="A compact Deme card for other sites: pick a Toronto ward to see its member, their attendance and votes cast, and the latest decisions tagged to that ward.">
+<link rel="stylesheet" href="assets/css/deme.css">
+<link rel="stylesheet" href="assets/css/improvements.css">
+<link rel="icon" href="favicon-navy.svg" type="image/svg+xml">
+<meta name="theme-color" content="#0E2A47">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+</head>
+<body class="embed-card-page">
+<main id="main" class="embed-main">
+  <div class="embed-card" role="region" aria-labelledby="embed-card-h">
+    <p class="kicker embed-kicker">Deme</p>
+    <h1 id="embed-card-h" class="embed-title">Your ward&rsquo;s record</h1>
+    <hr class="rule embed-rule">
+
+    <div class="embed-picker">
+      <label class="embed-label" for="embed-ward-select">Ward</label>
+      <select id="embed-ward-select" class="embed-select" disabled>
+        <option value="">Loading wards&hellip;</option>
+      </select>
+    </div>
+
+    <div id="embed-card-body" aria-live="polite">
+      <p class="small embed-hint">Loading the record&hellip;</p>
+      <noscript>
+        <p class="small">This card needs JavaScript to load the record.
+        You can read your ward&rsquo;s record on
+        <a href="https://demeapp.github.io/" target="_blank" rel="noopener">Deme</a>.</p>
+      </noscript>
+    </div>
+
+    <p class="embed-credit">
+      <a href="https://demeapp.github.io/" target="_blank" rel="noopener">On Deme</a>
+      <span aria-hidden="true"> &middot; </span>
+      Toronto City Council&rsquo;s record, in plain language
+    </p>
+  </div>
+</main>
+<script src="assets/js/common.js"></script>
+<script src="assets/js/embed.js"></script>
+</body>
+</html>

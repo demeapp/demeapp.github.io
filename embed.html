@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Embed this card — Deme</title>
+<meta name="description" content="Put your ward's record on your community site or blog: a free, lightweight Deme card showing a ward's member, attendance, votes cast, and latest decisions.">
+<link rel="stylesheet" href="assets/css/deme.css">
+<link rel="stylesheet" href="assets/css/improvements.css">
+<link rel="icon" href="favicon-navy.svg" type="image/svg+xml">
+<meta name="theme-color" content="#0E2A47">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Deme">
+<meta property="og:title" content="Embed this card — Deme">
+<meta property="og:description" content="Put your ward's record on your community site or blog: a free, lightweight Deme card showing a ward's member, attendance, votes cast, and latest decisions.">
+<meta property="og:image" content="https://demeapp.github.io/assets/og-image-navy.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Embed this card — Deme">
+<meta name="twitter:description" content="Put your ward's record on your community site or blog: a free, lightweight Deme card showing a ward's member, attendance, votes cast, and latest decisions.">
+<meta name="twitter:image" content="https://demeapp.github.io/assets/og-image-navy.png">
+<link rel="apple-touch-icon" href="assets/icon-180-navy.png">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to main content</a>
+<header class="site-header"></header>
+<main id="main">
+  <div class="wrap">
+    <section class="reveal" aria-labelledby="embed-h">
+      <p class="kicker">Embed</p>
+      <h1 id="embed-h">Put your ward&rsquo;s record on your site</h1>
+      <hr class="rule">
+      <p class="lede">A small, free card for community sites, tenants&rsquo;
+      associations, libraries, and blogs. Readers pick a ward — or you
+      pre-pick yours — and see that ward&rsquo;s member, their attendance
+      and votes cast, and the latest City Council decisions tagged to
+      the ward. Every decision links out to its full record on Deme.</p>
+      <p style="max-width:44rem">The card is just the public record, in
+      plain language. Attendance means: present and voting, out of all recorded votes in their record. Deme publishes no grades, no
+      rankings, and no tally of visitors&rsquo; positions — and neither
+      does the card.</p>
+
+      <h2 style="margin-top:2.2rem">Live preview</h2>
+      <p style="max-width:44rem">This is the card itself, live. Change
+      the ward to see how the preview, the snippet below, and the card
+      update together.</p>
+      <div class="embed-preview-tools">
+        <div class="embed-preview-field">
+          <label for="embed-preview-ward">Preview ward</label>
+          <select id="embed-preview-ward" disabled>
+            <option value="">Loading wards&hellip;</option>
+          </select>
+        </div>
+      </div>
+      <div class="embed-preview-frame-wrap">
+        <iframe id="embed-preview-frame" src="embed-card.html"
+          title="Preview: Your ward's record — Deme"
+          width="100%" height="520" loading="lazy"></iframe>
+      </div>
+
+      <h2 style="margin-top:2.2rem">Copy the snippet</h2>
+      <p style="max-width:44rem">Paste this where your site accepts
+      HTML. If you picked a ward above, the snippet already carries it;
+      leave the ward off and readers choose their own.</p>
+      <div class="embed-snippet-block">
+        <label class="embed-snippet-label" for="embed-snippet">Embed code</label>
+        <textarea id="embed-snippet" class="embed-snippet" rows="4" readonly
+          spellcheck="false">&lt;iframe src="https://demeapp.github.io/embed-card.html" title="Your ward's record — Deme" width="100%" height="520" style="border:1px solid #D7DEE8;border-radius:12px;max-width:480px" loading="lazy"&gt;&lt;/iframe&gt;</textarea>
+        <div class="embed-snippet-actions">
+          <button class="btn" type="button" id="embed-copy">Copy snippet</button>
+          <span class="small" id="embed-copy-note" aria-live="polite"></span>
+        </div>
+      </div>
+      <p class="small" style="max-width:44rem">To pre-select a ward, add
+      <code>?ward=</code> and the ward number to the address — for
+      example <code>https://demeapp.github.io/embed-card.html?ward=19</code>
+      for Ward 19, Beaches&ndash;East York.</p>
+
+      <h2 style="margin-top:2.2rem">Sizing</h2>
+      <p style="max-width:44rem">The card is built for a narrow column:
+      it works from about 320px to 480px wide. Set the iframe to
+      <code>width="100%"</code> with a <code>max-width</code> of 480px
+      and a height around 520px, as the snippet does. Shorter wards and
+      longer decision titles vary the content a little — if your layout
+      clips the credit line at the bottom, raise the height to 560px.
+      The card loads its data from Deme, so it stays current on its own;
+      there is nothing to update on your site.</p>
+
+      <h2 style="margin-top:2.2rem">Terms</h2>
+      <p style="max-width:44rem">Free to use on any site — just keep the
+      &ldquo;On Deme&rdquo; credit line on the card as it appears.</p>
+      <p style="max-width:44rem">Questions about how the record is built
+      are answered on <a href="about.html">About &amp; method</a>, and
+      the underlying files are listed on the
+      <a href="open-data.html">open data page</a>.</p>
+    </section>
+  </div>
+</main>
+<footer class="site-footer"></footer>
+<script src="assets/js/common.js"></script>
+<script src="assets/js/embed.js"></script>
+<script>renderChrome("");</script>
+<script data-goatcounter="https://demecivic.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>

@@ -1,0 +1,144 @@
+/* Deme — Improvements 3–5 (branch improvements-3-5).
+   Loaded only by the pages that need it; deme.css stays untouched so
+   this file can merge independently of the chrome/mobile waves. */
+
+/* ---------- Improvement 5a: accessibility fixes owned by this wave ---------- */
+/* Lobbying panel sub-heads are h3 now (heading order); keep deme.css's
+   h4 metrics for them here so the panel looks unchanged. */
+.lob-cols h3 { margin: 0 0 .5rem; font-size: .98rem; }
+
+/* ---------- Improvement 3: "Have your say" (member pages) ---------- */
+.hys { margin-top: 2.6rem; }
+.hys .lede-line { max-width: 44rem; }
+.hys-grid { display: grid; gap: 1rem; margin-top: 1.1rem; }
+@media (min-width: 820px) { .hys-grid { grid-template-columns: 1fr 1.6fr; } }
+.hys-grid > .profile-panel { margin-top: 0; }
+.hys-steps { list-style: none; margin: 0; padding: 0; display: grid; gap: .9rem; }
+.hys-steps li { display: grid; grid-template-columns: 2rem 1fr; gap: .7rem; align-items: start; }
+.hys-num {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 2rem; height: 2rem; border-radius: 50%;
+  background: var(--navy); color: #fff; font-weight: 700; font-size: 1rem;
+}
+.hys-steps p { margin: 0; }
+.hys-steps .step-h { font-weight: 700; color: var(--ink); }
+
+/* ---------- Improvement 4: Distribution (embed card, embed page,
+   reporters) ----------
+   The card is designed to be iframed at ~320–480px wide on other
+   people's sites, so it uses only deme.css tokens, carries its own
+   compact chrome, and never depends on the site header/footer. The
+   embed page's preview/snippet and the reporters page reuse the same
+   tokens; nothing here restyles existing components. */
+
+/* The card page: no site padding rhythm, a single compact surface. */
+.embed-card-page { background: var(--marble); }
+.embed-main { padding-bottom: 0; }
+.embed-card {
+  background: var(--card); border: 1px solid var(--line-soft);
+  border-top: 3px solid var(--bronze); border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+  padding: 1.1rem 1.15rem 1rem; margin: .6rem;
+}
+@media (min-width: 480px) { .embed-card { margin: 1rem auto; max-width: 30rem; } }
+.embed-kicker { margin-bottom: .3rem; }
+.embed-title { font-size: 1.55rem; margin-bottom: .5rem; }
+.embed-rule { margin-bottom: .9rem; }
+.embed-picker { margin-bottom: 1rem; }
+.embed-label {
+  display: block; font-weight: 600; font-size: .92rem; margin-bottom: .4rem;
+}
+.embed-select {
+  width: 100%; min-height: 48px; padding: .5rem .7rem; font: inherit;
+  border: 1.5px solid var(--line); border-radius: 12px;
+  background: #fff; color: var(--ink);
+}
+.embed-select:disabled { opacity: .65; }
+.embed-ward {
+  font-size: .92rem; font-weight: 700; letter-spacing: .04em;
+  color: var(--bronze-dark); margin: 0 0 .15rem;
+}
+.embed-name { font-size: 1.35rem; margin: 0 0 .8rem; }
+.embed-name a { color: var(--navy); text-decoration: none; }
+.embed-name a:hover {
+  text-decoration: underline; text-decoration-color: var(--bronze);
+}
+.embed-stats {
+  display: grid; grid-template-columns: 1fr 1fr; gap: .8rem;
+  margin-bottom: .6rem;
+}
+.embed-stat {
+  background: var(--marble); border: 1px solid var(--line-soft);
+  border-radius: 10px; padding: .7rem .85rem;
+}
+.embed-stat-num {
+  display: block; font-family: var(--font-display);
+  font-size: 1.45rem; font-weight: 800; line-height: 1.15; color: var(--navy);
+}
+.embed-stat-lab {
+  display: block; font-size: .82rem; font-weight: 700;
+  letter-spacing: .06em; text-transform: uppercase; color: var(--ink-faint);
+  margin-top: .15rem;
+}
+.embed-def { font-size: .85rem; color: var(--ink-soft); margin: 0 0 .2rem; }
+.embed-latest { margin-top: 1rem; border-top: 1px solid var(--line-soft); padding-top: .85rem; }
+.embed-latest-h { font-size: 1rem; margin: 0 0 .55rem; }
+.embed-decisions { list-style: none; margin: 0; padding: 0; display: grid; gap: .7rem; }
+.embed-decisions li { font-size: .95rem; line-height: 1.45; }
+.embed-decisions a { color: var(--ink); font-weight: 600; text-decoration: none; }
+.embed-decisions a:hover {
+  text-decoration: underline; text-decoration-color: var(--bronze);
+}
+.embed-decision-meta { display: block; font-size: .82rem; color: var(--ink-faint); margin-top: .1rem; }
+.embed-no-decisions { margin: 0; }
+.embed-hint { margin: 0; }
+.embed-state p { margin: 0 0 .6rem; }
+.embed-credit {
+  margin: 1rem 0 0; padding-top: .75rem;
+  border-top: 1px solid var(--line-soft);
+  font-size: .85rem; color: var(--ink-faint);
+}
+.embed-credit a { font-weight: 700; }
+
+/* Embed page: preview frame + copyable snippet. */
+.embed-preview-tools { margin: 1rem 0; max-width: 30rem; }
+.embed-preview-field label {
+  display: block; font-weight: 600; font-size: .92rem; margin-bottom: .4rem;
+}
+.embed-preview-field select {
+  width: 100%; min-height: 48px; padding: .5rem .7rem; font: inherit;
+  border: 1.5px solid var(--line); border-radius: 12px;
+  background: #fff; color: var(--ink);
+}
+.embed-preview-frame-wrap { max-width: 30rem; margin-bottom: .5rem; }
+.embed-preview-frame-wrap iframe {
+  display: block; width: 100%; border: 1px solid var(--line);
+  border-radius: var(--radius); background: var(--card);
+}
+.embed-snippet-block { max-width: 44rem; margin-top: 1rem; }
+.embed-snippet-label {
+  display: block; font-weight: 600; font-size: .92rem; margin-bottom: .4rem;
+}
+.embed-snippet {
+  width: 100%; font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  font-size: .88rem; line-height: 1.5; color: var(--ink);
+  border: 1.5px solid var(--line); border-radius: 12px;
+  background: var(--card); padding: .8rem .9rem; resize: vertical;
+}
+.embed-snippet-actions {
+  display: flex; gap: .8rem; flex-wrap: wrap; align-items: center;
+  margin-top: .7rem;
+}
+
+/* Reporters page: plain lists + the methodology note as a panel. */
+.reporters-list { max-width: 44rem; margin: 0 0 1rem; padding-left: 1.3rem; }
+.reporters-list li { margin-bottom: .5rem; }
+.reporters-method {
+  background: var(--card); border: 1px solid var(--line-soft);
+  border-left: 4px solid var(--bronze); border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+  padding: 1.4rem 1.5rem 1.1rem; margin-top: 2.2rem; max-width: 48rem;
+}
+.reporters-method h3 { margin-top: 1.3rem; }
+.reporters-method h3:first-of-type { margin-top: .6rem; }
+.reporters-method p { max-width: 44rem; }

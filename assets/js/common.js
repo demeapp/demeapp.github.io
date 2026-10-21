@@ -160,6 +160,8 @@ function renderChrome(active) {
           <ul>
             <li><a href="about.html">About &amp; method</a></li>
             <li><a href="open-data.html">Open data</a></li>
+            <li><a href="reporters.html">For reporters</a></li>
+            <li><a href="embed.html">Embed the record</a></li>
             <li><a href="my-record.html">My Record</a></li>
             <li><a href="privacy.html">Privacy policy</a></li>
           </ul>

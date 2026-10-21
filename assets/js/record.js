@@ -138,6 +138,7 @@ const alertsBox = document.getElementById("profile-alerts");
 const picksBox = document.getElementById("picks");
 const agreeBox = document.getElementById("agreement");
 const upcomingBox = document.getElementById("upcoming");
+const watchesBox = document.getElementById("watches");
 let people = [];
 let wardNames = new Map();
 let threadThreads = [];
@@ -301,7 +302,8 @@ function renderProfileChrome() {
     <a href="#account-zone">your account</a> above.</p>`;
 }
 window.DemeRecord = { refreshProfileSummary: renderProfileChrome,
-  refreshWeighIn: renderUpcoming, refreshPicks: renderPicks };
+  refreshWeighIn: renderUpcoming, refreshPicks: renderPicks,
+  refreshWatches: renderWatches };
 
 /* Continuity, same snapshot discipline as Home: no snapshot + a known
    current rep primes the snapshot silently; a snapshot naming someone
@@ -410,6 +412,36 @@ function weighInHTML(u) {
          saved to your account. Tap the other side to change it, any
          time before the meeting.`
       : "No pick yet — tap Support or Oppose to save your pick to your account."}</p>
+    ${watchHTML(u)}
+  </div>`;
+}
+/* Watching (owner decision, Oct 21, 2026 — "close the loop"):
+   a signed-in visitor can watch an item whether or not they
+   picked a side; when Council decides it, the resolver sends
+   one outcome email and the watch appears below with its
+   result. The toggle's state reads the account layer's watch
+   cache; a watch whose account write hasn't landed yet says so
+   on its note line (DemeAccount.isStaleWatch), never silently. */
+function watchHTML(u) {
+  const acct = window.DemeAccount;
+  if (!acct || typeof acct.isWatching !== "function") return "";
+  const watching = acct.isWatching(u.ref);
+  const stale = watching && typeof acct.isStaleWatch === "function"
+    && acct.isStaleWatch(u.ref);
+  const note = watching
+    ? (stale
+      ? "You're watching this item — saved on this device; the "
+        + "account copy didn't go through just now and will be "
+        + "retried at your next sign-in."
+      : "You're watching this item — we'll email you once, when "
+        + "Council decides it. Your watch is listed below.")
+    : "Watch this item and we'll email you once, when Council "
+      + "decides it — the outcome, and your pick beside it if "
+      + "you weighed in. No other mail.";
+  return `<div class="watchrow">
+    <button class="choice watchbtn" type="button" data-ref="${esc(u.ref)}"
+      aria-pressed="${watching}">${watching ? "Watching" : "Watch this item"}</button>
+    <p class="savedNote watch-note" aria-live="polite">${note}</p>
   </div>`;
 }
 function renderUpcoming() {
@@ -455,6 +487,45 @@ function bindWeighIns() {
   if (!upcomingBox || upcomingBox.dataset.bound) return;
   upcomingBox.dataset.bound = "1";
   upcomingBox.addEventListener("click", async (e) => {
+    const watchBtn = e.target.closest(".watchbtn");
+    if (watchBtn) {
+      if (!accountSignedIn() || !window.DemeAccount
+          || typeof window.DemeAccount.syncWatch !== "function") return;
+      const ref = watchBtn.dataset.ref;
+      const item = upcomingItems.find((u) => u.ref === ref);
+      if (!item) return;
+      const hadFocusW = document.activeElement === watchBtn;
+      const on = !window.DemeAccount.isWatching(ref);
+      const synced = await window.DemeAccount.syncWatch(
+        ref, on, item.title);
+      /* Re-render the whole weigh-in block, exactly as a pick
+         change does, so the toggle and its note line agree. */
+      const wrap = document.getElementById(`w-${CSS.escape(ref)}`);
+      if (wrap) {
+        const fresh = document.createElement("div");
+        fresh.innerHTML = weighInHTML(item);
+        const note = fresh.querySelector(".watch-note");
+        if (note && !synced && on) {
+          note.textContent = "You're watching this item on this "
+            + "device — the account copy didn't go through just "
+            + "now, and it will be retried at your next sign-in. "
+            + "The outcome email follows the account copy.";
+        }
+        if (note && !synced && !on) {
+          note.textContent = "That unwatch is saved on this "
+            + "device — the account copy didn't go through just "
+            + "now, and it will be retried at your next sign-in.";
+        }
+        const newWrap = fresh.firstElementChild;
+        wrap.replaceWith(newWrap);
+        if (hadFocusW) {
+          const eq = newWrap.querySelector(".watchbtn");
+          if (eq) eq.focus();
+        }
+      }
+      renderWatches();
+      return;
+    }
     const gateBtn = e.target.closest(".gate-signin");
     if (gateBtn) {
       try {
@@ -631,6 +702,118 @@ async function renderPicks() {
   agreeBox.innerHTML = html;
 }
 
+/* ---------------- items you're watching ----------------
+   A watch's live status is resolved from the same published
+   archive the picks use: no card yet means Council hasn't
+   decided the item in the published record; a card means it
+   has, and the card (plus the per-decision file, for the
+   recorded-vote counts) says how. This mirrors the resolver's
+   own test server-side, so the list and the outcome email can
+   never disagree about whether an item is decided. The email
+   state shown here reads the row's notify_state, which only
+   the resolver writes. */
+let watchesRenderSeq = 0;
+async function renderWatches() {
+  if (!watchesBox) return;
+  /* Render passes overlap (boot, sign-in bootstrap, a toggle):
+     each pass awaits archive fetches, so a slow earlier pass
+     could otherwise paint its stale snapshot over a newer one.
+     Only the latest pass may paint. */
+  const seq = ++watchesRenderSeq;
+  const acct = window.DemeAccount;
+  if (!acct || typeof acct.enabled !== "function" || !acct.enabled()) {
+    watchesBox.innerHTML = "";
+    return;
+  }
+  if (!accountSignedIn()) {
+    watchesBox.innerHTML = `<div class="calm"><h3>Watching is part
+      of a free account.</h3>
+      <p>Sign in above, and you can watch any upcoming Council
+      item. When Council decides it, we email you the outcome
+      once — and if you weighed in, your pick is lined up beside
+      it. Reading the record never needs an account.</p></div>`;
+    return;
+  }
+  const watches = (acct.getWatches() || []).slice().sort(
+    (a, b) => (a.created_at < b.created_at ? 1 : -1));
+  if (!watches.length) {
+    watchesBox.innerHTML = `<div class="calm"><h3>You're not
+      watching anything yet.</h3>
+      <p>Tap <strong>Watch this item</strong> on anything coming
+      up at Council, and it will be listed here — waiting first,
+      then with its outcome once Council decides.</p></div>`;
+    return;
+  }
+  const blocks = [];
+  for (const w of watches) {
+    const ref = w.item_ref;
+    const pick = (typeof VoteStore.getPick === "function")
+      ? VoteStore.getPick(ref) : null;
+    const pickLine = pick
+      ? `<p style="margin:.2rem 0 0">Your pick: <strong>${
+          pick.choice === "support" ? "Support" : "Oppose"}</strong>.</p>`
+      : "";
+    const unwatch = `<p style="margin:.6rem 0 0"><button class="btn
+      secondary small" type="button" data-unwatch="${esc(ref)}">Stop
+      watching</button></p>`;
+    const card = await findCard(ref);
+    if (!card) {
+      blocks.push(`<article class="card" style="margin-bottom:1rem">
+        <div class="meta"><span>Item ${esc(ref)}</span>
+          <span class="pill plain">Awaiting decision</span></div>
+        <h3>${esc(w.item_title || "Council item")}</h3>
+        ${pickLine}
+        <p class="small" style="margin:.4rem 0 0">Watched
+          ${esc(fmtDate(String(w.created_at || "").slice(0, 10)))}.
+          We'll email you once, when Council decides it.</p>
+        ${unwatch}</article>`);
+      continue;
+    }
+    let voteLine = "";
+    if (card.hasVote) {
+      try {
+        const detail = await loadJSON(
+          dataPath(`d/${encodeURIComponent(ref)}.json`));
+        const motion = detail && Array.isArray(detail.motions)
+          ? detail.motions.find((m) => m && m.stage === "City Council")
+          : null;
+        if (motion) {
+          voteLine = `<p style="margin:.4rem 0 0">Recorded vote at
+            City Council: <strong>${motion.yes} in favour,
+            ${motion.no} opposed</strong>.</p>`;
+        }
+      } catch (e) { /* the card's outcome line still stands */ }
+    }
+    const emailed = w.notify_state === "sent" && w.notified_at
+      ? `<p class="small" style="margin:.4rem 0 0">We emailed you
+          this outcome on
+          ${esc(fmtDate(String(w.notified_at).slice(0, 10)))}.</p>`
+      : "";
+    blocks.push(`<article class="card" style="margin-bottom:1rem">
+      <div class="meta"><span>${esc(fmtDate(card.date))}</span>
+        <span>${esc(card.body)}</span>
+        <span class="pill">${esc(card.statusLabel)}</span></div>
+      <h3><a href="decision.html?ref=${encodeURIComponent(ref)}">${
+        esc(card.title)}</a></h3>
+      ${voteLine}
+      ${pickLine}
+      ${emailed}
+      ${unwatch}</article>`);
+  }
+  if (seq !== watchesRenderSeq) return;
+  watchesBox.innerHTML = blocks.join("");
+}
+if (watchesBox) {
+  watchesBox.addEventListener("click", async (e) => {
+    const btn = e.target.closest("[data-unwatch]");
+    if (!btn || !accountSignedIn() || !window.DemeAccount
+        || typeof window.DemeAccount.syncWatch !== "function") return;
+    await window.DemeAccount.syncWatch(btn.dataset.unwatch, false);
+    renderWatches();
+    renderUpcoming();
+  });
+}
+
 async function init() {
   people = await loadJSON(dataPath("councillors.json"));
   wardNames = new Map(people.filter((p) => p.current && !p.mayor)
@@ -679,6 +862,7 @@ async function init() {
     }
   });
   renderPicks();
+  renderWatches();
   loadUpcoming();
 }
 init().catch(() => {

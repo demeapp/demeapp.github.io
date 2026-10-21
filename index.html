@@ -249,6 +249,7 @@
 <script src="assets/js/common.js"></script>
 <script src="assets/js/ward-finder.js"></script>
 <script src="assets/js/personalize.js"></script>
+<script src="assets/js/account.js"></script>
 <script>
 renderChrome("index.html");
 
@@ -259,8 +260,64 @@ function voteCard(u) {
     <h3><a href="my-record.html#${encodeURIComponent(u.ref)}">${esc(u.title)}</a></h3>
     ${u.brief ? `<p class="brief">${esc(u.brief)}</p>` : ""}
     <p class="more"><a href="my-record.html#${encodeURIComponent(u.ref)}">Read the brief and weigh in →</a></p>
+    <p class="watchline" data-watchline="${esc(u.ref)}"></p>
   </article>`;
 }
+
+/* Watching ("close the loop", Oct 21, 2026): each upcoming card
+   carries a watch line under its weigh-in link. Signed in, it is
+   the same toggle My Record's weigh-in cards carry (the account
+   layer, account.js, owns the state and the writes); signed out,
+   it is one quiet line to the sign-in route — watching is an
+   account feature because the outcome arrives by email. The
+   account layer announces session settles with a "deme:session"
+   event; until it fires, the line stays empty rather than guess. */
+function paintWatchLines() {
+  const acct = window.DemeAccount;
+  document.querySelectorAll("[data-watchline]").forEach((line) => {
+    const ref = line.getAttribute("data-watchline");
+    if (!acct || typeof acct.enabled !== "function" || !acct.enabled()) {
+      line.innerHTML = "";
+      return;
+    }
+    if (typeof acct.isSignedIn !== "function" || !acct.isSignedIn()) {
+      line.innerHTML = `<a href="my-record.html#${encodeURIComponent(ref)}">Watch this item — get the outcome by email</a>`;
+      return;
+    }
+    const watching = typeof acct.isWatching === "function"
+      && acct.isWatching(ref);
+    line.innerHTML = `<button class="choice watchbtn watchbtn-home"
+      type="button" data-watchref="${esc(ref)}"
+      aria-pressed="${watching}">${watching ? "Watching" : "Watch this item"}</button>
+      <span class="small" data-watchnote="${esc(ref)}">${watching
+        ? "We'll email you once, when Council decides it."
+        : ""}</span>`;
+  });
+}
+window.addEventListener("deme:session", paintWatchLines);
+document.getElementById("upcoming").addEventListener("click", async (e) => {
+  const btn = e.target.closest(".watchbtn-home");
+  if (!btn) return;
+  const acct = window.DemeAccount;
+  if (!acct || typeof acct.syncWatch !== "function"
+      || typeof acct.isWatching !== "function") return;
+  const ref = btn.getAttribute("data-watchref");
+  const card = btn.closest("article");
+  const titleEl = card ? card.querySelector("h3") : null;
+  const on = !acct.isWatching(ref);
+  const synced = await acct.syncWatch(ref, on,
+    titleEl ? titleEl.textContent.trim() : null);
+  paintWatchLines();
+  if (!synced) {
+    const note = document.querySelector(
+      `[data-watchnote="${CSS.escape(ref)}"]`);
+    if (note) {
+      note.textContent = on
+        ? "Watching on this device — the account copy didn't go through just now and will be retried at your next sign-in."
+        : "That unwatch is on this device — the account copy didn't go through just now and will be retried at your next sign-in.";
+    }
+  }
+});
 
 Promise.all([loadJSON(dataPath("stats.json")), loadJSON(dataPath("latest.json")),
              loadJSON(dataPath("upcoming.json")), loadJSON(dataPath("topics.json")),
@@ -286,6 +343,7 @@ Promise.all([loadJSON(dataPath("stats.json")), loadJSON(dataPath("latest.json"))
   if (councilItems.length) {
     up.innerHTML = `<div class="cards two">${councilItems.slice(0, 4).map(voteCard).join("")}</div>
       <p style="margin-top:1.1rem"><a class="btn bronze" href="my-record.html#weigh-in">Weigh in before the meeting</a></p>`;
+    paintWatchLines();
   } else {
     /* Empty state: one honest line in a slim band — same true wording,
        no big empty box. The items path above is untouched. */

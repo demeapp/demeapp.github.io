@@ -25,7 +25,11 @@
      profiles, used only for the owner's own voting card and
      notifications. There is deliberately no field or function
      anywhere that could total visitors' picks — the no-tally rule
-     is permanent, accounts or not.
+     is permanent, accounts or not. Watches (owner decision,
+     Oct 21, 2026 — "close the loop") follow the same shape: one
+     row per watched item in public.watches, own-rows-only under
+     RLS, read only for the owner's own list and the owner's one
+     outcome email when the item is decided.
    - Data access is enforced by Postgres row-level security (each row
      readable/writable only by its owner); the anon key shipped here
      is a public client key by design.
@@ -367,6 +371,14 @@ const DemeAccount = (() => {
     if (!r) return;
     if (typeof r.refreshWeighIn === "function") r.refreshWeighIn();
     if (typeof r.refreshPicks === "function") r.refreshPicks();
+    if (typeof r.refreshWatches === "function") r.refreshWatches();
+  }
+  /* Pages without a DemeRecord surface (Home's upcoming cards)
+     listen for this instead: it fires whenever the session or the
+     watch list settles — sign-in, sign-out, bootstrap, a toggle. */
+  function notifyWatchSurfaces() {
+    try { window.dispatchEvent(new CustomEvent("deme:session")); }
+    catch (e) { /* very old browser — surfaces refresh on next load */ }
   }
   /* On sign-in: the account's rows and this device's picks are
      merged into the cache. Anything the account doesn't hold
@@ -477,6 +489,149 @@ const DemeAccount = (() => {
         }
       }
     });
+  }
+
+  /* ---------------- watches (account-saved, owner decision
+     Oct 21, 2026 — "close the loop") ----------------
+     One row per watched item in public.watches: item_ref, a
+     snapshot of the item's public title, timestamps, and the
+     resolver-owned notify state (watch-migration.sql). Watching
+     requires sign-in, like weighing in; reading never does. When
+     the item is decided, the server-side resolver sends the owner
+     exactly one outcome email and marks the row sent — the
+     notify_state / notified_at / outcome columns are written
+     only by that resolver (a trigger freezes them against client
+     writes), never from here.
+     Failure discipline mirrors picks: a failed account write
+     never loses the device copy — the divergence is remembered
+     as "stale" and retried at the next sign-in bootstrap, and
+     syncWatch returns false so the caller can say honestly that
+     the change is only on this device for now. A watch is a
+     subscription, not a position, so unlike picks there is
+     nothing to arbitrate at merge time: stale retries are quiet.
+     Watches are read for the owner's own list and the owner's
+     outcome email only; there is no tally, here or anywhere. */
+  const WATCH_CACHE_KEY = "deme.watches.v1";
+  const STALE_WATCH_KEY = "deme.staleWatches.v1";
+  let watchRows = null; /* null = account copy not loaded yet */
+  function cachedWatches() {
+    try {
+      const v = JSON.parse(localStorage.getItem(WATCH_CACHE_KEY));
+      if (v && v.user && session && v.user === session.user.id
+          && Array.isArray(v.rows)) return v.rows;
+    } catch (e) { /* treat as no cache */ }
+    return [];
+  }
+  function cacheWatches(rows) {
+    watchRows = rows;
+    try {
+      if (session && rows) {
+        localStorage.setItem(WATCH_CACHE_KEY, JSON.stringify(
+          { user: session.user.id, rows }));
+      }
+    } catch (e) {}
+  }
+  /* The render-facing read: the account's watches when signed in,
+     nothing when signed out — a watch is account data tied to the
+     outcome email, so unlike a pick it has no on-device meaning,
+     and a previous visitor's cache on a shared device is never
+     shown (the cache is stamped with its owner's id). */
+  function getWatches() {
+    if (!session) return [];
+    return watchRows || cachedWatches();
+  }
+  function isWatching(ref) {
+    return getWatches().some((w) => w && w.item_ref === ref);
+  }
+  function staleWatches() {
+    try {
+      const v = JSON.parse(localStorage.getItem(STALE_WATCH_KEY));
+      return v && typeof v === "object" ? v : {};
+    } catch (e) { return {}; }
+  }
+  function setStaleWatch(ref, want) {
+    try {
+      const st = staleWatches();
+      if (want === undefined) delete st[ref];
+      else st[ref] = want;
+      if (Object.keys(st).length) {
+        localStorage.setItem(STALE_WATCH_KEY, JSON.stringify(st));
+      } else localStorage.removeItem(STALE_WATCH_KEY);
+    } catch (e) {}
+  }
+  function isStaleWatch(ref) {
+    return Object.prototype.hasOwnProperty.call(staleWatches(), ref);
+  }
+  async function fetchWatches() {
+    const rows = await authedJSON(
+      `/rest/v1/watches?user_id=eq.${encodeURIComponent(session.user.id)}`
+      + `&select=id,item_ref,item_title,created_at,notify_state,notified_at,outcome`
+      + `&order=created_at.asc`);
+    return Array.isArray(rows) ? rows : [];
+  }
+  async function upsertWatchRow(ref, title) {
+    await authedJSON("/rest/v1/watches", {
+      method: "POST",
+      headers: { "Prefer": "resolution=merge-duplicates,return=minimal" },
+      body: JSON.stringify({
+        user_id: session.user.id, item_ref: ref,
+        item_title: title || null,
+      }),
+    });
+  }
+  async function deleteWatchRow(ref) {
+    await authedJSON(
+      `/rest/v1/watches?user_id=eq.${encodeURIComponent(session.user.id)}`
+      + `&item_ref=eq.${encodeURIComponent(ref)}`,
+      { method: "DELETE", headers: { "Prefer": "return=minimal" } });
+  }
+  /* Called by the watch toggles (My Record's weigh-in cards,
+     Home's upcoming cards) after the visitor taps. The device
+     cache updates first so the toggle answers instantly; the
+     account write follows. Returns true when the account copy
+     is in step; on failure the divergence is marked stale for
+     the next bootstrap retry and false comes back, so the
+     caller can say honestly that only the device copy is saved. */
+  async function syncWatch(ref, on, title) {
+    if (!session) return false;
+    const before = getWatches().slice();
+    const next = on
+      ? [...before.filter((w) => w.item_ref !== ref),
+         { item_ref: ref, item_title: title || null,
+           created_at: new Date().toISOString(),
+           notify_state: "pending", notified_at: null, outcome: null }]
+      : before.filter((w) => w.item_ref !== ref);
+    cacheWatches(next);
+    try {
+      if (on) await upsertWatchRow(ref, title);
+      else await deleteWatchRow(ref);
+      setStaleWatch(ref, undefined);
+      return true;
+    } catch (e) {
+      setStaleWatch(ref, on ? { title: title || null } : null);
+      return false;
+    }
+  }
+  /* On sign-in / stored-session restore: stale divergences are
+     retried once, quietly, then the account's rows become the
+     cache. A failure anywhere leaves the cached copy in place —
+     the account copy loads on a later visit. */
+  async function bootstrapWatches() {
+    if (!session) return;
+    try {
+      const stale = staleWatches();
+      for (const ref of Object.keys(stale)) {
+        const want = stale[ref];
+        try {
+          if (want) await upsertWatchRow(ref, want.title);
+          else await deleteWatchRow(ref);
+          setStaleWatch(ref, undefined);
+        } catch (e) { /* stays stale; retried next visit */ }
+      }
+      cacheWatches(await fetchWatches());
+    } catch (e) { /* account copy loads on a later visit */ }
+    notifyRecord();
+    notifyWatchSurfaces();
   }
 
   /* ---------------- CAPTCHA (F-6 readiness) ----------------
@@ -1067,8 +1222,11 @@ const DemeAccount = (() => {
         const row = (await fetchRow()) || accountProfile || {};
         let pickRows = [];
         try { pickRows = await fetchPicks(); } catch (e3) { pickRows = []; }
+        let watchRowsExport = [];
+        try { watchRowsExport = await fetchWatches(); }
+        catch (e3) { watchRowsExport = []; }
         const payload = { ...row, email: session.user.email || "",
-          picks: pickRows };
+          picks: pickRows, watches: watchRowsExport };
         /* The postal area was dropped from the profile (owner
            decision, Oct 20, 2026); a row written by an earlier
            build may still carry the retired fsa column — it is
@@ -1095,6 +1253,7 @@ const DemeAccount = (() => {
       renderSignedOut("Signed out on this device. Your local profile and picks stay on this device, and your account keeps its copies for your next sign-in.");
       refreshAlertsBox();
       notifyRecord();
+      notifyWatchSurfaces();
     });
 
     const delZone = zone.querySelector("#del-zone");
@@ -1159,7 +1318,13 @@ const DemeAccount = (() => {
           try { localStorage.removeItem(PENDING_KEY); } catch (e) {}
           renderSignedOut("Your account and its server-held data — including every pick saved to your account — are deleted. Your local profile and picks remain on this device — erase them any time with the button below.");
           refreshAlertsBox();
+          /* The watches rows cascade-delete with the auth user
+             (watches.user_id references auth.users on delete
+             cascade) — nothing watch-specific to call here. */
+          watchRows = [];
+          try { localStorage.removeItem(WATCH_CACHE_KEY); } catch (e) {}
           notifyRecord();
+          notifyWatchSurfaces();
         } catch (e2) {
           errLine(err, "Automatic deletion couldn't complete just now. Your account can be deleted on request — see the privacy policy for how to reach us, and nothing about your account changes in the meantime.");
         }
@@ -1174,6 +1339,7 @@ const DemeAccount = (() => {
     await renderSignedIn();
     refreshAlertsBox();
     await bootstrapPicks();
+    await bootstrapWatches();
     settleAuthReady();
   }
 
@@ -1328,8 +1494,14 @@ const DemeAccount = (() => {
 
   /* ---------------- boot ---------------- */
   async function boot() {
-    if (!zone || booted) { settleAuthReady(); return; }
+    if (booted) { settleAuthReady(); return; }
     booted = true;
+    /* Pages without the account panel (Home) still boot: the
+       session restore and the picks/watches bootstraps below are
+       what Home's watch toggles read, and every panel render is
+       zone-guarded into a no-op there. (Oct 21, 2026: boot used
+       to return early without a panel, which left Home's toggles
+       permanently signed-out.) */
     if (!enabled()) { renderDisabled(); settleAuthReady(); return; }
 
     /* Accounts are live, so the "no server and no account" line no
@@ -1417,8 +1589,9 @@ const DemeAccount = (() => {
         renderSignedOut();
       }
     }
-    if (session) { await bootstrapPicks(); }
+    if (session) { await bootstrapPicks(); await bootstrapWatches(); }
     settleAuthReady();
+    notifyWatchSurfaces();
     refreshAlertsBox();
     setInterval(syncFromLocal, 20000);
     document.addEventListener("visibilitychange", () => {
@@ -1433,7 +1606,8 @@ const DemeAccount = (() => {
   }
 
   return { enabled, renderAlerts, alertsOptIn, isSignedIn,
-    authReady, syncPick, bootstrapPicks };
+    authReady, syncPick, bootstrapPicks,
+    syncWatch, getWatches, isWatching, isStaleWatch, bootstrapWatches };
 })();
 
 window.DemeAccount = DemeAccount;

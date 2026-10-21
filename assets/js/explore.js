@@ -19,6 +19,15 @@ const STATUS_LABELS = {
 };
 const PAGE = 25;
 let rows = [], councillors = [], filtered = [], shown = 0;
+/* Render generations: applyFilters bumps renderSeq on every reset,
+   and page renders run one at a time off renderTail. A render whose
+   generation has been superseded — by a streamed shard landing, a
+   keystroke, any reset — appends nothing. Without this, a render
+   suspended in hydrate() while the next reset starts a second render
+   of the same first page appends its copy too, and the visitor sees
+   page one twice (or three times). */
+let renderSeq = 0;
+let renderTail = Promise.resolve();
 let archiveLoading = false; // D1: true until every search-<year> shard lands
 let parsed = null; // parseAsk result for the current query text, or null
 let profileFilter = null; // "Use my profile" filter, or null when off
@@ -119,6 +128,7 @@ function applyFilters() {
     filtered.sort((a, b) => (a.date < b.date ? 1 : -1));
   }
   shown = 0;
+  renderSeq++;
   $("results").innerHTML = "";
   memberHit(eff);
   renderInterpretation(eff);
@@ -268,7 +278,17 @@ async function hydrate(refs) {
     } catch (e) { /* cards render without briefs if a shard fails */ }
   }));
 }
-async function renderMore() {
+/* Entry point for every page render (applyFilters' first page and
+   the Show more button alike): queue this generation's render behind
+   any render still in flight, so appends land one at a time, in
+   order, exactly once each. */
+function renderMore() {
+  const seq = renderSeq;
+  renderTail = renderTail.then(() => renderPage(seq));
+  return renderTail;
+}
+async function renderPage(seq) {
+  if (seq !== renderSeq) return; // superseded before it even started
   /* The pager rewrite below destroys the focused button — remember
      whether it held focus so its replacement can take it back. */
   const wasFocused = document.activeElement
@@ -276,6 +296,9 @@ async function renderMore() {
   const slice = filtered.slice(shown, shown + PAGE);
   shown += slice.length;
   await hydrate(slice);
+  /* A reset landed while this page hydrated: the DOM (and `shown`)
+     now belong to the newer generation — append nothing. */
+  if (seq !== renderSeq) return;
   const html = slice.map((r) => {
     const full = briefCache.get(r.ref);
     if (full) return decisionCard(full);

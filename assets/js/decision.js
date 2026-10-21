@@ -120,6 +120,20 @@ function descLine(m) {
 }
 
 function motionBlock(m, idx) {
+  /* D-1 (Oct 21, 2026): tally-only motions — the City's published
+     record gives the official result but its name-by-name rows for
+     the vote are incomplete in the source, so the result stands
+     alone; Deme never shows two disagreeing numbers for one vote. */
+  if (m.tallyOnly) {
+    return `<div class="card" style="margin-top:1rem">
+    <h3>${esc(m.type || "Motion")}${m.result ? ` — ${esc(m.result)}` : ""}</h3>
+    <p class="small" style="margin:.1rem 0 .5rem">Vote taken at:
+      <strong>${esc(m.stage || "City Council")}</strong></p>
+    <p class="small">The City's published voting record gives the result
+      above, but its name-by-name rows for this vote are incomplete —
+      so no breakdown is shown, rather than a wrong one.</p>
+  </div>`;
+  }
   const absent = m.votes.filter(([, v]) => v === "Absent").length;
   const interest = m.votes.filter(([, v]) => v && v.startsWith("Absent(Interest")).length;
   /* W2: tag the visitor's own representatives in the name-by-name

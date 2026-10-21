@@ -9,6 +9,7 @@ document.documentElement.classList.add("js");
 if (typeof document.startViewTransition === "function") {
   document.documentElement.classList.add("vt");
 }
+document.head.appendChild(Object.assign(document.createElement("script"), { src: "/assets/js/pwa.js", defer: true }));
 
 /* ---------------- formatting helpers ---------------- */
 const fmtNum = (n) => (n == null ? "—" : Number(n).toLocaleString("en-CA"));

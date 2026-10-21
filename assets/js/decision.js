@@ -226,15 +226,32 @@ async function init() {
   setupShareButton(document.getElementById("share-btn"));
 
   /* Keep it simple (restored): where the simpler-worded summary
-     corpus covers this decision (the 2025–2026 items carried from
-     the earlier build), offer the toggle the old build had. The
-     standard brief stays the default; the simple text swaps in
-     place, nothing is re-fetched per toggle. */
-  if (card.brief) {
+     corpus covers this decision, offer the toggle the old build
+     had. The standard brief stays the default; the simple text
+     swaps in place, nothing is re-fetched per toggle. The fetch is
+     gated on SIMPLE_YEARS — the years that have a simple shard —
+     so a year without one never produces a 404 request; the
+     toggle's presence simply reflects availability. For the rare
+     card with no standard brief, the simple text is the summary
+     and is shown directly, labelled as such. */
+  const SIMPLE_YEARS = new Set(["2018", "2019", "2020", "2021", "2022",
+    "2023", "2024", "2025", "2026"]);
+  if (SIMPLE_YEARS.has(String(year))) {
     loadJSON(dataPath(`simple-${year}.json`)).then((shard) => {
       const simple = shard && shard[card.ref];
+      if (!simple) return;
       const briefEl = document.getElementById("brief-main");
-      if (!simple || !briefEl) return;
+      if (!briefEl) {
+        const anchor = document.getElementById("threadlinks");
+        if (anchor) {
+          anchor.insertAdjacentHTML("beforebegin", `
+            <div class="brief-head">
+              <span class="bh-lab">Simple summary</span>
+            </div>
+            <p class="briefBig">${esc(simple)}</p>`);
+        }
+        return;
+      }
       briefEl.insertAdjacentHTML("beforebegin", `
         <div class="brief-head">
           <span class="bh-lab" id="brief-mode-label">Plain-language summary</span>

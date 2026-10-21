@@ -188,6 +188,14 @@ section:first-child { margin-top: 0; }
 .site-nav a[aria-current="page"] {
   background: var(--ink); color: #fff; font-weight: 600;
 }
+.header-social { display: flex; gap: .15rem; align-items: center; }
+.header-social a {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 44px; height: 44px; flex: none; border-radius: 999px;
+  color: var(--ink-soft); text-decoration: none;
+}
+.header-social a:hover { background: var(--marble-2); color: var(--ink); }
+.header-social a svg { display: block; }
 .site-footer {
   border-top: 1px solid var(--line); margin-top: 2rem;
   padding: 2.2rem 0 2.6rem; color: var(--ink-soft); font-size: .92rem;
@@ -300,7 +308,7 @@ p { margin: 0 0 1rem; }
 .btn.small { min-height: 44px; padding: .45rem 1rem; font-size: .98rem; }
 .btn[disabled] { opacity: .55; cursor: default; }
 @media (prefers-reduced-motion: no-preference) {
-  .btn, .chip, .choice, .site-nav a {
+  .btn, .chip, .choice, .site-nav a, .header-social a {
     transition: background-color .15s ease, color .15s ease,
       border-color .15s ease, box-shadow .18s ease, transform .12s ease;
   }

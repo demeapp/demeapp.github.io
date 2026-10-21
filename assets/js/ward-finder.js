@@ -57,9 +57,16 @@ const WardFinder = (() => {
     let current = opts.current ?? null;      /* displayed / staged value */
     let stagedTouched = false;
     const allWards = Array.from({ length: 25 }, (_, i) => i + 1);
+    /* Collapsed-empty mode (owner request, Oct 21, 2026): a picker
+       that starts empty — the second-ward pickers — renders as one
+       "+ …" line instead of the whole entry block, expanding on tap.
+       A set value keeps the usual one-line summary. */
+    const collapsible = !!opts.collapseWhenEmpty && !!opts.label;
+    let addOpen = false;
 
     el.innerHTML = `
       <div class="wardfinder">
+        ${collapsible ? `<button class="wf-listtoggle wf-addtoggle" type="button" id="${p}-add" aria-expanded="false" aria-controls="${p}-entry">+ ${esc(opts.label)}</button>` : ""}
         ${opts.label ? `<p class="wf-label" id="${p}-label">${esc(opts.label)}</p>` : ""}
         <div class="wf-current" id="${p}-current" hidden></div>
         <div class="wf-entry" id="${p}-entry">
@@ -96,11 +103,36 @@ const WardFinder = (() => {
     const listRow = el.querySelector(`#${p}-listrow`);
     const listToggle = el.querySelector(`#${p}-lt`);
     const listSel = el.querySelector(`#${p}-list`);
+    const addBtn = collapsible ? el.querySelector(`#${p}-add`) : null;
+    const labelEl = opts.label ? el.querySelector(`#${p}-label`) : null;
+
+    function applyCollapse() {
+      if (!addBtn) return;
+      if (current != null) {
+        addBtn.hidden = true;
+        if (labelEl) labelEl.style.display = "";
+        return;
+      }
+      addBtn.hidden = false;
+      addBtn.setAttribute("aria-expanded", String(addOpen));
+      addBtn.textContent = (addOpen ? "− " : "+ ") + opts.label;
+      if (labelEl) labelEl.style.display = "none"; /* the toggle line carries the label's words while empty */
+      if (!addOpen) entryBox.hidden = true;
+      else if (currentBox.hidden) entryBox.hidden = false;
+    }
+    if (addBtn) {
+      addBtn.addEventListener("click", () => {
+        addOpen = !addOpen;
+        applyCollapse();
+        if (addOpen) input.focus();
+      });
+    }
 
     function showCurrent() {
       if (current == null) {
         currentBox.hidden = true;
         entryBox.hidden = false;
+        applyCollapse();
         return;
       }
       const wi = info(people, current);
@@ -115,7 +147,9 @@ const WardFinder = (() => {
         entryBox.hidden = false;
         result.innerHTML = "";
         input.focus();
+        if (addBtn) { addOpen = true; applyCollapse(); }
       });
+      applyCollapse();
     }
 
     function choose(n) {

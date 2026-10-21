@@ -161,11 +161,12 @@ const HomeStore = (() => {
       document.getElementById("profile-watch-finder"), {
         idPrefix: "sh2",
         people,
-        label: isMayor ? "Watch a ward" : "Also watch a second ward",
+        label: isMayor ? "Watch a ward" : "Also watch a second ward (optional)",
         current: (ww0 != null && ww0 !== state.choice) ? ww0 : null,
         exclude: typeof state.choice === "number" ? state.choice : null,
         noneLabel: "No second ward",
         inputLabel: "Postal code of the area to watch",
+        collapseWhenEmpty: true,
       });
     body.querySelectorAll("#profile-ints .chip").forEach((b) =>
       b.addEventListener("click", () => b.setAttribute("aria-pressed",

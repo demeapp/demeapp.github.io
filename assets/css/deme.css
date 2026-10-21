@@ -843,6 +843,7 @@ html.js .entry-shell { min-height: 25.4rem; }
   font-weight: 600; text-decoration: underline; text-underline-offset: 3px;
   min-height: 44px;
 }
+.wf-addtoggle { display: inline-flex; align-items: center; margin: 0; }
 .wf-listrow { margin-top: .5rem; }
 .wf-listrow select {
   width: 100%; min-height: 48px; padding: .5rem .7rem; font: inherit;

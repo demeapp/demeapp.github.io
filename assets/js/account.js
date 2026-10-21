@@ -878,6 +878,7 @@ const DemeAccount = (() => {
       idPrefix: "su2", people, label: "Also watch a second ward (optional)",
       current: null, noneLabel: "No second ward",
       inputLabel: "Postal code of the area to watch",
+      collapseWhenEmpty: true,
     });
 
     zone.querySelector("#acc-signup").addEventListener("submit", async (e) => {
@@ -1170,10 +1171,11 @@ const DemeAccount = (() => {
       current: row.ward ?? VoteStore.getWard(), noneLabel: "No ward set",
     });
     const watchFinder = WardFinder.mount(zone.querySelector("#ap-watch"), {
-      idPrefix: "ap2", people, label: "Also watch a second ward",
+      idPrefix: "ap2", people, label: "Also watch a second ward (optional)",
       current: row.watch_ward ?? VoteStore.getWatchWard(),
       exclude: row.ward ?? VoteStore.getWard(), noneLabel: "No second ward",
       inputLabel: "Postal code of the area to watch",
+      collapseWhenEmpty: true,
     });
     zone.querySelectorAll("#ap-ints .chip").forEach((b) =>
       b.addEventListener("click", () => b.setAttribute("aria-pressed",

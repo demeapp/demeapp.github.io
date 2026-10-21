@@ -214,28 +214,51 @@ function renderInterests() {
   renderProfileChrome();
 }
 
-/* Profile summary (owner decision, Oct 20, 2026): the ward editors
-   that used to live here are gone — a ward is set when the account
-   is created and changed in the account form above, which is the
-   profile's one edit path. This block only ever READS state.
+/* Profile summary + topics/alerts visibility (owner decisions,
+   Oct 20, 2026): the ward editors that used to live here are
+   gone — a ward is set when the account is created and changed
+   in the account form above, which is the profile's one edit
+   path. This block only ever READS state.
    Signed in, it states the profile facts: home ward, watched
    ward, topics count, Council alerts state (the alerts segment
    reads the account layer's opt-in — false signed out, omitted
    while a signed-in row is still loading; see
-   DemeAccount.alertsOptIn). Signed out, it says plainly where a
-   ward lives and where to find a councillor without one. The
-   topics/alerts editors below stay visible in both states, as
-   they always have. */
+   DemeAccount.alertsOptIn).
+   Signed out, there is no explainer section any more: the
+   topics/alerts block below renders only when signed in, where
+   it actually works, and all that remains here is one line
+   pointing to the directory's postal-code lookup.
+   While accounts are not enabled at all, the on-device profile
+   remains the whole product: the explainer and the editors stay
+   visible, as before. */
 function accountSignedInNow() {
   return Boolean(window.DemeAccount
     && typeof window.DemeAccount.isSignedIn === "function"
     && window.DemeAccount.isSignedIn());
+}
+function accountsLive() {
+  return Boolean(window.DemeAccount
+    && typeof window.DemeAccount.enabled === "function"
+    && window.DemeAccount.enabled());
+}
+function setSetupVisible(visible) {
+  const setup = document.getElementById("profile-setup");
+  if (setup) setup.hidden = !visible;
 }
 function renderProfileChrome() {
   const summary = document.getElementById("profile-summary");
   if (!summary) return;
   summary.hidden = false;
   if (!accountSignedInNow()) {
+    if (accountsLive()) {
+      setSetupVisible(false);
+      summary.innerHTML = `<p class="small" style="margin:0">Just
+        looking for your councillor?
+        <a href="councillors.html#ward-lookup">Find them by postal
+        code in the directory</a>.</p>`;
+      return;
+    }
+    setSetupVisible(true);
     summary.innerHTML = `<h2 style="font-size:1.25rem">Your profile</h2>
       <p style="max-width:44rem;margin:0">Your ward is part of your
       account profile — it's set when you create your account, so
@@ -245,6 +268,7 @@ function renderProfileChrome() {
       code in the directory</a>.</p>`;
     return;
   }
+  setSetupVisible(true);
   const ward = VoteStore.getWard();
   const parts = [];
   if (ward != null) {
@@ -305,11 +329,13 @@ function renderContinuity() {
   });
 }
 
-/* Council alerts opt-in (BUILD 3) — the link IS the sign-up action;
-   while DEME_ALERTS_FORM_URL is empty, only the "open soon" line shows.
-   When Deme accounts are active (account.js, config-gated), the
-   account layer renders this box instead: for a signed-in visitor
-   the account IS the alerts identity and supersedes the form. */
+/* Council alerts — account opt-in only (owner decision, Oct 20,
+   2026): the separate sign-up form route is retired. Alerts are
+   opted into when the account is created, or in the account
+   settings. When Deme accounts are active (account.js,
+   config-gated), the account layer renders this box. This
+   fallback renders only while accounts are not enabled at all;
+   it describes the same account route and offers no form. */
 function renderAlerts() {
   if (!alertsBox) return;
   if (window.DemeAccount && window.DemeAccount.enabled()) {
@@ -318,17 +344,13 @@ function renderAlerts() {
   }
   alertsBox.innerHTML = `<h3>Council alerts by email</h3>
     <p>Get an email when items on your wards or topics reach a City
-    Council agenda. Sign-ups are open now — digests haven't started
-    yet, and they begin with the new Council term. When they start, it
-    will be one digest per Council agenda, never one email per item,
-    and a person reviews every digest before it goes out.</p>
-    ${DEME_ALERTS_FORM_URL
-      ? `<p><a class="btn bronze" href="${esc(DEME_ALERTS_FORM_URL)}" target="_blank" rel="noopener">Sign up for Council alerts</a></p>
-         <p class="small">The sign-up form will ask for your email
-         address, your wards and your topics. Nothing is sent until
-         digests begin. Unsubscribe at any time.</p>`
-      : `<p class="small">Sign-ups are not open right now. When they
-         open, alerts will follow the wards and topics on your profile.</p>`}`;
+    Council agenda. Council alerts are part of a free Deme account:
+    you opt in when you create your account, and the digest follows
+    the wards and topics on your profile. Digests haven't started
+    yet, and they begin with the new Council term. When they start,
+    it will be one digest per Council agenda, never one email per
+    item, and a person reviews every digest before it goes out.
+    Nothing is sent until digests begin.</p>`;
 }
 
 /* ---------------- weigh in (folded in from the old Vote page) ----

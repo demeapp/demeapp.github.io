@@ -1195,28 +1195,24 @@ const DemeAccount = (() => {
         until digests begin.</p>`;
       return;
     }
-    /* One route, told once (OE-4): Council alerts are a benefit of
-       the account above — the digest follows the wards and topics on
-       your profile. The no-account form stays, as the quiet
-       alternative under that story, not a second pitch beside it. */
+    /* One route, told once (OE-4; separate form route retired by
+       owner decision, Oct 20, 2026): Council alerts are a benefit
+       of the account above — you opt in when you create the
+       account, or turn alerts on later in the account settings,
+       and the digest follows the wards and topics on your
+       profile. There is no separate form. */
     box.innerHTML = `<h3>Council alerts by email</h3>
       <p>Council alerts are part of a free Deme account: the digest
-      follows the wards and topics on your profile, and you manage it
-      from <a href="#account-zone">your account</a> above. Sign-ups are
-      open now — digests haven't started yet, and they begin with the
-      new Council term.</p>
-      ${DEME_ALERTS_FORM_URL
-        ? `<p class="small">Prefer not to create an account? You can
-           sign up with a form instead — it will ask for your email
-           address, your wards and your topics. When digests start, it
-           will be one digest per Council agenda, never one email per
-           item, and a person reviews every digest before it goes out.
-           Nothing is sent until digests begin. Unsubscribe at any
-           time.</p>
-           <p><a class="btn secondary" href="${esc(DEME_ALERTS_FORM_URL)}" target="_blank" rel="noopener">Sign up for Council alerts with the form</a></p>`
-        : `<p class="small">Sign-ups are not open right now. When they
-           open, alerts will follow the wards and topics on your
-           profile.</p>`}`;
+      follows the wards and topics on your profile, and you opt in
+      when you create your account — or turn them on any time from
+      <a href="#account-zone">your account</a> above. Sign-ups are
+      open now — digests haven't started yet, and they begin with
+      the new Council term.</p>
+      <p class="small">When digests start, it will be one digest
+      per Council agenda, never one email per item, and a person
+      reviews every digest before it goes out. Nothing is sent
+      until digests begin. Turn alerts off any time in your account
+      settings; every digest also carries an unsubscribe link.</p>`;
   }
   function refreshAlertsBox() {
     const box = document.getElementById("profile-alerts");

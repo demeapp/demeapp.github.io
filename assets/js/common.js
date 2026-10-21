@@ -358,10 +358,12 @@ function decisionCard(c, opts = {}) {
    tally, or percentage-of-visitors concept anywhere in this interface:
    a static site has no other visitors' data, and Deme never implies
    otherwise. */
-/* Council alerts (staged) — single config point. Empty string = sign-ups not open yet; the parent will supply the Google Form URL here. */
-const DEME_ALERTS_FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLSejGu1-j2a0-OfU_gxwjd5Y0WHnhgV-NWxriF-Lh-RU_cUx4A/viewform";
+/* Council alerts are an account opt-in (owner decision, Oct 20,
+   2026): there is no separate sign-up form, and no form URL is
+   configured anywhere. Alerts are opted into at account creation
+   and managed in the account settings (account.js). */
 
-/* Deme accounts (staged) — same constant pattern as the alerts form.
+/* Deme accounts (staged) — config constants.
    Both values empty = accounts not open: My Record shows an honest
    "accounts open soon" panel and the local, no-account profile remains
    the whole product. The parent fills these from the Supabase project

@@ -943,7 +943,7 @@ const DemeAccount = (() => {
   function refreshSyncLine() {
     const el = zone && zone.querySelector("#acc-sync");
     if (el && accountProfile) {
-      el.textContent = `Synced — Your Deme saved ${fmtDate((accountProfile.updated_at || "").slice(0, 10)) || "just now"}.`;
+      el.textContent = `Synced — your profile saved ${fmtDate((accountProfile.updated_at || "").slice(0, 10)) || "just now"}.`;
     }
   }
 
@@ -952,7 +952,7 @@ const DemeAccount = (() => {
     const row = accountProfile || {};
     zone.innerHTML = `<div class="card record-card account-card">
       <p class="kicker">Accounts</p>
-      <h2 style="font-size:1.25rem">Your Deme account</h2>
+      <h2 style="font-size:1.25rem">Your account</h2>
       <p>Signed in as <strong>${esc(session.user.email || "")}</strong>.
       The form below is your account profile — your name, your wards,
       the topics you follow and your Council alerts. Saving it updates
@@ -986,7 +986,7 @@ const DemeAccount = (() => {
         for your account — your name, email of record,
         wards, topics, your alerts opt-in and consent record, and the
         picks you have saved to your account — as a JSON file. This
-        device's own copy of Your Deme is exported separately, with
+        device's own copy of your profile is exported separately, with
         the button below this card.</p>
         <p class="toolbar" style="margin:.6rem 0 0">
           <button class="btn secondary" type="button" id="acc-export">Export my account data</button>
@@ -1195,19 +1195,25 @@ const DemeAccount = (() => {
         until digests begin.</p>`;
       return;
     }
+    /* One route, told once (OE-4): Council alerts are a benefit of
+       the account above — the digest follows the wards and topics on
+       your profile. The no-account form stays, as the quiet
+       alternative under that story, not a second pitch beside it. */
     box.innerHTML = `<h3>Council alerts by email</h3>
-      <p>Get an email when items on your wards or topics reach a City
-      Council agenda. Sign-ups are open now — digests haven't started
-      yet, and they begin with the new Council term. When they start,
-      it will be one digest per Council agenda, never one email per
-      item, and a person reviews every digest before it goes out.</p>
+      <p>Council alerts are part of a free Deme account: the digest
+      follows the wards and topics on your profile, and you manage it
+      from <a href="#account-zone">your account</a> above. Sign-ups are
+      open now — digests haven't started yet, and they begin with the
+      new Council term.</p>
       ${DEME_ALERTS_FORM_URL
-        ? `<p><a class="btn bronze" href="${esc(DEME_ALERTS_FORM_URL)}" target="_blank" rel="noopener">Sign up for Council alerts</a></p>
-           <p class="small">The sign-up form will ask for your email
-           address, your wards and your topics. Nothing is sent until
-           digests begin. Unsubscribe at any time.</p>
-           <p class="small">Or <a href="#account-zone">create a Deme
-           account</a> and manage alerts from your account instead.</p>`
+        ? `<p class="small">Prefer not to create an account? You can
+           sign up with a form instead — it will ask for your email
+           address, your wards and your topics. When digests start, it
+           will be one digest per Council agenda, never one email per
+           item, and a person reviews every digest before it goes out.
+           Nothing is sent until digests begin. Unsubscribe at any
+           time.</p>
+           <p><a class="btn secondary" href="${esc(DEME_ALERTS_FORM_URL)}" target="_blank" rel="noopener">Sign up for Council alerts with the form</a></p>`
         : `<p class="small">Sign-ups are not open right now. When they
            open, alerts will follow the wards and topics on your
            profile.</p>`}`;
@@ -1337,14 +1343,12 @@ const DemeAccount = (() => {
     const note = document.getElementById("local-note");
     if (note) {
       note.textContent = "Your picks: when you're signed in, they're "
-        + "saved to your account — only you can see them — and kept "
-        + "on this device too; signed out, they live only in this "
-        + "browser. Deme keeps no tally of visitors' positions. Your "
-        + "local profile lives in this browser's storage; with an "
-        + "account, your name, email, wards, topics and picks are "
-        + "also held on our server so they can follow you — see the "
-        + "privacy policy for exactly what's held and how to delete "
-        + "it.";
+        + "saved to your account and kept on this device too; signed "
+        + "out, they live only in this browser. Your local profile "
+        + "lives in this browser's storage; with an account, your "
+        + "name, email, wards, topics and picks are also held on our "
+        + "server so they can follow you — see the privacy policy "
+        + "for exactly what's held and how to delete it.";
     }
 
     try {

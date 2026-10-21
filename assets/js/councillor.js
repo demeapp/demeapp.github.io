@@ -132,6 +132,9 @@ function promiseCategories(text) {
     .reduce((all, g) => all.concat(g.item), []);
 }
 function relatedVotes(promiseText) {
+  /* Count ALL matches — the dropdown label prints this total, so it
+     must be the true count, never a display cap (OE-2). Only the
+     rendered list is capped, and it says so. */
   const terms = [...new Set(promiseCategories(promiseText))];
   if (!terms.length) return [];
   const seen = new Set();
@@ -142,7 +145,6 @@ function relatedVotes(promiseText) {
     if (seen.has(r.ref)) continue;
     seen.add(r.ref);
     out.push(r);
-    if (out.length >= 3) break;
   }
   return out;
 }
@@ -207,11 +209,12 @@ async function renderExtras(person) {
           ${related.length ? `<details class="related-votes">
             <summary>Related votes in the record (${related.length})</summary>
             <div class="related-list">
-            ${related.map((r) => `<button class="related-vote" type="button"
+            ${related.slice(0, 3).map((r) => `<button class="related-vote" type="button"
               data-ref="${esc(r.ref)}"><span>${esc(r.title || r.ref)}
               <span class="rv-ref">${esc(r.ref)} · ${esc(fmtDate(r.date))}</span></span>
               ${voteChip(r.vote)}</button>`).join("")}
             </div>
+            ${related.length > 3 ? `<p class="small" style="margin:.45rem 0 0">Showing 3 of ${related.length} matching votes — the most recent first.</p>` : ""}
           </details>` : ""}
         </article>`;
       }).join("");
@@ -242,7 +245,10 @@ async function renderExtras(person) {
         <summary>Lobbying Record
           <span class="pill">${fmtNum(lobbying.total)} communications</span></summary>
         <p class="lob-lede">Lobbyists must file every communication with a
-        member of Council. This is the filed record for ${esc(person.name)} —
+        member of Council. A communication is any contact a registered
+        lobbyist reported naming this member — a meeting, a call or an
+        email; it records the lobbyist's activity, not anything the
+        member sought or did. This is the filed record for ${esc(person.name)} —
         shown beside the voting record, never as a claim about influence:
         Deme reports the record and leaves conclusions to readers.</p>
         <div class="lob-stats">
@@ -304,8 +310,11 @@ function compositionStrip(person) {
   if (!total) return "";
   const pct = (n) => (100 * n / total);
   const pctTxt = (n) => {
+    /* One rounding rule everywhere (OE-8): exactly one decimal,
+       matching the stat tiles — never a bare "88" beside a tile's
+       "88.5". The tiny-value case keeps its honest "<0.1". */
     const p = pct(n);
-    return p > 0 && p < 0.05 ? "<0.1" : (Math.round(p * 10) / 10).toString();
+    return p > 0 && p < 0.05 ? "<0.1" : p.toFixed(1);
   };
   const seg = (n, cls) => n > 0
     ? `<span class="comp-seg ${cls}" style="width:${pct(n).toFixed(2)}%"></span>` : "";
@@ -360,7 +369,7 @@ function recordCardHTML(person, standalone) {
       <h2>${esc(person.name)}</h2>
       <p class="rc-ward">${esc(role)} · Voting record card</p></div></div>
     <div class="rc-stats">
-      <div class="rc-stat"><span>Attendance</span><strong>${person.attendance == null ? "—" : person.attendance + "%"}</strong></div>
+      <div class="rc-stat"><span>Attendance</span><strong>${fmtAtt(person)}</strong></div>
       <div class="rc-stat"><span>Votes cast</span><strong>${fmtNum(person.votesCast)}</strong></div>
       <div class="rc-stat"><span>Yes</span><strong>${fmtNum(person.yes)}</strong></div>
       <div class="rc-stat"><span>No</span><strong>${fmtNum(person.no)}</strong></div>
@@ -468,7 +477,7 @@ async function init() {
       </div>
     </div>
     <div class="statTiles">
-      <div class="stat"><span class="num">${person.attendance == null ? "—" : person.attendance + "%"}</span>
+      <div class="stat"><span class="num">${fmtAtt(person)}</span>
         <span class="lab">Attendance — present and voting, out of all
         recorded votes in their record</span>${attBar}</div>
       <div class="stat"><span class="num">${fmtNum(person.votesCast)}</span>

@@ -129,7 +129,6 @@ function renderChrome(active) {
             <li><a href="about.html">About &amp; method</a></li>
             <li><a href="open-data.html">Open data</a></li>
             <li><a href="my-record.html">My Record</a></li>
-            <li><a href="my-record.html#your-deme">Your Deme profile</a></li>
             <li><a href="privacy.html">Privacy policy</a></li>
           </ul>
         </nav>
@@ -156,6 +155,14 @@ function memberTenure(person) {
     ? `On Council since ${since}`
     : `${terms.length} terms · since ${since}`;
 }
+/* One attendance format everywhere (OE-8): exactly one decimal,
+   matching the member-page tiles — a stored 95 renders "95.0%",
+   never a bare "95%" beside someone else's "95.7%". */
+function fmtAtt(person) {
+  if (person.attendance == null) return "—";
+  const att = Number(person.attendance);
+  return Number.isFinite(att) ? `${att.toFixed(1)}%` : "—";
+}
 function memberStatsHTML(person) {
   const interest = Number(person.interest) || 0;
   /* Decorative attendance meter (the percentage figure beside it is
@@ -166,7 +173,7 @@ function memberStatsHTML(person) {
     ? `<span class="att-meter" aria-hidden="true"><span class="att-fill" style="width:${Math.max(0, Math.min(100, att))}%"></span></span>`
     : "";
   return `<div class="member-stats" aria-label="Record summary">
-    <div><span>Attendance</span><strong>${person.attendance == null ? "—" : `${person.attendance}%`}</strong>${meter}</div>
+    <div><span>Attendance</span><strong>${fmtAtt(person)}</strong>${meter}</div>
     <div><span>Votes cast</span><strong>${fmtNum(person.votesCast)}</strong></div>
     <div><span>Tenure</span><strong>${esc(memberTenure(person))}</strong></div>
     <div><span>Interests declared</span><strong>${fmtNum(interest)}</strong></div>
@@ -337,7 +344,7 @@ function decisionCard(c, opts = {}) {
      getMayorRep() / setMayorRep(slug, name) / clearMayorRep()
      hasProfile()
    LocalAdapter below is the production adapter on a static host: picks
-   and the "Your Deme" profile (ward, an optional second watched
+   and the on-device profile (ward, an optional second watched
    ward, followed topics, ward/mayor rep snapshots, last-changed
    time) live in the visitor's own browser (localStorage), v2.
    Migration: on read, a valid v2 wins. Otherwise a valid v1 migrates

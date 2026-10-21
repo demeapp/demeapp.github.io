@@ -207,7 +207,7 @@ function renderMyWardChip(eff) {
     String($("f-ward").value === String(eff.storedWard)));
 }
 
-/* "Your Deme" profile offer: shown only with a stored profile, no
+/* On-device profile offer: shown only with a stored profile, no
    q/year/vote params in the URL, and no dismissal this session. */
 function profileDismissed() {
   try { return sessionStorage.getItem("deme.explore.profileDismissed") === "1"; }

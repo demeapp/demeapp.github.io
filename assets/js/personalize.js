@@ -123,7 +123,7 @@ const HomeStore = (() => {
       your ward; ${nm} represents Ward ${state.choice} now.</p>${tail}`;
   }
 
-  /* Step 2 (also the "Edit your Deme" editor), kept in VoteStore.
+  /* Step 2 (also the "Edit your profile" editor), kept in VoteStore.
      The second ward is picked with the same postal-code finder as
      step 1 (its built-in list is the fallback); the pick is staged
      and only written when Save is pressed, as before. */
@@ -134,7 +134,7 @@ const HomeStore = (() => {
     const ints = VoteStore.getInterests(), ww0 = VoteStore.getWatchWard();
     body.innerHTML = `
       <p class="kicker">Start here</p>
-      <h2 id="starthere-h">Your Deme — optional extras</h2>
+      <h2 id="starthere-h">Optional extras</h2>
       <hr class="rule">
       <div class="card starthere-card">
         <div class="profile-field">
@@ -147,7 +147,7 @@ const HomeStore = (() => {
           </div>
         </div>
         <p class="toolbar" style="margin:0 0 .8rem">
-          <button class="btn" type="button" id="profile-save">${isMayor ? "Save and show my Deme" : "Save and show my ward"}</button>
+          <button class="btn" type="button" id="profile-save">${isMayor ? "Save and show my extras" : "Save and show my ward"}</button>
           <button class="btn secondary" type="button" id="profile-skip">Skip this step</button>
         </p>
         <p class="small" style="margin:0">${(typeof demeSignedIn === "function" && demeSignedIn())
@@ -222,11 +222,11 @@ const HomeStore = (() => {
       }
       sec.hidden = false;
       fb.innerHTML = `
-        <p class="kicker">Your Deme</p>
+        <p class="kicker">Your profile</p>
         <h2>For you</h2>
         <hr class="rule">
         <p class="small">Latest decisions for ${esc(basis.join(" · "))}
-        — from Your Deme. Edit it in
+        — from your profile. Edit it in
         <a href="my-record.html">My Record</a>.</p>
         ${cards.length
           ? `<div class="cards two">${cards.map((c) => decisionCard(c)).join("")}</div>`
@@ -241,7 +241,7 @@ const HomeStore = (() => {
   function renderPicker(state) {
     section.hidden = false;
     body.innerHTML = `
-      <p class="kicker">Your Deme</p>
+      <p class="kicker">Your profile</p>
       <h2 id="starthere-h">Make Deme yours</h2>
       <hr class="rule">
       <div class="card starthere-card entry-panel">
@@ -292,7 +292,7 @@ const HomeStore = (() => {
   function renderEntrySlim(state) {
     section.hidden = false;
     body.innerHTML = `
-      <p class="kicker">Your Deme</p>
+      <p class="kicker">Your profile</p>
       <h2 id="starthere-h">Make Deme yours</h2>
       <hr class="rule">
       <div class="card starthere-card entry-slim">
@@ -337,7 +337,7 @@ const HomeStore = (() => {
       </div>
       <p style="margin-top:1.1rem">
         <button class="btn secondary small" type="button" id="starthere-change">Change ward</button>
-        <button class="btn secondary small" type="button" id="starthere-edit">Edit your Deme</button>
+        <button class="btn secondary small" type="button" id="starthere-edit">Edit your profile</button>
       </p>`;
     document.getElementById("starthere-change").addEventListener("click", () => {
       renderPicker(state);
@@ -391,7 +391,7 @@ const HomeStore = (() => {
   function renderSignpost() {
     section.hidden = false;
     body.innerHTML = `
-      <p class="kicker">Your Deme</p>
+      <p class="kicker">Your profile</p>
       <h2 id="starthere-h">Make Deme yours</h2>
       <hr class="rule">
       <div class="card starthere-card entry-panel">

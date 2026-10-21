@@ -328,7 +328,7 @@ function renderAlerts() {
          address, your wards and your topics. Nothing is sent until
          digests begin. Unsubscribe at any time.</p>`
       : `<p class="small">Sign-ups are not open right now. When they
-         open, alerts will follow the wards and topics in Your Deme.</p>`}`;
+         open, alerts will follow the wards and topics on your profile.</p>`}`;
 }
 
 /* ---------------- weigh in (folded in from the old Vote page) ----
@@ -647,7 +647,7 @@ async function init() {
     URL.revokeObjectURL(a.href);
   });
   document.getElementById("reset").addEventListener("click", () => {
-    if (confirm("Erase all your Deme picks, your ward and Your Deme from this browser? (Picks saved to your account are not erased by this — deleting the account itself removes those.)")) {
+    if (confirm("Erase all your picks, your ward and your preferences from this browser? (Picks saved to your account are not erased by this — deleting the account itself removes those.)")) {
       VoteStore.resetAll();
       topicsEditing = false;
       renderContinuity();

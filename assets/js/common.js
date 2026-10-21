@@ -114,6 +114,14 @@ function renderChrome(active) {
         <div class="footer-brand">
           <p><strong>Deme</strong> — Toronto City Council's record, in plain
           language. Non-partisan. No grades, no endorsements — just the record.</p>
+          <nav class="footer-group footer-social" aria-label="Follow Deme">
+            <p class="footer-h">Follow Deme</p>
+            <ul>
+              <li><a href="https://x.com/demecivic" target="_blank" rel="noopener">X</a></li>
+              <li><a href="https://www.instagram.com/demecivic" target="_blank" rel="noopener">Instagram</a></li>
+              <li><a href="https://www.facebook.com/profile.php?id=1417248804799587" target="_blank" rel="noopener">Facebook</a></li>
+            </ul>
+          </nav>
         </div>
         <nav class="footer-group" aria-label="Explore the record">
           <p class="footer-h">Explore the record</p>

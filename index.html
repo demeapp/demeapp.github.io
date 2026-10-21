@@ -50,7 +50,8 @@
 #starthere .starthere-card { padding-top: 1.05rem; padding-bottom: .95rem; }
 /* Hero polish (owner pass, Oct 20): the search reads as ONE joined
    bar — crisp white field, button flush on its right edge, a single
-   shadow and a single focus ring around the whole unit — followed by
+   shadow, the field's own focus ring (Audit-5 D1 fix, Oct 21) echoed
+   around the whole unit by :focus-within — followed by
    one tidy row of uniform example chips under their label, then the
    account row on one shared line. Even steps between the four rows.
    Hero-scoped only; the form, input id/name and button are untouched,
@@ -65,8 +66,9 @@
   border-radius: 14px 0 0 14px; box-shadow: none;
 }
 .hero .searchbox input[type="search"]:focus {
-  outline: none; box-shadow: none;
-  border-color: rgba(255,255,255,.35);
+  outline: 3px solid var(--bronze-dark); outline-offset: 2px;
+  box-shadow: 0 0 0 3px rgba(47,191,143,.35);
+  border-color: var(--bronze-dark);
 }
 .hero .searchbox:focus-within {
   box-shadow: var(--shadow), 0 0 0 3px rgba(47,191,143,.45);

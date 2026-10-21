@@ -689,7 +689,7 @@ const DemeAccount = (() => {
           <div id="si-err"></div>
           <p style="margin:.8rem 0 0"><button class="btn secondary" type="submit">Sign in</button></p>
           <p style="margin:.7rem 0 0"><button type="button" id="si-forgot"
-            style="background:none;border:0;padding:0;font:inherit;color:var(--bronze-dark);text-decoration:underline;cursor:pointer">Forgot your password?</button></p>
+            style="background:none;border:0;padding:.7rem .25rem;min-height:44px;font:inherit;color:var(--bronze-dark);text-decoration:underline;cursor:pointer">Forgot your password?</button></p>
           <div id="si-reset" hidden>
             <div class="field"><label for="sr-email">Email for your reset link</label>
               <input type="email" id="sr-email" autocomplete="email">

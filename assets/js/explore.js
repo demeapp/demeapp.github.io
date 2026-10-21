@@ -100,17 +100,21 @@ function applyFilters() {
     (!eff.statusCodes || eff.statusCodes.includes(r.status)) &&
     (eff.wardNum == null || (r.w && r.w.includes(eff.wardNum))) &&
     (!eff.voteOnly || r.hv === 1) &&
-    (!eff.closeOnly || (r.hv === 1 && r.mg != null && r.mg <= 2)) &&
+    (!eff.closeOnly || (r.hv === 1 && r.dm != null && r.dm <= 2)) &&
     (!profileActive
       || (r.w && r.w.some((w) => profileFilter.wards.includes(w)))
       || (profileFilter.interestRefs && profileFilter.interestRefs.has(r.ref))));
-  /* W3 closest-calls lens: with the close filter on, browse by the
-     principal margin — closest calls first, ties newest first. The
-     margins are the regenerated ones (data/closest-calls.json is the
-     published dataset behind them), so the lens and the decision
-     pages' own bars can never disagree. */
+  /* Close-votes lens: with the close filter on, browse by the margin
+     of the vote that decided each item — closest first, ties newest
+     first. r.dm is that deciding margin (the item's last Adopt Item
+     vote at City Council stage, precomputed in the search rows), and
+     the tiles' printed vote counts quote the same deciding vote, so
+     the banner's "margin of two or fewer" holds literally. This is
+     deliberately not the closest-calls convention: closest-calls.json
+     and the alignment figures keep the FIRST Council-stage motion as
+     an item's "main" vote. */
   if (eff.closeOnly) {
-    filtered.sort((a, b) => (a.mg - b.mg) || (a.date < b.date ? 1 : -1));
+    filtered.sort((a, b) => (a.dm - b.dm) || (a.date < b.date ? 1 : -1));
   } else {
     filtered.sort((a, b) => (a.date < b.date ? 1 : -1));
   }

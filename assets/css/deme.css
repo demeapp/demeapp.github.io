@@ -1291,3 +1291,197 @@ dialog.record-dialog::backdrop { background: rgba(10,20,36,.55); }
 /* Directory postal lookup: the matched card gets a mint outline so
    the eye lands on it after the scroll. */
 .person.lookup-hit { outline: 3px solid var(--bronze); outline-offset: 3px; }
+
+/* ---------- Explore restyle (Oct 20, 2026) ----------
+   Owner: the Explore page "looks plain and boring" — the decision
+   tiles, search bar and page brought up to the Navy & Mint member-
+   card standard (soft shadow, 16px radii, mint accents, deep-navy
+   headings, hover lift). Presentation ONLY: tile text, the result
+   count and search/filter behaviour are unchanged. Every rule is
+   scoped under body.explore-page so no other page can shift. */
+
+/* Page: a subtle navy wash at the top so the white surfaces sit
+   on something, easing into the standard marble ground. */
+body.explore-page {
+  background: linear-gradient(180deg, #E8F0F7 0, var(--marble) 430px);
+}
+body.explore-page .lede { max-width: 40rem; }
+
+/* --- search panel: an elevated feature card --- */
+body.explore-page .search-panel {
+  border-radius: 18px; border: 1px solid var(--line-soft);
+  border-top: 4px solid var(--bronze);
+  box-shadow: var(--shadow);
+  padding: 1.5rem 1.6rem 1.6rem;
+}
+body.explore-page .search-field {
+  position: relative; flex: 1 1 auto; min-width: 0; display: flex;
+}
+body.explore-page .search-panel .searchbox input[type="search"] {
+  flex: 1 1 auto; width: 100%; min-height: 58px;
+  padding: .8rem 6.4rem .8rem 1.1rem;
+  font-size: 1.08rem; border: 1.5px solid var(--line);
+  border-radius: 14px 0 0 14px;
+}
+body.explore-page .search-panel .searchbox input[type="search"]:focus {
+  border-color: var(--bronze-dark);
+  box-shadow: 0 0 0 3px rgba(47,191,143,.35);
+}
+body.explore-page .search-hint {
+  position: absolute; right: .8rem; top: 50%; transform: translateY(-50%);
+  display: inline-flex; align-items: center; gap: .4rem;
+  font-size: .82rem; color: var(--ink-faint); pointer-events: none;
+  white-space: nowrap;
+}
+body.explore-page .search-hint kbd {
+  font-family: inherit; font-size: .82rem; font-weight: 700; color: var(--navy);
+  background: var(--marble); border: 1px solid var(--line);
+  border-bottom-width: 2px; border-radius: 6px; padding: .08rem .42rem;
+}
+@media (max-width: 560px) {
+  body.explore-page .search-hint { display: none; }
+  body.explore-page .search-panel .searchbox input[type="search"] {
+    padding-right: 1rem;
+  }
+}
+body.explore-page .search-panel .searchbox .btn {
+  min-height: 58px; padding-left: 1.7rem; padding-right: 1.7rem;
+  font-size: 1.05rem; border-radius: 0 14px 14px 0; flex: none;
+}
+
+/* --- filters: a clean labelled grid under a hairline --- */
+body.explore-page .search-panel .filters-in {
+  border-top: 1px solid var(--line); margin-top: 1.3rem; padding-top: 1.15rem;
+}
+body.explore-page .search-panel .filters-in label {
+  font-size: .8rem; font-weight: 700; letter-spacing: .05em;
+  text-transform: uppercase; color: var(--ink-faint); margin-bottom: .4rem;
+}
+body.explore-page .search-panel .filters-in select {
+  border: 1.5px solid var(--line); border-radius: 12px;
+  box-shadow: var(--shadow-sm); min-height: 50px;
+}
+body.explore-page .search-panel .filters-in select:focus {
+  border-color: var(--bronze-dark);
+  box-shadow: 0 0 0 3px rgba(47,191,143,.35);
+}
+/* the recorded-vote checkbox as a pill toggle */
+body.explore-page .search-panel .filters-in label.checkline {
+  display: inline-flex; align-items: center; gap: .55rem;
+  min-height: 50px; padding: .45rem 1rem; margin-bottom: 0;
+  border: 1.5px solid var(--line); border-radius: 999px;
+  background: #fff; box-shadow: var(--shadow-sm); cursor: pointer;
+  font-size: .95rem; font-weight: 600; letter-spacing: 0;
+  text-transform: none; color: var(--ink);
+}
+body.explore-page .search-panel .filters-in label.checkline input {
+  width: 20px; height: 20px; margin: 0; flex: none;
+  accent-color: var(--bronze-dark);
+}
+body.explore-page .search-panel .filters-in label.checkline:has(input:checked) {
+  background: var(--mint-light); border-color: var(--bronze-dark);
+  color: var(--navy);
+}
+body.explore-page .search-panel .filters-in p.small {
+  background: var(--marble); border-radius: 10px;
+  padding: .65rem .85rem; color: var(--ink-faint); font-size: .94rem;
+}
+body.explore-page .profile-strip { border-radius: 16px; }
+
+/* --- result count: presence, in deep navy --- */
+body.explore-page .resultcount {
+  display: flex; align-items: center; gap: .7rem;
+  font-size: 1.22rem; font-weight: 650; letter-spacing: -.01em;
+  color: var(--navy); margin: 1.7rem 0 1.1rem;
+}
+body.explore-page .resultcount::before {
+  content: ""; flex: none; width: 26px; height: 4px;
+  border-radius: 2px; background: var(--bronze);
+}
+body.explore-page #results { gap: 1.1rem; }
+
+/* --- decision tiles: proper cards --- */
+body.explore-page #results .card {
+  position: relative; overflow: hidden;
+  border-radius: 16px; border: 1px solid var(--line-soft);
+  box-shadow: var(--shadow-sm);
+  padding: 1.3rem 1.45rem 1.15rem 1.65rem;
+}
+/* left accent, keyed to the FACT of the outcome (set from the index
+   row's status code by explore.js — presentation of existing data) */
+body.explore-page #results .card::before {
+  content: ""; position: absolute; left: 0; top: 0; bottom: 0;
+  width: 5px; background: var(--line);
+}
+body.explore-page #results .card:is([data-status="ADOPTED"],
+  [data-status="AMENDED"], [data-status="CONFRMED"],
+  [data-status="DEEMADPT"])::before { background: var(--bronze); }
+body.explore-page #results .card:is([data-status="RECEIVED"],
+  [data-status="WO_RECS"])::before { background: var(--navy); }
+body.explore-page #results .card:is([data-status="REFERRED"],
+  [data-status="POSTPONE"], [data-status="DEFERIND"])::before {
+  background: var(--abs); }
+body.explore-page #results .card:is([data-status="NOTADOPT"],
+  [data-status="WITHDRAW"], [data-status="RESCIND"],
+  [data-status="NO_ACTN"], [data-status="NOQUORUM"],
+  [data-status="INT_FAIL"], [data-status="OOORDER"])::before {
+  background: var(--no); }
+/* recorded-vote marker: a mint dot in the gutter — no added text,
+   so the tile's wording stays exactly as published */
+body.explore-page #results .card.has-vote::after {
+  content: ""; position: absolute; left: .72rem; top: 1.32rem;
+  width: 10px; height: 10px; border-radius: 50%;
+  background: var(--bronze); box-shadow: 0 0 0 3px var(--mint-light);
+}
+body.explore-page #results .card .meta {
+  font-size: .9rem; margin-bottom: .55rem; align-items: center;
+}
+body.explore-page #results .card .meta span:first-child {
+  font-weight: 700; color: var(--navy);
+}
+body.explore-page #results .card .meta span:nth-child(2) {
+  color: var(--ink-soft); font-weight: 550;
+}
+body.explore-page #results .card .pill { margin-left: auto; }
+/* outcome chips: tints keyed to the same outcome groups */
+body.explore-page #results .card:is([data-status="ADOPTED"],
+  [data-status="AMENDED"], [data-status="CONFRMED"],
+  [data-status="DEEMADPT"]) .pill {
+  background: var(--mint-light); color: var(--bronze-dark); }
+body.explore-page #results .card:is([data-status="RECEIVED"],
+  [data-status="WO_RECS"]) .pill {
+  background: var(--marble-2); color: var(--navy); }
+body.explore-page #results .card:is([data-status="REFERRED"],
+  [data-status="POSTPONE"], [data-status="DEFERIND"]) .pill {
+  background: var(--abs-soft); color: var(--abs); }
+body.explore-page #results .card:is([data-status="NOTADOPT"],
+  [data-status="WITHDRAW"], [data-status="RESCIND"],
+  [data-status="NO_ACTN"], [data-status="NOQUORUM"],
+  [data-status="INT_FAIL"], [data-status="OOORDER"]) .pill {
+  background: var(--no-soft); color: var(--no-dark); }
+body.explore-page #results .card h3 { font-size: 1.18rem; line-height: 1.35; }
+body.explore-page #results .card h3 a { color: var(--navy); }
+body.explore-page #results .card .brief { color: var(--ink-soft); }
+body.explore-page #results .card .stake { color: var(--ink-faint); }
+body.explore-page #results .card .more {
+  border-top: 1px solid var(--line-soft);
+  padding-top: .7rem; margin-top: .95rem; align-items: center;
+}
+body.explore-page #results .card .more a { color: var(--bronze-dark); }
+body.explore-page #results .card .more a:hover {
+  text-decoration: underline; text-decoration-color: var(--bronze);
+}
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  body.explore-page #results .card {
+    transition: transform .18s ease, box-shadow .18s ease,
+      border-color .18s ease;
+  }
+  body.explore-page #results .card:hover {
+    transform: translateY(-3px); box-shadow: var(--shadow);
+    border-color: var(--line);
+  }
+}
+/* pager: keep the standard button, on a white surface */
+body.explore-page #pager .btn.secondary {
+  background: #fff; box-shadow: var(--shadow-sm); border-radius: 12px;
+}

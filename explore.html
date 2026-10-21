@@ -20,7 +20,7 @@
 <meta name="twitter:image" content="https://demeapp.github.io/assets/og-image-navy.png">
 <link rel="apple-touch-icon" href="assets/icon-180-navy.png">
 </head>
-<body>
+<body class="explore-page">
 <a class="skip-link" href="#main">Skip to main content</a>
 <header class="site-header"></header>
 <main id="main">
@@ -35,7 +35,10 @@
       <div class="search-panel">
         <form class="searchbox" id="searchform" role="search">
           <label class="visually-hidden" for="q">Search decisions</label>
-          <input type="search" id="q" name="q" placeholder="Search decisions, topics, places… · press / to focus" autocomplete="off">
+          <div class="search-field">
+            <input type="search" id="q" name="q" placeholder="Search decisions, topics, places…" autocomplete="off">
+            <span class="search-hint" aria-hidden="true"><kbd>/</kbd> to focus</span>
+          </div>
           <button class="btn" type="submit">Search</button>
         </form>
         <div class="filters-in">

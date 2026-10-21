@@ -284,7 +284,18 @@ async function renderMore() {
       <p class="more"><a href="decision.html?ref=${encodeURIComponent(r.ref)}">Details →</a></p>
     </article>`;
   }).join("");
-  $("results").insertAdjacentHTML("beforeend", html);
+  const resultsEl = $("results");
+  const beforeCount = resultsEl.children.length;
+  resultsEl.insertAdjacentHTML("beforeend", html);
+  /* Presentation hooks only (Explore restyle): tag each new card with
+     its outcome code + a recorded-vote flag so CSS can key the accent
+     and marker to facts already in the index row. No text changes. */
+  [...resultsEl.children].slice(beforeCount).forEach((el, i) => {
+    const r = slice[i];
+    if (!r) return;
+    if (r.status) el.dataset.status = r.status;
+    if (r.hv === 1) el.classList.add("has-vote");
+  });
   $("count").textContent = (filtered.length
     ? `${fmtNum(filtered.length)} decision${filtered.length === 1 ? "" : "s"} found`
     : (archiveLoading

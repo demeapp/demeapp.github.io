@@ -246,6 +246,36 @@ section:first-child { margin-top: 0; }
   .related-more { padding: .6rem 0; }
 }
 
+/* Nav fit hotfix (Oct 21): the five-item nav row's content measures
+   454px at the base link size — wider than every phone viewport — so
+   inside the scrollable row the My Record pill sat off the right
+   edge, clipped, at ALL phone widths (owner-caught on My Record).
+   Below 560px the links size down (font + side padding, tap height
+   untouched at 44px) until the whole row fits the screen; below
+   374px they also grow evenly to fill the row. No item is dropped
+   and the pill keeps its outline/fill treatment. Desktop and the
+   561–719px range keep the original sizing, which already fits. */
+@media (max-width: 560px) {
+  .site-nav { gap: .1rem; }
+  .site-nav a { font-size: .76rem; padding-left: .38rem; padding-right: .38rem; }
+}
+@media (max-width: 374px) {
+  .site-nav { gap: .08rem; }
+  .site-nav a {
+    font-size: .7rem; padding-left: .22rem; padding-right: .22rem;
+    flex: 1 1 auto; justify-content: center;
+  }
+}
+
+/* Min-content shrink guards (Oct 21 hotfix adjunct): the account
+   form is a grid child whose track sized to its min-content (316px)
+   instead of the column, and the ward-finder postal input would not
+   shrink below its intrinsic width — together they pushed My Record
+   sideways at <=350px. Let both shrink to their containers; nothing
+   changes where the content already fits. */
+.account-form { min-width: 0; }
+.wf-row input[type="text"] { min-width: 0; }
+
 /* ---------- type ---------- */
 h1, h2, h3 { font-family: var(--font-display); color: var(--ink); }
 h1 {

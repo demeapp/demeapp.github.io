@@ -6,6 +6,32 @@
 <title>Councillors — Deme</title>
 <meta name="description" content="Every Toronto City Council member in the record: who they are, their ward, and their voting record — facts only, no grades.">
 <link rel="stylesheet" href="assets/css/deme.css">
+<style>
+/* Unified directory finder (Oct 20, 2026): one elevated Navy & Mint
+   panel takes both the name search and the postal-code lookup. Page-
+   local so the shared stylesheet stays untouched. */
+.finder-panel {
+  margin-top: 1.4rem; border-radius: 16px; position: relative;
+  overflow: hidden; padding-top: 1.5rem;
+  box-shadow: 0 10px 30px rgba(10, 31, 56, .10);
+}
+.finder-panel::before {
+  content: ""; position: absolute; inset: 0 0 auto 0; height: 5px;
+  background: linear-gradient(90deg, var(--navy) 0%, var(--bronze) 100%);
+}
+.finder-panel h2 { font-size: 1.3rem; margin: 0 0 .4rem; color: var(--navy-ink); }
+.finder-row { display: flex; gap: .6rem; flex-wrap: wrap; margin-top: .8rem; }
+.finder-row input[type="text"] {
+  flex: 1 1 14rem; min-width: 0; font-size: 1.05rem;
+  padding: .75rem 1rem; border: 1.5px solid var(--line);
+  border-radius: 12px; background: #fff; color: var(--ink);
+}
+.finder-row input[type="text"]:focus {
+  outline: none; border-color: var(--bronze);
+  box-shadow: 0 0 0 3px var(--mint-light);
+}
+.finder-row .btn { border-radius: 12px; }
+</style>
 <link rel="icon" href="favicon-navy.svg" type="image/svg+xml">
 <meta name="theme-color" content="#0E2A47">
 <meta name="referrer" content="strict-origin-when-cross-origin">
@@ -34,11 +60,27 @@
       voting. When a member declares a personal interest in an item, they
       must step back — a duty, not an absence — and those votes never
       count against their attendance.</p>
-      <div class="directory-bar">
-        <form class="searchbox" id="filterform" role="search">
-          <label class="visually-hidden" for="pq">Find a member</label>
-          <input type="search" id="pq" placeholder="Find a member by name…" autocomplete="off">
+
+      <div class="card finder-panel" id="ward-lookup">
+        <h2>Find a councillor — by name or postal code</h2>
+        <p class="small" style="max-width:44rem;margin-top:0">Type a name
+          or a ward to filter the members below — or enter your postal
+          code and Deme will point you to your councillor and their
+          record.</p>
+        <form class="finder-row" id="finder-form" role="search">
+          <label class="visually-hidden" for="fq">Find a councillor by name or postal code</label>
+          <input type="text" id="fq" placeholder="A name, a ward — or M5V 1J1" autocomplete="off" spellcheck="false">
+          <button class="btn" type="submit">Find</button>
         </form>
+        <p class="wf-privacy">Only the first 3 characters of a postal
+          code are used, right here in your browser — your full postal
+          code is never stored or sent anywhere. This is a lookup only:
+          nothing is saved, and it doesn't set anything on your
+          profile.</p>
+        <div id="finder-result" aria-live="polite"></div>
+      </div>
+
+      <div class="directory-bar">
         <label class="sortlab" for="dir-sort">Sort councillors
           <select id="dir-sort">
             <option value="ward">Current first, by ward</option>
@@ -50,24 +92,6 @@
         votes cast, tenure, and declared interests. Open a member for the
         full record. Portraits are the members’ official photos; where
         none is published, the card shows initials instead.</p>
-
-      <div class="card" id="ward-lookup" style="margin-top:1.4rem">
-        <h2 style="font-size:1.15rem;margin-top:0">Find your councillor</h2>
-        <p class="small" style="max-width:44rem;margin-top:0">Enter your
-          postal code and Deme will point you to your councillor and
-          their record.</p>
-        <form class="wf-row" id="lookup-form">
-          <label class="visually-hidden" for="lookup-pc">Your postal code</label>
-          <input type="text" id="lookup-pc" autocomplete="postal-code"
-            autocapitalize="characters" spellcheck="false" placeholder="M5V 1J1">
-          <button class="btn" type="submit">Find my councillor</button>
-        </form>
-        <p class="wf-privacy">Only the first 3 characters are used, right
-          here in your browser — your full postal code is never stored or
-          sent anywhere. This is a lookup only: nothing is saved, and it
-          doesn't set anything on your profile.</p>
-        <div id="lookup-result" aria-live="polite"></div>
-      </div>
 
       <p style="margin-top:1.2rem"><a class="btn secondary" href="compare.html">Compare two councillors →</a></p>
 
@@ -94,6 +118,7 @@
 renderChrome("councillors.html");
 let all = [];
 let currentSort = "ward";
+let filter = "";
 function personCard(c) {
   const role = c.mayor ? "Mayor of Toronto"
     : `Councillor · Ward ${c.ward} — ${esc(c.wardName)}`;
@@ -107,15 +132,27 @@ function personCard(c) {
     ${memberStatsHTML(c)}
   </article>`;
 }
-function render(filter) {
-  const q = (filter || "").toLowerCase();
-  const cur = all.filter((c) => c.current && c.name.toLowerCase().includes(q));
+/* One filter for the grid: a name, as before — and now also a ward
+   name or a ward number ("ward 21", "21", "Scarborough Southwest"),
+   which the unified finder accepts in the same box. */
+function matches(c, q) {
+  if (!q) return true;
+  if (c.name.toLowerCase().includes(q)) return true;
+  if (c.wardName && c.wardName.toLowerCase().includes(q)) return true;
+  const wm = q.match(/^(?:ward\s*)?(\d{1,2})$/);
+  if (wm && c.ward === Number(wm[1])) return true;
+  if (q === "mayor" && c.mayor) return true;
+  return false;
+}
+function render(q) {
+  const query = (q || "").toLowerCase();
+  const cur = all.filter((c) => c.current && matches(c, query));
   if (currentSort === "name") cur.sort((a, b) => a.name.localeCompare(b.name));
   else cur.sort((a, b) => (a.mayor ? -1 : b.mayor ? 1 : a.ward - b.ward));
   document.getElementById("current").innerHTML = cur.length
     ? cur.map(personCard).join("")
     : `<p class="small">No current member matches.</p>`;
-  const old = all.filter((c) => !c.current && c.name.toLowerCase().includes(q));
+  const old = all.filter((c) => !c.current && matches(c, query));
   old.sort((a, b) => a.name.localeCompare(b.name));
   document.getElementById("earlier").innerHTML = old.map((c) =>
     `<li>${avatarHTML(c, "sm")}<span><a href="councillor.html?m=${encodeURIComponent(c.slug)}">${esc(c.name)}</a>
@@ -126,37 +163,43 @@ loadJSON(dataPath("councillors.json")).then((people) => {
   render("");
   document.getElementById("dir-sort").addEventListener("change", (e) => {
     currentSort = e.target.value;
-    render(document.getElementById("pq").value);
+    render(filter);
   });
-  let t;
-  document.getElementById("pq").addEventListener("input", (e) => {
-    clearTimeout(t); t = setTimeout(() => render(e.target.value), 150);
-  });
-  document.getElementById("filterform").addEventListener("submit", (e) => e.preventDefault());
-  initLookup();
+  initFinder();
 }).catch(() => {
   document.getElementById("current").innerHTML =
     `<p class="small">The member list could not be loaded. Please reload.</p>`;
 });
 
-/* Postal-code lookup — a finder, not a profile tool. It reuses the
-   ward finder's FSA map (first 3 characters only, computed here in
-   the browser); it writes nothing anywhere: no device profile, no
-   saved ward, nothing sent. Single-ward areas surface the member
+/* The unified finder: ONE input that is both the directory search
+   and the postal-code lookup. Text filters the grid live, exactly as
+   the name search always did. A postal code runs the ward lookup —
+   the existing WardFinder FSA map, first 3 characters only, computed
+   here in the browser; it writes nothing anywhere: no device profile,
+   no saved ward, nothing sent. Single-ward areas surface the member
    and highlight their card below; boundary areas list every
    candidate and let the visitor choose. */
-function initLookup() {
-  const form = document.getElementById("lookup-form");
-  const input = document.getElementById("lookup-pc");
-  const result = document.getElementById("lookup-result");
+function initFinder() {
+  const form = document.getElementById("finder-form");
+  const input = document.getElementById("fq");
+  const result = document.getElementById("finder-result");
   if (!form || !input || !result) return;
   let cues = null;
+  let lastFsa = null;
+  let t;
+  const norm = (v) => v.toUpperCase().replace(/[^A-Z0-9]/g, "");
+  /* Postal-shaped input starts with a letter followed by a digit
+     (M5, M5V, M5V1J1…). Anything else is a name/ward search. */
+  const looksPostal = (v) => /^[A-Z]\d/.test(norm(v));
   function memberFor(n) {
     return all.find((c) => c.current && !c.mayor && c.ward === n) || null;
   }
-  function highlight(slug, scroll) {
+  function clearHighlights() {
     document.querySelectorAll(".person.lookup-hit")
       .forEach((el) => el.classList.remove("lookup-hit"));
+  }
+  function highlight(slug, scroll) {
+    clearHighlights();
     const link = document.querySelector(
       `#current article.person h3 a[href="councillor.html?m=${encodeURIComponent(slug)}"]`);
     const card = link ? link.closest("article.person") : null;
@@ -166,7 +209,7 @@ function initLookup() {
     }
   }
   async function lookup() {
-    const fsa = input.value.toUpperCase().replace(/[^A-Z0-9]/g, "").slice(0, 3);
+    const fsa = norm(input.value).slice(0, 3);
     if (!/^[A-Z]\d[A-Z]$/.test(fsa)) {
       result.innerHTML = `<p class="wf-note">That doesn't look like a postal
         code yet — the first three characters are enough (a letter, a
@@ -174,6 +217,7 @@ function initLookup() {
       input.focus();
       return;
     }
+    if (filter) { filter = ""; render(""); }
     result.innerHTML = `<p class="wf-note">Looking up ${esc(fsa)}…</p>`;
     let wards = null;
     try {
@@ -186,8 +230,8 @@ function initLookup() {
     if (wards === null || !wards.length) {
       result.innerHTML = `<p class="wf-note"><strong>That postal code isn't
         in Toronto</strong> — Deme covers Toronto City Council. If you do
-        live in Toronto, check the first three characters, or find your
-        member by name in the search above.</p>`;
+        live in Toronto, check the first three characters, or type your
+        member's name here instead.</p>`;
       return;
     }
     if (wards.length === 1) {
@@ -206,8 +250,10 @@ function initLookup() {
         </p></div>`;
       const show = result.querySelector("#lookup-show");
       if (show) show.addEventListener("click", () => {
-        const pq = document.getElementById("pq");
-        if (pq && pq.value) { pq.value = ""; render(""); }
+        input.value = "";
+        filter = "";
+        lastFsa = null;
+        render("");
         highlight(c.slug, true);
       });
       highlight(c.slug, false);
@@ -234,7 +280,59 @@ function initLookup() {
           `councillor.html?m=${encodeURIComponent(b.dataset.slug)}`;
       }));
   }
-  form.addEventListener("submit", (e) => { e.preventDefault(); lookup(); });
+  input.addEventListener("input", () => {
+    const v = input.value;
+    clearTimeout(t);
+    if (!v.trim()) {
+      lastFsa = null;
+      result.innerHTML = "";
+      clearHighlights();
+      filter = "";
+      render("");
+      return;
+    }
+    if (looksPostal(v)) {
+      /* A postal code is not a name — never grid-filter by it. A
+         complete FSA resolves on its own; the Find button covers
+         every other case. */
+      if (filter) { filter = ""; render(""); }
+      const s = norm(v);
+      if (s.length >= 3 && /^[A-Z]\d[A-Z]$/.test(s.slice(0, 3))) {
+        const fsa = s.slice(0, 3);
+        if (fsa !== lastFsa) {
+          t = setTimeout(() => { lastFsa = fsa; lookup(); }, 350);
+        }
+      } else {
+        lastFsa = null;
+      }
+      return;
+    }
+    if (/^[A-Za-z]$/.test(v.trim())) return; /* one letter: wait for more */
+    lastFsa = null;
+    result.innerHTML = "";
+    clearHighlights();
+    t = setTimeout(() => { filter = v.trim(); render(filter); }, 150);
+  });
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    clearTimeout(t);
+    const v = input.value.trim();
+    if (!v) {
+      result.innerHTML = `<p class="wf-note">Type a member's name or a
+        ward — or the first three characters of your postal code.</p>`;
+      input.focus();
+      return;
+    }
+    if (looksPostal(v)) {
+      lastFsa = norm(v).slice(0, 3);
+      lookup();
+    } else {
+      lastFsa = null;
+      result.innerHTML = "";
+      filter = v;
+      render(filter);
+    }
+  });
 }
 </script>
 <script data-goatcounter="https://demecivic.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>

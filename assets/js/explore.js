@@ -346,6 +346,14 @@ function fillSelect(el, values, allLabel) {
   el.innerHTML = `<option value="">${allLabel}</option>` +
     values.map(([v, label]) => `<option value="${esc(v)}">${esc(label)}</option>`).join("");
 }
+/* F-5 (Oct 21): body/outcome options are derived from the full
+   archive, which streams in per year — until it lands, the selects
+   say so and stay disabled instead of posing as empty filters.
+   fillBodyStatus() fills and re-enables them. */
+function fillLoadingSelect(el) {
+  el.innerHTML = `<option value="">Loading…</option>`;
+  el.disabled = true;
+}
 function parseCurrentQuery() {
   const q = $("q").value;
   parsed = q.trim()
@@ -370,6 +378,8 @@ function fillBodyStatus() {
   const statuses = [...new Set(rows.map((r) => r.status))].sort();
   fillSelect(statusSel,
     statuses.map((s) => [s, STATUS_LABELS[s] || s]), "All outcomes");
+  bodySel.disabled = false;
+  statusSel.disabled = false;
   if (bodyVal) bodySel.value = bodyVal;
   if (statusVal) statusSel.value = statusVal;
 }
@@ -393,8 +403,8 @@ async function init() {
   rows = first.flat();
   const years = SEARCH_YEARS.slice();
   fillSelect($("f-year"), years.map((y) => [y, y]), "All years");
-  fillSelect($("f-body"), [], "All bodies");
-  fillSelect($("f-status"), [], "All outcomes");
+  fillLoadingSelect($("f-body"));
+  fillLoadingSelect($("f-status"));
   fillSelect($("f-ward"),
     Array.from({ length: 25 }, (_, i) => {
       const n = i + 1;

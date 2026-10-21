@@ -148,6 +148,26 @@ function relatedVotes(promiseText) {
   }
   return out;
 }
+/* F-3 (Oct 21): the promise dropdown previews the 3 most recent
+   related votes and says so; the full list is one tap away via the
+   "Show all" button, rendered from the same array the count came
+   from — the label's total and the list can never disagree. */
+const promiseRelated = [];
+function relatedVoteRow(r) {
+  return `<button class="related-vote" type="button"
+    data-ref="${esc(r.ref)}"><span>${esc(r.title || r.ref)}
+    <span class="rv-ref">${esc(r.ref)} · ${esc(fmtDate(r.date))}</span></span>
+    ${voteChip(r.vote)}</button>`;
+}
+function bindRelatedVotes(scope) {
+  scope.querySelectorAll(".related-vote").forEach((b) => {
+    if (b.dataset.bound) return;
+    b.dataset.bound = "1";
+    b.addEventListener("click", () => {
+      location.href = `decision.html?ref=${encodeURIComponent(b.dataset.ref)}`;
+    });
+  });
+}
 function shortBio(text) {
   const parts = String(text || "").match(/[^.!?]+[.!?]+/g) || [String(text || "")];
   return parts.slice(0, 3).join(" ").trim();
@@ -201,6 +221,7 @@ async function renderExtras(person) {
       }
       const cards = promises.map((pr, i) => {
         const related = relatedVotes(pr.text);
+        promiseRelated[i] = related;
         return `<article class="promise-card">
           <p class="promise-num">Campaign promise ${i + 1}</p>
           <p>${esc(pr.text)}</p>
@@ -209,12 +230,10 @@ async function renderExtras(person) {
           ${related.length ? `<details class="related-votes">
             <summary>Related votes in the record (${related.length})</summary>
             <div class="related-list">
-            ${related.slice(0, 3).map((r) => `<button class="related-vote" type="button"
-              data-ref="${esc(r.ref)}"><span>${esc(r.title || r.ref)}
-              <span class="rv-ref">${esc(r.ref)} · ${esc(fmtDate(r.date))}</span></span>
-              ${voteChip(r.vote)}</button>`).join("")}
+            ${related.slice(0, 3).map(relatedVoteRow).join("")}
             </div>
-            ${related.length > 3 ? `<p class="small" style="margin:.45rem 0 0">Showing 3 of ${related.length} matching votes — the most recent first.</p>` : ""}
+            ${related.length > 3 ? `<p class="small related-note" style="margin:.45rem 0 0">Showing 3 of ${related.length} matching votes — the most recent first.</p>
+            <button class="related-more" type="button" data-promise="${i}">Show all ${related.length} matching votes</button>` : ""}
           </details>` : ""}
         </article>`;
       }).join("");
@@ -261,15 +280,15 @@ async function renderExtras(person) {
             ${fmtNum(lobbying.subjects)} subject matters</span></div>
         </div>
         <div class="lob-cols">
-          <div><h4>Top subject matters</h4>
+          <div><h3>Top subject matters</h3>
             <ul class="lob-list">${lobbying.top.map((t) =>
               `<li><span>${esc(t.label)}</span><b>${fmtNum(t.count)}</b></li>`).join("")}</ul></div>
-          <div><h4>Communications by year</h4>
+          <div><h3>Communications by year</h3>
             <div class="lob-years">${lobbying.years.map((y) =>
               `<div class="lob-year"><span>${y.year}</span>
                 <span class="bar"><span style="width:${Math.max(3, Math.round(y.count / maxYear * 100))}%"></span></span>
                 <b>${fmtNum(y.count)}</b></div>`).join("")}</div>
-            ${methods ? `<h4 style="margin-top:1.1rem">How contact was made</h4>
+            ${methods ? `<h3 style="margin-top:1.1rem">How contact was made</h3>
             <ul class="lob-list">${methods}</ul>` : ""}
           </div>
         </div>
@@ -287,10 +306,100 @@ async function renderExtras(person) {
       Registry filings gathered on October 8, 2026.</p></section>`;
   }
   host.innerHTML = html;
-  host.querySelectorAll(".related-vote").forEach((b) =>
-    b.addEventListener("click", () => {
-      location.href = `decision.html?ref=${encodeURIComponent(b.dataset.ref)}`;
+  bindRelatedVotes(host);
+  host.querySelectorAll(".related-more").forEach((btn) =>
+    btn.addEventListener("click", () => {
+      const all = promiseRelated[Number(btn.dataset.promise)] || [];
+      const details = btn.closest("details.related-votes");
+      const list = details && details.querySelector(".related-list");
+      if (!list || all.length <= 3) { btn.remove(); return; }
+      list.insertAdjacentHTML("beforeend",
+        all.slice(3).map(relatedVoteRow).join(""));
+      bindRelatedVotes(list);
+      const note = details.querySelector(".related-note");
+      if (note) note.textContent =
+        `Showing all ${all.length} matching votes — the most recent first.`;
+      btn.remove();
     }));
+}
+
+/* ---------- Improvement 3: "Have your say" ---------------------
+   The action block at the foot of the member page: the member's
+   public office contact routes (the same profiles.json contact data
+   as the dossier panel — never anything the record doesn't carry)
+   and a plain-language route to speaking at a committee, linking
+   only to the City's official pages. */
+const CITY_MEMBERS_URL = "https://www.toronto.ca/city-government/council/members-of-council/";
+const CITY_MEETINGS_URL = "https://secure.toronto.ca/council/";
+const CITY_SPEAK_URL = "https://www.toronto.ca/city-government/council/council-committee-meetings/participate/";
+async function renderHaveYourSay(person) {
+  const host = document.getElementById("have-your-say");
+  if (!host) return;
+  let profile = null;
+  try { profile = (await loadJSON(dataPath("profiles.json")))[person.slug] || null; }
+  catch (e) { /* the block stands on the City links alone */ }
+  const contact = (profile && profile.contact) || {};
+  const phoneHref = String(contact.phone || "").replace(/[^0-9+]/g, "");
+  const where = person.ward
+    ? `Ward ${person.ward} — ${esc(person.wardName)}` : "Toronto";
+  const contactPanel = (contact.email || contact.phone)
+    ? `<div class="contact-lines">
+          ${contact.email ? `<span>Email: <a href="mailto:${esc(contact.email)}">${esc(contact.email)}</a></span>` : ""}
+          ${contact.phone ? `<span>Phone: <a href="tel:${esc(phoneHref)}">${esc(contact.phone)}</a></span>` : ""}
+        </div>
+        ${contact.email ? `<a class="btn secondary" href="mailto:${esc(contact.email)}">Email the office</a>
+        <p class="email-helper">Opens your email app with the office address
+        filled in. Deme does not send or read the message.</p>` : ""}`
+    : `<p class="small">No public office contact details for this member
+        are listed in the record. To reach the office that holds the seat
+        today, use the City's official
+        <a href="${CITY_MEMBERS_URL}" target="_blank" rel="noopener noreferrer">members of Council directory</a>.</p>`;
+  const intro = person.current
+    ? `The record above is what ${esc(person.name)} has decided and how
+       they voted. If you live in ${where}, this is your representative
+       at City Hall — the office route is below. And while an item is
+       still being decided, you can speak to the committee considering
+       it yourself.`
+    : `${esc(person.name)} no longer sits on Council, so the office that
+       held this seat has changed hands — the City's
+       <a href="${CITY_MEMBERS_URL}" target="_blank" rel="noopener noreferrer">members of Council directory</a>
+       reaches the office that holds it today. The committee route below
+       still applies to the questions this record covers.`;
+  host.innerHTML = `<section class="hys" aria-labelledby="hys-h">
+    <h2 id="hys-h">Have your say</h2><hr class="rule">
+    <p class="lede-line">${intro}</p>
+    <div class="hys-grid">
+      <section class="profile-panel" aria-labelledby="hys-contact-h">
+        <h3 id="hys-contact-h">Reach the office</h3>
+        <p class="intro">Public office contact details, as listed in the record.</p>
+        ${contactPanel}</section>
+      <section class="profile-panel" aria-labelledby="hys-speak-h">
+        <h3 id="hys-speak-h">Speak at a committee</h3>
+        <p class="intro">Most Council decisions start at a committee —
+        and residents can address it directly.</p>
+        <ol class="hys-steps">
+          <li><span class="hys-num" aria-hidden="true">1</span>
+            <p><span class="step-h">Find the item.</span>
+            Look it up on the City's
+            <a href="${CITY_MEETINGS_URL}" target="_blank" rel="noopener noreferrer">meeting portal</a>
+            and note which committee is hearing it, and when.</p></li>
+          <li><span class="hys-num" aria-hidden="true">2</span>
+            <p><span class="step-h">Ask to speak.</span>
+            Tell the City Clerk you want to speak on the item — anyone
+            can. The City's page on
+            <a href="${CITY_SPEAK_URL}" target="_blank" rel="noopener noreferrer">participating in council and committee meetings</a>
+            sets out how to register — you are asked to register by
+            4:30 p.m. the day before the meeting. Written comments can
+            be sent instead, and become part of the public record.</p></li>
+          <li><span class="hys-num" aria-hidden="true">3</span>
+            <p><span class="step-h">Say your piece.</span>
+            Public presentations are limited to five minutes. Say who
+            you are, where you live, and what you are asking the
+            committee to do — plainly is fine.</p></li>
+        </ol>
+      </section>
+    </div>
+  </section>`;
 }
 
 /* ---------- W1: recorded-vote composition strip ----------
@@ -325,7 +434,8 @@ function compositionStrip(person) {
       ${seg(cast, "cast")}${seg(absent, "absent")}${seg(interest, "interest")}
     </div>
     <p class="comp-legend">Of the ${fmtNum(total)} recorded votes in their
-      record: <strong>${pctTxt(cast)}%</strong> cast ·
+      record (2006–2026), counting declared interests in the total:
+      <strong>${pctTxt(cast)}%</strong> cast ·
       <strong>${pctTxt(absent)}%</strong> absent ·
       <strong>${pctTxt(interest)}%</strong> declared an interest — a duty,
       not an absence.</p>
@@ -478,8 +588,8 @@ async function init() {
     </div>
     <div class="statTiles">
       <div class="stat"><span class="num">${fmtAtt(person)}</span>
-        <span class="lab">Attendance — present and voting, out of all
-        recorded votes in their record</span>${attBar}</div>
+        <span class="lab">Attendance — present and voting, out of recorded
+        votes where a vote was theirs to cast</span>${attBar}</div>
       <div class="stat"><span class="num">${fmtNum(person.votesCast)}</span>
         <span class="lab">Votes cast (yes or no) across their record</span></div>
       <div class="stat"><span class="num">${fmtNum(person.interest)}</span>
@@ -489,17 +599,24 @@ async function init() {
     <p class="small" style="max-width:44rem">Attendance counts only recorded
     votes — the name-by-name kind. When a member declares an interest in an
     item, stepping back is required, so those are never counted against
-    attendance here.</p>
+    attendance here. The breakdown below uses a wider base — every recorded
+    vote, declared interests included — which is why its cast share can run
+    slightly lower than the attendance figure.</p>
     ${compositionStrip(person)}
+    <p class="small" style="max-width:44rem">The totals above count the full
+    voting record, 2006–2026. The item-by-item list below covers the
+    decision archive, 2018–2026.</p>
     <p style="margin-top:1rem"><button class="btn secondary" id="record-card-btn"
       type="button">Print / download record card</button>
     <button class="btn secondary" id="share-btn" type="button">Copy link</button></p>
     <div id="profile-extra"></div>
     <h2 style="margin-top:2.6rem">Recorded votes</h2>
     <hr class="rule">
+    <p class="small">Item by item — the decision archive, 2018–2026.</p>
     <div id="historyWrap"><div class="skel-card" aria-hidden="true">
       <span class="skel-el sm"></span><span class="skel-el title"></span>
-      <span class="skel-el"></span><span class="skel-el short"></span></div></div>`;
+      <span class="skel-el"></span><span class="skel-el short"></span></div></div>
+    <div id="have-your-say"></div>`;
   document.getElementById("record-card-btn")
     .addEventListener("click", () => openRecordCard(person));
   setupShareButton(document.getElementById("share-btn"));
@@ -532,6 +649,7 @@ async function init() {
     wrap.innerHTML = `<p class="small">The voting record could not be loaded.</p>`;
   }
   renderExtras(person);
+  renderHaveYourSay(person);
 }
 init().catch(() => {
   box.innerHTML = `<p class="small">The record could not be loaded. Please reload.</p>`;

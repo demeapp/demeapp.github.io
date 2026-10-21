@@ -1391,8 +1391,23 @@ const DemeAccount = (() => {
         }
       }
       if (session) {
-        try { accountProfile = await fetchRow(); } catch (e) { accountProfile = null; }
-        lastSyncedStamp = VoteStore.exportAll().profileUpdatedAt;
+        /* Stored-session restore runs the SAME profile bootstrap
+           as a form sign-in (afterSignIn): fetch the row AND
+           mirror it into this device's VoteStore. A bare fetchRow
+           here left a returning user on a fresh device/browser
+           with an empty local store — every ward/topic surface
+           read "No home ward set · No topics followed" — until a
+           form sign-in happened to run the bootstrap.
+           bootstrapProfile owns the arbitration (newer of server
+           row / local profile wins) and lastSyncedStamp, exactly
+           as on the sign-in path; a failure leaves the panel on
+           its null-profile fallback, as the bare fetch did.
+           Picks are untouched here: applyToLocal writes profile
+           fields only, and bootstrapPicks below runs after, in
+           the same order as the sign-in path. */
+        try {
+          await bootstrapProfile();
+        } catch (e) { accountProfile = null; /* row loads on a later visit */ }
         await renderSignedIn();
       } else if (recovery && recovery.kind === "error") {
         renderSignedOut(LINK_STALE_NOTE, { resend: true });

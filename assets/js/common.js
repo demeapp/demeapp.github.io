@@ -42,7 +42,11 @@ function animateCount(el, target, duration) {
   }
   const dur = duration || 900, t0 = performance.now();
   function tick(now) {
-    const p = Math.min(1, (now - t0) / dur), e = 1 - Math.pow(1 - p, 3);
+    /* Clamped at both ends: a first rAF timestamp can precede t0,
+       which would otherwise ease to a negative first frame
+       (visitor-eye catch, stats-countup wave). */
+    const p = Math.min(1, Math.max(0, (now - t0) / dur)),
+      e = 1 - Math.pow(1 - p, 3);
     el.textContent = fmtNum(Math.round(target * e));
     if (p < 1) requestAnimationFrame(tick); else el.textContent = finalText;
   }

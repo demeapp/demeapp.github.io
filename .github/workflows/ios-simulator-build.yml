@@ -40,8 +40,8 @@ jobs:
 
       - name: Verify baked iOS config (safe-area guard)
         run: |
-          cat ios/App/App/capacitor.config.json
-          grep -q '"contentInset": "automatic"' ios/App/App/capacitor.config.json
+          cat native/ios/App/App/capacitor.config.json
+          grep -q '"contentInset": "automatic"' native/ios/App/App/capacitor.config.json
 
       - name: List Xcode schemes
         working-directory: native

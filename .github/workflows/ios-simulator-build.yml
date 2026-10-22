@@ -1,0 +1,52 @@
+name: iOS simulator build test
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - ios-ci-build-test
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: macos-26
+    timeout-minutes: 60
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+          cache-dependency-path: native/package-lock.json
+
+      - name: Show Xcode version
+        run: xcodebuild -version
+
+      - name: Install native dependencies
+        working-directory: native
+        run: npm ci
+
+      - name: Sync web assets (live mode)
+        working-directory: native
+        run: npm run sync
+
+      - name: List Xcode schemes
+        working-directory: native
+        run: xcodebuild -list -project ios/App/App.xcodeproj
+
+      - name: Build iOS app for simulator (unsigned)
+        working-directory: native
+        run: |
+          xcodebuild \
+            -project ios/App/App.xcodeproj \
+            -scheme App \
+            -configuration Debug \
+            -sdk iphonesimulator \
+            -destination 'generic/platform=iOS Simulator' \
+            CODE_SIGNING_ALLOWED=NO \
+            build

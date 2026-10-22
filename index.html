@@ -331,14 +331,16 @@ Promise.all([loadJSON(dataPath("stats.json")), loadJSON(dataPath("latest.json"))
   document.getElementById("statband").innerHTML = `
     <div class="stat"><span class="num" data-count="${stats.decisions}">${fmtNum(stats.decisions)}</span>
       <span class="lab">decisions in the archive — City Council, its committees and boards — in plain language (${stats.decisionsFrom}–${stats.decisionsTo})</span></div>
-    <div class="stat"><span class="num">9 in 100</span>
+    <div class="stat"><span class="num"><span data-count="9">9</span> in 100</span>
       <span class="lab">decisions carry a recorded vote — ${fmtNum(stats.recordedVoteDecisions)} where every name is on the record</span></div>
     <div class="stat"><span class="num" data-count="${stats.votesCast}">${fmtNum(stats.votesCast)}</span>
       <span class="lab">individual votes cast — yes or no — by ${stats.members} members across five terms, back to ${stats.votesFrom}</span></div>`;
-  /* Animate the two numeric stats; the "9 in 100" stat stays static text.
-     animateCount always lands on exactly fmtNum(target). */
-  document.querySelectorAll("#statband .num[data-count]").forEach((el) =>
-    animateCount(el, Number(el.dataset.count)));
+  /* All three headline stats count up once when the band scrolls
+     into view (setupCountUps wires every [data-count] in the band):
+     the two big totals, and the "9" in "9 in 100" — "in 100" and the
+     label figures (3,171, 94) carry no data-count and stay static.
+     Each animation lands on exactly fmtNum(target) and stops. */
+  setupCountUps(document.getElementById("statband"));
 
   const up = document.getElementById("upcoming");
   /* Defence in depth: only City Council items may render here, whatever

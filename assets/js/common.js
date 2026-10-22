@@ -26,11 +26,12 @@ const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({
 }[c]));
 
 /* ---------------- motion helpers ----------------
-   Animated counter: ease-out over ~900ms, formatted with fmtNum.
-   Sets the final value instantly under reduced motion, without
+   Animated counter: ease-out, formatted with fmtNum. Sets the final
+   value instantly under reduced motion, without
    requestAnimationFrame, or if anything goes wrong — the rendered
-   number is always exactly fmtNum(target). */
-function animateCount(el, target) {
+   number is always exactly fmtNum(target): it lands, it never
+   overshoots, and nothing keeps ticking afterwards. */
+function animateCount(el, target, duration) {
   if (!el) return;
   const finalText = fmtNum(target);
   const reduced = window.matchMedia
@@ -39,13 +40,65 @@ function animateCount(el, target) {
     el.textContent = finalText;
     return;
   }
-  const dur = 900, t0 = performance.now();
+  const dur = duration || 900, t0 = performance.now();
   function tick(now) {
     const p = Math.min(1, (now - t0) / dur), e = 1 - Math.pow(1 - p, 3);
     el.textContent = fmtNum(Math.round(target * e));
     if (p < 1) requestAnimationFrame(tick); else el.textContent = finalText;
   }
   requestAnimationFrame(tick);
+}
+
+/* Duration for a stat count-up, scaled by size so the biggest
+   figures don't feel rushed: 900ms small, 1000ms five-figure,
+   1200ms six-figure. */
+function countDuration(target) {
+  if (target >= 100000) return 1200;
+  if (target >= 10000) return 1000;
+  return 900;
+}
+
+/* Stat-band count-ups (stats-countup wave, Oct 22, 2026): any
+   [data-count] inside a .statband counts up ONCE when it scrolls
+   into view, via the same animateCount as the rest of the site —
+   one mechanism, wherever the band appears (homepage, Open Data,
+   For Reporters). Only elements carrying data-count animate;
+   secondary figures without it stay static. Elements start from
+   their final value in the markup, so without JS — and for
+   reduced-motion visitors, whose figures are set instantly and
+   never zeroed — the band always shows the true numbers. */
+function setupCountUps(scope) {
+  const root = scope || document;
+  const els = Array.from(root.querySelectorAll(".statband [data-count]"))
+    .filter((el) => !el.dataset.countWired);
+  if (!els.length) return;
+  const reduced = window.matchMedia
+    && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (reduced || typeof IntersectionObserver !== "function"
+      || typeof requestAnimationFrame !== "function") {
+    els.forEach((el) => {
+      el.dataset.countWired = "1";
+      animateCount(el, Number(el.dataset.count));
+    });
+    return;
+  }
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((en) => {
+      const el = en.target;
+      if (en.isIntersecting) {
+        io.unobserve(el);
+        animateCount(el, Number(el.dataset.count),
+          countDuration(Number(el.dataset.count)));
+      } else if (!el.dataset.countArmed) {
+        /* Still off-screen: park it at zero so the count-up is seen
+           from the start when the band arrives — never a flash of
+           the final figure first. */
+        el.dataset.countArmed = "1";
+        el.textContent = fmtNum(0);
+      }
+    });
+  }, { rootMargin: "0px 0px -8% 0px" });
+  els.forEach((el) => { el.dataset.countWired = "1"; io.observe(el); });
 }
 
 /* Scroll reveal: .reveal elements get .in as they enter the viewport.
@@ -657,3 +710,6 @@ function setupShareButton(btn) {
 /* Static sections are already parsed when this script runs (it sits at
    the end of <body> on every page), so reveal can be wired up now. */
 setupReveal();
+/* Stat bands in static markup are wired up here; the homepage builds
+   its band from data and calls setupCountUps on it directly. */
+setupCountUps(document);

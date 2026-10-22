@@ -74,7 +74,7 @@ jobs:
             adb shell cmd package set-app-links-user-selection --package io.github.demeapp.deme --user 0 true demeapp.github.io || true
             adb shell pm set-app-links --package io.github.demeapp.deme 2 demeapp.github.io || true
             adb shell cmd package get-app-links io.github.demeapp.deme || true
-            adb shell cmd package force-stop io.github.demeapp.deme
+            adb shell am force-stop io.github.demeapp.deme
             adb shell cmd package query-intent-activities -a android.intent.action.VIEW -d https://demeapp.github.io/my-record.html || true
             adb shell am start -a android.intent.action.VIEW -d "https://demeapp.github.io/my-record.html" || true
             sleep 15

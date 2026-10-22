@@ -32,28 +32,61 @@
 .account-entry .signin-link { font-weight: 600; color: var(--bronze-dark); }
 .upcoming-sec { margin-top: var(--sp-4); }
 .upcoming-line {
-  background: var(--card); border: 1px solid var(--line-soft);
-  border-left: 3px solid var(--bronze); border-radius: var(--radius);
+  background: var(--mint-wash); border: 1px solid rgba(11,122,92,.18);
+  border-left: 4px solid var(--bronze); border-radius: var(--radius);
   box-shadow: var(--shadow-sm);
   padding: .85rem 1.15rem; margin: 0; max-width: 52rem;
 }
 .upcoming-line a { font-weight: 600; }
-/* Council status band (live-council-status, Oct 22): one slim band
-   at the top of Upcoming in every state — same card ground and mint
-   left edge as .upcoming-line, headline in strong navy, body plain,
-   and a small checked-on line. Homepage-local only. */
+/* Council status band (live-council-status, Oct 22; visual warmth
+   pass, Oct 22): a designed navy moment at the top of Upcoming in
+   every state — the hero's navy gradient and mint glow, a mint rule
+   across the top, a pulsing mint dot beside a poster-size headline,
+   the weigh-in link as a mint pill button, and a quiet checked-on
+   line. Presentation only: the resolver's states, headline, body and
+   links are unchanged. Homepage-local only. */
 .council-status {
-  background: var(--card); border: 1px solid var(--line-soft);
-  border-left: 3px solid var(--bronze); border-radius: var(--radius);
-  box-shadow: var(--shadow-sm);
-  padding: .85rem 1.15rem; margin: 0 0 1rem; max-width: 52rem;
+  position: relative; overflow: hidden; isolation: isolate;
+  background: linear-gradient(135deg, #0E2A47 0%, #0A1F38 78%);
+  border: 0; border-radius: 18px;
+  box-shadow: var(--shadow);
+  padding: 1.45rem 1.6rem 1.35rem; margin: 0 0 1.1rem; max-width: 52rem;
+  color: #fff;
 }
-.council-status-head { margin: 0; color: var(--navy); }
-.council-status-body { margin: .3rem 0 0; }
-.council-status-action { margin: .6rem 0 0; }
-.council-status-action a { font-weight: 600; }
+.council-status::before {
+  content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none;
+  background:
+    radial-gradient(30rem 12rem at 92% -30%, rgba(47,191,143,.35), transparent 62%);
+}
+.council-status::after {
+  content: ""; position: absolute; top: 0; left: 0; right: 0;
+  height: 4px; background: var(--bronze);
+}
+.council-status-head {
+  display: flex; align-items: center; gap: .65rem;
+  margin: 0; color: #fff; font-size: 1.32rem; line-height: 1.2;
+}
+.council-status-head::before {
+  content: ""; flex: none; width: 10px; height: 10px;
+  border-radius: 50%; background: var(--bronze);
+}
+@media (prefers-reduced-motion: no-preference) {
+  .council-status-head::before { animation: deme-pulse 2.4s ease-out infinite; }
+}
+.council-status-head strong { font-weight: 800; letter-spacing: -.01em; }
+.council-status-body {
+  margin: .45rem 0 0; color: #C7D3E2; font-size: 1.05rem; max-width: 44rem;
+}
+.council-status-action { margin: .95rem 0 0; }
+.council-status-action a {
+  display: inline-flex; align-items: center; min-height: 44px;
+  padding: .5rem 1.15rem; border-radius: 999px;
+  background: var(--bronze); color: var(--navy-ink);
+  font-weight: 700; text-decoration: none;
+}
+.council-status-action a:hover { background: #27AB80; }
 .council-status-checked {
-  margin: .5rem 0 0; font-size: .85rem; color: var(--ink-faint);
+  margin: .8rem 0 0; font-size: .85rem; color: #93A7BF;
 }
 /* Personalization as a quiet strip, below the lead content. */
 #starthere { margin-top: var(--sp-4); }

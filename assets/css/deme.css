@@ -67,6 +67,13 @@
   --shadow-sm: 0 1px 2px rgba(16,30,56,.05), 0 4px 14px rgba(16,30,56,.05);
   --shadow: 0 2px 4px rgba(16,30,56,.06), 0 14px 34px rgba(16,30,56,.10);
   --shadow-lg: 0 4px 10px rgba(16,30,56,.07), 0 22px 48px rgba(16,30,56,.14);
+  /* Visual warmth pass (Oct 22, 2026): designed surfaces in the same
+     Navy & Mint family — a pale mint panel ground, a deeper card
+     shadow, and a near-white card gradient so tiles stop reading as
+     flat white boxes on a flat page. No new hues. */
+  --mint-wash: #EAF5F0;
+  --shadow-card: 0 1px 2px rgba(16,30,56,.05), 0 10px 24px rgba(16,30,56,.07);
+  --card-grad: linear-gradient(180deg, #FFFFFF 0%, #FAFCFB 100%);
   --font-body: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     "Helvetica Neue", Arial, sans-serif;
   --font-display: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI",
@@ -1648,3 +1655,129 @@ body.explore-page #results .card .more a:hover {
 body.explore-page #pager .btn.secondary {
   background: #fff; box-shadow: var(--shadow-sm); border-radius: 12px;
 }
+
+/* =====================================================================
+   VISUAL WARMTH PASS (Oct 22, 2026 — owner: the all-white tiles "look
+   so bland and like a textbook... for any part of the website").
+   Presentation only: surfaces, depth, tint, type scale and rhythm.
+   No element, copy or behaviour changes; Navy & Mint only. The wave
+   gives each zone its own designed surface so the eye gets rhythm —
+   navy moments, mint-wash panels, lifted gradient cards — instead of
+   one flat white tile after another on a flat ground.
+   ===================================================================== */
+
+/* The page ground itself: a soft mint glow behind the top of every
+   page, fading into the marble — the flat textbook sheet is gone. */
+body {
+  background-image:
+    radial-gradient(72rem 26rem at 50% -10rem, rgba(47,191,143,.09), rgba(47,191,143,0) 62%);
+  background-repeat: no-repeat;
+}
+
+/* Section headers carry more presence: a larger navy headline and a
+   longer, rounded mint rule under it. */
+h2 { font-size: clamp(1.55rem, 3.4vw, 2.05rem); color: var(--navy); }
+.rule { width: 72px; height: 4px; border-radius: 2px; }
+
+/* The card family lifts off the page: a whisper of gradient instead
+   of flat white, and a deeper, softer shadow. One treatment shared by
+   every tile surface on the site so pages feel built, not pasted. */
+.card, .skel-card, .profile-panel, .step, .gap-row, .faq-list details {
+  background: var(--card-grad);
+  box-shadow: var(--shadow-card);
+}
+.card { border-radius: 14px; }
+.weighin {
+  background: var(--card-grad);
+  box-shadow: var(--shadow-card);
+  border-top: 3px solid var(--bronze);
+}
+.filters, .search-panel {
+  background: linear-gradient(180deg, var(--mint-wash), #FDFEFE);
+  box-shadow: var(--shadow-card);
+}
+.calm { background: var(--mint-wash); }
+.pick-gate { background: var(--mint-wash); }
+.stat { box-shadow: var(--shadow-card); }
+
+/* Chips join the mint family everywhere (hero chips keep their own
+   on-navy treatment, explore's pressed state keeps its ink fill). */
+.chip { background: var(--mint-light); border-color: rgba(11,122,92,.22); }
+.chip:hover { background: rgba(47,191,143,.28); border-color: var(--bronze-dark); }
+.chip[aria-pressed="true"]:hover { background: var(--ink); }
+
+/* Steps read as designed markers: the number becomes a navy disc. */
+.step .n {
+  display: inline-grid; place-items: center;
+  width: 2.4rem; height: 2.4rem; border-radius: 50%;
+  background: var(--navy); color: #fff;
+  font-size: 1.15rem; margin-bottom: .55rem;
+}
+
+/* Homepage rhythm — each section gets its own surface.
+   Latest: the cards sit on a pale mint panel, so the white tiles
+   finally have something to stand against. */
+section[aria-labelledby="latest-h"] {
+  background: var(--mint-wash);
+  border-radius: 20px;
+  padding: 1.9rem 1.6rem 1.7rem;
+  box-shadow: inset 0 0 0 1px rgba(11,122,92,.10);
+}
+@media (max-width: 640px) {
+  section[aria-labelledby="latest-h"] {
+    border-radius: 16px; padding: 1.4rem 1rem 1.3rem;
+  }
+}
+/* Upcoming vote cards carry the mint rule the stat band and thread
+   cards already use, so the before-the-vote zone reads as one set. */
+.upcoming-sec .card { border-top: 3px solid var(--bronze); }
+/* The personal strip opens on a mint fade into its card gradient. */
+.entry-panel {
+  background: linear-gradient(180deg, var(--mint-wash), #FFFFFF 78%);
+}
+/* Story cards go navy — a dark beat mid-page between the light
+   sections, echoing the hero and the vision band. */
+.thread-card {
+  background: linear-gradient(140deg, #0E2A47, #0A1F38);
+  border-color: #2F4965;
+  box-shadow: var(--shadow);
+  color: #fff;
+}
+.thread-card-label { color: #fff; }
+.thread-card-meta { color: #B5C1D3; }
+.thread-card:hover { border-color: #58718B; }
+/* The comparison rows gain the mint edge the rest of the family has. */
+.gap-row { border-left: 3px solid var(--bronze); }
+.gap-row .who { color: var(--navy); }
+
+/* Representatives: the identity zone warms from flat marble to a mint
+   tint, and the headshot gets a white-and-mint ring so faces sit in a
+   designed frame. The Mayor's navy band is untouched. */
+.person { box-shadow: var(--shadow-card); }
+.person-top {
+  background: linear-gradient(135deg, var(--mint-light) 0%, #F0F7F3 72%);
+}
+.person .avatar {
+  box-shadow: 0 0 0 3px #fff, 0 0 0 5px rgba(47,191,143,.40);
+}
+.person.is-mayor .avatar {
+  box-shadow: 0 0 0 3px var(--navy), 0 0 0 5px rgba(47,191,143,.55);
+}
+
+/* The footer becomes the site's closing navy moment instead of a
+   pale strip — same words, same links, designed ground. */
+.site-footer {
+  background: linear-gradient(160deg, #0E2A47 0%, #0A1424 100%);
+  border-top: 0;
+  margin-top: 3rem;
+  padding: 2.6rem 0 2.8rem;
+  color: #B5C1D3;
+}
+.site-footer a { color: #8FE8C4; }
+.site-footer .footer-h { color: #76DBB6; }
+.site-footer .footer-brand p strong { color: #fff; }
+.site-footer .footer-group a { color: #D5DEE9; }
+.site-footer .footer-group a:hover {
+  color: #fff; text-decoration-color: var(--bronze);
+}
+.site-footer .fineprint { color: #93A7BF; }

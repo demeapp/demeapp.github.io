@@ -178,11 +178,13 @@ section:first-child { margin-top: 0; }
   letter-spacing: .14em; text-transform: uppercase; color: var(--bronze-dark);
   margin-top: .2rem; font-weight: 600;
 }
-.site-nav { display: flex; gap: .25rem; flex-wrap: wrap; }
+.site-nav { display: flex; gap: .35rem; flex-wrap: wrap; align-items: center; }
 .site-nav a {
   color: var(--ink-soft); text-decoration: none; font-size: .98rem;
-  padding: .5rem .8rem; border-radius: 999px; min-height: 44px;
+  font-weight: 500;
+  padding: .55rem .85rem; border-radius: 999px; min-height: 44px;
   display: inline-flex; align-items: center;
+  border: 1.5px solid transparent;
 }
 .site-nav a:hover { background: var(--marble-2); color: var(--ink); }
 .site-nav a[aria-current="page"] {
@@ -257,12 +259,16 @@ section:first-child { margin-top: 0; }
    561–719px range keep the original sizing, which already fits. */
 @media (max-width: 560px) {
   .site-nav { gap: .1rem; }
-  .site-nav a { font-size: .76rem; padding-left: .38rem; padding-right: .38rem; }
+  /* Relief-wave trim (Oct 22): the unified pill border added ~3px per
+     item and pushed My Record ~8px past the row's visible edge at
+     390px (visitor-eye catch) — side padding gives the width back so
+     all five pills sit inside the screen again. */
+  .site-nav a { font-size: .76rem; padding-left: .22rem; padding-right: .22rem; }
 }
 @media (max-width: 374px) {
   .site-nav { gap: .08rem; }
   .site-nav a {
-    font-size: .7rem; padding-left: .22rem; padding-right: .22rem;
+    font-size: .7rem; padding-left: .16rem; padding-right: .16rem;
     flex: 1 1 auto; justify-content: center;
   }
 }
@@ -509,7 +515,15 @@ html.js .statband:empty { min-height: 8.2rem; }
 }
 
 /* ---------- councillors ---------- */
-.people { display: grid; gap: 1.3rem; grid-template-columns: 1fr; }
+/* Card-grid relief wave (Oct 22, 2026): the owner found the grid
+   "repetitive and dizzy" even after the earlier calming pass — every
+   card the same white tile, the same green ward line, the same green
+   bar, four shouty labels apiece, rows packed tight. No information
+   changes; the relief is rhythm: wider gutters, a tinted identity
+   zone set apart from the white stats zone, a calmer ward line, a
+   lighter card shadow, softer stat labels and a thinner meter, so
+   the eye reads person first, numbers second, card by card. */
+.people { display: grid; gap: 1.9rem 1.6rem; grid-template-columns: 1fr; }
 @media (min-width: 720px) { .people { grid-template-columns: 1fr 1fr; } }
 @media (min-width: 1020px) { .people { grid-template-columns: 1fr 1fr 1fr; } }
 /* Restyled Oct 20, 2026 (owner: the flat tiles "look boring") —
@@ -518,8 +532,8 @@ html.js .statband:empty { min-height: 8.2rem; }
    meter; the Mayor's card carries a navy header band. */
 .person {
   background: var(--card); border: 1px solid var(--line-soft);
-  border-radius: 16px; padding: 0; overflow: hidden;
-  box-shadow: var(--shadow-sm);
+  border-radius: 18px; padding: 0; overflow: hidden;
+  box-shadow: 0 1px 2px rgba(16,30,56,.04), 0 3px 10px rgba(16,30,56,.04);
   display: flex; flex-direction: column; position: relative;
 }
 @media (hover: hover) and (prefers-reduced-motion: no-preference) {
@@ -534,23 +548,23 @@ html.js .statband:empty { min-height: 8.2rem; }
    element, so the stretch is safe. Hit area only; geometry, spacing
    and visuals are unchanged at every width. */
 .person h3 a::after { content: ""; position: absolute; inset: 0; }
-.person .ward { color: var(--bronze-dark); font-weight: 600; font-size: .92rem; margin: 0; }
+.person .ward { color: var(--ink-soft); font-weight: 600; font-size: .92rem; margin: 0; }
 .person .onestat { color: var(--ink-soft); font-size: .98rem; margin: 0; }
 .member-stats {
-  display: grid; grid-template-columns: 1fr 1fr; gap: 1rem 1.1rem;
-  padding: 1.05rem 1.35rem 1.3rem; flex: 1; align-content: start;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 1.15rem 1.25rem;
+  padding: 1.25rem 1.45rem 1.45rem; flex: 1; align-content: start;
 }
 .member-stats > div { min-width: 0; }
 .member-stats span {
-  display: block; color: var(--ink-faint); font-size: .76rem; font-weight: 700;
-  letter-spacing: .06em; text-transform: uppercase;
+  display: block; color: var(--ink-faint); font-size: .76rem; font-weight: 600;
+  letter-spacing: .05em; text-transform: uppercase;
 }
-.member-stats strong { display: block; margin-top: .2rem; font-size: 1.13rem; line-height: 1.25; color: var(--ink); }
+.member-stats strong { display: block; margin-top: .2rem; font-size: 1.1rem; line-height: 1.25; color: var(--ink); }
 /* Attendance meter: mint fill on a pale mint track, under the figure.
    Polish wave (Oct 22, 2026): slimmed from 6px to 4px — one calm line,
    not a stripe repeated down the grid. */
 .att-meter {
-  height: 4px; margin-top: .45rem;
+  height: 3px; margin-top: .5rem;
   background: var(--mint-light); border-radius: 999px; overflow: hidden;
 }
 .att-fill { height: 100%; background: var(--bronze); border-radius: 999px; }
@@ -789,14 +803,18 @@ footer .fineprint { font-size: .82rem; color: var(--ink-faint); }
    Appended for the ward-finder / discoverability / accounts pass.
    Existing design tokens only; no new colours, fonts, or radii. */
 
-/* My Record carries a bronze-outlined pill in the nav — the door to
-   the profile is always one click away, on every page. */
+/* My Record in the nav — the personal destination keeps a distinction
+   inside the same pill family (card-grid relief wave, Oct 22, 2026):
+   same geometry, height, radius and border weight as every other nav
+   item; a soft mint tint instead of the old bronze outline that sat
+   mismatched beside the filled active pill. The active state is the
+   one shared treatment — the navy fill — for all five items. */
 .site-nav a.nav-record {
-  border: 1.5px solid var(--bronze-dark); color: var(--ink); font-weight: 600;
+  background: var(--mint-light); color: var(--navy); font-weight: 600;
 }
-.site-nav a.nav-record:hover { background: rgba(47,191,143,.14); }
+.site-nav a.nav-record:hover { background: rgba(47,191,143,.22); color: var(--navy); }
 .site-nav a.nav-record[aria-current="page"] {
-  background: var(--ink); border-color: var(--ink); color: #fff;
+  background: var(--ink); color: #fff;
 }
 
 /* Home entry panel — the persistent invitation for visitors with
@@ -1051,14 +1069,14 @@ html.js .entry-shell { min-height: 25.4rem; }
    quieter stat numerals. The Mayor's navy band stays. */
 .person-top {
   display: flex; gap: 1rem; align-items: center;
-  padding: 1.25rem 1.35rem 1.1rem;
+  padding: 1.35rem 1.45rem 1.2rem;
+  background: var(--marble);
   border-bottom: 1px solid var(--line-soft);
 }
 .person-top h3 { margin: 0; }
 .person-top .ward { margin: 0; }
 .person .avatar {
   width: 72px; height: 72px; font-size: 1.35rem;
-  border: 2px solid var(--mint-light);
   box-shadow: 0 0 0 1px var(--line-soft);
 }
 .person.is-mayor .person-top { background: var(--navy); border-bottom-color: rgba(255,255,255,.16); }

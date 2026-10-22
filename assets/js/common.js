@@ -300,7 +300,7 @@ const initialsOf = (name) => String(name || "").split(/\s+/)
   .filter(Boolean).slice(0, 2).map((w) => w.charAt(0)).join("").toUpperCase();
 function avatarHTML(person, size = "") {
   const img = PHOTO_SLUGS.has(person.slug)
-    ? `<img src="assets/headshots/${encodeURIComponent(person.slug)}.jpg"
+    ? `<img src="assets/headshots/${encodeURIComponent(person.slug)}.webp"
         alt="" loading="lazy" decoding="async" onerror="this.remove()">`
     : "";
   return `<span class="avatar ${size}" aria-hidden="true"><span>${esc(initialsOf(person.name))}</span>${img}</span>`;
@@ -325,7 +325,7 @@ function renderElectionBanner() {
   aside.setAttribute("aria-label", "Municipal election reminder");
   aside.innerHTML = `<div class="wrap">
     <a href="councillors.html">Municipal election — Monday, October 26,
-      2026 — check your councillor’s record before you vote.</a>
+      2026 — check your representative’s record before you vote.</a>
     <button class="election-close" type="button"
       aria-label="Dismiss election reminder">×</button></div>`;
   document.body.insertBefore(aside, document.body.firstChild);

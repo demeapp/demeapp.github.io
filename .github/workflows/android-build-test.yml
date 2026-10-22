@@ -71,6 +71,11 @@ jobs:
             sleep 15
             adb exec-out screencap -p > deme-android-2.png
             node native/scripts/bridge-check.mjs | tee bridge-check.log
+            adb shell am force-stop io.github.demeapp.deme
+            adb shell cmd package query-intent-activities -a android.intent.action.VIEW -d https://demeapp.github.io/my-record.html || true
+            adb shell am start -a android.intent.action.VIEW -d "https://demeapp.github.io/my-record.html" || true
+            sleep 5
+            adb exec-out screencap -p > deme-android-3.png
       - name: Upload Android screenshots
         uses: actions/upload-artifact@v4
         with:

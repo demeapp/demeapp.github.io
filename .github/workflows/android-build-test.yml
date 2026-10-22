@@ -47,6 +47,10 @@ jobs:
           echo 'KERNEL=="kvm", GROUP="kvm", MODE="0666", OPTIONS+="static_node=kvm"' | sudo tee /etc/udev/rules.d/99-kvm4all.rules
           sudo udevadm control --reload-rules
           sudo udevadm trigger --name-match=kvm
+      - name: Set up Node 22 (bridge check)
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
       - name: Boot emulator, install and launch Deme, screenshot
         uses: reactivecircus/android-emulator-runner@v2
         with:
@@ -65,9 +69,12 @@ jobs:
             adb shell monkey -p io.github.demeapp.deme -c android.intent.category.LAUNCHER 1
             sleep 15
             adb exec-out screencap -p > deme-android-2.png
+            node native/scripts/bridge-check.mjs | tee bridge-check.log
       - name: Upload Android screenshots
         uses: actions/upload-artifact@v4
         with:
           name: deme-android-screenshots
-          path: deme-android-*.png
+          path: |
+            deme-android-*.png
+            bridge-check.log
           if-no-files-found: error

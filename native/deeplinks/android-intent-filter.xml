@@ -1,0 +1,11 @@
+<!-- Phase 2 / deep links. Paste inside the MainActivity <activity> element of
+     android/app/src/main/AndroidManifest.xml (created by `npm run add:android`).
+     Verified app links also need assetlinks.json live on the site (see README-NATIVE.md). -->
+<intent-filter android:autoVerify="true">
+    <action android:name="android.intent.action.VIEW" />
+    <category android:name="android.intent.category.DEFAULT" />
+    <category android:name="android.intent.category.BROWSABLE" />
+    <data android:scheme="https" android:host="demeapp.github.io" />
+    <data android:path="/" />
+    <data android:pathPattern="/.*\\.html" />
+</intent-filter>

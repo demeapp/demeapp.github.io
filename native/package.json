@@ -1,0 +1,30 @@
+{
+  "name": "deme-native",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Capacitor wrapper for Deme. Same codebase as the website; the site still deploys to GitHub Pages unchanged.",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "sync:web": "node scripts/sync-web.mjs",
+    "sync": "node scripts/sync-web.mjs && node scripts/cap-sync.mjs bundled",
+    "add:android": "npx cap add android",
+    "add:ios": "npx cap add ios",
+    "assets": "npx capacitor-assets generate",
+    "open:android": "npx cap open android",
+    "open:ios": "npx cap open ios",
+    "sync:live": "node scripts/sync-web.mjs && node scripts/cap-sync.mjs live"
+  },
+  "dependencies": {
+    "@capacitor/android": "^8.0.0",
+    "@capacitor/app": "^8.0.0",
+    "@capacitor/core": "^8.0.0",
+    "@capacitor/ios": "^8.0.0",
+    "@capacitor/splash-screen": "^8.0.0"
+  },
+  "devDependencies": {
+    "@capacitor/assets": "^3.0.0",
+    "@capacitor/cli": "^8.0.0"
+  }
+}

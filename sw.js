@@ -1,4 +1,4 @@
-// Deme service worker (v3).
+// Deme service worker (v4).
 // Caches: app shell + static assets, visited pages, and the PUBLIC record JSON
 // (read-only, for offline browsing of what was already loaded).
 // Never caches: non-GET requests, cross-origin requests (Supabase auth, picks,
@@ -12,7 +12,7 @@
 // deploy, so assets are network-first too; cache is the offline fallback.
 // VERSION bumps rename every cache, and activate deletes the old ones —
 // bump VERSION whenever this file ships a strategy change.
-const VERSION = 'v3';
+const VERSION = 'v4';
 const SHELL = 'deme-shell-' + VERSION;
 const PAGES = 'deme-pages-' + VERSION;
 const DATA = 'deme-data-' + VERSION;
@@ -82,7 +82,7 @@ self.addEventListener('fetch', (event) => {
   }
 
   // Public record data: fresh when online; already-loaded copy when offline.
-  if (url.pathname.startsWith('/data/')) {
+  if (url.pathname.startsWith('/record-data/')) {
     event.respondWith(
       networkFirst(req, DATA, MAX_DATA).then((res) => res || Response.error())
     );

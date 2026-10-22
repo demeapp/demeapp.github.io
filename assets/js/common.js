@@ -133,7 +133,7 @@ function loadJSON(path) {
   }
   return _cache.get(path);
 }
-const dataPath = (p) => `data/${p}`;
+const dataPath = (p) => `record-data/${p}`;
 
 /* ---------------- site chrome ---------------- */
 const NAV = [

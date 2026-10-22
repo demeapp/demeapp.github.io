@@ -16,6 +16,10 @@ const config = {
   webDir: "www",
   server: { allowNavigation: ["demeapp.github.io"] },
   plugins: { SplashScreen: { backgroundColor: "#0E2A47", showSpinner: false } },
+  // iOS safe area: without this the page starts at the very top of the screen and the
+  // election banner sits under the Dynamic Island. "automatic" insets the page below the
+  // status bar/Island; the band behind it uses --marble from assets/css/deme.css.
+  ios: { contentInset: "automatic", backgroundColor: "#F4F7FA" },
 };
 if (mode === "live") config.server.url = "https://demeapp.github.io";
 

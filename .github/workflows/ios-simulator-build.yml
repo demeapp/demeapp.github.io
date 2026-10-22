@@ -38,6 +38,11 @@ jobs:
         working-directory: native
         run: npm run sync
 
+      - name: Verify baked iOS config (safe-area guard)
+        run: |
+          cat ios/App/App/capacitor.config.json
+          grep -q '"contentInset": "automatic"' ios/App/App/capacitor.config.json
+
       - name: List Xcode schemes
         working-directory: native
         run: xcodebuild -list -project ios/App/App.xcodeproj
@@ -52,7 +57,7 @@ jobs:
             -sdk iphonesimulator \
             -destination 'generic/platform=iOS Simulator' \
             CODE_SIGNING_ALLOWED=NO \
-            build
+          build
 
       - name: Simulator launch test
         working-directory: native

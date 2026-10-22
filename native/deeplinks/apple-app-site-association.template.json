@@ -2,8 +2,12 @@
   "applinks": {
     "details": [
       {
-        "appIDs": ["REPLACE_WITH_APPLE_TEAM_ID.io.github.demeapp.deme"],
-        "components": [{ "/": "/" }, { "/": "/*.html" }]
+        "appIDs": ["REPLACE_WITH_TEAM_ID.io.github.demeapp.deme"],
+        "components": [
+          { "/": "/data/*", "exclude": true, "comment": "Record data files are never app pages" },
+          { "/": "/" },
+          { "/": "/*.html" }
+        ]
       }
     ]
   }

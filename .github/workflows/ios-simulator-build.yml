@@ -66,10 +66,14 @@ jobs:
           echo "App: $APP_PATH"
           xcrun simctl install "$UDID" "$APP_PATH"
           xcrun simctl launch "$UDID" io.github.demeapp.deme | tee sim-launch.log
-          sleep 8
-          xcrun simctl io "$UDID" screenshot deme-sim-1-splash.png
-          sleep 20
-          xcrun simctl io "$UDID" screenshot deme-sim-2-loaded.png
+          xcrun simctl io "$UDID" screenshot deme-sim-0-splash.png
+          sleep 1
+          xcrun simctl io "$UDID" screenshot deme-sim-1.png
+          sleep 12
+          xcrun simctl io "$UDID" screenshot deme-sim-2-light.png
+          xcrun simctl ui "$UDID" appearance dark
+          sleep 3
+          xcrun simctl io "$UDID" screenshot deme-sim-3-dark.png
           xcrun simctl spawn "$UDID" log show --style compact --last 3m --predicate 'process == "App"' > sim-log.txt 2>&1 || true
           xcrun simctl terminate "$UDID" io.github.demeapp.deme || true
 
@@ -79,8 +83,10 @@ jobs:
         with:
           name: deme-ios-simulator-evidence
           path: |
-            native/deme-sim-1-splash.png
-            native/deme-sim-2-loaded.png
+            native/deme-sim-0-splash.png
+            native/deme-sim-1.png
+            native/deme-sim-2-light.png
+            native/deme-sim-3-dark.png
             native/sim-launch.log
             native/sim-log.txt
           if-no-files-found: warn

@@ -38,6 +38,23 @@
   padding: .85rem 1.15rem; margin: 0; max-width: 52rem;
 }
 .upcoming-line a { font-weight: 600; }
+/* Council status band (live-council-status, Oct 22): one slim band
+   at the top of Upcoming in every state — same card ground and mint
+   left edge as .upcoming-line, headline in strong navy, body plain,
+   and a small checked-on line. Homepage-local only. */
+.council-status {
+  background: var(--card); border: 1px solid var(--line-soft);
+  border-left: 3px solid var(--bronze); border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+  padding: .85rem 1.15rem; margin: 0 0 1rem; max-width: 52rem;
+}
+.council-status-head { margin: 0; color: var(--navy); }
+.council-status-body { margin: .3rem 0 0; }
+.council-status-action { margin: .6rem 0 0; }
+.council-status-action a { font-weight: 600; }
+.council-status-checked {
+  margin: .5rem 0 0; font-size: .85rem; color: var(--ink-faint);
+}
 /* Personalization as a quiet strip, below the lead content. */
 #starthere { margin-top: var(--sp-4); }
 #starthere h2 { margin-bottom: .35rem; }
@@ -252,6 +269,7 @@
 </main>
 <footer class="site-footer"></footer>
 <script src="assets/js/common.js"></script>
+<script src="assets/js/council-status.js"></script>
 <script src="assets/js/ward-finder.js"></script>
 <script src="assets/js/personalize.js"></script>
 <script src="assets/js/account.js"></script>
@@ -326,8 +344,9 @@ document.getElementById("upcoming").addEventListener("click", async (e) => {
 
 Promise.all([loadJSON(dataPath("stats.json")), loadJSON(dataPath("latest.json")),
              loadJSON(dataPath("upcoming.json")), loadJSON(dataPath("topics.json")),
-             loadJSON(dataPath("threads-summary.json")).catch(() => null)])
-.then(([stats, latest, upcoming, topics, threadData]) => {
+             loadJSON(dataPath("threads-summary.json")).catch(() => null),
+             loadJSON(dataPath("council-status.json")).catch(() => null)])
+.then(([stats, latest, upcoming, topics, threadData, councilStatus]) => {
   document.getElementById("statband").innerHTML = `
     <div class="stat"><span class="num" data-count="${stats.decisions}">${fmtNum(stats.decisions)}</span>
       <span class="lab">decisions in the archive — City Council, its committees and boards — in plain language (${stats.decisionsFrom}–${stats.decisionsTo})</span></div>
@@ -345,10 +364,48 @@ Promise.all([loadJSON(dataPath("stats.json")), loadJSON(dataPath("latest.json"))
      the payload says. The exporter enforces the same rule upstream. */
   const councilItems = (upcoming.items || []).filter(
     (u) => u.body === "City Council");
-  if (councilItems.length) {
-    up.innerHTML = `<div class="cards two">${councilItems.slice(0, 4).map(voteCard).join("")}</div>
+  /* Council status band (live-council-status, Oct 22): one band at
+     the top of Upcoming in every state, built from the
+     hand-maintained data/council-status.json and the resolver in
+     assets/js/council-status.js (state, headline, body, items come
+     from it; "today" is the Toronto date, not the visitor's).
+     Cards keep rendering below the band whenever Council items
+     exist — on a meeting day those are today's items only. When
+     no items exist, the weigh-in link sits inside the band so the
+     path stays reachable. If the status file fails to load (its
+     fetch has a .catch(() => null) like threads-summary) or the
+     resolver is missing/throws, there is no band and the previous
+     behaviour is untouched. */
+  let statusBand = "";
+  let displayItems = councilItems;
+  if (councilStatus && window.DemeCouncilStatus
+      && typeof window.DemeCouncilStatus.resolve === "function") {
+    try {
+      const resolved = window.DemeCouncilStatus.resolve(
+        councilStatus, upcoming.items || [],
+        window.DemeCouncilStatus.todayInToronto());
+      displayItems = Array.isArray(resolved.items)
+        ? resolved.items : councilItems;
+      const checkedOn = councilStatus.scheduleCheckedOn
+        && typeof window.DemeCouncilStatus.formatLongDate === "function"
+        ? `<p class="council-status-checked">Schedule checked ${
+          esc(window.DemeCouncilStatus.formatLongDate(
+            councilStatus.scheduleCheckedOn))}</p>` : "";
+      /* No items: keep the weigh-in route reachable inside the band. */
+      const weighIn = displayItems.length ? ""
+        : `<p class="council-status-action"><a href="my-record.html#weigh-in">See how weighing in works →</a></p>`;
+      statusBand = `<div class="council-status">` +
+        `<p class="council-status-head"><strong>${esc(resolved.headline)}</strong></p>` +
+        `<p class="council-status-body">${esc(resolved.body)}</p>` +
+        `${weighIn}${checkedOn}</div>`;
+    } catch (e) { /* status degrade: no band, cards/lines as before */ }
+  }
+  if (displayItems.length) {
+    up.innerHTML = statusBand + `<div class="cards two">${displayItems.slice(0, 4).map(voteCard).join("")}</div>
       <p style="margin-top:1.1rem"><a class="btn bronze" href="my-record.html#weigh-in">Weigh in before the meeting</a></p>`;
     paintWatchLines();
+  } else if (statusBand) {
+    up.innerHTML = statusBand;
   } else {
     /* Empty state: one honest line in a slim band — same true wording,
        no big empty box. The items path above is untouched. */

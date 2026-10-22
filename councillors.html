@@ -45,6 +45,15 @@
 .earlier-group { margin-top: 1.1rem; }
 .earlier-group h4 { margin: 0 0 .35rem; font-size: 1rem; color: var(--navy-ink); }
 .earlier-note { max-width: 44rem; }
+/* Earlier rows: a fixed text column beside the avatar (polish wave,
+   visitor-eye fix). The shared .personlist row is space-between —
+   written when rows held only a name and a term list. With ward
+   history + attendance added, desktop rows scattered the name to a
+   different x on every row and a long record broke its row. Scoped
+   to this section only; the shared rule is untouched. */
+#earlier-details .personlist li { justify-content: flex-start; flex-wrap: nowrap; }
+#earlier-details .personlist li > span:first-child { flex: none; }
+#earlier-details .personlist li > span:last-child { flex: 1 1 auto; min-width: 0; }
 </style>
 <link rel="icon" href="favicon-navy.svg" type="image/svg+xml">
 <meta name="theme-color" content="#0E2A47">

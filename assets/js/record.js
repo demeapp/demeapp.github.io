@@ -456,7 +456,7 @@ function renderUpcoming() {
       <strong>October 26, 2026</strong>; the new Council takes office in
       November, and its first agendas follow. In the meantime, the full
       record is open:</p>
-      <p><a class="btn secondary small" href="explore.html">Explore past decisions</a></p>
+      <p><a class="btn secondary small" href="explore.html">Browse past decisions</a></p>
     </div>`;
     return;
   }

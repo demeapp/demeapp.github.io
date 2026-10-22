@@ -138,8 +138,8 @@ const dataPath = (p) => `data/${p}`;
 /* ---------------- site chrome ---------------- */
 const NAV = [
   ["index.html", "Home"],
-  ["explore.html", "Explore"],
-  ["councillors.html", "Councillors"],
+  ["explore.html", "The Record"],
+  ["councillors.html", "Representatives"],
   ["about.html", "About"],
   ["my-record.html", "My Record"],
 ];
@@ -205,11 +205,11 @@ function renderChrome(active) {
             </ul>
           </nav>
         </div>
-        <nav class="footer-group" aria-label="Explore the record">
-          <p class="footer-h">Explore the record</p>
+        <nav class="footer-group" aria-label="The Record">
+          <p class="footer-h">The Record</p>
           <ul>
-            <li><a href="explore.html">Explore</a></li>
-            <li><a href="councillors.html">Councillors</a></li>
+            <li><a href="explore.html">The Record</a></li>
+            <li><a href="councillors.html">Representatives</a></li>
             <li><a href="my-record.html#weigh-in">Weigh in</a></li>
           </ul>
         </nav>

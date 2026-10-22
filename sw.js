@@ -1,17 +1,25 @@
-// Deme service worker (v2).
+// Deme service worker (v3).
 // Caches: app shell + static assets, visited pages, and the PUBLIC record JSON
 // (read-only, for offline browsing of what was already loaded).
 // Never caches: non-GET requests, cross-origin requests (Supabase auth, picks,
 // watches, Turnstile), or anything carrying an Authorization header.
-// Online, pages and record data are always fetched fresh first (network-first),
-// so a push to main and any pipeline data fix go live immediately.
-const VERSION = 'v2';
+// Online, EVERYTHING same-origin is fetched fresh first (network-first) —
+// pages, record data, AND static assets. Assets used to be served
+// stale-while-revalidate; that mixed a fresh page with last deploy's JS on
+// the first load after a push (Oct 22, 2026: new index.html + old common.js
+// → setupCountUps ReferenceError → homepage stats/Upcoming/Latest broke
+// for returning visitors). HTML and JS must always come from the same
+// deploy, so assets are network-first too; cache is the offline fallback.
+// VERSION bumps rename every cache, and activate deletes the old ones —
+// bump VERSION whenever this file ships a strategy change.
+const VERSION = 'v3';
 const SHELL = 'deme-shell-' + VERSION;
 const PAGES = 'deme-pages-' + VERSION;
 const DATA = 'deme-data-' + VERSION;
 const KEEP = [SHELL, PAGES, DATA];
 const OFFLINE_URL = '/offline.html';
 const MAX_PAGES = 60;
+const MAX_SHELL = 200;
 const MAX_DATA = 400; // per-decision files are small; this bounds storage
 
 const PRECACHE = [
@@ -81,20 +89,12 @@ self.addEventListener('fetch', (event) => {
     return;
   }
 
-  // Static assets: instant from cache, refreshed in the background.
+  // Static assets: fresh when online (same deploy as the page that
+  // requested them); last-seen copy when offline. Never stale-while-
+  // revalidate — see the header note on the Oct 22 version mix.
   if (url.pathname.startsWith('/assets/') || /\.(?:svg|png|ico|webmanifest)$/.test(url.pathname)) {
     event.respondWith(
-      caches.open(SHELL).then((cache) =>
-        cache.match(req).then((cached) => {
-          const refresh = fetch(req)
-            .then((res) => {
-              if (res && res.status === 200) cache.put(req, res.clone());
-              return res;
-            })
-            .catch(() => cached);
-          return cached || refresh;
-        })
-      )
+      networkFirst(req, SHELL, MAX_SHELL).then((res) => res || Response.error())
     );
   }
 });

@@ -123,7 +123,7 @@
       be notified when votes land, and see where you stand against your
       representative.</p>
 
-      <div class="statband" id="statband" aria-label="The archive in numbers">
+      <div class="statband" id="statband" aria-label="The Toronto council archive, in numbers">
         <!-- filled from data/stats.json -->
       </div>
       <p class="counting-note on-dark"><span class="pulse-dot" aria-hidden="true"></span>And counting — the record grows with every meeting.</p>
@@ -144,7 +144,7 @@
       <div class="cards two" id="latest"><span class="visually-hidden">Loading…</span>
         <div class="skel-card" aria-hidden="true"><span class="skel-el sm"></span><span class="skel-el title"></span><span class="skel-el"></span><span class="skel-el short"></span></div>
         <div class="skel-card" aria-hidden="true"><span class="skel-el sm"></span><span class="skel-el title"></span><span class="skel-el"></span><span class="skel-el short"></span></div></div>
-      <p style="margin-top:1.2rem"><a class="btn secondary" href="explore.html">Explore all decisions</a></p>
+      <p style="margin-top:1.2rem"><a class="btn secondary" href="explore.html">Browse the record</a></p>
     </section>
 
     <section class="reveal" id="starthere" aria-labelledby="starthere-h">
@@ -195,7 +195,7 @@
       recorded vote — no public list of who voted yes and who voted no.
       They pass without anyone's name attached. Deme keeps the whole
       record readable, and flags every decision where the names
-      <em>are</em> on it, so you can see exactly how your councillor
+      <em>are</em> on it, so you can see exactly how your representative
       voted. <a href="about.html">How Deme works →</a></p>
     </section>
 
@@ -340,8 +340,6 @@ Promise.all([loadJSON(dataPath("stats.json")), loadJSON(dataPath("latest.json"))
      the two big totals, and the "9" in "9 in 100" — "in 100" and the
      label figures (3,171, 94) carry no data-count and stay static.
      Each animation lands on exactly fmtNum(target) and stops. */
-  setupCountUps(document.getElementById("statband"));
-
   const up = document.getElementById("upcoming");
   /* Defence in depth: only City Council items may render here, whatever
      the payload says. The exporter enforces the same rule upstream. */
@@ -377,6 +375,18 @@ Promise.all([loadJSON(dataPath("stats.json")), loadJSON(dataPath("latest.json"))
         <span class="thread-card-meta">${fmtNum(t.count)} decisions · ${esc(span)}</span>
       </a>`;
     }).join("");
+  }
+
+  /* Wire the count-up LAST, and only if the helper is actually there.
+     Oct 22, 2026: a returning visitor's browser ran this page against
+     the previous deploy's common.js (stale service-worker asset), where
+     setupCountUps does not exist — the bare call threw, the .catch
+     below misreported it as a data failure, and Upcoming/Latest never
+     rendered. Content first, decoration last, guarded: if the helper
+     is ever missing again the figures simply stay at their true
+     static values and everything else still renders. */
+  if (typeof setupCountUps === "function") {
+    setupCountUps(document.getElementById("statband"));
   }
 }).catch(() => {
   document.getElementById("latest").innerHTML =

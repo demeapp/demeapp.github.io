@@ -29,6 +29,7 @@ let rows = [], councillors = [], filtered = [], shown = 0;
 let renderSeq = 0;
 let renderTail = Promise.resolve();
 let archiveLoading = false; // D1: true until every search-<year> shard lands
+let userEngaged = false; // polish wave: true once the visitor types, filters, or pages
 let parsed = null; // parseAsk result for the current query text, or null
 let profileFilter = null; // "Use my profile" filter, or null when off
 let profileSummaryBase = ""; // profile-row summary without " — filter on"
@@ -95,13 +96,16 @@ function effectiveFilters() {
   };
 }
 
-function applyFilters() {
+/* The filter computation, split out of applyFilters (polish wave,
+   Oct 22, 2026) so the archive stream can refresh the result COUNT
+   without re-rendering the cards — see streamRest. */
+function computeFiltered() {
   const eff = effectiveFilters();
   /* A profile filter with no wards and no interest refs is treated as
      off — the predicate below is a no-op whenever profileFilter is off. */
   const profileActive = Boolean(profileFilter
     && (profileFilter.wards.length || profileFilter.interestRefs));
-  filtered = rows.filter((r) =>
+  const list = rows.filter((r) =>
     matches(r, eff.freeTokens) &&
     askRowMatchesTopics(r, eff.topicGroups) &&
     (eff.yearFrom == null || (Number(r.year) >= eff.yearFrom && Number(r.year) <= eff.yearTo)) &&
@@ -123,10 +127,19 @@ function applyFilters() {
      and the alignment figures keep the FIRST Council-stage motion as
      an item's "main" vote. */
   if (eff.closeOnly) {
-    filtered.sort((a, b) => (a.dm - b.dm) || (a.date < b.date ? 1 : -1));
+    list.sort((a, b) => (a.dm - b.dm) || (a.date < b.date ? 1 : -1));
   } else {
-    filtered.sort((a, b) => (a.date < b.date ? 1 : -1));
+    list.sort((a, b) => (a.date < b.date ? 1 : -1));
   }
+  return { list, eff };
+}
+
+function applyFilters(opts) {
+  /* keepShown (stream-triggered refreshes only): rebuild the list
+     without yanking an engaged visitor back to page one. */
+  const keepShown = opts && opts.keepShown ? shown : 0;
+  const { list, eff } = computeFiltered();
+  filtered = list;
   shown = 0;
   renderSeq++;
   $("results").innerHTML = "";
@@ -134,6 +147,11 @@ function applyFilters() {
   renderInterpretation(eff);
   renderMyWardChip(eff);
   renderMore();
+  if (keepShown > PAGE) {
+    (async () => {
+      while (shown < keepShown && shown < filtered.length) await renderMore();
+    })();
+  }
 }
 
 function memberHit(eff) {
@@ -278,6 +296,64 @@ async function hydrate(refs) {
     } catch (e) { /* cards render without briefs if a shard fails */ }
   }));
 }
+/* ---------------- the living count (polish wave, Oct 22, 2026) ----
+   The result number counts up to the total as results land — fast
+   (~650ms), ease-out, tabular figures, and purely cosmetic: it never
+   delays or blocks the results themselves, and under reduced motion
+   (or without rAF) the final value is set instantly. The animated
+   span is aria-hidden; the line's aria-label always carries the true
+   final value for assistive tech. */
+let lastCount = null;
+let countRaf = null;
+function animateCountNum(el, from, to) {
+  if (!el) return;
+  if (countRaf) cancelAnimationFrame(countRaf);
+  const reduced = window.matchMedia
+    && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (reduced || from === to || typeof requestAnimationFrame !== "function") {
+    el.textContent = fmtNum(to);
+    return;
+  }
+  const dur = 650, t0 = performance.now();
+  const step = (now) => {
+    const p = Math.min(1, (now - t0) / dur), e = 1 - Math.pow(1 - p, 3);
+    el.textContent = fmtNum(Math.round(from + (to - from) * e));
+    if (p < 1) countRaf = requestAnimationFrame(step);
+    else el.textContent = fmtNum(to);
+  };
+  countRaf = requestAnimationFrame(step);
+}
+function renderCount() {
+  const el = $("count");
+  if (!el) return;
+  const n = filtered.length;
+  const suffix = archiveLoading
+    ? " — the full archive is still loading; older years are on the way." : "";
+  if (!n) {
+    if (countRaf) cancelAnimationFrame(countRaf);
+    el.textContent = (archiveLoading
+      ? "No decisions in the years loaded so far"
+      : "No decisions match. Try fewer words, or clear a filter.") + suffix;
+    el.setAttribute("aria-label", el.textContent);
+    lastCount = 0;
+    return;
+  }
+  const from = lastCount == null ? 0 : lastCount;
+  el.setAttribute("aria-label",
+    `${fmtNum(n)} decision${n === 1 ? "" : "s"} found${suffix}`);
+  el.innerHTML = `<span class="count-num" aria-hidden="true">${fmtNum(from)}</span>`
+    + ` decision${n === 1 ? "" : "s"} found${suffix}`;
+  animateCountNum(el.querySelector(".count-num"), from, n);
+  lastCount = n;
+}
+/* Stream-time count refresh: recompute the filtered total and update
+   ONLY the count line. The cards on screen are the newest page and
+   cannot change while older years stream in behind them. */
+function refreshCountOnly() {
+  filtered = computeFiltered().list;
+  renderCount();
+}
+
 /* Entry point for every page render (applyFilters' first page and
    the Show more button alike): queue this generation's render behind
    any render still in flight, so appends land one at a time, in
@@ -323,18 +399,13 @@ async function renderPage(seq) {
     if (r.status) el.dataset.status = r.status;
     if (r.hv === 1) el.classList.add("has-vote");
   });
-  $("count").textContent = (filtered.length
-    ? `${fmtNum(filtered.length)} decision${filtered.length === 1 ? "" : "s"} found`
-    : (archiveLoading
-      ? "No decisions in the years loaded so far"
-      : "No decisions match. Try fewer words, or clear a filter."))
-    + (archiveLoading ? " — the full archive is still loading; older years are on the way." : "");
+  renderCount();
   $("pager").innerHTML = shown < filtered.length
     ? `<button class="btn secondary" id="more">Show more (${fmtNum(filtered.length - shown)} remaining)</button>`
     : "";
   const more = $("more");
   if (more) {
-    more.addEventListener("click", renderMore);
+    more.addEventListener("click", () => { userEngaged = true; renderMore(); });
     if (wasFocused) more.focus();
   } else if (wasFocused) {
     $("pager").setAttribute("tabindex", "-1");
@@ -362,8 +433,9 @@ function parseCurrentQuery() {
 }
 /* D1: the search index arrives per year. 2026 + 2025 land first
    (~0.41 MB gzip, a ~79% cut in the old blocking payload) and the
-   page works; the older years stream in behind it, re-running the
-   filters as each lands. The body/outcome selects are derived from
+   page works; the older years stream in behind it. (Polish wave,
+   Oct 22, 2026: the stream no longer re-runs the full render per
+   shard — see streamRest.) The body/outcome selects are derived from
    the full archive, so they fill when the stream completes — a
    selection made mid-stream is preserved across the refill. */
 const SEARCH_YEARS = ["2026", "2025", "2024", "2023", "2022", "2021",
@@ -389,7 +461,15 @@ async function streamRest() {
       const part = await loadJSON(dataPath(`search-${y}.json`));
       rows = rows.concat(part);
     } catch (e) { /* a missing year simply never joins the archive */ }
-    applyFilters();
+    /* Polish wave (Oct 22, 2026): this loop used to re-run the full
+       filter + sort + card render on EVERY shard — seven extra full
+       passes over a growing archive, the "clunky" load the owner
+       flagged. Until the visitor engages, the visible first page
+       cannot change (older years stream in behind it), so only the
+       count line updates — watch it climb. An engaged visitor keeps
+       the live re-filter, with their place in the list preserved. */
+    if (userEngaged) applyFilters({ keepShown: true });
+    else refreshCountOnly();
   }
   archiveLoading = false;
   fillBodyStatus();
@@ -421,30 +501,36 @@ async function init() {
 
   let debounce;
   $("q").addEventListener("input", () => {
+    userEngaged = true;
     clearTimeout(debounce);
     debounce = setTimeout(() => { parseCurrentQuery(); applyFilters(); }, 220);
   });
   /* Manual control changes clear the conflicting parsed pieces. */
   $("f-year").addEventListener("change", () => {
+    userEngaged = true;
     if (parsed) { parsed.yearFrom = null; parsed.yearTo = null; }
     applyFilters();
   });
   $("f-status").addEventListener("change", () => {
+    userEngaged = true;
     if (parsed) parsed.statusGroup = null;
     applyFilters();
   });
   $("f-ward").addEventListener("change", () => {
+    userEngaged = true;
     if (profileFilter) { profileFilter = null; renderProfileState(); }
     if (parsed) parsed.ward = null;
     applyFilters();
   });
   $("f-vote").addEventListener("change", () => {
+    userEngaged = true;
     if (parsed) { parsed.voteOnly = false; parsed.closeOnly = false; }
     applyFilters();
   });
-  $("f-body").addEventListener("change", applyFilters);
+  $("f-body").addEventListener("change", () => { userEngaged = true; applyFilters(); });
   const myward = $("myward");
   if (myward) myward.addEventListener("click", () => {
+    userEngaged = true;
     const w = (typeof demeProfileWard === "function") ? demeProfileWard() : null;
     if (w == null) return;
     if (parsed) parsed.ward = null;
@@ -453,6 +539,7 @@ async function init() {
   });
   const useProfile = $("use-profile");
   if (useProfile) useProfile.addEventListener("click", async () => {
+    userEngaged = true;
     if (typeof demeSignedOut === "function" && demeSignedOut()) return;
     const ward = VoteStore.getWard(), watchWard = VoteStore.getWatchWard();
     const ints = VoteStore.getInterests();

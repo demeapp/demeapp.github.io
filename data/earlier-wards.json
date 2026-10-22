@@ -1,0 +1,920 @@
+{
+ "a-a-heaps": {
+  "2006-2010": {
+   "ward": 35,
+   "wardName": "Scarborough Southwest"
+  }
+ },
+ "adam-giambrone": {
+  "2006-2010": {
+   "ward": 18,
+   "wardName": "Davenport"
+  }
+ },
+ "adam-vaughan": {
+  "2006-2010": {
+   "ward": 20,
+   "wardName": "Trinity—Spadina"
+  },
+  "2010-2014": {
+   "ward": 20,
+   "wardName": "Trinity—Spadina"
+  }
+ },
+ "ana-bailao": {
+  "2010-2014": {
+   "ward": 18,
+   "wardName": "Davenport"
+  },
+  "2014-2018": {
+   "ward": 18,
+   "wardName": "Davenport"
+  },
+  "2018-2022": {
+   "ward": 9,
+   "wardName": "Davenport"
+  }
+ },
+ "bill-saundercook": {
+  "2006-2010": {
+   "ward": 13,
+   "wardName": "Parkdale—High Park"
+  }
+ },
+ "brian-ashton": {
+  "2006-2010": {
+   "ward": 36,
+   "wardName": "Scarborough Southwest"
+  }
+ },
+ "case-ootes": {
+  "2006-2010": {
+   "ward": 29,
+   "wardName": "Toronto—Danforth"
+  }
+ },
+ "cesar-palacio": {
+  "2006-2010": {
+   "ward": 17,
+   "wardName": "Davenport"
+  },
+  "2010-2014": {
+   "ward": 17,
+   "wardName": "Davenport"
+  },
+  "2014-2018": {
+   "ward": 17,
+   "wardName": "Davenport"
+  }
+ },
+ "ceta-ramkhalawansingh": {
+  "2010-2014": {
+   "ward": 20,
+   "wardName": "Trinity—Spadina"
+  }
+ },
+ "chin-lee": {
+  "2006-2010": {
+   "ward": 41,
+   "wardName": "Scarborough—Rouge River"
+  },
+  "2010-2014": {
+   "ward": 41,
+   "wardName": "Scarborough—Rouge River"
+  },
+  "2014-2018": {
+   "ward": 41,
+   "wardName": "Scarborough—Rouge River"
+  }
+ },
+ "christin-carmichael-greb": {
+  "2014-2018": {
+   "ward": 16,
+   "wardName": "Eglinton—Lawrence"
+  }
+ },
+ "cliff-jenkins": {
+  "2006-2010": {
+   "ward": 25,
+   "wardName": "Don Valley West"
+  }
+ },
+ "cynthia-lai": {
+  "2018-2022": {
+   "ward": 23,
+   "wardName": "Scarborough North"
+  }
+ },
+ "david-miller": {
+  "2006-2010": {
+   "ward": null,
+   "wardName": null
+  }
+ },
+ "david-shiner": {
+  "2006-2010": {
+   "ward": 24,
+   "wardName": "Willowdale"
+  },
+  "2010-2014": {
+   "ward": 24,
+   "wardName": "Willowdale"
+  },
+  "2014-2018": {
+   "ward": 24,
+   "wardName": "Willowdale"
+  }
+ },
+ "denzil-minnan-wong": {
+  "2006-2010": {
+   "ward": 34,
+   "wardName": "Don Valley East"
+  },
+  "2010-2014": {
+   "ward": 34,
+   "wardName": "Don Valley East"
+  },
+  "2014-2018": {
+   "ward": 34,
+   "wardName": "Don Valley East"
+  },
+  "2018-2022": {
+   "ward": 16,
+   "wardName": "Don Valley East"
+  }
+ },
+ "doug-ford": {
+  "2010-2014": {
+   "ward": 2,
+   "wardName": "Etobicoke North"
+  }
+ },
+ "doug-holyday": {
+  "2006-2010": {
+   "ward": 3,
+   "wardName": "Etobicoke Centre"
+  },
+  "2010-2014": {
+   "ward": 3,
+   "wardName": "Etobicoke Centre"
+  }
+ },
+ "frank-di-giorgio": {
+  "2006-2010": {
+   "ward": 12,
+   "wardName": "York South—Weston"
+  },
+  "2010-2014": {
+   "ward": 12,
+   "wardName": "York South—Weston"
+  },
+  "2014-2018": {
+   "ward": 12,
+   "wardName": "York South—Weston"
+  }
+ },
+ "gary-crawford": {
+  "2010-2014": {
+   "ward": 36,
+   "wardName": "Scarborough Southwest"
+  },
+  "2014-2018": {
+   "ward": 36,
+   "wardName": "Scarborough Southwest"
+  },
+  "2018-2022": {
+   "ward": 20,
+   "wardName": "Scarborough Southwest"
+  },
+  "2022-2026": {
+   "ward": 20,
+   "wardName": "Scarborough Southwest"
+  }
+ },
+ "giorgio-mammoliti": {
+  "2006-2010": {
+   "ward": 7,
+   "wardName": "York West"
+  },
+  "2010-2014": {
+   "ward": 7,
+   "wardName": "York West"
+  },
+  "2014-2018": {
+   "ward": 7,
+   "wardName": "York West"
+  }
+ },
+ "glenn-de-baeremaeker": {
+  "2006-2010": {
+   "ward": 38,
+   "wardName": "Scarborough Centre"
+  },
+  "2010-2014": {
+   "ward": 38,
+   "wardName": "Scarborough Centre"
+  },
+  "2014-2018": {
+   "ward": 38,
+   "wardName": "Scarborough Centre"
+  }
+ },
+ "gloria-lindsay-luby": {
+  "2006-2010": {
+   "ward": 4,
+   "wardName": "Etobicoke Centre"
+  },
+  "2010-2014": {
+   "ward": 4,
+   "wardName": "Etobicoke Centre"
+  }
+ },
+ "howard-moscoe": {
+  "2006-2010": {
+   "ward": 15,
+   "wardName": "Eglinton—Lawrence"
+  }
+ },
+ "james-maloney": {
+  "2010-2014": {
+   "ward": 5,
+   "wardName": "Etobicoke—Lakeshore"
+  }
+ },
+ "janet-davis": {
+  "2006-2010": {
+   "ward": 31,
+   "wardName": "Beaches—East York"
+  },
+  "2010-2014": {
+   "ward": 31,
+   "wardName": "Beaches—East York"
+  },
+  "2014-2018": {
+   "ward": 31,
+   "wardName": "Beaches—East York"
+  }
+ },
+ "jaye-robinson": {
+  "2010-2014": {
+   "ward": 25,
+   "wardName": "Don Valley West"
+  },
+  "2014-2018": {
+   "ward": 25,
+   "wardName": "Don Valley West"
+  },
+  "2018-2022": {
+   "ward": 15,
+   "wardName": "Don Valley West"
+  },
+  "2022-2026": {
+   "ward": 15,
+   "wardName": "Don Valley West"
+  }
+ },
+ "jennifer-mckelvie": {
+  "2018-2022": {
+   "ward": 25,
+   "wardName": "Scarborough—Rouge Park"
+  },
+  "2022-2026": {
+   "ward": 25,
+   "wardName": "Scarborough—Rouge Park"
+  }
+ },
+ "jim-hart": {
+  "2014-2018": {
+   "ward": 44,
+   "wardName": "Scarborough East"
+  }
+ },
+ "jim-karygiannis": {
+  "2014-2018": {
+   "ward": 39,
+   "wardName": "Scarborough—Agincourt"
+  },
+  "2018-2022": {
+   "ward": 22,
+   "wardName": "Scarborough-Agincourt"
+  }
+ },
+ "joe-cressy": {
+  "2014-2018": {
+   "ward": 20,
+   "wardName": "Trinity—Spadina"
+  },
+  "2018-2022": {
+   "ward": 10,
+   "wardName": "Spadina–Fort York"
+  }
+ },
+ "joe-mihevc": {
+  "2006-2010": {
+   "ward": 21,
+   "wardName": "St. Paul's"
+  },
+  "2010-2014": {
+   "ward": 21,
+   "wardName": "St. Paul's"
+  },
+  "2014-2018": {
+   "ward": 21,
+   "wardName": "St. Paul's"
+  },
+  "2018-2022": {
+   "ward": 10,
+   "wardName": "Spadina–Fort York"
+  }
+ },
+ "joe-pantalone": {
+  "2006-2010": {
+   "ward": 19,
+   "wardName": "Trinity—Spadina"
+  }
+ },
+ "john-campbell": {
+  "2014-2018": {
+   "ward": 4,
+   "wardName": "Etobicoke Centre"
+  }
+ },
+ "john-filion": {
+  "2006-2010": {
+   "ward": 23,
+   "wardName": "Willowdale"
+  },
+  "2010-2014": {
+   "ward": 23,
+   "wardName": "Willowdale"
+  },
+  "2014-2018": {
+   "ward": 23,
+   "wardName": "Willowdale"
+  },
+  "2018-2022": {
+   "ward": 18,
+   "wardName": "Willowdale"
+  }
+ },
+ "john-parker": {
+  "2006-2010": {
+   "ward": 26,
+   "wardName": "Don Valley West"
+  },
+  "2010-2014": {
+   "ward": 26,
+   "wardName": "Don Valley West"
+  }
+ },
+ "john-tory": {
+  "2014-2018": {
+   "ward": null,
+   "wardName": null
+  },
+  "2018-2022": {
+   "ward": null,
+   "wardName": null
+  },
+  "2022-2026": {
+   "ward": null,
+   "wardName": null
+  }
+ },
+ "jonathan-tsao": {
+  "2014-2018": {
+   "ward": 33,
+   "wardName": "Don Valley East"
+  }
+ },
+ "josh-colle": {
+  "2010-2014": {
+   "ward": 15,
+   "wardName": "Eglinton—Lawrence"
+  },
+  "2014-2018": {
+   "ward": 15,
+   "wardName": "Eglinton—Lawrence"
+  }
+ },
+ "justin-j-di-ciano": {
+  "2014-2018": {
+   "ward": 5,
+   "wardName": "Etobicoke—Lakeshore"
+  }
+ },
+ "karen-stintz": {
+  "2006-2010": {
+   "ward": 16,
+   "wardName": "Eglinton—Lawrence"
+  },
+  "2010-2014": {
+   "ward": 16,
+   "wardName": "Eglinton—Lawrence"
+  }
+ },
+ "kristyn-wong-tam": {
+  "2010-2014": {
+   "ward": 27,
+   "wardName": "Toronto Centre—Rosedale"
+  },
+  "2014-2018": {
+   "ward": 27,
+   "wardName": "Toronto Centre—Rosedale"
+  },
+  "2018-2022": {
+   "ward": 13,
+   "wardName": "Toronto Centre"
+  }
+ },
+ "kyle-rae": {
+  "2006-2010": {
+   "ward": 27,
+   "wardName": "Toronto Centre—Rosedale"
+  }
+ },
+ "lucy-troisi": {
+  "2014-2018": {
+   "ward": 28,
+   "wardName": "Toronto Centre—Rosedale"
+  }
+ },
+ "maria-augimeri": {
+  "2006-2010": {
+   "ward": 9,
+   "wardName": "York Centre"
+  },
+  "2010-2014": {
+   "ward": 9,
+   "wardName": "York Centre"
+  },
+  "2014-2018": {
+   "ward": 9,
+   "wardName": "York Centre"
+  }
+ },
+ "mark-grimes": {
+  "2006-2010": {
+   "ward": 6,
+   "wardName": "Etobicoke—Lakeshore"
+  },
+  "2010-2014": {
+   "ward": 6,
+   "wardName": "Etobicoke—Lakeshore"
+  },
+  "2014-2018": {
+   "ward": 6,
+   "wardName": "Etobicoke—Lakeshore"
+  },
+  "2018-2022": {
+   "ward": 3,
+   "wardName": "Etobicoke—Lakeshore"
+  }
+ },
+ "mary-fragedakis": {
+  "2010-2014": {
+   "ward": 29,
+   "wardName": "Toronto—Danforth"
+  },
+  "2014-2018": {
+   "ward": 29,
+   "wardName": "Toronto—Danforth"
+  }
+ },
+ "mary-margaret-mcmahon": {
+  "2010-2014": {
+   "ward": 32,
+   "wardName": "Beaches—East York"
+  },
+  "2014-2018": {
+   "ward": 32,
+   "wardName": "Beaches—East York"
+  }
+ },
+ "michael-ford": {
+  "2014-2018": {
+   "ward": 2,
+   "wardName": "Etobicoke North"
+  },
+  "2018-2022": {
+   "ward": 1,
+   "wardName": "Etobicoke North"
+  }
+ },
+ "michael-walker": {
+  "2006-2010": {
+   "ward": 22,
+   "wardName": "St. Paul's"
+  }
+ },
+ "michelle-berardinetti": {
+  "2010-2014": {
+   "ward": 35,
+   "wardName": "Scarborough Southwest"
+  },
+  "2014-2018": {
+   "ward": 35,
+   "wardName": "Scarborough Southwest"
+  }
+ },
+ "michelle-holland": {
+  "2014-2018": {
+   "ward": 35,
+   "wardName": "Scarborough Southwest"
+  }
+ },
+ "miganoush-megardichian": {
+  "2014-2018": {
+   "ward": 41,
+   "wardName": "Scarborough—Rouge River"
+  }
+ },
+ "mike-del-grande": {
+  "2006-2010": {
+   "ward": 39,
+   "wardName": "Scarborough—Agincourt"
+  },
+  "2010-2014": {
+   "ward": 39,
+   "wardName": "Scarborough—Agincourt"
+  }
+ },
+ "mike-feldman": {
+  "2006-2010": {
+   "ward": 10,
+   "wardName": "York Centre"
+  }
+ },
+ "mike-layton": {
+  "2010-2014": {
+   "ward": 19,
+   "wardName": "Trinity—Spadina"
+  },
+  "2014-2018": {
+   "ward": 19,
+   "wardName": "Trinity—Spadina"
+  },
+  "2018-2022": {
+   "ward": 11,
+   "wardName": "University—Rosedale"
+  }
+ },
+ "norman-kelly": {
+  "2006-2010": {
+   "ward": 40,
+   "wardName": "Scarborough—Agincourt"
+  },
+  "2010-2014": {
+   "ward": 40,
+   "wardName": "Scarborough—Agincourt"
+  },
+  "2014-2018": {
+   "ward": 40,
+   "wardName": "Scarborough—Agincourt"
+  }
+ },
+ "pam-mcconnell": {
+  "2006-2010": {
+   "ward": 28,
+   "wardName": "Toronto Centre—Rosedale"
+  },
+  "2010-2014": {
+   "ward": 28,
+   "wardName": "Toronto Centre—Rosedale"
+  },
+  "2014-2018": {
+   "ward": 28,
+   "wardName": "Toronto Centre—Rosedale"
+  }
+ },
+ "peter-leon": {
+  "2010-2014": {
+   "ward": 3,
+   "wardName": "Etobicoke Centre"
+  }
+ },
+ "peter-milczyn": {
+  "2006-2010": {
+   "ward": 5,
+   "wardName": "Etobicoke—Lakeshore"
+  },
+  "2010-2014": {
+   "ward": 5,
+   "wardName": "Etobicoke—Lakeshore"
+  }
+ },
+ "raymond-cho": {
+  "2006-2010": {
+   "ward": 42,
+   "wardName": "Scarborough—Rouge River"
+  },
+  "2010-2014": {
+   "ward": 42,
+   "wardName": "Scarborough—Rouge River"
+  },
+  "2014-2018": {
+   "ward": 42,
+   "wardName": "Scarborough—Rouge River"
+  }
+ },
+ "rob-ford": {
+  "2006-2010": {
+   "ward": 2,
+   "wardName": "Etobicoke North"
+  },
+  "2010-2014": {
+   "ward": null,
+   "wardName": null
+  },
+  "2014-2018": {
+   "ward": 2,
+   "wardName": "Etobicoke North"
+  }
+ },
+ "robin-buxton-potts": {
+  "2018-2022": {
+   "ward": 13,
+   "wardName": "Toronto Centre"
+  }
+ },
+ "ron-moeser": {
+  "2006-2010": {
+   "ward": 44,
+   "wardName": "Scarborough East"
+  },
+  "2010-2014": {
+   "ward": 44,
+   "wardName": "Scarborough East"
+  },
+  "2014-2018": {
+   "ward": 44,
+   "wardName": "Scarborough East"
+  }
+ },
+ "rose-milczyn": {
+  "2018-2022": {
+   "ward": 1,
+   "wardName": "Etobicoke North"
+  }
+ },
+ "sandra-bussin": {
+  "2006-2010": {
+   "ward": 32,
+   "wardName": "Beaches—East York"
+  }
+ },
+ "sarah-doucette": {
+  "2010-2014": {
+   "ward": 13,
+   "wardName": "Parkdale—High Park"
+  },
+  "2014-2018": {
+   "ward": 13,
+   "wardName": "Parkdale—High Park"
+  }
+ },
+ "suzan-hall": {
+  "2006-2010": {
+   "ward": 1,
+   "wardName": "Etobicoke North"
+  }
+ },
+ "anthony-perruzza": {
+  "2006-2010": {
+   "ward": 8,
+   "wardName": "York West"
+  },
+  "2010-2014": {
+   "ward": 8,
+   "wardName": "York West"
+  },
+  "2014-2018": {
+   "ward": 8,
+   "wardName": "York West"
+  },
+  "2018-2022": {
+   "ward": 7,
+   "wardName": "Humber River-Black Creek"
+  },
+  "2022-2026": {
+   "ward": 7,
+   "wardName": "Humber River-Black Creek"
+  }
+ },
+ "frances-nunziata": {
+  "2006-2010": {
+   "ward": 11,
+   "wardName": "York South—Weston"
+  },
+  "2010-2014": {
+   "ward": 11,
+   "wardName": "York South—Weston"
+  },
+  "2014-2018": {
+   "ward": 11,
+   "wardName": "York South—Weston"
+  },
+  "2018-2022": {
+   "ward": 5,
+   "wardName": "York South—Weston"
+  },
+  "2022-2026": {
+   "ward": 5,
+   "wardName": "York South—Weston"
+  }
+ },
+ "gord-perks": {
+  "2006-2010": {
+   "ward": 14,
+   "wardName": "Parkdale—High Park"
+  },
+  "2010-2014": {
+   "ward": 14,
+   "wardName": "Parkdale—High Park"
+  },
+  "2014-2018": {
+   "ward": 14,
+   "wardName": "Parkdale—High Park"
+  },
+  "2018-2022": {
+   "ward": 4,
+   "wardName": "Parkdale—High Park"
+  },
+  "2022-2026": {
+   "ward": 4,
+   "wardName": "Parkdale—High Park"
+  }
+ },
+ "james-pasternak": {
+  "2010-2014": {
+   "ward": 10,
+   "wardName": "York Centre"
+  },
+  "2014-2018": {
+   "ward": 10,
+   "wardName": "York Centre"
+  },
+  "2018-2022": {
+   "ward": 6,
+   "wardName": "York Centre"
+  },
+  "2022-2026": {
+   "ward": 6,
+   "wardName": "York Centre"
+  }
+ },
+ "josh-matlow": {
+  "2010-2014": {
+   "ward": 22,
+   "wardName": "St. Paul's"
+  },
+  "2014-2018": {
+   "ward": 22,
+   "wardName": "St. Paul's"
+  },
+  "2018-2022": {
+   "ward": 12,
+   "wardName": "Toronto—St. Paul's"
+  },
+  "2022-2026": {
+   "ward": 12,
+   "wardName": "Toronto—St. Paul's"
+  }
+ },
+ "michael-thompson": {
+  "2006-2010": {
+   "ward": 37,
+   "wardName": "Scarborough Centre"
+  },
+  "2010-2014": {
+   "ward": 37,
+   "wardName": "Scarborough Centre"
+  },
+  "2014-2018": {
+   "ward": 37,
+   "wardName": "Scarborough Centre"
+  },
+  "2018-2022": {
+   "ward": 21,
+   "wardName": "Scarborough Centre"
+  },
+  "2022-2026": {
+   "ward": 21,
+   "wardName": "Scarborough Centre"
+  }
+ },
+ "paul-ainslie": {
+  "2006-2010": {
+   "ward": 43,
+   "wardName": "Scarborough East"
+  },
+  "2010-2014": {
+   "ward": 43,
+   "wardName": "Scarborough East"
+  },
+  "2014-2018": {
+   "ward": 43,
+   "wardName": "Scarborough East"
+  },
+  "2018-2022": {
+   "ward": 24,
+   "wardName": "Scarborough—Guildwood"
+  },
+  "2022-2026": {
+   "ward": 24,
+   "wardName": "Scarborough—Guildwood"
+  }
+ },
+ "paula-fletcher": {
+  "2006-2010": {
+   "ward": 30,
+   "wardName": "Toronto—Danforth"
+  },
+  "2010-2014": {
+   "ward": 30,
+   "wardName": "Toronto—Danforth"
+  },
+  "2014-2018": {
+   "ward": 30,
+   "wardName": "Toronto—Danforth"
+  },
+  "2018-2022": {
+   "ward": 14,
+   "wardName": "Toronto—Danforth"
+  },
+  "2022-2026": {
+   "ward": 14,
+   "wardName": "Toronto—Danforth"
+  }
+ },
+ "shelley-carroll": {
+  "2006-2010": {
+   "ward": 33,
+   "wardName": "Don Valley East"
+  },
+  "2010-2014": {
+   "ward": 33,
+   "wardName": "Don Valley East"
+  },
+  "2014-2018": {
+   "ward": 33,
+   "wardName": "Don Valley East"
+  },
+  "2018-2022": {
+   "ward": 17,
+   "wardName": "Don Valley North"
+  },
+  "2022-2026": {
+   "ward": 17,
+   "wardName": "Don Valley North"
+  }
+ },
+ "stephen-holyday": {
+  "2014-2018": {
+   "ward": 3,
+   "wardName": "Etobicoke Centre"
+  },
+  "2018-2022": {
+   "ward": 2,
+   "wardName": "Etobicoke Centre"
+  },
+  "2022-2026": {
+   "ward": 2,
+   "wardName": "Etobicoke Centre"
+  }
+ },
+ "jon-burnside": {
+  "2014-2018": {
+   "ward": 26,
+   "wardName": "Don Valley West"
+  },
+  "2022-2026": {
+   "ward": 16,
+   "wardName": "Don Valley East"
+  }
+ },
+ "vincent-crisanti": {
+  "2010-2014": {
+   "ward": 1,
+   "wardName": "Etobicoke North"
+  },
+  "2014-2018": {
+   "ward": 1,
+   "wardName": "Etobicoke North"
+  },
+  "2022-2026": {
+   "ward": 1,
+   "wardName": "Etobicoke North"
+  }
+ },
+ "neethan-shan": {
+  "2014-2018": {
+   "ward": 42,
+   "wardName": "Scarborough—Rouge River"
+  },
+  "2022-2026": {
+   "ward": 25,
+   "wardName": "Scarborough—Rouge Park"
+  }
+ }
+}

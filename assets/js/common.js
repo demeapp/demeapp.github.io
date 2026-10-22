@@ -216,10 +216,15 @@ function memberStatsHTML(person) {
 }
 
 /* ---------------- member avatars ----------------
-   Official portraits exist for the 25 members in PHOTO_SLUGS (the
-   files live in assets/headshots/, named by slug). Everyone else —
-   and any photo that fails to load — falls back to the member's
-   initials on a navy disc, the old build's pattern. */
+   Official portraits exist for the members in PHOTO_SLUGS (the
+   files live in assets/headshots/, named by slug): all 26 current
+   members, plus 21 earlier members whose portraits come from the
+   City of Toronto Archives' official councillor portrait series
+   (Fonds 219, Series 2311, via Wikimedia Commons — polish wave,
+   Oct 22, 2026; full provenance in the wave's D/E report).
+   Everyone else — and any photo that fails to load — falls back
+   to the member's initials on a navy disc, the old build's
+   pattern. */
 const PHOTO_SLUGS = new Set(["alejandra-bravo", "amber-morley",
   "anthony-perruzza", "ausma-malik", "brad-bradford", "chris-moise",
   "dianne-saxe", "frances-nunziata", "gord-perks", "jamaal-myers",
@@ -227,7 +232,13 @@ const PHOTO_SLUGS = new Set(["alejandra-bravo", "amber-morley",
   "michael-thompson", "mike-colle", "neethan-shan", "nick-mantas", "olivia-chow",
   "parthi-kandavel", "paul-ainslie", "paula-fletcher",
   "rachel-chernos-lin", "shelley-carroll", "stephen-holyday",
-  "vincent-crisanti"]);
+  "vincent-crisanti",
+  "adam-vaughan", "ana-bailao", "chin-lee", "doug-ford",
+  "doug-holyday", "frank-di-giorgio", "gary-crawford", "janet-davis",
+  "jaye-robinson", "joe-mihevc", "john-parker", "josh-colle",
+  "karen-stintz", "kristyn-wong-tam", "maria-augimeri", "mark-grimes",
+  "mary-fragedakis", "mary-margaret-mcmahon", "mike-layton",
+  "norman-kelly", "sarah-doucette"]);
 const initialsOf = (name) => String(name || "").split(/\s+/)
   .filter(Boolean).slice(0, 2).map((w) => w.charAt(0)).join("").toUpperCase();
 function avatarHTML(person, size = "") {

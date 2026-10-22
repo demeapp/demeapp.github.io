@@ -481,9 +481,32 @@ html.js .statband:empty { min-height: 8.2rem; }
 .checkline { display: flex; gap: .6rem; align-items: center; min-height: 44px; font-size: .98rem; }
 .checkline input { width: 22px; height: 22px; accent-color: var(--bronze-dark); }
 .resultcount { color: var(--ink-soft); margin: 1.4rem 0 1rem; }
+/* Living count (polish wave, Oct 22, 2026): the result number counts
+   up as results land, and a quiet pulse + line beside it says Deme is
+   still keeping count. The pulse is the only motion, and it stops
+   under reduced motion. The count itself is honest — it changes when
+   the archive grows, never on a timer. */
+.count-num { font-weight: 800; font-variant-numeric: tabular-nums; }
+.counting-note {
+  display: flex; align-items: center; gap: .5rem;
+  color: var(--ink-soft); font-size: .95rem; margin: .8rem 0 0;
+}
+.counting-note.on-dark { color: #9AD8BE; }
+.pulse-dot {
+  flex: none; width: 8px; height: 8px; border-radius: 50%;
+  background: var(--bronze);
+}
+@media (prefers-reduced-motion: no-preference) {
+  .pulse-dot { animation: deme-pulse 2.4s ease-out infinite; }
+}
+@keyframes deme-pulse {
+  0% { box-shadow: 0 0 0 0 rgba(47,191,143,.45); }
+  70% { box-shadow: 0 0 0 7px rgba(47,191,143,0); }
+  100% { box-shadow: 0 0 0 0 rgba(47,191,143,0); }
+}
 
 /* ---------- councillors ---------- */
-.people { display: grid; gap: 1rem; grid-template-columns: 1fr; }
+.people { display: grid; gap: 1.3rem; grid-template-columns: 1fr; }
 @media (min-width: 720px) { .people { grid-template-columns: 1fr 1fr; } }
 @media (min-width: 1020px) { .people { grid-template-columns: 1fr 1fr 1fr; } }
 /* Restyled Oct 20, 2026 (owner: the flat tiles "look boring") —
@@ -511,18 +534,20 @@ html.js .statband:empty { min-height: 8.2rem; }
 .person .ward { color: var(--bronze-dark); font-weight: 600; font-size: .92rem; margin: 0; }
 .person .onestat { color: var(--ink-soft); font-size: .98rem; margin: 0; }
 .member-stats {
-  display: grid; grid-template-columns: 1fr 1fr; gap: .85rem 1rem;
-  padding: 1rem 1.3rem 1.25rem; flex: 1; align-content: start;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 1rem 1.1rem;
+  padding: 1.05rem 1.35rem 1.3rem; flex: 1; align-content: start;
 }
 .member-stats > div { min-width: 0; }
 .member-stats span {
   display: block; color: var(--ink-faint); font-size: .76rem; font-weight: 700;
   letter-spacing: .06em; text-transform: uppercase;
 }
-.member-stats strong { display: block; margin-top: .2rem; font-size: 1.22rem; line-height: 1.25; color: var(--navy); }
-/* Attendance meter: mint fill on a pale mint track, under the figure. */
+.member-stats strong { display: block; margin-top: .2rem; font-size: 1.13rem; line-height: 1.25; color: var(--ink); }
+/* Attendance meter: mint fill on a pale mint track, under the figure.
+   Polish wave (Oct 22, 2026): slimmed from 6px to 4px — one calm line,
+   not a stripe repeated down the grid. */
 .att-meter {
-  height: 6px; margin-top: .5rem;
+  height: 4px; margin-top: .45rem;
   background: var(--mint-light); border-radius: 999px; overflow: hidden;
 }
 .att-fill { height: 100%; background: var(--bronze); border-radius: 999px; }
@@ -1012,21 +1037,28 @@ html.js .entry-shell { min-height: 25.4rem; }
 .avatar.sm { width: 40px; height: 40px; font-size: .85rem; }
 
 /* Directory person cards with photo + recent votes */
-/* Card header: thin mint rule underneath; the Mayor's card swaps the
-   white header for a navy band so it reads first in the grid. */
+/* Card header: hairline divider underneath (polish wave, Oct 22 —
+   see .person-top); the Mayor's card swaps the white header for a
+   navy band so it reads first in the grid. */
+/* Polish wave (Oct 22, 2026): the owner found the grid "repetitive
+   and dizzy" — the same strong mint rule + ringed headshot + bold bar
+   repeated identically on every card. The information is unchanged;
+   the presentation calms down: a hairline divider instead of the 3px
+   mint rule, a soft ring on the headshot, more air between cards,
+   quieter stat numerals. The Mayor's navy band stays. */
 .person-top {
   display: flex; gap: 1rem; align-items: center;
-  padding: 1.2rem 1.3rem 1.05rem;
-  border-bottom: 3px solid var(--bronze);
+  padding: 1.25rem 1.35rem 1.1rem;
+  border-bottom: 1px solid var(--line-soft);
 }
 .person-top h3 { margin: 0; }
 .person-top .ward { margin: 0; }
 .person .avatar {
   width: 72px; height: 72px; font-size: 1.35rem;
-  border: 3px solid var(--bronze);
-  box-shadow: 0 0 0 3px var(--mint-light);
+  border: 2px solid var(--mint-light);
+  box-shadow: 0 0 0 1px var(--line-soft);
 }
-.person.is-mayor .person-top { background: var(--navy); }
+.person.is-mayor .person-top { background: var(--navy); border-bottom-color: rgba(255,255,255,.16); }
 .person.is-mayor h3 a { color: #fff; }
 .person.is-mayor .ward { color: #94E5C9; }
 .recent-votes { list-style: none; margin: .8rem 0 0; padding: .7rem 0 0; border-top: 1px solid var(--line-soft); display: grid; gap: .45rem; }

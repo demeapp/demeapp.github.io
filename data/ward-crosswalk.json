@@ -1,0 +1,568 @@
+{
+ "eras": {
+  "2006-2018": {
+   "system": "44 wards",
+   "wards": [
+    {
+     "ward": 1,
+     "wardName": "Etobicoke North"
+    },
+    {
+     "ward": 2,
+     "wardName": "Etobicoke North"
+    },
+    {
+     "ward": 3,
+     "wardName": "Etobicoke Centre"
+    },
+    {
+     "ward": 4,
+     "wardName": "Etobicoke Centre"
+    },
+    {
+     "ward": 5,
+     "wardName": "Etobicoke—Lakeshore"
+    },
+    {
+     "ward": 6,
+     "wardName": "Etobicoke—Lakeshore"
+    },
+    {
+     "ward": 7,
+     "wardName": "York West"
+    },
+    {
+     "ward": 8,
+     "wardName": "York West"
+    },
+    {
+     "ward": 9,
+     "wardName": "York Centre"
+    },
+    {
+     "ward": 10,
+     "wardName": "York Centre"
+    },
+    {
+     "ward": 11,
+     "wardName": "York South—Weston"
+    },
+    {
+     "ward": 12,
+     "wardName": "York South—Weston"
+    },
+    {
+     "ward": 13,
+     "wardName": "Parkdale—High Park"
+    },
+    {
+     "ward": 14,
+     "wardName": "Parkdale—High Park"
+    },
+    {
+     "ward": 15,
+     "wardName": "Eglinton—Lawrence"
+    },
+    {
+     "ward": 16,
+     "wardName": "Eglinton—Lawrence"
+    },
+    {
+     "ward": 17,
+     "wardName": "Davenport"
+    },
+    {
+     "ward": 18,
+     "wardName": "Davenport"
+    },
+    {
+     "ward": 19,
+     "wardName": "Trinity—Spadina"
+    },
+    {
+     "ward": 20,
+     "wardName": "Trinity—Spadina"
+    },
+    {
+     "ward": 21,
+     "wardName": "St. Paul's"
+    },
+    {
+     "ward": 22,
+     "wardName": "St. Paul's"
+    },
+    {
+     "ward": 23,
+     "wardName": "Willowdale"
+    },
+    {
+     "ward": 24,
+     "wardName": "Willowdale"
+    },
+    {
+     "ward": 25,
+     "wardName": "Don Valley West"
+    },
+    {
+     "ward": 26,
+     "wardName": "Don Valley West"
+    },
+    {
+     "ward": 27,
+     "wardName": "Toronto Centre—Rosedale"
+    },
+    {
+     "ward": 28,
+     "wardName": "Toronto Centre—Rosedale"
+    },
+    {
+     "ward": 29,
+     "wardName": "Toronto—Danforth"
+    },
+    {
+     "ward": 30,
+     "wardName": "Toronto—Danforth"
+    },
+    {
+     "ward": 31,
+     "wardName": "Beaches—East York"
+    },
+    {
+     "ward": 32,
+     "wardName": "Beaches—East York"
+    },
+    {
+     "ward": 33,
+     "wardName": "Don Valley East"
+    },
+    {
+     "ward": 34,
+     "wardName": "Don Valley East"
+    },
+    {
+     "ward": 35,
+     "wardName": "Scarborough Southwest"
+    },
+    {
+     "ward": 36,
+     "wardName": "Scarborough Southwest"
+    },
+    {
+     "ward": 37,
+     "wardName": "Scarborough Centre"
+    },
+    {
+     "ward": 38,
+     "wardName": "Scarborough Centre"
+    },
+    {
+     "ward": 39,
+     "wardName": "Scarborough—Agincourt"
+    },
+    {
+     "ward": 40,
+     "wardName": "Scarborough—Agincourt"
+    },
+    {
+     "ward": 41,
+     "wardName": "Scarborough—Rouge River"
+    },
+    {
+     "ward": 42,
+     "wardName": "Scarborough—Rouge River"
+    },
+    {
+     "ward": 43,
+     "wardName": "Scarborough East"
+    },
+    {
+     "ward": 44,
+     "wardName": "Scarborough East"
+    }
+   ]
+  },
+  "2018-2026": {
+   "system": "25 wards",
+   "wards": [
+    {
+     "ward": 1,
+     "wardName": "Etobicoke North"
+    },
+    {
+     "ward": 2,
+     "wardName": "Etobicoke Centre"
+    },
+    {
+     "ward": 3,
+     "wardName": "Etobicoke—Lakeshore"
+    },
+    {
+     "ward": 4,
+     "wardName": "Parkdale—High Park"
+    },
+    {
+     "ward": 5,
+     "wardName": "York South—Weston"
+    },
+    {
+     "ward": 6,
+     "wardName": "York Centre"
+    },
+    {
+     "ward": 7,
+     "wardName": "Humber River-Black Creek"
+    },
+    {
+     "ward": 8,
+     "wardName": "Eglinton-Lawrence"
+    },
+    {
+     "ward": 9,
+     "wardName": "Davenport"
+    },
+    {
+     "ward": 10,
+     "wardName": "Spadina–Fort York"
+    },
+    {
+     "ward": 11,
+     "wardName": "University—Rosedale"
+    },
+    {
+     "ward": 12,
+     "wardName": "Toronto—St. Paul's"
+    },
+    {
+     "ward": 13,
+     "wardName": "Toronto Centre"
+    },
+    {
+     "ward": 14,
+     "wardName": "Toronto—Danforth"
+    },
+    {
+     "ward": 15,
+     "wardName": "Don Valley West"
+    },
+    {
+     "ward": 16,
+     "wardName": "Don Valley East"
+    },
+    {
+     "ward": 17,
+     "wardName": "Don Valley North"
+    },
+    {
+     "ward": 18,
+     "wardName": "Willowdale"
+    },
+    {
+     "ward": 19,
+     "wardName": "Beaches-East York"
+    },
+    {
+     "ward": 20,
+     "wardName": "Scarborough Southwest"
+    },
+    {
+     "ward": 21,
+     "wardName": "Scarborough Centre"
+    },
+    {
+     "ward": 22,
+     "wardName": "Scarborough-Agincourt"
+    },
+    {
+     "ward": 23,
+     "wardName": "Scarborough North"
+    },
+    {
+     "ward": 24,
+     "wardName": "Scarborough—Guildwood"
+    },
+    {
+     "ward": 25,
+     "wardName": "Scarborough—Rouge Park"
+    }
+   ]
+  }
+ },
+ "predecessors": {
+  "1": [
+   1,
+   2
+  ],
+  "2": [
+   3,
+   4
+  ],
+  "3": [
+   5,
+   6
+  ],
+  "4": [
+   13,
+   14
+  ],
+  "5": [
+   11,
+   12
+  ],
+  "6": [
+   9,
+   10
+  ],
+  "7": [
+   7,
+   8
+  ],
+  "8": [
+   15,
+   16
+  ],
+  "9": [
+   17,
+   18
+  ],
+  "10": [
+   14,
+   19,
+   20,
+   28
+  ],
+  "11": [
+   19,
+   20,
+   27
+  ],
+  "12": [
+   21,
+   22
+  ],
+  "13": [
+   27,
+   28
+  ],
+  "14": [
+   29,
+   30,
+   32
+  ],
+  "15": [
+   25,
+   26
+  ],
+  "16": [
+   26,
+   33,
+   34
+  ],
+  "17": [
+   24,
+   33,
+   34
+  ],
+  "18": [
+   23,
+   24
+  ],
+  "19": [
+   31,
+   32
+  ],
+  "20": [
+   35,
+   36
+  ],
+  "21": [
+   37,
+   38
+  ],
+  "22": [
+   39,
+   40
+  ],
+  "23": [
+   39,
+   40,
+   41,
+   42
+  ],
+  "24": [
+   36,
+   43,
+   44
+  ],
+  "25": [
+   41,
+   42
+  ]
+ },
+ "successors": {
+  "1": [
+   1
+  ],
+  "2": [
+   1
+  ],
+  "3": [
+   2
+  ],
+  "4": [
+   2
+  ],
+  "5": [
+   3
+  ],
+  "6": [
+   3
+  ],
+  "7": [
+   7
+  ],
+  "8": [
+   7
+  ],
+  "9": [
+   6
+  ],
+  "10": [
+   6
+  ],
+  "11": [
+   5
+  ],
+  "12": [
+   5
+  ],
+  "13": [
+   4
+  ],
+  "14": [
+   4,
+   10
+  ],
+  "15": [
+   8
+  ],
+  "16": [
+   8
+  ],
+  "17": [
+   9
+  ],
+  "18": [
+   9
+  ],
+  "19": [
+   10,
+   11
+  ],
+  "20": [
+   10,
+   11
+  ],
+  "21": [
+   12
+  ],
+  "22": [
+   12
+  ],
+  "23": [
+   18
+  ],
+  "24": [
+   17,
+   18
+  ],
+  "25": [
+   15
+  ],
+  "26": [
+   15,
+   16
+  ],
+  "27": [
+   11,
+   13
+  ],
+  "28": [
+   10,
+   13
+  ],
+  "29": [
+   14
+  ],
+  "30": [
+   14
+  ],
+  "31": [
+   19
+  ],
+  "32": [
+   14,
+   19
+  ],
+  "33": [
+   16,
+   17
+  ],
+  "34": [
+   16,
+   17
+  ],
+  "35": [
+   20
+  ],
+  "36": [
+   20,
+   24
+  ],
+  "37": [
+   21
+  ],
+  "38": [
+   21
+  ],
+  "39": [
+   22,
+   23
+  ],
+  "40": [
+   22,
+   23
+  ],
+  "41": [
+   23,
+   25
+  ],
+  "42": [
+   23,
+   25
+  ],
+  "43": [
+   24
+  ],
+  "44": [
+   24
+  ]
+ },
+ "manyToManyOldWards": [
+  14,
+  19,
+  20,
+  24,
+  26,
+  27,
+  28,
+  32,
+  33,
+  34,
+  36,
+  39,
+  40,
+  41,
+  42
+ ],
+ "notes": "Rough area correspondence only — ward boundaries were redrawn in 2018 and numbers were reused for different areas. Predecessor/successor lists describe the old wards whose area a current ward roughly covers (and vice versa), not an exact split. Downtown and Don Valley / Scarborough North / Scarborough-Guildwood cases are many-to-many; see report for sources."
+}

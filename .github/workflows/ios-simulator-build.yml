@@ -27,6 +27,9 @@ jobs:
       - name: Show Xcode version
         run: xcodebuild -version
 
+      - name: Icon alpha check (sips)
+        run: sips -g hasAlpha native/ios/App/App/Assets.xcassets/AppIcon.appiconset/AppIcon-512@2x.png
+
       - name: Install native dependencies
         working-directory: native
         run: npm ci
@@ -50,3 +53,34 @@ jobs:
             -destination 'generic/platform=iOS Simulator' \
             CODE_SIGNING_ALLOWED=NO \
             build
+
+      - name: Simulator launch test
+        working-directory: native
+        run: |
+          UDID=$(xcrun simctl list devices available | awk -F '[()]' '/iPhone/ {print $2; exit}')
+          echo "Simulator UDID: $UDID"
+          xcrun simctl boot "$UDID" || true
+          xcrun simctl bootstatus "$UDID" -b
+          xcodebuild -project ios/App/App.xcodeproj -scheme App -configuration Debug -destination "platform=iOS Simulator,id=$UDID" -derivedDataPath "$PWD/build/DerivedData" CODE_SIGNING_ALLOWED=NO build
+          APP_PATH="$PWD/build/DerivedData/Build/Products/Debug-iphonesimulator/App.app"
+          echo "App: $APP_PATH"
+          xcrun simctl install "$UDID" "$APP_PATH"
+          xcrun simctl launch "$UDID" io.github.demeapp.deme | tee sim-launch.log
+          sleep 8
+          xcrun simctl io "$UDID" screenshot deme-sim-1-splash.png
+          sleep 20
+          xcrun simctl io "$UDID" screenshot deme-sim-2-loaded.png
+          xcrun simctl spawn "$UDID" log show --style compact --last 3m --predicate 'process == "App"' > sim-log.txt 2>&1 || true
+          xcrun simctl terminate "$UDID" io.github.demeapp.deme || true
+
+      - name: Upload simulator evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: deme-ios-simulator-evidence
+          path: |
+            native/deme-sim-1-splash.png
+            native/deme-sim-2-loaded.png
+            native/sim-launch.log
+            native/sim-log.txt
+          if-no-files-found: warn

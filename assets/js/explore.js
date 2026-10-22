@@ -316,7 +316,10 @@ function animateCountNum(el, from, to) {
   }
   const dur = 650, t0 = performance.now();
   const step = (now) => {
-    const p = Math.min(1, (now - t0) / dur), e = 1 - Math.pow(1 - p, 3);
+    /* Lower clamp as in animateCount: a first frame timestamped
+       before t0 must not ease below the start value. */
+    const p = Math.min(1, Math.max(0, (now - t0) / dur)),
+      e = 1 - Math.pow(1 - p, 3);
     el.textContent = fmtNum(Math.round(from + (to - from) * e));
     if (p < 1) countRaf = requestAnimationFrame(step);
     else el.textContent = fmtNum(to);

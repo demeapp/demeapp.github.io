@@ -254,7 +254,7 @@ function renderProfileChrome() {
     if (accountsLive()) {
       setSetupVisible(false);
       summary.innerHTML = `<p class="small" style="margin:0">Just
-        looking for your councillor?
+        looking for your representative?
         <a href="councillors.html#ward-lookup">Find them by postal
         code in the directory</a>.</p>`;
       return;
@@ -263,8 +263,8 @@ function renderProfileChrome() {
     summary.innerHTML = `<h2 style="font-size:1.25rem">Your profile</h2>
       <p style="max-width:44rem;margin:0">Your ward is part of your
       account profile — it's set when you create your account, so
-      your councillor's votes can be lined up against your picks.
-      Looking for your councillor right now?
+      your representative's votes can be lined up against your picks.
+      Looking for your representative right now?
       <a href="councillors.html#ward-lookup">Find them by postal
       code in the directory</a>.</p>`;
     return;
@@ -392,7 +392,7 @@ function weighInHTML(u) {
         <h3>Sign in to weigh in</h3>
         <p>Sign in to weigh in — your picks save to your account, and
         we'll notify you when your voting card is ready: how the vote
-        went, how your councillor voted, and where you stand — on any
+        went, how your representative voted, and where you stand — on any
         device.</p>
         <p style="margin:.6rem 0 0"><button class="btn gate-signin"
           type="button" data-ref="${esc(u.ref)}">Sign in or create

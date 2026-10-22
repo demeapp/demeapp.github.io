@@ -7,14 +7,16 @@
     "node": ">=22"
   },
   "scripts": {
-    "sync:web": "node scripts/sync-web.mjs",
-    "sync": "node scripts/sync-web.mjs && node scripts/cap-sync.mjs bundled",
+    "sync:web": "node scripts/sync-web.mjs live",
+    "sync": "node scripts/sync-web.mjs live && node scripts/cap-sync.mjs live",
     "add:android": "npx cap add android",
     "add:ios": "npx cap add ios",
     "assets": "npx capacitor-assets generate",
     "open:android": "npx cap open android",
     "open:ios": "npx cap open ios",
-    "sync:live": "node scripts/sync-web.mjs && node scripts/cap-sync.mjs live"
+    "sync:live": "node scripts/sync-web.mjs live && node scripts/cap-sync.mjs live",
+    "sync:web:bundled": "node scripts/sync-web.mjs bundled",
+    "sync:bundled": "node scripts/sync-web.mjs bundled && node scripts/cap-sync.mjs bundled"
   },
   "dependencies": {
     "@capacitor/android": "^8.0.0",

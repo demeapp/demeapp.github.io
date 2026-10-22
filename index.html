@@ -87,6 +87,7 @@
 .account-entry .signin-link {
   display: inline-flex; align-items: center; min-height: 48px;
 }
+.account-reason { margin: .8rem 0 0; max-width: 46rem; }
 </style>
 </head>
 <body>
@@ -104,7 +105,7 @@
       <form class="searchbox" action="explore.html" method="get" role="search">
         <label class="visually-hidden" for="q">Search decisions</label>
         <input type="search" id="q" name="q"
-               placeholder="Try “bike lanes”, “rent”, or a councillor's name · press / to focus"
+               placeholder="Try “rent”"
                autocomplete="off">
         <button class="btn" type="submit">Search</button>
       </form>
@@ -118,6 +119,9 @@
         <a class="btn bronze" href="my-record.html#account-zone">Create an account</a>
         <a class="signin-link" href="my-record.html#account-zone">Sign in</a>
       </div>
+      <p class="small account-reason">Have your say on upcoming decisions,
+      be notified when votes land, and see where you stand against your
+      representative.</p>
 
       <div class="statband" id="statband" aria-label="The archive in numbers">
         <!-- filled from data/stats.json -->

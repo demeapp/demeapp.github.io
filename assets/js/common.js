@@ -346,6 +346,18 @@ function pastVoice(brief) {
   return out;
 }
 
+/* ---------------- record-title hygiene ----------------
+   A few City item titles carry a doubled honorific ("by Councillor
+   Councillor Paula Fletcher") — the exporter's title build adds the
+   title to a name that already carries it. Collapse the repeat at
+   render time, wherever a record title is shown, so a regenerated
+   dataset cannot resurrect it. Only an exact, immediate repeat of
+   the same honorific is touched; the rest of the title is the
+   record's own and stays byte-for-byte. */
+function cleanTitle(t) {
+  return String(t || "").replace(/\b(Councillor|Mayor|Deputy Mayor)\s+\1\b/g, "$1");
+}
+
 /* ---------------- decision card renderer ---------------- */
 function decisionCard(c, opts = {}) {
   const more = c.hasVote
@@ -360,7 +372,7 @@ function decisionCard(c, opts = {}) {
     <div class="meta"><span>${esc(fmtDate(c.date))}</span>
       <span>${esc(c.body)}</span>
       <span class="pill">${esc(c.statusLabel)}</span></div>
-    <h3><a href="decision.html?ref=${encodeURIComponent(c.ref)}">${esc(c.title)}</a></h3>
+    <h3><a href="decision.html?ref=${encodeURIComponent(c.ref)}">${esc(cleanTitle(c.title))}</a></h3>
     ${c.brief ? `<p class="brief">${esc(pastVoice(c.brief))}</p>` : ""}
     ${c.stake ? `<p class="stake">${esc(c.stake)}</p>` : ""}
     <p class="more">${more}${wards ? `<span class="wardtag">${esc(wards.replace(/^ · /, ""))}</span>` : ""}</p>

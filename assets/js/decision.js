@@ -187,25 +187,41 @@ async function init() {
     return;
   }
   const { card, year } = found;
-  document.title = `${card.title} — Deme`;
+  document.title = `${cleanTitle(card.title)} — Deme`;
   /* Topic terms arrive comma-stuffed ("ferries, ferry tickets" as one
      string). Split them into single chips and drop near-duplicates
      ("ferry boats" / "ferryboats") — render-time only; the data and
      the search it feeds stay exactly as published. */
   const normTopic = (t) => t.toLowerCase().replace(/\s+/g, "")
     .replace(/ies$/, "y").replace(/s$/, "");
-  const seenT = new Set();
-  const topicTerms = [];
+  /* Two City-keyword artefacts never reach a chip (render-time only,
+     same philosophy as the split above — the data and the search it
+     feeds stay exactly as published):
+       - bare keyword codes ("abccs", "abcds") — internal index codes
+         from the City's keyword list, gibberish to a reader;
+       - thesaurus variants "circles (roads)", "courts (roads)"… when
+         the qualifier itself ("roads") is already one of the item's
+         terms — the variant adds nothing the plain term doesn't say. */
+  const TOPIC_CODE_FRAGMENTS = new Set(["abccs", "abcds"]);
+  const rawParts = [];
   for (const t of card.topics || []) {
     for (const part of String(t).split(",")) {
       const term = part.trim();
-      if (!term) continue;
-      const key = normTopic(term);
-      if (seenT.has(key)) continue;
-      seenT.add(key);
-      topicTerms.push(term);
-      if (topicTerms.length >= 8) break;
+      if (term) rawParts.push(term);
     }
+  }
+  const plainKeys = new Set(rawParts.filter((t) => !/[()]/.test(t))
+    .map(normTopic));
+  const seenT = new Set();
+  const topicTerms = [];
+  for (const term of rawParts) {
+    if (TOPIC_CODE_FRAGMENTS.has(term.toLowerCase())) continue;
+    const paren = /\(([^)]+)\)\s*$/.exec(term);
+    if (paren && plainKeys.has(normTopic(paren[1].trim()))) continue;
+    const key = normTopic(term);
+    if (seenT.has(key)) continue;
+    seenT.add(key);
+    topicTerms.push(term);
     if (topicTerms.length >= 8) break;
   }
   const topics = topicTerms.map((t) =>
@@ -217,7 +233,7 @@ async function init() {
 
   box.innerHTML = `
     <p class="kicker">${esc(card.body)}</p>
-    <h1 style="font-size:clamp(1.6rem,4vw,2.4rem)">${esc(card.title)}</h1>
+    <h1 style="font-size:clamp(1.6rem,4vw,2.4rem)">${esc(cleanTitle(card.title))}</h1>
     <div class="outcomeRow">
       <span class="pill">${esc(card.statusLabel)}</span>
       <span class="small">${esc(fmtDate(card.date))}</span>

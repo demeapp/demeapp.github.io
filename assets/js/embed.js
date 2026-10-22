@@ -18,7 +18,7 @@
 const DEME_BASE = "https://demeapp.github.io/";
 const EMBED_CARD_URL = `${DEME_BASE}embed-card.html`;
 const ATTENDANCE_DEFINITION =
-  "present and voting, out of all recorded votes in their record";
+  "present and voting, out of recorded votes where a vote was theirs to cast";
 
 /* ---------- shared helpers ---------- */
 

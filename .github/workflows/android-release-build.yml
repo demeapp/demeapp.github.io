@@ -1,0 +1,44 @@
+name: Android release build (unsigned)
+
+# Release-prep: builds the unsigned release APK + AAB on a clean runner.
+# Signing happens locally with the CN=Deme upload keystore (never in CI,
+# never committed). Mirrors the environment of android-build-test.yml.
+
+on:
+  push:
+    branches: [android-ci-build-test]
+    paths:
+      - '.github/workflows/android-release-build.yml'
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: native
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 21
+      - name: Install dependencies
+        run: npm ci
+      - name: Sync web assets (live mode)
+        run: npm run sync
+      - name: Build unsigned release APK + AAB
+        working-directory: native/android
+        run: |
+          chmod +x gradlew
+          ./gradlew assembleRelease bundleRelease --stacktrace
+      - name: Upload unsigned release outputs
+        uses: actions/upload-artifact@v4
+        with:
+          name: deme-android-release-unsigned
+          path: |
+            native/android/app/build/outputs/apk/release/app-release-unsigned.apk
+            native/android/app/build/outputs/bundle/release/app-release.aab
+          if-no-files-found: error

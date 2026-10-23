@@ -916,5 +916,35 @@
    "ward": 25,
    "wardName": "Scarborough—Rouge Park"
   }
+ },
+ "brad-bradford": {
+  "2018-2022": {
+   "ward": 19,
+   "wardName": "Beaches-East York"
+  },
+  "2022-2026": {
+   "ward": 19,
+   "wardName": "Beaches-East York"
+  }
+ },
+ "mike-colle": {
+  "2018-2022": {
+   "ward": 8,
+   "wardName": "Eglinton-Lawrence"
+  },
+  "2022-2026": {
+   "ward": 8,
+   "wardName": "Eglinton-Lawrence"
+  }
+ },
+ "nick-mantas": {
+  "2018-2022": {
+   "ward": 22,
+   "wardName": "Scarborough-Agincourt"
+  },
+  "2022-2026": {
+   "ward": 22,
+   "wardName": "Scarborough-Agincourt"
+  }
  }
 }

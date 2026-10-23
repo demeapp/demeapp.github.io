@@ -349,20 +349,46 @@ async function renderExtras(person) {
 async function renderDeclaredInterests(person) {
   const host = document.getElementById("declared-interests");
   if (!host) return;
-  let entries = null;
+  let entries = null, entriesLoaded = false;
   try {
     const data = await loadJSON(dataPath("declared-interests.json"));
     entries = (data.members || {})[person.slug] || null;
+    entriesLoaded = true;
   } catch (e) { entries = null; /* the record stands without the register */ }
-  let gifts = null;
+  let gifts = null, giftsLoaded = false;
   try {
     const gdata = await loadJSON(dataPath("gift-disclosures.json"));
     gifts = (gdata.members || {})[person.slug] || null;
+    giftsLoaded = true;
   } catch (e) { gifts = null; }
   const hasEntries = !!(entries && entries.length);
   const hasGifts = !!(gifts && gifts.length);
   const hasVoteInterests = (person.interest || 0) > 0;
-  if (!hasEntries && !hasGifts && !hasVoteInterests) return;
+  /* Wave A display fix (Fix 4): service that ended before the gift
+     registry begins (2011) has no gifts record because none was
+     published — not-published, not a zero. */
+  const giftsEraNA = !hasGifts && !!person.lastSeen && person.lastSeen < "2011-01-01";
+  const giftsNaHTML = giftsEraNA ? `<h3 style="margin-top:1.8rem">Gifts and benefits disclosed</h3>
+    <p class="small" style="max-width:44rem">${simpleOn()
+      ? `No gift list was published while ${esc(person.name)} served — the Gift Disclosure Registry starts in 2011, after their service ended. So there is no gifts record to show. That is not the same as saying they disclosed nothing: no registry existed then.`
+      : `No gift registry was published during ${esc(person.name)}'s service — the Gift Disclosure Registry begins in 2011, after their service ended — so there is no gifts record to show. That is not a record of zero disclosures: no registry existed to disclose into.`}</p>` : "";
+  if (!hasEntries && !hasGifts && !hasVoteInterests) {
+    /* Wave A display fix (Fix 2): both files loaded and hold nothing for
+       this member — a verified zero in the published registers. Say so;
+       never leave the absence unexplained. On load failure the section
+       stays silent, as before: a failure is not a zero. */
+    if (entriesLoaded && giftsLoaded) {
+      host.innerHTML = `<section style="margin-top:2.4rem" aria-labelledby="declared-interests-h">
+    <h2 id="declared-interests-h">Declared interests — the official register</h2><hr class="rule">
+    <p class="small" style="max-width:44rem">${simpleOn()
+      ? `No declaration for ${esc(person.name)} appears in the City Clerk's published list (2007–2026)${giftsEraNA ? "." : ", and no gifts for them appear in the Gift Disclosure Registry (2011–2025)."} That is what the published record shows — not a gap in this page.`
+      : `No declaration by ${esc(person.name)} appears in the City Clerk's published register (2007–2026)${giftsEraNA ? "." : ", and no gift disclosures for them appear in the Gift Disclosure Registry (2011–2025)."} Both published files were checked for this page; the absence is the record, not a gap in it.`}</p>
+    ${giftsNaHTML}
+    <p class="small" style="max-width:44rem;margin-top:1rem">Source: City Clerk's Office · Registry of Declared Interest (published 2007–2026; the City publishes no declarations dated 2006 or earlier) + Gift Disclosure Registry (published 2011–2025; 2026 not yet published) (Integrity Commissioner) · Open Data refreshed September 26, 2026</p>
+  </section>`;
+    }
+    return;
+  }
   const rows = hasEntries ? entries.map((r) => {
     const meta = [fmtDate(r.VerbalDeclarationDate), r.Committee, r.Item]
       .filter(Boolean).join(" · ");
@@ -392,7 +418,7 @@ async function renderDeclaredInterests(person) {
     const giftsHTML = hasGifts
       ? `<h3 style="margin-top:1.8rem">Gifts and benefits disclosed</h3>
       ${giftsBody}`
-      : "";
+      : giftsNaHTML;
     host.innerHTML = `<section style="margin-top:2.4rem" aria-labelledby="declared-interests-h">
     <h2 id="declared-interests-h">Declared interests — the official register</h2><hr class="rule">
     <p class="small" style="max-width:44rem">${simpleOn()
@@ -400,7 +426,7 @@ async function renderDeclaredInterests(person) {
       : `The City Clerk's official register — the declarations ${esc(person.name)} made on the record, item by item. It is separate from the recorded-vote count above it, counted from recorded votes where the member declared an interest and did not vote; the two count different things and their totals will not match. <strong>This register is the City Clerk's published file of declarations. A declaration made out loud in the chamber — for example under Article 8 of the Code of Conduct — may not appear in that file, so this list can miss a declaration that the vote record shows.</strong>`}</p>
     ${hasEntries ? `<ul class="personlist history-rows">${rows}</ul>` : `<p class="small">${simpleOn() ? `No declaration for ${esc(person.name)} appears in the City Clerk's published list. The vote count above records declarations made on votes, including ones said out loud in the chamber, that may be missing from this list.` : `No declaration by ${esc(person.name)} appears in the City Clerk's published register file. The recorded-vote count above counts declarations recorded on votes, including declarations made out loud in the chamber, which the published file can miss.`}</p>`}
     ${giftsHTML}
-    <p class="small" style="max-width:44rem;margin-top:1rem">Source: City Clerk's Office · Registry of Declared Interest + Gift Disclosure Registry (Integrity Commissioner) · Open Data refreshed September 26, 2026</p>
+    <p class="small" style="max-width:44rem;margin-top:1rem">Source: City Clerk's Office · Registry of Declared Interest (published 2007–2026; the City publishes no declarations dated 2006 or earlier) + Gift Disclosure Registry (published 2011–2025; 2026 not yet published) (Integrity Commissioner) · Open Data refreshed September 26, 2026</p>
   </section>`;
     return;
   }
@@ -410,10 +436,21 @@ async function renderDeclaredInterests(person) {
      gifts record and says nothing about the member's declarations. */
   host.innerHTML = `<section style="margin-top:2.4rem" aria-labelledby="gift-disclosures-h">
     <h2 id="gift-disclosures-h">Gifts and benefits disclosed</h2><hr class="rule">
+    ${entriesLoaded ? `<p class="small" style="max-width:44rem">${simpleOn()
+      ? `The City Clerk's published list has no declaration for ${esc(person.name)} (2007–2026). The gifts below come from a different list, the Gift Disclosure Registry.`
+      : `No declaration by ${esc(person.name)} appears in the City Clerk's published register (2007–2026) — a verified zero in that file. The gifts below are the separate Gift Disclosure Registry record.`}</p>` : ""}
     ${giftsBody}
-    <p class="small" style="max-width:44rem;margin-top:1rem">Source: Gift Disclosure Registry (Integrity Commissioner) · Open Data refreshed September 26, 2026</p>
+    <p class="small" style="max-width:44rem;margin-top:1rem">Source: Gift Disclosure Registry (Integrity Commissioner) · published 2011–2025 (no registry was published for 2010 or earlier; 2026 not yet published) · Open Data refreshed September 26, 2026</p>
   </section>`;
 }
+
+/* The name-by-name record that produces the interest counter begins in
+   2018. A member whose service ended before it has no counter to print:
+   the directory's dash, never an unsupported 0 (Wave A display fix). */
+const interestBeforeRecord = (person) =>
+  !!person.lastSeen && person.lastSeen < "2018-01-01";
+const interestFigure = (person) =>
+  interestBeforeRecord(person) ? "—" : fmtNum(person.interest);
 
 /* ---------- pay and expenses: as published ----------
    The City Clerk's annual remuneration reports (record-data/
@@ -586,6 +623,7 @@ async function renderHaveYourSay(person) {
 function compositionStrip(person) {
   const cast = person.votesCast || 0, absent = person.absent || 0,
     interest = person.interest || 0;
+  const beforeRecord = interestBeforeRecord(person);
   const total = cast + absent + interest;
   if (!total) return "";
   const pct = (n) => (100 * n / total);
@@ -600,13 +638,21 @@ function compositionStrip(person) {
     ? `<span class="comp-seg ${cls}" style="width:${pct(n).toFixed(2)}%"></span>` : "";
   return `<div class="composition">
     <div class="comp-bar" role="img" aria-label="${simpleOn()
-      ? `Of ${fmtNum(total)} recorded votes in this member's record: ${fmtNum(cast)} they voted on, ${fmtNum(absent)} they were absent for, ${fmtNum(interest)} with an interest declared.`
-      : `Of ${fmtNum(total)} recorded votes in this member's record: ${fmtNum(cast)} cast, ${fmtNum(absent)} absent, ${fmtNum(interest)} with an interest declared.`}">
+      ? (beforeRecord
+        ? `Of ${fmtNum(total)} recorded votes in this member's record: ${fmtNum(cast)} they voted on, ${fmtNum(absent)} they were absent for.`
+        : `Of ${fmtNum(total)} recorded votes in this member's record: ${fmtNum(cast)} they voted on, ${fmtNum(absent)} they were absent for, ${fmtNum(interest)} with an interest declared.`)
+      : (beforeRecord
+        ? `Of ${fmtNum(total)} recorded votes in this member's record: ${fmtNum(cast)} cast, ${fmtNum(absent)} absent.`
+        : `Of ${fmtNum(total)} recorded votes in this member's record: ${fmtNum(cast)} cast, ${fmtNum(absent)} absent, ${fmtNum(interest)} with an interest declared.`)}">
       ${seg(cast, "cast")}${seg(absent, "absent")}${seg(interest, "interest")}
     </div>
     <p class="comp-legend">${simpleOn()
-      ? `Of the ${fmtNum(total)} recorded votes in their record (member totals back to 2006; votes with names from 2018): <strong>${pctTxt(cast)}%</strong> they voted · <strong>${pctTxt(absent)}%</strong> they were absent · <strong>${pctTxt(interest)}%</strong> they declared an interest. Declaring an interest is a duty, not a missed vote.`
-      : `Of the ${fmtNum(total)} recorded votes in their record (member totals back to 2006; name-by-name rows from 2018), counting declared interests in the total: <strong>${pctTxt(cast)}%</strong> cast · <strong>${pctTxt(absent)}%</strong> absent · <strong>${pctTxt(interest)}%</strong> declared an interest — a duty, not an absence.`}</p>
+      ? (beforeRecord
+        ? `Of the ${fmtNum(total)} recorded votes in their record (member totals back to 2006; votes with names from 2018): <strong>${pctTxt(cast)}%</strong> they voted · <strong>${pctTxt(absent)}%</strong> they were absent.`
+        : `Of the ${fmtNum(total)} recorded votes in their record (member totals back to 2006; votes with names from 2018): <strong>${pctTxt(cast)}%</strong> they voted · <strong>${pctTxt(absent)}%</strong> they were absent · <strong>${pctTxt(interest)}%</strong> they declared an interest. Declaring an interest is a duty, not a missed vote.`)
+      : (beforeRecord
+        ? `Of the ${fmtNum(total)} recorded votes in their record (member totals back to 2006; name-by-name rows from 2018): <strong>${pctTxt(cast)}%</strong> cast · <strong>${pctTxt(absent)}%</strong> absent.`
+        : `Of the ${fmtNum(total)} recorded votes in their record (member totals back to 2006; name-by-name rows from 2018), counting declared interests in the total: <strong>${pctTxt(cast)}%</strong> cast · <strong>${pctTxt(absent)}%</strong> absent · <strong>${pctTxt(interest)}%</strong> declared an interest — a duty, not an absence.`)}</p>
   </div>`;
 }
 
@@ -651,7 +697,7 @@ function recordCardHTML(person, standalone) {
       <div class="rc-stat"><span>Votes cast</span><strong>${fmtNum(person.votesCast)}</strong></div>
       <div class="rc-stat"><span>Yes</span><strong>${fmtNum(person.yes)}</strong></div>
       <div class="rc-stat"><span>No</span><strong>${fmtNum(person.no)}</strong></div>
-      <div class="rc-stat"><span>${simpleT("Interest declared · stepped back", "Declared an interest · did not vote")}</span><strong>${fmtNum(person.interest)}</strong></div>
+      <div class="rc-stat"><span>${simpleT("Interest declared · stepped back", "Declared an interest · did not vote")}</span><strong>${interestFigure(person)}</strong></div>
     </div>
     <h3>${simpleT("Five most recent recorded votes", "Their five newest recorded votes")}</h3>
     ${votes || `<p>${simpleT("No recorded votes in the searchable archive.", "No recorded votes in the archive you can search.")}</p>`}
@@ -759,13 +805,13 @@ async function init() {
         <span class="lab">${simpleT("Recorded-vote participation — present and voting, out of recorded votes where a vote was theirs to cast", "Recorded votes they took part in — they were there and voted, out of the recorded votes they could vote on")}</span>${attBar}</div>
       <div class="stat"><span class="num">${fmtNum(person.votesCast)}</span>
         <span class="lab">${simpleT("Votes cast (yes or no) across their record", "Votes they cast (yes or no) in their whole record")}</span></div>
-      <div class="stat"><span class="num">${fmtNum(person.interest)}</span>
+      <div class="stat"><span class="num">${interestFigure(person)}</span>
         <span class="lab">${simpleT("Times they declared a personal interest and did not vote — a duty, not an absence", "Times they said they had a personal interest and did not vote — that is their duty, not a missed vote")}</span></div>
     </div>
     <p class="small" style="max-width:44rem">${simpleT("Recorded-vote participation is the share of recorded votes where the member was present and voting — not a count of meetings attended, and declared interests are never counted against it.", "This number is the share of recorded votes where the member was there and voted. It is not a count of meetings they went to. Declared interests never count against them.")}
     <a href="about.html#how-we-count">How we count</a>${simpleT(" explains each figure on this page.", " explains each number on this page.")}</p>
     ${compositionStrip(person)}
-    <p class="small" style="max-width:44rem">${simpleT("The totals count the full record: member totals back to 2006; item-by-item rows from 2018.", "The totals cover the full record. Member totals go back to 2006. Rows for each item start in 2018.")}</p>
+    <p class="small" style="max-width:44rem">${simpleT("The totals count the full record: member totals back to 2006; item-by-item rows from 2018. The declared-interest figure counts only the name-by-name record (2018–2026); a dash marks a member whose service ended before that record begins.", "The totals cover the full record. Member totals go back to 2006. Rows for each item start in 2018. The declared-interest number counts only the name-by-name record (2018 to 2026). A dash means the member's service ended before that record starts.")}</p>
     <p style="margin-top:1rem"><button class="btn secondary" id="record-card-btn"
       type="button">${simpleT("Print / download record card", "Print or download record card")}</button>
     <button class="btn secondary" id="share-btn" type="button">Copy link</button></p>

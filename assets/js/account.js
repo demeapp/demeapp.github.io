@@ -139,6 +139,9 @@ const DemeAccount = (() => {
       ward: VoteStore.getWard(),
       watch_ward: VoteStore.getWatchWard(),
       interests: VoteStore.getInterests(),
+      simple_text: typeof DemeSimple !== "undefined"
+        ? Boolean(DemeSimple.getPreference())
+        : (() => { try { return localStorage.getItem("deme.simple.v1") === "1"; } catch (e) { return false; } })(),
     };
   }
   function applyToLocal(row) {
@@ -149,6 +152,11 @@ const DemeAccount = (() => {
     const ints = Array.isArray(row.interests) ? row.interests : [];
     if (JSON.stringify(ints) !== JSON.stringify(VoteStore.getInterests())) {
       VoteStore.setInterests(ints);
+    }
+    if (typeof row.simple_text === "boolean"
+        && typeof DemeSimple !== "undefined"
+        && row.simple_text !== DemeSimple.getPreference()) {
+      DemeSimple.setPreference(row.simple_text, { fromAccount: true });
     }
   }
   async function fetchRow() {
@@ -226,6 +234,8 @@ const DemeAccount = (() => {
       ward,
       watch_ward: watch,
       interests: VoteStore.getInterests(),
+      simple_text: typeof DemeSimple !== "undefined"
+        ? Boolean(DemeSimple.getPreference()) : false,
     });
     if (ward !== VoteStore.getWard()) VoteStore.setWard(ward);
     if (watch !== VoteStore.getWatchWard()) VoteStore.setWatchWard(watch);
@@ -300,6 +310,27 @@ const DemeAccount = (() => {
       refreshSyncLine();
     } catch (e) { /* next tick retries */ }
   }
+
+  /* Simpler-text toggles made while signed in are pushed to the
+     account row, so the preference follows the person, not just
+     this device. Events sourced from the account itself (sign-in
+     merge applying the row's value) are ignored — no write loop.
+     Name and the alerts opt-in are re-sourced from a fresh row
+     read, exactly as in syncFromLocal (RT-02). */
+  document.addEventListener("deme:simple-changed", async (e) => {
+    if (!session || !accountProfile) return;
+    if (e.detail && e.detail.source === "account") return;
+    try {
+      const fresh = await fetchRow();
+      if (!fresh) return;
+      accountProfile = fresh;
+      await upsertRow({
+        name: fresh.name || "",
+        alerts_opt_in: Boolean(fresh.alerts_opt_in),
+        ...localPayload(),
+      });
+    } catch (err) { /* next sign-in merge reconciles */ }
+  });
 
   /* ---------------- picks (account-saved, owner decision
      Oct 20, 2026) ----------------

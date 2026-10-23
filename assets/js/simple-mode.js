@@ -21,14 +21,15 @@
    4. Off restores every node's original text (kept in a WeakMap) —
       off is the untouched site.
 
-   Persistence: localStorage "deme.simple.v1" ("1"/"0") on this device.
-   Account sync is a documented integration point, NOT faked: the
-   profiles row has fixed columns only, so a production ship needs a
-   schema field; when account.js grows one it can call
-   DemeSimple.setPreference(on, { fromAccount: true }) on sign-in and
-   listen for the "deme:simple-changed" event (detail: {on, source})
-   to upsert. Until then the honest behaviour, stated at the toggle,
-   is "saved on this device".
+   Persistence: localStorage "deme.simple.v1" ("1"/"0") on this device,
+   and — when signed in — the account's profiles.simple_text field.
+   account.js wires the two together: on sign-in it applies the row's
+   value via DemeSimple.setPreference(on, { fromAccount: true }), and
+   it listens for the "deme:simple-changed" event (detail: {on, source})
+   to upsert toggles made on this device; events sourced from the
+   account itself are ignored, so there is no write loop. The toggle
+   states the behaviour plainly: the choice is saved on this device,
+   and to the account when signed in.
 */
 "use strict";
 

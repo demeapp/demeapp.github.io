@@ -200,7 +200,8 @@ function renderChrome(active) {
           aria-pressed="${simpleOn()}" aria-describedby="simple-mode-help">
           <span class="track" aria-hidden="true"></span>Simpler text</button>
         <span class="visually-hidden" id="simple-mode-help">Use simpler words
-          across this site. Your choice is saved on this device.</span>
+          across this site. Your choice is saved on this device, and to your
+          account when you are signed in.</span>
       </div></div>`;
   }
   const footer = document.querySelector(".site-footer");

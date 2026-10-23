@@ -51,7 +51,7 @@ function voteCell(v) {
   if (v === "Yes") return `<span class="voteYes">Yes</span>`;
   if (v === "No") return `<span class="voteNo">No</span>`;
   if (v && v.startsWith("Absent(Interest"))
-    return `<span class="voteAbs">Declared an interest — stepped back from this vote</span>`;
+    return `<span class="voteAbs">${simpleT("Declared an interest — stepped back from this vote", "Declared an interest — did not vote on this item")}</span>`;
   return `<span class="voteAbs">Absent</span>`;
 }
 
@@ -164,7 +164,7 @@ function motionBlock(m, idx) {
     ${bars(m.yes, m.no)}
     <p class="votecaption">of the ${m.yes + m.no} members who voted</p>
     <p class="small">${m.yes + m.no} members voted ·
-      ${absent} absent${interest ? ` · ${interest} declared an interest — stepped back from this vote` : ""}.</p>
+      ${absent} absent${interest ? ` · ${interest} ` + simpleT("declared an interest — stepped back from this vote", "declared an interest and did not vote") : ""}.</p>
     <details class="recordExpander">
       <summary class="btn secondary small" style="display:inline-flex">See who voted, name by name</summary>
       <table class="record"><thead><tr><th scope="col">Member</th>
@@ -293,12 +293,23 @@ async function init() {
         </div>`);
       const toggle = document.getElementById("simple-toggle");
       const label = document.getElementById("brief-mode-label");
-      let simpleOn = false;
+      /* Simpler-text mode (Stream D): the global mode is the starting
+         state here; the switch then works per-decision as before, and
+         a global toggle re-syncs this page's summary. */
+      let simpleActive = simpleOn();
+      const applySimple = () => {
+        toggle.setAttribute("aria-checked", String(simpleActive));
+        briefEl.textContent = simpleActive ? simple : pastVoice(card.brief);
+        label.textContent = simpleActive ? "Simple summary" : "Plain-language summary";
+      };
+      if (simpleActive) applySimple();
       toggle.addEventListener("click", () => {
-        simpleOn = !simpleOn;
-        toggle.setAttribute("aria-checked", String(simpleOn));
-        briefEl.textContent = simpleOn ? simple : pastVoice(card.brief);
-        label.textContent = simpleOn ? "Simple summary" : "Plain-language summary";
+        simpleActive = !simpleActive;
+        applySimple();
+      });
+      document.addEventListener("deme:simple-changed", (e) => {
+        simpleActive = Boolean(e.detail && e.detail.on);
+        applySimple();
       });
     }).catch(() => { /* no simple corpus for this year — standard brief only */ });
   }
@@ -335,15 +346,26 @@ async function init() {
   if (card.hasVote) {
     if (detail && detail.motions) {
       const hasNames = detail.motions.some((m) => m.votes && m.votes.length);
+      const voteKind = simpleT(
+        hasNames
+          ? "the public list of who voted yes and who voted no."
+          : "a recorded tally of the votes for and against. This vote was recorded as a count only, so no name-by-name list exists for it.",
+        hasNames
+          ? "the public list of who voted yes and who voted no."
+          : "a recorded count of the votes for and against. This vote was recorded as a count only, so there is no list of names for it.");
+      const motionsNote = detail.motions.length > 1
+        ? `There were ${detail.motions.length} recorded votes on this item. ` : "";
       vz.innerHTML = `<h2 style="margin-top:2.2rem">How the vote went</h2>
         <hr class="rule">
-        <p class="small">This decision has a <strong>recorded vote</strong> —
-        ${hasNames
-          ? "the public list of who voted yes and who voted no."
-          : "a recorded tally of the votes for and against. This vote was recorded as a count only, so no name-by-name list exists for it."}
-        ${detail.motions.length > 1 ? `There were ${detail.motions.length} recorded votes on this item. ` : ""}Some
+        <p class="small">${simpleOn()
+          ? `This decision has a <strong>recorded vote</strong>. That is ${voteKind}
+        ${motionsNote}Some
+        items are voted on at a committee first, before they reach
+        Council. Each vote below says which body took it.`
+          : `This decision has a <strong>recorded vote</strong> — ${voteKind}
+        ${motionsNote}Some
         items are voted on at a committee before reaching Council — every
-        vote below is labelled with the body that took it.</p>
+        vote below is labelled with the body that took it.`}</p>
         ${detail.motions.map(motionBlock).join("")}`;
     } else {
       vz.innerHTML = `<h2 style="margin-top:2.2rem">How the vote went</h2>

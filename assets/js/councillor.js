@@ -81,8 +81,12 @@ async function renderMore() {
   const status = document.getElementById("hist-status");
   if (status) {
     status.textContent = outcomeFilter === "all"
-      ? `${fmtNum(memberTotal)} recorded votes on decisions in the archive, newest first. Every row links to the decision itself.`
-      : `${fmtNum(rows.length)} recorded votes marked ${FILTER_LABEL[outcomeFilter]} — out of ${fmtNum(memberTotal)} in this member’s record.`;
+      ? (simpleOn()
+        ? `${fmtNum(memberTotal)} recorded votes on decisions in the archive, newest first. Each row links to the decision.`
+        : `${fmtNum(memberTotal)} recorded votes on decisions in the archive, newest first. Every row links to the decision itself.`)
+      : (simpleOn()
+        ? `${fmtNum(rows.length)} recorded votes marked ${FILTER_LABEL[outcomeFilter]}, out of ${fmtNum(memberTotal)} in this member's record.`
+        : `${fmtNum(rows.length)} recorded votes marked ${FILTER_LABEL[outcomeFilter]} — out of ${fmtNum(memberTotal)} in this member’s record.`);
   }
   const pager = document.getElementById("pager");
   pager.innerHTML = shown < total
@@ -241,7 +245,7 @@ async function renderExtras(person) {
             <div class="related-list">
             ${related.slice(0, 3).map(relatedVoteRow).join("")}
             </div>
-            ${related.length > 3 ? `<p class="small related-note" style="margin:.45rem 0 0">Showing 3 of ${related.length} matching votes — the most recent first.</p>
+            ${related.length > 3 ? `<p class="small related-note" style="margin:.45rem 0 0">${simpleOn() ? `Showing 3 of ${related.length} matching votes, newest first.` : `Showing 3 of ${related.length} matching votes — the most recent first.`}</p>
             <button class="related-more" type="button" data-promise="${i}">Show all ${related.length} matching votes</button>` : ""}
           </details>` : ""}
         </article>`;
@@ -297,9 +301,9 @@ async function renderExtras(person) {
   } else if (lobbying) {
     html += `<section class="lobbying" aria-labelledby="lobbying-h">
       <h2 id="lobbying-h">Lobbying Record</h2><hr class="rule">
-      <p class="small" style="max-width:44rem">No recorded lobbying
-      communications for ${esc(person.name)} in the City of Toronto Lobbyist
-      Registry filings gathered on October 8, 2026.</p></section>`;
+      <p class="small" style="max-width:44rem">${simpleOn()
+        ? `No lobbying contacts for ${esc(person.name)} were found in the City of Toronto Lobbyist Registry filings gathered on October 8, 2026.`
+        : `No recorded lobbying communications for ${esc(person.name)} in the City of Toronto Lobbyist Registry filings gathered on October 8, 2026.`}</p></section>`;
   }
   host.innerHTML = html;
   bindRelatedVotes(host);
@@ -314,7 +318,9 @@ async function renderExtras(person) {
       bindRelatedVotes(list);
       const note = details.querySelector(".related-note");
       if (note) note.textContent =
-        `Showing all ${all.length} matching votes — the most recent first.`;
+        simpleOn()
+          ? `Showing all ${all.length} matching votes, newest first.`
+          : `Showing all ${all.length} matching votes — the most recent first.`;
       btn.remove();
     }));
 }
@@ -383,7 +389,9 @@ async function renderDeclaredInterests(person) {
       : "";
     host.innerHTML = `<section style="margin-top:2.4rem" aria-labelledby="declared-interests-h">
     <h2 id="declared-interests-h">Declared interests — the official register</h2><hr class="rule">
-    <p class="small" style="max-width:44rem">The City Clerk's official register — the declarations ${esc(person.name)} made on the record, item by item. It is separate from the recorded-vote count above it, counted from recorded votes where the member declared an interest and did not vote; the two count different things and their totals will not match.</p>
+    <p class="small" style="max-width:44rem">${simpleOn()
+      ? `This is the City Clerk's official list — the interests ${esc(person.name)} declared on the record, one item at a time. It is not the same as the recorded-vote count above. That count comes from recorded votes where the member declared an interest and did not vote. The two lists count different things, so their totals will not match.`
+      : `The City Clerk's official register — the declarations ${esc(person.name)} made on the record, item by item. It is separate from the recorded-vote count above it, counted from recorded votes where the member declared an interest and did not vote; the two count different things and their totals will not match.`}</p>
     <ul class="personlist history-rows">${rows}</ul>
     ${giftsHTML}
     <p class="small" style="max-width:44rem;margin-top:1rem">Source: City Clerk's Office · Registry of Declared Interest + Gift Disclosure Registry (Integrity Commissioner) · Open Data refreshed September 26, 2026</p>
@@ -476,12 +484,7 @@ async function renderPayExpenses(person) {
     + byYear.get(y).map(blockHTML).join("")).join("");
   host.innerHTML = `<section style="margin-top:2.4rem" aria-labelledby="pay-expenses-h">
     <h2 id="pay-expenses-h">Pay and expenses — as published</h2><hr class="rule">
-    <p class="small" style="max-width:44rem">These are the figures from
-    the City Clerk's annual remuneration reports, shown as published.
-    A year's figures can appear in more than one published table; each
-    table is shown under its own label, and the site never adds the
-    tables together. Annual reports are included for 2006–2025;
-    quarterly office-expense detail is also not yet included.</p>
+    <p class="small" style="max-width:44rem">${simpleT("These are the figures from the City Clerk's annual remuneration reports, shown as published. A year's figures can appear in more than one published table; each table is shown under its own label, and the site never adds the tables together. Annual reports are included for 2006–2025; quarterly office-expense detail is also not yet included.", "These numbers come from the City Clerk's yearly pay reports. They are shown as published. One year's numbers can show up in more than one table. Each table is shown under its own name. The site never adds the tables together. Yearly reports run from 2006 to 2025. Office-expense detail for each quarter is not included yet.")}</p>
     ${yearsHTML}
     <p class="small" style="max-width:44rem;margin-top:1rem">Source: City Clerk's Office · Annual Remuneration Reports (Budgets &amp; Expense Reports) · Verified October 23, 2026</p>
   </section>`;
@@ -521,7 +524,9 @@ async function renderHaveYourSay(person) {
         today, use the City's official
         <a href="${CITY_MEMBERS_URL}" target="_blank" rel="noopener noreferrer">members of Council directory</a>.</p>`;
   const intro = person.current
-    ? `The record above is what ${esc(person.name)} decided and how they voted. If you live in ${where}, this is your representative at City Hall — the office route is below. While an item is still being decided, you can speak to the committee considering it yourself.`
+    ? (simpleOn()
+      ? `The record above shows what ${esc(person.name)} decided and how they voted. If you live in ${where}, this person represents you at City Hall. How to reach their office is below. While an item is still being decided, you can also speak to the committee yourself.`
+      : `The record above is what ${esc(person.name)} decided and how they voted. If you live in ${where}, this is your representative at City Hall — the office route is below. While an item is still being decided, you can speak to the committee considering it yourself.`)
     : `${esc(person.name)} no longer sits on Council, so the office that
        held this seat has changed hands — the City's
        <a href="${CITY_MEMBERS_URL}" target="_blank" rel="noopener noreferrer">members of Council directory</a>
@@ -588,18 +593,14 @@ function compositionStrip(person) {
   const seg = (n, cls) => n > 0
     ? `<span class="comp-seg ${cls}" style="width:${pct(n).toFixed(2)}%"></span>` : "";
   return `<div class="composition">
-    <div class="comp-bar" role="img" aria-label="Of ${fmtNum(total)} recorded
-      votes in this member's record: ${fmtNum(cast)} cast, ${fmtNum(absent)}
-      absent, ${fmtNum(interest)} with an interest declared.">
+    <div class="comp-bar" role="img" aria-label="${simpleOn()
+      ? `Of ${fmtNum(total)} recorded votes in this member's record: ${fmtNum(cast)} they voted on, ${fmtNum(absent)} they were absent for, ${fmtNum(interest)} with an interest declared.`
+      : `Of ${fmtNum(total)} recorded votes in this member's record: ${fmtNum(cast)} cast, ${fmtNum(absent)} absent, ${fmtNum(interest)} with an interest declared.`}">
       ${seg(cast, "cast")}${seg(absent, "absent")}${seg(interest, "interest")}
     </div>
-    <p class="comp-legend">Of the ${fmtNum(total)} recorded votes in their
-      record (member totals back to 2006; name-by-name rows from 2018),
-      counting declared interests in the total:
-      <strong>${pctTxt(cast)}%</strong> cast ·
-      <strong>${pctTxt(absent)}%</strong> absent ·
-      <strong>${pctTxt(interest)}%</strong> declared an interest — a duty,
-      not an absence.</p>
+    <p class="comp-legend">${simpleOn()
+      ? `Of the ${fmtNum(total)} recorded votes in their record (member totals back to 2006; votes with names from 2018): <strong>${pctTxt(cast)}%</strong> they voted · <strong>${pctTxt(absent)}%</strong> they were absent · <strong>${pctTxt(interest)}%</strong> they declared an interest. Declaring an interest is a duty, not a missed vote.`
+      : `Of the ${fmtNum(total)} recorded votes in their record (member totals back to 2006; name-by-name rows from 2018), counting declared interests in the total: <strong>${pctTxt(cast)}%</strong> cast · <strong>${pctTxt(absent)}%</strong> absent · <strong>${pctTxt(interest)}%</strong> declared an interest — a duty, not an absence.`}</p>
   </div>`;
 }
 
@@ -640,14 +641,14 @@ function recordCardHTML(person, standalone) {
       <h2>${esc(person.name)}</h2>
       <p class="rc-ward">${esc(role)} · Voting record card</p></div></div>
     <div class="rc-stats">
-      <div class="rc-stat"><span>Recorded-vote participation</span><strong>${fmtAtt(person)}</strong></div>
+      <div class="rc-stat"><span>${simpleT("Recorded-vote participation", "Recorded votes they took part in")}</span><strong>${fmtAtt(person)}</strong></div>
       <div class="rc-stat"><span>Votes cast</span><strong>${fmtNum(person.votesCast)}</strong></div>
       <div class="rc-stat"><span>Yes</span><strong>${fmtNum(person.yes)}</strong></div>
       <div class="rc-stat"><span>No</span><strong>${fmtNum(person.no)}</strong></div>
-      <div class="rc-stat"><span>Interest declared · stepped back</span><strong>${fmtNum(person.interest)}</strong></div>
+      <div class="rc-stat"><span>${simpleT("Interest declared · stepped back", "Declared an interest · did not vote")}</span><strong>${fmtNum(person.interest)}</strong></div>
     </div>
-    <h3>Five most recent recorded votes</h3>
-    ${votes || '<p>No recorded votes in the searchable archive.</p>'}
+    <h3>${simpleT("Five most recent recorded votes", "Their five newest recorded votes")}</h3>
+    ${votes || `<p>${simpleT("No recorded votes in the searchable archive.", "No recorded votes in the archive you can search.")}</p>`}
     <p class="rc-foot">Source: City of Toronto Council records, via Deme
     (demeapp.github.io) · Record current to October 19, 2026 · Prepared
     ${new Date().toLocaleDateString("en-CA", { year: "numeric", month: "long", day: "numeric" })}</p>
@@ -749,32 +750,25 @@ async function init() {
     </div>
     <div class="statTiles">
       <div class="stat"><span class="num">${fmtAtt(person)}</span>
-        <span class="lab">Recorded-vote participation — present and voting, out of recorded
-        votes where a vote was theirs to cast</span>${attBar}</div>
+        <span class="lab">${simpleT("Recorded-vote participation — present and voting, out of recorded votes where a vote was theirs to cast", "Recorded votes they took part in — they were there and voted, out of the recorded votes they could vote on")}</span>${attBar}</div>
       <div class="stat"><span class="num">${fmtNum(person.votesCast)}</span>
-        <span class="lab">Votes cast (yes or no) across their record</span></div>
+        <span class="lab">${simpleT("Votes cast (yes or no) across their record", "Votes they cast (yes or no) in their whole record")}</span></div>
       <div class="stat"><span class="num">${fmtNum(person.interest)}</span>
-        <span class="lab">Times they declared a personal interest and did
-        not vote — a duty, not an absence</span></div>
+        <span class="lab">${simpleT("Times they declared a personal interest and did not vote — a duty, not an absence", "Times they said they had a personal interest and did not vote — that is their duty, not a missed vote")}</span></div>
     </div>
-    <p class="small" style="max-width:44rem">Recorded-vote participation
-    is the share of recorded votes where the member was
-    present and voting — not a count of meetings attended, and declared
-    interests are never counted against it.
-    <a href="about.html#how-we-count">How we count</a> explains each
-    figure on this page.</p>
+    <p class="small" style="max-width:44rem">${simpleT("Recorded-vote participation is the share of recorded votes where the member was present and voting — not a count of meetings attended, and declared interests are never counted against it.", "This number is the share of recorded votes where the member was there and voted. It is not a count of meetings they went to. Declared interests never count against them.")}
+    <a href="about.html#how-we-count">How we count</a>${simpleT(" explains each figure on this page.", " explains each number on this page.")}</p>
     ${compositionStrip(person)}
-    <p class="small" style="max-width:44rem">The totals count the full
-    record: member totals back to 2006; item-by-item rows from 2018.</p>
+    <p class="small" style="max-width:44rem">${simpleT("The totals count the full record: member totals back to 2006; item-by-item rows from 2018.", "The totals cover the full record. Member totals go back to 2006. Rows for each item start in 2018.")}</p>
     <p style="margin-top:1rem"><button class="btn secondary" id="record-card-btn"
-      type="button">Print / download record card</button>
+      type="button">${simpleT("Print / download record card", "Print or download record card")}</button>
     <button class="btn secondary" id="share-btn" type="button">Copy link</button></p>
     <div id="profile-extra"></div>
     <div id="declared-interests"></div>
     <div id="pay-expenses"></div>
     <h2 style="margin-top:2.6rem">Recorded votes</h2>
     <hr class="rule">
-    <p class="small">Item by item — the decision archive, 2018–2026.</p>
+    <p class="small">${simpleT("Item by item — the decision archive, 2018–2026.", "One by one — the decision archive, 2018–2026.")}</p>
     <div id="historyWrap"><div class="skel-card" aria-hidden="true">
       <span class="skel-el sm"></span><span class="skel-el title"></span>
       <span class="skel-el"></span><span class="skel-el short"></span></div></div>

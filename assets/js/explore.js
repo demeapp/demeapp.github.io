@@ -188,8 +188,7 @@ function renderInterpretation(eff) {
     const looksQuestion = /^(how|what|when|did|who|which)\b/.test(lower) || lower.endsWith("?");
     if (raw && looksQuestion) {
       box.hidden = false;
-      box.innerHTML = `<span>I couldn't break that question down — here are
-        the plain results for “${esc(raw)}”.</span>`;
+      box.innerHTML = `<span>${simpleT("I couldn't break that question down — here are the plain results for", "I could not work out that question — here are the plain results for")} “${esc(raw)}”.</span>`;
     } else {
       box.hidden = true; box.innerHTML = "";
     }
@@ -208,17 +207,18 @@ function renderInterpretation(eff) {
     parts.push(eff.yearFrom === eff.yearTo ? `${eff.yearFrom}` : `${eff.yearFrom}–${eff.yearTo}`);
   }
   if (eff.wardNum != null) parts.push(`Ward ${eff.wardNum}`);
-  if (eff.closeOnly) parts.push("close recorded votes (margin of two or fewer)");
+  if (eff.closeOnly) parts.push(simpleT("close recorded votes (margin of two or fewer)", "close recorded votes (won by two votes or fewer)"));
   else if (eff.voteOnly) parts.push("with a recorded vote");
   if (eff.statusLabel && parsed && parsed.statusGroup) {
     parts.push(`Outcome: ${esc(eff.statusLabel)}`);
   }
   if (eff.member) {
-    parts.push(`${esc(eff.member.name)}'s own votes are on their record page — open any result to see exactly how every member voted.`);
+    parts.push(simpleOn()
+      ? `${esc(eff.member.name)}'s own votes are on their record page. Open any result to see just how each member voted.`
+      : `${esc(eff.member.name)}'s own votes are on their record page — open any result to see exactly how every member voted.`);
   }
   box.hidden = false;
-  box.innerHTML = `<span>${parts.join(" · ")} — set by your question.
-    Change anything with the filters, or </span>
+  box.innerHTML = `<span>${parts.join(" · ")}${simpleT(" — set by your question. Change anything with the filters, or ", " — from your question. Change anything with the filters, or ")}</span>
     <button type="button" class="interp-clear" id="interp-clear">clear the question</button>`;
   $("interp-clear").addEventListener("click", () => {
     parsed = null;
@@ -331,7 +331,7 @@ function renderCount() {
   if (!el) return;
   const n = filtered.length;
   const suffix = archiveLoading
-    ? " — the full archive is still loading; older years are on the way." : "";
+    ? simpleT(" — the full archive is still loading; older years are on the way.", " — the full archive is still loading. Older years are on the way.") : "";
   if (!n) {
     if (countRaf) cancelAnimationFrame(countRaf);
     el.textContent = (archiveLoading

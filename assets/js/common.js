@@ -25,6 +25,12 @@ const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({
   "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;",
 }[c]));
 
+/* Simpler-text mode (Stream D preview): renderers pick wording through
+   simpleT(normal, simple); when simple-mode.js is absent or the mode is
+   off, the normal wording is returned untouched. */
+const simpleT = (a, b) => (typeof DemeSimple !== "undefined" ? DemeSimple.t(a, b) : a);
+const simpleOn = () => typeof DemeSimple !== "undefined" && DemeSimple.isOn();
+
 /* ---------------- motion helpers ----------------
    Animated counter: ease-out, formatted with fmtNum. Sets the final
    value instantly under reduced motion, without
@@ -173,6 +179,7 @@ const SOCIAL_LINKS = [
     </svg>`],
 ];
 function renderChrome(active) {
+  window.__demeChromeActive = active;
   renderElectionBanner();
   const header = document.querySelector(".site-header");
   if (header) {
@@ -187,7 +194,14 @@ function renderChrome(active) {
       <nav class="site-nav" aria-label="Main">
         ${NAV.map(([href, label]) =>
           `<a href="${href}"${href === "my-record.html" ? ' class="nav-record"' : ""}${href === active ? ' aria-current="page"' : ""}>${label}</a>`).join("")}
-      </nav></div>`;
+      </nav>
+      <div class="simple-mode-wrap">
+        <button class="simple-mode-toggle" id="simple-mode-toggle" type="button"
+          aria-pressed="${simpleOn()}" aria-describedby="simple-mode-help">
+          <span class="track" aria-hidden="true"></span>Simpler text</button>
+        <span class="visually-hidden" id="simple-mode-help">Use simpler words
+          across this site. Your choice is saved on this device.</span>
+      </div></div>`;
   }
   const footer = document.querySelector(".site-footer");
   if (footer) {
@@ -267,10 +281,10 @@ function memberStatsHTML(person) {
     ? `<span class="att-meter" aria-hidden="true"><span class="att-fill" style="width:${Math.max(0, Math.min(100, att))}%"></span></span>`
     : "";
   return `<div class="member-stats" aria-label="Record summary">
-    <div><span>Recorded-vote participation</span><strong>${fmtAtt(person)}</strong>${meter}</div>
+    <div><span>${simpleT("Recorded-vote participation", "Recorded votes they took part in")}</span><strong>${fmtAtt(person)}</strong>${meter}</div>
     <div><span>Votes cast</span><strong>${fmtNum(person.votesCast)}</strong></div>
-    <div><span>Tenure</span><strong>${esc(memberTenure(person))}</strong></div>
-    <div><span>Interest declared · stepped back</span><strong>${fmtNum(interest)}</strong></div>
+    <div><span>${simpleT("Tenure", "How long on Council")}</span><strong>${esc(memberTenure(person))}</strong></div>
+    <div><span>${simpleT("Interest declared · stepped back", "Declared an interest · did not vote")}</span><strong>${fmtNum(interest)}</strong></div>
   </div>`;
 }
 
@@ -326,8 +340,7 @@ function renderElectionBanner() {
   aside.id = "election-banner";
   aside.setAttribute("aria-label", "Municipal election reminder");
   aside.innerHTML = `<div class="wrap">
-    <a href="councillors.html">Municipal election — Monday, October 26,
-      2026 — check your representative’s record before you vote.</a>
+    <a href="councillors.html">${esc(simpleT("Municipal election — Monday, October 26, 2026 — check your representative’s record before you vote.", "City election — Monday, October 26, 2026 — look at your representative's record before you vote."))}</a>
     <button class="election-close" type="button"
       aria-label="Dismiss election reminder">×</button></div>`;
   document.body.insertBefore(aside, document.body.firstChild);
@@ -430,6 +443,9 @@ function cleanTitle(t) {
 
 /* ---------------- decision card renderer ---------------- */
 function decisionCard(c, opts = {}) {
+  const briefText = c.brief
+    ? (simpleOn() ? DemeSimple.simplifyBrief(pastVoice(c.brief)) : pastVoice(c.brief))
+    : "";
   const more = c.hasVote
     ? `<a href="decision.html?ref=${encodeURIComponent(c.ref)}">See the record
        <span aria-hidden="true">→</span></a>`
@@ -443,7 +459,7 @@ function decisionCard(c, opts = {}) {
       <span>${esc(c.body)}</span>
       <span class="pill">${esc(c.statusLabel)}</span></div>
     <h3><a href="decision.html?ref=${encodeURIComponent(c.ref)}">${esc(cleanTitle(c.title))}</a></h3>
-    ${c.brief ? `<p class="brief">${esc(pastVoice(c.brief))}</p>` : ""}
+    ${c.brief ? `<p class="brief">${esc(briefText)}</p>` : ""}
     ${c.stake ? `<p class="stake">${esc(c.stake)}</p>` : ""}
     <p class="more">${more}${wards ? `<span class="wardtag">${esc(wards.replace(/^ · /, ""))}</span>` : ""}</p>
   </article>`;

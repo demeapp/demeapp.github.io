@@ -113,10 +113,12 @@ function alignmentCopy(tally, memberName, ward) {
   const explainer = [];
   if (tally.B1) explainer.push(
     `${tally.B1} where ${memberName} was absent — there was no vote to compare.`);
-  if (tally.B2) explainer.push(
-    `${tally.B2} where ${memberName} declared an interest and did not vote — stepping back on a conflict is a duty, not a position, so these are never counted for or against.`);
-  if (tally.B3) explainer.push(
-    `${tally.B3} decided without a recorded vote at City Council — most Council decisions are not taken name-by-name.`);
+  if (tally.B2) explainer.push(simpleOn()
+    ? `${tally.B2} where ${memberName} declared an interest and did not vote. Stepping back when there is a conflict is a duty, not a position. These are never counted for or against them.`
+    : `${tally.B2} where ${memberName} declared an interest and did not vote — stepping back on a conflict is a duty, not a position, so these are never counted for or against.`);
+  if (tally.B3) explainer.push(simpleOn()
+    ? `${tally.B3} decided without a recorded vote at City Council. Most Council decisions are not taken name-by-name.`
+    : `${tally.B3} decided without a recorded vote at City Council — most Council decisions are not taken name-by-name.`);
   if (tally.B4) explainer.push(
     `${tally.B4} where ${memberName} has no recorded vote on the item — for example, it was decided before they took office.`);
   if (tally.comparable >= 5) {
@@ -124,11 +126,15 @@ function alignmentCopy(tally, memberName, ward) {
       progress: null,
       headline: {
         num: `${tally.matched} of ${tally.comparable}`,
-        lab: `decided picks where ${memberName} voted the same way you did. ${memberName} is your Ward ${ward} councillor, and each pick is compared with the first recorded vote they cast at City Council on that item. Counted here, on this device, from your picks and the public record — a record, not a score; what you do with it is up to you.`,
+        lab: simpleOn()
+          ? `decided picks where ${memberName} voted the same way you did. ${memberName} is your Ward ${ward} councillor. Each pick is compared with the first recorded vote they cast at City Council on that item. Counted here, on this device, from your picks and the public record. It is a record, not a score. What you do with it is up to you.`
+          : `decided picks where ${memberName} voted the same way you did. ${memberName} is your Ward ${ward} councillor, and each pick is compared with the first recorded vote they cast at City Council on that item. Counted here, on this device, from your picks and the public record — a record, not a score; what you do with it is up to you.`,
       } };
   }
   return { explainer, headline: null,
-    progress: `How you line up with ${memberName} will be summed up here once more of your decided picks have a recorded Council vote from them — so far ${tally.comparable} of the 5 needed are counted. Every pick is already lined up against the record below.` };
+    progress: simpleOn()
+      ? `How you line up with ${memberName} will be summed up here once more of your decided picks have a recorded Council vote from them. So far ${tally.comparable} of the 5 needed are counted. Every pick is already lined up against the record below.`
+      : `How you line up with ${memberName} will be summed up here once more of your decided picks have a recorded Council vote from them — so far ${tally.comparable} of the 5 needed are counted. Every pick is already lined up against the record below.` };
 }
 /* === END ALIGNMENT CORE === */
 

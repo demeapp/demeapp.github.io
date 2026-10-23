@@ -1917,3 +1917,41 @@ body.explore-page #results { gap: 1.25rem; }
   .member-stats { padding: 1.2rem 1.15rem 1.3rem; }
   .person-top { padding: 1.25rem 1.15rem 1.1rem; }
 }
+
+/* ---------- Simpler text mode (Stream D preview, Oct 23, 2026) ----------
+   The header toggle is a real button: aria-pressed carries the state,
+   the track/knob is decorative, and the focus ring matches the site's
+   :focus-visible treatment. The privacy page's short-version box is a
+   summary layer only — it renders only in Simple mode and never
+   replaces the policy text below it. */
+.simple-mode-wrap { display: flex; align-items: center; }
+.simple-mode-toggle {
+  display: inline-flex; align-items: center; gap: .55rem; min-height: 44px;
+  background: none; border: 0; padding: .3rem .2rem; font: inherit;
+  font-size: .95rem; font-weight: 600; color: var(--ink); cursor: pointer;
+  border-radius: 8px;
+}
+.simple-mode-toggle .track {
+  width: 46px; height: 26px; border-radius: 999px; flex: none;
+  background: var(--line); position: relative; transition: background-color .15s ease;
+}
+.simple-mode-toggle .track::after {
+  content: ""; position: absolute; top: 3px; left: 3px; width: 20px; height: 20px;
+  border-radius: 50%; background: #fff; box-shadow: 0 1px 3px rgba(10,31,56,.3);
+  transition: left .15s ease;
+}
+.simple-mode-toggle[aria-pressed="true"] .track { background: var(--bronze-dark); }
+.simple-mode-toggle[aria-pressed="true"] .track::after { left: 23px; }
+.simple-mode-toggle:focus-visible {
+  outline: 3px solid var(--bronze-dark); outline-offset: 2px;
+}
+[data-simple-only] { display: none; }
+html.simple-on [data-simple-only] { display: block; }
+.simple-summary {
+  background: var(--mint-wash); border: 1px solid rgba(11,122,92,.18);
+  border-left: 4px solid var(--bronze); border-radius: var(--radius);
+  padding: 1.1rem 1.25rem; margin: 1.4rem 0 .4rem; max-width: 52rem;
+}
+@media (forced-colors: active) {
+  .simple-mode-toggle .track { border: 1px solid ButtonText; }
+}

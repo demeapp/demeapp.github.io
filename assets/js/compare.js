@@ -49,7 +49,7 @@ function personSummary(p, shared) {
   return `<div class="compare-person">${avatarHTML(p)}
     <div><h3><a href="councillor.html?m=${encodeURIComponent(p.slug)}">${esc(p.name)}</a></h3>
     <p>${esc(role)}</p>
-    <p>${fmtNum(shared)} shared recorded votes in this comparison</p></div></div>`;
+    <p>${fmtNum(shared)} ${simpleT("shared recorded votes in this comparison", "recorded votes in this comparison that both members took part in")}</p></div></div>`;
 }
 
 async function render() {
@@ -85,15 +85,19 @@ async function render() {
       <div class="compare-agree">
         <div><strong>${pct == null ? "—" : pct + "%"}</strong>
         <span>${shared
-          ? `voted the same way on ${fmtNum(agreed)} of ${fmtNum(shared)} shared recorded votes`
-          : "no shared recorded votes in the archive"}</span></div>
+          ? (simpleOn()
+            ? `voted the same way on ${fmtNum(agreed)} of ${fmtNum(shared)} recorded votes they both took part in`
+            : `voted the same way on ${fmtNum(agreed)} of ${fmtNum(shared)} shared recorded votes`)
+          : simpleT("no shared recorded votes in the archive", "no recorded votes in the archive that both members took part in")}</span></div>
       </div>
       ${personSummary(b, shared)}
     </div>
     <h2>Different recorded positions</h2>
     <hr class="rule">
     <p class="small">${splitRows.length
-      ? `${fmtNum(splitRows.length)} shared motions where they voted differently, newest first.`
+      ? (simpleOn()
+        ? `${fmtNum(splitRows.length)} motions where they voted in different ways, newest first.`
+        : `${fmtNum(splitRows.length)} shared motions where they voted differently, newest first.`)
       : "They took the same position on every shared recorded vote in the archive."}</p>
     <div id="split-list"></div>
     <div class="pager" id="split-pager"></div>`;

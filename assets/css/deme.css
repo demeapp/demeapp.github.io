@@ -110,6 +110,7 @@ a:visited { color: var(--bronze-dark); }
   background: var(--ink); color: var(--marble); padding: .6rem 1rem;
 }
 .skip-link:focus { left: .5rem; top: .5rem; }
+.skip-link:visited { color: var(--marble); }
 :focus-visible {
   outline: 3px solid var(--bronze-dark);
   outline-offset: 2px; border-radius: 4px;
@@ -185,10 +186,14 @@ h2[id], h3[id], section[id] { scroll-margin-top: 10.5rem; }
   display: flex; align-items: center; gap: .65rem;
   color: var(--ink); text-decoration: none; margin-right: auto;
 }
+/* Visited-state pin: a:visited (0,1,1) otherwise outranks .brand
+   (0,1,0) and turns the wordmark bronze-dark green for every
+   returning visitor. The brand holds var(--ink) in every state. */
+.brand:link, .brand:visited, .brand:hover, .brand:active { color: var(--ink); }
 .brand .mark { flex: none; }
 .brand .wordmark {
   font-family: var(--font-display); font-size: 1.55rem; font-weight: 700;
-  letter-spacing: .01em; line-height: 1;
+  letter-spacing: .01em; line-height: 1; color: var(--ink);
 }
 .brand .tagline {
   display: block; font-family: var(--font-body); font-size: .875rem;
@@ -383,6 +388,9 @@ p { margin: 0 0 1rem; }
   border: 1.5px solid var(--ink); background: var(--ink); color: #fff;
   text-decoration: none;
 }
+/* Visited pin, placed before the (0,2,0) variant rules below so
+   .btn.secondary / .btn.bronze keep their own text colours. */
+.btn:visited { color: #fff; }
 .btn:hover { background: #1B2C4E; }
 .btn.secondary { background: transparent; color: var(--ink); border-color: var(--ink); }
 .btn.secondary:hover { background: var(--marble-2); }
@@ -479,6 +487,10 @@ html.js .statband:empty { min-height: 8.2rem; }
   background: var(--card); color: var(--ink); text-decoration: none;
   font-size: .98rem; cursor: pointer; font-family: inherit;
 }
+.chip:visited { color: var(--ink); }
+/* Hero ask-chips sit on the navy hero: their light label (#E7EEF5 from
+   .hero .chip) must survive :visited too, or the pin above inks them out. */
+.hero .chip:visited { color: #E7EEF5; }
 .chip:hover { border-color: var(--bronze-dark); background: var(--marble-2); }
 .chip[aria-pressed="true"] { background: var(--ink); color: #fff; border-color: var(--ink); }
 
@@ -1759,6 +1771,9 @@ section[aria-labelledby="latest-h"] {
 .thread-card-label { color: #fff; }
 .thread-card-meta { color: #B5C1D3; }
 .thread-card:hover { border-color: #58718B; }
+/* Visited pin: the navy restyle above is the winning unvisited
+   colour (#fff); a:visited must not turn card text green. */
+.thread-card:visited { color: #fff; }
 /* The comparison rows gain the mint edge the rest of the family has. */
 .gap-row { border-left: 3px solid var(--bronze); }
 .gap-row .who { color: var(--navy); }

@@ -51,11 +51,34 @@
    history + participation added, desktop rows scattered the name to a
    different x on every row and a long record broke its row. Scoped
    to this section only; the shared rule is untouched. */
-#earlier-details .personlist li { justify-content: flex-start; flex-wrap: nowrap; }
-#earlier-details .personlist li > span:first-child { flex: none; }
-#earlier-details .personlist li > span:last-child { flex: 1 1 auto; min-width: 0; }
+/* v18 (Oct 23, 2026): the row is an organized record unit — name,
+   tenure line, ward history on its own line(s), then the summary
+   stats as aligned labelled columns in the member cards'
+   .member-stats language, so the eye can compare down the list.
+   Every fact the old running line carried is still on the row. */
+#earlier-details .personlist li { justify-content: flex-start; flex-wrap: nowrap; align-items: flex-start; }
+#earlier-details .personlist li > .avatar { flex: none; }
+.em-main { flex: 1 1 auto; min-width: 0; }
+.em-name { margin: 0; font-size: 1.08rem; line-height: 1.3; }
+.em-terms { margin: .2rem 0 0; color: var(--ink-soft); font-size: .92rem; }
+.em-wards { margin: .15rem 0 0; color: var(--ink-faint); font-size: .875rem; }
+.em-wards span { display: block; }
+.em-stats {
+  display: grid; grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: .55rem 1.25rem; margin-top: .65rem; max-width: 36rem;
+}
+.em-stats > div { min-width: 0; }
+.em-stats span {
+  display: block; color: var(--ink-faint); font-size: .72rem; font-weight: 600;
+  letter-spacing: .05em; text-transform: uppercase;
+}
+.em-stats strong { display: block; margin-top: .15rem; font-size: 1.05rem; line-height: 1.25; color: var(--ink); }
+@media (max-width: 480px) {
+  .em-stats { gap: .55rem .8rem; }
+  .em-stats span { font-size: .66rem; }
+}
 </style>
-<link rel="icon" href="favicon-navy.svg" type="image/svg+xml">
+<link rel="icon" href="favicon-navy-2026.svg" type="image/svg+xml">
 <meta name="theme-color" content="#0E2A47">
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <meta property="og:type" content="website">
@@ -67,7 +90,7 @@
 <meta name="twitter:title" content="Representatives — Deme">
 <meta name="twitter:description" content="Every Toronto City Council member in the record: ward and voting record — facts only, no grades.">
 <meta name="twitter:image" content="https://demeapp.github.io/assets/og-image-navy.png">
-<link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
+<link rel="apple-touch-icon" href="assets/icons/apple-touch-icon-2026.png">
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to main content</a>
@@ -125,6 +148,7 @@
       <details class="filters" id="earlier-details" style="margin-top:3rem">
         <summary>Earlier members (2006–2026)</summary>
         <p class="small" style="margin-top:.8rem">Members from earlier terms, in the same archive.</p>
+        <p class="small earlier-note">Interests declared counts recorded votes where a member declared an interest and did not vote, in the name-by-name record (2018–2026). A dash marks a member whose service ended before that record begins.</p>
         <div class="earlier-search">
           <label class="visually-hidden" for="eq">Search earlier members</label>
           <input type="text" id="eq" placeholder="Search earlier members — a name, or a ward then or now" autocomplete="off" spellcheck="false">
@@ -196,8 +220,8 @@ function loadEarlierData() {
    collapse into one segment, e.g. "Ward 30 — Toronto—Danforth
    (2006–2018) · Ward 14 — Toronto—Danforth (2018–2026)". Mayors and
    unknown wards produce no segment. */
-function wardSummary(c) {
-  if (!earlierWards || !earlierWards[c.slug]) return "";
+function wardGroups(c) {
+  if (!earlierWards || !earlierWards[c.slug]) return [];
   const groups = [];
   for (const t of c.terms) {
     const info = earlierWards[c.slug][t];
@@ -212,12 +236,37 @@ function wardSummary(c) {
       ? fmtTerm(g.terms[0])
       : `${fmtTerm(g.terms[0]).slice(0, 4)}–${fmtTerm(g.terms[g.terms.length - 1]).slice(5)}`;
     return `Ward ${g.ward} — ${g.wardName} (${span})`;
-  }).join(" · ");
+  });
+}
+function wardSummary(c) {
+  return wardGroups(c).join(" · ");
+}
+/* Interests declared for an earlier row — the member cards' measure:
+   recorded votes where the member declared an interest and did not
+   vote (councillors.json `interest`, counted from the vote rows
+   flagged Absent(Interest Declared)). That count lives in the
+   name-by-name record, 2018–2026. A member whose service ended
+   before the record begins has no rows in it at all — verified
+   against record-data/member/*.json for all 94 members (Oct 23,
+   2026): exactly the members last seen in the record era have rows.
+   For them the stat is the record's own missing mark — never a 0
+   the data cannot support. */
+function earlierInterest(c) {
+  if (!c.lastSeen || c.lastSeen < "2018-01-01") return "—";
+  return fmtNum(Number(c.interest) || 0);
 }
 function earlierRow(c) {
-  const ws = wardSummary(c);
-  return `<li>${avatarHTML(c, "sm")}<span><a href="councillor.html?m=${encodeURIComponent(c.slug)}">${esc(c.name)}</a>
-   <span class="terms">${esc(c.terms.map(fmtTerm).join(" · "))}${ws ? ` · ${esc(ws)}` : ""} · ${fmtNum(c.votesCast)} votes cast · ${esc(fmtAtt(c))} recorded-vote participation</span></span></li>`;
+  const wards = wardGroups(c).map((w) => `<span>${esc(w)}</span>`).join("");
+  return `<li>${avatarHTML(c, "sm")}<div class="em-main">
+    <p class="em-name"><a href="councillor.html?m=${encodeURIComponent(c.slug)}">${esc(c.name)}</a></p>
+    <p class="em-terms">${esc(c.terms.map(fmtTerm).join(" · "))}</p>
+    ${wards ? `<p class="em-wards">${wards}</p>` : ""}
+    <div class="em-stats" aria-label="Record summary">
+      <div><span>Votes cast</span><strong>${fmtNum(c.votesCast)}</strong></div>
+      <div><span>${simpleT("Recorded-vote participation", "Recorded votes they took part in")}</span><strong>${esc(fmtAtt(c))}</strong></div>
+      <div><span>${simpleT("Interest declared · stepped back", "Declared an interest · did not vote")}</span><strong>${earlierInterest(c)}</strong></div>
+    </div>
+  </div></li>`;
 }
 function render(q) {
   const query = (q || "").toLowerCase();

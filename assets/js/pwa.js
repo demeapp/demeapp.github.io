@@ -9,7 +9,7 @@
   if (!document.querySelector('link[rel="manifest"]'))
     add('link', { rel: 'manifest', href: '/manifest.webmanifest' });
   if (!document.querySelector('link[rel="apple-touch-icon"]'))
-    add('link', { rel: 'apple-touch-icon', href: '/assets/icons/apple-touch-icon.png' });
+    add('link', { rel: 'apple-touch-icon', href: '/assets/icons/apple-touch-icon-2026.png' });
   if (!document.querySelector('meta[name="theme-color"]'))
     add('meta', { name: 'theme-color', content: '#0E2A47' });
   add('meta', { name: 'mobile-web-app-capable', content: 'yes' });

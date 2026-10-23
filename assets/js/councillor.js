@@ -356,7 +356,8 @@ async function renderDeclaredInterests(person) {
   } catch (e) { gifts = null; }
   const hasEntries = !!(entries && entries.length);
   const hasGifts = !!(gifts && gifts.length);
-  if (!hasEntries && !hasGifts) return;
+  const hasVoteInterests = (person.interest || 0) > 0;
+  if (!hasEntries && !hasGifts && !hasVoteInterests) return;
   const rows = hasEntries ? entries.map((r) => {
     const meta = [fmtDate(r.VerbalDeclarationDate), r.Committee, r.Item]
       .filter(Boolean).join(" · ");
@@ -382,7 +383,7 @@ async function renderDeclaredInterests(person) {
     giftsBody = `<p class="small" style="max-width:44rem">Gifts and benefits this member disclosed, as published in the Integrity Commissioner's Gift Disclosure Registry. Values are as published.</p>
       <ul class="personlist history-rows">${grows}</ul>`;
   }
-  if (hasEntries) {
+  if (hasEntries || hasVoteInterests) {
     const giftsHTML = hasGifts
       ? `<h3 style="margin-top:1.8rem">Gifts and benefits disclosed</h3>
       ${giftsBody}`
@@ -390,9 +391,9 @@ async function renderDeclaredInterests(person) {
     host.innerHTML = `<section style="margin-top:2.4rem" aria-labelledby="declared-interests-h">
     <h2 id="declared-interests-h">Declared interests — the official register</h2><hr class="rule">
     <p class="small" style="max-width:44rem">${simpleOn()
-      ? `This is the City Clerk's official list — the interests ${esc(person.name)} declared on the record, one item at a time. It is not the same as the recorded-vote count above. That count comes from recorded votes where the member declared an interest and did not vote. The two lists count different things, so their totals will not match.`
-      : `The City Clerk's official register — the declarations ${esc(person.name)} made on the record, item by item. It is separate from the recorded-vote count above it, counted from recorded votes where the member declared an interest and did not vote; the two count different things and their totals will not match.`}</p>
-    <ul class="personlist history-rows">${rows}</ul>
+      ? `This is the City Clerk's official list — the interests ${esc(person.name)} declared on the record, one item at a time. It is not the same as the recorded-vote count above. That count comes from recorded votes where the member declared an interest and did not vote. The two lists count different things, so their totals will not match. A member can declare an interest out loud in the chamber and still not appear in this list. The vote record above may show a declaration that this list does not have.`
+      : `The City Clerk's official register — the declarations ${esc(person.name)} made on the record, item by item. It is separate from the recorded-vote count above it, counted from recorded votes where the member declared an interest and did not vote; the two count different things and their totals will not match. <strong>This register is the City Clerk's published file of declarations. A declaration made out loud in the chamber — for example under Article 8 of the Code of Conduct — may not appear in that file, so this list can miss a declaration that the vote record shows.</strong>`}</p>
+    ${hasEntries ? `<ul class="personlist history-rows">${rows}</ul>` : `<p class="small">${simpleOn() ? `No declaration for ${esc(person.name)} appears in the City Clerk's published list. The vote count above records declarations made on votes, including ones said out loud in the chamber, that may be missing from this list.` : `No declaration by ${esc(person.name)} appears in the City Clerk's published register file. The recorded-vote count above counts declarations recorded on votes, including declarations made out loud in the chamber, which the published file can miss.`}</p>`}
     ${giftsHTML}
     <p class="small" style="max-width:44rem;margin-top:1rem">Source: City Clerk's Office · Registry of Declared Interest + Gift Disclosure Registry (Integrity Commissioner) · Open Data refreshed September 26, 2026</p>
   </section>`;

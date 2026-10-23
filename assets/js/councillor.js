@@ -239,13 +239,13 @@ async function renderExtras(person) {
           <p class="promise-num">Campaign promise ${i + 1}</p>
           <p>${esc(pr.text)}</p>
           ${pr.source ? `<a class="promise-source" href="${esc(pr.source)}"
-            target="_blank" rel="noopener noreferrer">View campaign source ↗</a>` : ""}
+            target="_blank" rel="noopener noreferrer">View campaign source ↗<span class="visually-hidden"> (opens in a new tab)</span></a>` : ""}
           ${related.length ? `<details class="related-votes">
             <summary>Related votes in the record (${related.length})</summary>
             <div class="related-list">
             ${related.slice(0, 3).map(relatedVoteRow).join("")}
             </div>
-            ${related.length > 3 ? `<p class="small related-note" style="margin:.45rem 0 0">${simpleOn() ? `Showing 3 of ${related.length} matching votes, newest first.` : `Showing 3 of ${related.length} matching votes — the most recent first.`}</p>
+            ${related.length > 3 ? `<p class="small related-note" style="margin:.45rem 0 0" tabindex="-1" aria-live="polite">${simpleOn() ? `Showing 3 of ${related.length} matching votes, newest first.` : `Showing 3 of ${related.length} matching votes — the most recent first.`}</p>
             <button class="related-more" type="button" data-promise="${i}">Show all ${related.length} matching votes</button>` : ""}
           </details>` : ""}
         </article>`;
@@ -296,7 +296,7 @@ async function renderExtras(person) {
         </div>
         <p class="lob-note">Counts are communications as filed in the City of Toronto Lobbyist Registry, grouped to the member the filing names — a contact with a member’s staff is not counted here.
         Registry snapshot: October 8, 2026. Source:
-        <a href="https://open.toronto.ca/dataset/lobbyist-registry/" target="_blank" rel="noopener noreferrer">City of Toronto Lobbyist Registry (Open Data)</a>.</p>
+        <a href="https://open.toronto.ca/dataset/lobbyist-registry/" target="_blank" rel="noopener noreferrer">City of Toronto Lobbyist Registry (Open Data)<span class="visually-hidden"> (opens in a new tab)</span></a>.</p>
       </details></section>`;
   } else if (lobbying) {
     html += `<section class="lobbying" aria-labelledby="lobbying-h">
@@ -317,10 +317,15 @@ async function renderExtras(person) {
         all.slice(3).map(relatedVoteRow).join(""));
       bindRelatedVotes(list);
       const note = details.querySelector(".related-note");
-      if (note) note.textContent =
-        simpleOn()
-          ? `Showing all ${all.length} matching votes, newest first.`
-          : `Showing all ${all.length} matching votes — the most recent first.`;
+      if (note) {
+        note.textContent =
+          simpleOn()
+            ? `Showing all ${all.length} matching votes, newest first.`
+            : `Showing all ${all.length} matching votes — the most recent first.`;
+        /* WCAG fix wave (M-3): the button removes itself; move focus to
+           the updated note (focusable + live region) instead of body. */
+        note.focus();
+      }
       btn.remove();
     }));
 }
@@ -365,7 +370,7 @@ async function renderDeclaredInterests(person) {
       <span class="h-meta">${esc(meta)}</span>
       ${r.VerbalDeclaration ? `<span class="h-meta">Interest as recorded: ${esc(r.VerbalDeclaration)}</span>` : ""}
       ${r.capacityNote ? `<span class="h-meta">${esc(r.capacityNote)}</span>` : ""}
-      ${r.WrittenDeclaration ? `<span class="h-meta"><a href="${esc(r.WrittenDeclaration)}" target="_blank" rel="noopener noreferrer">Written declaration (PDF)</a></span>` : ""}
+      ${r.WrittenDeclaration ? `<span class="h-meta"><a href="${esc(r.WrittenDeclaration)}" target="_blank" rel="noopener noreferrer">Written declaration (PDF)<span class="visually-hidden"> (opens in a new tab)</span></a></span>` : ""}
       </span></li>`;
   }).join("") : "";
   let giftsBody = "";
@@ -377,7 +382,7 @@ async function renderDeclaredInterests(person) {
       return `<li><span class="h-title">${esc(g.details || "")}
         <span class="h-meta">${esc(meta)}</span>
         <span class="h-meta">${donor}Value as published: ${esc(g.valueAsPublished || "")}${g.incompleteOrUnapproved ? " (marked incomplete and/or not approved in the registry, as published)" : ""}</span>
-        ${g.valueDetailUrl ? `<span class="h-meta"><a href="${esc(g.valueDetailUrl)}" target="_blank" rel="noopener noreferrer">Disclosure statement (PDF)</a></span>` : ""}
+        ${g.valueDetailUrl ? `<span class="h-meta"><a href="${esc(g.valueDetailUrl)}" target="_blank" rel="noopener noreferrer">Disclosure statement (PDF)<span class="visually-hidden"> (opens in a new tab)</span></a></span>` : ""}
         </span></li>`;
     }).join("");
     giftsBody = `<p class="small" style="max-width:44rem">Gifts and benefits this member disclosed, as published in the Integrity Commissioner's Gift Disclosure Registry. Values are as published.</p>
@@ -477,7 +482,7 @@ async function renderPayExpenses(person) {
       ${rows ? `<ul class="lob-list">${rows}</ul>` : ""}
       ${r.correctionNote ? `<p class="small" style="max-width:44rem;margin-top:.5rem">${esc(r.correctionNote)}</p>` : ""}
       ${r.extractionNote ? `<p class="small" style="max-width:44rem;margin-top:.5rem">${esc(r.extractionNote)}</p>` : ""}
-      ${r.sourceUrl ? `<p class="small" style="margin-top:.5rem"><a href="${esc(r.sourceUrl)}" target="_blank" rel="noopener noreferrer">Report (PDF)</a></p>` : ""}
+      ${r.sourceUrl ? `<p class="small" style="margin-top:.5rem"><a href="${esc(r.sourceUrl)}" target="_blank" rel="noopener noreferrer">Report (PDF)<span class="visually-hidden"> (opens in a new tab)</span></a></p>` : ""}
     </div>`;
   };
   const yearsHTML = years.map((y) =>
@@ -523,14 +528,14 @@ async function renderHaveYourSay(person) {
     : `<p class="small">No public office contact details for this member
         are listed in the record. To reach the office that holds the seat
         today, use the City's official
-        <a href="${CITY_MEMBERS_URL}" target="_blank" rel="noopener noreferrer">members of Council directory</a>.</p>`;
+        <a href="${CITY_MEMBERS_URL}" target="_blank" rel="noopener noreferrer">members of Council directory<span class="visually-hidden"> (opens in a new tab)</span></a>.</p>`;
   const intro = person.current
     ? (simpleOn()
       ? `The record above shows what ${esc(person.name)} decided and how they voted. If you live in ${where}, this person represents you at City Hall. How to reach their office is below. While an item is still being decided, you can also speak to the committee yourself.`
       : `The record above is what ${esc(person.name)} decided and how they voted. If you live in ${where}, this is your representative at City Hall — the office route is below. While an item is still being decided, you can speak to the committee considering it yourself.`)
     : `${esc(person.name)} no longer sits on Council, so the office that
        held this seat has changed hands — the City's
-       <a href="${CITY_MEMBERS_URL}" target="_blank" rel="noopener noreferrer">members of Council directory</a>
+       <a href="${CITY_MEMBERS_URL}" target="_blank" rel="noopener noreferrer">members of Council directory<span class="visually-hidden"> (opens in a new tab)</span></a>
        reaches the office that holds it today. The committee route below
        still applies to the questions this record covers.`;
   host.innerHTML = `<section class="hys" aria-labelledby="hys-h">
@@ -549,13 +554,13 @@ async function renderHaveYourSay(person) {
           <li><span class="hys-num" aria-hidden="true">1</span>
             <p><span class="step-h">Find the item.</span>
             Look it up on the City's
-            <a href="${CITY_MEETINGS_URL}" target="_blank" rel="noopener noreferrer">meeting portal</a>
+            <a href="${CITY_MEETINGS_URL}" target="_blank" rel="noopener noreferrer">meeting portal<span class="visually-hidden"> (opens in a new tab)</span></a>
             and note which committee is hearing it, and when.</p></li>
           <li><span class="hys-num" aria-hidden="true">2</span>
             <p><span class="step-h">Ask to speak.</span>
             Tell the City Clerk you want to speak on the item — anyone
             can. The City's page on
-            <a href="${CITY_SPEAK_URL}" target="_blank" rel="noopener noreferrer">participating in council and committee meetings</a>
+            <a href="${CITY_SPEAK_URL}" target="_blank" rel="noopener noreferrer">participating in council and committee meetings<span class="visually-hidden"> (opens in a new tab)</span></a>
             sets out how to register — you are asked to register by
             4:30 p.m. the day before the meeting. Written comments can
             be sent instead, and become part of the public record.</p></li>
@@ -727,7 +732,7 @@ async function init() {
     person = people.find((p) => p.name === params.get("name"));
   }
   if (!person) {
-    box.innerHTML = `<div class="calm"><h3>Member not found.</h3>
+    box.innerHTML = `<div class="calm"><h2>Member not found.</h2>
       <p>See the <a href="councillors.html">full list of members</a>.</p></div>`;
     return;
   }

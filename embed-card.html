@@ -13,11 +13,14 @@
 <meta name="referrer" content="strict-origin-when-cross-origin">
 </head>
 <body class="embed-card-page">
+<a class="skip-link" href="#main">Skip to the card</a>
 <main id="main" class="embed-main">
   <div class="embed-card" role="region" aria-labelledby="embed-card-h">
+    <header class="embed-head">
     <p class="kicker embed-kicker">Deme</p>
     <h1 id="embed-card-h" class="embed-title">Your ward&rsquo;s record</h1>
     <hr class="rule embed-rule">
+    </header>
 
     <div class="embed-picker">
       <label class="embed-label" for="embed-ward-select">Ward</label>
@@ -31,15 +34,17 @@
       <noscript>
         <p class="small">This card needs JavaScript to load the record.
         You can read your ward&rsquo;s record on
-        <a href="https://demeapp.github.io/" target="_blank" rel="noopener">Deme</a>.</p>
+        <a href="https://demeapp.github.io/" target="_blank" rel="noopener">Deme<span class="visually-hidden"> (opens in a new tab)</span></a>.</p>
       </noscript>
     </div>
 
+    <footer class="embed-foot">
     <p class="embed-credit">
-      <a href="https://demeapp.github.io/" target="_blank" rel="noopener">On Deme</a>
+      <a href="https://demeapp.github.io/" target="_blank" rel="noopener">On Deme<span class="visually-hidden"> (opens in a new tab)</span></a>
       <span aria-hidden="true"> &middot; </span>
       Toronto City Council&rsquo;s record, in plain language
     </p>
+    </footer>
   </div>
 </main>
 <script src="assets/js/common.js"></script>

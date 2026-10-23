@@ -175,13 +175,13 @@ function motionBlock(m, idx) {
 
 async function init() {
   if (!ref) {
-    box.innerHTML = `<div class="calm"><h3>No decision specified.</h3>
+    box.innerHTML = `<div class="calm"><h2>No decision specified.</h2>
       <p>Browse the <a href="explore.html">record</a> to pick one.</p></div>`;
     return;
   }
   const found = await findCard(ref);
   if (!found) {
-    box.innerHTML = `<div class="calm"><h3>That item isn't in the archive.</h3>
+    box.innerHTML = `<div class="calm"><h2>That item isn't in the archive.</h2>
       <p>It may predate the decision archive (2018) or the reference may be
       mistyped. <a href="explore.html">Search the record →</a></p></div>`;
     return;
@@ -251,7 +251,7 @@ async function init() {
     <div id="official"></div>
     <p style="margin-top:2rem"><a class="ext" href="${tmmisUrl(card.ref)}"
       target="_blank" rel="noopener">Read the full official record at the
-      City of Toronto →</a></p>`;
+      City of Toronto →<span class="visually-hidden"> (opens in a new tab)</span></a></p>`;
 
   setupShareButton(document.getElementById("share-btn"));
 
@@ -289,7 +289,7 @@ async function init() {
           <span class="bh-lab" id="brief-mode-label">Plain-language summary</span>
           <button class="simple-toggle" id="simple-toggle" type="button"
             role="switch" aria-checked="false">
-            <span class="track" aria-hidden="true"></span>Keep it simple</button>
+            <span class="track" aria-hidden="true"></span>Simpler text</button>
         </div>`);
       const toggle = document.getElementById("simple-toggle");
       const label = document.getElementById("brief-mode-label");

@@ -116,7 +116,7 @@
   border-radius: 14px 0 0 14px; box-shadow: none;
 }
 .hero .searchbox input[type="search"]:focus {
-  outline: 3px solid var(--bronze-dark); outline-offset: 2px;
+  outline: 3px solid #8FE8C4; outline-offset: 2px;
   box-shadow: 0 0 0 3px rgba(47,191,143,.35);
   border-color: var(--bronze-dark);
 }
@@ -126,6 +126,12 @@
 .hero .searchbox .btn {
   flex: 0 0 auto; min-height: 58px; border-radius: 0 14px 14px 0;
   box-shadow: none;
+}
+.hero .search-hint-row { margin: .6rem 0 0; font-size: .82rem; color: #B5C1D3; }
+.hero .search-hint kbd {
+  font-family: inherit; font-weight: 700; color: var(--navy);
+  background: var(--marble); border: 1px solid var(--line);
+  border-bottom-width: 2px; border-radius: 6px; padding: .08rem .42rem;
 }
 .hero .askchips { margin: 1rem 0 0; gap: .5rem; align-items: stretch; }
 .hero .askchips-label { flex: 0 0 100%; }
@@ -157,6 +163,7 @@
                autocomplete="off">
         <button class="btn" type="submit">Search</button>
       </form>
+      <p class="search-hint-row"><span class="search-hint" aria-hidden="true"><kbd>/</kbd> to focus search</span></p>
       <div class="askchips" aria-label="Example questions you can ask">
         <span class="askchips-label">Ask in plain words:</span>
         <a class="chip" href="explore.html?q=How%20did%20council%20vote%20on%20housing%20since%202022%3F">How did council vote on housing since 2022?</a>

@@ -65,7 +65,7 @@ function embedCardFallbackHTML() {
     <p><strong>The record could not load here.</strong></p>
     <p class="small">You can still read your ward&rsquo;s record on Deme.</p>
     <p><a class="btn small" href="${DEME_BASE}" target="_blank"
-      rel="noopener">Open Deme</a></p>
+      rel="noopener">Open Deme<span class="visually-hidden"> (opens in a new tab)</span></a></p>
   </div>`;
 }
 
@@ -79,7 +79,7 @@ function embedMemberHTML(person, decisions) {
           `${DEME_BASE}decision.html?ref=${encodeURIComponent(d.ref)}`;
         const meta = [fmtDate(d.date), d.statusLabel].filter(Boolean).join(" · ");
         return `<li>
-          <a href="${esc(href)}" target="_blank" rel="noopener">${esc(d.title)}</a>
+          <a href="${esc(href)}" target="_blank" rel="noopener">${esc(d.title)}<span class="visually-hidden"> (opens in a new tab)</span></a>
           ${meta ? `<span class="embed-decision-meta">${esc(meta)}</span>` : ""}
         </li>`;
       }).join("")}</ul>`
@@ -91,7 +91,7 @@ function embedMemberHTML(person, decisions) {
       <p class="embed-ward">${esc(wardLabel)}</p>
       <h2 class="embed-name">
         <a href="${esc(memberHref)}" target="_blank"
-           rel="noopener">${esc(person.name)}</a>
+           rel="noopener">${esc(person.name)}<span class="visually-hidden"> (opens in a new tab)</span></a>
       </h2>
       <div class="embed-stats">
         <div class="embed-stat">

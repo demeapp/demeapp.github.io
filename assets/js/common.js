@@ -150,8 +150,8 @@ const NAV = [
   ["my-record.html", "My Record"],
 ];
 const COLUMN_MARK = `
-<svg class="mark" width="30" height="38" viewBox="0 0 30 38" role="img"
-     aria-label="Deme column mark">
+<svg class="mark" width="30" height="38" viewBox="0 0 30 38" aria-hidden="true"
+     focusable="false">
   <rect x="3" y="2" width="24" height="4" rx="1" fill="#2FBF8F"/>
   <rect x="6" y="9" width="3.6" height="19" fill="#0E2A47"/>
   <rect x="13.2" y="9" width="3.6" height="19" fill="#0E2A47"/>
@@ -189,7 +189,7 @@ function renderChrome(active) {
         <span class="tagline">Where the people meet the vote</span></span></a>
       <nav class="header-social" aria-label="Deme on social media">
         ${SOCIAL_LINKS.map(([href, label, glyph]) =>
-          `<a href="${href}" target="_blank" rel="noopener" aria-label="${label}">${glyph}</a>`).join("")}
+          `<a href="${href}" target="_blank" rel="noopener" aria-label="${label} (opens in a new tab)">${glyph}</a>`).join("")}
       </nav>
       <nav class="site-nav" aria-label="Main">
         ${NAV.map(([href, label]) =>
@@ -214,9 +214,9 @@ function renderChrome(active) {
           <nav class="footer-group footer-social" aria-label="Follow Deme">
             <p class="footer-h">Follow Deme</p>
             <ul>
-              <li><a href="https://x.com/demecivic" target="_blank" rel="noopener">X</a></li>
-              <li><a href="https://www.instagram.com/demecivic" target="_blank" rel="noopener">Instagram</a></li>
-              <li><a href="https://www.facebook.com/profile.php?id=1417248804799587" target="_blank" rel="noopener">Facebook</a></li>
+              <li><a href="https://x.com/demecivic" target="_blank" rel="noopener">X<span class="visually-hidden"> (opens in a new tab)</span></a></li>
+              <li><a href="https://www.instagram.com/demecivic" target="_blank" rel="noopener">Instagram<span class="visually-hidden"> (opens in a new tab)</span></a></li>
+              <li><a href="https://www.facebook.com/profile.php?id=1417248804799587" target="_blank" rel="noopener">Facebook<span class="visually-hidden"> (opens in a new tab)</span></a></li>
             </ul>
           </nav>
         </div>
@@ -693,16 +693,22 @@ const tmmisUrl = (ref) =>
   `https://secure.toronto.ca/tmmis/viewAgendaItemHistory.do?item=${encodeURIComponent(ref)}`;
 
 /* ---------------- "/" focuses search (D7) ----------------
-   The search-first shortcut: pressing "/" anywhere on a page with a
-   search box (#q — Home hero, Explore) focuses it. Never fires while
-   typing in a field, and modifier combos are left to the browser. */
+   The search-first shortcut: pressing "/" on a page with a search box
+   (#q — Home hero, Explore) focuses it. Never fires while typing in a
+   field, and modifier combos are left to the browser. WCAG fix wave
+   (m-2, 2.1.4): the shortcut fires only while the search box is on
+   screen, and it is documented beside the search box on both pages. */
 document.addEventListener("keydown", (e) => {
   if (e.key !== "/" || e.metaKey || e.ctrlKey || e.altKey) return;
   const t = e.target;
   if (t && (t.tagName === "INPUT" || t.tagName === "TEXTAREA"
     || t.tagName === "SELECT" || t.isContentEditable)) return;
   const q = document.getElementById("q");
-  if (q) { e.preventDefault(); q.focus(); }
+  if (!q) return;
+  const r = q.getBoundingClientRect();
+  const onScreen = r.bottom > 0 && r.top < window.innerHeight
+    && r.right > 0 && r.left < window.innerWidth;
+  if (onScreen) { e.preventDefault(); q.focus(); }
 });
 
 /* ---------------- share / copy link (D3) ----------------

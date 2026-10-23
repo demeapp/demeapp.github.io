@@ -332,8 +332,13 @@ async function renderExtras(person) {
    record from the recorded-vote interest count in the stat tiles:
    that count comes from votes where the member declared an interest
    and did not vote. A member with no matched register entries gets
-   NO section at all — absence here only means no matched records in
-   the published files, never a claim of "no declarations". */
+   NO register section at all — absence here only means no matched
+   records in the published files, never a claim of "no declarations".
+   The gifts block is independent of the register section: it renders
+   whenever the member has gift disclosures — inside the register
+   section when that renders, and standing alone (under its own
+   heading, with its own Gift Disclosure Registry source line) when
+   it does not. */
 async function renderDeclaredInterests(person) {
   const host = document.getElementById("declared-interests");
   if (!host) return;
@@ -341,14 +346,16 @@ async function renderDeclaredInterests(person) {
   try {
     const data = await loadJSON(dataPath("declared-interests.json"));
     entries = (data.members || {})[person.slug] || null;
-  } catch (e) { return; /* the record stands without the register */ }
-  if (!entries || !entries.length) return;
+  } catch (e) { entries = null; /* the record stands without the register */ }
   let gifts = null;
   try {
     const gdata = await loadJSON(dataPath("gift-disclosures.json"));
     gifts = (gdata.members || {})[person.slug] || null;
   } catch (e) { gifts = null; }
-  const rows = entries.map((r) => {
+  const hasEntries = !!(entries && entries.length);
+  const hasGifts = !!(gifts && gifts.length);
+  if (!hasEntries && !hasGifts) return;
+  const rows = hasEntries ? entries.map((r) => {
     const meta = [fmtDate(r.VerbalDeclarationDate), r.Committee, r.Item]
       .filter(Boolean).join(" · ");
     return `<li><span class="h-title">${esc(r.ItemTitle || r.Item || "")}
@@ -356,9 +363,9 @@ async function renderDeclaredInterests(person) {
       ${r.VerbalDeclaration ? `<span class="h-meta">Interest as recorded: ${esc(r.VerbalDeclaration)}</span>` : ""}
       ${r.WrittenDeclaration ? `<span class="h-meta"><a href="${esc(r.WrittenDeclaration)}" target="_blank" rel="noopener noreferrer">Written declaration (PDF)</a></span>` : ""}
       </span></li>`;
-  }).join("");
-  let giftsHTML = "";
-  if (gifts && gifts.length) {
+  }).join("") : "";
+  let giftsBody = "";
+  if (hasGifts) {
     const grows = gifts.map((g) => {
       const meta = [g.registryYear, g.date, g.type]
         .filter(Boolean).join(" · ");
@@ -369,14 +376,18 @@ async function renderDeclaredInterests(person) {
         ${g.valueDetailUrl ? `<span class="h-meta"><a href="${esc(g.valueDetailUrl)}" target="_blank" rel="noopener noreferrer">Disclosure statement (PDF)</a></span>` : ""}
         </span></li>`;
     }).join("");
-    giftsHTML = `<h3 style="margin-top:1.8rem">Gifts and benefits disclosed</h3>
-      <p class="small" style="max-width:44rem">Gifts and benefits this member
+    giftsBody = `<p class="small" style="max-width:44rem">Gifts and benefits this member
       disclosed, as published in the Integrity Commissioner's Gift
       Disclosure Registry. A published disclosure is the record of a gift
       or benefit — values are as published.</p>
       <ul class="personlist history-rows">${grows}</ul>`;
   }
-  host.innerHTML = `<section style="margin-top:2.4rem" aria-labelledby="declared-interests-h">
+  if (hasEntries) {
+    const giftsHTML = hasGifts
+      ? `<h3 style="margin-top:1.8rem">Gifts and benefits disclosed</h3>
+      ${giftsBody}`
+      : "";
+    host.innerHTML = `<section style="margin-top:2.4rem" aria-labelledby="declared-interests-h">
     <h2 id="declared-interests-h">Declared interests — the official register</h2><hr class="rule">
     <p class="small" style="max-width:44rem">This is the City Clerk's
     official register — the declarations ${esc(person.name)} made on the
@@ -387,6 +398,17 @@ async function renderDeclaredInterests(person) {
     <ul class="personlist history-rows">${rows}</ul>
     ${giftsHTML}
     <p class="small" style="max-width:44rem;margin-top:1rem">Source: City Clerk's Office · Registry of Declared Interest + Gift Disclosure Registry (Integrity Commissioner) · Open Data refreshed September 26, 2026</p>
+  </section>`;
+    return;
+  }
+  /* Gifts only — no matched register entries: the gifts block stands
+     alone in the same page area, under its own heading and its own
+     Gift Disclosure Registry source line. It speaks only to the
+     gifts record and says nothing about the member's declarations. */
+  host.innerHTML = `<section style="margin-top:2.4rem" aria-labelledby="gift-disclosures-h">
+    <h2 id="gift-disclosures-h">Gifts and benefits disclosed</h2><hr class="rule">
+    ${giftsBody}
+    <p class="small" style="max-width:44rem;margin-top:1rem">Source: Gift Disclosure Registry (Integrity Commissioner) · Open Data refreshed September 26, 2026</p>
   </section>`;
 }
 

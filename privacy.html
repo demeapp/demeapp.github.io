@@ -62,7 +62,19 @@
       emailed to you). Your password is held
       only by our sign-in provider — Deme never sees or stores it.
       Account data is held by Supabase (Canada (Central)) and is protected so
-      only you can read or change your own record.</p>
+      only you can read or change your own record. Sign-in is protected
+      by Cloudflare Turnstile, which checks that a person — not a
+      bot — is signing in.</p>
+
+      <h2 style="margin-top:2.2rem">Who processes your information</h2>
+      <p style="max-width:44rem">Three services process information
+      for Deme, each only for the job named here. Supabase holds
+      account data — your profile, your saved picks, and the items
+      you watch — in Canada (Central). Cloudflare Turnstile runs the
+      bot check when you sign in or create an account. Mailjet
+      delivers Deme's email, including account notifications and,
+      once they launch, Council alerts. No other service receives
+      your account information from us.</p>
 
       <h2 style="margin-top:2.2rem">Council alerts</h2>
       <p style="max-width:44rem">Council alerts are part of a Deme
@@ -71,7 +83,7 @@
       launched yet — no digest email has been sent. When alerts
       launch, digests will be sent to your account email, held on
       your account as described above, through our email provider,
-      only after you confirm, one per Council agenda, reviewed by
+      Mailjet, only after you confirm, one per Council agenda, reviewed by
       a person before sending. Every digest will carry an
       unsubscribe link, and unsubscribing will work immediately.
       You can also turn alerts off at any time in your account

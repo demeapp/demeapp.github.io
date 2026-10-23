@@ -194,7 +194,16 @@ async function renderExtras(person) {
           listed in this profile.</p>`;
     const contact = profile.contact || {};
     const phoneHref = String(contact.phone || "").replace(/[^0-9+]/g, "");
-    const contactPanel = contact.email || contact.phone
+    /* Former members: stored contact details are historical — the
+       phone numbers and office addresses from their time in office now
+       belong to whoever holds the seat today, so they are not shown as
+       live contact routes. */
+    const contactPanel = !person.current
+      ? `<p class="small">Historical profile — this member is no longer
+          in office, and the office contact details from their time in
+          office are not shown: the seat's phone number and office now
+          belong to their successor.</p>`
+      : contact.email || contact.phone
       ? `<div class="contact-lines">
           ${contact.email ? `<span>Email: <a href="mailto:${esc(contact.email)}">${esc(contact.email)}</a></span>` : ""}
           ${contact.phone ? `<span>Phone: <a href="tel:${esc(phoneHref)}">${esc(contact.phone)}</a></span>` : ""}
@@ -239,11 +248,7 @@ async function renderExtras(person) {
       }).join("");
       html += `<section style="margin-top:2.4rem" aria-labelledby="promises-h">
         <h2 id="promises-h">Campaign promises</h2><hr class="rule">
-        <p class="small" style="max-width:44rem">Promises are carried from
-        the campaign material each member published, with the source kept
-        beside the words. Related votes are matched by topic from this
-        member’s recorded votes — a finding aid, not a verdict on whether
-        a promise was kept.</p>
+        <p class="small" style="max-width:44rem">Promises are carried from the campaign material each member published, with the source kept beside the words. Related votes are matched by topic from this member’s recorded votes — a finding aid, not a verdict on whether a promise was kept.</p>
         <div class="promise-list">${cards}</div></section>`;
     } else {
       html += `<section style="margin-top:2.4rem" aria-labelledby="promises-h">
@@ -253,25 +258,24 @@ async function renderExtras(person) {
     }
   }
   /* ---------- lobbying record (public registry exports only) ------ */
+  /* The by-year breakdown is deliberately not rendered: the per-year
+     series in lobbying.json undercounts against the reconciled totals
+     for 55 of 94 members and no exact per-year source exists to rebuild
+     it (audit H-02, Oct 23). Totals, subject matters and methods —
+     which reconcile — are what is shown. */
   if (lobbying && lobbying.total > 0) {
     const methods = Object.entries(lobbying.methods || {})
       .filter(([, n]) => n > 0)
       .map(([k, n]) => `<li><span>${esc(k)}</span><b>${fmtNum(n)}</b></li>`).join("");
-    const maxYear = Math.max(...lobbying.years.map((y) => y.count), 1);
     html += `<section class="lobbying" aria-labelledby="lobbying-h">
       <h2 id="lobbying-h" class="visually-hidden">Lobbying Record</h2>
       <details>
         <summary>Lobbying Record
           <span class="pill">${fmtNum(lobbying.total)} communications</span></summary>
-        <p class="lob-lede">Lobbyists must file every communication with a
-        member of Council — any contact a registered lobbyist reported
-        naming this member, whether a meeting, a call or an email. It
-        records the lobbyist's activity, not anything the member sought
-        or did, and is shown beside the voting record never as a claim
-        about influence.</p>
+        <p class="lob-lede">Lobbyists must file every communication with a member of Council — any contact a registered lobbyist reported naming this member, whether a meeting, a call or an email. It records the lobbyist's activity, not anything the member sought or did, and is never a claim about influence.</p>
         <div class="lob-stats">
           <div class="stat"><span class="num">${fmtNum(lobbying.total)}</span>
-            <span class="lab">Communications filed, ${esc(lobbying.first)} to ${esc(lobbying.last)}</span></div>
+            <span class="lab">Communications filed, ${esc(fmtDate(lobbying.first))} to ${esc(fmtDate(lobbying.last))}</span></div>
           <div class="stat"><span class="num">${fmtNum(lobbying.term)}</span>
             <span class="lab">Filed in the current term (2022–2026)</span></div>
           <div class="stat"><span class="num">${fmtNum(lobbying.lobbyists)}</span>
@@ -282,18 +286,11 @@ async function renderExtras(person) {
           <div><h3>Top subject matters</h3>
             <ul class="lob-list">${lobbying.top.map((t) =>
               `<li><span>${esc(t.label)}</span><b>${fmtNum(t.count)}</b></li>`).join("")}</ul></div>
-          <div><h3>Communications by year</h3>
-            <div class="lob-years">${lobbying.years.map((y) =>
-              `<div class="lob-year"><span>${y.year}</span>
-                <span class="bar"><span style="width:${Math.max(3, Math.round(y.count / maxYear * 100))}%"></span></span>
-                <b>${fmtNum(y.count)}</b></div>`).join("")}</div>
-            ${methods ? `<h3 style="margin-top:1.1rem">How contact was made</h3>
+          <div>${methods ? `<h3>How contact was made</h3>
             <ul class="lob-list">${methods}</ul>` : ""}
           </div>
         </div>
-        <p class="lob-note">Counts are communications as filed by lobbyists
-        in the City of Toronto Lobbyist Registry, grouped to the member the
-        filing names — a contact with a member’s staff is not counted here.
+        <p class="lob-note">Counts are communications as filed in the City of Toronto Lobbyist Registry, grouped to the member the filing names — a contact with a member’s staff is not counted here.
         Registry snapshot: October 8, 2026. Source:
         <a href="https://open.toronto.ca/dataset/lobbyist-registry/" target="_blank" rel="noopener noreferrer">City of Toronto Lobbyist Registry (Open Data)</a>.</p>
       </details></section>`;
@@ -360,6 +357,7 @@ async function renderDeclaredInterests(person) {
     return `<li><span class="h-title">${esc(r.ItemTitle || r.Item || "")}
       <span class="h-meta">${esc(meta)}</span>
       ${r.VerbalDeclaration ? `<span class="h-meta">Interest as recorded: ${esc(r.VerbalDeclaration)}</span>` : ""}
+      ${r.capacityNote ? `<span class="h-meta">${esc(r.capacityNote)}</span>` : ""}
       ${r.WrittenDeclaration ? `<span class="h-meta"><a href="${esc(r.WrittenDeclaration)}" target="_blank" rel="noopener noreferrer">Written declaration (PDF)</a></span>` : ""}
       </span></li>`;
   }).join("") : "";
@@ -375,10 +373,7 @@ async function renderDeclaredInterests(person) {
         ${g.valueDetailUrl ? `<span class="h-meta"><a href="${esc(g.valueDetailUrl)}" target="_blank" rel="noopener noreferrer">Disclosure statement (PDF)</a></span>` : ""}
         </span></li>`;
     }).join("");
-    giftsBody = `<p class="small" style="max-width:44rem">Gifts and benefits this member
-      disclosed, as published in the Integrity Commissioner's Gift
-      Disclosure Registry. A published disclosure is the record of a gift
-      or benefit — values are as published.</p>
+    giftsBody = `<p class="small" style="max-width:44rem">Gifts and benefits this member disclosed, as published in the Integrity Commissioner's Gift Disclosure Registry. Values are as published.</p>
       <ul class="personlist history-rows">${grows}</ul>`;
   }
   if (hasEntries) {
@@ -388,12 +383,7 @@ async function renderDeclaredInterests(person) {
       : "";
     host.innerHTML = `<section style="margin-top:2.4rem" aria-labelledby="declared-interests-h">
     <h2 id="declared-interests-h">Declared interests — the official register</h2><hr class="rule">
-    <p class="small" style="max-width:44rem">This is the City Clerk's
-    official register — the declarations ${esc(person.name)} made on the
-    record, item by item. It is separate from the recorded-vote count
-    above it, which is counted from recorded votes where the member
-    declared an interest and did not vote; the two records count
-    different things and their totals will not match.</p>
+    <p class="small" style="max-width:44rem">The City Clerk's official register — the declarations ${esc(person.name)} made on the record, item by item. It is separate from the recorded-vote count above it, counted from recorded votes where the member declared an interest and did not vote; the two count different things and their totals will not match.</p>
     <ul class="personlist history-rows">${rows}</ul>
     ${giftsHTML}
     <p class="small" style="max-width:44rem;margin-top:1rem">Source: City Clerk's Office · Registry of Declared Interest + Gift Disclosure Registry (Integrity Commissioner) · Open Data refreshed September 26, 2026</p>
@@ -516,7 +506,9 @@ async function renderHaveYourSay(person) {
   const phoneHref = String(contact.phone || "").replace(/[^0-9+]/g, "");
   const where = person.ward
     ? `Ward ${person.ward} — ${esc(person.wardName)}` : "Toronto";
-  const contactPanel = (contact.email || contact.phone)
+  /* Former members never get the stored contact panel: those details
+     are historical and the numbers now reach the successor's office. */
+  const contactPanel = (person.current && (contact.email || contact.phone))
     ? `<div class="contact-lines">
           ${contact.email ? `<span>Email: <a href="mailto:${esc(contact.email)}">${esc(contact.email)}</a></span>` : ""}
           ${contact.phone ? `<span>Phone: <a href="tel:${esc(phoneHref)}">${esc(contact.phone)}</a></span>` : ""}
@@ -529,11 +521,7 @@ async function renderHaveYourSay(person) {
         today, use the City's official
         <a href="${CITY_MEMBERS_URL}" target="_blank" rel="noopener noreferrer">members of Council directory</a>.</p>`;
   const intro = person.current
-    ? `The record above is what ${esc(person.name)} has decided and how
-       they voted. If you live in ${where}, this is your representative
-       at City Hall — the office route is below. And while an item is
-       still being decided, you can speak to the committee considering
-       it yourself.`
+    ? `The record above is what ${esc(person.name)} decided and how they voted. If you live in ${where}, this is your representative at City Hall — the office route is below. While an item is still being decided, you can speak to the committee considering it yourself.`
     : `${esc(person.name)} no longer sits on Council, so the office that
        held this seat has changed hands — the City's
        <a href="${CITY_MEMBERS_URL}" target="_blank" rel="noopener noreferrer">members of Council directory</a>
@@ -567,9 +555,7 @@ async function renderHaveYourSay(person) {
             be sent instead, and become part of the public record.</p></li>
           <li><span class="hys-num" aria-hidden="true">3</span>
             <p><span class="step-h">Say your piece.</span>
-            Public presentations are limited to five minutes. Say who
-            you are, where you live, and what you are asking the
-            committee to do — plainly is fine.</p></li>
+            Public presentations are limited to five minutes. Say who you are, where you live, and what you are asking the committee to do.</p></li>
         </ol>
       </section>
     </div>
@@ -772,7 +758,7 @@ async function init() {
         not vote — a duty, not an absence</span></div>
     </div>
     <p class="small" style="max-width:44rem">Recorded-vote participation
-    is the share of recorded, name-by-name votes where the member was
+    is the share of recorded votes where the member was
     present and voting — not a count of meetings attended, and declared
     interests are never counted against it.
     <a href="about.html#how-we-count">How we count</a> explains each

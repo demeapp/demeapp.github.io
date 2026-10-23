@@ -40,20 +40,26 @@
   --card: #FFFFFF;
   --ink: #0A1F38;
   --ink-soft: #33415A;
-  --ink-faint: #52627A;
+  /* Readability pass (Stream C, Oct 23, 2026): --ink-faint,
+     --bronze-dark/--yes, --no and --abs darkened within the same
+     Navy & Mint hues. Every pair already passed WCAG AA, but the
+     thinnest margins (links/badges on tinted grounds, 4.66–4.94:1)
+     sat on small text; the darker tones lift every body-text pair
+     to ≥5.45:1. See the Stream C block at the end of this file. */
+  --ink-faint: #4B5D75;
   --bronze: #2FBF8F;
-  --bronze-dark: #0B7A5C;
+  --bronze-dark: #09684C;
   --line: #D7DEE8;
   --line-soft: #E3EAF1;
-  --yes: #0B7A5C;
-  --no: #C93A2E;
+  --yes: #09684C;
+  --no: #B93427;
   --navy: #0E2A47;
   --navy-deep: #0A1F38;
   --navy-ink: #0A1424;
   --mint-light: #E3F4EC;
   --no-soft: #FBE6E3;
   --no-dark: #A82A1F;
-  --abs: #8B6408;
+  --abs: #7C5906;
   --abs-soft: #FFF0C8;
   --conflict: #5B557B;
   --conflict-soft: #EAE7F3;
@@ -1709,7 +1715,7 @@ h2 { font-size: clamp(1.55rem, 3.4vw, 2.05rem); color: var(--navy); }
 
 /* Chips join the mint family everywhere (hero chips keep their own
    on-navy treatment, explore's pressed state keeps its ink fill). */
-.chip { background: var(--mint-light); border-color: rgba(11,122,92,.22); }
+.chip { background: var(--mint-light); border-color: rgba(9,104,76,.28); }
 .chip:hover { background: rgba(47,191,143,.28); border-color: var(--bronze-dark); }
 .chip[aria-pressed="true"]:hover { background: var(--ink); }
 
@@ -1728,7 +1734,7 @@ section[aria-labelledby="latest-h"] {
   background: var(--mint-wash);
   border-radius: 20px;
   padding: 1.9rem 1.6rem 1.7rem;
-  box-shadow: inset 0 0 0 1px rgba(11,122,92,.10);
+  box-shadow: inset 0 0 0 1px rgba(9,104,76,.12);
 }
 @media (max-width: 640px) {
   section[aria-labelledby="latest-h"] {
@@ -1788,3 +1794,126 @@ section[aria-labelledby="latest-h"] {
   color: #fff; text-decoration-color: var(--bronze);
 }
 .site-footer .fineprint { color: #93A7BF; }
+
+/* =====================================================================
+   READABILITY PASS — Stream C (Oct 23, 2026; owner: "easy on the eyes")
+   CSS-only: no element, copy, class or behaviour changes, and no
+   information removed anywhere. Density is relieved through type
+   size, line-height, line length and a single spacing scale — the
+   card-grid relief wave's parity rule (Oct 22) holds: every datum
+   that rendered before still renders. Colour strengthening lives in
+   :root (see the note there); this block carries type + spacing.
+   It sits last so equal-specificity rules here win on source order.
+   ===================================================================== */
+
+/* ---------- type: a 16px floor for prose, calmer line-heights ------
+   Body is already 1.0625rem/1.62. What sat under 16px was the prose
+   around it — helper text (.small, used for real sentences), record
+   tables, committee/lobbying lists, card stake lines, saved notes —
+   mostly at .92–.98rem. Those rise to 1rem (16px). Pure labels,
+   badges, meta rows and footnotes keep their smaller sizes by
+   design; several of the smallest prose-adjacent ones (captions,
+   helper notes) rise one step (.85–.875rem → .92rem) instead. */
+.small { font-size: 1rem; line-height: 1.55; }
+table.record { font-size: 1rem; line-height: 1.55; }
+/* The 16px lift widened one data table's longest file-name token
+   2px past a 390px phone screen (open-data) — let unbreakable
+   tokens wrap when they must. Wrapping elsewhere is unchanged;
+   anywhere only permits a break where the line would overflow. */
+table.record td, table.record th { overflow-wrap: anywhere; }
+.card .stake { font-size: 1rem; }
+.gap-row p { font-size: 1rem; }
+.committee-list li { font-size: 1rem; }
+.lob-list { font-size: 1rem; }
+.lob-years { font-size: .95rem; }
+.checkline { font-size: 1rem; }
+.interpretation { font-size: 1rem; }
+.savedNote { font-size: 1rem; }
+.wf-note { font-size: 1rem; }
+.counting-note { font-size: 1rem; }
+.compare-person p { font-size: .95rem; }
+.compare-agree span { font-size: .95rem; }
+.wf-privacy { font-size: .92rem; line-height: 1.5; }
+.email-helper { font-size: .92rem; line-height: 1.5; }
+.lob-note { font-size: .92rem; line-height: 1.55; }
+.votecaption { font-size: .92rem; line-height: 1.5; }
+.comp-legend { font-size: .95rem; line-height: 1.55; }
+.profile-panel .intro { font-size: .95rem; line-height: 1.55; }
+.gap-row .who small { font-size: .875rem; }
+/* Same floor, where a more specific rule outranks the plain ones
+   above: the Explore panel's recorded-vote note (a full sentence
+   that its own scoped rule held at .94rem), the account band's
+   privacy sentence, the profile strip's sentence, the election
+   banner line, the stat labels, and the footer — whose brand line
+   and link columns are sentences, not just labels. The footer's
+   fineprint is legal microcopy; it rises one step to .875rem. */
+body.explore-page .search-panel .filters-in p.small { font-size: 1rem; }
+.acct-privacy { font-size: 1rem; }
+.profile-strip .ps-text { font-size: 1rem; }
+.election-banner a { font-size: 1rem; }
+.stat .lab { font-size: .95rem; }
+.site-footer { font-size: 1rem; }
+.site-footer .fineprint { font-size: .875rem; }
+/* Wrapped headings breathe a little more. */
+h3 { line-height: 1.3; }
+.acct-feature h2 { line-height: 1.3; }
+.member-stats strong { line-height: 1.3; }
+
+/* ---------- line length: prose capped around 65–75ch ---------------
+   The long-form pages (About, Privacy, Reporters, Open Data, Embed)
+   cap their paragraphs with inline max-width:44rem — measured in a
+   rendered browser at 71–74 characters per line on average with the
+   longest lines reaching ~89, past the comfortable range. (In this
+   font 1ch ≈ 11px at body size, wider than an average glyph, so the
+   ch caps below are set to land at ~65–70 real characters a line.)
+   The section-scoped cap below narrows them to 60ch; it needs
+   !important only because the widths it replaces are inline styles.
+   No HTML changes. Decision briefs and stake lines get the same
+   treatment in ch so the cap tracks their own font size. */
+section[aria-labelledby="about-h"] p,
+section[aria-labelledby="privacy-h"] p,
+section[aria-labelledby="reporters-h"] p,
+section[aria-labelledby="opendata-h"] p,
+section[aria-labelledby="embed-h"] p { max-width: 60ch !important; }
+.briefBig { max-width: 56ch; }
+.stake-prominent { max-width: 58ch; }
+.pick-gate p { max-width: 58ch; }
+
+/* ---------- spacing rhythm: one card scale, one grid gap -----------
+   Measured on the base tree, card-family padding scattered across
+   .9–1.6rem with no scale, and card grids mixed 1rem and 1.1rem
+   gaps. The card family now shares one padding — 1.4rem vertical,
+   1.5rem horizontal — and one grid gap, 1.25rem (the --sp scale's
+   missing step, between --sp-2 1rem and --sp-3 1.5rem). Nested
+   surfaces (promise cards, embed stat tiles) keep their smaller
+   inset padding: hierarchy, not scatter. Deliberate exceptions are
+   re-asserted after the shared rule so they keep their designed
+   values: the hero-adjacent entry panel, the weigh-in panel, the
+   empty-state calm panel, the account feature band, and the
+   councillor grid, whose wider 1.9rem/1.6rem gutters are the
+   Oct 22 card-grid relief tuning and are not touched. */
+.card, .skel-card, .step, .profile-panel, .thread-card, .gap-row,
+.faq-list details, .compare-person, .search-panel, .filters,
+.lobbying > details { padding: 1.4rem 1.5rem; }
+.weighin { padding: 1.5rem 1.6rem; }
+.calm { padding: 1.6rem; }
+.entry-panel { padding: 1.6rem 1.6rem 1.4rem; }
+.entry-slim { padding: 1.4rem 1.6rem 1.2rem; }
+.acct-feature { padding: 1.4rem 1.5rem 1.5rem; }
+.cards, .steps, .thread-grid, .profile-grid, .statband, .statTiles { gap: 1.25rem; }
+body.explore-page #results { gap: 1.25rem; }
+.member-stats { gap: 1.25rem 1.35rem; padding: 1.3rem 1.5rem 1.5rem; }
+.person-top { padding: 1.4rem 1.5rem 1.3rem; }
+/* Card interiors: the title/meta/brief stack gets even air. */
+.card h3 { margin-bottom: .4rem; }
+.card .meta { margin-bottom: .6rem; }
+/* On phones the shared card padding steps down one notch so text
+   keeps its width; it is still roomier than the base mobile card. */
+@media (max-width: 640px) {
+  .card, .skel-card, .step, .profile-panel, .thread-card, .gap-row,
+  .faq-list details, .compare-person, .search-panel, .filters,
+  .lobbying > details { padding: 1.25rem 1.15rem; }
+  .weighin { padding: 1.3rem 1.15rem; }
+  .member-stats { padding: 1.2rem 1.15rem 1.3rem; }
+  .person-top { padding: 1.25rem 1.15rem 1.1rem; }
+}

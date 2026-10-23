@@ -142,3 +142,18 @@
 .reporters-method h3 { margin-top: 1.3rem; }
 .reporters-method h3:first-of-type { margin-top: .6rem; }
 .reporters-method p { max-width: 44rem; }
+
+/* ---------- Readability pass — Stream C (Oct 23, 2026) ----------
+   Companion to the Stream C block at the end of deme.css; this file
+   loads after deme.css, so the embed/reporters/have-your-say tweaks
+   live here with their components. Same rules: CSS-only, nothing
+   removed, prose lifted toward the 16px floor, one spacing scale. */
+.hys-grid { gap: 1.25rem; }
+.embed-decisions li { font-size: 1rem; line-height: 1.6; }
+.embed-def { font-size: .92rem; line-height: 1.5; }
+.embed-decision-meta { font-size: .875rem; }
+.embed-credit { font-size: .92rem; line-height: 1.5; }
+.reporters-method { padding: 1.4rem 1.5rem; }
+.reporters-list li { margin-bottom: .6rem; line-height: 1.6; }
+/* The embed card itself keeps its compact padding by design — it is
+   built to be iframed at 320–480px on other people's sites. */

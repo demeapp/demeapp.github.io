@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Representatives — Deme</title>
-<meta name="description" content="Every Toronto City Council member in the record: who they are, their ward, and their voting record — facts only, no grades.">
+<meta name="description" content="Every Toronto City Council member in the record: ward and voting record — facts only, no grades.">
 <link rel="stylesheet" href="assets/css/deme.css">
 <style>
 /* Unified directory finder (Oct 20, 2026): one elevated Navy & Mint
@@ -61,11 +61,11 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Deme">
 <meta property="og:title" content="Representatives — Deme">
-<meta property="og:description" content="Every Toronto City Council member in the record: who they are, their ward, and their voting record — facts only, no grades.">
+<meta property="og:description" content="Every Toronto City Council member in the record: ward and voting record — facts only, no grades.">
 <meta property="og:image" content="https://demeapp.github.io/assets/og-image-navy.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Representatives — Deme">
-<meta name="twitter:description" content="Every Toronto City Council member in the record: who they are, their ward, and their voting record — facts only, no grades.">
+<meta name="twitter:description" content="Every Toronto City Council member in the record: ward and voting record — facts only, no grades.">
 <meta name="twitter:image" content="https://demeapp.github.io/assets/og-image-navy.png">
 <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
 </head>
@@ -86,10 +86,8 @@
 
       <div class="card finder-panel" id="ward-lookup">
         <h2>Find a councillor — by name or postal code</h2>
-        <p class="small" style="max-width:44rem;margin-top:0">Type a name
-          or a ward to filter the members below — or enter your postal
-          code and Deme will point you to your councillor and their
-          record.</p>
+        <p class="small" style="max-width:44rem;margin-top:0">Type a name or a ward to filter the members below — or enter your
+          postal code to find your councillor and their record.</p>
         <form class="finder-row" id="finder-form" role="search">
           <label class="visually-hidden" for="fq">Find a councillor by name or postal code</label>
           <input type="text" id="fq" placeholder="A name, a ward — or M5V 1J1" autocomplete="off" spellcheck="false">
@@ -97,9 +95,8 @@
         </form>
         <p class="wf-privacy">Only the first 3 characters of a postal
           code are used, right here in your browser — your full postal
-          code is never stored or sent anywhere. This is a lookup only:
-          nothing is saved, and it doesn't set anything on your
-          profile.</p>
+          code is never stored or sent anywhere. A lookup only:
+          nothing is saved, and it sets nothing on your profile.</p>
         <div id="finder-result" aria-live="polite"></div>
       </div>
 
@@ -111,11 +108,11 @@
           </select>
         </label>
       </div>
-      <p class="small">Each card carries four summary facts — recorded-vote
+      <p class="small">Each card carries four facts — recorded-vote
         participation, votes cast, tenure, and times a member declared an
-        interest and did not vote. Open a member for the
-        full record. Portraits are the members’ official photos; where
-        none is published, the card shows initials instead.</p>
+        interest and did not vote.
+        Open a member for the full record. Portraits are the members’
+        official photos; where none is published, initials instead.</p>
 
       <p style="margin-top:1.2rem"><a class="btn secondary" href="compare.html">Compare two representatives →</a></p>
 
@@ -127,8 +124,7 @@
 
       <details class="filters" id="earlier-details" style="margin-top:3rem">
         <summary>Earlier members (2006–2026)</summary>
-        <p class="small" style="margin-top:.8rem">Members from earlier terms
-        in the record. Their votes are part of the same archive.</p>
+        <p class="small" style="margin-top:.8rem">Members from earlier terms, in the same archive.</p>
         <div class="earlier-search">
           <label class="visually-hidden" for="eq">Search earlier members</label>
           <input type="text" id="eq" placeholder="Search earlier members — a name, or a ward then or now" autocomplete="off" spellcheck="false">

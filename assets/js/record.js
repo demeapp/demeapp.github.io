@@ -345,14 +345,7 @@ function renderAlerts() {
     return;
   }
   alertsBox.innerHTML = `<h3>Council alerts by email</h3>
-    <p>Get an email when items on your wards or topics reach a City
-    Council agenda. Council alerts are part of a free Deme account:
-    you opt in when you create your account, and the digest follows
-    the wards and topics on your profile. Digests haven't started
-    yet, and they begin with the new Council term. When they start,
-    it will be one digest per Council agenda, never one email per
-    item, and a person reviews every digest before it goes out.
-    Nothing is sent until digests begin.</p>`;
+    <p>Get an email when items on your wards or topics reach a City Council agenda. Council alerts are part of a free Deme account: you opt in when you create your account, and the digest follows the wards and topics on your profile. Digests haven't started yet; they begin with the new Council term — one digest per Council agenda, never one email per item, reviewed by a person before it goes out. Nothing is sent until digests begin.</p>`;
 }
 
 /* ---------------- weigh in (folded in from the old Vote page) ----
@@ -390,10 +383,7 @@ function weighInHTML(u) {
         Sign in to save picks to your account and to change them.</p>` : ""}
       <div class="pick-gate">
         <h3>Sign in to weigh in</h3>
-        <p>Sign in to weigh in — your picks save to your account, and
-        we'll notify you when your voting card is ready: how the vote
-        went, how your representative voted, and where you stand — on any
-        device.</p>
+        <p>Sign in to weigh in — your picks save to your account, and we'll notify you when your voting card is ready: how the vote went, how your representative voted, and where you stand.</p>
         <p style="margin:.6rem 0 0"><button class="btn gate-signin"
           type="button" data-ref="${esc(u.ref)}">Sign in or create
           your free account</button></p>
@@ -449,9 +439,7 @@ function renderUpcoming() {
   if (!upcomingItems.length) {
     upcomingBox.innerHTML = `<div class="calm">
       <h3>No Council votes are scheduled in the published agenda right now.</h3>
-      <p>The City publishes each Council agenda ahead of the meeting. When
-      the next one appears, its items will be listed here with briefs —
-      ready to weigh in on before the vote, not after.</p>
+      <p>When the City publishes the next Council agenda, its items will be listed here with briefs — ready to weigh in on before the vote.</p>
       <p style="margin-bottom:.4rem">Toronto's municipal election is
       <strong>October 26, 2026</strong>; the new Council takes office in
       November, and its first agendas follow. In the meantime, the full
@@ -599,9 +587,7 @@ async function renderPicks() {
     (a, b) => (picks[a].ts < picks[b].ts ? 1 : -1));
   if (!refs.length) {
     picksBox.innerHTML = `<div class="calm"><h3>No picks yet.</h3>
-      <p>When you weigh in on an upcoming Council item, your position is
-      saved here. After the meeting, this page lines your pick up against
-      what Council actually did. <a href="#weigh-in">See what's coming
+      <p>When you weigh in on an upcoming Council item, your position saves here. After the meeting, this page lines your pick up against what Council did. <a href="#weigh-in">See what's coming
       up →</a></p></div>`;
     agreeBox.innerHTML = "";
     return;
@@ -728,10 +714,7 @@ async function renderWatches() {
   if (!accountSignedIn()) {
     watchesBox.innerHTML = `<div class="calm"><h3>Watching is part
       of a free account.</h3>
-      <p>Sign in above, and you can watch any upcoming Council
-      item. When Council decides it, we email you the outcome
-      once — and if you weighed in, your pick is lined up beside
-      it. Reading the record never needs an account.</p></div>`;
+      <p>Sign in above to watch any upcoming Council item. When Council decides it, we email you the outcome once — with your pick beside it if you weighed in. Reading the record never needs an account.</p></div>`;
     return;
   }
   const watches = (acct.getWatches() || []).slice().sort(

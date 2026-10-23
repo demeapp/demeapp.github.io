@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Open data — Deme</title>
-<meta name="description" content="The record, as data: every file Deme publishes, what it holds, where it comes from, and how anyone can reuse it.">
+<meta name="description" content="The record, as data: every file Deme publishes, what it holds, and how to reuse it.">
 <link rel="stylesheet" href="assets/css/deme.css">
 <link rel="icon" href="favicon-navy.svg" type="image/svg+xml">
 <meta name="theme-color" content="#0E2A47">
@@ -36,16 +36,14 @@
       exception: the bulk dataset — every decision card in a single
       file — is sent by email on request. Email
       <a href="mailto:ourvote.app@gmail.com">ourvote.app@gmail.com</a>
-      for that one file, and we'll send it.</p>
+      for it.</p>
 
       <div class="statband" aria-label="The Toronto council archive, in numbers">
         <div class="stat"><span class="num" data-count="33796">33,796</span>
           <span class="lab">decisions in the archive, 2018–2026, from
           City Council and every council body</span></div>
         <div class="stat"><span class="num" data-count="631418">631,418</span>
-          <span class="lab">votes actually cast — a Yes or a No — in
-          member totals for the voting record, back to 2006; individual
-          vote rows are stored from 2018</span></div>
+          <span class="lab">votes actually cast — a Yes or a No — in member totals, back to 2006; individual vote rows stored from 2018</span></div>
         <div class="stat"><span class="num">3,171</span>
           <span class="lab">decisions with a recorded, name-by-name
           vote</span></div>
@@ -63,10 +61,7 @@
       </div>
 
       <h2 style="margin-top:2.6rem">What Deme publishes</h2>
-      <p style="max-width:44rem">Every file is JSON, at the public
-      address shown. If a page on this site shows a number, the file
-      behind it is listed here. The one exception is the bulk dataset
-      file, which is requested by email.</p>
+      <p style="max-width:44rem">Every file is JSON, at the public address shown. If a page on this site shows a number, the file behind it is listed here. The bulk dataset is the one exception, requested by email.</p>
       <table class="record">
         <thead>
           <tr><th scope="col">File</th><th scope="col">What it holds</th></tr>
@@ -84,11 +79,7 @@
               <a href="record-data/index-2025.json">2025</a> ·
               <a href="record-data/index-2026.json">2026</a><br>
               <code>record-data/index-&lt;year&gt;.json</code></td>
-            <td>One record per decision: its reference (for example
-            2026.TE31.16), title, date, the body that decided it, the
-            outcome, subject terms, the wards it touches, the
-            plain-language brief, and whether a recorded vote
-            exists.</td>
+            <td>One record per decision: reference (for example 2026.TE31.16), title, date, deciding body, outcome, subject terms, wards touched, plain-language brief, and whether a recorded vote exists.</td>
           </tr>
           <tr>
             <td>Decision details:<br>
@@ -107,10 +98,7 @@
           <tr>
             <td><a href="mailto:ourvote.app@gmail.com?subject=Data%20request%20%E2%80%94%20search.json">Search index — the bulk dataset, request by email</a><br>
               <code>record-data/search.json</code></td>
-            <td>Every decision card in a single file — all 33,796 —
-            the index the site's search runs on. This is the one file
-            Deme sends by email rather than posting at a public
-            address.</td>
+            <td>Every decision card in a single file — all 33,796 — the index the site's search runs on. We send the bulk file by email — write to us and we'll send the complete file.</td>
           </tr>
           <tr>
             <td><a href="record-data/latest.json">Latest decisions</a><br>
@@ -121,11 +109,7 @@
           <tr>
             <td><a href="record-data/upcoming.json">Upcoming items</a><br>
               <code>record-data/upcoming.json</code></td>
-            <td>City Council items from published agendas that are
-            still upcoming, with the counts from the classification
-            that selected them. The file is published even when it is
-            empty — an empty file is the honest state, not a missing
-            one.</td>
+            <td>City Council items from published agendas that are still upcoming, with the counts from the classification that selected them. Published even when empty — an empty file is the honest state, not a missing one.</td>
           </tr>
           <tr>
             <td><a href="record-data/councillors.json">Members</a><br>
@@ -160,31 +144,19 @@
             <td><a href="record-data/fsa-wards.json">Ward finder map</a><br>
               <code>record-data/fsa-wards.json</code> ·
               <a href="record-data/ward-cues.json">cues</a></td>
-            <td>The map behind the postal-code ward finder: each
-            Toronto FSA — the first three characters of a postal
-            code — and the ward or wards it touches, with a street or
-            landmark cue for each ward. Built from the City of
-            Toronto's ward boundaries and Statistics Canada's 2021
-            census FSA boundary file.</td>
+            <td>The map behind the postal-code ward finder: each Toronto FSA — the first three characters of a postal code — and the ward or wards it touches, with a street or landmark cue for each. Built from the City of Toronto's ward boundaries and Statistics Canada's 2021 census FSA boundary file.</td>
           </tr>
           <tr>
             <td><a href="record-data/stats.json">Site statistics</a><br>
               <code>record-data/stats.json</code> ·
               <a href="record-data/meta.json">build record</a></td>
-            <td>The headline counts quoted across this site, and the
-            record of how the published files were built — the same
-            numbers this page quotes, at their source.</td>
+            <td>The headline counts quoted across this site, and the record of how the published files were built.</td>
           </tr>
         </tbody>
       </table>
 
       <h2 style="margin-top:2.6rem">Where the record comes from</h2>
-      <p style="max-width:44rem">Everything starts with the City of
-      Toronto's published council records: the agendas, decisions, and
-      voting records the City Clerk posts through TMMIS, the Toronto
-      Meeting Management Information System. Those postings are the
-      City's official proceedings. Every decision page on Deme links
-      its item's official record in that system.</p>
+      <p style="max-width:44rem">Everything starts with the City of Toronto's published council records: the agendas, decisions, and voting records the City Clerk posts through TMMIS, the Toronto Meeting Management Information System — the City's official proceedings. Every decision page on Deme links its item's official record in that system.</p>
       <p style="max-width:44rem">The City publishes members' voting
       records itself, two ways: as the
       <a href="https://open.toronto.ca/dataset/members-of-toronto-city-council-voting-record/" target="_blank" rel="noopener">Members
@@ -192,10 +164,7 @@
       Open Data Portal, and as
       <a href="https://www.toronto.ca/legdocs/tmmis/votes-and-attendance.htm" target="_blank" rel="noopener">votes
       and attendance reports</a> in TMMIS. The City publishes no
-      attendance register; Deme's participation figure is derived from
-      the voting record, as the method notes below explain. Deme reorganizes the record; it
-      does not originate it. Where Deme and the official record ever
-      differ, the official record is right.</p>
+      attendance register; Deme's participation figure is derived from the voting record, as the method notes below explain. Deme reorganizes the record; it does not originate it. Where Deme and the official record differ, the official record is right.</p>
 
       <h2 style="margin-top:2.2rem">How Deme processes it</h2>
       <p style="max-width:44rem">Each decision's brief is a
@@ -208,19 +177,13 @@
       City Council's own. The Vote page and the Council alerts carry
       City Council business only — committee and board items never
       appear there.</p>
-      <p style="max-width:44rem">Story threads group decisions by
-      documented keyword rules over their titles and subject terms.
-      The grouping is conservative: when in doubt, a decision is left
-      out. The rules themselves ship inside the threads file, so
-      anyone can check exactly how a thread was built.</p>
+      <p style="max-width:44rem">Story threads group decisions by documented keyword rules over their titles and subject terms — conservatively: when in doubt, a decision is left out. The rules ship inside the threads file, so anyone can check how a thread was built.</p>
 
       <h2 style="margin-top:2.2rem">Reuse it</h2>
       <p style="max-width:44rem">The underlying records are the City
       of Toronto's. The City shares its open data under the
       <a href="https://open.toronto.ca/open-data-licence/" target="_blank" rel="noopener">Open
-      Government Licence – Toronto</a>, and Deme adds no licence and
-      no restrictions of its own to the City's data. Credit the
-      City of Toronto as the source of the record. The briefs are
+      Government Licence – Toronto</a>, and Deme adds no licence and no restrictions of its own. Credit the City of Toronto as the source. The briefs are
       Deme's summaries — check the official record before you rely on
       one. To reuse a file, take it from its public address above —
       the bulk dataset is the one exception: email us for it, and
@@ -237,8 +200,7 @@
       declarations register; the nature of each interest is not in
       this data.</p>
       <p style="max-width:44rem"><strong>Recorded-vote participation is a plain
-      statistic.</strong> It is a member's votes cast divided by their
-      votes cast plus their absences, across recorded votes where a vote was theirs to cast. It is the share of recorded votes where the member was present and voting; it is not a count of meetings attended, and the City of Toronto publishes no attendance register. Declared
+      statistic.</strong> A member's votes cast divided by their votes cast plus their absences, across recorded votes where a vote was theirs to cast — the share of recorded votes where the member was present and voting. It is not a count of meetings attended; the City of Toronto publishes no attendance register. Declared
       interests are left out of the count entirely: stepping back from
       a vote for a declared interest is a duty, not an absence, and
       Deme never counts it as one.</p>
@@ -248,20 +210,9 @@
       every 100. For the rest, the public record attaches no member's
       position, and Deme says so rather than guessing.</p>
       <p style="max-width:44rem"><strong>The two archives start in
-      different years.</strong> The decision archive runs 2018–2026.
-      Member totals in the voting record reach back to 2006, five
-      terms, as aggregates; individual, name-by-name vote rows are
-      stored from 2018 onward only. Some
-      long-serving members' totals include votes from before 2018;
-      their item-by-item record starts in 2018.</p>
-      <p style="max-width:44rem"><strong>Freshness.</strong> The
-      archive is current to October 19, 2026. The most recent Council
-      meeting in it is July 29, 2026. A new Council term begins in
-      November 2026. Its decisions and votes will be added as the new
-      Council meets and the City publishes its record.</p>
-      <p style="max-width:44rem">The record belongs to the public.
-      Deme makes it readable — every file at its public address
-      above, and the bulk dataset by email on request.</p>
+      different years.</strong> The decision archive runs 2018–2026. Member totals reach back to 2006, five terms, as aggregates; individual, name-by-name vote rows are stored from 2018 onward only. Some long-serving members' totals include votes from before 2018; their item-by-item record starts in 2018.</p>
+      <p style="max-width:44rem"><strong>Freshness.</strong> The archive is current to October 19, 2026; the most recent Council meeting in it is July 29, 2026. A new Council term begins in November 2026; its decisions and votes will be added as the new Council meets and the City publishes its record.</p>
+      <p style="max-width:44rem">The record belongs to the public. Deme makes it readable.</p>
       <p style="max-width:44rem"><a href="about.html">How Deme
       works</a> explains the briefs, the neutrality commitment, and
       your privacy.</p>

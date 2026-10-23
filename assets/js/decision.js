@@ -240,7 +240,7 @@ async function init() {
     </div>
     <p class="share-row"><button class="btn secondary small" id="share-btn"
       type="button">Copy link</button></p>
-    ${card.brief ? `<p class="briefBig" id="brief-main">${esc(pastVoice(card.brief))}</p>` : ""}
+    ${card.brief ? `<p class="briefBig" id="brief-main">${esc(pastVoice(card.brief))}</p>` : `<p class="briefBig" id="brief-fallback">No plain-language summary for this item yet — see the full City record linked below.</p>`}
     ${card.stake ? `<p class="stake stake-prominent">${esc(card.stake)}</p>` : ""}
     ${wards}
     ${topics ? `<div class="chips" style="margin:1rem 0">${topics}</div>` : ""}
@@ -272,6 +272,8 @@ async function init() {
       if (!simple) return;
       const briefEl = document.getElementById("brief-main");
       if (!briefEl) {
+        const fb = document.getElementById("brief-fallback");
+        if (fb) fb.remove();
         const anchor = document.getElementById("threadlinks");
         if (anchor) {
           anchor.insertAdjacentHTML("beforebegin", `
@@ -332,10 +334,13 @@ async function init() {
   const vz = document.getElementById("votezone");
   if (card.hasVote) {
     if (detail && detail.motions) {
+      const hasNames = detail.motions.some((m) => m.votes && m.votes.length);
       vz.innerHTML = `<h2 style="margin-top:2.2rem">How the vote went</h2>
         <hr class="rule">
         <p class="small">This decision has a <strong>recorded vote</strong> —
-        the public list of who voted yes and who voted no.
+        ${hasNames
+          ? "the public list of who voted yes and who voted no."
+          : "a recorded tally of the votes for and against. This vote was recorded as a count only, so no name-by-name list exists for it."}
         ${detail.motions.length > 1 ? `There were ${detail.motions.length} recorded votes on this item. ` : ""}Some
         items are voted on at a committee before reaching Council — every
         vote below is labelled with the body that took it.</p>
@@ -347,9 +352,7 @@ async function init() {
     }
   } else {
     vz.innerHTML = `<div class="notice"><strong>No recorded vote.</strong>
-      This decision was made without a name-by-name vote, so no member's
-      position is attached to it in the public record. Only about 9 in
-      every 100 Council decisions has one.</div>`;
+      Made without a name-by-name vote, so no member's position is attached to it in the public record. Only about 9 in every 100 Council decisions has one.</div>`;
   }
 
   const t = detail && detail.text;

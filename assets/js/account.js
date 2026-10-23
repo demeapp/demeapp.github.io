@@ -450,10 +450,7 @@ const DemeAccount = (() => {
     }
     host.innerHTML = `<div class="card pick-gate" style="margin-bottom:1rem">
       <h3>Bring your account up to date?</h3>
-      <p>${esc(parts.join("; "))}. Update your account so your voting
-      card matches this device on every device — or leave things as
-      they are for now. Either way, only you can see your picks, and
-      Deme never totals visitors' positions.</p>
+      <p>${esc(parts.join("; "))}. Update your account so your voting card matches this device everywhere — or leave things as they are. Either way, only you can see your picks, and Deme never totals visitors' positions.</p>
       <p class="toolbar" style="margin:.6rem 0 0">
         <button class="btn small" type="button" id="picks-migrate-yes">Update my account</button>
         <button class="btn secondary small" type="button" id="picks-migrate-no">Not now</button>
@@ -739,11 +736,9 @@ const DemeAccount = (() => {
       <h2>Make your voice heard — before the vote, not after it.</h2>
       <ul class="acct-points">
         <li class="acct-point"><strong>Have your say</strong> — weigh in
-        on what's coming up at Council, decision by decision, on the
-        matters that affect you.</li>
+        on what's coming up at Council, decision by decision.</li>
         <li class="acct-point"><strong>Stay informed</strong> — get
-        alerted when your ward or the issues you follow hit the agenda,
-        so nothing slips by you.</li>
+        alerted when your ward or the issues you follow hit the agenda.</li>
         <li class="acct-point"><strong>See where you stand</strong> —
         after the vote, your voting card lines your picks up against
         how your representative actually voted.</li>
@@ -758,10 +753,7 @@ const DemeAccount = (() => {
     if (!zone) return;
     zone.innerHTML = `<div class="card record-card account-card">
       ${featurePanelHTML()}
-      <p style="margin:0">Accounts are opening soon. Nothing is
-      missing today: the full record is open to everyone — an account
-      is how you weigh in and keep your picks, never a toll on the
-      record.</p>
+      <p style="margin:0">Accounts are opening soon. Nothing is missing today: the full record is open to everyone — an account is how you weigh in and keep your picks.</p>
       <p class="small" style="margin:.8rem 0 0">What Deme holds, where,
       and how to delete it: the
       <a href="privacy.html">privacy policy</a>.</p>

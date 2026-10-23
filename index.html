@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Deme — Toronto City Council's record, in plain language</title>
-<meta name="description" content="Deme makes Toronto's council record readable: 33,796 decisions in plain language, searchable by topic, ward, and councillor.">
+<meta name="description" content="Deme makes Toronto's council record readable: 33,796 decisions, most with a plain-language brief, searchable by topic, ward, and councillor.">
 <link rel="stylesheet" href="assets/css/deme.css">
 <link rel="icon" href="favicon-navy.svg" type="image/svg+xml">
 <meta name="theme-color" content="#0E2A47">
@@ -12,11 +12,11 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Deme">
 <meta property="og:title" content="Deme — Toronto City Council's record, in plain language">
-<meta property="og:description" content="Deme makes Toronto's council record readable: 33,796 decisions in plain language, searchable by topic, ward, and councillor.">
+<meta property="og:description" content="Deme makes Toronto's council record readable: 33,796 decisions, most with a plain-language brief, searchable by topic, ward, and councillor.">
 <meta property="og:image" content="https://demeapp.github.io/assets/og-image-navy.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Deme — Toronto City Council's record, in plain language">
-<meta name="twitter:description" content="Deme makes Toronto's council record readable: 33,796 decisions in plain language, searchable by topic, ward, and councillor.">
+<meta name="twitter:description" content="Deme makes Toronto's council record readable: 33,796 decisions, most with a plain-language brief, searchable by topic, ward, and councillor.">
 <meta name="twitter:image" content="https://demeapp.github.io/assets/og-image-navy.png">
 <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
 <style>
@@ -149,9 +149,7 @@
     <section class="hero" aria-labelledby="hero-h">
       <p class="kicker">Toronto City Council · The record, in plain language</p>
       <h1 id="hero-h">Know what City Hall decided — and how everyone voted.</h1>
-      <p class="lede">Deme turns the City of Toronto's published council
-      records into plain language anyone can read. Search a topic, a street,
-      or a name, and see the decision — and the vote behind it.</p>
+      <p class="lede">Deme turns the City of Toronto's published council records into plain language. Search a topic, a street, or a name, and see the decision — and the vote behind it.</p>
       <form class="searchbox" action="explore.html" method="get" role="search">
         <label class="visually-hidden" for="q">Search decisions</label>
         <input type="search" id="q" name="q"
@@ -230,10 +228,7 @@
       <p class="kicker">Follow a story</p>
       <h2 id="threads-h">Stories over time</h2>
       <hr class="rule">
-      <p style="max-width:44rem">Some questions run for years. Each story
-      below groups the decisions in one thread of the record, oldest story
-      to newest decision — grouping is a finding aid; the record itself is
-      unchanged.</p>
+      <p style="max-width:44rem">Each story below groups the decisions in one thread of the record, oldest story to newest decision — grouping is a finding aid; the record itself is unchanged.</p>
       <div class="thread-grid" id="threads"></div>
     </section>
 
@@ -243,7 +238,7 @@
       <hr class="rule">
       <p style="max-width:44rem">Most Council decisions come with no
       recorded vote — no public list of who voted yes and who voted no.
-      They pass without anyone's name attached. Deme keeps the whole
+      Deme keeps the whole
       record readable, and flags every decision where the names
       <em>are</em> on it, so you can see exactly how your representative
       voted. <a href="about.html">How Deme works →</a></p>
@@ -253,9 +248,7 @@
       <p class="kicker">The gap Deme fills</p>
       <h2 id="gap-h">Built to complete the record, not just cover it</h2>
       <hr class="rule">
-      <p style="max-width:44rem">Existing tools do part of the job. Deme
-      picks up where they stop — a plain-language record matched to
-      your ward.</p>
+      <p style="max-width:44rem">Existing tools do part of the job. Deme picks up where they stop: a plain-language record matched to your ward.</p>
       <ul class="gap-list">
         <li class="gap-row">
           <p class="who">GovTrack<small>United States</small></p>
@@ -265,7 +258,7 @@
         <li class="gap-row">
           <p class="who">Countable<small>United States</small></p>
           <p><strong>What it does well:</strong> plain-language summaries, polls, contact your lawmaker.</p>
-          <p><strong>What's missing:</strong> US federal &amp; state only; contact tool is US-only. No Canadian coverage.</p>
+          <p><strong>What's missing:</strong> US federal &amp; state only; contact tool is US-only.</p>
         </li>
         <li class="gap-row">
           <p class="who">VoteSpotter<small>United States</small></p>
@@ -278,11 +271,7 @@
           <p><strong>What's missing:</strong> stops at the federal level — no municipal or ward-level view.</p>
         </li>
       </ul>
-      <p class="gap-close">Deme is built for Canada's cities:
-      matched to your ward · your positions save to your account —
-      only yours to see, never tallied · a permanent public record
-      that holds representatives
-      accountable. <a href="explore.html">Start searching the record →</a></p>
+      <p class="gap-close">Deme is built for Canada's cities: matched to your ward · your positions save to your account — only yours to see, never tallied · a permanent public record. <a href="explore.html">Start searching the record →</a></p>
     </section>
 
     <section class="reveal" aria-labelledby="vision-h">
@@ -290,11 +279,7 @@
       <div class="vision-band">
         <div class="bar" aria-hidden="true"></div>
         <blockquote>A world where no vote happens in the dark — and every representative answers for their record.</blockquote>
-        <p>This is the record behind that vision: every decision, every
-        recorded vote, every promise — public, permanent and plain. Every
-        representative is shown fairly and without favour. Every resident
-        is trusted to judge the record for themselves. When people can see
-        the record, democracy works.</p>
+        <p>This is the record behind that vision: every decision, every recorded vote, and the promises on the record — public, permanent and plain. Every representative shown fairly and without favour. Every resident trusted to judge the record for themselves.</p>
       </div>
     </section>
 
@@ -382,11 +367,11 @@ Promise.all([loadJSON(dataPath("stats.json")), loadJSON(dataPath("latest.json"))
 .then(([stats, latest, upcoming, topics, threadData, councilStatus]) => {
   document.getElementById("statband").innerHTML = `
     <div class="stat"><span class="num" data-count="${stats.decisions}">${fmtNum(stats.decisions)}</span>
-      <span class="lab">decisions in the archive — City Council, its committees and boards — in plain language (${stats.decisionsFrom}–${stats.decisionsTo})</span></div>
+      <span class="lab">decisions in the archive — City Council, its committees and boards (${stats.decisionsFrom}–${stats.decisionsTo})</span></div>
     <div class="stat"><span class="num"><span data-count="9">9</span> in 100</span>
-      <span class="lab">decisions carry a recorded vote — ${fmtNum(stats.recordedVoteDecisions)} where every name is on the record</span></div>
+      <span class="lab">decisions carry a recorded vote — ${fmtNum(stats.recordedVoteDecisions)} in all, most with every name on the record, the rest as a recorded tally</span></div>
     <div class="stat"><span class="num" data-count="${stats.votesCast}">${fmtNum(stats.votesCast)}</span>
-      <span class="lab">votes cast — yes or no — by ${stats.members} members across five terms, back to ${stats.votesFrom} in member totals; name-by-name vote rows are stored from 2018</span></div>`;
+      <span class="lab">votes cast by ${stats.members} members across five terms, back to ${stats.votesFrom} in member totals; name-by-name rows stored from 2018</span></div>`;
   /* All three headline stats count up once when the band scrolls
      into view (setupCountUps wires every [data-count] in the band):
      the two big totals, and the "9" in "9 in 100" — "in 100" and the
@@ -442,10 +427,7 @@ Promise.all([loadJSON(dataPath("stats.json")), loadJSON(dataPath("latest.json"))
   } else {
     /* Empty state: one honest line in a slim band — same true wording,
        no big empty box. The items path above is untouched. */
-    up.innerHTML = `<p class="upcoming-line">No Council votes are scheduled
-      in the published agenda right now. When City Council publishes its
-      next agenda, the items coming up for a vote will appear here first,
-      each with a plain-language brief.
+    up.innerHTML = `<p class="upcoming-line">No Council votes are scheduled in the published agenda right now. When City Council publishes its next agenda, the items will appear here first, each with a plain-language brief.
       <a href="my-record.html#weigh-in">See how weighing in works →</a></p>`;
   }
 

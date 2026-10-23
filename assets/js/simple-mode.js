@@ -140,8 +140,8 @@ const DemeSimple = (() => {
       "Type a name or a ward to cut the list below. Or type your postal code to find your councillor and their record.",
     "Only the first 3 characters of a postal code are used, right here in your browser — your full postal code is never stored or sent anywhere. A lookup only: nothing is saved, and it sets nothing on your profile.":
       "Only the first 3 characters of your postal code are used, right here in your browser. Your full postal code is never saved or sent anywhere. It is a lookup only. Nothing is saved, and it sets nothing on your profile.",
-    "Each card carries four facts — recorded-vote participation, votes cast, tenure, and times a member declared an interest and did not vote. Open a member for the full record. Portraits are the members’ official photos; where none is published, initials instead.":
-      "Each card shows four facts: recorded votes they took part in, votes cast, how long they have served, and times they declared an interest and did not vote. Open a member to see the full record. The photos are the members' official photos. If none is published, the card shows initials instead.",
+    "Each card carries four facts — recorded-vote participation, votes cast, tenure, and — from the recorded votes — the times a member declared an interest and did not vote. Open a member for the full record. Portraits are the members’ official photos; where none is published, initials instead.":
+      "Each card shows four facts: recorded votes they took part in, votes cast, how long they have served, and — from the recorded votes — times they declared an interest and did not vote. Open a member to see the full record. The photos are the members' official photos. If none is published, the card shows initials instead.",
     "Members from earlier terms, in the same archive.":
       "Members from earlier terms, in the same archive.",
 

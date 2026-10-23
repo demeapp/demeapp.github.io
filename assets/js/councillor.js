@@ -323,6 +323,73 @@ async function renderExtras(person) {
     }));
 }
 
+/* ---------- declared interests: the official register ----------
+   The City Clerk's published register (record-data/declared-
+   interests.json) and the Integrity Commissioner's gift disclosures
+   (record-data/gift-disclosures.json), lazy-loaded only when a
+   member page renders this section — the same per-member loading
+   pattern as the lobbying record above. This register is a separate
+   record from the recorded-vote interest count in the stat tiles:
+   that count comes from votes where the member declared an interest
+   and did not vote. A member with no matched register entries gets
+   NO section at all — absence here only means no matched records in
+   the published files, never a claim of "no declarations". */
+async function renderDeclaredInterests(person) {
+  const host = document.getElementById("declared-interests");
+  if (!host) return;
+  let entries = null;
+  try {
+    const data = await loadJSON(dataPath("declared-interests.json"));
+    entries = (data.members || {})[person.slug] || null;
+  } catch (e) { return; /* the record stands without the register */ }
+  if (!entries || !entries.length) return;
+  let gifts = null;
+  try {
+    const gdata = await loadJSON(dataPath("gift-disclosures.json"));
+    gifts = (gdata.members || {})[person.slug] || null;
+  } catch (e) { gifts = null; }
+  const rows = entries.map((r) => {
+    const meta = [fmtDate(r.VerbalDeclarationDate), r.Committee, r.Item]
+      .filter(Boolean).join(" · ");
+    return `<li><span class="h-title">${esc(r.ItemTitle || r.Item || "")}
+      <span class="h-meta">${esc(meta)}</span>
+      ${r.VerbalDeclaration ? `<span class="h-meta">Interest as recorded: ${esc(r.VerbalDeclaration)}</span>` : ""}
+      ${r.WrittenDeclaration ? `<span class="h-meta"><a href="${esc(r.WrittenDeclaration)}" target="_blank" rel="noopener noreferrer">Written declaration (PDF)</a></span>` : ""}
+      </span></li>`;
+  }).join("");
+  let giftsHTML = "";
+  if (gifts && gifts.length) {
+    const grows = gifts.map((g) => {
+      const meta = [g.registryYear, g.date, g.type]
+        .filter(Boolean).join(" · ");
+      const donor = g.donorSponsor ? `Donor / sponsor: ${esc(g.donorSponsor)} · ` : "";
+      return `<li><span class="h-title">${esc(g.details || "")}
+        <span class="h-meta">${esc(meta)}</span>
+        <span class="h-meta">${donor}Value as published: ${esc(g.valueAsPublished || "")}${g.incompleteOrUnapproved ? " (marked incomplete and/or not approved in the registry, as published)" : ""}</span>
+        ${g.valueDetailUrl ? `<span class="h-meta"><a href="${esc(g.valueDetailUrl)}" target="_blank" rel="noopener noreferrer">Disclosure statement (PDF)</a></span>` : ""}
+        </span></li>`;
+    }).join("");
+    giftsHTML = `<h3 style="margin-top:1.8rem">Gifts and benefits disclosed</h3>
+      <p class="small" style="max-width:44rem">Gifts and benefits this member
+      disclosed, as published in the Integrity Commissioner's Gift
+      Disclosure Registry. A published disclosure is the record of a gift
+      or benefit — values are as published.</p>
+      <ul class="personlist history-rows">${grows}</ul>`;
+  }
+  host.innerHTML = `<section style="margin-top:2.4rem" aria-labelledby="declared-interests-h">
+    <h2 id="declared-interests-h">Declared interests — the official register</h2><hr class="rule">
+    <p class="small" style="max-width:44rem">This is the City Clerk's
+    official register — the declarations ${esc(person.name)} made on the
+    record, item by item. It is separate from the recorded-vote count
+    above it, which is counted from recorded votes where the member
+    declared an interest and did not vote; the two records count
+    different things and their totals will not match.</p>
+    <ul class="personlist history-rows">${rows}</ul>
+    ${giftsHTML}
+    <p class="small" style="max-width:44rem;margin-top:1rem">Source: City Clerk's Office · Registry of Declared Interest + Gift Disclosure Registry (Integrity Commissioner) · Open Data refreshed September 26, 2026</p>
+  </section>`;
+}
+
 /* ---------- Improvement 3: "Have your say" ---------------------
    The action block at the foot of the member page: the member's
    public office contact routes (the same profiles.json contact data
@@ -618,6 +685,7 @@ async function init() {
       type="button">Print / download record card</button>
     <button class="btn secondary" id="share-btn" type="button">Copy link</button></p>
     <div id="profile-extra"></div>
+    <div id="declared-interests"></div>
     <h2 style="margin-top:2.6rem">Recorded votes</h2>
     <hr class="rule">
     <p class="small">Item by item — the decision archive, 2018–2026.</p>
@@ -657,6 +725,7 @@ async function init() {
     wrap.innerHTML = `<p class="small">The voting record could not be loaded.</p>`;
   }
   renderExtras(person);
+  renderDeclaredInterests(person);
   renderHaveYourSay(person);
 }
 init().catch(() => {

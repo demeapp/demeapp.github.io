@@ -412,6 +412,94 @@ async function renderDeclaredInterests(person) {
   </section>`;
 }
 
+/* ---------- pay and expenses: as published ----------
+   The City Clerk's annual remuneration reports (record-data/
+   expenses.json), lazy-loaded only when a member page renders this
+   section — the same per-member loading pattern as the declared-
+   interests section above. Figures are shown exactly as published,
+   one block per published table, under that table's own label; the
+   site never adds tables together, and a field the report leaves
+   blank is simply not shown (never shown as zero). A member with no
+   matched records gets NO section at all — and a year with no record
+   has no row, which says nothing about that year's spending. */
+const EXPENSE_TABLE_LABEL = {
+  "Summary": "Summary table",
+  "Attachment 1": "Office budget detail (Attachment 1)",
+  "Appendix A": "Remuneration and benefits detail (Appendix A)",
+  "Appendix G": "Remuneration and benefits (Appendix G, 2000)",
+};
+const EXPENSE_FIELDS = [
+  ["remuneration", "Salary"],
+  ["benefits", "Benefits"],
+  ["severance", "Severance"],
+  ["fringeBenefits", "Fringe benefits"],
+  ["remunerationAndBenefits", "Remuneration and benefits"],
+  ["remunerationAndBenefitsPaidByCity", "City-paid total"],
+  ["supportStaffSalaries", "Support staff salaries"],
+  ["supportStaffSalariesAndBenefits", "Support staff salaries and benefits"],
+  ["officeExpenses", "Office expenses"],
+  ["expensesFromCouncilGeneralBudget", "Expenses from Council general budget"],
+  ["corporateBusinessTravel", "Corporate business travel"],
+  ["expensesChargedToCityDivisions", "Expenses charged to City divisions"],
+  ["expensesPaidByAgenciesBoardsAndOtherBodies", "Expenses paid by agencies, boards and other bodies"],
+  ["expensesPaidByAgenciesCorporationsAndOtherBodies", "Expenses paid by agencies, corporations and other bodies"],
+  ["remunerationPaidByAgenciesCorporationsAndOtherBodies", "Paid by agencies, corporations and other bodies"],
+  ["remunerationPaidByLocalBoards", "Paid by local boards"],
+  ["totalRemunerationAndBenefits", "Total remuneration and benefits"],
+  ["totalRemunerationExpenseIndemnityAndBenefits", "Total"],
+  ["totalRemunerationAndExpenses", "Total"],
+];
+const fmtMoney = (n) => (n < 0 ? "-$" : "$") + fmtNum(Math.abs(n));
+async function renderPayExpenses(person) {
+  const host = document.getElementById("pay-expenses");
+  if (!host) return;
+  let records = null;
+  try {
+    const data = await loadJSON(dataPath("expenses.json"));
+    records = (data.members || {})[person.slug] || null;
+  } catch (e) { records = null; /* the record stands without the figures */ }
+  if (!records || !records.length) return;
+  const years = [];
+  const byYear = new Map();
+  for (const r of records) {
+    if (!byYear.has(r.year)) { byYear.set(r.year, []); years.push(r.year); }
+    byYear.get(r.year).push(r);
+  }
+  const blockHTML = (r) => {
+    const label = EXPENSE_TABLE_LABEL[r.table] || r.table;
+    const meta = [r.period, r.ward != null ? `Ward ${r.ward}` : ""]
+      .filter(Boolean).join(" · ");
+    const rows = EXPENSE_FIELDS
+      .filter(([k]) => r[k] != null)
+      .map(([k, lab]) => `<li><span>${esc(lab)}</span><b>${esc(fmtMoney(r[k]))}</b></li>`)
+      .join("");
+    return `<div style="margin-top:1.1rem">
+      <p style="margin:0 0 .4rem"><strong>${esc(label)}</strong>
+      ${meta ? `<span class="small">· ${esc(meta)}</span>` : ""}</p>
+      ${rows ? `<ul class="lob-list">${rows}</ul>` : ""}
+      ${r.correctionNote ? `<p class="small" style="max-width:44rem;margin-top:.5rem">${esc(r.correctionNote)}</p>` : ""}
+      ${r.extractionNote ? `<p class="small" style="max-width:44rem;margin-top:.5rem">${esc(r.extractionNote)}</p>` : ""}
+      ${r.sourceUrl ? `<p class="small" style="margin-top:.5rem"><a href="${esc(r.sourceUrl)}" target="_blank" rel="noopener noreferrer">Report (PDF)</a></p>` : ""}
+    </div>`;
+  };
+  const yearsHTML = years.map((y) =>
+    `<h3 style="margin-top:1.8rem">${esc(y)}</h3>`
+    + byYear.get(y).map(blockHTML).join("")).join("");
+  host.innerHTML = `<section style="margin-top:2.4rem" aria-labelledby="pay-expenses-h">
+    <h2 id="pay-expenses-h">Pay and expenses — as published</h2><hr class="rule">
+    <p class="small" style="max-width:44rem">These are the figures from
+    the City Clerk's annual remuneration reports, shown as published.
+    A year's figures can appear in more than one published table; each
+    table is shown under its own label, and the site never adds the
+    tables together. Annual reports are included for 1999–2009 and
+    2017–2025. The 2010–2016 reports are published only inside Council
+    meeting records and are not yet included; quarterly office-expense
+    detail is also not yet included.</p>
+    ${yearsHTML}
+    <p class="small" style="max-width:44rem;margin-top:1rem">Source: City Clerk's Office · Annual Remuneration Reports (Budgets &amp; Expense Reports) · Verified October 23, 2026</p>
+  </section>`;
+}
+
 /* ---------- Improvement 3: "Have your say" ---------------------
    The action block at the foot of the member page: the member's
    public office contact routes (the same profiles.json contact data
@@ -708,6 +796,7 @@ async function init() {
     <button class="btn secondary" id="share-btn" type="button">Copy link</button></p>
     <div id="profile-extra"></div>
     <div id="declared-interests"></div>
+    <div id="pay-expenses"></div>
     <h2 style="margin-top:2.6rem">Recorded votes</h2>
     <hr class="rule">
     <p class="small">Item by item — the decision archive, 2018–2026.</p>
@@ -748,6 +837,7 @@ async function init() {
   }
   renderExtras(person);
   renderDeclaredInterests(person);
+  renderPayExpenses(person);
   renderHaveYourSay(person);
 }
 init().catch(() => {

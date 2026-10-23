@@ -171,6 +171,10 @@ section:first-child { margin-top: 0; }
   display: flex; align-items: center; gap: 1.5rem;
   padding-top: .9rem; padding-bottom: .9rem; flex-wrap: wrap;
 }
+
+/* Anchored headings must clear the sticky header when jumped to
+   (e.g. about.html#how-we-count, linked from every member profile). */
+h2[id], h3[id], section[id] { scroll-margin-top: 10.5rem; }
 .brand {
   display: flex; align-items: center; gap: .65rem;
   color: var(--ink); text-decoration: none; margin-right: auto;
@@ -1460,7 +1464,7 @@ dialog.record-dialog::backdrop { background: rgba(10,20,36,.55); }
 }
 /* Directory postal lookup: the matched card gets a mint outline so
    the eye lands on it after the scroll. */
-.person.lookup-hit { outline: 3px solid var(--bronze); outline-offset: 3px; }
+.person.lookup-hit { outline: 3px solid var(--bronze-dark); outline-offset: 3px; }
 
 /* ---------- Explore restyle (Oct 20, 2026) ----------
    Owner: the Explore page "looks plain and boring" — the decision
@@ -1596,12 +1600,15 @@ body.explore-page #results .card:is([data-status="NOTADOPT"],
   [data-status="NO_ACTN"], [data-status="NOQUORUM"],
   [data-status="INT_FAIL"], [data-status="OOORDER"])::before {
   background: var(--no); }
-/* recorded-vote marker: a mint dot in the gutter — no added text,
-   so the tile's wording stays exactly as published */
+/* recorded-vote marker: a deep-mint dot in the gutter — no added text,
+   so the tile's wording stays exactly as published. Deep mint
+   (#0B7A5C, var(--bronze-dark)) rather than bright mint: the dot is
+   the tile's only recorded-vote indicator, so it must clear 3:1
+   against the white card — bright mint measures 2.34:1 (A-11). */
 body.explore-page #results .card.has-vote::after {
   content: ""; position: absolute; left: .72rem; top: 1.32rem;
   width: 10px; height: 10px; border-radius: 50%;
-  background: var(--bronze); box-shadow: 0 0 0 3px var(--mint-light);
+  background: var(--bronze-dark); box-shadow: 0 0 0 3px var(--mint-light);
 }
 body.explore-page #results .card .meta {
   font-size: .9rem; margin-bottom: .55rem; align-items: center;

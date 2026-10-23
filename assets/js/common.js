@@ -270,7 +270,7 @@ function memberStatsHTML(person) {
     <div><span>Recorded-vote participation</span><strong>${fmtAtt(person)}</strong>${meter}</div>
     <div><span>Votes cast</span><strong>${fmtNum(person.votesCast)}</strong></div>
     <div><span>Tenure</span><strong>${esc(memberTenure(person))}</strong></div>
-    <div><span>Interest declared · did not vote</span><strong>${fmtNum(interest)}</strong></div>
+    <div><span>Interest declared · stepped back</span><strong>${fmtNum(interest)}</strong></div>
   </div>`;
 }
 

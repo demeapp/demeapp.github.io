@@ -1512,13 +1512,12 @@ const DemeAccount = (() => {
        the account layer is activated. */
     const note = document.getElementById("local-note");
     if (note) {
-      note.textContent = "Your picks: when you're signed in, they're "
-        + "saved to your account and kept on this device too; signed "
-        + "out, they live only in this browser. Your local profile "
-        + "lives in this browser's storage; with an account, your "
-        + "name, email, wards, topics and picks are also held on our "
-        + "server so they can follow you — see the privacy policy "
-        + "for exactly what's held and how to delete it.";
+      note.textContent = "Signed in, your picks save to your account "
+        + "and stay on this device too; signed out, they live only in "
+        + "this browser. With an account, your name, email, wards, "
+        + "topics and picks are also held on our server so they can "
+        + "follow you — the privacy policy lists exactly what's held "
+        + "and how to delete it.";
     }
 
     try {

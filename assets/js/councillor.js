@@ -264,12 +264,11 @@ async function renderExtras(person) {
         <summary>Lobbying Record
           <span class="pill">${fmtNum(lobbying.total)} communications</span></summary>
         <p class="lob-lede">Lobbyists must file every communication with a
-        member of Council. A communication is any contact a registered
-        lobbyist reported naming this member — a meeting, a call or an
-        email; it records the lobbyist's activity, not anything the
-        member sought or did. This is the filed record for ${esc(person.name)} —
-        shown beside the voting record, never as a claim about influence:
-        Deme reports the record and leaves conclusions to readers.</p>
+        member of Council — any contact a registered lobbyist reported
+        naming this member, whether a meeting, a call or an email. It
+        records the lobbyist's activity, not anything the member sought
+        or did, and is shown beside the voting record never as a claim
+        about influence.</p>
         <div class="lob-stats">
           <div class="stat"><span class="num">${fmtNum(lobbying.total)}</span>
             <span class="lab">Communications filed, ${esc(lobbying.first)} to ${esc(lobbying.last)}</span></div>
@@ -491,10 +490,8 @@ async function renderPayExpenses(person) {
     the City Clerk's annual remuneration reports, shown as published.
     A year's figures can appear in more than one published table; each
     table is shown under its own label, and the site never adds the
-    tables together. Annual reports are included for 2006–2009 and
-    2017–2025. The 2010–2016 reports are published only inside Council
-    meeting records and are not yet included; quarterly office-expense
-    detail is also not yet included.</p>
+    tables together. Annual reports are included for 2006–2025;
+    quarterly office-expense detail is also not yet included.</p>
     ${yearsHTML}
     <p class="small" style="max-width:44rem;margin-top:1rem">Source: City Clerk's Office · Annual Remuneration Reports (Budgets &amp; Expense Reports) · Verified October 23, 2026</p>
   </section>`;
@@ -643,7 +640,7 @@ function recordCardHTML(person, standalone) {
     : "Former member of Toronto City Council";
   const photo = PHOTO_SLUGS.has(person.slug)
     ? (standalone
-      ? `<img src="https://demeapp.github.io/assets/headshots/${person.slug}.jpg" alt="" width="72" height="72" style="border-radius:50%;object-fit:cover">`
+      ? `<img src="https://demeapp.github.io/assets/headshots/${person.slug}.webp" alt="" width="72" height="72" style="border-radius:50%;object-fit:cover" onerror="this.remove()">`
       : avatarHTML(person))
     : avatarHTML(person);
   const votes = cardVotes().map((r) => standalone
@@ -661,7 +658,7 @@ function recordCardHTML(person, standalone) {
       <div class="rc-stat"><span>Votes cast</span><strong>${fmtNum(person.votesCast)}</strong></div>
       <div class="rc-stat"><span>Yes</span><strong>${fmtNum(person.yes)}</strong></div>
       <div class="rc-stat"><span>No</span><strong>${fmtNum(person.no)}</strong></div>
-      <div class="rc-stat"><span>Interest declared · did not vote</span><strong>${fmtNum(person.interest)}</strong></div>
+      <div class="rc-stat"><span>Interest declared · stepped back</span><strong>${fmtNum(person.interest)}</strong></div>
     </div>
     <h3>Five most recent recorded votes</h3>
     ${votes || '<p>No recorded votes in the searchable archive.</p>'}
@@ -775,22 +772,14 @@ async function init() {
         not vote — a duty, not an absence</span></div>
     </div>
     <p class="small" style="max-width:44rem">Recorded-vote participation
-    counts only recorded votes — the name-by-name kind. It is the share of
-    those votes where the member was present and voting; it is not a count
-    of meetings attended, and the City of Toronto publishes no attendance
-    register. When a member declares an interest in an item, stepping back
-    is required, so those are never counted against participation here.
-    The interest count on this page is counted from recorded votes where
-    the member declared an interest and did not vote; the City's official
-    declarations register is a separate record, and the nature of each
-    interest is not in this data. The breakdown below uses a wider base —
-    every recorded vote, declared interests included — which is why its
-    cast share can run slightly lower than the participation figure.</p>
+    is the share of recorded, name-by-name votes where the member was
+    present and voting — not a count of meetings attended, and declared
+    interests are never counted against it.
+    <a href="about.html#how-we-count">How we count</a> explains each
+    figure on this page.</p>
     ${compositionStrip(person)}
-    <p class="small" style="max-width:44rem">The totals above count the full
-    voting record: member totals reach back to 2006, while individual
-    vote rows are stored from 2018. The item-by-item list below covers the
-    decision archive, 2018–2026.</p>
+    <p class="small" style="max-width:44rem">The totals count the full
+    record: member totals back to 2006; item-by-item rows from 2018.</p>
     <p style="margin-top:1rem"><button class="btn secondary" id="record-card-btn"
       type="button">Print / download record card</button>
     <button class="btn secondary" id="share-btn" type="button">Copy link</button></p>

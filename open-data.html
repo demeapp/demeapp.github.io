@@ -30,11 +30,13 @@
       <h1 id="opendata-h">The record, as data</h1>
       <hr class="rule">
       <p style="max-width:44rem">Deme is built from public records.
-      The same data files this website loads are available on
-      request. Email us at
-      <a href="mailto:ourvote.app@gmail.com">ourvote.app@gmail.com</a>, tell us which file
-      you want, and we'll send it. No account, no key — the City's
-      data is shared under the City's open licence.</p>
+      Every data file this website loads is published at a public
+      address, listed below — no account, no key; the City's data is
+      shared under the City's open licence. One file is the
+      exception: the bulk dataset — every decision card in a single
+      file — is sent by email on request. Email
+      <a href="mailto:ourvote.app@gmail.com">ourvote.app@gmail.com</a>
+      for that one file, and we'll send it.</p>
 
       <div class="statband" aria-label="The Toronto council archive, in numbers">
         <div class="stat"><span class="num" data-count="33796">33,796</span>
@@ -61,25 +63,26 @@
       </div>
 
       <h2 style="margin-top:2.6rem">What Deme publishes</h2>
-      <p style="max-width:44rem">Every file is JSON. If a page on
-      this site shows a number, the file behind it is listed here —
-      email us to request it, and we'll send it.</p>
+      <p style="max-width:44rem">Every file is JSON, at the public
+      address shown. If a page on this site shows a number, the file
+      behind it is listed here. The one exception is the bulk dataset
+      file, which is requested by email.</p>
       <table class="record">
         <thead>
           <tr><th scope="col">File</th><th scope="col">What it holds</th></tr>
         </thead>
         <tbody>
           <tr>
-            <td>Decision cards, by year — request by email:<br>
-              <a href="mailto:ourvote.app@gmail.com?subject=Data%20request%20%E2%80%94%20index-2018.json">2018</a> ·
-              <a href="mailto:ourvote.app@gmail.com?subject=Data%20request%20%E2%80%94%20index-2019.json">2019</a> ·
-              <a href="mailto:ourvote.app@gmail.com?subject=Data%20request%20%E2%80%94%20index-2020.json">2020</a> ·
-              <a href="mailto:ourvote.app@gmail.com?subject=Data%20request%20%E2%80%94%20index-2021.json">2021</a> ·
-              <a href="mailto:ourvote.app@gmail.com?subject=Data%20request%20%E2%80%94%20index-2022.json">2022</a> ·
-              <a href="mailto:ourvote.app@gmail.com?subject=Data%20request%20%E2%80%94%20index-2023.json">2023</a> ·
-              <a href="mailto:ourvote.app@gmail.com?subject=Data%20request%20%E2%80%94%20index-2024.json">2024</a> ·
-              <a href="mailto:ourvote.app@gmail.com?subject=Data%20request%20%E2%80%94%20index-2025.json">2025</a> ·
-              <a href="mailto:ourvote.app@gmail.com?subject=Data%20request%20%E2%80%94%20index-2026.json">2026</a><br>
+            <td>Decision cards, by year:<br>
+              <a href="record-data/index-2018.json">2018</a> ·
+              <a href="record-data/index-2019.json">2019</a> ·
+              <a href="record-data/index-2020.json">2020</a> ·
+              <a href="record-data/index-2021.json">2021</a> ·
+              <a href="record-data/index-2022.json">2022</a> ·
+              <a href="record-data/index-2023.json">2023</a> ·
+              <a href="record-data/index-2024.json">2024</a> ·
+              <a href="record-data/index-2025.json">2025</a> ·
+              <a href="record-data/index-2026.json">2026</a><br>
               <code>record-data/index-&lt;year&gt;.json</code></td>
             <td>One record per decision: its reference (for example
             2026.TE31.16), title, date, the body that decided it, the
@@ -89,8 +92,7 @@
           </tr>
           <tr>
             <td>Decision details:<br>
-              <code>record-data/d/&lt;reference&gt;.json</code><br>
-              (<a href="mailto:ourvote.app@gmail.com?subject=Data%20request%20%E2%80%94%20decision%20detail%20files%20%28record-data%2Fd%2F%29">request by email</a>)</td>
+              <code>record-data/d/&lt;reference&gt;.json</code></td>
             <td>One file for each of the 3,171 decisions with a
             recorded vote: the official summary, what was decided, and
             every motion on the item with its name-by-name votes and
@@ -98,25 +100,26 @@
           </tr>
           <tr>
             <td>Item text, by year:<br>
-              <code>record-data/text-&lt;year&gt;.json</code><br>
-              <a href="mailto:ourvote.app@gmail.com?subject=Data%20request%20%E2%80%94%20item%20text%20files%20%28record-data%2Ftext-%3Cyear%3E.json%29">Request by email</a></td>
+              <code>record-data/text-&lt;year&gt;.json</code></td>
             <td>The text behind each item — the official summary and
             the decision — keyed by reference.</td>
           </tr>
           <tr>
-            <td><a href="mailto:ourvote.app@gmail.com?subject=Data%20request%20%E2%80%94%20search.json">Search index — request by email</a><br>
+            <td><a href="mailto:ourvote.app@gmail.com?subject=Data%20request%20%E2%80%94%20search.json">Search index — the bulk dataset, request by email</a><br>
               <code>record-data/search.json</code></td>
             <td>Every decision card in a single file — all 33,796 —
-            the index the site's search runs on.</td>
+            the index the site's search runs on. This is the one file
+            Deme sends by email rather than posting at a public
+            address.</td>
           </tr>
           <tr>
-            <td><a href="mailto:ourvote.app@gmail.com?subject=Data%20request%20%E2%80%94%20latest.json">Latest decisions — request by email</a><br>
+            <td><a href="record-data/latest.json">Latest decisions</a><br>
               <code>record-data/latest.json</code></td>
             <td>The most recent City Council decisions, and the
             latest decisions overall.</td>
           </tr>
           <tr>
-            <td><a href="mailto:ourvote.app@gmail.com?subject=Data%20request%20%E2%80%94%20upcoming.json">Upcoming items — request by email</a><br>
+            <td><a href="record-data/upcoming.json">Upcoming items</a><br>
               <code>record-data/upcoming.json</code></td>
             <td>City Council items from published agendas that are
             still upcoming, with the counts from the classification
@@ -125,7 +128,7 @@
             one.</td>
           </tr>
           <tr>
-            <td><a href="mailto:ourvote.app@gmail.com?subject=Data%20request%20%E2%80%94%20councillors.json">Members — request by email</a><br>
+            <td><a href="record-data/councillors.json">Members</a><br>
               <code>record-data/councillors.json</code></td>
             <td>All 94 members in the voting record: terms served,
             votes cast, Yes and No counts, absences, declared
@@ -133,31 +136,30 @@
           </tr>
           <tr>
             <td>Member vote rows:<br>
-              <code>record-data/member/&lt;name&gt;.json</code><br>
-              <a href="mailto:ourvote.app@gmail.com?subject=Data%20request%20%E2%80%94%20member%20vote%20files%20%28record-data%2Fmember%2F%3Cname%3E.json%29">Request by email</a></td>
+              <code>record-data/member/&lt;name&gt;.json</code></td>
             <td>One file per member: the item-level vote rows from
             2018 onward — the item's reference, the vote cast, the
             stage, the date, the motion, and its result. Members whose
             service ended before 2018 show totals in Members instead.</td>
           </tr>
           <tr>
-            <td><a href="mailto:ourvote.app@gmail.com?subject=Data%20request%20%E2%80%94%20threads.json">Story threads — request by email</a><br>
+            <td><a href="record-data/threads.json">Story threads</a><br>
               <code>record-data/threads.json</code> ·
-              <a href="mailto:ourvote.app@gmail.com?subject=Data%20request%20%E2%80%94%20threads-summary.json">summary — request by email</a></td>
+              <a href="record-data/threads-summary.json">summary</a></td>
             <td>The story threads that group decisions by topic: the
             documented keyword rule behind each thread, and the
             decisions each rule groups.</td>
           </tr>
           <tr>
-            <td><a href="mailto:ourvote.app@gmail.com?subject=Data%20request%20%E2%80%94%20topics.json">Subject terms — request by email</a><br>
+            <td><a href="record-data/topics.json">Subject terms</a><br>
               <code>record-data/topics.json</code></td>
             <td>How often each subject term in the City's record
             appears across the archive.</td>
           </tr>
           <tr>
-            <td><a href="mailto:ourvote.app@gmail.com?subject=Data%20request%20%E2%80%94%20fsa-wards.json">Ward finder map — request by email</a><br>
+            <td><a href="record-data/fsa-wards.json">Ward finder map</a><br>
               <code>record-data/fsa-wards.json</code> ·
-              <a href="mailto:ourvote.app@gmail.com?subject=Data%20request%20%E2%80%94%20ward-cues.json">cues — request by email</a></td>
+              <a href="record-data/ward-cues.json">cues</a></td>
             <td>The map behind the postal-code ward finder: each
             Toronto FSA — the first three characters of a postal
             code — and the ward or wards it touches, with a street or
@@ -166,9 +168,9 @@
             census FSA boundary file.</td>
           </tr>
           <tr>
-            <td><a href="mailto:ourvote.app@gmail.com?subject=Data%20request%20%E2%80%94%20stats.json">Site statistics — request by email</a><br>
+            <td><a href="record-data/stats.json">Site statistics</a><br>
               <code>record-data/stats.json</code> ·
-              <a href="mailto:ourvote.app@gmail.com?subject=Data%20request%20%E2%80%94%20meta.json">build record — request by email</a></td>
+              <a href="record-data/meta.json">build record</a></td>
             <td>The headline counts quoted across this site, and the
             record of how the published files were built — the same
             numbers this page quotes, at their source.</td>
@@ -197,10 +199,9 @@
 
       <h2 style="margin-top:2.2rem">How Deme processes it</h2>
       <p style="max-width:44rem">Each decision's brief is a
-      plain-language summary prepared from the official record. The
-      extra line some decisions carry — why the decision matters — is
-      composed by template from the record's own fields. If a line
-      can't be sourced from the record, it isn't written.</p>
+      plain-language summary of the official record —
+      <a href="about.html">How Deme works</a> explains how the briefs
+      and the why-it-matters line are written.</p>
       <p style="max-width:44rem">Every item keeps the name of the body
       that decided it: City Council, a community council, a committee,
       or a board. Of the 33,796 decisions in the archive, 13,158 are
@@ -221,7 +222,9 @@
       no restrictions of its own to the City's data. Credit the
       City of Toronto as the source of the record. The briefs are
       Deme's summaries — check the official record before you rely on
-      one. To reuse a file, email us for it first — we'll send it.</p>
+      one. To reuse a file, take it from its public address above —
+      the bulk dataset is the one exception: email us for it, and
+      we'll send it.</p>
 
       <h2 style="margin-top:2.2rem">Method notes and limits</h2>
       <p style="max-width:44rem"><strong>Votes cast means Yes or
@@ -257,8 +260,8 @@
       November 2026. Its decisions and votes will be added as the new
       Council meets and the City publishes its record.</p>
       <p style="max-width:44rem">The record belongs to the public.
-      Deme makes it readable — and, on request, portable: email us
-      for a file, and we'll send it.</p>
+      Deme makes it readable — every file at its public address
+      above, and the bulk dataset by email on request.</p>
       <p style="max-width:44rem"><a href="about.html">How Deme
       works</a> explains the briefs, the neutrality commitment, and
       your privacy.</p>

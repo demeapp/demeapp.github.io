@@ -51,7 +51,7 @@ function voteCell(v) {
   if (v === "Yes") return `<span class="voteYes">Yes</span>`;
   if (v === "No") return `<span class="voteNo">No</span>`;
   if (v && v.startsWith("Absent(Interest"))
-    return `<span class="voteAbs">Declared an interest — did not vote</span>`;
+    return `<span class="voteAbs">Declared an interest — stepped back from this vote</span>`;
   return `<span class="voteAbs">Absent</span>`;
 }
 
@@ -164,7 +164,7 @@ function motionBlock(m, idx) {
     ${bars(m.yes, m.no)}
     <p class="votecaption">of the ${m.yes + m.no} members who voted</p>
     <p class="small">${m.yes + m.no} members voted ·
-      ${absent} absent${interest ? ` · ${interest} declared an interest and did not vote` : ""}.</p>
+      ${absent} absent${interest ? ` · ${interest} declared an interest — stepped back from this vote` : ""}.</p>
     <details class="recordExpander">
       <summary class="btn secondary small" style="display:inline-flex">See who voted, name by name</summary>
       <table class="record"><thead><tr><th scope="col">Member</th>

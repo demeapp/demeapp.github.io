@@ -42,7 +42,8 @@
           City Council and every council body</span></div>
         <div class="stat"><span class="num" data-count="631418">631,418</span>
           <span class="lab">votes actually cast — a Yes or a No — in
-          the voting record, 2006–2026</span></div>
+          member totals for the voting record, back to 2006; individual
+          vote rows are stored from 2018</span></div>
         <div class="stat"><span class="num">3,171</span>
           <span class="lab">decisions with a recorded, name-by-name
           vote</span></div>
@@ -128,7 +129,7 @@
               <code>record-data/councillors.json</code></td>
             <td>All 94 members in the voting record: terms served,
             votes cast, Yes and No counts, absences, declared
-            interests, and attendance as a plain statistic.</td>
+            interests, and recorded-vote participation as a plain statistic.</td>
           </tr>
           <tr>
             <td>Member vote rows:<br>
@@ -182,13 +183,15 @@
       Meeting Management Information System. Those postings are the
       City's official proceedings. Every decision page on Deme links
       its item's official record in that system.</p>
-      <p style="max-width:44rem">The City publishes members' attendance
-      and voting records itself, two ways: as the
+      <p style="max-width:44rem">The City publishes members' voting
+      records itself, two ways: as the
       <a href="https://open.toronto.ca/dataset/members-of-toronto-city-council-voting-record/" target="_blank" rel="noopener">Members
       of Toronto City Council Voting Record</a> dataset on the Toronto
       Open Data Portal, and as
-      <a href="https://www.toronto.ca/legdocs/tmmis/votes-and-attendance.htm" target="_blank" rel="noopener">attendance
-      and voting reports</a> in TMMIS. Deme reorganizes the record; it
+      <a href="https://www.toronto.ca/legdocs/tmmis/votes-and-attendance.htm" target="_blank" rel="noopener">votes
+      and attendance reports</a> in TMMIS. The City publishes no
+      attendance register; Deme's participation figure is derived from
+      the voting record, as the method notes below explain. Deme reorganizes the record; it
       does not originate it. Where Deme and the official record ever
       differ, the official record is right.</p>
 
@@ -226,10 +229,13 @@
       members who were absent — 112,140 of them — and rows where a
       member declared a personal interest — 119. Neither is a vote.
       Of 743,677 vote rows in the record, 631,418 are votes actually
-      cast.</p>
-      <p style="max-width:44rem"><strong>Attendance is a plain
+      cast. The 119 are a count of recorded votes flagged
+      “interest declared”, not entries in the City's official
+      declarations register; the nature of each interest is not in
+      this data.</p>
+      <p style="max-width:44rem"><strong>Recorded-vote participation is a plain
       statistic.</strong> It is a member's votes cast divided by their
-      votes cast plus their absences, across recorded votes where a vote was theirs to cast. Declared
+      votes cast plus their absences, across recorded votes where a vote was theirs to cast. It is the share of recorded votes where the member was present and voting; it is not a count of meetings attended, and the City of Toronto publishes no attendance register. Declared
       interests are left out of the count entirely: stepping back from
       a vote for a declared interest is a duty, not an absence, and
       Deme never counts it as one.</p>
@@ -240,7 +246,9 @@
       position, and Deme says so rather than guessing.</p>
       <p style="max-width:44rem"><strong>The two archives start in
       different years.</strong> The decision archive runs 2018–2026.
-      The voting record reaches back to 2006, five terms. Some
+      Member totals in the voting record reach back to 2006, five
+      terms, as aggregates; individual, name-by-name vote rows are
+      stored from 2018 onward only. Some
       long-serving members' totals include votes from before 2018;
       their item-by-item record starts in 2018.</p>
       <p style="max-width:44rem"><strong>Freshness.</strong> The

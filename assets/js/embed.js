@@ -96,14 +96,14 @@ function embedMemberHTML(person, decisions) {
       <div class="embed-stats">
         <div class="embed-stat">
           <span class="embed-stat-num">${esc(fmtAtt(person))}</span>
-          <span class="embed-stat-lab">Attendance</span>
+          <span class="embed-stat-lab">Recorded-vote participation</span>
         </div>
         <div class="embed-stat">
           <span class="embed-stat-num">${esc(fmtNum(person.votesCast))}</span>
           <span class="embed-stat-lab">Votes cast</span>
         </div>
       </div>
-      <p class="embed-def">Attendance: ${esc(ATTENDANCE_DEFINITION)}.</p>
+      <p class="embed-def">Recorded-vote participation: ${esc(ATTENDANCE_DEFINITION)}.</p>
     </div>
     <div class="embed-latest">
       <h3 class="embed-latest-h">Latest decisions for this ward</h3>
@@ -144,7 +144,7 @@ async function initEmbedCard() {
   function render(ward) {
     if (ward == null) {
       body.innerHTML = `<p class="small embed-hint">Pick a ward above to
-        see its member, their attendance and votes cast, and the latest
+        see its member, their recorded-vote participation and votes cast, and the latest
         decisions tagged to that ward.</p>`;
       return;
     }

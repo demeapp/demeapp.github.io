@@ -386,7 +386,7 @@ Promise.all([loadJSON(dataPath("stats.json")), loadJSON(dataPath("latest.json"))
     <div class="stat"><span class="num"><span data-count="9">9</span> in 100</span>
       <span class="lab">decisions carry a recorded vote — ${fmtNum(stats.recordedVoteDecisions)} where every name is on the record</span></div>
     <div class="stat"><span class="num" data-count="${stats.votesCast}">${fmtNum(stats.votesCast)}</span>
-      <span class="lab">individual votes cast — yes or no — by ${stats.members} members across five terms, back to ${stats.votesFrom}</span></div>`;
+      <span class="lab">votes cast — yes or no — by ${stats.members} members across five terms, back to ${stats.votesFrom} in member totals; name-by-name vote rows are stored from 2018</span></div>`;
   /* All three headline stats count up once when the band scrolls
      into view (setupCountUps wires every [data-count] in the band):
      the two big totals, and the "9" in "9 in 100" — "in 100" and the

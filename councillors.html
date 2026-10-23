@@ -48,7 +48,7 @@
 /* Earlier rows: a fixed text column beside the avatar (polish wave,
    visitor-eye fix). The shared .personlist row is space-between —
    written when rows held only a name and a term list. With ward
-   history + attendance added, desktop rows scattered the name to a
+   history + participation added, desktop rows scattered the name to a
    different x on every row and a long record broke its row. Scoped
    to this section only; the shared rule is untouched. */
 #earlier-details .personlist li { justify-content: flex-start; flex-wrap: nowrap; }
@@ -78,11 +78,13 @@
       <p class="kicker">Representatives</p>
       <h1 id="people-h">The people on the record</h1>
       <hr class="rule">
-      <p class="lede">Facts only — no grades, no rankings. Attendance is
-      simply this: of the recorded votes where a vote was theirs to cast,
-      the share where the member was present and voting. When a member declares a personal interest in an item, they
+      <p class="lede">Facts only — no grades, no rankings. Recorded-vote
+      participation is simply this: of the recorded votes where a vote was
+      theirs to cast, the share where the member was present and voting.
+      It is not a count of meetings attended; the City of Toronto
+      publishes no attendance register. When a member declares a personal interest in an item, they
       must step back — a duty, not an absence — and those votes never
-      count against their attendance.</p>
+      count against their participation.</p>
 
       <div class="card finder-panel" id="ward-lookup">
         <h2>Find a councillor — by name or postal code</h2>
@@ -111,8 +113,9 @@
           </select>
         </label>
       </div>
-      <p class="small">Each card carries four summary facts — attendance,
-        votes cast, tenure, and declared interests. Open a member for the
+      <p class="small">Each card carries four summary facts — recorded-vote
+        participation, votes cast, tenure, and times a member declared an
+        interest and did not vote. Open a member for the
         full record. Portraits are the members’ official photos; where
         none is published, the card shows initials instead.</p>
 
@@ -219,7 +222,7 @@ function wardSummary(c) {
 function earlierRow(c) {
   const ws = wardSummary(c);
   return `<li>${avatarHTML(c, "sm")}<span><a href="councillor.html?m=${encodeURIComponent(c.slug)}">${esc(c.name)}</a>
-   <span class="terms">${esc(c.terms.map(fmtTerm).join(" · "))}${ws ? ` · ${esc(ws)}` : ""} · ${fmtNum(c.votesCast)} votes cast · ${esc(fmtAtt(c))} attendance</span></span></li>`;
+   <span class="terms">${esc(c.terms.map(fmtTerm).join(" · "))}${ws ? ` · ${esc(ws)}` : ""} · ${fmtNum(c.votesCast)} votes cast · ${esc(fmtAtt(c))} recorded-vote participation</span></span></li>`;
 }
 function render(q) {
   const query = (q || "").toLowerCase();

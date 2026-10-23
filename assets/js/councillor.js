@@ -1,5 +1,5 @@
 /* Councillor profile — the simple picture first (who, ward, term, one
-   attendance stat), the restored dossier panels (about, committees,
+   recorded-vote participation stat), the restored dossier panels (about, committees,
    contact, campaign promises), the lobbying record, then the full
    recorded-vote history, filterable and paginated. Facts only: no
    grades, no rankings. */
@@ -434,7 +434,8 @@ function compositionStrip(person) {
       ${seg(cast, "cast")}${seg(absent, "absent")}${seg(interest, "interest")}
     </div>
     <p class="comp-legend">Of the ${fmtNum(total)} recorded votes in their
-      record (2006–2026), counting declared interests in the total:
+      record (member totals back to 2006; name-by-name rows from 2018),
+      counting declared interests in the total:
       <strong>${pctTxt(cast)}%</strong> cast ·
       <strong>${pctTxt(absent)}%</strong> absent ·
       <strong>${pctTxt(interest)}%</strong> declared an interest — a duty,
@@ -479,11 +480,11 @@ function recordCardHTML(person, standalone) {
       <h2>${esc(person.name)}</h2>
       <p class="rc-ward">${esc(role)} · Voting record card</p></div></div>
     <div class="rc-stats">
-      <div class="rc-stat"><span>Attendance</span><strong>${fmtAtt(person)}</strong></div>
+      <div class="rc-stat"><span>Recorded-vote participation</span><strong>${fmtAtt(person)}</strong></div>
       <div class="rc-stat"><span>Votes cast</span><strong>${fmtNum(person.votesCast)}</strong></div>
       <div class="rc-stat"><span>Yes</span><strong>${fmtNum(person.yes)}</strong></div>
       <div class="rc-stat"><span>No</span><strong>${fmtNum(person.no)}</strong></div>
-      <div class="rc-stat"><span>Declared interests</span><strong>${fmtNum(person.interest)}</strong></div>
+      <div class="rc-stat"><span>Interest declared · did not vote</span><strong>${fmtNum(person.interest)}</strong></div>
     </div>
     <h3>Five most recent recorded votes</h3>
     ${votes || '<p>No recorded votes in the searchable archive.</p>'}
@@ -588,7 +589,7 @@ async function init() {
     </div>
     <div class="statTiles">
       <div class="stat"><span class="num">${fmtAtt(person)}</span>
-        <span class="lab">Attendance — present and voting, out of recorded
+        <span class="lab">Recorded-vote participation — present and voting, out of recorded
         votes where a vote was theirs to cast</span>${attBar}</div>
       <div class="stat"><span class="num">${fmtNum(person.votesCast)}</span>
         <span class="lab">Votes cast (yes or no) across their record</span></div>
@@ -596,15 +597,22 @@ async function init() {
         <span class="lab">Times they declared a personal interest and did
         not vote — a duty, not an absence</span></div>
     </div>
-    <p class="small" style="max-width:44rem">Attendance counts only recorded
-    votes — the name-by-name kind. When a member declares an interest in an
-    item, stepping back is required, so those are never counted against
-    attendance here. The breakdown below uses a wider base — every recorded
-    vote, declared interests included — which is why its cast share can run
-    slightly lower than the attendance figure.</p>
+    <p class="small" style="max-width:44rem">Recorded-vote participation
+    counts only recorded votes — the name-by-name kind. It is the share of
+    those votes where the member was present and voting; it is not a count
+    of meetings attended, and the City of Toronto publishes no attendance
+    register. When a member declares an interest in an item, stepping back
+    is required, so those are never counted against participation here.
+    The interest count on this page is counted from recorded votes where
+    the member declared an interest and did not vote; the City's official
+    declarations register is a separate record, and the nature of each
+    interest is not in this data. The breakdown below uses a wider base —
+    every recorded vote, declared interests included — which is why its
+    cast share can run slightly lower than the participation figure.</p>
     ${compositionStrip(person)}
     <p class="small" style="max-width:44rem">The totals above count the full
-    voting record, 2006–2026. The item-by-item list below covers the
+    voting record: member totals reach back to 2006, while individual
+    vote rows are stored from 2018. The item-by-item list below covers the
     decision archive, 2018–2026.</p>
     <p style="margin-top:1rem"><button class="btn secondary" id="record-card-btn"
       type="button">Print / download record card</button>

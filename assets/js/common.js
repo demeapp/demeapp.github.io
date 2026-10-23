@@ -226,7 +226,8 @@ function renderChrome(active) {
         </nav>
       </div>
       <p class="fineprint">Built from the City of Toronto's published council
-      records. Decision archive: 2018–2026 · Voting record: 2006–2026 ·
+      records. Decision archive: 2018–2026 · Voting record: name-by-name
+      rows 2018–2026, member totals back to 2006 ·
       Archive current to Oct 19, 2026 — see
       <a href="about.html">About &amp; method</a>.</p>
       </div>`;
@@ -234,7 +235,8 @@ function renderChrome(active) {
 }
 
 /* Member cards carry only the four summary stats the owner approved:
-   attendance, votes cast, tenure, and declared interests. Tenure is
+   recorded-vote participation, votes cast, tenure, and declared
+   interests (counted from recorded votes). Tenure is
    derived only from the member's own term list in councillors.json:
    the earliest term start plus, where relevant, the number of terms. */
 function memberTenure(person) {
@@ -247,7 +249,7 @@ function memberTenure(person) {
     ? `On Council since ${since}`
     : `${terms.length} terms · since ${since}`;
 }
-/* One attendance format everywhere (OE-8): exactly one decimal,
+/* One recorded-vote participation format everywhere (OE-8): exactly one decimal,
    matching the member-page tiles — a stored 95 renders "95.0%",
    never a bare "95%" beside someone else's "95.7%". */
 function fmtAtt(person) {
@@ -257,18 +259,18 @@ function fmtAtt(person) {
 }
 function memberStatsHTML(person) {
   const interest = Number(person.interest) || 0;
-  /* Decorative attendance meter (the percentage figure beside it is
+  /* Decorative participation meter (the percentage figure beside it is
      the value; the meter is aria-hidden and purely visual). Null or
-     non-numeric attendance renders the em dash with no meter. */
+     non-numeric participation renders the em dash with no meter. */
   const att = Number(person.attendance);
   const meter = person.attendance != null && Number.isFinite(att)
     ? `<span class="att-meter" aria-hidden="true"><span class="att-fill" style="width:${Math.max(0, Math.min(100, att))}%"></span></span>`
     : "";
   return `<div class="member-stats" aria-label="Record summary">
-    <div><span>Attendance</span><strong>${fmtAtt(person)}</strong>${meter}</div>
+    <div><span>Recorded-vote participation</span><strong>${fmtAtt(person)}</strong>${meter}</div>
     <div><span>Votes cast</span><strong>${fmtNum(person.votesCast)}</strong></div>
     <div><span>Tenure</span><strong>${esc(memberTenure(person))}</strong></div>
-    <div><span>Interests declared</span><strong>${fmtNum(interest)}</strong></div>
+    <div><span>Interest declared · did not vote</span><strong>${fmtNum(interest)}</strong></div>
   </div>`;
 }
 

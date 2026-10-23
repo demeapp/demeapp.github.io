@@ -491,7 +491,7 @@ async function renderPayExpenses(person) {
     the City Clerk's annual remuneration reports, shown as published.
     A year's figures can appear in more than one published table; each
     table is shown under its own label, and the site never adds the
-    tables together. Annual reports are included for 1999–2009 and
+    tables together. Annual reports are included for 2006–2009 and
     2017–2025. The 2010–2016 reports are published only inside Council
     meeting records and are not yet included; quarterly office-expense
     detail is also not yet included.</p>

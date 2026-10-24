@@ -108,11 +108,11 @@
       <a href="about.html#how-we-count">How we count →</a></p>
 
       <div class="card finder-panel" id="ward-lookup">
-        <h2>Find a councillor — by name or postal code</h2>
+        <h2>Find a representative — by name or postal code</h2>
         <p class="small" style="max-width:44rem;margin-top:0">Type a name or a ward to filter the members below — or enter your
-          postal code to find your councillor and their record.</p>
+          postal code to find your representative and their record.</p>
         <form class="finder-row" id="finder-form" role="search">
-          <label class="visually-hidden" for="fq">Find a councillor by name or postal code</label>
+          <label class="visually-hidden" for="fq">Find a representative by name or postal code</label>
           <input type="text" id="fq" placeholder="A name, a ward — or M5V 1J1" autocomplete="off" spellcheck="false">
           <button class="btn" type="submit">Find</button>
         </form>
@@ -514,7 +514,7 @@ function initFinder() {
       }
       result.innerHTML = `<div class="wf-confirm">
         <p><strong>Ward ${c.ward} — ${esc(c.wardName)}.</strong>
-        Your councillor is ${esc(c.name)}.</p>
+        Your representative is ${esc(c.name)}.</p>
         <p class="wf-actions">
           <a class="btn bronze" href="councillor.html?m=${encodeURIComponent(c.slug)}">See ${esc(c.name)}'s record</a>
           <button class="btn secondary" type="button" id="lookup-show">Show their card below</button>

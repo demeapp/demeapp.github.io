@@ -77,8 +77,8 @@ const DemeSimple = (() => {
       "And still counting — the record grows with each meeting.",
     "Upcoming at City Council": "Coming up at City Council",
     "Make Deme yours": "Set up Deme for you",
-    "Set your ward to see your councillor, your area's decisions, and alerts.":
-      "Set your ward. You will see your councillor, decisions for your area, and alerts.",
+    "Set your ward to see your representative, your area's decisions, and alerts.":
+      "Set your ward. You will see your representative, decisions for your area, and alerts.",
     "Each story below groups the decisions in one thread of the record, oldest story to newest decision — grouping is a finding aid; the record itself is unchanged.":
       "Each story below puts the decisions on one topic in one place, from the oldest story to the newest decision. Grouping only helps you find things. The record itself does not change.",
     "Most Council decisions come with no recorded vote — no public list of who voted yes and who voted no. Deme keeps the whole record readable, and flags every decision where the names":
@@ -136,8 +136,8 @@ const DemeSimple = (() => {
     /* ----- representatives directory ----- */
     "Facts only — no grades, no rankings. Recorded-vote participation is the share of recorded votes where a member was present and voting — not a count of meetings attended, and declared interests never count against it.":
       "Facts only — no grades, no rankings. Recorded votes they took part in means: of the recorded votes, the share where the member was there and voted. It is not a count of meetings they went to. A declared interest never counts against them.",
-    "Type a name or a ward to filter the members below — or enter your postal code to find your councillor and their record.":
-      "Type a name or a ward to cut the list below. Or type your postal code to find your councillor and their record.",
+    "Type a name or a ward to filter the members below — or enter your postal code to find your representative and their record.":
+      "Type a name or a ward to cut the list below. Or type your postal code to find your representative and their record.",
     "Only the first 3 characters of a postal code are used, right here in your browser — your full postal code is never stored or sent anywhere. A lookup only: nothing is saved, and it sets nothing on your profile.":
       "Only the first 3 characters of your postal code are used, right here in your browser. Your full postal code is never saved or sent anywhere. It is a lookup only. Nothing is saved, and it sets nothing on your profile.",
     "Each card carries four facts — recorded-vote participation, votes cast, tenure, and — from the recorded votes — the times a member declared an interest and did not vote. Open a member for the full record. Portraits are the members’ official photos; where none is published, initials instead.":
@@ -221,8 +221,8 @@ const DemeSimple = (() => {
       "You never need an account to read the record. Your picks are yours alone. Only you can see them. Deme never adds up visitors' picks.",
     "Account tools load here — if they don't appear, this page still works in full on this device.":
       "Account tools load here. If they do not show up, this page still works in full on this device.",
-    "Your topics and Council alerts live here. Just looking for your councillor?":
-      "Your topics and Council alerts are here. Just looking for your councillor?",
+    "Your topics and Council alerts live here. Just looking for your representative?":
+      "Your topics and Council alerts are here. Just looking for your representative?",
     "Take your position before the vote. Signed-in picks save to your account; after the meeting, your picks below are lined up against what Council actually did.":
       "Say what you think before the vote. If you are signed in, your picks save to your account. After the meeting, your picks below sit next to what Council did.",
     "Watch an item and it waits here. When Council decides it, we email you the outcome once, and the item lands here with its result — and your pick beside it if you weighed in.":
@@ -243,9 +243,9 @@ const DemeSimple = (() => {
       "Accounts are opening soon. Nothing is missing today. The full record is open to everyone. An account is how you weigh in and keep your picks.",
     "What Deme holds, where, and how to delete it: the":
       "What Deme keeps, where, and how to delete it: the",
-    "Your ward is part of your account profile — it's set when you create your account, so Deme can put your councillor's actual votes beside your picks, on any device.":
-      "Your ward is part of your account profile. You set it when you create your account. That way Deme can put your councillor's real votes beside your picks, on any device.",
-    "Just looking for your councillor?": "Just looking for your councillor?",
+    "Your ward is part of your account profile — it's set when you create your account, so Deme can put your representative's actual votes beside your picks, on any device.":
+      "Your ward is part of your account profile. You set it when you create your account. That way Deme can put your representative's real votes beside your picks, on any device.",
+    "Just looking for your representative?": "Just looking for your representative?",
     "Find them by postal code in the directory": "Find them by postal code in the directory",
     "— a lookup only; nothing is saved. And nothing else on this page waits on an account — the whole record stays open either way.":
       "— a lookup only. Nothing is saved. Nothing else on this page needs an account. The whole record stays open either way.",
@@ -397,7 +397,7 @@ const DemeSimple = (() => {
   const SIMPLE_ATTRS = {
     "Search decisions, topics, places…": "Search decisions, topics, places…",
     "Dismiss election reminder": "Close election reminder",
-    "Find a councillor by name or postal code": "Find a councillor by name or postal code",
+    "Find a representative by name or postal code": "Find a representative by name or postal code",
     "Search earlier members": "Search earlier members",
   };
 

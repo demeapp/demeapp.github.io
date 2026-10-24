@@ -117,7 +117,7 @@ const HomeStore = (() => {
         hands. ${old} was mayor when you set your choice; ${nm} is mayor
         now.</p>${tail}`;
     }
-    return `<div class="notice"><h3>Your councillor changed</h3>
+    return `<div class="notice"><h3>Your representative changed</h3>
       <p>When the new Council took office, Ward ${state.choice}'s seat
       changed hands. ${old} was the councillor on record when you set
       your ward; ${nm} represents Ward ${state.choice} now.</p>${tail}`;
@@ -246,7 +246,7 @@ const HomeStore = (() => {
       <h2 id="starthere-h">Make Deme yours</h2>
       <hr class="rule">
       <div class="card starthere-card entry-panel">
-        <p class="entry-lede">Set your ward to see your councillor, your
+        <p class="entry-lede">Set your ward to see your representative, your
         area's decisions, and alerts.</p>
         <div id="sh-finder"></div>
         <div class="entry-alt">
@@ -297,7 +297,7 @@ const HomeStore = (() => {
       <h2 id="starthere-h">Make Deme yours</h2>
       <hr class="rule">
       <div class="card starthere-card entry-slim">
-        <p>Set your ward to see your councillor, your area's decisions,
+        <p>Set your ward to see your representative, your area's decisions,
         and alerts.</p>
         <p class="entry-actions">
           <button class="btn bronze" type="button" id="entry-set">Set your ward</button>
@@ -398,14 +398,14 @@ const HomeStore = (() => {
       <div class="card starthere-card entry-panel">
         <p class="entry-lede">Your ward is part of your account
         profile — it's set when you create your account, so Deme can
-        put your councillor's actual votes beside your picks, on any
+        put your representative's actual votes beside your picks, on any
         device.</p>
         <p class="entry-actions">
           <a class="btn bronze" href="my-record.html#account-zone">Create your account</a>
           <a class="btn secondary" href="my-record.html#account-zone">Sign in</a>
         </p>
         <p class="small" style="margin:.9rem 0 0">Just looking for
-        your councillor? <a href="councillors.html#ward-lookup">Find
+        your representative? <a href="councillors.html#ward-lookup">Find
         them by postal code in the directory</a> — a lookup only;
         nothing is saved. And nothing else on this page waits on an
         account — the whole record stays open either way.</p>

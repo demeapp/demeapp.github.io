@@ -164,7 +164,7 @@ const WardFinder = (() => {
       const wi = info(people, n);
       return `<div class="wf-confirm">
         <p><strong>That's Ward ${n}${wi.name ? ` — ${esc(wi.name)}` : ""}.</strong>
-        ${wi.councillor ? `Your councillor is ${esc(wi.councillor)}.` : ""}</p>
+        ${wi.councillor ? `Your representative is ${esc(wi.councillor)}.` : ""}</p>
         <p class="wf-actions">
           <button class="btn bronze" type="button" data-yes="${n}">Yes — set Ward ${n}</button>
           <button class="btn secondary" type="button" data-no="1">Not my ward</button>

@@ -127,8 +127,8 @@ function alignmentCopy(tally, memberName, ward) {
       headline: {
         num: `${tally.matched} of ${tally.comparable}`,
         lab: simpleOn()
-          ? `decided picks where ${memberName} voted the same way you did. ${memberName} is your Ward ${ward} councillor. Each pick is compared with the first recorded vote they cast at City Council on that item. Counted here, on this device, from your picks and the public record. It is a record, not a score. What you do with it is up to you.`
-          : `decided picks where ${memberName} voted the same way you did. ${memberName} is your Ward ${ward} councillor, and each pick is compared with the first recorded vote they cast at City Council on that item. Counted here, on this device, from your picks and the public record — a record, not a score; what you do with it is up to you.`,
+          ? `decided picks where ${memberName} voted the same way you did. ${memberName} is your Ward ${ward} representative. Each pick is compared with the first recorded vote they cast at City Council on that item. Counted here, on this device, from your picks and the public record. It is a record, not a score. What you do with it is up to you.`
+          : `decided picks where ${memberName} voted the same way you did. ${memberName} is your Ward ${ward} representative, and each pick is compared with the first recorded vote they cast at City Council on that item. Counted here, on this device, from your picks and the public record — a record, not a score; what you do with it is up to you.`,
       } };
   }
   return { explainer, headline: null,
@@ -325,7 +325,7 @@ function renderContinuity() {
     return;
   }
   if (snap.slug === c.slug) { continuityBox.innerHTML = ""; return; }
-  continuityBox.innerHTML = `<div class="notice"><h3>Your councillor changed</h3>
+  continuityBox.innerHTML = `<div class="notice"><h3>Your representative changed</h3>
     <p>When the new Council took office, Ward ${c.ward}'s seat changed
     hands. ${esc(snap.name)} was the councillor on record when you set
     your ward; ${esc(c.name)} represents Ward ${c.ward} now.</p>

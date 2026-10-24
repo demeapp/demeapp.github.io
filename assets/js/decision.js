@@ -148,7 +148,7 @@ function motionBlock(m, idx) {
   const wardRep = tagReps && typeof VoteStore !== "undefined" ? VoteStore.getWardRep() : null;
   const mayorRep = tagReps && typeof VoteStore !== "undefined" ? VoteStore.getMayorRep() : null;
   const repTag = (name) => {
-    if (wardRep && name === wardRep.name) return ` <span class="pill yourrep">Your councillor</span>`;
+    if (wardRep && name === wardRep.name) return ` <span class="pill yourrep">Your representative</span>`;
     if (mayorRep && name === mayorRep.name) return ` <span class="pill yourrep">Your mayor</span>`;
     return "";
   };

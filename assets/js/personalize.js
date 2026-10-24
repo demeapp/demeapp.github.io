@@ -47,6 +47,37 @@ const HomeStore = (() => {
   let people = [];
   const cardCache = new Map(); // ref -> card, hydrated from year shards
 
+  /* The personalization index is sharded by year
+     (record-data/search-lite-<year>.json: [ref, date, wards, position]
+     tuples split from the bulk search index, which is no longer
+     published as a single file — it is the email-gated bulk dataset,
+     see open-data.html). Shards load newest-first, and the scan stops
+     once the requested top-N is settled: every unloaded row sits in
+     an earlier year, so it is strictly older than the Nth row already
+     held and cannot displace it. Rows are restored to bulk-index
+     order (position) before the caller's own sort runs, so the
+     selection — ties included — is exactly what the full index
+     produced. Identical output is enforced by harness/difftest in the
+     fix wave's gate package. */
+  let _liteYears = null;
+  async function topSearchRows(pred, n) {
+    if (!_liteYears) {
+      const idx = await loadJSON(dataPath("search-lite-index.json"));
+      _liteYears = idx.years || [];
+    }
+    const picked = [];
+    for (const y of _liteYears) {
+      const tuples = await loadJSON(dataPath(`search-lite-${y}.json`));
+      for (const t of tuples) {
+        const row = { ref: t[0], date: t[1], w: t[2], year: String(y), _pos: t[3] };
+        if (pred(row)) picked.push(row);
+      }
+      if (picked.length >= n) break;
+    }
+    picked.sort((a, b) => a._pos - b._pos);
+    return picked;
+  }
+
   async function hydrateCards(refs) {
     const need = refs.filter((r) => !cardCache.has(r.ref));
     const byYear = new Map();
@@ -196,7 +227,6 @@ const HomeStore = (() => {
       const ward = VoteStore.getWard(), ww = VoteStore.getWatchWard();
       const ints = VoteStore.getInterests();
       if (ww == null && !ints.length) { sec.hidden = true; return; }
-      const search = await loadJSON(dataPath("search.json"));
       const refSet = new Set();
       if (ints.length) {
         try {
@@ -211,8 +241,8 @@ const HomeStore = (() => {
          the watched ward or a followed topic — never through the
          primary ward alone. (The launch-day visual audit caught the
          two sections showing the same four cards.) */
-      const rows = search.filter((r) => refSet.has(r.ref)
-        || (r.w && ww != null && r.w.includes(ww)))
+      const rows = (await topSearchRows((r) => refSet.has(r.ref)
+        || (r.w && ww != null && r.w.includes(ww)), 12))
         .sort((a, b) => (a.date < b.date ? 1 : a.date > b.date ? -1 : 0)).slice(0, 12);
       const cards = (await hydrateCards(rows)).filter(Boolean).slice(0, 4);
       const basis = [];
@@ -370,9 +400,8 @@ const HomeStore = (() => {
           .filter((c) => !shownRefs.has(c.ref)).slice(0, 4);
         if (!cards.length) cards = (latest.council || []).slice(0, 4);
       } else {
-        const search = await loadJSON(dataPath("search.json"));
-        const mine = search
-          .filter((r) => r.w && r.w.includes(state.choice))
+        const mine = (await topSearchRows(
+          (r) => r.w && r.w.includes(state.choice), 4))
           .sort((a, b) => (a.date < b.date ? 1 : -1))
           .slice(0, 4);
         cards = (await hydrateCards(mine)).filter(Boolean);

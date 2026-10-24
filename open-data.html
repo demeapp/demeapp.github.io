@@ -6,19 +6,21 @@
 <title>Open data — Deme</title>
 <meta name="description" content="The record, as data: every file Deme publishes, what it holds, and how to reuse it.">
 <link rel="stylesheet" href="assets/css/deme.css">
-<link rel="icon" href="favicon-navy-2026.svg" type="image/svg+xml">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="favicon-navy-mint-v2.svg" type="image/svg+xml">
+<link rel="icon" href="assets/icons/favicon-32.png" sizes="32x32" type="image/png">
 <meta name="theme-color" content="#0E2A47">
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Deme">
 <meta property="og:title" content="Open data — Deme">
 <meta property="og:description" content="The record, as data: every file Deme publishes, what it holds, where it comes from, and how anyone can reuse it.">
-<meta property="og:image" content="https://demeapp.github.io/assets/og-image-navy.png">
+<meta property="og:image" content="https://demeapp.github.io/assets/og-image-navy-2026-v2.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Open data — Deme">
 <meta name="twitter:description" content="The record, as data: every file Deme publishes, what it holds, where it comes from, and how anyone can reuse it.">
-<meta name="twitter:image" content="https://demeapp.github.io/assets/og-image-navy.png">
-<link rel="apple-touch-icon" href="assets/icons/apple-touch-icon-2026.png">
+<meta name="twitter:image" content="https://demeapp.github.io/assets/og-image-navy-2026-v2.png">
+<link rel="apple-touch-icon" href="assets/icons/apple-touch-icon-2026-v2.png">
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to main content</a>
@@ -84,10 +86,7 @@
           <tr>
             <td>Decision details:<br>
               <code>record-data/d/&lt;reference&gt;.json</code></td>
-            <td>One file for each of the 3,171 decisions with a
-            recorded vote: the official summary, what was decided, and
-            every motion on the item with its name-by-name votes and
-            result.</td>
+            <td>One file for each of the 33,795 decisions: the official summary, what was decided, and — where the City took a recorded vote — every motion on the item with its name-by-name votes and result.</td>
           </tr>
           <tr>
             <td>Item text, by year:<br>
@@ -115,8 +114,7 @@
             <td><a href="record-data/councillors.json">Members</a><br>
               <code>record-data/councillors.json</code></td>
             <td>All 94 members in the voting record: terms served,
-            votes cast, Yes and No counts, absences, declared
-            interests, and recorded-vote participation as a plain statistic.</td>
+            votes cast, Yes and No counts, absences, interest-flagged step-backs (the flag exists only from June 2023), and recorded-vote participation as a plain statistic.</td>
           </tr>
           <tr>
             <td>Member vote rows:<br>
@@ -125,6 +123,44 @@
             2018 onward — the item's reference, the vote cast, the
             stage, the date, the motion, and its result. Members whose
             service ended before 2018 show totals in Members instead.</td>
+          </tr>
+          <tr>
+            <td><a href="record-data/declared-interests.json">Declared interests — the official register</a><br>
+              <code>record-data/declared-interests.json</code></td>
+            <td>The register entries Deme serves for each member: the declarations on the City Clerk's official Registry of Declared Interest, entry by entry, as published (2007–2026). A separate record from the interest-flagged vote count in Members.</td>
+          </tr>
+          <tr>
+            <td><a href="record-data/gift-disclosures.json">Gift disclosures</a><br>
+              <code>record-data/gift-disclosures.json</code></td>
+            <td>The gifts and benefits members disclosed, from the Integrity Commissioner's Gift Disclosure Registry, as published (2011–2025).</td>
+          </tr>
+          <tr>
+            <td><a href="record-data/expenses.json">Pay and expenses</a><br>
+              <code>record-data/expenses.json</code> ·
+              <a href="record-data/expenses-detail.json">quarterly detail</a></td>
+            <td>The figures behind each member's Pay and expenses section: the City Clerk's annual remuneration reports (1999–2025) and the quarterly office-expense routine disclosure (2013–2026). Two separate publications — their figures are never added together.</td>
+          </tr>
+          <tr>
+            <td><a href="record-data/lobbying.json">Lobbying</a><br>
+              <code>record-data/lobbying.json</code> ·
+              <code>record-data/lob/&lt;name&gt;.json</code></td>
+            <td>The summary and the per-member files behind the Lobbying Record on each profile: communications by year, top subject matters and how contact was made, as filed with the Lobbyist Registrar.</td>
+          </tr>
+          <tr>
+            <td><a href="record-data/profiles.json">Member profiles</a><br>
+              <code>record-data/profiles.json</code></td>
+            <td>The material behind the About, committees and contact sections of each member's page.</td>
+          </tr>
+          <tr>
+            <td><a href="record-data/earlier-wards.json">Earlier-member wards</a><br>
+              <code>record-data/earlier-wards.json</code> ·
+              <a href="record-data/ward-crosswalk.json">ward crosswalk</a></td>
+            <td>Each earlier member's ward in each term they served, and how the pre-2018 wards map onto today's — the era-aware history behind the Earlier members search.</td>
+          </tr>
+          <tr>
+            <td><a href="record-data/council-status.json">Council status</a><br>
+              <code>record-data/council-status.json</code></td>
+            <td>Where the council term stands — session, recess, election and term dates — the file the site's term banners and election states read.</td>
           </tr>
           <tr>
             <td><a href="record-data/threads.json">Story threads</a><br>
@@ -192,8 +228,7 @@
       <h2 style="margin-top:2.2rem">Method notes and limits</h2>
       <p style="max-width:44rem"><strong>Votes cast means Yes or
       No.</strong> The City's voting record also carries rows for
-      members who were absent — 112,140 of them — and rows where a
-      member declared a personal interest — 119. Neither is a vote.
+      members who were absent — 112,140 of them — and rows where a member declared a personal interest and stepped back — 119, all of them dated June 2023 or later: the record carries that flag only from June 2023, and earlier declarations were recorded as ordinary absences. Neither is a vote.
       Of 743,677 vote rows in the record, 631,418 are votes actually
       cast. The 119 are a count of recorded votes flagged
       “interest declared”, not entries in the City's official

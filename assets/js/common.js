@@ -272,9 +272,10 @@ function fmtAtt(person) {
   const att = Number(person.attendance);
   return Number.isFinite(att) ? `${att.toFixed(1)}%` : "—";
 }
-/* Callers pass CURRENT members only: the interest counter's name-by-name
-   record begins in 2018, so an earlier member must never reach this
-   helper — the directory dashes them instead (Wave A display fix). */
+/* Callers pass CURRENT members only: the interest counter reads vote
+   rows the source flags as interest-declared, a flag that exists only
+   from June 2023 — an earlier member must never reach this helper;
+   the directory dashes them instead. */
 function memberStatsHTML(person) {
   const interest = Number(person.interest) || 0;
   /* Decorative participation meter (the percentage figure beside it is

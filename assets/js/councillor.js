@@ -481,6 +481,11 @@ async function renderDeclaredInterests(person) {
     giftsBody = `<p class="small" style="max-width:44rem">Gifts and benefits this member disclosed, as published in the Integrity Commissioner's Gift Disclosure Registry. Values are as published.</p>
       <ul class="personlist history-rows">${grows}</ul>`;
   }
+  const regN = entries ? entries.length : 0;
+  const giftN = gifts ? gifts.length : 0;
+  const countsLine = `<p class="small" style="max-width:44rem">${simpleOn()
+    ? `<strong>Served on this page:</strong> ${fmtNum(regN)} ${regN === 1 ? "entry" : "entries"} from the City Clerk's official list${giftsEraNA ? "" : ` and ${fmtNum(giftN)} gift ${giftN === 1 ? "disclosure" : "disclosures"}`} — two separate lists, counted on their own, never added together.`
+    : `<strong>Served on this page:</strong> ${fmtNum(regN)} ${regN === 1 ? "entry" : "entries"} from the official register${giftsEraNA ? "" : ` · ${fmtNum(giftN)} gift ${giftN === 1 ? "disclosure" : "disclosures"}`} — separate records, counted separately, never added together.`}</p>`;
   if (hasEntries || hasVoteInterests) {
     const giftsHTML = hasGifts
       ? `<h3 style="margin-top:1.8rem">Gifts and benefits disclosed</h3>
@@ -491,6 +496,7 @@ async function renderDeclaredInterests(person) {
     <p class="small" style="max-width:44rem">${simpleOn()
       ? `This is the City Clerk's official list — the interests ${esc(person.name)} declared on the record, one item at a time. It is not the same as the recorded-vote count above. That count comes from recorded votes where the member declared an interest and did not vote. The two lists count different things, so their totals will not match. A member can declare an interest out loud in the chamber and still not appear in this list. The vote record above may show a declaration that this list does not have.`
       : `The City Clerk's official register — the declarations ${esc(person.name)} made on the record, item by item. It is separate from the recorded-vote count above it, counted from recorded votes where the member declared an interest and did not vote; the two count different things and their totals will not match. <strong>This register is the City Clerk's published file of declarations. A declaration made out loud in the chamber — for example under Article 8 of the Code of Conduct — may not appear in that file, so this list can miss a declaration that the vote record shows.</strong>`}</p>
+    ${countsLine}
     ${hasEntries ? `<ul class="personlist history-rows">${rows}</ul>` : `<p class="small">${simpleOn() ? `No declaration for ${esc(person.name)} appears in the City Clerk's published list. The vote count above records declarations made on votes, including ones said out loud in the chamber, that may be missing from this list.` : `No declaration by ${esc(person.name)} appears in the City Clerk's published register file. The recorded-vote count above counts declarations recorded on votes, including declarations made out loud in the chamber, which the published file can miss.`}</p>`}
     ${giftsHTML}
     <p class="small" style="max-width:44rem;margin-top:1rem">Source: City Clerk's Office · Registry of Declared Interest (published 2007–2026; the City publishes no declarations dated 2006 or earlier) + Gift Disclosure Registry (published 2011–2025; 2026 not yet published) (Integrity Commissioner) · Open Data refreshed September 26, 2026</p>
@@ -506,16 +512,19 @@ async function renderDeclaredInterests(person) {
     ${entriesLoaded ? `<p class="small" style="max-width:44rem">${simpleOn()
       ? `The City Clerk's published list has no declaration for ${esc(person.name)} (2007–2026). The gifts below come from a different list, the Gift Disclosure Registry.`
       : `No declaration by ${esc(person.name)} appears in the City Clerk's published register (2007–2026) — a verified zero in that file. The gifts below are the separate Gift Disclosure Registry record.`}</p>` : ""}
+    ${countsLine}
     ${giftsBody}
     <p class="small" style="max-width:44rem;margin-top:1rem">Source: Gift Disclosure Registry (Integrity Commissioner) · published 2011–2025 (no registry was published for 2010 or earlier; 2026 not yet published) · Open Data refreshed September 26, 2026</p>
   </section>`;
 }
 
-/* The name-by-name record that produces the interest counter begins in
-   2018. A member whose service ended before it has no counter to print:
-   the directory's dash, never an unsupported 0 (Wave A display fix). */
+/* The interest counter reads only vote rows the source flags
+   Absent(Interest Declared) — a flag that exists only from June 2023
+   (earlier declarations were recorded as ordinary absences). A member
+   whose service ended before the flag era has no counter to print:
+   the directory's dash, never an unsupported 0. */
 const interestBeforeRecord = (person) =>
-  !!person.lastSeen && person.lastSeen < "2018-01-01";
+  !!person.lastSeen && person.lastSeen < "2023-06-01";
 const interestFigure = (person) =>
   interestBeforeRecord(person) ? "—" : fmtNum(person.interest);
 
@@ -608,9 +617,10 @@ async function renderPayExpenses(person) {
       ${r.sourceUrl ? `<p class="small" style="margin-top:.5rem"><a href="${esc(r.sourceUrl)}" target="_blank" rel="noopener noreferrer">Report (PDF)<span class="visually-hidden"> (opens in a new tab)</span></a></p>` : ""}
     </div>`;
     };
+    const maxAnnualYear = Math.max(...years.map((y) => Number(y)));
     annualHTML = years.map((y) =>
-      `<h3 style="margin-top:1.8rem">${esc(y)}</h3>`
-      + byYear.get(y).map(blockHTML).join("")).join("");
+      `<details class="pay-year"${Number(y) === maxAnnualYear ? " open" : ""}><summary><h3>${esc(y)}</h3></summary>`
+      + byYear.get(y).map(blockHTML).join("") + `</details>`).join("");
   }
 
   let detailHTML = "";
@@ -653,11 +663,12 @@ async function renderPayExpenses(person) {
       if (!dByYear.has(r.year)) { dByYear.set(r.year, []); dyears.push(r.year); }
       dByYear.get(r.year).push(r);
     }
+    const maxDetailYear = Math.max(...dyears.map((y) => Number(y)));
     detailHTML = `<h3 style="margin-top:2.2rem">${simpleT("Office-expense detail — routine disclosure", "Office spending detail")}</h3>
     <p class="small" style="max-width:44rem">${simpleT("The City Clerk also publishes each member's constituency services and office expenses in a routine disclosure, posted quarterly from 2013 and broken down by category. It is a separate publication from the annual reports, with a narrower scope — office spending only, not pay, benefits or staff salaries — so its figures stand on their own and are never added to the annual figures. The invoice documents themselves stay on the City's site; a category amount links to its invoices there.", "The City also posts each member's office spending by category. It has been posted every quarter since 2013. This is a different report from the yearly ones. It covers office spending only — not pay or staff. Its numbers stand on their own and are never added to the yearly numbers. The invoices stay on the City's site. A category amount links to its invoices there.")}</p>`
       + dyears.map((y) =>
-        `<h4 style="margin-top:1.4rem">${esc(y)}</h4>`
-        + dByYear.get(y).map(detailBlock).join("")).join("");
+        `<details class="pay-year"${Number(y) === maxDetailYear ? " open" : ""}><summary><h4>${esc(y)}</h4></summary>`
+        + dByYear.get(y).map(detailBlock).join("") + `</details>`).join("");
   }
 
   const intro = hasAnnual
@@ -789,10 +800,10 @@ function compositionStrip(person) {
     <p class="comp-legend">${simpleOn()
       ? (beforeRecord
         ? `Of the ${fmtNum(total)} recorded votes in their record (member totals back to 2006; votes with names from 2018): <strong>${pctTxt(cast)}%</strong> they voted · <strong>${pctTxt(absent)}%</strong> they were absent.`
-        : `Of the ${fmtNum(total)} recorded votes in their record (member totals back to 2006; votes with names from 2018): <strong>${pctTxt(cast)}%</strong> they voted · <strong>${pctTxt(absent)}%</strong> they were absent · <strong>${pctTxt(interest)}%</strong> they declared an interest. Declaring an interest is a duty, not a missed vote.`)
+        : `Of the ${fmtNum(total)} recorded votes in their record (member totals back to 2006; votes with names from 2018): <strong>${pctTxt(cast)}%</strong> they voted · <strong>${pctTxt(absent)}%</strong> they were absent · <strong>${pctTxt(interest)}%</strong> they declared an interest — the record flags these only from June 2023. Declaring an interest is a duty, not a missed vote.`)
       : (beforeRecord
         ? `Of the ${fmtNum(total)} recorded votes in their record (member totals back to 2006; name-by-name rows from 2018): <strong>${pctTxt(cast)}%</strong> cast · <strong>${pctTxt(absent)}%</strong> absent.`
-        : `Of the ${fmtNum(total)} recorded votes in their record (member totals back to 2006; name-by-name rows from 2018), counting declared interests in the total: <strong>${pctTxt(cast)}%</strong> cast · <strong>${pctTxt(absent)}%</strong> absent · <strong>${pctTxt(interest)}%</strong> declared an interest — a duty, not an absence.`)}</p>
+        : `Of the ${fmtNum(total)} recorded votes in their record (member totals back to 2006; name-by-name rows from 2018), counting declared interests in the total: <strong>${pctTxt(cast)}%</strong> cast · <strong>${pctTxt(absent)}%</strong> absent · <strong>${pctTxt(interest)}%</strong> declared an interest (the record flags these only from June 2023) — a duty, not an absence.`)}</p>
   </div>`;
 }
 
@@ -918,7 +929,7 @@ async function init() {
     person = people.find((p) => p.name === params.get("name"));
   }
   if (!person) {
-    box.innerHTML = `<div class="calm"><h2>Member not found.</h2>
+    box.innerHTML = `<div class="calm"><h1>Member not found.</h1>
       <p>See the <a href="councillors.html">full list of members</a>.</p></div>`;
     return;
   }
@@ -946,19 +957,29 @@ async function init() {
       <div class="stat"><span class="num">${fmtNum(person.votesCast)}</span>
         <span class="lab">${simpleT("Votes cast (yes or no) across their record", "Votes they cast (yes or no) in their whole record")}</span></div>
       <div class="stat"><span class="num">${interestFigure(person)}</span>
-        <span class="lab">${simpleT("Times they declared a personal interest and did not vote — a duty, not an absence", "Times they said they had a personal interest and did not vote — that is their duty, not a missed vote")}</span></div>
+        <span class="lab">${simpleT("Interest declared · stepped back", "Declared an interest · did not vote")}</span></div>
     </div>
     <p class="small" style="max-width:44rem">${simpleT("Recorded-vote participation is the share of recorded votes where the member was present and voting — not a count of meetings attended, and declared interests are never counted against it.", "This number is the share of recorded votes where the member was there and voted. It is not a count of meetings they went to. Declared interests never count against them.")}
     <a href="about.html#how-we-count">How we count</a>${simpleT(" explains each figure on this page.", " explains each number on this page.")}</p>
     ${compositionStrip(person)}
-    <p class="small" style="max-width:44rem">${simpleT("The totals count the full record: member totals back to 2006; item-by-item rows from 2018. The declared-interest figure counts only the name-by-name record (2018–2026); a dash marks a member whose service ended before that record begins.", "The totals cover the full record. Member totals go back to 2006. Rows for each item start in 2018. The declared-interest number counts only the name-by-name record (2018 to 2026). A dash means the member's service ended before that record starts.")}</p>
+    <p class="small" style="max-width:44rem">${simpleT("The totals count the full record: member totals back to 2006; item-by-item rows from 2018. The “Interest declared · stepped back” figure is narrower: the voting record flags a declared interest only from June 2023, so the figure counts flagged votes from June 2023 on — earlier declarations were recorded as ordinary absences. A dash marks a member whose service ended before June 2023. The figure is not the City’s declarations register; the register entries Deme serves for this member are listed on this page under “Declared interests — the official register”, with their own count.", "The totals cover the full record. Member totals go back to 2006. Rows for each item start in 2018. The “Declared an interest · did not vote” number is narrower. The voting record only marks a declared interest from June 2023. So the number counts marked votes from June 2023 on. Before that, declarations were written down as plain absences. A dash means the member’s service ended before June 2023. This number is not the City’s official list of declared interests. That list is on this page too, under its own heading, with its own count.")}</p>
     <p style="margin-top:1rem"><button class="btn secondary" id="record-card-btn"
       type="button">${simpleT("Print / download record card", "Print or download record card")}</button>
     <button class="btn secondary" id="share-btn" type="button">Copy link</button></p>
+    <nav class="profile-contents" id="profile-contents" aria-label="On this page">
+      <span class="pc-lab">On this page</span>
+      <a data-pc="about" href="#about-member">About</a>
+      <a data-pc="promises" href="#promises-h">Promises</a>
+      <a data-pc="lobbying" href="#lobbying-h">Lobbying</a>
+      <a data-pc="registry" href="#declared-interests">Declared interests</a>
+      <a data-pc="pay" href="#pay-expenses">Pay &amp; expenses</a>
+      <a data-pc="votes" href="#recorded-votes-h">Recorded votes</a>
+      <a data-pc="say" href="#have-your-say">Have your say</a>
+    </nav>
     <div id="profile-extra"></div>
     <div id="declared-interests"></div>
     <div id="pay-expenses"></div>
-    <h2 style="margin-top:2.6rem">Recorded votes</h2>
+    <h2 style="margin-top:2.6rem" id="recorded-votes-h">Recorded votes</h2>
     <hr class="rule">
     <p class="small">${simpleT("Item by item — the decision archive, 2018–2026.", "One by one — the decision archive, 2018–2026.")}</p>
     <div id="historyWrap"><div class="skel-card" aria-hidden="true">
@@ -996,10 +1017,32 @@ async function init() {
   } catch (e) {
     wrap.innerHTML = `<p class="small">The voting record could not be loaded.</p>`;
   }
-  renderExtras(person);
-  renderDeclaredInterests(person);
-  renderPayExpenses(person);
-  renderHaveYourSay(person);
+  Promise.allSettled([renderExtras(person), renderDeclaredInterests(person),
+    renderPayExpenses(person), renderHaveYourSay(person)])
+    .then(pruneProfileContents);
+}
+/* The contents strip links only to sections this member actually has:
+   a link whose section never rendered is removed, so the strip never
+   promises a jump that lands nowhere. */
+function pruneProfileContents() {
+  const nav = document.getElementById("profile-contents");
+  if (!nav) return;
+  const hostLen = (id) => { const el = document.getElementById(id); return el ? el.innerHTML.trim().length : 0; };
+  const checks = {
+    about: () => !!document.getElementById("about-member"),
+    promises: () => !!document.getElementById("promises-h"),
+    lobbying: () => !!document.getElementById("lobbying-h"),
+    registry: () => hostLen("declared-interests") > 0,
+    pay: () => hostLen("pay-expenses") > 0,
+    votes: () => true,
+    say: () => hostLen("have-your-say") > 0,
+  };
+  let kept = 0;
+  nav.querySelectorAll("a[data-pc]").forEach((a) => {
+    const ok = checks[a.dataset.pc] ? checks[a.dataset.pc]() : true;
+    if (ok) kept += 1; else a.remove();
+  });
+  if (kept < 2) nav.remove();
 }
 init().catch(() => {
   box.innerHTML = `<p class="small">The record could not be loaded. Please reload.</p>`;

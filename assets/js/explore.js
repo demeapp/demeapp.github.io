@@ -134,7 +134,21 @@ function computeFiltered() {
   return { list, eff };
 }
 
+/* The mobile Filters toggle label carries how many filters are set,
+   so a collapsed panel never hides an active filter silently. */
+function syncFiltersToggle() {
+  const btn = document.getElementById("filters-toggle");
+  if (!btn) return;
+  let n = 0;
+  if ($("f-year") && $("f-year").value) n += 1;
+  if ($("f-body") && $("f-body").value) n += 1;
+  if ($("f-status") && $("f-status").value) n += 1;
+  if ($("f-ward") && $("f-ward").value) n += 1;
+  if ($("f-vote") && $("f-vote").checked) n += 1;
+  btn.textContent = n ? `Filters \u2014 ${n} set` : "Filters";
+}
 function applyFilters(opts) {
+  syncFiltersToggle();
   /* keepShown (stream-triggered refreshes only): rebuild the list
      without yanking an engaged visitor back to page one. */
   const keepShown = opts && opts.keepShown ? shown : 0;
@@ -531,6 +545,26 @@ async function init() {
     applyFilters();
   });
   $("f-body").addEventListener("change", () => { userEngaged = true; applyFilters(); });
+  /* Mobile only: the filter panel starts collapsed behind the Filters
+     toggle, so the first result is not pushed a full screen down.
+     Desktop is untouched — the button stays hidden, the panel shows. */
+  const filtersIn = $("filters-in"), filtersToggle = $("filters-toggle");
+  if (filtersIn && filtersToggle) {
+    const mq = window.matchMedia("(max-width: 700px)");
+    const applyMq = () => {
+      if (mq.matches) { filtersToggle.hidden = false; }
+      else { filtersIn.hidden = false; filtersToggle.hidden = true; filtersToggle.setAttribute("aria-expanded", "true"); }
+    };
+    if (mq.matches) { filtersIn.hidden = true; filtersToggle.setAttribute("aria-expanded", "false"); }
+    applyMq();
+    filtersToggle.addEventListener("click", () => {
+      const open = filtersIn.hidden;
+      filtersIn.hidden = !open;
+      filtersToggle.setAttribute("aria-expanded", String(open));
+    });
+    if (mq.addEventListener) mq.addEventListener("change", applyMq);
+    syncFiltersToggle();
+  }
   const myward = $("myward");
   if (myward) myward.addEventListener("click", () => {
     userEngaged = true;

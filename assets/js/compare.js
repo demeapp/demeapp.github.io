@@ -80,6 +80,8 @@ async function render() {
   splitsShown = 0;
   const pct = shared ? Math.round(agreed / shared * 100) : null;
   out.innerHTML = `
+    <h2>The record they share</h2>
+    <hr class="rule">
     <div class="compare-summary">
       ${personSummary(a, shared)}
       <div class="compare-agree">

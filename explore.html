@@ -6,19 +6,21 @@
 <title>The Record — Deme</title>
 <meta name="description" content="Search 33,795 decisions from Toronto's council record, most with a plain-language brief. Filter by year, topic, ward, outcome — and find every decision with a recorded vote.">
 <link rel="stylesheet" href="assets/css/deme.css">
-<link rel="icon" href="favicon-navy-2026.svg" type="image/svg+xml">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="favicon-navy-mint-v2.svg" type="image/svg+xml">
+<link rel="icon" href="assets/icons/favicon-32.png" sizes="32x32" type="image/png">
 <meta name="theme-color" content="#0E2A47">
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Deme">
 <meta property="og:title" content="The Record — Deme">
 <meta property="og:description" content="Search 33,795 decisions from Toronto's council record, most with a plain-language brief. Filter by year, topic, ward, outcome — and find every decision with a recorded vote.">
-<meta property="og:image" content="https://demeapp.github.io/assets/og-image-navy.png">
+<meta property="og:image" content="https://demeapp.github.io/assets/og-image-navy-2026-v2.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="The Record — Deme">
 <meta name="twitter:description" content="Search 33,795 decisions from Toronto's council record, most with a plain-language brief. Filter by year, topic, ward, outcome — and find every decision with a recorded vote.">
-<meta name="twitter:image" content="https://demeapp.github.io/assets/og-image-navy.png">
-<link rel="apple-touch-icon" href="assets/icons/apple-touch-icon-2026.png">
+<meta name="twitter:image" content="https://demeapp.github.io/assets/og-image-navy-2026-v2.png">
+<link rel="apple-touch-icon" href="assets/icons/apple-touch-icon-2026-v2.png">
 </head>
 <body class="explore-page">
 <a class="skip-link" href="#main">Skip to main content</a>
@@ -41,7 +43,8 @@
           </div>
           <button class="btn" type="submit">Search</button>
         </form>
-        <div class="filters-in">
+        <button type="button" class="btn secondary filters-toggle" id="filters-toggle" aria-expanded="true" aria-controls="filters-in" hidden>Filters</button>
+        <div class="filters-in" id="filters-in">
           <div class="grid">
             <div>
               <label for="f-year">Year</label>
@@ -84,6 +87,7 @@
         </div>
       </div>
 
+      <h2 id="results-h" style="margin-top:2rem">Results</h2>
       <div id="interpretation" class="interpretation" hidden></div>
       <div id="memberhit"></div>
       <p class="resultcount" id="count" role="status">Loading the archive…</p>

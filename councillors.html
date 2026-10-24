@@ -6,6 +6,7 @@
 <title>Representatives — Deme</title>
 <meta name="description" content="Every Toronto City Council member in the record: ward and voting record — facts only, no grades.">
 <link rel="stylesheet" href="assets/css/deme.css">
+<link rel="manifest" href="manifest.webmanifest">
 <style>
 /* Unified directory finder (Oct 20, 2026): one elevated Navy & Mint
    panel takes both the name search and the postal-code lookup. Page-
@@ -44,6 +45,8 @@
 }
 .earlier-group { margin-top: 1.1rem; }
 .earlier-group h4 { margin: 0 0 .35rem; font-size: 1rem; color: var(--navy-ink); }
+.earlier-group h3 { margin: 0 0 .35rem; font-size: 1.08rem; color: var(--navy-ink); }
+#earlier-details summary h2 { display: inline; font-size: 1.05rem; margin: 0; }
 .earlier-note { max-width: 44rem; }
 /* Earlier rows: a fixed text column beside the avatar (polish wave,
    visitor-eye fix). The shared .personlist row is space-between —
@@ -78,19 +81,20 @@
   .em-stats span { font-size: .66rem; }
 }
 </style>
-<link rel="icon" href="favicon-navy-2026.svg" type="image/svg+xml">
+<link rel="icon" href="favicon-navy-mint-v2.svg" type="image/svg+xml">
+<link rel="icon" href="assets/icons/favicon-32.png" sizes="32x32" type="image/png">
 <meta name="theme-color" content="#0E2A47">
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Deme">
 <meta property="og:title" content="Representatives — Deme">
 <meta property="og:description" content="Every Toronto City Council member in the record: ward and voting record — facts only, no grades.">
-<meta property="og:image" content="https://demeapp.github.io/assets/og-image-navy.png">
+<meta property="og:image" content="https://demeapp.github.io/assets/og-image-navy-2026-v2.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Representatives — Deme">
 <meta name="twitter:description" content="Every Toronto City Council member in the record: ward and voting record — facts only, no grades.">
-<meta name="twitter:image" content="https://demeapp.github.io/assets/og-image-navy.png">
-<link rel="apple-touch-icon" href="assets/icons/apple-touch-icon-2026.png">
+<meta name="twitter:image" content="https://demeapp.github.io/assets/og-image-navy-2026-v2.png">
+<link rel="apple-touch-icon" href="assets/icons/apple-touch-icon-2026-v2.png">
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to main content</a>
@@ -123,7 +127,10 @@
         <div id="finder-result" aria-live="polite"></div>
       </div>
 
-      <div class="directory-bar">
+      <p class="small" style="margin-top:.9rem">Looking for someone who served before this term?
+    <a href="#earlier-details" id="earlier-jump">Earlier members (2006–2026) — <span id="earlier-count">…</span> members ↓</a></p>
+
+  <div class="directory-bar">
         <label class="sortlab" for="dir-sort">Sort representatives
           <select id="dir-sort">
             <option value="ward">Current first, by ward</option>
@@ -146,9 +153,9 @@
         <div class="skel-card" aria-hidden="true"><span class="skel-el title"></span><span class="skel-el sm"></span><span class="skel-el short"></span></div></div>
 
       <details class="filters" id="earlier-details" style="margin-top:3rem">
-        <summary>Earlier members (2006–2026)</summary>
+        <summary><h2>Earlier members (2006–2026)</h2> <span class="small" id="earlier-count-note"></span></summary>
         <p class="small" style="margin-top:.8rem">Members from earlier terms, in the same archive.</p>
-        <p class="small earlier-note">Interests declared counts recorded votes where a member declared an interest and did not vote, in the name-by-name record (2018–2026). A dash marks a member whose service ended before that record begins.</p>
+        <p class="small earlier-note">“Interest declared · stepped back” counts recorded votes where a member declared an interest and did not vote. The voting record only carries that flag from June 2023 — earlier declarations were recorded as ordinary absences — so a dash marks a member whose service ended before June 2023. Each member’s page also lists the declarations on the City’s official register, counted separately.</p>
         <div class="earlier-search">
           <label class="visually-hidden" for="eq">Search earlier members</label>
           <input type="text" id="eq" placeholder="Search earlier members — a name, or a ward then or now" autocomplete="off" spellcheck="false">
@@ -251,8 +258,19 @@ function wardSummary(c) {
    2026): exactly the members last seen in the record era have rows.
    For them the stat is the record's own missing mark — never a 0
    the data cannot support. */
+/* The finder must not dead-end on a past member's name: when no
+   current member matches but earlier members do, name them and point
+   into the Earlier members section (the click opens it). */
+function earlierHintHTML(query) {
+  const hits = query ? all.filter((c) => !c.current && matches(c, query)) : [];
+  if (!hits.length) return `<p class="small">No current member matches.</p>`;
+  hits.sort((a, b) => a.name.localeCompare(b.name));
+  const names = hits.slice(0, 3).map((c) => esc(c.name)).join(", ");
+  const more = hits.length > 3 ? ` and ${hits.length - 3} more` : "";
+  return `<p class="small">No current member matches — but ${names}${more} ${hits.length === 1 ? "is" : "are"} in <a href="#earlier-details" data-open-earlier>Earlier members ↓</a>.</p>`;
+}
 function earlierInterest(c) {
-  if (!c.lastSeen || c.lastSeen < "2018-01-01") return "—";
+  if (!c.lastSeen || c.lastSeen < "2023-06-01") return "—";
   return fmtNum(Number(c.interest) || 0);
 }
 function earlierRow(c) {
@@ -275,7 +293,7 @@ function render(q) {
   else cur.sort((a, b) => (a.mayor ? -1 : b.mayor ? 1 : a.ward - b.ward));
   document.getElementById("current").innerHTML = cur.length
     ? cur.map(personCard).join("")
-    : `<p class="small">No current member matches.</p>`;
+    : earlierHintHTML(query);
   const old = all.filter((c) => !c.current && matches(c, query));
   old.sort((a, b) => a.name.localeCompare(b.name));
   document.getElementById("earlier").innerHTML = old.map(earlierRow).join("");
@@ -386,7 +404,7 @@ function renderEarlierSearch() {
       }
     }
     const rows = earlierEntriesFor(pairs);
-    parts.push(`<div class="earlier-group"><h4>Ward ${w.ward} — ${esc(w.wardName)} (2018–today)</h4>
+    parts.push(`<div class="earlier-group"><h3>Ward ${w.ward} — ${esc(w.wardName)} (2018–today)</h3>
       <p class="small earlier-note">Ward boundaries were redrawn in 2018 — numbers were reused for different areas. Earlier members below represented the wards that covered roughly this area before 2018.</p>
       ${rows.length ? groupedRowsHTML(rows) : `<p class="small">No earlier members in the record for this area.</p>`}</div>`);
   }
@@ -406,7 +424,7 @@ function renderEarlierSearch() {
       const cw = lists.current.find((x) => x.ward === n);
       return cw ? `Ward ${n} — ${cw.wardName}` : `Ward ${n}`;
     }).join(" and ");
-    parts.push(`<div class="earlier-group"><h4>Ward ${w.ward} — ${esc(w.wardName)} (2006–2018)</h4>
+    parts.push(`<div class="earlier-group"><h3>Ward ${w.ward} — ${esc(w.wardName)} (2006–2018)</h3>
       ${rows.length ? groupedRowsHTML(rows) : `<p class="small">No earlier members in the record for this ward.</p>`}
       ${succText ? `<p class="small earlier-note">Since 2018 this area is mostly in ${esc(succText)}.</p>` : ""}</div>`);
   }
@@ -430,6 +448,20 @@ function initEarlierSearch() {
 }
 loadJSON(dataPath("councillors.json")).then((people) => {
   all = people;
+  const nEarlier = people.filter((c) => !c.current).length;
+  const countEl = document.getElementById("earlier-count");
+  if (countEl) countEl.textContent = nEarlier;
+  const noteEl = document.getElementById("earlier-count-note");
+  if (noteEl) noteEl.textContent = `· ${nEarlier} members — find yours`;
+  document.addEventListener("click", (e) => {
+    if (!e.target.closest("a[data-open-earlier], #earlier-jump")) return;
+    const d = document.getElementById("earlier-details");
+    if (!d) return;
+    e.preventDefault();
+    d.open = true;
+    loadEarlierData();
+    d.scrollIntoView({ behavior: "smooth", block: "start" });
+  });
   render("");
   document.getElementById("dir-sort").addEventListener("change", (e) => {
     currentSort = e.target.value;

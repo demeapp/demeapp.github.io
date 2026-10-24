@@ -54,13 +54,13 @@ async function init() {
   try {
     data = await loadJSON(dataPath("threads.json"));
   } catch (e) {
-    box.innerHTML = `<div class="calm"><h3>The stories could not be loaded.</h3>
+    box.innerHTML = `<div class="calm"><h1>The stories could not be loaded.</h1>
       <p>Please reload the page, or go <a href="index.html">back home</a>.</p></div>`;
     return;
   }
   const thread = (data.threads || []).find((t) => t.id === id);
   if (!thread) {
-    box.innerHTML = `<div class="calm"><h3>That story thread wasn't found.</h3>
+    box.innerHTML = `<div class="calm"><h1>That story thread wasn't found.</h1>
       <p>The record itself is unchanged — this grouping just doesn't exist.
       <a href="index.html">Back home →</a></p></div>`;
     return;

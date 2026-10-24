@@ -1981,3 +1981,19 @@ html.simple-on [data-simple-only] { display: block; }
 @media (forced-colors: active) {
   .simple-mode-toggle .track { border: 1px solid ButtonText; }
 }
+
+/* Fix wave (Oct 2026): profile contents strip, collapsed pay-and-expenses
+   years, calm empty-state heads, Explore filter disclosure. */
+.profile-contents { display: flex; flex-wrap: wrap; gap: .45rem; align-items: center; margin-top: 1.6rem; }
+.profile-contents .pc-lab { font-weight: 700; font-size: .85rem; letter-spacing: .06em; text-transform: uppercase; color: var(--navy-ink); margin-right: .2rem; }
+.profile-contents a { border: 1.5px solid #B9C6D2; border-radius: 999px; padding: .28rem .7rem; font-size: .88rem; font-weight: 600; color: var(--navy-ink); text-decoration: none; background: #fff; }
+.profile-contents a:hover { border-color: #09684C; }
+details.pay-year { margin-top: 1.2rem; }
+details.pay-year > summary { cursor: pointer; padding: .3rem 0; }
+details.pay-year > summary h3, details.pay-year > summary h4 { display: inline; margin: 0; }
+details.pay-year > summary::after { content: "\25BE"; margin-left: .45rem; color: #09684C; font-weight: 700; }
+details.pay-year[open] > summary::after { content: "\25B4"; }
+.calm .calm-head { font-family: var(--font-display); font-size: 1.18rem; font-weight: 700; color: var(--ink); line-height: 1.2; margin: 0 0 .45rem; }
+.search-panel .filters-in[hidden] { display: none !important; }
+.filters-toggle { display: none; }
+@media (max-width: 700px) { .filters-toggle { display: inline-flex; margin: 0 0 .9rem; } }

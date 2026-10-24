@@ -444,7 +444,7 @@ function renderUpcoming() {
   if (!upcomingBox) return;
   if (!upcomingItems.length) {
     upcomingBox.innerHTML = `<div class="calm">
-      <h3>No Council votes are scheduled in the published agenda right now.</h3>
+      <p class="calm-head">No Council votes are scheduled in the published agenda right now.</p>
       <p>When the City publishes the next Council agenda, its items will be listed here with briefs — ready to weigh in on before the vote.</p>
       <p style="margin-bottom:.4rem">Toronto's municipal election is
       <strong>October 26, 2026</strong>; the new Council takes office in
@@ -592,7 +592,7 @@ async function renderPicks() {
   const refs = Object.keys(picks).sort(
     (a, b) => (picks[a].ts < picks[b].ts ? 1 : -1));
   if (!refs.length) {
-    picksBox.innerHTML = `<div class="calm"><h3>No picks yet.</h3>
+    picksBox.innerHTML = `<div class="calm"><p class="calm-head">No picks yet.</p>
       <p>When you weigh in on an upcoming Council item, your position saves here. After the meeting, this page lines your pick up against what Council did. <a href="#weigh-in">See what's coming
       up →</a></p></div>`;
     agreeBox.innerHTML = "";
@@ -718,16 +718,14 @@ async function renderWatches() {
     return;
   }
   if (!accountSignedIn()) {
-    watchesBox.innerHTML = `<div class="calm"><h3>Watching is part
-      of a free account.</h3>
+    watchesBox.innerHTML = `<div class="calm"><p class="calm-head">Watching is part of a free account.</p>
       <p>Sign in above to watch any upcoming Council item. When Council decides it, we email you the outcome once — with your pick beside it if you weighed in. Reading the record never needs an account.</p></div>`;
     return;
   }
   const watches = (acct.getWatches() || []).slice().sort(
     (a, b) => (a.created_at < b.created_at ? 1 : -1));
   if (!watches.length) {
-    watchesBox.innerHTML = `<div class="calm"><h3>You're not
-      watching anything yet.</h3>
+    watchesBox.innerHTML = `<div class="calm"><p class="calm-head">You're not watching anything yet.</p>
       <p>Tap <strong>Watch this item</strong> on anything coming
       up at Council, and it will be listed here — waiting first,
       then with its outcome once Council decides.</p></div>`;

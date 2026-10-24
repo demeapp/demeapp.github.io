@@ -175,13 +175,13 @@ function motionBlock(m, idx) {
 
 async function init() {
   if (!ref) {
-    box.innerHTML = `<div class="calm"><h2>No decision specified.</h2>
+    box.innerHTML = `<div class="calm"><h1>No decision specified.</h1>
       <p>Browse the <a href="explore.html">record</a> to pick one.</p></div>`;
     return;
   }
   const found = await findCard(ref);
   if (!found) {
-    box.innerHTML = `<div class="calm"><h2>That item isn't in the archive.</h2>
+    box.innerHTML = `<div class="calm"><h1>That item isn't in the archive.</h1>
       <p>It may predate the decision archive (2018) or the reference may be
       mistyped. <a href="explore.html">Search the record →</a></p></div>`;
     return;
@@ -380,6 +380,7 @@ async function init() {
   const t = detail && detail.text;
   if (t && (t[0] || t[1])) {
     document.getElementById("official").innerHTML = `
+      ${card.hasVote ? "" : `<h2 style="margin-top:2.2rem">The official record</h2><hr class="rule">`}
       <details class="recordExpander">
         <summary class="btn secondary small" style="display:inline-flex">Read the official wording</summary>
         ${t[0] ? `<h3 style="margin-top:1.2rem">What the item proposed</h3><p style="max-width:44rem">${esc(t[0])}</p>` : ""}

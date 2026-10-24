@@ -528,7 +528,14 @@ const interestFigure = (person) =>
    site never adds tables together, and a field the report leaves
    blank is simply not shown (never shown as zero). A member with no
    matched records gets NO section at all — and a year with no record
-   has no row, which says nothing about that year's spending. */
+   has no row, which says nothing about that year's spending.
+   The second layer (record-data/expenses-detail.json) is the City
+   Clerk's Council Expense Routine Disclosure — constituency services
+   and office expenses by category, from 2013 — rendered below the
+   annual figures under its own heading and source line. It is a
+   separate publication with a narrower scope (office spending only),
+   so the two layers are never added together; invoice-level documents
+   stay on the City's site and category amounts link out to them. */
 const EXPENSE_TABLE_LABEL = {
   "Summary": "Summary table",
   "Attachment 1": "Office budget detail (Attachment 1)",
@@ -557,6 +564,7 @@ const EXPENSE_FIELDS = [
   ["totalRemunerationAndExpenses", "Total"],
 ];
 const fmtMoney = (n) => (n < 0 ? "-$" : "$") + fmtNum(Math.abs(n));
+const DETAIL_HUB = "https://www.toronto.ca/city-government/council/budgets-and-expense-reports/council-expense-routine-disclosure/";
 async function renderPayExpenses(person) {
   const host = document.getElementById("pay-expenses");
   if (!host) return;
@@ -565,22 +573,33 @@ async function renderPayExpenses(person) {
     const data = await loadJSON(dataPath("expenses.json"));
     records = (data.members || {})[person.slug] || null;
   } catch (e) { records = null; /* the record stands without the figures */ }
-  if (!records || !records.length) return;
-  const years = [];
-  const byYear = new Map();
-  for (const r of records) {
-    if (!byYear.has(r.year)) { byYear.set(r.year, []); years.push(r.year); }
-    byYear.get(r.year).push(r);
-  }
-  const blockHTML = (r) => {
-    const label = EXPENSE_TABLE_LABEL[r.table] || r.table;
-    const meta = [r.period, r.ward != null ? `Ward ${r.ward}` : ""]
-      .filter(Boolean).join(" · ");
-    const rows = EXPENSE_FIELDS
-      .filter(([k]) => r[k] != null)
-      .map(([k, lab]) => `<li><span>${esc(lab)}</span><b>${esc(fmtMoney(r[k]))}</b></li>`)
-      .join("");
-    return `<div style="margin-top:1.1rem">
+  let detail = null, detailSource = null;
+  try {
+    const ddata = await loadJSON(dataPath("expenses-detail.json"));
+    detail = (ddata.members || {})[person.slug] || null;
+    detailSource = ddata.source || null;
+  } catch (e) { detail = null; /* the annual layer stands without the detail */ }
+  const hasAnnual = !!(records && records.length);
+  const hasDetail = !!(detail && detail.length);
+  if (!hasAnnual && !hasDetail) return;
+
+  let annualHTML = "";
+  if (hasAnnual) {
+    const years = [];
+    const byYear = new Map();
+    for (const r of records) {
+      if (!byYear.has(r.year)) { byYear.set(r.year, []); years.push(r.year); }
+      byYear.get(r.year).push(r);
+    }
+    const blockHTML = (r) => {
+      const label = EXPENSE_TABLE_LABEL[r.table] || r.table;
+      const meta = [r.period, r.ward != null ? `Ward ${r.ward}` : ""]
+        .filter(Boolean).join(" · ");
+      const rows = EXPENSE_FIELDS
+        .filter(([k]) => r[k] != null)
+        .map(([k, lab]) => `<li><span>${esc(lab)}</span><b>${esc(fmtMoney(r[k]))}</b></li>`)
+        .join("");
+      return `<div style="margin-top:1.1rem">
       <p style="margin:0 0 .4rem"><strong>${esc(label)}</strong>
       ${meta ? `<span class="small">· ${esc(meta)}</span>` : ""}</p>
       ${rows ? `<ul class="lob-list">${rows}</ul>` : ""}
@@ -588,15 +607,69 @@ async function renderPayExpenses(person) {
       ${r.extractionNote ? `<p class="small" style="max-width:44rem;margin-top:.5rem">${esc(r.extractionNote)}</p>` : ""}
       ${r.sourceUrl ? `<p class="small" style="margin-top:.5rem"><a href="${esc(r.sourceUrl)}" target="_blank" rel="noopener noreferrer">Report (PDF)<span class="visually-hidden"> (opens in a new tab)</span></a></p>` : ""}
     </div>`;
-  };
-  const yearsHTML = years.map((y) =>
-    `<h3 style="margin-top:1.8rem">${esc(y)}</h3>`
-    + byYear.get(y).map(blockHTML).join("")).join("");
+    };
+    annualHTML = years.map((y) =>
+      `<h3 style="margin-top:1.8rem">${esc(y)}</h3>`
+      + byYear.get(y).map(blockHTML).join("")).join("");
+  }
+
+  let detailHTML = "";
+  if (hasDetail) {
+    const catRow = (r, c) => {
+      const link = (r.cityCouncillorId != null && c.categoryId != null && c.count > 0)
+        ? `${DETAIL_HUB}#TCER2FrontEndEmbedded_tcer2categoryRep/0/${r.cityCouncillorId}/${c.categoryId}`
+        : null;
+      const amt = link
+        ? `<a href="${esc(link)}" target="_blank" rel="noopener noreferrer">${esc(fmtMoney(c.amount))}<span class="visually-hidden"> — invoices for this category on the City's site (opens in a new tab)</span></a>`
+        : esc(fmtMoney(c.amount));
+      return `<li><span>${esc(c.description)}</span><b>${amt}</b></li>`;
+    };
+    const detailBlock = (r) => {
+      const meta = [r.period, r.ward != null ? `Ward ${r.ward}` : ""]
+        .filter(Boolean).join(" · ");
+      const rows = [
+        r.officeExpense != null
+          ? `<li><span>Constituency services &amp; office expenses — total for the period</span><b>${esc(fmtMoney(r.officeExpense))}</b></li>`
+          : "",
+        ...(r.categories || []).map((c) => catRow(r, c)),
+      ].join("");
+      const personal = (r.personalFunds != null && r.personalFunds !== 0)
+        ? `<p style="margin:.7rem 0 .4rem"><strong>Paid from personal funds</strong>
+      <span class="small">· the member's own money, as the City reports it</span></p>
+      <ul class="lob-list"><li><span>Personal funds — total</span><b>${esc(fmtMoney(r.personalFunds))}</b></li>${(r.personalFundsCategories || []).map((c) => catRow(r, c)).join("")}</ul>`
+        : "";
+      return `<div style="margin-top:1.1rem">
+      <p style="margin:0 0 .4rem"><strong>Office-expense detail (routine disclosure)</strong>
+      ${meta ? `<span class="small">· ${esc(meta)}</span>` : ""}</p>
+      ${rows ? `<ul class="lob-list">${rows}</ul>` : ""}
+      ${personal}
+      ${r.nameChangeNote ? `<p class="small" style="max-width:44rem;margin-top:.5rem">${esc(r.nameChangeNote)}</p>` : ""}
+      ${r.sourceUrl ? `<p class="small" style="margin-top:.5rem"><a href="${esc(r.sourceUrl)}" target="_blank" rel="noopener noreferrer">This period on the City's disclosure site<span class="visually-hidden"> (opens in a new tab)</span></a></p>` : ""}
+    </div>`;
+    };
+    const dyears = [];
+    const dByYear = new Map();
+    for (const r of detail) {
+      if (!dByYear.has(r.year)) { dByYear.set(r.year, []); dyears.push(r.year); }
+      dByYear.get(r.year).push(r);
+    }
+    detailHTML = `<h3 style="margin-top:2.2rem">${simpleT("Office-expense detail — routine disclosure", "Office spending detail")}</h3>
+    <p class="small" style="max-width:44rem">${simpleT("The City Clerk also publishes each member's constituency services and office expenses in a routine disclosure, posted quarterly from 2013 and broken down by category. It is a separate publication from the annual reports, with a narrower scope — office spending only, not pay, benefits or staff salaries — so its figures stand on their own and are never added to the annual figures. The invoice documents themselves stay on the City's site; a category amount links to its invoices there.", "The City also posts each member's office spending by category. It has been posted every quarter since 2013. This is a different report from the yearly ones. It covers office spending only — not pay or staff. Its numbers stand on their own and are never added to the yearly numbers. The invoices stay on the City's site. A category amount links to its invoices there.")}</p>`
+      + dyears.map((y) =>
+        `<h4 style="margin-top:1.4rem">${esc(y)}</h4>`
+        + dByYear.get(y).map(detailBlock).join("")).join("");
+  }
+
+  const intro = hasAnnual
+    ? simpleT("These are the figures from the City Clerk's annual remuneration reports, shown as published. A year's figures can appear in more than one published table; each table is shown under its own label, and the site never adds the tables together. Annual reports are included for 1999–2025. The City published the same annual series back to 1998, but no per-member 1998 report could be located, so 1998 is not included. The City's quarterly routine disclosure of office expenses, published from 2013, is included below the annual figures under its own heading.", "These numbers come from the City Clerk's yearly pay reports. They are shown as published. One year's numbers can show up in more than one table. Each table is shown under its own name. The site never adds the tables together. Yearly reports run from 1999 to 2025. The City also published a yearly report for 1998, but no copy with each member's numbers could be found, so 1998 is not included. The City's office-expense detail, posted every quarter from 2013, is included below, under its own heading.")
+    : simpleT("These figures come from the City Clerk's Council Expense Routine Disclosure, shown as published.", "These figures come from the City Clerk's office-expense disclosure. They are shown as published.");
   host.innerHTML = `<section style="margin-top:2.4rem" aria-labelledby="pay-expenses-h">
     <h2 id="pay-expenses-h">Pay and expenses — as published</h2><hr class="rule">
-    <p class="small" style="max-width:44rem">${simpleT("These are the figures from the City Clerk's annual remuneration reports, shown as published. A year's figures can appear in more than one published table; each table is shown under its own label, and the site never adds the tables together. Annual reports are included for 1999–2025. The City published the same annual series back to 1998, but no per-member 1998 report could be located, so 1998 is not included. The City also publishes quarterly office-expense detail from 2013; that detail is not yet included.", "These numbers come from the City Clerk's yearly pay reports. They are shown as published. One year's numbers can show up in more than one table. Each table is shown under its own name. The site never adds the tables together. Yearly reports run from 1999 to 2025. The City also published a yearly report for 1998, but no copy with each member's numbers could be found, so 1998 is not included. The City also publishes office-expense detail every quarter from 2013. That detail is not included yet.")}</p>
-    ${yearsHTML}
-    <p class="small" style="max-width:44rem;margin-top:1rem">Source: City Clerk's Office · Annual Remuneration Reports (Budgets &amp; Expense Reports) · Verified October 23, 2026</p>
+    <p class="small" style="max-width:44rem">${intro}</p>
+    ${annualHTML}
+    ${detailHTML}
+    ${hasAnnual ? `<p class="small" style="max-width:44rem;margin-top:1rem">Source: City Clerk's Office · Annual Remuneration Reports (Budgets &amp; Expense Reports) · Verified October 23, 2026</p>` : ""}
+    ${hasDetail ? `<p class="small" style="max-width:44rem;margin-top:.3rem">Source: City Clerk's Office · Council Expense Routine Disclosure (Constituency Services &amp; Office Expenses) · Verified ${esc((detailSource && detailSource.verified) || "")}</p>` : ""}
   </section>`;
 }
 

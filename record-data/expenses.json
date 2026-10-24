@@ -4,7 +4,7 @@
   "publisher": "City Clerk's Office, City of Toronto",
   "hub": "https://www.toronto.ca/city-government/council/budgets-and-expense-reports/",
   "verified": "October 23, 2026",
-  "note": "Figures are the City Clerk's annual remuneration reports, shown as published. Annual reports are included for 1999–2025. The City published the same annual series back to 1998, but no per-member 1998 report could be located, so 1998 is not included. Quarterly office-expense detail from 2013 is not included."
+  "note": "Figures are the City Clerk's annual remuneration reports, shown as published. Annual reports are included for 1999–2025. The City published the same annual series back to 1998, but no per-member 1998 report could be located, so 1998 is not included. Quarterly office-expense detail from 2013 is not included. Quarterly routine-disclosure detail (from 2013) is published separately on member pages as expenses-detail.json."
  },
  "members": {
   "a-a-heaps": [

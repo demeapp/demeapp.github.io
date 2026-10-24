@@ -3,6 +3,10 @@
  "councilDecisions": 13158,
  "votesCast": 631418,
  "voteRows": 743677,
+ "voteRowsBasis": "aggregates-plus-stored",
+ "voteRowsStored": 157292,
+ "voteRowsStoredFrom": "2018",
+ "voteRowsAggregateOnly": 586385,
  "members": 94,
  "terms": 5,
  "recordedVoteDecisions": 3171,
@@ -24,6 +28,7 @@
   "totalsBasis": "Per-member career totals (votesCast, yes, no, absent) and the published participation figures are AGGREGATE-basis: they include 743,677 vote rows reaching back to 2006 across five terms. The archive stores 157,292 name-by-name vote rows, all from 2018 onward; 586,385 of the 743,677 rows (78.9%) exist only as aggregates, and 30 of 94 members have no stored name-by-name rows. Aggregate totals must not be described as stored records. The interest figure is NOT aggregate-basis: it counts only stored name-by-name rows the source flags 'Absent (Interest Declared)', a flag that exists only from 2023-06-01 (see interestRows).",
   "interestRows": "interestRows (119) counts recorded votes flagged 'Absent (Interest Declared)' in the vote record. It is NOT a count of declarations in the City's Registry of Declared Interest (served separately in declared-interests.json, 1,249 councillor-matched records) and the two figures measure different things and will not match for most members. The source carries the 'Absent (Interest Declared)' flag only from 2023-06-01 — all 119 flagged rows date from then; declarations before that were recorded as ordinary absences and are not in this count.",
   "closeEvents": "closeEvents counts motions (of 6,260 vote-bearing motions) whose recorded yes/no margin was 2 or fewer: 355. Recounted 2026-10-23 over all brief detail files under this single definition; supersedes earlier inconsistent figures (407 in stats, 285 in meta).",
-  "participationBasis": "Participation is computed from the aggregate-basis totals above (votesCast / (votesCast + absent)). It is a recorded-vote participation measure, not a register of meeting attendance; Toronto publishes no attendance register."
+  "participationBasis": "Participation is computed from the aggregate-basis totals above (votesCast / (votesCast + absent)). It is a recorded-vote participation measure, not a register of meeting attendance; Toronto publishes no attendance register.",
+  "voteRowsBasis": "voteRows (743,677) is an aggregate-inclusive total: voteRowsStored (157,292) name-by-name vote rows actually stored, all from 2018 onward, plus voteRowsAggregateOnly (586,385) rows that exist only as per-member career aggregates reaching back to 2006 (their source database is not part of this archive). votesFrom (\"2006\") describes the aggregate span only; the stored span begins in 2018 (voteRowsStoredFrom). A surface citing a stored-record count must read voteRowsStored / voteRowsStoredFrom; voteRows may be cited only with this basis attached."
  }
 }

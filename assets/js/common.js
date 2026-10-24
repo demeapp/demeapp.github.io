@@ -268,8 +268,8 @@ function memberTenure(person) {
    matching the member-page tiles — a stored 95 renders "95.0%",
    never a bare "95%" beside someone else's "95.7%". */
 function fmtAtt(person) {
-  if (person.attendance == null) return "—";
-  const att = Number(person.attendance);
+  if (person.participation == null) return "—";
+  const att = Number(person.participation);
   return Number.isFinite(att) ? `${att.toFixed(1)}%` : "—";
 }
 /* Callers pass CURRENT members only: the interest counter reads vote
@@ -281,8 +281,8 @@ function memberStatsHTML(person) {
   /* Decorative participation meter (the percentage figure beside it is
      the value; the meter is aria-hidden and purely visual). Null or
      non-numeric participation renders the em dash with no meter. */
-  const att = Number(person.attendance);
-  const meter = person.attendance != null && Number.isFinite(att)
+  const att = Number(person.participation);
+  const meter = person.participation != null && Number.isFinite(att)
     ? `<span class="att-meter" aria-hidden="true"><span class="att-fill" style="width:${Math.max(0, Math.min(100, att))}%"></span></span>`
     : "";
   return `<div class="member-stats" aria-label="Record summary">

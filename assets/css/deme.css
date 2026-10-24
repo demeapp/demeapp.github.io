@@ -1139,12 +1139,12 @@ html.js .entry-shell { min-height: 25.4rem; }
 
 /* Member profile — header, panels, promises, lobbying */
 .profile-head { display: flex; gap: 1.3rem; align-items: center; flex-wrap: wrap; }
-.attendance-bar {
+.participation-bar {
   display: block;
   height: 10px; border-radius: 6px; background: var(--marble-2);
   overflow: hidden; max-width: 34rem; margin: .4rem 0 .2rem;
 }
-.attendance-bar span { display: block; height: 100%; background: var(--bronze); }
+.participation-bar span { display: block; height: 100%; background: var(--bronze); }
 .profile-grid {
   display: grid; gap: 1rem; grid-template-columns: 1fr; margin-top: 1.6rem;
 }

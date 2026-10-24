@@ -19,15 +19,27 @@ renderChrome("my-record.html");
    dependency so the spec's §10 fixtures run against them in Node with
    no DOM (the fixture runner extracts exactly this marked section).
 
-   comparableVote(detail, memberName): the member's value in the FIRST
-   motion whose stage is exactly "City Council" (Decision S-1 — a
-   committee vote is a recommendation, never the decision). Name match
-   is exact string equality (S-4); an unrecognized value is "none",
-   never coerced. Returns one of:
+   comparableVote(detail, memberName, memberTerms): the member's value
+   in the first motion whose stage is exactly "City Council" AND in
+   which the member has a usable row (Decision S-1 — a committee vote
+   is a recommendation, never the decision; Phase 2 audit A-2 — every
+   Council-stage motion is consulted, not only the first, so a later
+   motion carrying the member's named vote is never masked by an
+   earlier one that does not). Name match is exact string equality
+   (S-4); an unrecognized value is "none", never coerced. Returns one of:
      {kind:"vote", value:"Yes"|"No"} | {kind:"absent"} |
-     {kind:"interest"} | {kind:"none", reason:"no-council-vote"|"no-row"}
-   ("no-council-vote": no City Council-stage motion in the file;
-    "no-row": a Council vote exists but the member has no usable row.)
+     {kind:"interest"} | {kind:"none", reason:"no-council-vote"|"no-row"
+       |"tally-only"|"pre-office"}
+   ("no-council-vote": no City Council-stage motion in the file, or
+    none carrying named rows or a published tally;
+    "tally-only": a Council motion carries the data's tallyOnly flag
+    (a published result, no individual names) — the member may well
+    have voted; the City simply did not record who (Phase 2 P0-2);
+    "no-row": named Council votes exist but the member is in none of
+    them, and their terms cover the item's year;
+    "pre-office": the same, but the member's term buckets in
+    councillors.json do not cover the item's year — the only case in
+    which a service-date reason may be given.)
 
    tallyAlignment(picks, ward, people, detailByRef): the §4 tally.
    picks is the VoteStore.allPicks() shape {ref:{choice, ts}}; ward is
@@ -41,36 +53,70 @@ renderChrome("my-record.html");
          → decided, bucket B3, no detail needed;
      - {detail:<d/{ref}.json>} or a raw detail object
          → decided; classified by comparableVote.
-   Returns {matched, comparable, B1, B2, B3, B4, decided, member}
-   where decided = comparable+B1+B2+B3+B4 and member is the resolved
-   current councillor's name (null when the ward has none). Counts
-   only — no percentage is ever computed (S-2), and nothing here is
-   persisted (S-5): the caller keeps the result in render scope only.
+   Returns {matched, comparable, B1, B2, B3, B4, B5, B6, decided,
+   member} where decided = comparable+B1+B2+B3+B4+B5+B6 and member is
+   the resolved current councillor's name (null when the ward has
+   none). B4 = no-row, B5 = tally-only, B6 = pre-office (see
+   comparableVote). Counts only — no percentage is ever computed
+   (S-2), and nothing here is persisted (S-5): the caller keeps the
+   result in render scope only.
 
    alignmentCopy(tally, memberName, ward): the §6 display strings —
    headline (comparable ≥ 5, S-3), progress state, and the not-counted
-   explainer lines for the non-zero buckets, in B1–B4 order. */
-function comparableVote(detail, memberName) {
+   explainer lines for the non-zero buckets, in B1–B6 order. */
+function comparableVote(detail, memberName, memberTerms) {
   if (!detail || !Array.isArray(detail.motions)) {
     return { kind: "none", reason: "no-council-vote" };
   }
-  const motion = detail.motions.find((m) => m && m.stage === "City Council");
-  if (!motion) return { kind: "none", reason: "no-council-vote" };
-  if (!Array.isArray(motion.votes)) return { kind: "none", reason: "no-row" };
-  const row = motion.votes.find((v) => Array.isArray(v) && v[0] === memberName);
-  if (!row) return { kind: "none", reason: "no-row" };
-  const value = row[1];
-  if (value === "Yes" || value === "No") return { kind: "vote", value };
-  if (value === "Absent") return { kind: "absent" };
-  if (typeof value === "string" && value.startsWith("Absent(Interest")) {
-    return { kind: "interest" };
+  const councilMotions = detail.motions.filter(
+    (m) => m && m.stage === "City Council");
+  if (!councilMotions.length) return { kind: "none", reason: "no-council-vote" };
+  let sawTallyOnly = false;
+  let sawNamedRows = false;
+  for (const motion of councilMotions) {
+    const votes = Array.isArray(motion.votes) ? motion.votes : [];
+    if (!votes.length) {
+      /* A tally-only motion (the data's own tallyOnly flag: votes []
+         and the tally carried in the result string) means the City
+         recorded the result, not the names (P0-2). An empty vote list
+         without the flag is no record at all. */
+      if (motion.tallyOnly === true) sawTallyOnly = true;
+      continue;
+    }
+    sawNamedRows = true;
+    const row = votes.find((v) => Array.isArray(v) && v[0] === memberName);
+    if (!row) continue;
+    const value = row[1];
+    if (value === "Yes" || value === "No") return { kind: "vote", value };
+    if (value === "Absent") return { kind: "absent" };
+    if (typeof value === "string" && value.startsWith("Absent(Interest")) {
+      return { kind: "interest" };
+    }
+    return { kind: "none", reason: "no-row" };
+  }
+  if (sawTallyOnly) return { kind: "none", reason: "tally-only" };
+  if (!sawNamedRows) return { kind: "none", reason: "no-council-vote" };
+  /* Named Council votes exist and the member is in none of them. The
+     service-date reason is earned, not guessed: it is returned only
+     when the member's term buckets do not cover the item's year. */
+  if (Array.isArray(memberTerms) && memberTerms.length) {
+    const when = (councilMotions[0] && councilMotions[0].when) || "";
+    const year = Number(String(when).slice(0, 4));
+    if (Number.isFinite(year) && year > 0) {
+      const covered = memberTerms.some((t) => {
+        const parts = String(t).split("-").map(Number);
+        return parts.length === 2 && Number.isFinite(parts[0])
+          && Number.isFinite(parts[1]) && year >= parts[0] && year <= parts[1];
+      });
+      if (!covered) return { kind: "none", reason: "pre-office" };
+    }
   }
   return { kind: "none", reason: "no-row" };
 }
 
 function tallyAlignment(picks, ward, people, detailByRef) {
   const out = { matched: 0, comparable: 0, B1: 0, B2: 0, B3: 0, B4: 0,
-    decided: 0, member: null };
+    B5: 0, B6: 0, decided: 0, member: null };
   const member = (Array.isArray(people) && ward != null)
     ? people.find((p) => p && p.current && p.ward === ward) || null
     : null;
@@ -92,7 +138,7 @@ function tallyAlignment(picks, ward, people, detailByRef) {
     if (hasVote === false) { out.B3 += 1; continue; }
     const pick = picks[ref];
     const choice = typeof pick === "string" ? pick : (pick && pick.choice);
-    const cv = comparableVote(detail, member.name);
+    const cv = comparableVote(detail, member.name, member.terms);
     if (cv.kind === "vote") {
       out.comparable += 1;
       if ((choice === "support" && cv.value === "Yes")
@@ -100,9 +146,12 @@ function tallyAlignment(picks, ward, people, detailByRef) {
     } else if (cv.kind === "absent") out.B1 += 1;
     else if (cv.kind === "interest") out.B2 += 1;
     else if (cv.reason === "no-council-vote") out.B3 += 1;
+    else if (cv.reason === "tally-only") out.B5 += 1;
+    else if (cv.reason === "pre-office") out.B6 += 1;
     else out.B4 += 1;
   }
-  out.decided = out.comparable + out.B1 + out.B2 + out.B3 + out.B4;
+  out.decided = out.comparable + out.B1 + out.B2 + out.B3
+    + out.B4 + out.B5 + out.B6;
   return out;
 }
 
@@ -119,8 +168,14 @@ function alignmentCopy(tally, memberName, ward) {
   if (tally.B3) explainer.push(simpleOn()
     ? `${tally.B3} decided without a recorded vote at City Council. Most Council decisions are not taken name-by-name.`
     : `${tally.B3} decided without a recorded vote at City Council — most Council decisions are not taken name-by-name.`);
-  if (tally.B4) explainer.push(
-    `${tally.B4} where ${memberName} has no recorded vote on the item — for example, it was decided before they took office.`);
+  if (tally.B4) explainer.push(simpleOn()
+    ? `${tally.B4} where the recorded Council vote does not list ${memberName}. No vote of theirs is recorded on the item.`
+    : `${tally.B4} where the recorded Council vote does not list ${memberName} — no vote of theirs is recorded on the item.`);
+  if (tally.B5) explainer.push(simpleOn()
+    ? `${tally.B5} where the City published only the tally. No names were recorded, so there is no vote to compare.`
+    : `${tally.B5} where the City published the result as a tally only — no individual names were recorded, so there is no vote to compare.`);
+  if (tally.B6) explainer.push(
+    `${tally.B6} where ${memberName} has no recorded vote on the item — it was decided before they took office.`);
   if (tally.comparable >= 5) {
     return { explainer,
       progress: null,
@@ -642,7 +697,7 @@ async function renderPicks() {
     let councillorLine = "";
     const entry = detailByRef[ref];
     if (councillor && entry && entry.hasVote && entry.detail) {
-      const cv = comparableVote(entry.detail, councillor.name);
+      const cv = comparableVote(entry.detail, councillor.name, councillor.terms);
       if (cv.kind === "vote") {
         const aligned = (pick.choice === "support" && cv.value === "Yes") ||
                         (pick.choice === "oppose" && cv.value === "No");
@@ -658,7 +713,7 @@ async function renderPicks() {
         councillorLine = `<p style="margin:.4rem 0 0">${esc(councillor.name)}
           declared an interest in this item and did not vote.</p>`;
       }
-      /* kind "none" (B3/B4): no per-pick line — the reason surfaces
+      /* kind "none" (B3–B6): no per-pick line — the reason surfaces
          only in the aggregate explainer below (spec §6.5). */
     }
     blocks.push(`<article class="card" style="margin-bottom:1rem">

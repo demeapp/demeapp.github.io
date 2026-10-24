@@ -939,8 +939,14 @@ async function init() {
     ? (person.mayor ? "Mayor of Toronto"
        : `Councillor · Ward ${person.ward} — ${esc(person.wardName)}`)
     : "Former member of Toronto City Council";
-  const attBar = person.attendance == null ? ""
-    : `<span class="attendance-bar" aria-hidden="true"><span style="width:${Math.max(0, Math.min(100, person.attendance))}%"></span></span>`;
+  const attBar = person.participation == null ? ""
+    : `<span class="participation-bar" aria-hidden="true"><span style="width:${Math.max(0, Math.min(100, person.participation))}%"></span></span>`;
+  /* Basis note (Phase 2 audit P0-5): members whose figures rest partly on
+     the pre-2018 aggregate layer carry participationBasis:"aggregate" in
+     councillors.json; the note sits beside the figures it qualifies. */
+  const basisNote = person.participationBasis === "aggregate"
+    ? `<p class="small" style="max-width:44rem">${simpleT("This member's figures include their pre-2018 aggregate record; not all of their votes are stored individually.", "This member's numbers include their record from before 2018, kept as totals. Not all of their votes are stored one by one.")}</p>`
+    : "";
   box.innerHTML = `
     <p class="kicker">${person.current ? "Council today" : "Earlier member"}</p>
     <div class="profile-head">${avatarHTML(person, "lg")}
@@ -961,6 +967,7 @@ async function init() {
     </div>
     <p class="small" style="max-width:44rem">${simpleT("Recorded-vote participation is the share of recorded votes where the member was present and voting — not a count of meetings attended, and declared interests are never counted against it.", "This number is the share of recorded votes where the member was there and voted. It is not a count of meetings they went to. Declared interests never count against them.")}
     <a href="about.html#how-we-count">How we count</a>${simpleT(" explains each figure on this page.", " explains each number on this page.")}</p>
+    ${basisNote}
     ${compositionStrip(person)}
     <p class="small" style="max-width:44rem">${simpleT("The totals count the full record: member totals back to 2006; item-by-item rows from 2018. The “Interest declared · stepped back” figure is narrower: the voting record flags a declared interest only from June 2023, so the figure counts flagged votes from June 2023 on — earlier declarations were recorded as ordinary absences. A dash marks a member whose service ended before June 2023. The figure is not the City’s declarations register; the register entries Deme serves for this member are listed on this page under “Declared interests — the official register”, with their own count.", "The totals cover the full record. Member totals go back to 2006. Rows for each item start in 2018. The “Declared an interest · did not vote” number is narrower. The voting record only marks a declared interest from June 2023. So the number counts marked votes from June 2023 on. Before that, declarations were written down as plain absences. A dash means the member’s service ended before June 2023. This number is not the City’s official list of declared interests. That list is on this page too, under its own heading, with its own count.")}</p>
     <p style="margin-top:1rem"><button class="btn secondary" id="record-card-btn"

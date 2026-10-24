@@ -709,10 +709,9 @@ async function renderPicks() {
           they voted <strong>${esc(cv.value)}</strong> — ${aligned
             ? "the same way you picked." : "differently from your pick."}</p>`;
       } else if (cv.kind === "absent") {
-        councillorLine = `<p style="margin:.4rem 0 0">On the first recorded
-          Council motion on this item that lists ${esc(councillor.name)},
-          they were absent, so there is nothing to line your pick up
-          against.</p>`;
+        councillorLine = `<p style="margin:.4rem 0 0">${esc(councillor.name)}
+          was absent for the recorded Council vote on this item, so there
+          is nothing to line your pick up against.</p>`;
       } else if (cv.kind === "interest") {
         councillorLine = `<p style="margin:.4rem 0 0">${esc(councillor.name)}
           declared an interest in this item and did not vote.</p>`;

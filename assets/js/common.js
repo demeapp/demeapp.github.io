@@ -286,7 +286,7 @@ function memberStatsHTML(person) {
     ? `<span class="att-meter" aria-hidden="true"><span class="att-fill" style="width:${Math.max(0, Math.min(100, att))}%"></span></span>`
     : "";
   return `<div class="member-stats" aria-label="Record summary">
-    <div><span>${simpleT("Recorded-vote participation", "Recorded votes they took part in")}</span><strong>${fmtAtt(person)}</strong>${meter}</div>
+    <div><span>${simpleT("Recorded-vote participation", "Votes they took part in")}</span><strong>${fmtAtt(person)}</strong>${meter}</div>
     <div><span>Votes cast</span><strong>${fmtNum(person.votesCast)}</strong></div>
     <div><span>${simpleT("Tenure", "How long on Council")}</span><strong>${esc(memberTenure(person))}</strong></div>
     <div><span>${simpleT("Interest declared · stepped back", "Declared an interest · did not vote")}</span><strong>${fmtNum(interest)}</strong></div>

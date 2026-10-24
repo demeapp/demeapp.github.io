@@ -1,4 +1,4 @@
-// Deme service worker (v26).
+// Deme service worker (v27).
 // Caches: app shell + static assets, visited pages, and the PUBLIC record JSON
 // (read-only, for offline browsing of what was already loaded).
 // Never caches: non-GET requests, cross-origin requests (Supabase auth, picks,
@@ -12,7 +12,7 @@
 // deploy, so assets are network-first too; cache is the offline fallback.
 // VERSION bumps rename every cache, and activate deletes the old ones —
 // bump VERSION whenever this file ships a strategy change.
-const VERSION = 'v26';
+const VERSION = 'v27';
 const SHELL = 'deme-shell-' + VERSION;
 const PAGES = 'deme-pages-' + VERSION;
 const DATA = 'deme-data-' + VERSION;

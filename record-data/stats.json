@@ -22,6 +22,7 @@
  "decisionsFrom": "2018",
  "decisionsTo": "2026",
  "votesFrom": "2006",
+ "votesFromBasis": "aggregate-span-only — the 2006 span describes the aggregate-inclusive member totals; stored name-by-name vote rows begin in 2018 (voteRowsStoredFrom)",
  "archiveUpdatedThrough": "2026-10-19",
  "lastCouncilMeeting": "2026-07-29",
  "documentation": {

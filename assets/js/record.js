@@ -29,17 +29,20 @@ renderChrome("my-record.html");
    (S-4); an unrecognized value is "none", never coerced. Returns one of:
      {kind:"vote", value:"Yes"|"No"} | {kind:"absent"} |
      {kind:"interest"} | {kind:"none", reason:"no-council-vote"|"no-row"
-       |"tally-only"|"pre-office"}
+       |"tally-only"|"not-in-office"}
    ("no-council-vote": no City Council-stage motion in the file, or
     none carrying named rows or a published tally;
-    "tally-only": a Council motion carries the data's tallyOnly flag
-    (a published result, no individual names) — the member may well
-    have voted; the City simply did not record who (Phase 2 P0-2);
+    "tally-only": no named Council rows exist and a Council motion
+    carries the data's tallyOnly flag (a published result, no
+    individual names) — the member may well have voted; the City
+    simply did not record who (Phase 2 P0-2);
     "no-row": named Council votes exist but the member is in none of
     them, and their terms cover the item's year;
-    "pre-office": the same, but the member's term buckets in
+    "not-in-office": the same, but the member's term buckets in
     councillors.json do not cover the item's year — the only case in
-    which a service-date reason may be given.)
+    which an in-office/not-in-office reason may be given. The bucket
+    does NOT prove the item predates their first term: gap-term
+    members are out of office between terms too.)
 
    tallyAlignment(picks, ward, people, detailByRef): the §4 tally.
    picks is the VoteStore.allPicks() shape {ref:{choice, ts}}; ward is
@@ -56,7 +59,7 @@ renderChrome("my-record.html");
    Returns {matched, comparable, B1, B2, B3, B4, B5, B6, decided,
    member} where decided = comparable+B1+B2+B3+B4+B5+B6 and member is
    the resolved current councillor's name (null when the ward has
-   none). B4 = no-row, B5 = tally-only, B6 = pre-office (see
+   none). B4 = no-row, B5 = tally-only, B6 = not-in-office (see
    comparableVote). Counts only — no percentage is ever computed
    (S-2), and nothing here is persisted (S-5): the caller keeps the
    result in render scope only.
@@ -94,10 +97,10 @@ function comparableVote(detail, memberName, memberTerms) {
     }
     return { kind: "none", reason: "no-row" };
   }
-  if (sawTallyOnly) return { kind: "none", reason: "tally-only" };
+  if (sawTallyOnly && !sawNamedRows) return { kind: "none", reason: "tally-only" };
   if (!sawNamedRows) return { kind: "none", reason: "no-council-vote" };
   /* Named Council votes exist and the member is in none of them. The
-     service-date reason is earned, not guessed: it is returned only
+     not-in-office reason is earned, not guessed: it is returned only
      when the member's term buckets do not cover the item's year. */
   if (Array.isArray(memberTerms) && memberTerms.length) {
     const when = (councilMotions[0] && councilMotions[0].when) || "";
@@ -108,7 +111,7 @@ function comparableVote(detail, memberName, memberTerms) {
         return parts.length === 2 && Number.isFinite(parts[0])
           && Number.isFinite(parts[1]) && year >= parts[0] && year <= parts[1];
       });
-      if (!covered) return { kind: "none", reason: "pre-office" };
+      if (!covered) return { kind: "none", reason: "not-in-office" };
     }
   }
   return { kind: "none", reason: "no-row" };
@@ -147,7 +150,7 @@ function tallyAlignment(picks, ward, people, detailByRef) {
     else if (cv.kind === "interest") out.B2 += 1;
     else if (cv.reason === "no-council-vote") out.B3 += 1;
     else if (cv.reason === "tally-only") out.B5 += 1;
-    else if (cv.reason === "pre-office") out.B6 += 1;
+    else if (cv.reason === "not-in-office") out.B6 += 1;
     else out.B4 += 1;
   }
   out.decided = out.comparable + out.B1 + out.B2 + out.B3
@@ -175,7 +178,7 @@ function alignmentCopy(tally, memberName, ward) {
     ? `${tally.B5} where the City published only the tally. No names were recorded, so there is no vote to compare.`
     : `${tally.B5} where the City published the result as a tally only — no individual names were recorded, so there is no vote to compare.`);
   if (tally.B6) explainer.push(
-    `${tally.B6} where ${memberName} has no recorded vote on the item — it was decided before they took office.`);
+    `${tally.B6} where ${memberName} has no recorded vote on the item — it was decided when they were not in office.`);
   if (tally.comparable >= 5) {
     return { explainer,
       progress: null,
@@ -702,13 +705,14 @@ async function renderPicks() {
         const aligned = (pick.choice === "support" && cv.value === "Yes") ||
                         (pick.choice === "oppose" && cv.value === "No");
         councillorLine = `<p style="margin:.4rem 0 0">On the first recorded
-          Council vote on this item, ${esc(councillor.name)} voted
-          <strong>${esc(cv.value)}</strong> — ${aligned
+          vote ${esc(councillor.name)} cast at City Council on this item,
+          they voted <strong>${esc(cv.value)}</strong> — ${aligned
             ? "the same way you picked." : "differently from your pick."}</p>`;
       } else if (cv.kind === "absent") {
         councillorLine = `<p style="margin:.4rem 0 0">On the first recorded
-          Council vote on this item, ${esc(councillor.name)} was absent, so
-          there is nothing to line your pick up against.</p>`;
+          Council motion on this item that lists ${esc(councillor.name)},
+          they were absent, so there is nothing to line your pick up
+          against.</p>`;
       } else if (cv.kind === "interest") {
         councillorLine = `<p style="margin:.4rem 0 0">${esc(councillor.name)}
           declared an interest in this item and did not vote.</p>`;

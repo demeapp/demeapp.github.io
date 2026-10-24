@@ -614,7 +614,7 @@ async function renderPayExpenses(person) {
       ${rows ? `<ul class="lob-list">${rows}</ul>` : ""}
       ${r.correctionNote ? `<p class="small" style="max-width:44rem;margin-top:.5rem">${esc(r.correctionNote)}</p>` : ""}
       ${r.extractionNote ? `<p class="small" style="max-width:44rem;margin-top:.5rem">${esc(r.extractionNote)}</p>` : ""}
-      ${r.sourceUrl ? `<p class="small" style="margin-top:.5rem"><a href="${esc(r.sourceUrl)}" target="_blank" rel="noopener noreferrer">Report (PDF)<span class="visually-hidden"> (opens in a new tab)</span></a></p>` : ""}
+      ${r.sourceUrl ? `<p class="small" style="margin-top:.5rem"><a href="${esc(r.sourceUrl)}" target="_blank" rel="noopener noreferrer">${r.sourceUrl.includes(".pdf") ? "Report (PDF)" : "Source at the City of Toronto"}<span class="visually-hidden"> (opens in a new tab)</span></a></p>` : ""}
     </div>`;
     };
     const maxAnnualYear = Math.max(...years.map((y) => Number(y)));
@@ -941,11 +941,13 @@ async function init() {
     : "Former member of Toronto City Council";
   const attBar = person.participation == null ? ""
     : `<span class="participation-bar" aria-hidden="true"><span style="width:${Math.max(0, Math.min(100, person.participation))}%"></span></span>`;
-  /* Basis note (Phase 2 audit P0-5): members whose figures rest partly on
-     the pre-2018 aggregate layer carry participationBasis:"aggregate" in
-     councillors.json; the note sits beside the figures it qualifies. */
+  /* Basis note (Phase 2 audit P0-5): members whose participation and
+     vote totals rest partly on the pre-2018 aggregate layer carry
+     participationBasis:"aggregate" in councillors.json; the note sits
+     beside the figures it qualifies. It does not qualify the separate
+     interest-declared figure, which is stored-rows only. */
   const basisNote = person.participationBasis === "aggregate"
-    ? `<p class="small" style="max-width:44rem">${simpleT("This member's figures include their pre-2018 aggregate record; not all of their votes are stored individually.", "This member's numbers include their record from before 2018, kept as totals. Not all of their votes are stored one by one.")}</p>`
+    ? `<p class="small" style="max-width:44rem">${simpleT("This member's participation and vote totals include their pre-2018 aggregate record, kept as totals rather than stored vote by vote; some or all of those earlier votes are not stored individually.", "This member's participation and vote totals include their record from before 2018, kept as totals, not stored one by one. Some or all of those earlier votes are not stored one by one.")}</p>`
     : "";
   box.innerHTML = `
     <p class="kicker">${person.current ? "Council today" : "Earlier member"}</p>

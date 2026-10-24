@@ -3,10 +3,10 @@
    extraction the spec's §10 fixture runner uses, and drives tallyAlignment
    end-to-end (picks + people + detailByRef) for each bucket case:
    named vote, absent, interest, no-Council-vote, tally-only (B5),
-   pre-office (B6), no-row in-office (B4), and the A-2 multi-motion cases.
-   The invariant under test: missing data is NEVER rendered as agreement
-   or disagreement, and a service-date reason is given only when the
-   member's term buckets genuinely exclude the item's year.
+   not-in-office (B6), no-row in-office (B4), and the A-2 multi-motion
+   cases. The invariant under test: missing data is NEVER rendered as
+   agreement or disagreement, and a not-in-office reason is given only
+   when the member's term buckets genuinely exclude the item's year.
    Run: node tests/alignment-buckets.test.mjs  (exit 1 on any failure) */
 import { readFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
@@ -59,30 +59,40 @@ t = run({ motions: [{ stage: "Toronto and East York Community Council", when: "2
 check("committee-only item lands in B3", t.B3 === 1, JSON.stringify(t));
 
 /* 5 — TALLY-ONLY (P0-2): a Council motion carrying the data's tallyOnly
-   flag (real shape: votes [], yes/no null, tally in the result string —
-   e.g. record-data/d/2018.EP10.10.json) must land in B5, and its
-   explainer must blame the tally — never the member's service dates. */
+   flag (field shape as in the corpus's real tallyOnly motions, which
+   currently sit at board/committee stages — votes [], yes/no null,
+   tally in the result string) must land in B5, and its explainer must
+   blame the tally — never the member's office status. */
 t = run({ motions: [cc([], { yes: null, no: null, tallyOnly: true, result: "Carried, 18-3" })] });
 check("tally-only motion lands in B5 (not B4)", t.B5 === 1 && t.B4 === 0 && t.B6 === 0 && t.comparable === 0, JSON.stringify(t));
 check("B5 explainer names the tally-only reason", /tally only/.test(copy(t)), copy(t));
-check("B5 explainer gives NO service-date reason", !/took office/.test(copy(t)), copy(t));
+check("B5 explainer gives NO office-status reason", !/not in office/.test(copy(t)), copy(t));
 simple = true;
-check("B5 simpler text names the tally too", /only the tally/.test(copy(t)) && !/took office/.test(copy(t)), copy(t));
+check("B5 simpler text names the tally too", /only the tally/.test(copy(t)) && !/not in office/.test(copy(t)), copy(t));
 simple = false;
 
-/* 6 — PRE-OFFICE (B6): named Council votes exist, the member is in none,
-   and the item's year (2015) is outside the member's terms (2022–2026):
-   only here may the explainer use the service-date reason. */
+/* 6 — NOT-IN-OFFICE (B6): named Council votes exist, the member is in
+   none, and the item's year (2015) is outside the member's terms
+   (2022–2026): only here may the explainer use the not-in-office
+   reason. The wording must not claim the item predates their first
+   term — the same bucket also covers gap-term members (fixture 6b). */
 t = run({ motions: [cc([["Other", "Yes"], ["Another", "No"]], { yes: 1, no: 1, when: "2015-06-10 9:30 AM" })] });
-check("pre-office item lands in B6", t.B6 === 1 && t.B4 === 0 && t.B5 === 0, JSON.stringify(t));
-check("B6 explainer may use the service-date reason", /before they took office/.test(copy(t)), copy(t));
+check("out-of-terms item lands in B6", t.B6 === 1 && t.B4 === 0 && t.B5 === 0, JSON.stringify(t));
+check("B6 explainer uses the earned not-in-office reason", /decided when they were not in office/.test(copy(t)), copy(t));
+const gapPeople = [{ name: MEMBER, slug: "test-member", current: true, ward: 1,
+  terms: ["2014-2018", "2022-2026"] }];
+t = tallyAlignment({ "2099.TE1.1": { choice: "support" } }, 1, gapPeople,
+  { "2099.TE1.1": { detail: { motions: [cc([["Other", "Yes"]],
+    { yes: 1, no: 0, when: "2020-06-10 9:30 AM" })] } } });
+check("gap-term item (between terms) also lands in B6", t.B6 === 1 && t.B4 === 0, JSON.stringify(t));
+check("gap-term explainer makes no first-term claim", /not in office/.test(copy(t)) && !/before they took office/.test(copy(t)), copy(t));
 
 /* 7 — NO-ROW IN OFFICE (B4): same shape as 6 but the item is from 2024,
    inside the member's terms — the service-date reason must NOT appear. */
 t = run({ motions: [cc([["Other", "Yes"], ["Another", "No"]], { yes: 1, no: 1 })] });
 check("in-office no-row lands in B4", t.B4 === 1 && t.B6 === 0 && t.B5 === 0, JSON.stringify(t));
 check("B4 explainer says the vote does not list the member", /does not list/.test(copy(t)), copy(t));
-check("B4 explainer gives NO service-date reason", !/took office/.test(copy(t)), copy(t));
+check("B4 explainer gives NO office-status reason", !/not in office/.test(copy(t)), copy(t));
 
 /* 8 — A-2 MASKING: first Council motion is tally-only, a later Council
    motion on the same item carries the member's named vote. The vote must
@@ -94,6 +104,16 @@ check("A-2: later named vote is found past a tally-only first motion", t.compara
    rows but not the member's; a later one has the member's row. */
 t = run({ motions: [cc([["Other", "Yes"]], { yes: 1, no: 0 }), cc([[MEMBER, "Yes"], ["Other", "No"]], { yes: 1, no: 1 })] });
 check("A-2: later named vote is found past a member-less first motion", t.comparable === 1 && t.matched === 1, JSON.stringify(t));
+
+/* 9b — MIXED ITEM: a tally-only motion AND a named Council motion, the
+   member in neither. Named rows exist for the item, so the tally-only
+   sentence ("no individual names were recorded") would be false; the
+   member's classification must come from the named motion (B4 here,
+   terms cover the year), never B5. */
+t = run({ motions: [cc([], { yes: null, no: null, tallyOnly: true, result: "Carried, 20-1" }),
+  cc([["Other", "Yes"], ["Another", "No"]], { yes: 1, no: 1 })] });
+check("mixed tally+named item lands in B4, not B5", t.B4 === 1 && t.B5 === 0, JSON.stringify(t));
+check("mixed-item explainer does not claim no names were recorded", !/tally only/.test(copy(t)), copy(t));
 
 /* 10 — Council motion with an empty vote list and NO tallyOnly flag:
    no record at all → B3 (decided without a recorded vote), never B5/B4. */

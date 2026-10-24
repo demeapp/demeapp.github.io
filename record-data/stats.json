@@ -1,1 +1,29 @@
-{"decisions":33796,"councilDecisions":13158,"votesCast":631418,"voteRows":743677,"members":94,"terms":5,"recordedVoteDecisions":3171,"recordedShare":0.094,"yesShare":84.4,"absentRows":112140,"noRows":98426,"interestRows":119,"unanimousEvents":2175,"closeEvents":355,"eventsTotal":6260,"wardTaggedPct":51.4,"decisionsFrom":"2018","decisionsTo":"2026","votesFrom":"2006","archiveUpdatedThrough":"2026-10-19","lastCouncilMeeting":"2026-07-29","documentation":{"totalsBasis":"Per-member career totals (votesCast, yes, no, absent, interest) and the published participation figures are AGGREGATE-basis: they include 743,677 vote rows reaching back to 2006 across five terms. The archive stores 157,292 name-by-name vote rows, all from 2018 onward; 586,385 of the 743,677 rows (78.9%) exist only as aggregates, and 30 of 94 members have no stored name-by-name rows. Aggregate totals must not be described as stored records.","interestRows":"interestRows (119) counts recorded votes flagged 'Absent (Interest Declared)' in the vote record. It is NOT a count of declarations in the City's Registry of Declared Interest (served separately in declared-interests.json, 1,249 councillor-matched records) and the two figures measure different things and will not match for most members.","closeEvents":"closeEvents counts motions (of 6,260 vote-bearing motions) whose recorded yes/no margin was 2 or fewer: 355. Recounted 2026-10-23 over all brief detail files under this single definition; supersedes earlier inconsistent figures (407 in stats, 285 in meta).","participationBasis":"Participation is computed from the aggregate-basis totals above (votesCast / (votesCast + absent)). It is a recorded-vote participation measure, not a register of meeting attendance; Toronto publishes no attendance register."}}
+{
+ "decisions": 33795,
+ "councilDecisions": 13158,
+ "votesCast": 631418,
+ "voteRows": 743677,
+ "members": 94,
+ "terms": 5,
+ "recordedVoteDecisions": 3171,
+ "recordedShare": 0.094,
+ "yesShare": 84.4,
+ "absentRows": 112140,
+ "noRows": 98426,
+ "interestRows": 119,
+ "unanimousEvents": 2175,
+ "closeEvents": 355,
+ "eventsTotal": 6260,
+ "wardTaggedPct": 51.4,
+ "decisionsFrom": "2018",
+ "decisionsTo": "2026",
+ "votesFrom": "2006",
+ "archiveUpdatedThrough": "2026-10-19",
+ "lastCouncilMeeting": "2026-07-29",
+ "documentation": {
+  "totalsBasis": "Per-member career totals (votesCast, yes, no, absent, interest) and the published participation figures are AGGREGATE-basis: they include 743,677 vote rows reaching back to 2006 across five terms. The archive stores 157,292 name-by-name vote rows, all from 2018 onward; 586,385 of the 743,677 rows (78.9%) exist only as aggregates, and 30 of 94 members have no stored name-by-name rows. Aggregate totals must not be described as stored records.",
+  "interestRows": "interestRows (119) counts recorded votes flagged 'Absent (Interest Declared)' in the vote record. It is NOT a count of declarations in the City's Registry of Declared Interest (served separately in declared-interests.json, 1,249 councillor-matched records) and the two figures measure different things and will not match for most members.",
+  "closeEvents": "closeEvents counts motions (of 6,260 vote-bearing motions) whose recorded yes/no margin was 2 or fewer: 355. Recounted 2026-10-23 over all brief detail files under this single definition; supersedes earlier inconsistent figures (407 in stats, 285 in meta).",
+  "participationBasis": "Participation is computed from the aggregate-basis totals above (votesCast / (votesCast + absent)). It is a recorded-vote participation measure, not a register of meeting attendance; Toronto publishes no attendance register."
+ }
+}

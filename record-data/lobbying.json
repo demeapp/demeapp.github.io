@@ -42,7 +42,8 @@
     "count": 2
    }
   ],
-  "snapshot": "2026-10-08"
+  "undated": 51,
+  "snapshot": "2026-10-23"
  },
  "adam-giambrone": {
   "total": 95,
@@ -87,7 +88,8 @@
     "count": 3
    }
   ],
-  "snapshot": "2026-10-08"
+  "undated": 92,
+  "snapshot": "2026-10-23"
  },
  "adam-vaughan": {
   "total": 713,
@@ -152,19 +154,20 @@
     "count": 77
    }
   ],
-  "snapshot": "2026-10-08"
+  "undated": 130,
+  "snapshot": "2026-10-23"
  },
  "alejandra-bravo": {
-  "total": 267,
-  "term": 267,
+  "total": 268,
+  "term": 268,
   "first": "2022-11-17",
-  "last": "2026-09-03",
+  "last": "2026-10-08",
   "lobbyists": 71,
   "clients": 59,
   "subjects": 114,
   "methods": {
    "Meetings": 84,
-   "Emails": 158,
+   "Emails": 159,
    "Phone calls": 15,
    "Written": 7,
    "Other or unreported": 3
@@ -210,10 +213,11 @@
    },
    {
     "year": 2026,
-    "count": 22
+    "count": 23
    }
   ],
-  "snapshot": "2026-10-08"
+  "undated": 0,
+  "snapshot": "2026-10-23"
  },
  "amber-morley": {
   "total": 377,
@@ -274,7 +278,8 @@
     "count": 38
    }
   ],
-  "snapshot": "2026-10-08"
+  "undated": 0,
+  "snapshot": "2026-10-23"
  },
  "ana-bailao": {
   "total": 1565,
@@ -363,19 +368,20 @@
     "count": 112
    }
   ],
-  "snapshot": "2026-10-08"
+  "undated": 2,
+  "snapshot": "2026-10-23"
  },
  "anthony-perruzza": {
-  "total": 896,
-  "term": 197,
+  "total": 897,
+  "term": 198,
   "first": "2010-08-24",
-  "last": "2026-09-03",
+  "last": "2026-10-08",
   "lobbyists": 233,
   "clients": 197,
   "subjects": 444,
   "methods": {
    "Meetings": 254,
-   "Emails": 476,
+   "Emails": 477,
    "Phone calls": 49,
    "Written": 84,
    "Other or unreported": 33
@@ -469,22 +475,23 @@
    },
    {
     "year": 2026,
-    "count": 22
+    "count": 23
    }
   ],
-  "snapshot": "2026-10-08"
+  "undated": 51,
+  "snapshot": "2026-10-23"
  },
  "ausma-malik": {
-  "total": 318,
-  "term": 318,
+  "total": 319,
+  "term": 319,
   "first": "2022-11-16",
-  "last": "2026-09-03",
+  "last": "2026-10-08",
   "lobbyists": 90,
   "clients": 63,
   "subjects": 152,
   "methods": {
    "Meetings": 75,
-   "Emails": 227,
+   "Emails": 228,
    "Phone calls": 7,
    "Written": 6,
    "Other or unreported": 3
@@ -530,10 +537,11 @@
    },
    {
     "year": 2026,
-    "count": 37
+    "count": 38
    }
   ],
-  "snapshot": "2026-10-08"
+  "undated": 0,
+  "snapshot": "2026-10-23"
  },
  "bill-saundercook": {
   "total": 91,
@@ -578,7 +586,8 @@
     "count": 10
    }
   ],
-  "snapshot": "2026-10-08"
+  "undated": 81,
+  "snapshot": "2026-10-23"
  },
  "brad-bradford": {
   "total": 803,
@@ -655,7 +664,8 @@
     "count": 22
    }
   ],
-  "snapshot": "2026-10-08"
+  "undated": 0,
+  "snapshot": "2026-10-23"
  },
  "brian-ashton": {
   "total": 84,
@@ -700,7 +710,8 @@
     "count": 2
    }
   ],
-  "snapshot": "2026-10-08"
+  "undated": 82,
+  "snapshot": "2026-10-23"
  },
  "case-ootes": {
   "total": 79,
@@ -745,7 +756,8 @@
     "count": 7
    }
   ],
-  "snapshot": "2026-10-08"
+  "undated": 72,
+  "snapshot": "2026-10-23"
  },
  "cesar-palacio": {
   "total": 740,
@@ -822,7 +834,8 @@
     "count": 50
    }
   ],
-  "snapshot": "2026-10-08"
+  "undated": 60,
+  "snapshot": "2026-10-23"
  },
  "ceta-ramkhalawansingh": {
   "total": 23,
@@ -867,7 +880,8 @@
     "count": 23
    }
   ],
-  "snapshot": "2026-10-08"
+  "undated": 0,
+  "snapshot": "2026-10-23"
  },
  "chin-lee": {
   "total": 592,
@@ -944,19 +958,20 @@
     "count": 10
    }
   ],
-  "snapshot": "2026-10-08"
+  "undated": 71,
+  "snapshot": "2026-10-23"
  },
  "chris-moise": {
-  "total": 488,
-  "term": 488,
+  "total": 489,
+  "term": 489,
   "first": "2022-11-17",
-  "last": "2026-09-03",
+  "last": "2026-10-08",
   "lobbyists": 119,
   "clients": 98,
   "subjects": 201,
   "methods": {
    "Meetings": 258,
-   "Emails": 188,
+   "Emails": 189,
    "Phone calls": 19,
    "Written": 10,
    "Other or unreported": 13
@@ -1002,10 +1017,11 @@
    },
    {
     "year": 2026,
-    "count": 42
+    "count": 43
    }
   ],
-  "snapshot": "2026-10-08"
+  "undated": 0,
+  "snapshot": "2026-10-23"
  },
  "christin-carmichael-greb": {
   "total": 388,
@@ -1066,7 +1082,8 @@
     "count": 38
    }
   ],
-  "snapshot": "2026-10-08"
+  "undated": 0,
+  "snapshot": "2026-10-23"
  },
  "cliff-jenkins": {
   "total": 88,
@@ -1111,7 +1128,8 @@
     "count": 14
    }
   ],
-  "snapshot": "2026-10-08"
+  "undated": 74,
+  "snapshot": "2026-10-23"
  },
  "cynthia-lai": {
   "total": 196,
@@ -1172,7 +1190,8 @@
     "count": 17
    }
   ],
-  "snapshot": "2026-10-08"
+  "undated": 0,
+  "snapshot": "2026-10-23"
  },
  "david-miller": {
   "total": 58,
@@ -1217,7 +1236,8 @@
     "count": 3
    }
   ],
-  "snapshot": "2026-10-08"
+  "undated": 55,
+  "snapshot": "2026-10-23"
  },
  "david-shiner": {
   "total": 699,
@@ -1294,7 +1314,8 @@
     "count": 67
    }
   ],
-  "snapshot": "2026-10-08"
+  "undated": 57,
+  "snapshot": "2026-10-23"
  },
  "denzil-minnan-wong": {
   "total": 1345,
@@ -1387,19 +1408,20 @@
     "count": 29
    }
   ],
-  "snapshot": "2026-10-08"
+  "undated": 80,
+  "snapshot": "2026-10-23"
  },
  "dianne-saxe": {
-  "total": 740,
-  "term": 740,
+  "total": 741,
+  "term": 741,
   "first": "2022-11-17",
-  "last": "2026-07-29",
+  "last": "2026-10-08",
   "lobbyists": 104,
   "clients": 101,
   "subjects": 229,
   "methods": {
    "Meetings": 189,
-   "Emails": 415,
+   "Emails": 416,
    "Phone calls": 85,
    "Written": 12,
    "Other or unreported": 39
@@ -1445,10 +1467,11 @@
    },
    {
     "year": 2026,
-    "count": 59
+    "count": 60
    }
   ],
-  "snapshot": "2026-10-08"
+  "undated": 0,
+  "snapshot": "2026-10-23"
  },
  "doug-ford": {
   "total": 465,
@@ -1509,7 +1532,8 @@
     "count": 80
    }
   ],
-  "snapshot": "2026-10-08"
+  "undated": 0,
+  "snapshot": "2026-10-23"
  },
  "doug-holyday": {
   "total": 230,
@@ -1566,19 +1590,20 @@
     "count": 71
    }
   ],
-  "snapshot": "2026-10-08"
+  "undated": 76,
+  "snapshot": "2026-10-23"
  },
  "frances-nunziata": {
-  "total": 1084,
-  "term": 223,
+  "total": 1085,
+  "term": 224,
   "first": "2010-07-22",
-  "last": "2026-09-03",
+  "last": "2026-10-08",
   "lobbyists": 248,
   "clients": 238,
   "subjects": 526,
   "methods": {
    "Meetings": 387,
-   "Emails": 485,
+   "Emails": 486,
    "Phone calls": 98,
    "Written": 85,
    "Other or unreported": 29
@@ -1672,10 +1697,11 @@
    },
    {
     "year": 2026,
-    "count": 21
+    "count": 22
    }
   ],
-  "snapshot": "2026-10-08"
+  "undated": 64,
+  "snapshot": "2026-10-23"
  },
  "frank-di-giorgio": {
   "total": 735,
@@ -1752,7 +1778,8 @@
     "count": 38
    }
   ],
-  "snapshot": "2026-10-08"
+  "undated": 78,
+  "snapshot": "2026-10-23"
  },
  "gary-crawford": {
   "total": 989,
@@ -1845,7 +1872,8 @@
     "count": 48
    }
   ],
-  "snapshot": "2026-10-08"
+  "undated": 1,
+  "snapshot": "2026-10-23"
  },
  "giorgio-mammoliti": {
   "total": 524,
@@ -1922,7 +1950,8 @@
     "count": 14
    }
   ],
-  "snapshot": "2026-10-08"
+  "undated": 64,
+  "snapshot": "2026-10-23"
  },
  "glenn-de-baeremaeker": {
   "total": 857,
@@ -1999,7 +2028,8 @@
     "count": 30
    }
   ],
-  "snapshot": "2026-10-08"
+  "undated": 107,
+  "snapshot": "2026-10-23"
  },
  "gloria-lindsay-luby": {
   "total": 272,
@@ -2060,19 +2090,20 @@
     "count": 47
    }
   ],
-  "snapshot": "2026-10-08"
+  "undated": 64,
+  "snapshot": "2026-10-23"
  },
  "gord-perks": {
-  "total": 942,
-  "term": 243,
+  "total": 943,
+  "term": 244,
   "first": "2010-08-24",
-  "last": "2026-09-03",
+  "last": "2026-10-08",
   "lobbyists": 268,
   "clients": 204,
   "subjects": 494,
   "methods": {
    "Meetings": 354,
-   "Emails": 442,
+   "Emails": 443,
    "Phone calls": 35,
    "Written": 77,
    "Other or unreported": 34
@@ -2166,10 +2197,11 @@
    },
    {
     "year": 2026,
-    "count": 19
+    "count": 20
    }
   ],
-  "snapshot": "2026-10-08"
+  "undated": 78,
+  "snapshot": "2026-10-23"
  },
  "howard-moscoe": {
   "total": 82,
@@ -2214,19 +2246,20 @@
     "count": 5
    }
   ],
-  "snapshot": "2026-10-08"
+  "undated": 77,
+  "snapshot": "2026-10-23"
  },
  "jamaal-myers": {
-  "total": 310,
-  "term": 310,
+  "total": 311,
+  "term": 311,
   "first": "2022-11-17",
-  "last": "2026-09-03",
+  "last": "2026-10-08",
   "lobbyists": 83,
   "clients": 77,
   "subjects": 147,
   "methods": {
    "Meetings": 107,
-   "Emails": 161,
+   "Emails": 162,
    "Phone calls": 24,
    "Written": 7,
    "Other or unreported": 11
@@ -2242,7 +2275,7 @@
    },
    {
     "label": "Transit / TTC",
-    "count": 56
+    "count": 57
    },
    {
     "label": "By-law / Regulation",
@@ -2272,10 +2305,11 @@
    },
    {
     "year": 2026,
-    "count": 37
+    "count": 38
    }
   ],
-  "snapshot": "2026-10-08"
+  "undated": 0,
+  "snapshot": "2026-10-23"
  },
  "james-maloney": {
   "total": 26,
@@ -2320,19 +2354,20 @@
     "count": 26
    }
   ],
-  "snapshot": "2026-10-08"
+  "undated": 0,
+  "snapshot": "2026-10-23"
  },
  "james-pasternak": {
-  "total": 1397,
-  "term": 331,
+  "total": 1398,
+  "term": 332,
   "first": "2011-02-14",
-  "last": "2026-09-16",
+  "last": "2026-10-08",
   "lobbyists": 245,
   "clients": 241,
   "subjects": 528,
   "methods": {
    "Meetings": 411,
-   "Emails": 715,
+   "Emails": 716,
    "Phone calls": 122,
    "Written": 80,
    "Other or unreported": 69
@@ -2422,10 +2457,11 @@
    },
    {
     "year": 2026,
-    "count": 24
+    "count": 25
    }
   ],
-  "snapshot": "2026-10-08"
+  "undated": 0,
+  "snapshot": "2026-10-23"
  },
  "janet-davis": {
   "total": 406,
@@ -2502,7 +2538,8 @@
     "count": 10
    }
   ],
-  "snapshot": "2026-10-08"
+  "undated": 48,
+  "snapshot": "2026-10-23"
  },
  "jaye-robinson": {
   "total": 875,
@@ -2599,7 +2636,8 @@
     "count": 9
    }
   ],
-  "snapshot": "2026-10-08"
+  "undated": 0,
+  "snapshot": "2026-10-23"
  },
  "jennifer-mckelvie": {
   "total": 726,
@@ -2672,7 +2710,8 @@
     "count": 22
    }
   ],
-  "snapshot": "2026-10-08"
+  "undated": 0,
+  "snapshot": "2026-10-23"
  },
  "jim-hart": {
   "total": 54,
@@ -2721,7 +2760,8 @@
     "count": 19
    }
   ],
-  "snapshot": "2026-10-08"
+  "undated": 0,
+  "snapshot": "2026-10-23"
  },
  "jim-karygiannis": {
   "total": 867,
@@ -2790,7 +2830,8 @@
     "count": 27
    }
   ],
-  "snapshot": "2026-10-08"
+  "undated": 0,
+  "snapshot": "2026-10-23"
  },
  "joe-cressy": {
   "total": 896,
@@ -2867,7 +2908,8 @@
     "count": 13
    }
   ],
-  "snapshot": "2026-10-08"
+  "undated": 0,
+  "snapshot": "2026-10-23"
  },
  "joe-mihevc": {
   "total": 658,
@@ -2948,7 +2990,8 @@
     "count": 23
    }
   ],
-  "snapshot": "2026-10-08"
+  "undated": 77,
+  "snapshot": "2026-10-23"
  },
  "joe-pantalone": {
   "total": 174,
@@ -2993,7 +3036,8 @@
     "count": 71
    }
   ],
-  "snapshot": "2026-10-08"
+  "undated": 103,
+  "snapshot": "2026-10-23"
  },
  "john-campbell": {
   "total": 385,
@@ -3058,7 +3102,8 @@
     "count": 1
    }
   ],
-  "snapshot": "2026-10-08"
+  "undated": 0,
+  "snapshot": "2026-10-23"
  },
  "john-filion": {
   "total": 803,
@@ -3151,7 +3196,8 @@
     "count": 33
    }
   ],
-  "snapshot": "2026-10-08"
+  "undated": 63,
+  "snapshot": "2026-10-23"
  },
  "john-parker": {
   "total": 465,
@@ -3212,7 +3258,8 @@
     "count": 86
    }
   ],
-  "snapshot": "2026-10-08"
+  "undated": 86,
+  "snapshot": "2026-10-23"
  },
  "john-tory": {
   "total": 976,
@@ -3293,19 +3340,20 @@
     "count": 8
    }
   ],
-  "snapshot": "2026-10-08"
+  "undated": 0,
+  "snapshot": "2026-10-23"
  },
  "jon-burnside": {
-  "total": 692,
-  "term": 261,
+  "total": 693,
+  "term": 262,
   "first": "2014-12-02",
-  "last": "2026-09-03",
+  "last": "2026-10-08",
   "lobbyists": 157,
   "clients": 133,
   "subjects": 301,
   "methods": {
    "Meetings": 261,
-   "Emails": 300,
+   "Emails": 301,
    "Phone calls": 75,
    "Written": 43,
    "Other or unreported": 13
@@ -3371,10 +3419,11 @@
    },
    {
     "year": 2026,
-    "count": 35
+    "count": 36
    }
   ],
-  "snapshot": "2026-10-08"
+  "undated": 0,
+  "snapshot": "2026-10-23"
  },
  "jonathan-tsao": {
   "total": 4,
@@ -3415,7 +3464,8 @@
     "count": 4
    }
   ],
-  "snapshot": "2026-10-08"
+  "undated": 0,
+  "snapshot": "2026-10-23"
  },
  "josh-colle": {
   "total": 722,
@@ -3488,19 +3538,20 @@
     "count": 34
    }
   ],
-  "snapshot": "2026-10-08"
+  "undated": 1,
+  "snapshot": "2026-10-23"
  },
  "josh-matlow": {
-  "total": 1236,
-  "term": 328,
+  "total": 1243,
+  "term": 335,
   "first": "2010-12-22",
-  "last": "2026-08-28",
-  "lobbyists": 265,
+  "last": "2026-10-16",
+  "lobbyists": 268,
   "clients": 284,
   "subjects": 584,
   "methods": {
    "Meetings": 419,
-   "Emails": 585,
+   "Emails": 592,
    "Phone calls": 120,
    "Written": 75,
    "Other or unreported": 37
@@ -3594,10 +3645,11 @@
    },
    {
     "year": 2026,
-    "count": 44
+    "count": 51
    }
   ],
-  "snapshot": "2026-10-08"
+  "undated": 1,
+  "snapshot": "2026-10-23"
  },
  "justin-j-di-ciano": {
   "total": 600,
@@ -3658,7 +3710,8 @@
     "count": 52
    }
   ],
-  "snapshot": "2026-10-08"
+  "undated": 0,
+  "snapshot": "2026-10-23"
  },
  "karen-stintz": {
   "total": 616,
@@ -3719,7 +3772,8 @@
     "count": 106
    }
   ],
-  "snapshot": "2026-10-08"
+  "undated": 98,
+  "snapshot": "2026-10-23"
  },
  "kristyn-wong-tam": {
   "total": 1653,
@@ -3812,7 +3866,8 @@
     "count": 53
    }
   ],
-  "snapshot": "2026-10-08"
+  "undated": 1,
+  "snapshot": "2026-10-23"
  },
  "kyle-rae": {
   "total": 116,
@@ -3857,19 +3912,20 @@
     "count": 3
    }
   ],
-  "snapshot": "2026-10-08"
+  "undated": 113,
+  "snapshot": "2026-10-23"
  },
  "lily-cheng": {
-  "total": 389,
-  "term": 389,
+  "total": 390,
+  "term": 390,
   "first": "2022-11-17",
-  "last": "2026-10-01",
+  "last": "2026-10-08",
   "lobbyists": 74,
   "clients": 63,
   "subjects": 143,
   "methods": {
    "Meetings": 153,
-   "Emails": 195,
+   "Emails": 196,
    "Phone calls": 25,
    "Written": 10,
    "Other or unreported": 6
@@ -3915,10 +3971,11 @@
    },
    {
     "year": 2026,
-    "count": 61
+    "count": 62
    }
   ],
-  "snapshot": "2026-10-08"
+  "undated": 0,
+  "snapshot": "2026-10-23"
  },
  "lucy-troisi": {
   "total": 106,
@@ -3967,7 +4024,8 @@
     "count": 90
    }
   ],
-  "snapshot": "2026-10-08"
+  "undated": 0,
+  "snapshot": "2026-10-23"
  },
  "maria-augimeri": {
   "total": 549,
@@ -4044,7 +4102,8 @@
     "count": 17
    }
   ],
-  "snapshot": "2026-10-08"
+  "undated": 61,
+  "snapshot": "2026-10-23"
  },
  "mark-grimes": {
   "total": 1030,
@@ -4137,7 +4196,8 @@
     "count": 42
    }
   ],
-  "snapshot": "2026-10-08"
+  "undated": 77,
+  "snapshot": "2026-10-23"
  },
  "mary-fragedakis": {
   "total": 436,
@@ -4214,7 +4274,8 @@
     "count": 15
    }
   ],
-  "snapshot": "2026-10-08"
+  "undated": 1,
+  "snapshot": "2026-10-23"
  },
  "mary-margaret-mcmahon": {
   "total": 580,
@@ -4287,7 +4348,8 @@
     "count": 58
    }
   ],
-  "snapshot": "2026-10-08"
+  "undated": 1,
+  "snapshot": "2026-10-23"
  },
  "michael-ford": {
   "total": 411,
@@ -4356,19 +4418,20 @@
     "count": 19
    }
   ],
-  "snapshot": "2026-10-08"
+  "undated": 0,
+  "snapshot": "2026-10-23"
  },
  "michael-thompson": {
-  "total": 1579,
-  "term": 195,
+  "total": 1580,
+  "term": 196,
   "first": "2010-07-09",
-  "last": "2026-09-03",
+  "last": "2026-10-08",
   "lobbyists": 428,
   "clients": 295,
   "subjects": 725,
   "methods": {
    "Meetings": 629,
-   "Emails": 635,
+   "Emails": 636,
    "Phone calls": 159,
    "Written": 111,
    "Other or unreported": 45
@@ -4462,10 +4525,11 @@
    },
    {
     "year": 2026,
-    "count": 25
+    "count": 26
    }
   ],
-  "snapshot": "2026-10-08"
+  "undated": 78,
+  "snapshot": "2026-10-23"
  },
  "michael-walker": {
   "total": 84,
@@ -4514,7 +4578,8 @@
     "count": 1
    }
   ],
-  "snapshot": "2026-10-08"
+  "undated": 82,
+  "snapshot": "2026-10-23"
  },
  "michelle-berardinetti": {
   "total": 374,
@@ -4583,7 +4648,8 @@
     "count": 17
    }
   ],
-  "snapshot": "2026-10-08"
+  "undated": 1,
+  "snapshot": "2026-10-23"
  },
  "michelle-holland": {
   "total": 172,
@@ -4636,7 +4702,8 @@
     "count": 20
    }
   ],
-  "snapshot": "2026-10-08"
+  "undated": 0,
+  "snapshot": "2026-10-23"
  },
  "miganoush-megardichian": {
   "total": 1,
@@ -4673,19 +4740,20 @@
     "count": 1
    }
   ],
-  "snapshot": "2026-10-08"
+  "undated": 0,
+  "snapshot": "2026-10-23"
  },
  "mike-colle": {
-  "total": 644,
-  "term": 289,
+  "total": 645,
+  "term": 290,
   "first": "2018-12-07",
-  "last": "2026-09-03",
+  "last": "2026-10-08",
   "lobbyists": 169,
   "clients": 128,
   "subjects": 281,
   "methods": {
    "Meetings": 147,
-   "Emails": 392,
+   "Emails": 393,
    "Phone calls": 75,
    "Written": 18,
    "Other or unreported": 12
@@ -4747,10 +4815,11 @@
    },
    {
     "year": 2026,
-    "count": 23
+    "count": 24
    }
   ],
-  "snapshot": "2026-10-08"
+  "undated": 0,
+  "snapshot": "2026-10-23"
  },
  "mike-del-grande": {
   "total": 218,
@@ -4811,7 +4880,8 @@
     "count": 38
    }
   ],
-  "snapshot": "2026-10-08"
+  "undated": 54,
+  "snapshot": "2026-10-23"
  },
  "mike-feldman": {
   "total": 82,
@@ -4856,7 +4926,8 @@
     "count": 6
    }
   ],
-  "snapshot": "2026-10-08"
+  "undated": 76,
+  "snapshot": "2026-10-23"
  },
  "mike-layton": {
   "total": 1559,
@@ -4949,19 +5020,20 @@
     "count": 94
    }
   ],
-  "snapshot": "2026-10-08"
+  "undated": 2,
+  "snapshot": "2026-10-23"
  },
  "neethan-shan": {
-  "total": 76,
-  "term": 29,
+  "total": 77,
+  "term": 30,
   "first": "2017-03-01",
-  "last": "2026-09-03",
+  "last": "2026-10-08",
   "lobbyists": 18,
   "clients": 34,
   "subjects": 53,
   "methods": {
    "Meetings": 23,
-   "Emails": 42,
+   "Emails": 43,
    "Phone calls": 4,
    "Written": 3,
    "Other or unreported": 4
@@ -5003,22 +5075,23 @@
    },
    {
     "year": 2026,
-    "count": 24
+    "count": 25
    }
   ],
-  "snapshot": "2026-10-08"
+  "undated": 0,
+  "snapshot": "2026-10-23"
  },
  "nick-mantas": {
-  "total": 593,
-  "term": 390,
+  "total": 594,
+  "term": 391,
   "first": "2021-01-21",
-  "last": "2026-09-03",
+  "last": "2026-10-08",
   "lobbyists": 72,
   "clients": 123,
   "subjects": 206,
   "methods": {
    "Meetings": 128,
-   "Emails": 216,
+   "Emails": 217,
    "Phone calls": 199,
    "Written": 10,
    "Other or unreported": 40
@@ -5068,46 +5141,47 @@
    },
    {
     "year": 2026,
-    "count": 43
+    "count": 44
    }
   ],
-  "snapshot": "2026-10-08"
+  "undated": 0,
+  "snapshot": "2026-10-23"
  },
  "norman-kelly": {
-  "total": 487,
+  "total": 760,
   "term": 0,
   "first": "2010-07-22",
-  "last": "2018-07-30",
-  "lobbyists": 142,
-  "clients": 97,
-  "subjects": 238,
+  "last": "2018-08-03",
+  "lobbyists": 206,
+  "clients": 139,
+  "subjects": 359,
   "methods": {
-   "Meetings": 248,
-   "Emails": 149,
-   "Phone calls": 29,
-   "Written": 53,
-   "Other or unreported": 8
+   "Meetings": 352,
+   "Emails": 281,
+   "Phone calls": 40,
+   "Written": 72,
+   "Other or unreported": 15
   },
   "top": [
    {
     "label": "Economic Development",
-    "count": 129
+    "count": 229
    },
    {
-    "label": "Waterfront Revitalization",
-    "count": 56
+    "label": "By-law / Regulation",
+    "count": 110
+   },
+   {
+    "label": "Licences / Licensing",
+    "count": 105
    },
    {
     "label": "Attractions / Tourism",
-    "count": 49
+    "count": 75
    },
    {
-    "label": "Transit / TTC",
-    "count": 48
-   },
-   {
-    "label": "Transportation - Cycling / Bicycle Lanes",
-    "count": 34
+    "label": "Planning and Development Application, Zoning By-law",
+    "count": 65
    }
   ],
   "years": [
@@ -5129,38 +5203,39 @@
    },
    {
     "year": 2014,
-    "count": 151
+    "count": 155
    },
    {
     "year": 2015,
-    "count": 20
+    "count": 102
    },
    {
     "year": 2016,
-    "count": 4
+    "count": 90
    },
    {
     "year": 2017,
-    "count": 3
+    "count": 87
    },
    {
     "year": 2018,
-    "count": 1
+    "count": 18
    }
   ],
-  "snapshot": "2026-10-08"
+  "undated": 73,
+  "snapshot": "2026-10-23"
  },
  "olivia-chow": {
-  "total": 283,
-  "term": 283,
+  "total": 284,
+  "term": 284,
   "first": "2023-07-12",
-  "last": "2026-09-23",
+  "last": "2026-10-08",
   "lobbyists": 103,
   "clients": 56,
   "subjects": 156,
   "methods": {
    "Meetings": 88,
-   "Emails": 162,
+   "Emails": 163,
    "Phone calls": 13,
    "Written": 16,
    "Other or unreported": 4
@@ -5184,7 +5259,7 @@
    },
    {
     "label": "Transit / TTC",
-    "count": 35
+    "count": 36
    }
   ],
   "years": [
@@ -5202,10 +5277,11 @@
    },
    {
     "year": 2026,
-    "count": 33
+    "count": 34
    }
   ],
-  "snapshot": "2026-10-08"
+  "undated": 0,
+  "snapshot": "2026-10-23"
  },
  "pam-mcconnell": {
   "total": 545,
@@ -5278,19 +5354,20 @@
     "count": 20
    }
   ],
-  "snapshot": "2026-10-08"
+  "undated": 78,
+  "snapshot": "2026-10-23"
  },
  "parthi-kandavel": {
-  "total": 254,
-  "term": 254,
+  "total": 255,
+  "term": 255,
   "first": "2023-12-14",
-  "last": "2026-09-03",
+  "last": "2026-10-08",
   "lobbyists": 44,
   "clients": 47,
   "subjects": 91,
   "methods": {
    "Meetings": 121,
-   "Emails": 97,
+   "Emails": 98,
    "Phone calls": 31,
    "Written": 2,
    "Other or unreported": 3
@@ -5332,22 +5409,23 @@
    },
    {
     "year": 2026,
-    "count": 23
+    "count": 24
    }
   ],
-  "snapshot": "2026-10-08"
+  "undated": 0,
+  "snapshot": "2026-10-23"
  },
  "paul-ainslie": {
-  "total": 982,
-  "term": 210,
+  "total": 983,
+  "term": 211,
   "first": "2010-08-24",
-  "last": "2026-09-03",
+  "last": "2026-10-08",
   "lobbyists": 210,
   "clients": 228,
   "subjects": 488,
   "methods": {
    "Meetings": 171,
-   "Emails": 601,
+   "Emails": 602,
    "Phone calls": 72,
    "Written": 98,
    "Other or unreported": 40
@@ -5441,22 +5519,23 @@
    },
    {
     "year": 2026,
-    "count": 33
+    "count": 34
    }
   ],
-  "snapshot": "2026-10-08"
+  "undated": 58,
+  "snapshot": "2026-10-23"
  },
  "paula-fletcher": {
-  "total": 873,
-  "term": 191,
+  "total": 874,
+  "term": 192,
   "first": "2010-08-24",
-  "last": "2026-08-13",
+  "last": "2026-10-08",
   "lobbyists": 211,
   "clients": 190,
   "subjects": 421,
   "methods": {
    "Meetings": 158,
-   "Emails": 486,
+   "Emails": 487,
    "Phone calls": 99,
    "Written": 86,
    "Other or unreported": 44
@@ -5550,10 +5629,11 @@
    },
    {
     "year": 2026,
-    "count": 18
+    "count": 19
    }
   ],
-  "snapshot": "2026-10-08"
+  "undated": 62,
+  "snapshot": "2026-10-23"
  },
  "peter-leon": {
   "total": 80,
@@ -5602,7 +5682,8 @@
     "count": 57
    }
   ],
-  "snapshot": "2026-10-08"
+  "undated": 0,
+  "snapshot": "2026-10-23"
  },
  "peter-milczyn": {
   "total": 745,
@@ -5663,19 +5744,20 @@
     "count": 79
    }
   ],
-  "snapshot": "2026-10-08"
+  "undated": 129,
+  "snapshot": "2026-10-23"
  },
  "rachel-chernos-lin": {
-  "total": 103,
-  "term": 103,
+  "total": 104,
+  "term": 104,
   "first": "2024-11-11",
-  "last": "2026-09-03",
+  "last": "2026-10-08",
   "lobbyists": 29,
   "clients": 31,
   "subjects": 56,
   "methods": {
    "Meetings": 39,
-   "Emails": 56,
+   "Emails": 57,
    "Phone calls": 7,
    "Written": 1,
    "Other or unreported": 0
@@ -5713,10 +5795,11 @@
    },
    {
     "year": 2026,
-    "count": 40
+    "count": 41
    }
   ],
-  "snapshot": "2026-10-08"
+  "undated": 0,
+  "snapshot": "2026-10-23"
  },
  "raymond-cho": {
   "total": 367,
@@ -5789,7 +5872,8 @@
     "count": 1
    }
   ],
-  "snapshot": "2026-10-08"
+  "undated": 39,
+  "snapshot": "2026-10-23"
  },
  "rob-ford": {
   "total": 601,
@@ -5858,7 +5942,8 @@
     "count": 9
    }
   ],
-  "snapshot": "2026-10-08"
+  "undated": 79,
+  "snapshot": "2026-10-23"
  },
  "robin-buxton-potts": {
   "total": 17,
@@ -5903,7 +5988,8 @@
     "count": 17
    }
   ],
-  "snapshot": "2026-10-08"
+  "undated": 0,
+  "snapshot": "2026-10-23"
  },
  "ron-moeser": {
   "total": 294,
@@ -5976,7 +6062,8 @@
     "count": 6
    }
   ],
-  "snapshot": "2026-10-08"
+  "undated": 49,
+  "snapshot": "2026-10-23"
  },
  "rose-milczyn": {
   "total": 6,
@@ -6021,7 +6108,8 @@
     "count": 6
    }
   ],
-  "snapshot": "2026-10-08"
+  "undated": 0,
+  "snapshot": "2026-10-23"
  },
  "sandra-bussin": {
   "total": 69,
@@ -6070,7 +6158,8 @@
     "count": 1
    }
   ],
-  "snapshot": "2026-10-08"
+  "undated": 67,
+  "snapshot": "2026-10-23"
  },
  "sarah-doucette": {
   "total": 434,
@@ -6143,19 +6232,20 @@
     "count": 20
    }
   ],
-  "snapshot": "2026-10-08"
+  "undated": 2,
+  "snapshot": "2026-10-23"
  },
  "shelley-carroll": {
-  "total": 1217,
-  "term": 341,
+  "total": 1218,
+  "term": 342,
   "first": "2010-07-13",
-  "last": "2026-09-03",
-  "lobbyists": 286,
+  "last": "2026-10-08",
+  "lobbyists": 285,
   "clients": 241,
   "subjects": 540,
   "methods": {
    "Meetings": 441,
-   "Emails": 538,
+   "Emails": 539,
    "Phone calls": 86,
    "Written": 85,
    "Other or unreported": 67
@@ -6249,22 +6339,23 @@
    },
    {
     "year": 2026,
-    "count": 28
+    "count": 29
    }
   ],
-  "snapshot": "2026-10-08"
+  "undated": 85,
+  "snapshot": "2026-10-23"
  },
  "stephen-holyday": {
-  "total": 997,
-  "term": 261,
+  "total": 998,
+  "term": 262,
   "first": "2014-12-02",
-  "last": "2026-08-27",
+  "last": "2026-10-08",
   "lobbyists": 232,
   "clients": 178,
   "subjects": 427,
   "methods": {
    "Meetings": 363,
-   "Emails": 457,
+   "Emails": 458,
    "Phone calls": 95,
    "Written": 45,
    "Other or unreported": 37
@@ -6342,10 +6433,11 @@
    },
    {
     "year": 2026,
-    "count": 46
+    "count": 47
    }
   ],
-  "snapshot": "2026-10-08"
+  "undated": 0,
+  "snapshot": "2026-10-23"
  },
  "suzan-hall": {
   "total": 53,
@@ -6390,19 +6482,20 @@
     "count": 3
    }
   ],
-  "snapshot": "2026-10-08"
+  "undated": 50,
+  "snapshot": "2026-10-23"
  },
  "vincent-crisanti": {
-  "total": 833,
-  "term": 258,
+  "total": 834,
+  "term": 259,
   "first": "2010-12-13",
-  "last": "2026-09-03",
+  "last": "2026-10-08",
   "lobbyists": 174,
   "clients": 162,
   "subjects": 372,
   "methods": {
    "Meetings": 322,
-   "Emails": 368,
+   "Emails": 369,
    "Phone calls": 71,
    "Written": 64,
    "Other or unreported": 8
@@ -6426,7 +6519,7 @@
    },
    {
     "label": "Transit / TTC",
-    "count": 72
+    "count": 73
    }
   ],
   "years": [
@@ -6484,9 +6577,10 @@
    },
    {
     "year": 2026,
-    "count": 20
+    "count": 21
    }
   ],
-  "snapshot": "2026-10-08"
+  "undated": 0,
+  "snapshot": "2026-10-23"
  }
 }

@@ -262,15 +262,57 @@ async function renderExtras(person) {
     }
   }
   /* ---------- lobbying record (public registry exports only) ------ */
-  /* The by-year breakdown is deliberately not rendered: the per-year
-     series in lobbying.json undercounts against the reconciled totals
-     for 55 of 94 members and no exact per-year source exists to rebuild
-     it (audit H-02, Oct 23). Totals, subject matters and methods —
-     which reconcile — are what is shown. */
+  /* By-year breakdown (WS2b display fix, Oct 23): "years" in the
+     refreshed lobbying.json carries DATED-year counts only, and each
+     member now carries "undated" — the registry communications with
+     no date, which sit in the reconciled total but in no year.
+     Rendering the years WITH the explicit "Date not reported:
+     N communications" line (only when undated > 0) makes
+     dated + undated = total reconcile on the page. That resolves
+     audit H-02 (Oct 23): the by-year breakdown was previously
+     suppressed because the undated share (3,362 of 49,658
+     communications, across 55 of 94 members) was invisible, so the
+     years alone undercounted against the total.
+     The per-communication list comes from record-data/lob/<slug>.json,
+     loaded per member here like the other sections below; when that
+     file is absent or fails to load, the section renders exactly as
+     it did without it — the summary stands on lobbying.json alone.
+     The snapshot date is read from the loaded data (lobbying.snapshot)
+     in both text modes, never hard-coded. */
+  const LOB_CAP = 10;
+  let lobComms = [];
+  const lobCommRow = (c) => {
+    const who = [c.lobbyist, c.organization].filter(Boolean).join(" · ");
+    const meta = [c.date ? fmtDate(c.date) : "Date not reported", c.method]
+      .filter(Boolean).join(" · ");
+    return `<li><span class="h-title">${esc(c.subject || "")}
+      <span class="h-meta">${esc(meta)}</span>
+      ${who ? `<span class="h-meta">${esc(who)}</span>` : ""}
+      ${c.client ? `<span class="h-meta">Client: ${esc(c.client)}</span>` : ""}
+      </span></li>`;
+  };
   if (lobbying && lobbying.total > 0) {
+    try {
+      const detail = await loadJSON(dataPath(`lob/${person.slug}.json`));
+      lobComms = (detail && detail.communications) || [];
+    } catch (e) { lobComms = []; /* the summary stands without the list */ }
     const methods = Object.entries(lobbying.methods || {})
       .filter(([, n]) => n > 0)
       .map(([k, n]) => `<li><span>${esc(k)}</span><b>${fmtNum(n)}</b></li>`).join("");
+    const undated = lobbying.undated || 0;
+    const years = (lobbying.years || []).filter((y) => y.count > 0);
+    const yearsHTML = (years.length || undated > 0) ? `<div><h3>Communications by year</h3>
+            ${years.length ? `<ul class="lob-list">${years.map((y) =>
+              `<li><span>${esc(y.year)}</span><b>${fmtNum(y.count)}</b></li>`).join("")}</ul>` : ""}
+            ${undated > 0 ? `<p class="small" style="margin:.5rem 0 0">Date not reported: ${fmtNum(undated)} communications</p>` : ""}
+          </div>` : "";
+    const commsHTML = lobComms.length ? `
+        <div class="lob-comms">
+          <h3>All communications, as filed</h3>
+          <ul class="personlist history-rows lob-comms-list">${lobComms.slice(0, LOB_CAP).map(lobCommRow).join("")}</ul>
+          ${lobComms.length > LOB_CAP ? `<p class="small lob-comms-note" style="margin:.45rem 0 0" tabindex="-1" aria-live="polite">${simpleOn() ? `Showing ${LOB_CAP} of ${fmtNum(lobComms.length)} communications, newest first.` : `Showing ${LOB_CAP} of ${fmtNum(lobComms.length)} communications — the most recent first.`}</p>
+          <button class="related-more lob-more" type="button">Show all ${fmtNum(lobComms.length)} communications</button>` : ""}
+        </div>` : "";
     html += `<section class="lobbying" aria-labelledby="lobbying-h">
       <h2 id="lobbying-h" class="visually-hidden">Lobbying Record</h2>
       <details>
@@ -293,17 +335,20 @@ async function renderExtras(person) {
           <div>${methods ? `<h3>How contact was made</h3>
             <ul class="lob-list">${methods}</ul>` : ""}
           </div>
+          ${yearsHTML}
         </div>
-        <p class="lob-note">Counts are communications as filed in the City of Toronto Lobbyist Registry, grouped to the member the filing names — a contact with a member’s staff is not counted here.
-        Registry snapshot: October 8, 2026. Source:
+        ${commsHTML}
+        <p class="lob-note">${simpleOn()
+          ? `These counts come from reports filed in the City of Toronto Lobbyist Registry. They are grouped by the member named in the report. A contact with a member's staff is not counted here. Registry snapshot: ${esc(fmtDate(lobbying.snapshot))}. Source:`
+          : `Counts are communications as filed in the City of Toronto Lobbyist Registry, grouped to the member the filing names — a contact with a member’s staff is not counted here. Registry snapshot: ${esc(fmtDate(lobbying.snapshot))}. Source:`}
         <a href="https://open.toronto.ca/dataset/lobbyist-registry/" target="_blank" rel="noopener noreferrer">City of Toronto Lobbyist Registry (Open Data)<span class="visually-hidden"> (opens in a new tab)</span></a>.</p>
       </details></section>`;
   } else if (lobbying) {
     html += `<section class="lobbying" aria-labelledby="lobbying-h">
       <h2 id="lobbying-h">Lobbying Record</h2><hr class="rule">
       <p class="small" style="max-width:44rem">${simpleOn()
-        ? `No lobbying contacts for ${esc(person.name)} were found in the City of Toronto Lobbyist Registry filings gathered on October 8, 2026.`
-        : `No recorded lobbying communications for ${esc(person.name)} in the City of Toronto Lobbyist Registry filings gathered on October 8, 2026.`}</p></section>`;
+        ? `No lobbying contacts for ${esc(person.name)} were found in the City of Toronto Lobbyist Registry filings gathered on ${esc(fmtDate(lobbying.snapshot))}.`
+        : `No recorded lobbying communications for ${esc(person.name)} in the City of Toronto Lobbyist Registry filings gathered on ${esc(fmtDate(lobbying.snapshot))}.`}</p></section>`;
   }
   host.innerHTML = html;
   bindRelatedVotes(host);
@@ -324,6 +369,28 @@ async function renderExtras(person) {
             : `Showing all ${all.length} matching votes — the most recent first.`;
         /* WCAG fix wave (M-3): the button removes itself; move focus to
            the updated note (focusable + live region) instead of body. */
+        note.focus();
+      }
+      btn.remove();
+    }));
+  /* Lobbying communications expander: same interaction as the
+     related-votes "Show all" above — the capped list grows in place
+     from the same array the count came from, and the M-3 focus
+     behaviour applies identically (button removes itself, focus
+     moves to the updated note). */
+  host.querySelectorAll(".lob-more").forEach((btn) =>
+    btn.addEventListener("click", () => {
+      const wrap = btn.closest(".lob-comms");
+      const list = wrap && wrap.querySelector(".lob-comms-list");
+      if (!list || lobComms.length <= LOB_CAP) { btn.remove(); return; }
+      list.insertAdjacentHTML("beforeend",
+        lobComms.slice(LOB_CAP).map(lobCommRow).join(""));
+      const note = wrap.querySelector(".lob-comms-note");
+      if (note) {
+        note.textContent =
+          simpleOn()
+            ? `Showing all ${fmtNum(lobComms.length)} communications, newest first.`
+            : `Showing all ${fmtNum(lobComms.length)} communications — the most recent first.`;
         note.focus();
       }
       btn.remove();
@@ -527,7 +594,7 @@ async function renderPayExpenses(person) {
     + byYear.get(y).map(blockHTML).join("")).join("");
   host.innerHTML = `<section style="margin-top:2.4rem" aria-labelledby="pay-expenses-h">
     <h2 id="pay-expenses-h">Pay and expenses — as published</h2><hr class="rule">
-    <p class="small" style="max-width:44rem">${simpleT("These are the figures from the City Clerk's annual remuneration reports, shown as published. A year's figures can appear in more than one published table; each table is shown under its own label, and the site never adds the tables together. Annual reports are included for 2006–2025. The City published the same annual reports back to 1998, and many members profiled here served in those years — those earlier reports are not yet included. The City also publishes quarterly office-expense detail from 2013; that detail is not yet included.", "These numbers come from the City Clerk's yearly pay reports. They are shown as published. One year's numbers can show up in more than one table. Each table is shown under its own name. The site never adds the tables together. Yearly reports run from 2006 to 2025. The City published the same yearly reports back to 1998. Many members here served in those years too. Those earlier reports are not included yet. The City also publishes office-expense detail every quarter from 2013. That detail is not included yet.")}</p>
+    <p class="small" style="max-width:44rem">${simpleT("These are the figures from the City Clerk's annual remuneration reports, shown as published. A year's figures can appear in more than one published table; each table is shown under its own label, and the site never adds the tables together. Annual reports are included for 1999–2025. The City published the same annual series back to 1998, but no per-member 1998 report could be located, so 1998 is not included. The City also publishes quarterly office-expense detail from 2013; that detail is not yet included.", "These numbers come from the City Clerk's yearly pay reports. They are shown as published. One year's numbers can show up in more than one table. Each table is shown under its own name. The site never adds the tables together. Yearly reports run from 1999 to 2025. The City also published a yearly report for 1998, but no copy with each member's numbers could be found, so 1998 is not included. The City also publishes office-expense detail every quarter from 2013. That detail is not included yet.")}</p>
     ${yearsHTML}
     <p class="small" style="max-width:44rem;margin-top:1rem">Source: City Clerk's Office · Annual Remuneration Reports (Budgets &amp; Expense Reports) · Verified October 23, 2026</p>
   </section>`;

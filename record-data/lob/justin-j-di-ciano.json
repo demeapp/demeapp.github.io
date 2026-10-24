@@ -1,0 +1,4811 @@
+{
+ "member": "justin-j-di-ciano",
+ "source": {
+  "name": "City of Toronto Lobbyist Registry (Open Data)",
+  "url": "https://open.toronto.ca/dataset/lobbyist-registry/"
+ },
+ "snapshot": "2026-10-23",
+ "count": 600,
+ "communications": [
+  {
+   "date": "2018-09-13",
+   "lobbyist": "Sean Hill",
+   "organization": "The Advantage Group",
+   "client": "Outfront Media LLC",
+   "subject": "Signs",
+   "method": "Meetings"
+  },
+  {
+   "date": "2018-09-10",
+   "lobbyist": "Sean Hill",
+   "organization": "The Advantage Group",
+   "client": "Outfront Media LLC",
+   "subject": "Signs",
+   "method": "Other or unreported"
+  },
+  {
+   "date": "2018-07-26",
+   "lobbyist": "Jamie Besner",
+   "organization": "Sussex Strategy Group",
+   "client": "The Cadillac Fairview Corporation Limited",
+   "subject": "Budget;Economic Development;Financial Services",
+   "method": "Phone calls"
+  },
+  {
+   "date": "2018-07-23",
+   "lobbyist": "Amir Remtulla",
+   "organization": "Amir Remtulla and Associates",
+   "client": "Queen's Walk Inc.",
+   "subject": "Planning and Development Application, Site Plan",
+   "method": "Meetings"
+  },
+  {
+   "date": "2018-07-23",
+   "lobbyist": "David A McKay",
+   "organization": "MacNaughton Hermsen Britton Clarkson Planning Limited",
+   "client": "Sobeys Developments",
+   "subject": "Planning and Development, Combined Application",
+   "method": "Phone calls"
+  },
+  {
+   "date": "2018-07-18",
+   "lobbyist": "Amir Remtulla",
+   "organization": "Amir Remtulla and Associates",
+   "client": "Queen's Walk Inc.",
+   "subject": "Planning and Development Application, Site Plan",
+   "method": "Emails"
+  },
+  {
+   "date": "2018-06-21",
+   "lobbyist": "Finley McEwen",
+   "organization": "The Cadillac Fairview Corporation Limited",
+   "client": null,
+   "subject": "Planning and Development Application, Official Plan;Real Estate / Property (City-owned)",
+   "method": "Meetings"
+  },
+  {
+   "date": "2018-06-08",
+   "lobbyist": "Frank van Biesen",
+   "organization": "35 Oak Holdings",
+   "client": null,
+   "subject": "Economic Development",
+   "method": "Meetings"
+  },
+  {
+   "date": "2018-06-08",
+   "lobbyist": "Kevin Wiener",
+   "organization": "35 Oak Holdings",
+   "client": null,
+   "subject": "Economic Development",
+   "method": "Meetings"
+  },
+  {
+   "date": "2018-06-08",
+   "lobbyist": "Joel D Farber",
+   "organization": "Fogler, Rubinoff",
+   "client": "RioCan REIT",
+   "subject": "Planning and Development Application, Zoning By-law",
+   "method": "Emails"
+  },
+  {
+   "date": "2018-06-05",
+   "lobbyist": "David Gerofsky",
+   "organization": "Great Gulf Group of Companies",
+   "client": null,
+   "subject": "Planning and Development, Planning Policy / Study;Planning and Development Application, Zoning By-law;Transportation - Roads / Bridges",
+   "method": "Meetings"
+  },
+  {
+   "date": "2018-06-04",
+   "lobbyist": "Amir Remtulla",
+   "organization": "Amir Remtulla and Associates",
+   "client": "Queen's Walk Inc.",
+   "subject": "Planning and Development Application, Site Plan",
+   "method": "Emails"
+  },
+  {
+   "date": "2018-06-01",
+   "lobbyist": "Amir Remtulla",
+   "organization": "Amir Remtulla and Associates",
+   "client": "Queen's Walk Inc.",
+   "subject": "Planning and Development Application, Site Plan",
+   "method": "Meetings"
+  },
+  {
+   "date": "2018-05-31",
+   "lobbyist": "Justin A. Brown",
+   "organization": "Millard-Edward Group Inc.",
+   "client": "Canadian National Exhibition",
+   "subject": "Arts / Culture;Attractions / Tourism;Economic Development",
+   "method": "Meetings"
+  },
+  {
+   "date": "2018-05-29",
+   "lobbyist": "Amir Remtulla",
+   "organization": "Amir Remtulla and Associates",
+   "client": "Queen's Walk Inc.",
+   "subject": "Planning and Development Application, Site Plan",
+   "method": "Emails"
+  },
+  {
+   "date": "2018-05-28",
+   "lobbyist": "Amir Remtulla",
+   "organization": "Amir Remtulla and Associates",
+   "client": "Queen's Walk Inc.",
+   "subject": "Planning and Development Application, Site Plan",
+   "method": "Emails"
+  },
+  {
+   "date": "2018-05-17",
+   "lobbyist": "Yash Dogra",
+   "organization": "Capital Hill Group",
+   "client": "Rogers Communications Inc.",
+   "subject": "Arts / Culture;Film and TV",
+   "method": "Emails"
+  },
+  {
+   "date": "2018-05-10",
+   "lobbyist": "Amir Remtulla",
+   "organization": "Amir Remtulla and Associates",
+   "client": "North Edge Property Management",
+   "subject": "Planning and Development Application, Zoning By-law",
+   "method": "Emails"
+  },
+  {
+   "date": "2018-04-26",
+   "lobbyist": "Amir Remtulla",
+   "organization": "Amir Remtulla and Associates",
+   "client": "BILD",
+   "subject": "Economic Development",
+   "method": "Emails"
+  },
+  {
+   "date": "2018-04-23",
+   "lobbyist": "Sean Hill",
+   "organization": "The Advantage Group",
+   "client": "Outfront Media LLC",
+   "subject": "Signs",
+   "method": "Phone calls"
+  },
+  {
+   "date": "2018-04-23",
+   "lobbyist": "Kristine Zwicker",
+   "organization": "Marlin Spring Developments",
+   "client": null,
+   "subject": "Planning and Development Application, Zoning By-law",
+   "method": "Meetings"
+  },
+  {
+   "date": "2018-04-23",
+   "lobbyist": "Zev Mandelbaum",
+   "organization": "Marlin Spring Developments",
+   "client": null,
+   "subject": "Planning and Development Application, Zoning By-law",
+   "method": "Meetings"
+  },
+  {
+   "date": "2018-04-20",
+   "lobbyist": "Amir Remtulla",
+   "organization": "Amir Remtulla and Associates",
+   "client": "Queen's Walk Inc.",
+   "subject": "Planning and Development Application, Site Plan",
+   "method": "Emails"
+  },
+  {
+   "date": "2018-04-16",
+   "lobbyist": "Chris Schafer",
+   "organization": "Uber Canada, Inc.",
+   "client": null,
+   "subject": "By-law / Regulation;Economic Development;Licences / Licensing",
+   "method": "Emails"
+  },
+  {
+   "date": "2018-04-10",
+   "lobbyist": "Amir Remtulla",
+   "organization": "Amir Remtulla and Associates",
+   "client": "Queen's Walk Inc.",
+   "subject": "Planning and Development Application, Site Plan",
+   "method": "Emails"
+  },
+  {
+   "date": "2018-04-05",
+   "lobbyist": "Sean Hill",
+   "organization": "The Advantage Group",
+   "client": "Outfront Media LLC",
+   "subject": "Signs",
+   "method": "Meetings"
+  },
+  {
+   "date": "2018-04-03",
+   "lobbyist": "Sean Hill",
+   "organization": "The Advantage Group",
+   "client": "Outfront Media LLC",
+   "subject": "Signs",
+   "method": "Emails"
+  },
+  {
+   "date": "2018-03-23",
+   "lobbyist": "Kelly Wilson",
+   "organization": "Concert Properties Ltd",
+   "client": null,
+   "subject": "Affordable Housing;Planning and Development Application, Zoning By-law;Planning and Development Application, Site Plan",
+   "method": "Meetings"
+  },
+  {
+   "date": "2018-03-19",
+   "lobbyist": "Sid Catalano",
+   "organization": "Pattison Outdoor Advertising",
+   "client": null,
+   "subject": "Signs",
+   "method": "Written"
+  },
+  {
+   "date": "2018-03-07",
+   "lobbyist": "Anne Vit",
+   "organization": "QuadReal Property Group Limited Partnership",
+   "client": null,
+   "subject": "Planning and Development Application, Official Plan;Planning and Development Application, Zoning By-law;Planning and Development Application, Site Plan",
+   "method": "Meetings"
+  },
+  {
+   "date": "2018-03-07",
+   "lobbyist": "Jay Camacho",
+   "organization": "QuadReal Property Group Limited Partnership",
+   "client": null,
+   "subject": "Planning and Development Application, Official Plan;Planning and Development Application, Zoning By-law;Planning and Development Application, Site Plan",
+   "method": "Meetings"
+  },
+  {
+   "date": "2018-03-07",
+   "lobbyist": "Michael Foderick",
+   "organization": "McCarthy Tetrault LLP",
+   "client": "MUCI ACQ INC.",
+   "subject": "Planning and Development, Combined Application",
+   "method": "Meetings"
+  },
+  {
+   "date": "2018-03-07",
+   "lobbyist": "Michael Foderick",
+   "organization": "McCarthy Tetrault LLP",
+   "client": "Maple Leaf Sports and Entertainment",
+   "subject": "Planning and Development Application, Site Plan;Real Estate / Property (City-owned);Signs",
+   "method": "Meetings"
+  },
+  {
+   "date": "2018-02-28",
+   "lobbyist": "Yoav Bohbot",
+   "organization": "Plazacorp Investments Limited",
+   "client": null,
+   "subject": "Planning and Development, Combined Application",
+   "method": "Meetings"
+  },
+  {
+   "date": "2018-02-28",
+   "lobbyist": "Julianna Boldt",
+   "organization": "Plazacorp Investments Limited",
+   "client": null,
+   "subject": "Planning and Development, Combined Application",
+   "method": "Meetings"
+  },
+  {
+   "date": "2018-02-28",
+   "lobbyist": "Steven Heller",
+   "organization": "Plazacorp Investments Limited",
+   "client": null,
+   "subject": "Planning and Development, Combined Application",
+   "method": "Meetings"
+  },
+  {
+   "date": "2018-02-26",
+   "lobbyist": "Sid Catalano",
+   "organization": "Pattison Outdoor Advertising",
+   "client": null,
+   "subject": "Signs",
+   "method": "Written"
+  },
+  {
+   "date": "2018-02-05",
+   "lobbyist": "Michael Foderick",
+   "organization": "McCarthy Tetrault LLP",
+   "client": "MUCI ACQ INC.",
+   "subject": "Planning and Development, Combined Application",
+   "method": "Emails"
+  },
+  {
+   "date": "2018-01-29",
+   "lobbyist": "Kinga Surma",
+   "organization": "Sussex Strategy Group",
+   "client": "International Well Building Institute",
+   "subject": "Planning and Development, Planning Policy / Study",
+   "method": "Meetings"
+  },
+  {
+   "date": "2018-01-27",
+   "lobbyist": "Kinga Surma",
+   "organization": "Sussex Strategy Group",
+   "client": "International Well Building Institute",
+   "subject": "Planning and Development, Planning Policy / Study",
+   "method": "Written"
+  },
+  {
+   "date": "2018-01-26",
+   "lobbyist": "Amin Massoudi",
+   "organization": "Amir Remtulla and Associates",
+   "client": "Keurig Canada",
+   "subject": "Garbage / Recycling",
+   "method": "Meetings"
+  },
+  {
+   "date": "2018-01-26",
+   "lobbyist": "Jim Burnett",
+   "organization": "Pathway Group",
+   "client": "Keurig Canada",
+   "subject": "Garbage / Recycling",
+   "method": "Meetings"
+  },
+  {
+   "date": "2018-01-26",
+   "lobbyist": "Amir Remtulla",
+   "organization": "Amir Remtulla and Associates",
+   "client": "North Edge Property Management",
+   "subject": "Planning and Development Application, Zoning By-law",
+   "method": "Meetings"
+  },
+  {
+   "date": "2018-01-22",
+   "lobbyist": "Jim Burnett",
+   "organization": "Pathway Group",
+   "client": "BAI Communications",
+   "subject": "Technology;Transit / TTC;Transportation - Metrolinx",
+   "method": "Emails"
+  },
+  {
+   "date": "2018-01-19",
+   "lobbyist": "Gavin Dew",
+   "organization": "Ontario Gaming GTA Limited Partnership",
+   "client": null,
+   "subject": "Economic Development",
+   "method": "Emails"
+  },
+  {
+   "date": "2018-01-18",
+   "lobbyist": "Kinga Surma",
+   "organization": "Sussex Strategy Group",
+   "client": "International Well Building Institute",
+   "subject": "Planning and Development, Planning Policy / Study",
+   "method": "Meetings"
+  },
+  {
+   "date": "2018-01-18",
+   "lobbyist": "Ryan Szainwald",
+   "organization": "Ontario Gaming GTA Limited Partnership",
+   "client": null,
+   "subject": "Economic Development",
+   "method": "Meetings"
+  },
+  {
+   "date": "2018-01-18",
+   "lobbyist": "Rod Baker",
+   "organization": "Ontario Gaming GTA Limited Partnership",
+   "client": null,
+   "subject": "Economic Development",
+   "method": "Meetings"
+  },
+  {
+   "date": "2018-01-18",
+   "lobbyist": "Gavin Dew",
+   "organization": "Ontario Gaming GTA Limited Partnership",
+   "client": null,
+   "subject": "Economic Development",
+   "method": "Meetings"
+  },
+  {
+   "date": "2018-01-18",
+   "lobbyist": "Terrance Doyle",
+   "organization": "Ontario Gaming GTA Limited Partnership",
+   "client": null,
+   "subject": "Economic Development",
+   "method": "Meetings"
+  },
+  {
+   "date": "2018-01-02",
+   "lobbyist": "Dayna Dobrowolski",
+   "organization": "Canadian Beverage Association",
+   "client": null,
+   "subject": "Economic Development;Public Health",
+   "method": "Emails"
+  },
+  {
+   "date": "2018-01-02",
+   "lobbyist": "Kinga Surma",
+   "organization": "Sussex Strategy Group",
+   "client": "Edev Inc.",
+   "subject": "Planning and Development, Planning Policy / Study;Planning and Development Application, Official Plan;Planning and Development Application, Zoning By-law",
+   "method": "Emails"
+  },
+  {
+   "date": "2017-12-13",
+   "lobbyist": "Amir Remtulla",
+   "organization": "Amir Remtulla and Associates",
+   "client": "Queen's Walk Inc.",
+   "subject": "Planning and Development Application, Site Plan",
+   "method": "Meetings"
+  },
+  {
+   "date": "2017-12-07",
+   "lobbyist": "Ange Valentini",
+   "organization": "Airbnb Canada Inc.",
+   "client": null,
+   "subject": "Economic Development;Licences / Licensing;Planning and Development Application, Zoning By-law",
+   "method": "Written"
+  },
+  {
+   "date": "2017-12-06",
+   "lobbyist": "Stephanie Gawur",
+   "organization": "Counsel Public Affairs Inc.",
+   "client": "Airbnb Ireland UC",
+   "subject": "Economic Development;Licences / Licensing;Planning and Development Application, Zoning By-law",
+   "method": "Meetings"
+  },
+  {
+   "date": "2017-12-06",
+   "lobbyist": "Ange Valentini",
+   "organization": "Airbnb Canada Inc.",
+   "client": null,
+   "subject": "Economic Development;Licences / Licensing;Planning and Development Application, Zoning By-law",
+   "method": "Meetings"
+  },
+  {
+   "date": "2017-12-05",
+   "lobbyist": "Rebecca Grundy",
+   "organization": "Stosic & Associates",
+   "client": "Home Sharing Service Providers (Association)",
+   "subject": "Affordable Housing;Economic Development;Planning and Development, Planning Policy / Study",
+   "method": "Emails"
+  },
+  {
+   "date": "2017-12-05",
+   "lobbyist": "Yash Dogra",
+   "organization": "Capital Hill Group",
+   "client": "Pegah Construction Ltd.",
+   "subject": "By-law / Regulation;Licences / Licensing",
+   "method": "Emails"
+  },
+  {
+   "date": "2017-12-04",
+   "lobbyist": "Joseph Montano",
+   "organization": "Expedia Group, Inc.",
+   "client": null,
+   "subject": "Economic Development;Licences / Licensing;Planning and Development Application, Zoning By-law",
+   "method": "Emails"
+  },
+  {
+   "date": "2017-12-03",
+   "lobbyist": "Thorben Wieditz",
+   "organization": "Fairbnb.ca Coalition",
+   "client": null,
+   "subject": "Affordable Housing;Attractions / Tourism;By-law / Regulation",
+   "method": "Emails"
+  },
+  {
+   "date": "2017-12-01",
+   "lobbyist": "Thorben Wieditz",
+   "organization": "Fairbnb.ca Coalition",
+   "client": null,
+   "subject": "Affordable Housing;Attractions / Tourism;By-law / Regulation",
+   "method": "Emails"
+  },
+  {
+   "date": "2017-11-30",
+   "lobbyist": "Stephanie Gawur",
+   "organization": "Counsel Public Affairs Inc.",
+   "client": "Airbnb Ireland UC",
+   "subject": "Economic Development;Licences / Licensing;Planning and Development Application, Zoning By-law",
+   "method": "Emails"
+  },
+  {
+   "date": "2017-11-29",
+   "lobbyist": "Thorben Wieditz",
+   "organization": "Fairbnb.ca Coalition",
+   "client": null,
+   "subject": "Affordable Housing;Attractions / Tourism;By-law / Regulation",
+   "method": "Written"
+  },
+  {
+   "date": "2017-11-27",
+   "lobbyist": "Amir Remtulla",
+   "organization": "Amir Remtulla and Associates",
+   "client": "BILD",
+   "subject": "Economic Development",
+   "method": "Meetings"
+  },
+  {
+   "date": "2017-11-27",
+   "lobbyist": "Thorben Wieditz",
+   "organization": "Fairbnb.ca Coalition",
+   "client": null,
+   "subject": "Affordable Housing;Attractions / Tourism;By-law / Regulation",
+   "method": "Emails"
+  },
+  {
+   "date": "2017-11-27",
+   "lobbyist": "Lis Pimentel",
+   "organization": "Fairbnb.ca Coalition",
+   "client": null,
+   "subject": "Affordable Housing;Attractions / Tourism;By-law / Regulation",
+   "method": "Written"
+  },
+  {
+   "date": "2017-11-27",
+   "lobbyist": "Ange Valentini",
+   "organization": "Airbnb Canada Inc.",
+   "client": null,
+   "subject": "Economic Development;Licences / Licensing;Planning and Development Application, Zoning By-law",
+   "method": "Meetings"
+  },
+  {
+   "date": "2017-11-27",
+   "lobbyist": "Amir Remtulla",
+   "organization": "Amir Remtulla and Associates",
+   "client": "Fieldgate Homes",
+   "subject": "Planning and Development Application, Zoning By-law",
+   "method": "Meetings"
+  },
+  {
+   "date": "2017-11-23",
+   "lobbyist": "Finley McEwen",
+   "organization": "The Cadillac Fairview Corporation Limited",
+   "client": null,
+   "subject": "Planning and Development Application, Official Plan;Real Estate / Property (City-owned)",
+   "method": "Meetings"
+  },
+  {
+   "date": "2017-11-22",
+   "lobbyist": "Daniel A Bordonali",
+   "organization": "Sutherland Corporation",
+   "client": "Menkes Developments Ltd.",
+   "subject": "Transit / TTC;Transportation - Metrolinx;Transportation - Roads / Bridges",
+   "method": "Meetings"
+  },
+  {
+   "date": "2017-11-22",
+   "lobbyist": "Aleem Kanji",
+   "organization": "Sutherland Corporation Ltd.",
+   "client": "Menkes Developments Ltd.",
+   "subject": "Transit / TTC;Transportation - Metrolinx;Transportation - Roads / Bridges",
+   "method": "Meetings"
+  },
+  {
+   "date": "2017-11-16",
+   "lobbyist": "Benjamin Westelman",
+   "organization": "Kijiji Canada Ltd.",
+   "client": null,
+   "subject": "By-law / Regulation",
+   "method": "Emails"
+  },
+  {
+   "date": "2017-11-15",
+   "lobbyist": "Stephanie Gawur",
+   "organization": "Counsel Public Affairs Inc.",
+   "client": "Airbnb Ireland UC",
+   "subject": "Economic Development;Licences / Licensing;Planning and Development Application, Zoning By-law",
+   "method": "Meetings"
+  },
+  {
+   "date": "2017-11-15",
+   "lobbyist": "Ange Valentini",
+   "organization": "Airbnb Canada Inc.",
+   "client": null,
+   "subject": "Economic Development;Licences / Licensing;Planning and Development Application, Zoning By-law",
+   "method": "Meetings"
+  },
+  {
+   "date": "2017-11-13",
+   "lobbyist": "Martin Green",
+   "organization": "Foresight Strategic Advisors Inc.",
+   "client": "Expedia Group Inc.",
+   "subject": "Economic Development;Licences / Licensing;Planning and Development Application, Zoning By-law",
+   "method": "Emails"
+  },
+  {
+   "date": "2017-11-09",
+   "lobbyist": "Martin Green",
+   "organization": "Foresight Strategic Advisors Inc.",
+   "client": "Expedia Group Inc.",
+   "subject": "Economic Development;Licences / Licensing;Planning and Development Application, Zoning By-law",
+   "method": "Emails"
+  },
+  {
+   "date": "2017-11-08",
+   "lobbyist": "Sean Hill",
+   "organization": "The Advantage Group",
+   "client": "Outfront Media LLC",
+   "subject": "By-law / Regulation;Signs",
+   "method": "Meetings"
+  },
+  {
+   "date": "2017-11-07",
+   "lobbyist": "Sean Hill",
+   "organization": "The Advantage Group",
+   "client": "Outfront Media LLC",
+   "subject": "By-law / Regulation;Signs",
+   "method": "Meetings"
+  },
+  {
+   "date": "2017-11-07",
+   "lobbyist": "Sean Hill",
+   "organization": "The Advantage Group",
+   "client": "Outfront Media LLC",
+   "subject": "By-law / Regulation;Signs",
+   "method": "Meetings"
+  },
+  {
+   "date": "2017-11-07",
+   "lobbyist": "Daniel DR Moulton",
+   "organization": "Crestview Strategy",
+   "client": "Lyft Inc.",
+   "subject": "By-law / Regulation;Economic Development;Licences / Licensing",
+   "method": "Emails"
+  },
+  {
+   "date": "2017-11-03",
+   "lobbyist": "Kristine Zwicker",
+   "organization": "Marlin Spring Developments",
+   "client": null,
+   "subject": "Planning and Development, Planning Policy / Study",
+   "method": "Meetings"
+  },
+  {
+   "date": "2017-11-03",
+   "lobbyist": "Zev Mandelbaum",
+   "organization": "Marlin Spring Developments",
+   "client": null,
+   "subject": "Planning and Development, Planning Policy / Study",
+   "method": "Meetings"
+  },
+  {
+   "date": "2017-11-02",
+   "lobbyist": "Amir Remtulla",
+   "organization": "Amir Remtulla and Associates",
+   "client": "BILD",
+   "subject": "Economic Development",
+   "method": "Meetings"
+  },
+  {
+   "date": "2017-11-02",
+   "lobbyist": "Stephanie Gawur",
+   "organization": "Counsel Public Affairs Inc.",
+   "client": "Airbnb Ireland UC",
+   "subject": "Economic Development;Licences / Licensing;Planning and Development Application, Zoning By-law",
+   "method": "Meetings"
+  },
+  {
+   "date": "2017-11-02",
+   "lobbyist": "Ange Valentini",
+   "organization": "Airbnb Canada Inc.",
+   "client": null,
+   "subject": "Economic Development;Licences / Licensing;Planning and Development Application, Zoning By-law",
+   "method": "Meetings"
+  },
+  {
+   "date": "2017-10-27",
+   "lobbyist": "Sean Hill",
+   "organization": "The Advantage Group",
+   "client": "Outfront Media LLC",
+   "subject": "By-law / Regulation;Signs",
+   "method": "Meetings"
+  },
+  {
+   "date": "2017-10-26",
+   "lobbyist": "Sean Hill",
+   "organization": "The Advantage Group",
+   "client": "Outfront Media LLC",
+   "subject": "By-law / Regulation;Signs",
+   "method": "Phone calls"
+  },
+  {
+   "date": "2017-10-25",
+   "lobbyist": "Ange Valentini",
+   "organization": "Airbnb Canada Inc.",
+   "client": null,
+   "subject": "Economic Development;Licences / Licensing;Planning and Development Application, Zoning By-law",
+   "method": "Emails"
+  },
+  {
+   "date": "2017-10-18",
+   "lobbyist": "Amir Remtulla",
+   "organization": "Amir Remtulla and Associates",
+   "client": "Queen's Walk Inc.",
+   "subject": "Planning and Development Application, Site Plan",
+   "method": "Phone calls"
+  },
+  {
+   "date": "2017-10-17",
+   "lobbyist": "Amir Remtulla",
+   "organization": "Amir Remtulla and Associates",
+   "client": "Queen's Walk Inc.",
+   "subject": "Planning and Development Application, Site Plan",
+   "method": "Phone calls"
+  },
+  {
+   "date": "2017-10-12",
+   "lobbyist": "Sean Hill",
+   "organization": "The Advantage Group",
+   "client": "Outfront Media LLC",
+   "subject": "By-law / Regulation;Signs",
+   "method": "Phone calls"
+  },
+  {
+   "date": "2017-10-12",
+   "lobbyist": "Sean Hill",
+   "organization": "The Advantage Group",
+   "client": "Outfront Media LLC",
+   "subject": "By-law / Regulation;Signs",
+   "method": "Phone calls"
+  },
+  {
+   "date": "2017-10-05",
+   "lobbyist": "Sean Hill",
+   "organization": "The Advantage Group",
+   "client": "Outfront Media LLC",
+   "subject": "By-law / Regulation;Signs",
+   "method": "Phone calls"
+  },
+  {
+   "date": "2017-10-05",
+   "lobbyist": "Sean Hill",
+   "organization": "The Advantage Group",
+   "client": "Outfront Media LLC",
+   "subject": "By-law / Regulation;Signs",
+   "method": "Phone calls"
+  },
+  {
+   "date": "2017-10-04",
+   "lobbyist": "Ange Valentini",
+   "organization": "Airbnb Canada Inc.",
+   "client": null,
+   "subject": "Economic Development;Licences / Licensing;Planning and Development Application, Zoning By-law",
+   "method": "Emails"
+  },
+  {
+   "date": "2017-10-04",
+   "lobbyist": "Chris Korwin-Kuczynski",
+   "organization": "Chris Korwin-Kuczynski",
+   "client": "409 Collision Center",
+   "subject": "By-law / Regulation;Parking",
+   "method": "Meetings"
+  },
+  {
+   "date": "2017-10-03",
+   "lobbyist": "Justin A. Brown",
+   "organization": "Millard-Edward Group Inc.",
+   "client": "Canadian National Exhibition",
+   "subject": "Arts / Culture;Attractions / Tourism;Economic Development",
+   "method": "Meetings"
+  },
+  {
+   "date": "2017-09-28",
+   "lobbyist": "Sean Hill",
+   "organization": "The Advantage Group",
+   "client": "Outfront Media LLC",
+   "subject": "By-law / Regulation;Signs",
+   "method": "Meetings"
+  },
+  {
+   "date": "2017-09-28",
+   "lobbyist": "Sean Hill",
+   "organization": "The Advantage Group",
+   "client": "Outfront Media LLC",
+   "subject": "By-law / Regulation;Signs",
+   "method": "Meetings"
+  },
+  {
+   "date": "2017-09-26",
+   "lobbyist": "Daniel A Bordonali",
+   "organization": "Sutherland Corporation",
+   "client": "Empire Communities Ltd.",
+   "subject": "Planning and Development Application, Zoning By-law",
+   "method": "Meetings"
+  },
+  {
+   "date": "2017-09-25",
+   "lobbyist": "Sean Hill",
+   "organization": "The Advantage Group",
+   "client": "Outfront Media LLC",
+   "subject": "By-law / Regulation;Signs",
+   "method": "Meetings"
+  },
+  {
+   "date": "2017-09-25",
+   "lobbyist": "Sean Hill",
+   "organization": "The Advantage Group",
+   "client": "Outfront Media LLC",
+   "subject": "By-law / Regulation;Signs",
+   "method": "Meetings"
+  },
+  {
+   "date": "2017-09-25",
+   "lobbyist": "Jordan Kemp",
+   "organization": "Bousfields Inc.",
+   "client": "Parallax Investment Corp.",
+   "subject": "Planning and Development Application, Site Plan;Planning and Development Application, Minor Variance",
+   "method": "Meetings"
+  },
+  {
+   "date": "2017-09-22",
+   "lobbyist": "Ange Valentini",
+   "organization": "Airbnb Canada Inc.",
+   "client": null,
+   "subject": "Economic Development;Licences / Licensing;Planning and Development Application, Zoning By-law",
+   "method": "Emails"
+  },
+  {
+   "date": "2017-09-22",
+   "lobbyist": "Martin Green",
+   "organization": "Foresight Strategic Advisors Inc.",
+   "client": "Expedia Group Inc.",
+   "subject": "Economic Development;Licences / Licensing;Planning and Development Application, Zoning By-law",
+   "method": "Other or unreported"
+  },
+  {
+   "date": "2017-09-20",
+   "lobbyist": "Amir Remtulla",
+   "organization": "Amir Remtulla and Associates",
+   "client": "Queen's Walk Inc.",
+   "subject": "Planning and Development Application, Site Plan",
+   "method": "Emails"
+  },
+  {
+   "date": "2017-09-19",
+   "lobbyist": "Kevin Whyte",
+   "organization": "Sutherland Corporation Ltd",
+   "client": "Menkes Developments Ltd.",
+   "subject": "Transit / TTC;Transportation - Metrolinx;Transportation - Roads / Bridges",
+   "method": "Emails"
+  },
+  {
+   "date": "2017-09-12",
+   "lobbyist": "Pino Di Mascio",
+   "organization": "Urban Strategies Inc.",
+   "client": "DCMS Realty",
+   "subject": "Planning and Development Application, Official Plan;Planning and Development Application, Zoning By-law;Planning and Development Application, Site Plan",
+   "method": "Meetings"
+  },
+  {
+   "date": "2017-09-12",
+   "lobbyist": "Inger Squires",
+   "organization": "Urban Strategies Inc.",
+   "client": "DCMS (Bloor-Islington) Inc.",
+   "subject": "Planning and Development, Planning Policy / Study;Planning and Development Application, Official Plan;Planning and Development Application, Zoning By-law",
+   "method": "Meetings"
+  },
+  {
+   "date": "2017-09-11",
+   "lobbyist": "Amir Remtulla",
+   "organization": "Amir Remtulla and Associates",
+   "client": "BILD",
+   "subject": "Economic Development",
+   "method": "Meetings"
+  },
+  {
+   "date": "2017-09-11",
+   "lobbyist": "Sam Lapidus",
+   "organization": "Building Industry and Land Development Association",
+   "client": null,
+   "subject": "Planning and Development: Planning Policies/Studies",
+   "method": "Meetings"
+  },
+  {
+   "date": "2017-09-11",
+   "lobbyist": "Jon Carlos Tsilfidis",
+   "organization": "Building Industry and Land Development Association",
+   "client": null,
+   "subject": "Planning and Development: Planning Policies/Studies",
+   "method": "Meetings"
+  },
+  {
+   "date": "2017-09-11",
+   "lobbyist": "Paula J Tenuta",
+   "organization": "Building Industry and Land Development Association",
+   "client": null,
+   "subject": "Planning and Development: Planning Policies/Studies",
+   "method": "Meetings"
+  },
+  {
+   "date": "2017-09-11",
+   "lobbyist": "Shiraz Virani",
+   "organization": "Shiraz's Airbnb",
+   "client": null,
+   "subject": "Attractions / Tourism;By-law / Regulation;Licences / Licensing",
+   "method": "Meetings"
+  },
+  {
+   "date": "2017-09-11",
+   "lobbyist": "Sophia Virani",
+   "organization": "Shiraz's Airbnb",
+   "client": null,
+   "subject": "Attractions / Tourism;By-law / Regulation;Licences / Licensing",
+   "method": "Meetings"
+  },
+  {
+   "date": "2017-09-11",
+   "lobbyist": "Alex Dagg",
+   "organization": "Airbnb Canada Inc.",
+   "client": null,
+   "subject": "Economic Development;Licences / Licensing;Planning and Development Application, Zoning By-law",
+   "method": "Meetings"
+  },
+  {
+   "date": "2017-09-11",
+   "lobbyist": "Ange Valentini",
+   "organization": "Airbnb Canada Inc.",
+   "client": null,
+   "subject": "Economic Development;Licences / Licensing;Planning and Development Application, Zoning By-law",
+   "method": "Meetings"
+  },
+  {
+   "date": "2017-09-06",
+   "lobbyist": "Amir Remtulla",
+   "organization": "Amir Remtulla and Associates",
+   "client": "BILD",
+   "subject": "Economic Development",
+   "method": "Emails"
+  },
+  {
+   "date": "2017-09-05",
+   "lobbyist": "Patrick Harris",
+   "organization": "PVH Consulting",
+   "client": "Fairbnb.ca Coalition",
+   "subject": "Affordable Housing;Attractions / Tourism;By-law / Regulation",
+   "method": "Other or unreported"
+  },
+  {
+   "date": "2017-09-05",
+   "lobbyist": "Ange Valentini",
+   "organization": "Airbnb Canada Inc.",
+   "client": null,
+   "subject": "Economic Development;Licences / Licensing;Planning and Development Application, Zoning By-law",
+   "method": "Emails"
+  },
+  {
+   "date": "2017-09-01",
+   "lobbyist": "Pamela Griffith-Jones",
+   "organization": "Nieuport Aviation Infrastructure Partners",
+   "client": null,
+   "subject": "Economic Development;Waterfront Revitalization",
+   "method": "Meetings"
+  },
+  {
+   "date": "2017-09-01",
+   "lobbyist": "Patrick Harris",
+   "organization": "PVH Consulting",
+   "client": "Fairbnb.ca Coalition",
+   "subject": "Affordable Housing;Attractions / Tourism;By-law / Regulation",
+   "method": "Emails"
+  },
+  {
+   "date": "2017-09-01",
+   "lobbyist": "Kim Wright",
+   "organization": "Hill + Knowlton Strategies",
+   "client": "Nieuport Aviation Infrastructure Partners",
+   "subject": "Economic Development;Waterfront Revitalization",
+   "method": "Meetings"
+  },
+  {
+   "date": "2017-08-30",
+   "lobbyist": "Daniel A Bordonali",
+   "organization": "Sutherland Corporation",
+   "client": "Menkes Developments Ltd.",
+   "subject": "Transit / TTC;Transportation - Metrolinx;Transportation - Roads / Bridges",
+   "method": "Phone calls"
+  },
+  {
+   "date": "2017-08-21",
+   "lobbyist": "Amir Remtulla",
+   "organization": "Amir Remtulla and Associates",
+   "client": "BILD",
+   "subject": "Economic Development",
+   "method": "Phone calls"
+  },
+  {
+   "date": "2017-07-27",
+   "lobbyist": "Justin A. Brown",
+   "organization": "Millard-Edward Group Inc.",
+   "client": "Canadian National Exhibition",
+   "subject": "Arts / Culture;Attractions / Tourism;Economic Development",
+   "method": "Meetings"
+  },
+  {
+   "date": "2017-07-24",
+   "lobbyist": "Zev Mandelbaum",
+   "organization": "Marlin Spring Developments",
+   "client": null,
+   "subject": "Planning and Development, Planning Policy / Study",
+   "method": "Meetings"
+  },
+  {
+   "date": "2017-07-21",
+   "lobbyist": "Chris Schafer",
+   "organization": "Uber Canada, Inc.",
+   "client": null,
+   "subject": "By-law / Regulation;Economic Development;Licences / Licensing",
+   "method": "Emails"
+  },
+  {
+   "date": "2017-07-20",
+   "lobbyist": "Ginny Movat",
+   "organization": "Crestview Strategy",
+   "client": "Sonder Corporation",
+   "subject": "Licences / Licensing;Planning and Development Application, Zoning By-law",
+   "method": "Emails"
+  },
+  {
+   "date": "2017-07-20",
+   "lobbyist": "Kim Wright",
+   "organization": "Hill + Knowlton Strategies",
+   "client": "Nieuport Aviation Infrastructure Partners",
+   "subject": "Economic Development;Waterfront Revitalization",
+   "method": "Other or unreported"
+  },
+  {
+   "date": "2017-07-20",
+   "lobbyist": "David A McKay",
+   "organization": "MacNaughton Hermsen Britton Clarkson Planning Limited",
+   "client": "Queen's Walk Inc.",
+   "subject": "Planning and Development Application, Minor Variance",
+   "method": "Meetings"
+  },
+  {
+   "date": "2017-07-18",
+   "lobbyist": "Ange Valentini",
+   "organization": "Airbnb Canada Inc.",
+   "client": null,
+   "subject": "Economic Development;Licences / Licensing;Planning and Development Application, Zoning By-law",
+   "method": "Emails"
+  },
+  {
+   "date": "2017-07-07",
+   "lobbyist": "Jim Burnett",
+   "organization": "Pathway Group",
+   "client": "Astral Media Outdoor, L.P.",
+   "subject": "Exhibition Place;Signs",
+   "method": "Meetings"
+  },
+  {
+   "date": "2017-07-04",
+   "lobbyist": "Jamie Besner",
+   "organization": "Sussex Strategy Group",
+   "client": "Madison Group",
+   "subject": "Planning and Development Application, Official Plan;Planning and Development, Combined Application",
+   "method": "Phone calls"
+  },
+  {
+   "date": "2017-07-04",
+   "lobbyist": "Amir Remtulla",
+   "organization": "Amir Remtulla and Associates",
+   "client": "Queen's Walk Inc.",
+   "subject": "Planning and Development Application, Site Plan",
+   "method": "Emails"
+  },
+  {
+   "date": "2017-06-27",
+   "lobbyist": "Chris Schafer",
+   "organization": "Uber Canada, Inc.",
+   "client": null,
+   "subject": "By-law / Regulation;Economic Development;Licences / Licensing",
+   "method": "Emails"
+  },
+  {
+   "date": "2017-06-27",
+   "lobbyist": "Amin Massoudi",
+   "organization": "The Capital Hill Group",
+   "client": "Astral Out Of Home",
+   "subject": "Signs",
+   "method": "Phone calls"
+  },
+  {
+   "date": "2017-06-27",
+   "lobbyist": "Amin Massoudi",
+   "organization": "The Capital Hill Group",
+   "client": "RioCan",
+   "subject": "Signs",
+   "method": "Phone calls"
+  },
+  {
+   "date": "2017-06-27",
+   "lobbyist": "Kelly Wilson",
+   "organization": "Concert Properties Ltd",
+   "client": null,
+   "subject": "Planning and Development Application, Zoning By-law;Planning and Development Application, Site Plan",
+   "method": "Meetings"
+  },
+  {
+   "date": "2017-06-23",
+   "lobbyist": "Carmine Nigro",
+   "organization": "Craft Development Corporation",
+   "client": null,
+   "subject": "Planning and Development Application, Official Plan",
+   "method": "Meetings"
+  },
+  {
+   "date": "2017-06-23",
+   "lobbyist": "Katarzyna Sliwa",
+   "organization": "Dentons Canada LLP",
+   "client": "10 QEW Inc.",
+   "subject": "Planning and Development, Planning Policy / Study;Planning and Development Application, Official Plan;Planning and Development Application, Zoning By-law",
+   "method": "Meetings"
+  },
+  {
+   "date": "2017-06-22",
+   "lobbyist": "Chris Schafer",
+   "organization": "Uber Canada, Inc.",
+   "client": null,
+   "subject": "By-law / Regulation;Economic Development;Licences / Licensing",
+   "method": "Emails"
+  },
+  {
+   "date": "2017-06-19",
+   "lobbyist": "Paul Scrivener",
+   "organization": "Toronto Industry Network",
+   "client": null,
+   "subject": "By-law / Regulation;Economic Development;Environment",
+   "method": "Emails"
+  },
+  {
+   "date": "2017-06-16",
+   "lobbyist": "Ginny Movat",
+   "organization": "Crestview Strategy",
+   "client": "Sonder Corporation",
+   "subject": "Licences / Licensing;Planning and Development Application, Zoning By-law",
+   "method": "Emails"
+  },
+  {
+   "date": "2017-06-08",
+   "lobbyist": "James J. Lawson",
+   "organization": "Woodbine Entertainment Group",
+   "client": null,
+   "subject": "Attractions / Tourism",
+   "method": "Meetings"
+  },
+  {
+   "date": "2017-06-07",
+   "lobbyist": "Ange Valentini",
+   "organization": "Airbnb Canada Inc.",
+   "client": null,
+   "subject": "Economic Development;Licences / Licensing;Planning and Development Application, Zoning By-law",
+   "method": "Emails"
+  },
+  {
+   "date": "2017-05-31",
+   "lobbyist": "Sean Hill",
+   "organization": "The Advantage Group",
+   "client": "Outfront Media LLC",
+   "subject": "By-law / Regulation;Signs",
+   "method": "Meetings"
+  },
+  {
+   "date": "2017-05-31",
+   "lobbyist": "Sean Hill",
+   "organization": "The Advantage Group",
+   "client": "Outfront Media LLC",
+   "subject": "By-law / Regulation;Signs",
+   "method": "Meetings"
+  },
+  {
+   "date": "2017-05-31",
+   "lobbyist": "Calvin W Lantz",
+   "organization": "Stikeman Elliott LLP",
+   "client": "Lormel Homes",
+   "subject": "Planning and Development, Combined Application",
+   "method": "Emails"
+  },
+  {
+   "date": "2017-05-30",
+   "lobbyist": "Jim Burnett",
+   "organization": "Pathway Group",
+   "client": "Astral Media Outdoor, L.P.",
+   "subject": "Exhibition Place;Signs",
+   "method": "Meetings"
+  },
+  {
+   "date": "2017-05-28",
+   "lobbyist": "Jim Burnett",
+   "organization": "Pathway Group",
+   "client": "Astral Media Outdoor, L.P.",
+   "subject": "Exhibition Place;Signs",
+   "method": "Phone calls"
+  },
+  {
+   "date": "2017-05-26",
+   "lobbyist": "Sean Hill",
+   "organization": "The Advantage Group",
+   "client": "Outfront Media LLC",
+   "subject": "By-law / Regulation;Signs",
+   "method": "Emails"
+  },
+  {
+   "date": "2017-05-26",
+   "lobbyist": "Sean Hill",
+   "organization": "The Advantage Group",
+   "client": "Outfront Media LLC",
+   "subject": "By-law / Regulation;Signs",
+   "method": "Emails"
+  },
+  {
+   "date": "2017-05-25",
+   "lobbyist": "Sean Hill",
+   "organization": "The Advantage Group",
+   "client": "Outfront Media LLC",
+   "subject": "By-law / Regulation;Signs",
+   "method": "Meetings"
+  },
+  {
+   "date": "2017-05-25",
+   "lobbyist": "Sean Hill",
+   "organization": "The Advantage Group",
+   "client": "Outfront Media LLC",
+   "subject": "By-law / Regulation;Signs",
+   "method": "Meetings"
+  },
+  {
+   "date": "2017-05-25",
+   "lobbyist": "Steve B Wolowich",
+   "organization": "Outfront Media Canada LP",
+   "client": null,
+   "subject": "Signs",
+   "method": "Meetings"
+  },
+  {
+   "date": "2017-05-25",
+   "lobbyist": "Amir Remtulla",
+   "organization": "Amir Remtulla and Associates",
+   "client": "Queen's Walk Inc.",
+   "subject": "Planning and Development Application, Site Plan",
+   "method": "Meetings"
+  },
+  {
+   "date": "2017-05-18",
+   "lobbyist": "Jim Burnett",
+   "organization": "Pathway Group",
+   "client": "Astral Media Outdoor, L.P.",
+   "subject": "Exhibition Place;Signs",
+   "method": "Phone calls"
+  },
+  {
+   "date": "2017-05-17",
+   "lobbyist": "Jamie Besner",
+   "organization": "Sussex Strategy Group",
+   "client": "Madison Group",
+   "subject": "Planning and Development Application, Official Plan;Planning and Development, Combined Application",
+   "method": "Meetings"
+  },
+  {
+   "date": "2017-05-17",
+   "lobbyist": "Jamie Besner",
+   "organization": "Sussex Strategy Group",
+   "client": "Four Seasons Site Development",
+   "subject": "Transportation - Roads / Bridges",
+   "method": "Meetings"
+  },
+  {
+   "date": "2017-05-17",
+   "lobbyist": "Ange Valentini",
+   "organization": "Airbnb Canada Inc.",
+   "client": null,
+   "subject": "Economic Development;Licences / Licensing;Planning and Development Application, Zoning By-law",
+   "method": "Emails"
+  },
+  {
+   "date": "2017-05-16",
+   "lobbyist": "John Capobianco",
+   "organization": "Fleishman-Hillard Canada",
+   "client": "car2go N.A. LLC",
+   "subject": "Parking;Transportation - Roads / Bridges",
+   "method": "Meetings"
+  },
+  {
+   "date": "2017-05-16",
+   "lobbyist": "Mark Latchford",
+   "organization": "car2go Canada Ltd.",
+   "client": null,
+   "subject": "By-law / Regulation;Parking;Transportation - Roads / Bridges",
+   "method": "Meetings"
+  },
+  {
+   "date": "2017-05-15",
+   "lobbyist": "Jim Burnett",
+   "organization": "Pathway Group",
+   "client": "Astral Media Outdoor, L.P.",
+   "subject": "Exhibition Place;Signs",
+   "method": "Meetings"
+  },
+  {
+   "date": "2017-05-15",
+   "lobbyist": "Zev Mandelbaum",
+   "organization": "Marlin Spring Developments",
+   "client": null,
+   "subject": "Planning and Development, Planning Policy / Study",
+   "method": "Meetings"
+  },
+  {
+   "date": "2017-05-15",
+   "lobbyist": "Calvin W Lantz",
+   "organization": "Stikeman Elliott LLP",
+   "client": "Lormel Homes",
+   "subject": "Planning and Development, Combined Application",
+   "method": "Phone calls"
+  },
+  {
+   "date": "2017-05-15",
+   "lobbyist": "Matthew Ortved",
+   "organization": "RioCan Real estate Investment Trust",
+   "client": null,
+   "subject": "Planning and Development, Combined Application",
+   "method": "Meetings"
+  },
+  {
+   "date": "2017-05-08",
+   "lobbyist": "Mark Wilson",
+   "organization": "Enbridge Gas Distribution Inc.",
+   "client": null,
+   "subject": "Budget",
+   "method": "Written"
+  },
+  {
+   "date": "2017-05-01",
+   "lobbyist": "Anson Kwok",
+   "organization": "Mondiale Development LTD.",
+   "client": null,
+   "subject": "Building Permits;Planning and Development Application, Zoning By-law;Planning and Development Application, Site Plan",
+   "method": "Meetings"
+  },
+  {
+   "date": "2017-05-01",
+   "lobbyist": "Alex Marshall",
+   "organization": "Mondiale Development LTD.",
+   "client": null,
+   "subject": "Building Permits;Planning and Development Application, Zoning By-law;Planning and Development Application, Site Plan",
+   "method": "Meetings"
+  },
+  {
+   "date": "2017-05-01",
+   "lobbyist": "Michael De Cotiis",
+   "organization": "Mondiale Development LTD.",
+   "client": null,
+   "subject": "Building Permits;Planning and Development Application, Zoning By-law;Planning and Development Application, Site Plan",
+   "method": "Meetings"
+  },
+  {
+   "date": "2017-04-27",
+   "lobbyist": "Sean Hill",
+   "organization": "The Advantage Group",
+   "client": "Outfront Media LLC",
+   "subject": "By-law / Regulation;Signs",
+   "method": "Meetings"
+  },
+  {
+   "date": "2017-04-27",
+   "lobbyist": "Sean Hill",
+   "organization": "The Advantage Group",
+   "client": "Outfront Media LLC",
+   "subject": "By-law / Regulation;Signs",
+   "method": "Meetings"
+  },
+  {
+   "date": "2017-04-24",
+   "lobbyist": "Stephen Adler",
+   "organization": "StrategyCorp Inc.",
+   "client": "Global Fortune",
+   "subject": "Planning and Development, Planning Policy / Study",
+   "method": "Other or unreported"
+  },
+  {
+   "date": "2017-04-21",
+   "lobbyist": "Stephen Adler",
+   "organization": "StrategyCorp Inc.",
+   "client": "Global Fortune",
+   "subject": "Planning and Development, Planning Policy / Study",
+   "method": "Other or unreported"
+  },
+  {
+   "date": "2017-04-17",
+   "lobbyist": "Ange Valentini",
+   "organization": "Airbnb Canada Inc.",
+   "client": null,
+   "subject": "Economic Development;Licences / Licensing;Planning and Development Application, Zoning By-law",
+   "method": "Emails"
+  },
+  {
+   "date": "2017-04-13",
+   "lobbyist": "Michael Foderick",
+   "organization": "McCarthy Tetrault LLP",
+   "client": "Ernst & Young",
+   "subject": "Signs",
+   "method": "Meetings"
+  },
+  {
+   "date": "2017-04-13",
+   "lobbyist": "Erin Rogers",
+   "organization": "Ernst & Young LLP",
+   "client": null,
+   "subject": "By-law / Regulation;Signs",
+   "method": "Meetings"
+  },
+  {
+   "date": "2017-04-13",
+   "lobbyist": "Alan Smith",
+   "organization": "Ernst & Young LLP",
+   "client": null,
+   "subject": "By-law / Regulation;Signs",
+   "method": "Meetings"
+  },
+  {
+   "date": "2017-04-12",
+   "lobbyist": "Sean Hill",
+   "organization": "The Advantage Group",
+   "client": "Outfront Media LLC",
+   "subject": "By-law / Regulation;Signs",
+   "method": "Phone calls"
+  },
+  {
+   "date": "2017-04-11",
+   "lobbyist": "Sean Hill",
+   "organization": "The Advantage Group",
+   "client": "Outfront Media LLC",
+   "subject": "By-law / Regulation;Signs",
+   "method": "Phone calls"
+  },
+  {
+   "date": "2017-04-10",
+   "lobbyist": "Jamie Besner",
+   "organization": "Sussex Strategy Group",
+   "client": "Clear Channel Outdoor Canada",
+   "subject": "Signs",
+   "method": "Emails"
+  },
+  {
+   "date": "2017-04-10",
+   "lobbyist": "Sean Hill",
+   "organization": "The Advantage Group",
+   "client": "Outfront Media LLC",
+   "subject": "By-law / Regulation;Signs",
+   "method": "Emails"
+  },
+  {
+   "date": "2017-04-06",
+   "lobbyist": "Sean Hill",
+   "organization": "The Advantage Group",
+   "client": "Outfront Media LLC",
+   "subject": "By-law / Regulation;Signs",
+   "method": "Meetings"
+  },
+  {
+   "date": "2017-04-06",
+   "lobbyist": "Sean Hill",
+   "organization": "The Advantage Group",
+   "client": "Outfront Media LLC",
+   "subject": "By-law / Regulation;Signs",
+   "method": "Meetings"
+  },
+  {
+   "date": "2017-04-06",
+   "lobbyist": "Steve B Wolowich",
+   "organization": "Outfront Media Canada LP",
+   "client": null,
+   "subject": "Signs",
+   "method": "Meetings"
+  },
+  {
+   "date": "2017-04-06",
+   "lobbyist": "Sean Hill",
+   "organization": "The Advantage Group",
+   "client": "Outfront Media LLC",
+   "subject": "Signs",
+   "method": "Meetings"
+  },
+  {
+   "date": "2017-03-31",
+   "lobbyist": "Sean Hill",
+   "organization": "The Advantage Group",
+   "client": "Outfront Media LLC",
+   "subject": "By-law / Regulation;Signs",
+   "method": "Emails"
+  },
+  {
+   "date": "2017-03-31",
+   "lobbyist": "Zev Mandelbaum",
+   "organization": "Marlin Spring Developments",
+   "client": null,
+   "subject": "Planning and Development, Planning Policy / Study",
+   "method": "Meetings"
+  },
+  {
+   "date": "2017-03-29",
+   "lobbyist": "Michael Mestyan",
+   "organization": "Deltera Inc.",
+   "client": null,
+   "subject": "Planning and Development Application, Official Plan;Planning and Development Application, Zoning By-law;Planning and Development Application, Site Plan",
+   "method": "Meetings"
+  },
+  {
+   "date": "2017-03-29",
+   "lobbyist": "Steve P Daniels",
+   "organization": "Deltera Inc.",
+   "client": null,
+   "subject": "Planning and Development Application, Official Plan;Planning and Development Application, Zoning By-law;Planning and Development Application, Site Plan",
+   "method": "Meetings"
+  },
+  {
+   "date": "2017-03-28",
+   "lobbyist": "Kim Wright",
+   "organization": "Sussex Strategy Group",
+   "client": "Canadian Beverage Association",
+   "subject": "Economic Development;Public Health",
+   "method": "Meetings"
+  },
+  {
+   "date": "2017-03-28",
+   "lobbyist": "Jamie Besner",
+   "organization": "Sussex Strategy Group",
+   "client": "Canadian Beverage Association",
+   "subject": "Economic Development;Public Health",
+   "method": "Meetings"
+  },
+  {
+   "date": "2017-03-23",
+   "lobbyist": "David A McKay",
+   "organization": "MacNaughton Hermsen Britton Clarkson Planning Limited",
+   "client": "1127792 Ontario Limited",
+   "subject": "Planning and Development Application, Zoning By-law",
+   "method": "Meetings"
+  },
+  {
+   "date": "2017-03-22",
+   "lobbyist": "Sean Hill",
+   "organization": "The Advantage Group",
+   "client": "Outfront Media LLC",
+   "subject": "By-law / Regulation;Signs",
+   "method": "Emails"
+  },
+  {
+   "date": "2017-03-21",
+   "lobbyist": "Brianna Ames",
+   "organization": "Coca-Cola Ltd.",
+   "client": null,
+   "subject": "Health & Safety",
+   "method": "Meetings"
+  },
+  {
+   "date": "2017-03-21",
+   "lobbyist": "Megan Boyle",
+   "organization": "Canadian Beverage Association",
+   "client": null,
+   "subject": "Health & Safety",
+   "method": "Meetings"
+  },
+  {
+   "date": "2017-03-20",
+   "lobbyist": "Michael Foderick",
+   "organization": "McCarthy Tetrault LLP",
+   "client": "Ernst & Young",
+   "subject": "Signs",
+   "method": "Emails"
+  },
+  {
+   "date": "2017-03-20",
+   "lobbyist": "John Nunziata",
+   "organization": "John Nunziata, Barrister & Solicitor",
+   "client": "Trinity Development Group Inc",
+   "subject": "Planning and Development Application, Official Plan;Planning and Development Application, Zoning By-law;Planning and Development, Combined Application",
+   "method": "Phone calls"
+  },
+  {
+   "date": "2017-03-13",
+   "lobbyist": "Ange Valentini",
+   "organization": "Airbnb Canada Inc.",
+   "client": null,
+   "subject": "Economic Development;Licences / Licensing;Planning and Development Application, Zoning By-law",
+   "method": "Emails"
+  },
+  {
+   "date": "2017-03-02",
+   "lobbyist": "Pedro Lopez",
+   "organization": "Building Industry and Land Development Association",
+   "client": null,
+   "subject": "Planning and Development, Planning Policy / Study",
+   "method": "Meetings"
+  },
+  {
+   "date": "2017-03-02",
+   "lobbyist": "Remo Agostino",
+   "organization": "Building Industry and Land Development Association",
+   "client": null,
+   "subject": "Planning and Development, Planning Policy / Study",
+   "method": "Meetings"
+  },
+  {
+   "date": "2017-03-02",
+   "lobbyist": "Bob Blazevski",
+   "organization": "Building Industry and Land Development Association",
+   "client": null,
+   "subject": "Planning and Development, Planning Policy / Study",
+   "method": "Meetings"
+  },
+  {
+   "date": "2017-03-02",
+   "lobbyist": "Danielle Chin",
+   "organization": "Building Industry and Land Development Association",
+   "client": null,
+   "subject": "Planning and Development, Planning Policy / Study",
+   "method": "Meetings"
+  },
+  {
+   "date": "2017-02-24",
+   "lobbyist": "Danielle Chin",
+   "organization": "Building Industry and Land Development Association",
+   "client": null,
+   "subject": "Planning and Development, Planning Policy / Study",
+   "method": "Meetings"
+  },
+  {
+   "date": "2017-02-24",
+   "lobbyist": "Pedro Lopes",
+   "organization": "Minto Communities Inc.",
+   "client": null,
+   "subject": "Planning and Development, Planning Policy / Study",
+   "method": "Meetings"
+  },
+  {
+   "date": "2017-02-10",
+   "lobbyist": "Amir Remtulla",
+   "organization": "Amir Remtulla and Associates",
+   "client": "BILD",
+   "subject": "Economic Development",
+   "method": "Meetings"
+  },
+  {
+   "date": "2017-02-07",
+   "lobbyist": "Salvatore Cavarretta",
+   "organization": "Deltera Inc.",
+   "client": null,
+   "subject": "Planning and Development Application, Zoning By-law;Planning and Development Application, Site Plan;Planning and Development, Combined Application",
+   "method": "Meetings"
+  },
+  {
+   "date": "2017-02-07",
+   "lobbyist": "Steve Daniels",
+   "organization": "Deltera Inc.",
+   "client": null,
+   "subject": "Planning and Development Application, Zoning By-law;Planning and Development Application, Site Plan;Planning and Development, Combined Application",
+   "method": "Meetings"
+  },
+  {
+   "date": "2017-02-07",
+   "lobbyist": "Andrew Gray",
+   "organization": "Concert Properties Ltd",
+   "client": null,
+   "subject": "Planning and Development Application, Zoning By-law;Planning and Development Application, Site Plan",
+   "method": "Meetings"
+  },
+  {
+   "date": "2017-02-06",
+   "lobbyist": "Janet De Silva",
+   "organization": "Toronto Region Board of Trade",
+   "client": null,
+   "subject": "Budget",
+   "method": "Emails"
+  },
+  {
+   "date": "2017-01-31",
+   "lobbyist": "Mauro Ritacca",
+   "organization": "Toronto Regional Real Estate Board",
+   "client": null,
+   "subject": "Budget",
+   "method": "Meetings"
+  },
+  {
+   "date": "2017-01-30",
+   "lobbyist": "Philip A Gillies",
+   "organization": "Enterprise Canada Inc",
+   "client": "Emovis US Inc",
+   "subject": "Transportation - Roads / Bridges",
+   "method": "Emails"
+  },
+  {
+   "date": "2017-01-25",
+   "lobbyist": "Amir Remtulla",
+   "organization": "Amir Remtulla and Associates",
+   "client": "BILD",
+   "subject": "Economic Development",
+   "method": "Phone calls"
+  },
+  {
+   "date": "2017-01-11",
+   "lobbyist": "Mauro Ritacca",
+   "organization": "Toronto Regional Real Estate Board",
+   "client": null,
+   "subject": "Budget",
+   "method": "Meetings"
+  },
+  {
+   "date": "2016-12-18",
+   "lobbyist": "Tim Hudak",
+   "organization": "Ontario Real Estate Association",
+   "client": null,
+   "subject": "Affordable Housing;By-law / Regulation;Planning and Development, Planning Policy / Study",
+   "method": "Meetings"
+  },
+  {
+   "date": "2016-12-13",
+   "lobbyist": "Sean Hill",
+   "organization": "The Advantage Group",
+   "client": "Outfront Media LLC",
+   "subject": "Signs",
+   "method": "Meetings"
+  },
+  {
+   "date": "2016-12-13",
+   "lobbyist": "Sean Hill",
+   "organization": "The Advantage Group",
+   "client": "Outfront Media LLC",
+   "subject": "Signs",
+   "method": "Meetings"
+  },
+  {
+   "date": "2016-12-13",
+   "lobbyist": "Sean Hill",
+   "organization": "The Advantage Group",
+   "client": "Outfront Media LLC",
+   "subject": "Arts / Culture;Signs",
+   "method": "Meetings"
+  },
+  {
+   "date": "2016-12-12",
+   "lobbyist": "Robert M Walter-Joseph",
+   "organization": "Weston Consulting",
+   "client": "Larendale Group of Companies",
+   "subject": "Planning and Development Application, Site Plan",
+   "method": "Meetings"
+  },
+  {
+   "date": "2016-12-12",
+   "lobbyist": "Ryan M. Guetter",
+   "organization": "Weston Consulting Group Inc.",
+   "client": "Larendale Group of Companies",
+   "subject": "Planning and Development Application, Site Plan",
+   "method": "Meetings"
+  },
+  {
+   "date": "2016-12-07",
+   "lobbyist": "Chris Schafer",
+   "organization": "Uber Canada, Inc.",
+   "client": null,
+   "subject": "By-law / Regulation;Economic Development;Licences / Licensing",
+   "method": "Emails"
+  },
+  {
+   "date": "2016-12-02",
+   "lobbyist": "Terry Mundell",
+   "organization": "Toronto Hotel Association",
+   "client": null,
+   "subject": "Attractions / Tourism;Budget;Economic Development",
+   "method": "Written"
+  },
+  {
+   "date": "2016-12-02",
+   "lobbyist": "Terry Mundell",
+   "organization": "Toronto Hotel Association",
+   "client": null,
+   "subject": "Attractions / Tourism;By-law / Regulation;Economic Development",
+   "method": "Written"
+  },
+  {
+   "date": "2016-11-28",
+   "lobbyist": "Sean Hill",
+   "organization": "The Advantage Group",
+   "client": "International Council of Shopping Centres",
+   "subject": "Budget;Parking",
+   "method": "Emails"
+  },
+  {
+   "date": "2016-11-21",
+   "lobbyist": "Calvin W Lantz",
+   "organization": "Stikeman Elliott LLP",
+   "client": "Lormel Homes",
+   "subject": "Planning and Development, Combined Application",
+   "method": "Meetings"
+  },
+  {
+   "date": "2016-11-21",
+   "lobbyist": "Kim Taylor",
+   "organization": "Queenswell Ltd.",
+   "client": null,
+   "subject": "Planning and Development, Combined Application",
+   "method": "Meetings"
+  },
+  {
+   "date": "2016-11-18",
+   "lobbyist": "Mark Wilson",
+   "organization": "Enbridge Gas Distribution Inc.",
+   "client": null,
+   "subject": "Budget;Energy",
+   "method": "Emails"
+  },
+  {
+   "date": "2016-11-17",
+   "lobbyist": "David A McKay",
+   "organization": "MacNaughton Hermsen Britton Clarkson Planning Limited",
+   "client": "Sobeys Developments",
+   "subject": "Planning and Development, Combined Application",
+   "method": "Meetings"
+  },
+  {
+   "date": "2016-11-14",
+   "lobbyist": "Amir Remtulla",
+   "organization": "Amir Remtulla and Associates",
+   "client": "BILD",
+   "subject": "Economic Development",
+   "method": "Meetings"
+  },
+  {
+   "date": "2016-11-14",
+   "lobbyist": "Steve Daniels",
+   "organization": "Deltera Inc.",
+   "client": null,
+   "subject": "Affordable Housing",
+   "method": "Meetings"
+  },
+  {
+   "date": "2016-11-14",
+   "lobbyist": "Steve Daniels",
+   "organization": "Deltera Inc.",
+   "client": null,
+   "subject": "Planning and Development, Planning Policy / Study",
+   "method": "Meetings"
+  },
+  {
+   "date": "2016-11-14",
+   "lobbyist": "Steve Daniels",
+   "organization": "Deltera Inc.",
+   "client": null,
+   "subject": "Planning and Development Application, Zoning By-law;Planning and Development Application, Site Plan;Planning and Development, Combined Application",
+   "method": "Meetings"
+  },
+  {
+   "date": "2016-11-14",
+   "lobbyist": "Barry A. Horosko",
+   "organization": "Horosko Planning Law",
+   "client": "Fima Developments",
+   "subject": "Planning and Development, Planning Policy / Study",
+   "method": "Meetings"
+  },
+  {
+   "date": "2016-11-14",
+   "lobbyist": "Natalie Dash",
+   "organization": "Campbell Strategies Inc.",
+   "client": "Yellow Pages Digital & Media Solution Ltd.",
+   "subject": "Business Improvement Area (BIA);Economic Development;Technology",
+   "method": "Emails"
+  },
+  {
+   "date": "2016-11-08",
+   "lobbyist": "Janet De Silva",
+   "organization": "Toronto Region Board of Trade",
+   "client": null,
+   "subject": "Budget",
+   "method": "Emails"
+  },
+  {
+   "date": "2016-11-07",
+   "lobbyist": "Peter F. Smith",
+   "organization": "Bousfields Inc.",
+   "client": "Dunpar Developments Inc.",
+   "subject": "Planning and Development Application, Zoning By-law",
+   "method": "Meetings"
+  },
+  {
+   "date": "2016-11-07",
+   "lobbyist": "David Gerofsky",
+   "organization": "Great Gulf Group of Companies",
+   "client": null,
+   "subject": "Planning and Development, Planning Policy / Study;Planning and Development Application, Zoning By-law;Transportation - Roads / Bridges",
+   "method": "Written"
+  },
+  {
+   "date": "2016-10-28",
+   "lobbyist": "David A McKay",
+   "organization": "MacNaughton Hermsen Britton Clarkson Planning Limited",
+   "client": "1127792 Ontario Limited",
+   "subject": "Planning and Development Application, Zoning By-law",
+   "method": "Meetings"
+  },
+  {
+   "date": "2016-10-25",
+   "lobbyist": "Dave Bryans",
+   "organization": "Ontario Convenience Stores Association",
+   "client": null,
+   "subject": "Parking",
+   "method": "Emails"
+  },
+  {
+   "date": "2016-10-24",
+   "lobbyist": "Anson Kwok",
+   "organization": "Mondiale Development LTD.",
+   "client": null,
+   "subject": "Building Permits;Planning and Development Application, Zoning By-law;Planning and Development Application, Site Plan",
+   "method": "Meetings"
+  },
+  {
+   "date": "2016-10-24",
+   "lobbyist": "Alex Marshall",
+   "organization": "Mondiale Development LTD.",
+   "client": null,
+   "subject": "Building Permits;Planning and Development Application, Zoning By-law;Planning and Development Application, Site Plan",
+   "method": "Meetings"
+  },
+  {
+   "date": "2016-10-24",
+   "lobbyist": "Michael De Cotiis",
+   "organization": "Mondiale Development LTD.",
+   "client": null,
+   "subject": "Building Permits;Planning and Development Application, Zoning By-law;Planning and Development Application, Site Plan",
+   "method": "Meetings"
+  },
+  {
+   "date": "2016-10-24",
+   "lobbyist": "Calvin W Lantz",
+   "organization": "Stikeman Elliott LLP",
+   "client": "Lormel Homes",
+   "subject": "Planning and Development, Combined Application",
+   "method": "Meetings"
+  },
+  {
+   "date": "2016-10-24",
+   "lobbyist": "Kim Taylor",
+   "organization": "Queenswell Ltd.",
+   "client": null,
+   "subject": "Planning and Development, Combined Application",
+   "method": "Meetings"
+  },
+  {
+   "date": "2016-10-18",
+   "lobbyist": "Sta Kuzviwanza",
+   "organization": "Airbnb Canada Inc.",
+   "client": null,
+   "subject": "Attractions / Tourism",
+   "method": "Meetings"
+  },
+  {
+   "date": "2016-10-18",
+   "lobbyist": "Ange Valentini",
+   "organization": "Airbnb Canada Inc.",
+   "client": null,
+   "subject": "Attractions / Tourism",
+   "method": "Meetings"
+  },
+  {
+   "date": "2016-10-18",
+   "lobbyist": "Alex Dagg",
+   "organization": "Airbnb Canada Inc.",
+   "client": null,
+   "subject": "Attractions / Tourism",
+   "method": "Meetings"
+  },
+  {
+   "date": "2016-10-18",
+   "lobbyist": "David A McKay",
+   "organization": "MacNaughton Hermsen Britton Clarkson Planning Limited",
+   "client": "RioCan",
+   "subject": "Planning and Development Application, Zoning By-law;Planning and Development Application, Site Plan",
+   "method": "Meetings"
+  },
+  {
+   "date": "2016-10-14",
+   "lobbyist": "Sadaf Abbasi",
+   "organization": "Sussex Strategy Group",
+   "client": "D. Crupi and Sons Limited",
+   "subject": "Economic Development;Planning and Development, Planning Policy / Study",
+   "method": "Meetings"
+  },
+  {
+   "date": "2016-10-07",
+   "lobbyist": "Calvin W Lantz",
+   "organization": "Stikeman Elliott LLP",
+   "client": "Lormel Homes",
+   "subject": "Planning and Development, Combined Application",
+   "method": "Other or unreported"
+  },
+  {
+   "date": "2016-10-06",
+   "lobbyist": "Jim Burnett",
+   "organization": "Pathway Group",
+   "client": "Cieslok Media",
+   "subject": "Signs",
+   "method": "Meetings"
+  },
+  {
+   "date": "2016-10-04",
+   "lobbyist": "Elizabeth Kyi",
+   "organization": "Cieslok Media Ltd.",
+   "client": null,
+   "subject": "Signs",
+   "method": "Emails"
+  },
+  {
+   "date": "2016-10-04",
+   "lobbyist": "Jim Burnett",
+   "organization": "Pathway Group",
+   "client": "Cieslok Media",
+   "subject": "Signs",
+   "method": "Meetings"
+  },
+  {
+   "date": "2016-10-04",
+   "lobbyist": "Barry A. Horosko",
+   "organization": "Horosko Planning Law",
+   "client": "Quaestus",
+   "subject": "Planning and Development Application, Zoning By-law",
+   "method": "Meetings"
+  },
+  {
+   "date": "2016-10-04",
+   "lobbyist": "David A McKay",
+   "organization": "MacNaughton Hermsen Britton Clarkson Planning Limited",
+   "client": "Queen's Walk Inc.",
+   "subject": "Planning and Development Application, Minor Variance",
+   "method": "Meetings"
+  },
+  {
+   "date": "2016-09-28",
+   "lobbyist": "Steven Heller",
+   "organization": "Plazacorp Investments Limited",
+   "client": null,
+   "subject": "Planning and Development, Combined Application",
+   "method": "Meetings"
+  },
+  {
+   "date": "2016-09-28",
+   "lobbyist": "Yoav Bohbot",
+   "organization": "Plazacorp Investments Limited",
+   "client": null,
+   "subject": "Planning and Development, Combined Application",
+   "method": "Meetings"
+  },
+  {
+   "date": "2016-09-28",
+   "lobbyist": "Julianna Boldt",
+   "organization": "Plazacorp Investments Limited",
+   "client": null,
+   "subject": "Planning and Development, Combined Application",
+   "method": "Meetings"
+  },
+  {
+   "date": "2016-09-27",
+   "lobbyist": "Thorben Wieditz",
+   "organization": "Fairbnb.ca Coalition",
+   "client": null,
+   "subject": "Affordable Housing;Attractions / Tourism;By-law / Regulation",
+   "method": "Emails"
+  },
+  {
+   "date": "2016-09-27",
+   "lobbyist": "Lis Pimentel",
+   "organization": "Fairbnb.ca Coalition",
+   "client": null,
+   "subject": "Affordable Housing;Attractions / Tourism;By-law / Regulation",
+   "method": "Written"
+  },
+  {
+   "date": "2016-09-26",
+   "lobbyist": "Chris Schafer",
+   "organization": "Uber Canada, Inc.",
+   "client": null,
+   "subject": "By-law / Regulation;Economic Development;Licences / Licensing",
+   "method": "Emails"
+  },
+  {
+   "date": "2016-09-22",
+   "lobbyist": "Salvatore Cavarretta",
+   "organization": "Deltera Inc.",
+   "client": null,
+   "subject": "Planning and Development Application, Zoning By-law;Planning and Development Application, Site Plan;Planning and Development, Combined Application",
+   "method": "Phone calls"
+  },
+  {
+   "date": "2016-09-16",
+   "lobbyist": "Chris Schafer",
+   "organization": "Uber Canada, Inc.",
+   "client": null,
+   "subject": "By-law / Regulation;Economic Development;Licences / Licensing",
+   "method": "Emails"
+  },
+  {
+   "date": "2016-09-09",
+   "lobbyist": "Barry J Morrison",
+   "organization": "Barry J. Morrison & Associates Ltd",
+   "client": "BRL Realty Limited",
+   "subject": "Planning and Development Application, Minor Variance",
+   "method": "Other or unreported"
+  },
+  {
+   "date": "2016-09-08",
+   "lobbyist": "Kim Wright",
+   "organization": "Sussex Strategy Group",
+   "client": "Mount Pleasant Group of Cemetaries",
+   "subject": "Parking;Transportation - Roads / Bridges",
+   "method": "Meetings"
+  },
+  {
+   "date": "2016-09-08",
+   "lobbyist": "Jim Burnett",
+   "organization": "Pathway Group",
+   "client": "Cieslok Media",
+   "subject": "Signs",
+   "method": "Meetings"
+  },
+  {
+   "date": "2016-09-08",
+   "lobbyist": "Jim Burnett",
+   "organization": "Pathway Group",
+   "client": "Catholic Cemeteries & Funeral Services, Archdiocese of Toronto",
+   "subject": "Planning and Development, Planning Policy / Study",
+   "method": "Meetings"
+  },
+  {
+   "date": "2016-09-07",
+   "lobbyist": "Alex Dagg",
+   "organization": "Airbnb Canada Inc.",
+   "client": null,
+   "subject": "Attractions / Tourism",
+   "method": "Emails"
+  },
+  {
+   "date": "2016-09-07",
+   "lobbyist": "Sean Hill",
+   "organization": "The Advantage Group",
+   "client": "Outfront Media LLC",
+   "subject": "Signs",
+   "method": "Meetings"
+  },
+  {
+   "date": "2016-08-31",
+   "lobbyist": "Kim Wright",
+   "organization": "Sussex Strategy Group",
+   "client": "Ontario Association of Cemetery & Funeral Professionals",
+   "subject": "Budget;Financial Services",
+   "method": "Meetings"
+  },
+  {
+   "date": "2016-08-10",
+   "lobbyist": "Calvin W Lantz",
+   "organization": "Stikeman Elliott LLP",
+   "client": "Lormel Homes",
+   "subject": "Planning and Development, Combined Application",
+   "method": "Other or unreported"
+  },
+  {
+   "date": "2016-08-10",
+   "lobbyist": "Kim Taylor",
+   "organization": "Queenswell Ltd.",
+   "client": null,
+   "subject": "Planning and Development, Combined Application",
+   "method": "Meetings"
+  },
+  {
+   "date": "2016-08-09",
+   "lobbyist": "Chris Schafer",
+   "organization": "Uber Canada, Inc.",
+   "client": null,
+   "subject": "By-law / Regulation;Economic Development;Licences / Licensing",
+   "method": "Emails"
+  },
+  {
+   "date": "2016-08-02",
+   "lobbyist": "Sean Hill",
+   "organization": "The Advantage Group",
+   "client": "International Council of Shopping Centres",
+   "subject": "Budget;Parking",
+   "method": "Emails"
+  },
+  {
+   "date": "2016-07-27",
+   "lobbyist": "Steve J Boudreau",
+   "organization": "Nitta Gelatin Canada, Inc.",
+   "client": null,
+   "subject": "Building Inspection;By-law / Regulation;Environment",
+   "method": "Written"
+  },
+  {
+   "date": "2016-07-13",
+   "lobbyist": "Sean Hill",
+   "organization": "The Advantage Group",
+   "client": "Outfront Media LLC",
+   "subject": "Signs",
+   "method": "Emails"
+  },
+  {
+   "date": "2016-07-13",
+   "lobbyist": "Stephen McGregor",
+   "organization": "Outfront Media Canada LP",
+   "client": null,
+   "subject": "Signs",
+   "method": "Emails"
+  },
+  {
+   "date": "2016-07-12",
+   "lobbyist": "Kim Wright",
+   "organization": "Sussex Strategy Group",
+   "client": "Mount Pleasant Group of Cemetaries",
+   "subject": "Parking;Transportation - Roads / Bridges",
+   "method": "Meetings"
+  },
+  {
+   "date": "2016-07-12",
+   "lobbyist": "Jamie Besner",
+   "organization": "Sussex Strategy Group",
+   "client": "Clear Channel Outdoor Canada",
+   "subject": "Signs",
+   "method": "Phone calls"
+  },
+  {
+   "date": "2016-07-11",
+   "lobbyist": "Chris Schafer",
+   "organization": "Uber Canada, Inc.",
+   "client": null,
+   "subject": "By-law / Regulation;Economic Development;Licences / Licensing",
+   "method": "Emails"
+  },
+  {
+   "date": "2016-07-11",
+   "lobbyist": "Yash Dogra",
+   "organization": "Capital Hill Group",
+   "client": "Rogers Communications Inc.",
+   "subject": "Arts / Culture;Film and TV;Technology",
+   "method": "Emails"
+  },
+  {
+   "date": "2016-07-11",
+   "lobbyist": "Jamie Besner",
+   "organization": "Sussex Strategy Group",
+   "client": "Clear Channel Outdoor Canada",
+   "subject": "Signs",
+   "method": "Meetings"
+  },
+  {
+   "date": "2016-07-08",
+   "lobbyist": "Jamie Besner",
+   "organization": "Sussex Strategy Group",
+   "client": "Clear Channel Outdoor Canada",
+   "subject": "Signs",
+   "method": "Phone calls"
+  },
+  {
+   "date": "2016-07-08",
+   "lobbyist": "Geoff Wilkinson",
+   "organization": "Ontario Road Builders' Association",
+   "client": null,
+   "subject": "Procurement",
+   "method": "Emails"
+  },
+  {
+   "date": "2016-07-06",
+   "lobbyist": "Barry Steinberg",
+   "organization": "Consulting Engineers of Ontario",
+   "client": null,
+   "subject": "Planning and Development, Planning Policy / Study;Transportation - Roads / Bridges",
+   "method": "Written"
+  },
+  {
+   "date": "2016-07-05",
+   "lobbyist": "Stephen Adler",
+   "organization": "StrategyCorp Inc.",
+   "client": "The Toronto Wholesale Produce Association",
+   "subject": "Signs",
+   "method": "Phone calls"
+  },
+  {
+   "date": "2016-07-05",
+   "lobbyist": "Jamie Besner",
+   "organization": "Sussex Strategy Group",
+   "client": "Clear Channel Outdoor Canada",
+   "subject": "Signs",
+   "method": "Phone calls"
+  },
+  {
+   "date": "2016-07-04",
+   "lobbyist": "Yash Dogra",
+   "organization": "Capital Hill Group",
+   "client": "Rogers Communications Inc.",
+   "subject": "Arts / Culture;Film and TV;Technology",
+   "method": "Emails"
+  },
+  {
+   "date": "2016-06-30",
+   "lobbyist": "Sid Catalano",
+   "organization": "Pattison Outdoor Advertising",
+   "client": null,
+   "subject": "Signs",
+   "method": "Meetings"
+  },
+  {
+   "date": "2016-06-27",
+   "lobbyist": "Salvatore Cavarretta",
+   "organization": "Deltera Inc.",
+   "client": null,
+   "subject": "Planning and Development Application, Zoning By-law;Planning and Development Application, Site Plan;Planning and Development, Combined Application",
+   "method": "Phone calls"
+  },
+  {
+   "date": "2016-06-24",
+   "lobbyist": "Frank Notte",
+   "organization": "Trillium Automobile Dealers Association",
+   "client": null,
+   "subject": "Budget",
+   "method": "Emails"
+  },
+  {
+   "date": "2016-06-23",
+   "lobbyist": "Paul A Christie",
+   "organization": "M.L. Christie Consulting Ltd.",
+   "client": "Oxford Properties Group",
+   "subject": "Attractions / Tourism",
+   "method": "Meetings"
+  },
+  {
+   "date": "2016-06-21",
+   "lobbyist": "Chris Schafer",
+   "organization": "Uber Canada, Inc.",
+   "client": null,
+   "subject": "By-law / Regulation;Economic Development;Licences / Licensing",
+   "method": "Emails"
+  },
+  {
+   "date": "2016-06-21",
+   "lobbyist": "Stephen Adler",
+   "organization": "StrategyCorp Inc.",
+   "client": "The Toronto Wholesale Produce Association",
+   "subject": "Signs",
+   "method": "Meetings"
+  },
+  {
+   "date": "2016-06-21",
+   "lobbyist": "John Duffy",
+   "organization": "StrategyCorp Inc.",
+   "client": "The Toronto Wholesale Produce Association",
+   "subject": "Signs",
+   "method": "Meetings"
+  },
+  {
+   "date": "2016-06-21",
+   "lobbyist": "Stephen Adler",
+   "organization": "StrategyCorp Inc.",
+   "client": "Global Fortune",
+   "subject": "Planning and Development, Planning Policy / Study",
+   "method": "Meetings"
+  },
+  {
+   "date": "2016-06-21",
+   "lobbyist": "John Duffy",
+   "organization": "StrategyCorp Inc.",
+   "client": "Global Fortune",
+   "subject": "Planning and Development, Planning Policy / Study",
+   "method": "Meetings"
+  },
+  {
+   "date": "2016-06-15",
+   "lobbyist": "Jamie Besner",
+   "organization": "Sussex Strategy Group",
+   "client": "Clear Channel Outdoor Canada",
+   "subject": "Signs",
+   "method": "Meetings"
+  },
+  {
+   "date": "2016-06-13",
+   "lobbyist": "Jorg Cieslok",
+   "organization": "Cieslok Media Ltd.",
+   "client": null,
+   "subject": "Signs",
+   "method": "Written"
+  },
+  {
+   "date": "2016-06-08",
+   "lobbyist": "John Duffy",
+   "organization": "StrategyCorp Inc.",
+   "client": "The Toronto Wholesale Produce Association",
+   "subject": "Signs",
+   "method": "Other or unreported"
+  },
+  {
+   "date": "2016-06-08",
+   "lobbyist": "Sean Hill",
+   "organization": "The Advantage Group",
+   "client": "Outfront Media LLC",
+   "subject": "Arts / Culture;Signs",
+   "method": "Written"
+  },
+  {
+   "date": "2016-06-06",
+   "lobbyist": "Chris Schafer",
+   "organization": "Uber Canada, Inc.",
+   "client": null,
+   "subject": "By-law / Regulation;Economic Development;Licences / Licensing",
+   "method": "Emails"
+  },
+  {
+   "date": "2016-06-06",
+   "lobbyist": "Alan J Slobodsky",
+   "organization": "Slobodsky Associates",
+   "client": "Lifetime St. Mary Street Inc",
+   "subject": "Planning and Development, Heritage;Planning and Development Application, Zoning By-law",
+   "method": "Emails"
+  },
+  {
+   "date": "2016-06-02",
+   "lobbyist": "Amin Massoudi",
+   "organization": "The Capital Hill Group",
+   "client": "Cieslok Media",
+   "subject": "Signs",
+   "method": "Meetings"
+  },
+  {
+   "date": "2016-06-02",
+   "lobbyist": "Jim Burnett",
+   "organization": "Pathway Group",
+   "client": "Cieslok Media",
+   "subject": "Signs",
+   "method": "Meetings"
+  },
+  {
+   "date": "2016-06-02",
+   "lobbyist": "Jim Burnett",
+   "organization": "Pathway Group",
+   "client": "Catholic Cemeteries & Funeral Services, Archdiocese of Toronto",
+   "subject": "Planning and Development, Planning Policy / Study",
+   "method": "Meetings"
+  },
+  {
+   "date": "2016-05-30",
+   "lobbyist": "Anthony Cesario",
+   "organization": "Northcliffe Group",
+   "client": "Jatinder Sandhu",
+   "subject": "Signs",
+   "method": "Emails"
+  },
+  {
+   "date": "2016-05-26",
+   "lobbyist": "Jamie Besner",
+   "organization": "Sussex Strategy Group",
+   "client": "The Cadillac Fairview Corporation Limited",
+   "subject": "Budget;Economic Development;Financial Services",
+   "method": "Meetings"
+  },
+  {
+   "date": "2016-05-25",
+   "lobbyist": "Alan J Slobodsky",
+   "organization": "Slobodsky Associates",
+   "client": "Lifetime St. Mary Street Inc",
+   "subject": "Planning and Development, Heritage;Planning and Development Application, Zoning By-law",
+   "method": "Emails"
+  },
+  {
+   "date": "2016-05-25",
+   "lobbyist": "Andrew Gray",
+   "organization": "Concert Properties Ltd",
+   "client": null,
+   "subject": "Planning and Development Application, Zoning By-law;Planning and Development Application, Site Plan",
+   "method": "Meetings"
+  },
+  {
+   "date": "2016-05-24",
+   "lobbyist": "Jim Burnett",
+   "organization": "Pathway Group",
+   "client": "Cieslok Media",
+   "subject": "Signs",
+   "method": "Phone calls"
+  },
+  {
+   "date": "2016-05-24",
+   "lobbyist": "Jim Burnett",
+   "organization": "Pathway Group",
+   "client": "Catholic Cemeteries & Funeral Services, Archdiocese of Toronto",
+   "subject": "Planning and Development, Planning Policy / Study",
+   "method": "Phone calls"
+  },
+  {
+   "date": "2016-05-18",
+   "lobbyist": "Robert Coleman",
+   "organization": "279 Norseman Ltd.",
+   "client": null,
+   "subject": "Licences / Licensing",
+   "method": "Meetings"
+  },
+  {
+   "date": "2016-05-18",
+   "lobbyist": "David Price",
+   "organization": "279 Norseman Ltd.",
+   "client": null,
+   "subject": "Licences / Licensing",
+   "method": "Meetings"
+  },
+  {
+   "date": "2016-05-11",
+   "lobbyist": "Chris Schafer",
+   "organization": "Uber Canada, Inc.",
+   "client": null,
+   "subject": "By-law / Regulation;Economic Development;Licences / Licensing",
+   "method": "Emails"
+  },
+  {
+   "date": "2016-05-09",
+   "lobbyist": "Rita G Smith",
+   "organization": "Toronto Taxi Alliance",
+   "client": null,
+   "subject": "Licences / Licensing;Transit / TTC",
+   "method": "Emails"
+  },
+  {
+   "date": "2016-05-06",
+   "lobbyist": "Barry A. Horosko",
+   "organization": "Horosko Planning Law",
+   "client": "1282555 Ontario Inc.",
+   "subject": "Planning and Development Application, Official Plan",
+   "method": "Meetings"
+  },
+  {
+   "date": "2016-05-04",
+   "lobbyist": "Sean Hill",
+   "organization": "The Advantage Group",
+   "client": "Metrolinx",
+   "subject": "Signs",
+   "method": "Meetings"
+  },
+  {
+   "date": "2016-05-04",
+   "lobbyist": "Steve B Wolowich",
+   "organization": "Outfront Media Canada LP",
+   "client": null,
+   "subject": "Signs",
+   "method": "Meetings"
+  },
+  {
+   "date": "2016-05-04",
+   "lobbyist": "Stephen McGregor",
+   "organization": "Outfront Media Canada LP",
+   "client": null,
+   "subject": "Signs",
+   "method": "Emails"
+  },
+  {
+   "date": "2016-05-03",
+   "lobbyist": "Jamie Besner",
+   "organization": "Sussex Strategy Group",
+   "client": "Accessible Transportation Association of Ontario (ATAO)",
+   "subject": "Taxi Licensing issues",
+   "method": "Meetings"
+  },
+  {
+   "date": "2016-05-02",
+   "lobbyist": "Kristine Hubbard",
+   "organization": "Beck Taxi Limited",
+   "client": null,
+   "subject": "By-law / Regulation;Licences / Licensing",
+   "method": "Emails"
+  },
+  {
+   "date": "2016-05-02",
+   "lobbyist": "Sean Hill",
+   "organization": "The Advantage Group",
+   "client": "Metrolinx",
+   "subject": "Signs",
+   "method": "Emails"
+  },
+  {
+   "date": "2016-05-02",
+   "lobbyist": "Michael Masserman",
+   "organization": "Lyft",
+   "client": null,
+   "subject": "By-law / Regulation;Economic Development;Licences / Licensing",
+   "method": "Emails"
+  },
+  {
+   "date": "2016-05-02",
+   "lobbyist": "Rita G Smith",
+   "organization": "Toronto Taxi Alliance",
+   "client": null,
+   "subject": "Licences / Licensing;Transit / TTC",
+   "method": "Written"
+  },
+  {
+   "date": "2016-04-28",
+   "lobbyist": "Chris Schafer",
+   "organization": "Uber Canada, Inc.",
+   "client": null,
+   "subject": "By-law / Regulation;Economic Development;Licences / Licensing",
+   "method": "Emails"
+  },
+  {
+   "date": "2016-04-27",
+   "lobbyist": "Rita G Smith",
+   "organization": "Toronto Taxi Alliance",
+   "client": null,
+   "subject": "Licences / Licensing;Transit / TTC",
+   "method": "Emails"
+  },
+  {
+   "date": "2016-04-26",
+   "lobbyist": "Rita G Smith",
+   "organization": "Toronto Taxi Alliance",
+   "client": null,
+   "subject": "Licences / Licensing;Transit / TTC",
+   "method": "Emails"
+  },
+  {
+   "date": "2016-04-19",
+   "lobbyist": "Kristine Hubbard",
+   "organization": "Beck Taxi Limited",
+   "client": null,
+   "subject": "By-law / Regulation;Licences / Licensing",
+   "method": "Meetings"
+  },
+  {
+   "date": "2016-04-19",
+   "lobbyist": "Emily Naddaf",
+   "organization": "StrategyCorp Inc.",
+   "client": "Uber Canada Inc.",
+   "subject": "By-law / Regulation;Economic Development;Licences / Licensing",
+   "method": "Other or unreported"
+  },
+  {
+   "date": "2016-04-19",
+   "lobbyist": "HAYLEY C.S. STEINHART",
+   "organization": "HAYLEY STEINHART",
+   "client": null,
+   "subject": "By-law / Regulation;Health & Safety;Licences / Licensing",
+   "method": "Emails"
+  },
+  {
+   "date": "2016-04-18",
+   "lobbyist": "Emily Naddaf",
+   "organization": "StrategyCorp Inc.",
+   "client": "Uber Canada Inc.",
+   "subject": "By-law / Regulation;Economic Development;Licences / Licensing",
+   "method": "Emails"
+  },
+  {
+   "date": "2016-04-14",
+   "lobbyist": "Michael Masserman",
+   "organization": "Lyft",
+   "client": null,
+   "subject": "By-law / Regulation;Economic Development;Licences / Licensing",
+   "method": "Emails"
+  },
+  {
+   "date": "2016-04-13",
+   "lobbyist": "Chris Schafer",
+   "organization": "Uber Canada, Inc.",
+   "client": null,
+   "subject": "By-law / Regulation;Economic Development;Licences / Licensing",
+   "method": "Emails"
+  },
+  {
+   "date": "2016-04-11",
+   "lobbyist": "Alan J Slobodsky",
+   "organization": "Slobodsky Associates",
+   "client": "BILD",
+   "subject": "By-law / Regulation;Planning and Development, Planning Policy / Study",
+   "method": "Meetings"
+  },
+  {
+   "date": "2016-04-11",
+   "lobbyist": "Rita G Smith",
+   "organization": "Toronto Taxi Alliance",
+   "client": null,
+   "subject": "Licences / Licensing;Transit / TTC",
+   "method": "Emails"
+  },
+  {
+   "date": "2016-04-06",
+   "lobbyist": "Ian Black",
+   "organization": "Uber Canada, Inc.",
+   "client": null,
+   "subject": "By-law / Regulation;Economic Development;Licences / Licensing",
+   "method": "Meetings"
+  },
+  {
+   "date": "2016-04-06",
+   "lobbyist": "Adam Blinick",
+   "organization": "Uber Canada, Inc.",
+   "client": null,
+   "subject": "By-law / Regulation;Economic Development;Licences / Licensing",
+   "method": "Meetings"
+  },
+  {
+   "date": "2016-04-06",
+   "lobbyist": "Sean Hill",
+   "organization": "The Advantage Group",
+   "client": "Metrolinx",
+   "subject": "Signs",
+   "method": "Meetings"
+  },
+  {
+   "date": "2016-04-06",
+   "lobbyist": "Stephen Adler",
+   "organization": "StrategyCorp Inc.",
+   "client": "Uber Canada Inc.",
+   "subject": "By-law / Regulation;Economic Development;Licences / Licensing",
+   "method": "Meetings"
+  },
+  {
+   "date": "2016-04-05",
+   "lobbyist": "Sean Hill",
+   "organization": "The Advantage Group",
+   "client": "Metrolinx",
+   "subject": "Signs",
+   "method": "Emails"
+  },
+  {
+   "date": "2016-03-31",
+   "lobbyist": "Sean Hill",
+   "organization": "The Advantage Group",
+   "client": "Metrolinx",
+   "subject": "Signs",
+   "method": "Meetings"
+  },
+  {
+   "date": "2016-03-30",
+   "lobbyist": "Rita G Smith",
+   "organization": "Toronto Taxi Alliance",
+   "client": null,
+   "subject": "Licences / Licensing;Transit / TTC",
+   "method": "Emails"
+  },
+  {
+   "date": "2016-03-29",
+   "lobbyist": "Michael Masserman",
+   "organization": "Lyft",
+   "client": null,
+   "subject": "By-law / Regulation;Economic Development;Licences / Licensing",
+   "method": "Meetings"
+  },
+  {
+   "date": "2016-03-29",
+   "lobbyist": "Ginny Movat",
+   "organization": "Crestview Strategy",
+   "client": "Lyft Inc.",
+   "subject": "By-law / Regulation;Economic Development;Licences / Licensing",
+   "method": "Meetings"
+  },
+  {
+   "date": "2016-03-11",
+   "lobbyist": "Chris Schafer",
+   "organization": "Uber Canada, Inc.",
+   "client": null,
+   "subject": "By-law / Regulation;Economic Development;Licences / Licensing",
+   "method": "Emails"
+  },
+  {
+   "date": "2016-03-10",
+   "lobbyist": "Sean Hill",
+   "organization": "The Advantage Group",
+   "client": "Metrolinx",
+   "subject": "Signs",
+   "method": "Meetings"
+  },
+  {
+   "date": "2016-02-23",
+   "lobbyist": "Paula J Tenuta",
+   "organization": "Building Industry and Land Development Association",
+   "client": null,
+   "subject": "Planning and Development: Planning Policies/Studies",
+   "method": "Phone calls"
+  },
+  {
+   "date": "2016-02-22",
+   "lobbyist": "Paula J Tenuta",
+   "organization": "Building Industry and Land Development Association",
+   "client": null,
+   "subject": "Planning and Development: Planning Policies/Studies",
+   "method": "Emails"
+  },
+  {
+   "date": "2016-02-22",
+   "lobbyist": "Sean Hill",
+   "organization": "The Advantage Group",
+   "client": "Metrolinx",
+   "subject": "Signs",
+   "method": "Emails"
+  },
+  {
+   "date": "2016-02-22",
+   "lobbyist": "Kim Wright",
+   "organization": "Sussex Strategy Group",
+   "client": "Clear Channel Outdoor Company Canada",
+   "subject": "Signs",
+   "method": "Meetings"
+  },
+  {
+   "date": "2016-02-22",
+   "lobbyist": "Kim Wright",
+   "organization": "Sussex Strategy Group",
+   "client": "Liberty Entertainment Group",
+   "subject": "Exhibition Place;Planning and Development, Planning Policy / Study",
+   "method": "Meetings"
+  },
+  {
+   "date": "2016-02-22",
+   "lobbyist": "Jamie Besner",
+   "organization": "Sussex Strategy Group",
+   "client": "Clear Channel Outdoor Canada",
+   "subject": "Signs",
+   "method": "Meetings"
+  },
+  {
+   "date": "2016-02-22",
+   "lobbyist": "Jamie Besner",
+   "organization": "Sussex Strategy Group",
+   "client": "Liberty Entertainment Group",
+   "subject": "Exhibition Place;Planning and Development, Planning Policy / Study",
+   "method": "Meetings"
+  },
+  {
+   "date": "2016-02-19",
+   "lobbyist": "Sean Hill",
+   "organization": "The Advantage Group",
+   "client": "Metrolinx",
+   "subject": "Signs",
+   "method": "Emails"
+  },
+  {
+   "date": "2016-02-17",
+   "lobbyist": "Kim Wright",
+   "organization": "Sussex Strategy Group",
+   "client": "Cadillac Fairview Corporation Limited",
+   "subject": "Budget;Economic Development;Financial Services",
+   "method": "Meetings"
+  },
+  {
+   "date": "2016-02-15",
+   "lobbyist": "Michael McCart",
+   "organization": "McCart Associates Inc.",
+   "client": "Steven Deveaux",
+   "subject": "Planning and Development, Combined Application",
+   "method": "Meetings"
+  },
+  {
+   "date": "2016-02-10",
+   "lobbyist": "Michael Bissett",
+   "organization": "Bousfields Inc.",
+   "client": "Ms. Zirka Kelebay",
+   "subject": "Planning and Development Application, Zoning By-law",
+   "method": "Meetings"
+  },
+  {
+   "date": "2016-02-10",
+   "lobbyist": "Michael Bissett",
+   "organization": "Bousfields Inc.",
+   "client": "Ms. Zirka Kelebay",
+   "subject": "Signs",
+   "method": "Meetings"
+  },
+  {
+   "date": "2016-02-10",
+   "lobbyist": "Michael Bissett",
+   "organization": "Bousfields Inc.",
+   "client": "Ms. Zirka Kelebay",
+   "subject": "Planning and Development Application, Zoning By-law",
+   "method": "Meetings"
+  },
+  {
+   "date": "2016-02-08",
+   "lobbyist": "Aleem Kanji",
+   "organization": "Greater Toronto Airports Authority",
+   "client": null,
+   "subject": "Economic Development;Transit / TTC;Transportation - Metrolinx",
+   "method": "Meetings"
+  },
+  {
+   "date": "2016-02-04",
+   "lobbyist": "Anthony Cesario",
+   "organization": "Northcliffe Group",
+   "client": "Jatinder Sandhu",
+   "subject": "Signs",
+   "method": "Phone calls"
+  },
+  {
+   "date": "2016-02-04",
+   "lobbyist": "Jamie Besner",
+   "organization": "Sussex Strategy Group",
+   "client": "Liberty Entertainment Group",
+   "subject": "Exhibition Place;Planning and Development, Planning Policy / Study",
+   "method": "Phone calls"
+  },
+  {
+   "date": "2016-02-03",
+   "lobbyist": "Chris Schafer",
+   "organization": "Uber Canada, Inc.",
+   "client": null,
+   "subject": "By-law / Regulation;Economic Development;Licences / Licensing",
+   "method": "Emails"
+  },
+  {
+   "date": "2016-02-03",
+   "lobbyist": "Chris Korwin-Kuczynski",
+   "organization": "Chris Korwin-Kuczynski",
+   "client": "Lori Priolo",
+   "subject": "Planning and Development Application, Minor Variance;Planning and Development, Combined Application",
+   "method": "Meetings"
+  },
+  {
+   "date": "2016-02-03",
+   "lobbyist": "Jamie Besner",
+   "organization": "Sussex Strategy Group",
+   "client": "Liberty Entertainment Group",
+   "subject": "Exhibition Place;Planning and Development, Planning Policy / Study",
+   "method": "Emails"
+  },
+  {
+   "date": "2016-01-29",
+   "lobbyist": "Chris Schafer",
+   "organization": "Uber Canada, Inc.",
+   "client": null,
+   "subject": "By-law / Regulation;Economic Development;Licences / Licensing",
+   "method": "Emails"
+  },
+  {
+   "date": "2016-01-29",
+   "lobbyist": "Chris Korwin-Kuczynski",
+   "organization": "Chris Korwin-Kuczynski",
+   "client": "Lori Priolo",
+   "subject": "Planning and Development Application, Minor Variance;Planning and Development, Combined Application",
+   "method": "Written"
+  },
+  {
+   "date": "2016-01-28",
+   "lobbyist": "Paul Sutherland",
+   "organization": "Sutherland & Associates",
+   "client": "Muzik Clubs",
+   "subject": "Planning and Development Application, Official Plan",
+   "method": "Phone calls"
+  },
+  {
+   "date": "2016-01-26",
+   "lobbyist": "Janet De Silva",
+   "organization": "Toronto Region Board of Trade",
+   "client": null,
+   "subject": "Budget",
+   "method": "Emails"
+  },
+  {
+   "date": "2016-01-25",
+   "lobbyist": "Dov Seidenfeld",
+   "organization": "Fieldgate Homes",
+   "client": null,
+   "subject": "Planning and Development Application, Plan of Condominium;Planning and Development, Combined Application",
+   "method": "Meetings"
+  },
+  {
+   "date": "2016-01-25",
+   "lobbyist": "Dayna Gilbert",
+   "organization": "Fieldgate Homes",
+   "client": null,
+   "subject": "Planning and Development Application, Plan of Condominium;Planning and Development, Combined Application",
+   "method": "Meetings"
+  },
+  {
+   "date": "2016-01-25",
+   "lobbyist": "Leith R Moore",
+   "organization": "Fieldgate Homes",
+   "client": null,
+   "subject": "Planning and Development Application, Plan of Condominium;Planning and Development, Combined Application",
+   "method": "Meetings"
+  },
+  {
+   "date": "2016-01-20",
+   "lobbyist": "Mauro Ritacca",
+   "organization": "Toronto Regional Real Estate Board",
+   "client": null,
+   "subject": "Budget",
+   "method": "Emails"
+  },
+  {
+   "date": "2016-01-19",
+   "lobbyist": "Melissa Cristofoli",
+   "organization": "RioCan Real estate Investment Trust",
+   "client": null,
+   "subject": "Planning and Development, Combined Application",
+   "method": "Phone calls"
+  },
+  {
+   "date": "2016-01-15",
+   "lobbyist": "Sean Hill",
+   "organization": "The Advantage Group",
+   "client": "Metrolinx",
+   "subject": "Signs",
+   "method": "Emails"
+  },
+  {
+   "date": "2016-01-13",
+   "lobbyist": "Sean Hill",
+   "organization": "The Advantage Group",
+   "client": "Metrolinx",
+   "subject": "Signs",
+   "method": "Emails"
+  },
+  {
+   "date": "2016-01-08",
+   "lobbyist": "Melissa Cristofoli",
+   "organization": "RioCan Real estate Investment Trust",
+   "client": null,
+   "subject": "Planning and Development, Combined Application",
+   "method": "Meetings"
+  },
+  {
+   "date": "2016-01-08",
+   "lobbyist": "Calvin W Lantz",
+   "organization": "Stikeman Elliott LLP",
+   "client": "RioCan Real Estate Investment Trust",
+   "subject": "Planning and Development, Combined Application",
+   "method": "Meetings"
+  },
+  {
+   "date": "2016-01-05",
+   "lobbyist": "Chris Schafer",
+   "organization": "Uber Canada, Inc.",
+   "client": null,
+   "subject": "By-law / Regulation;Economic Development;Licences / Licensing",
+   "method": "Emails"
+  },
+  {
+   "date": "2015-12-15",
+   "lobbyist": "Sean Hill",
+   "organization": "The Advantage Group",
+   "client": "Canadian Pacific National Railway",
+   "subject": "Signs",
+   "method": "Meetings"
+  },
+  {
+   "date": "2015-12-15",
+   "lobbyist": "Allan D. Peck",
+   "organization": "Outdoor Opportunities Inc.",
+   "client": "Metrolinx",
+   "subject": "Signs",
+   "method": "Meetings"
+  },
+  {
+   "date": "2015-12-15",
+   "lobbyist": "Steve B Wolowich",
+   "organization": "Outfront Media Canada LP",
+   "client": null,
+   "subject": "Signs",
+   "method": "Meetings"
+  },
+  {
+   "date": "2015-12-14",
+   "lobbyist": "Chris Schafer",
+   "organization": "Uber Canada, Inc.",
+   "client": null,
+   "subject": "By-law / Regulation;Economic Development;Licences / Licensing",
+   "method": "Emails"
+  },
+  {
+   "date": "2015-12-10",
+   "lobbyist": "Chris Schafer",
+   "organization": "Uber Canada, Inc.",
+   "client": null,
+   "subject": "By-law / Regulation;Economic Development;Licences / Licensing",
+   "method": "Emails"
+  },
+  {
+   "date": "2015-12-09",
+   "lobbyist": "Sean Hill",
+   "organization": "The Advantage Group",
+   "client": "Outfront Media LLC",
+   "subject": "Signs",
+   "method": "Meetings"
+  },
+  {
+   "date": "2015-12-08",
+   "lobbyist": "Kim M Kovar",
+   "organization": "Aird & Berlis LLP",
+   "client": "2384903 Ontario Inc.",
+   "subject": "Planning and Development Application, Zoning By-law;Planning and Development Application, Consent to Sever",
+   "method": "Meetings"
+  },
+  {
+   "date": "2015-12-07",
+   "lobbyist": "Paul Scrivener",
+   "organization": "Toronto Industry Network",
+   "client": null,
+   "subject": "By-law / Regulation;Economic Development;Environment",
+   "method": "Emails"
+  },
+  {
+   "date": "2015-11-26",
+   "lobbyist": "Melissa Cristofoli",
+   "organization": "RioCan Real estate Investment Trust",
+   "client": null,
+   "subject": "Planning and Development, Combined Application",
+   "method": "Meetings"
+  },
+  {
+   "date": "2015-11-26",
+   "lobbyist": "Paul Sutherland",
+   "organization": "Sutherland & Associates",
+   "client": "Porter Aviation Holdings Inc.",
+   "subject": "Economic Development;Waterfront Revitalization",
+   "method": "Meetings"
+  },
+  {
+   "date": "2015-11-26",
+   "lobbyist": "Daniel A Bordonali",
+   "organization": "Sutherland & Associates",
+   "client": "Porter Aviation Holdings Inc.",
+   "subject": "Economic Development;Waterfront Revitalization",
+   "method": "Meetings"
+  },
+  {
+   "date": "2015-11-26",
+   "lobbyist": "Andrew AP Pierce",
+   "organization": "Porter Aviation Holdings Inc.",
+   "client": null,
+   "subject": "Economic Development;Waterfront Revitalization",
+   "method": "Meetings"
+  },
+  {
+   "date": "2015-11-26",
+   "lobbyist": "Jeffrey Brown",
+   "organization": "Porter Aviation Holdings Inc.",
+   "client": null,
+   "subject": "Economic Development;Waterfront Revitalization",
+   "method": "Meetings"
+  },
+  {
+   "date": "2015-11-26",
+   "lobbyist": "Marinela Gheorghe",
+   "organization": "Porter Aviation Holdings Inc.",
+   "client": null,
+   "subject": "Economic Development;Waterfront Revitalization",
+   "method": "Meetings"
+  },
+  {
+   "date": "2015-11-25",
+   "lobbyist": "Sean Hill",
+   "organization": "The Advantage Group",
+   "client": "Canadian Pacific National Railway",
+   "subject": "Signs",
+   "method": "Emails"
+  },
+  {
+   "date": "2015-11-22",
+   "lobbyist": "Paul Scrivener",
+   "organization": "Toronto Industry Network",
+   "client": null,
+   "subject": "By-law / Regulation;Economic Development;Environment",
+   "method": "Emails"
+  },
+  {
+   "date": "2015-11-17",
+   "lobbyist": "Kim M Kovar",
+   "organization": "Aird & Berlis LLP",
+   "client": "2384903 Ontario Inc.",
+   "subject": "Planning and Development Application, Zoning By-law;Planning and Development Application, Consent to Sever",
+   "method": "Meetings"
+  },
+  {
+   "date": "2015-11-16",
+   "lobbyist": "Paul Scrivener",
+   "organization": "Toronto Industry Network",
+   "client": null,
+   "subject": "By-law / Regulation;Economic Development;Environment",
+   "method": "Emails"
+  },
+  {
+   "date": "2015-11-16",
+   "lobbyist": "Sean Hill",
+   "organization": "The Advantage Group",
+   "client": "Canadian Pacific National Railway",
+   "subject": "Signs",
+   "method": "Meetings"
+  },
+  {
+   "date": "2015-11-16",
+   "lobbyist": "Kim Wright",
+   "organization": "Sussex Strategy Group",
+   "client": "D. Crupi & Sons Limited",
+   "subject": "Planning and Development, Planning Policy / Study",
+   "method": "Phone calls"
+  },
+  {
+   "date": "2015-11-12",
+   "lobbyist": "Paul Scrivener",
+   "organization": "Toronto Industry Network",
+   "client": null,
+   "subject": "By-law / Regulation;Economic Development;Environment",
+   "method": "Emails"
+  },
+  {
+   "date": "2015-11-12",
+   "lobbyist": "Clark Rabbior",
+   "organization": "Global Public Affairs",
+   "client": "Zipcar",
+   "subject": "Fleet Services;Parking;Toronto Parking Authority",
+   "method": "Other or unreported"
+  },
+  {
+   "date": "2015-11-12",
+   "lobbyist": "Duncan Payne",
+   "organization": "Building Industry and Land Development Association",
+   "client": null,
+   "subject": "Attractions / Tourism",
+   "method": "Meetings"
+  },
+  {
+   "date": "2015-11-12",
+   "lobbyist": "Bryan Tuckey",
+   "organization": "Building Industry and Land Development Association",
+   "client": null,
+   "subject": "Attractions / Tourism",
+   "method": "Meetings"
+  },
+  {
+   "date": "2015-11-12",
+   "lobbyist": "Steve Deveaux",
+   "organization": "Building Industry and Land Development Association",
+   "client": null,
+   "subject": "Attractions / Tourism",
+   "method": "Meetings"
+  },
+  {
+   "date": "2015-11-12",
+   "lobbyist": "Danielle Chin",
+   "organization": "Building Industry and Land Development Association",
+   "client": null,
+   "subject": "Affordable Housing",
+   "method": "Meetings"
+  },
+  {
+   "date": "2015-11-12",
+   "lobbyist": "Paula J Tenuta",
+   "organization": "Building Industry and Land Development Association",
+   "client": null,
+   "subject": "Affordable Housing",
+   "method": "Meetings"
+  },
+  {
+   "date": "2015-11-10",
+   "lobbyist": "Salvatore Cavarretta",
+   "organization": "Deltera Inc.",
+   "client": null,
+   "subject": "Planning and Development Application, Zoning By-law;Planning and Development Application, Site Plan;Planning and Development, Combined Application",
+   "method": "Meetings"
+  },
+  {
+   "date": "2015-11-10",
+   "lobbyist": "Sean Hill",
+   "organization": "The Advantage Group",
+   "client": "Canadian Pacific National Railway",
+   "subject": "Signs",
+   "method": "Emails"
+  },
+  {
+   "date": "2015-11-10",
+   "lobbyist": "Clark Rabbior",
+   "organization": "Global Public Affairs",
+   "client": "Zipcar",
+   "subject": "Fleet Services;Parking;Toronto Parking Authority",
+   "method": "Emails"
+  },
+  {
+   "date": "2015-11-09",
+   "lobbyist": "Sean Hill",
+   "organization": "The Advantage Group",
+   "client": "Canadian Pacific National Railway",
+   "subject": "Signs",
+   "method": "Meetings"
+  },
+  {
+   "date": "2015-11-09",
+   "lobbyist": "Kim Wright",
+   "organization": "Sussex Strategy Group",
+   "client": "D. Crupi & Sons Limited",
+   "subject": "Planning and Development, Planning Policy / Study",
+   "method": "Meetings"
+  },
+  {
+   "date": "2015-11-09",
+   "lobbyist": "Paul A Pellegrini",
+   "organization": "Sussex Strategy Group",
+   "client": "D. Crupi & Sons Limited",
+   "subject": "Planning and Development, Planning Policy / Study",
+   "method": "Meetings"
+  },
+  {
+   "date": "2015-11-09",
+   "lobbyist": "Calvin W Lantz",
+   "organization": "Stikeman Elliott LLP",
+   "client": "D. Crupi & Sons Limited",
+   "subject": "Economic Development",
+   "method": "Meetings"
+  },
+  {
+   "date": "2015-10-28",
+   "lobbyist": "Megan Boyle",
+   "organization": "Canadian Beverage Association",
+   "client": null,
+   "subject": "Economic Development;Public Health",
+   "method": "Phone calls"
+  },
+  {
+   "date": "2015-10-28",
+   "lobbyist": "Sean Hill",
+   "organization": "The Advantage Group",
+   "client": "Canadian Pacific National Railway",
+   "subject": "Signs",
+   "method": "Emails"
+  },
+  {
+   "date": "2015-10-28",
+   "lobbyist": "Kim Wright",
+   "organization": "Sussex Strategy Group",
+   "client": "D. Crupi & Sons Limited",
+   "subject": "Planning and Development, Planning Policy / Study",
+   "method": "Phone calls"
+  },
+  {
+   "date": "2015-10-28",
+   "lobbyist": "Calvin W Lantz",
+   "organization": "Stikeman Elliott LLP",
+   "client": "D. Crupi & Sons Limited",
+   "subject": "Economic Development",
+   "method": "Phone calls"
+  },
+  {
+   "date": "2015-10-23",
+   "lobbyist": "Derek Vanstone",
+   "organization": "Air Canada",
+   "client": null,
+   "subject": "Economic Development;Waterfront Revitalization",
+   "method": "Emails"
+  },
+  {
+   "date": "2015-10-22",
+   "lobbyist": "Megan Boyle",
+   "organization": "Canadian Beverage Association",
+   "client": null,
+   "subject": "Economic Development;Public Health",
+   "method": "Emails"
+  },
+  {
+   "date": "2015-10-22",
+   "lobbyist": "Kim Wright",
+   "organization": "Sussex Strategy Group",
+   "client": "D. Crupi & Sons Limited",
+   "subject": "Planning and Development, Planning Policy / Study",
+   "method": "Phone calls"
+  },
+  {
+   "date": "2015-10-22",
+   "lobbyist": "Megan Boyle",
+   "organization": "Canadian Beverage Association",
+   "client": null,
+   "subject": "Health & Safety",
+   "method": "Emails"
+  },
+  {
+   "date": "2015-10-21",
+   "lobbyist": "David Graham",
+   "organization": "Cieslok Media",
+   "client": null,
+   "subject": "Signs",
+   "method": "Meetings"
+  },
+  {
+   "date": "2015-10-20",
+   "lobbyist": "David Graham",
+   "organization": "Cieslok Media",
+   "client": null,
+   "subject": "Signs",
+   "method": "Meetings"
+  },
+  {
+   "date": "2015-10-15",
+   "lobbyist": "Robert Deluce",
+   "organization": "Porter Aviation Holdings Inc.",
+   "client": null,
+   "subject": "Economic Development;Waterfront Revitalization",
+   "method": "Written"
+  },
+  {
+   "date": "2015-10-14",
+   "lobbyist": "Kristine Hubbard",
+   "organization": "Beck Taxi Limited",
+   "client": null,
+   "subject": "By-law / Regulation;Licences / Licensing",
+   "method": "Phone calls"
+  },
+  {
+   "date": "2015-10-09",
+   "lobbyist": "Kristine Hubbard",
+   "organization": "Beck Taxi Limited",
+   "client": null,
+   "subject": "By-law / Regulation;Licences / Licensing",
+   "method": "Phone calls"
+  },
+  {
+   "date": "2015-10-08",
+   "lobbyist": "Kim Wright",
+   "organization": "Sussex Strategy Group",
+   "client": "D. Crupi & Sons Limited",
+   "subject": "Planning and Development, Planning Policy / Study",
+   "method": "Meetings"
+  },
+  {
+   "date": "2015-10-08",
+   "lobbyist": "Maria Crupi-Nisperos",
+   "organization": "D. Crupi and Sons Limited",
+   "client": null,
+   "subject": "Planning and Development Application, Zoning By-law",
+   "method": "Meetings"
+  },
+  {
+   "date": "2015-10-08",
+   "lobbyist": "Dominic Crupi",
+   "organization": "D. Crupi and Sons Limited",
+   "client": null,
+   "subject": "Planning and Development Application, Zoning By-law",
+   "method": "Meetings"
+  },
+  {
+   "date": "2015-10-08",
+   "lobbyist": "Cosimo Crupi",
+   "organization": "D. Crupi and Sons Limited",
+   "client": null,
+   "subject": "Planning and Development Application, Zoning By-law",
+   "method": "Meetings"
+  },
+  {
+   "date": "2015-10-08",
+   "lobbyist": "Maria Crupi-Nisperos",
+   "organization": "D. Crupi and Sons Limited",
+   "client": null,
+   "subject": "Economic Development",
+   "method": "Meetings"
+  },
+  {
+   "date": "2015-10-08",
+   "lobbyist": "Dominic Crupi",
+   "organization": "D. Crupi and Sons Limited",
+   "client": null,
+   "subject": "Economic Development",
+   "method": "Meetings"
+  },
+  {
+   "date": "2015-10-08",
+   "lobbyist": "Cosimo Crupi",
+   "organization": "D. Crupi and Sons Limited",
+   "client": null,
+   "subject": "Economic Development",
+   "method": "Meetings"
+  },
+  {
+   "date": "2015-10-08",
+   "lobbyist": "Maria Crupi-Nisperos",
+   "organization": "D. Crupi and Sons Limited",
+   "client": null,
+   "subject": "Economic Development",
+   "method": "Meetings"
+  },
+  {
+   "date": "2015-10-08",
+   "lobbyist": "Dominic Crupi",
+   "organization": "D. Crupi and Sons Limited",
+   "client": null,
+   "subject": "Economic Development",
+   "method": "Meetings"
+  },
+  {
+   "date": "2015-10-08",
+   "lobbyist": "Cosimo Crupi",
+   "organization": "D. Crupi and Sons Limited",
+   "client": null,
+   "subject": "Economic Development",
+   "method": "Meetings"
+  },
+  {
+   "date": "2015-10-08",
+   "lobbyist": "Maria Crupi-Nisperos",
+   "organization": "D. Crupi and Sons Limited",
+   "client": null,
+   "subject": "Economic Development",
+   "method": "Meetings"
+  },
+  {
+   "date": "2015-10-08",
+   "lobbyist": "Dominic Crupi",
+   "organization": "D. Crupi and Sons Limited",
+   "client": null,
+   "subject": "Economic Development",
+   "method": "Meetings"
+  },
+  {
+   "date": "2015-10-08",
+   "lobbyist": "Cosimo Crupi",
+   "organization": "D. Crupi and Sons Limited",
+   "client": null,
+   "subject": "Economic Development",
+   "method": "Meetings"
+  },
+  {
+   "date": "2015-10-08",
+   "lobbyist": "Maria Crupi-Nisperos",
+   "organization": "D. Crupi and Sons Limited",
+   "client": null,
+   "subject": "Planning and Development, Planning Policy / Study",
+   "method": "Meetings"
+  },
+  {
+   "date": "2015-10-08",
+   "lobbyist": "Dominic Crupi",
+   "organization": "D. Crupi and Sons Limited",
+   "client": null,
+   "subject": "Planning and Development, Planning Policy / Study",
+   "method": "Meetings"
+  },
+  {
+   "date": "2015-10-08",
+   "lobbyist": "Cosimo Crupi",
+   "organization": "D. Crupi and Sons Limited",
+   "client": null,
+   "subject": "Planning and Development, Planning Policy / Study",
+   "method": "Meetings"
+  },
+  {
+   "date": "2015-10-08",
+   "lobbyist": "Maria Crupi-Nisperos",
+   "organization": "D. Crupi and Sons Limited",
+   "client": null,
+   "subject": "Planning and Development Application, Zoning By-law",
+   "method": "Meetings"
+  },
+  {
+   "date": "2015-10-08",
+   "lobbyist": "Dominic Crupi",
+   "organization": "D. Crupi and Sons Limited",
+   "client": null,
+   "subject": "Planning and Development Application, Zoning By-law",
+   "method": "Meetings"
+  },
+  {
+   "date": "2015-10-08",
+   "lobbyist": "Cosimo Crupi",
+   "organization": "D. Crupi and Sons Limited",
+   "client": null,
+   "subject": "Planning and Development Application, Zoning By-law",
+   "method": "Meetings"
+  },
+  {
+   "date": "2015-10-07",
+   "lobbyist": "Sean Hill",
+   "organization": "The Advantage Group",
+   "client": "Canadian Pacific National Railway",
+   "subject": "Signs",
+   "method": "Meetings"
+  },
+  {
+   "date": "2015-10-07",
+   "lobbyist": "Kim Wright",
+   "organization": "Sussex Strategy Group",
+   "client": "D. Crupi & Sons Limited",
+   "subject": "Planning and Development, Planning Policy / Study",
+   "method": "Emails"
+  },
+  {
+   "date": "2015-10-07",
+   "lobbyist": "John Duffy",
+   "organization": "StrategyCorp Inc.",
+   "client": "Uber Canada Inc.",
+   "subject": "By-law / Regulation;Economic Development;Licences / Licensing",
+   "method": "Meetings"
+  },
+  {
+   "date": "2015-10-07",
+   "lobbyist": "Allan D. Peck",
+   "organization": "Outdoor Opportunities Inc.",
+   "client": "Canadian Pacific Railway Company",
+   "subject": "Signs",
+   "method": "Meetings"
+  },
+  {
+   "date": "2015-10-07",
+   "lobbyist": "John Duffy",
+   "organization": "StrategyCorp Inc.",
+   "client": "Global Fortune",
+   "subject": "Planning and Development, Planning Policy / Study",
+   "method": "Meetings"
+  },
+  {
+   "date": "2015-10-07",
+   "lobbyist": "Steve B Wolowich",
+   "organization": "Outfront Media Canada LP",
+   "client": null,
+   "subject": "Signs",
+   "method": "Meetings"
+  },
+  {
+   "date": "2015-10-06",
+   "lobbyist": "Alan Brookes",
+   "organization": "Canada Running Series",
+   "client": null,
+   "subject": "Recreation",
+   "method": "Written"
+  },
+  {
+   "date": "2015-10-05",
+   "lobbyist": "Amber Crawford",
+   "organization": "StrategyCorp Inc.",
+   "client": "Global Fortune",
+   "subject": "Planning and Development, Planning Policy / Study",
+   "method": "Emails"
+  },
+  {
+   "date": "2015-10-01",
+   "lobbyist": "Kristofer Tristovski",
+   "organization": "Dijoto Inc.",
+   "client": null,
+   "subject": "By-law / Regulation;Licences / Licensing;Technology",
+   "method": "Phone calls"
+  },
+  {
+   "date": "2015-09-30",
+   "lobbyist": "Kristine Hubbard",
+   "organization": "Beck Taxi Limited",
+   "client": null,
+   "subject": "By-law / Regulation;Licences / Licensing",
+   "method": "Emails"
+  },
+  {
+   "date": "2015-09-30",
+   "lobbyist": "Zlatko Starkovski",
+   "organization": "Muzik Clubs Inc.",
+   "client": null,
+   "subject": "Exhibition Place",
+   "method": "Written"
+  },
+  {
+   "date": "2015-09-30",
+   "lobbyist": "Jamie Besner",
+   "organization": "Sussex Strategy Group",
+   "client": "Accessible Transportation Association of Ontario (ATAO)",
+   "subject": "Taxi Licensing issues",
+   "method": "Meetings"
+  },
+  {
+   "date": "2015-09-29",
+   "lobbyist": "Kristine Hubbard",
+   "organization": "Beck Taxi Limited",
+   "client": null,
+   "subject": "By-law / Regulation;Licences / Licensing",
+   "method": "Meetings"
+  },
+  {
+   "date": "2015-09-29",
+   "lobbyist": "Patricia Favre",
+   "organization": "Navigator",
+   "client": "Beck Taxi",
+   "subject": "Licences / Licensing",
+   "method": "Meetings"
+  },
+  {
+   "date": "2015-09-29",
+   "lobbyist": "Joshua Wozenilek",
+   "organization": "Dijoto Inc.",
+   "client": null,
+   "subject": "By-law / Regulation;Licences / Licensing;Technology",
+   "method": "Written"
+  },
+  {
+   "date": "2015-09-29",
+   "lobbyist": "John Duffy",
+   "organization": "StrategyCorp Inc.",
+   "client": "Global Fortune",
+   "subject": "Planning and Development, Planning Policy / Study",
+   "method": "Meetings"
+  },
+  {
+   "date": "2015-09-28",
+   "lobbyist": "Ian Black",
+   "organization": "Uber Canada, Inc.",
+   "client": null,
+   "subject": "By-law / Regulation;Economic Development;Licences / Licensing",
+   "method": "Emails"
+  },
+  {
+   "date": "2015-09-28",
+   "lobbyist": "Gail Souter",
+   "organization": "Beck Taxi Limited",
+   "client": null,
+   "subject": "By-law / Regulation;Licences / Licensing",
+   "method": "Written"
+  },
+  {
+   "date": "2015-09-27",
+   "lobbyist": "Chris Schafer",
+   "organization": "Uber Canada, Inc.",
+   "client": null,
+   "subject": "By-law / Regulation;Economic Development;Licences / Licensing",
+   "method": "Emails"
+  },
+  {
+   "date": "2015-09-25",
+   "lobbyist": "David A McKay",
+   "organization": "MacNaughton Hermsen Britton Clarkson Planning Limited",
+   "client": "1127792 Ontario Limited",
+   "subject": "Planning and Development Application, Zoning By-law",
+   "method": "Meetings"
+  },
+  {
+   "date": "2015-09-24",
+   "lobbyist": "Sam Moini",
+   "organization": "Sam Moini",
+   "client": null,
+   "subject": "Licences / Licensing",
+   "method": "Meetings"
+  },
+  {
+   "date": "2015-09-24",
+   "lobbyist": "Kristofer Tristovski",
+   "organization": "Dijoto Inc.",
+   "client": null,
+   "subject": "By-law / Regulation;Licences / Licensing;Technology",
+   "method": "Emails"
+  },
+  {
+   "date": "2015-09-22",
+   "lobbyist": "Alan Brookes",
+   "organization": "Canada Running Series",
+   "client": null,
+   "subject": "Recreation",
+   "method": "Written"
+  },
+  {
+   "date": "2015-09-21",
+   "lobbyist": "Chris Schafer",
+   "organization": "Uber Canada, Inc.",
+   "client": null,
+   "subject": "By-law / Regulation;Economic Development;Licences / Licensing",
+   "method": "Emails"
+  },
+  {
+   "date": "2015-09-21",
+   "lobbyist": "Patricia Favre",
+   "organization": "Navigator",
+   "client": "Beck Taxi",
+   "subject": "Licences / Licensing",
+   "method": "Emails"
+  },
+  {
+   "date": "2015-09-18",
+   "lobbyist": "Chris Schafer",
+   "organization": "Uber Canada, Inc.",
+   "client": null,
+   "subject": "By-law / Regulation;Economic Development;Licences / Licensing",
+   "method": "Emails"
+  },
+  {
+   "date": "2015-09-16",
+   "lobbyist": "Sean Hill",
+   "organization": "The Advantage Group",
+   "client": "Canadian Pacific National Railway",
+   "subject": "Signs",
+   "method": "Emails"
+  },
+  {
+   "date": "2015-09-16",
+   "lobbyist": "Kim Wright",
+   "organization": "Sussex Strategy Group",
+   "client": "D. Crupi & Sons Limited",
+   "subject": "Planning and Development, Planning Policy / Study",
+   "method": "Meetings"
+  },
+  {
+   "date": "2015-09-15",
+   "lobbyist": "Kim Wright",
+   "organization": "Sussex Strategy Group",
+   "client": "D. Crupi & Sons Limited",
+   "subject": "Planning and Development, Planning Policy / Study",
+   "method": "Meetings"
+  },
+  {
+   "date": "2015-09-15",
+   "lobbyist": "Maria Crupi-Nisperos",
+   "organization": "D. Crupi and Sons Limited",
+   "client": null,
+   "subject": "Planning and Development Application, Zoning By-law",
+   "method": "Meetings"
+  },
+  {
+   "date": "2015-09-15",
+   "lobbyist": "Dominic Crupi",
+   "organization": "D. Crupi and Sons Limited",
+   "client": null,
+   "subject": "Planning and Development Application, Zoning By-law",
+   "method": "Meetings"
+  },
+  {
+   "date": "2015-09-15",
+   "lobbyist": "Cosimo Crupi",
+   "organization": "D. Crupi and Sons Limited",
+   "client": null,
+   "subject": "Planning and Development Application, Zoning By-law",
+   "method": "Meetings"
+  },
+  {
+   "date": "2015-09-15",
+   "lobbyist": "Maria Crupi-Nisperos",
+   "organization": "D. Crupi and Sons Limited",
+   "client": null,
+   "subject": "Economic Development",
+   "method": "Meetings"
+  },
+  {
+   "date": "2015-09-15",
+   "lobbyist": "Dominic Crupi",
+   "organization": "D. Crupi and Sons Limited",
+   "client": null,
+   "subject": "Economic Development",
+   "method": "Meetings"
+  },
+  {
+   "date": "2015-09-15",
+   "lobbyist": "Cosimo Crupi",
+   "organization": "D. Crupi and Sons Limited",
+   "client": null,
+   "subject": "Economic Development",
+   "method": "Meetings"
+  },
+  {
+   "date": "2015-09-15",
+   "lobbyist": "Maria Crupi-Nisperos",
+   "organization": "D. Crupi and Sons Limited",
+   "client": null,
+   "subject": "Economic Development",
+   "method": "Meetings"
+  },
+  {
+   "date": "2015-09-15",
+   "lobbyist": "Dominic Crupi",
+   "organization": "D. Crupi and Sons Limited",
+   "client": null,
+   "subject": "Economic Development",
+   "method": "Meetings"
+  },
+  {
+   "date": "2015-09-15",
+   "lobbyist": "Cosimo Crupi",
+   "organization": "D. Crupi and Sons Limited",
+   "client": null,
+   "subject": "Economic Development",
+   "method": "Meetings"
+  },
+  {
+   "date": "2015-09-15",
+   "lobbyist": "Maria Crupi-Nisperos",
+   "organization": "D. Crupi and Sons Limited",
+   "client": null,
+   "subject": "Economic Development",
+   "method": "Meetings"
+  },
+  {
+   "date": "2015-09-15",
+   "lobbyist": "Dominic Crupi",
+   "organization": "D. Crupi and Sons Limited",
+   "client": null,
+   "subject": "Economic Development",
+   "method": "Meetings"
+  },
+  {
+   "date": "2015-09-15",
+   "lobbyist": "Cosimo Crupi",
+   "organization": "D. Crupi and Sons Limited",
+   "client": null,
+   "subject": "Economic Development",
+   "method": "Meetings"
+  },
+  {
+   "date": "2015-09-15",
+   "lobbyist": "Maria Crupi-Nisperos",
+   "organization": "D. Crupi and Sons Limited",
+   "client": null,
+   "subject": "Planning and Development, Planning Policy / Study",
+   "method": "Meetings"
+  },
+  {
+   "date": "2015-09-15",
+   "lobbyist": "Dominic Crupi",
+   "organization": "D. Crupi and Sons Limited",
+   "client": null,
+   "subject": "Planning and Development, Planning Policy / Study",
+   "method": "Meetings"
+  },
+  {
+   "date": "2015-09-15",
+   "lobbyist": "Cosimo Crupi",
+   "organization": "D. Crupi and Sons Limited",
+   "client": null,
+   "subject": "Planning and Development, Planning Policy / Study",
+   "method": "Meetings"
+  },
+  {
+   "date": "2015-09-15",
+   "lobbyist": "Maria Crupi-Nisperos",
+   "organization": "D. Crupi and Sons Limited",
+   "client": null,
+   "subject": "Planning and Development Application, Zoning By-law",
+   "method": "Meetings"
+  },
+  {
+   "date": "2015-09-15",
+   "lobbyist": "Dominic Crupi",
+   "organization": "D. Crupi and Sons Limited",
+   "client": null,
+   "subject": "Planning and Development Application, Zoning By-law",
+   "method": "Meetings"
+  },
+  {
+   "date": "2015-09-15",
+   "lobbyist": "Cosimo Crupi",
+   "organization": "D. Crupi and Sons Limited",
+   "client": null,
+   "subject": "Planning and Development Application, Zoning By-law",
+   "method": "Meetings"
+  },
+  {
+   "date": "2015-09-11",
+   "lobbyist": "Chris Schafer",
+   "organization": "Uber Canada, Inc.",
+   "client": null,
+   "subject": "By-law / Regulation;Economic Development;Licences / Licensing",
+   "method": "Written"
+  },
+  {
+   "date": "2015-09-10",
+   "lobbyist": "Chris Schafer",
+   "organization": "Uber Canada, Inc.",
+   "client": null,
+   "subject": "By-law / Regulation;Economic Development;Licences / Licensing",
+   "method": "Emails"
+  },
+  {
+   "date": "2015-09-10",
+   "lobbyist": "Paul Sutherland",
+   "organization": "Sutherland & Associates",
+   "client": "Porter Aviation Holdings Inc.",
+   "subject": "Economic Development;Waterfront Revitalization",
+   "method": "Meetings"
+  },
+  {
+   "date": "2015-09-09",
+   "lobbyist": "Chris Schafer",
+   "organization": "Uber Canada, Inc.",
+   "client": null,
+   "subject": "By-law / Regulation;Economic Development;Licences / Licensing",
+   "method": "Meetings"
+  },
+  {
+   "date": "2015-09-08",
+   "lobbyist": "Chris Schafer",
+   "organization": "Uber Canada, Inc.",
+   "client": null,
+   "subject": "By-law / Regulation;Economic Development;Licences / Licensing",
+   "method": "Emails"
+  },
+  {
+   "date": "2015-08-31",
+   "lobbyist": "Amber Crawford",
+   "organization": "StrategyCorp Inc.",
+   "client": "Uber Canada Inc.",
+   "subject": "By-law / Regulation;Economic Development;Licences / Licensing",
+   "method": "Emails"
+  },
+  {
+   "date": "2015-08-26",
+   "lobbyist": "Chris Schafer",
+   "organization": "Uber Canada, Inc.",
+   "client": null,
+   "subject": "By-law / Regulation;Economic Development;Licences / Licensing",
+   "method": "Emails"
+  },
+  {
+   "date": "2015-08-21",
+   "lobbyist": "Fred Cromer",
+   "organization": "Bombardier Inc.",
+   "client": null,
+   "subject": "Economic Development",
+   "method": "Written"
+  },
+  {
+   "date": "2015-07-27",
+   "lobbyist": "Chris Schafer",
+   "organization": "Uber Canada, Inc.",
+   "client": null,
+   "subject": "By-law / Regulation;Economic Development;Licences / Licensing",
+   "method": "Emails"
+  },
+  {
+   "date": "2015-07-21",
+   "lobbyist": "Peter F. Smith",
+   "organization": "Bousfields Inc.",
+   "client": "Vandyk Group",
+   "subject": "Planning and Development Application, Zoning By-law",
+   "method": "Meetings"
+  },
+  {
+   "date": "2015-07-15",
+   "lobbyist": "Melissa Cristofoli",
+   "organization": "RioCan Real estate Investment Trust",
+   "client": null,
+   "subject": "Planning and Development, Combined Application",
+   "method": "Meetings"
+  },
+  {
+   "date": "2015-07-15",
+   "lobbyist": "Sasha Lauzon",
+   "organization": "Bousfields Inc.",
+   "client": "RioCan Management Inc.",
+   "subject": "Planning and Development Application, Zoning By-law",
+   "method": "Meetings"
+  },
+  {
+   "date": "2015-07-15",
+   "lobbyist": "Calvin W Lantz",
+   "organization": "Stikeman Elliott LLP",
+   "client": "RioCan Real Estate Investment Trust",
+   "subject": "Planning and Development, Combined Application",
+   "method": "Meetings"
+  },
+  {
+   "date": "2015-07-13",
+   "lobbyist": "Chris Schafer",
+   "organization": "Uber Canada, Inc.",
+   "client": null,
+   "subject": "By-law / Regulation;Economic Development;Licences / Licensing",
+   "method": "Emails"
+  },
+  {
+   "date": "2015-07-09",
+   "lobbyist": "Chris Schafer",
+   "organization": "Uber Canada, Inc.",
+   "client": null,
+   "subject": "By-law / Regulation;Economic Development;Licences / Licensing",
+   "method": "Emails"
+  },
+  {
+   "date": "2015-07-09",
+   "lobbyist": "Jamie Besner",
+   "organization": "Sussex Strategy Group",
+   "client": "Toronto Taxi Alliance",
+   "subject": "Licences / Licensing",
+   "method": "Emails"
+  },
+  {
+   "date": "2015-07-09",
+   "lobbyist": "Kim Wright",
+   "organization": "Sussex Strategy Group",
+   "client": "Clear Channel Outdoor Company Canada",
+   "subject": "Signs",
+   "method": "Other or unreported"
+  },
+  {
+   "date": "2015-07-09",
+   "lobbyist": "Jamie Besner",
+   "organization": "Sussex Strategy Group",
+   "client": "Clear Channel Outdoor Canada",
+   "subject": "Signs",
+   "method": "Emails"
+  },
+  {
+   "date": "2015-07-08",
+   "lobbyist": "Jamie Besner",
+   "organization": "Sussex Strategy Group",
+   "client": "Toronto Taxi Alliance",
+   "subject": "Licences / Licensing",
+   "method": "Emails"
+  },
+  {
+   "date": "2015-07-08",
+   "lobbyist": "Kim Wright",
+   "organization": "Sussex Strategy Group",
+   "client": "Clear Channel Outdoor Company Canada",
+   "subject": "Signs",
+   "method": "Meetings"
+  },
+  {
+   "date": "2015-07-08",
+   "lobbyist": "Jamie Besner",
+   "organization": "Sussex Strategy Group",
+   "client": "Clear Channel Outdoor Canada",
+   "subject": "Signs",
+   "method": "Emails"
+  },
+  {
+   "date": "2015-07-07",
+   "lobbyist": "Kim Wright",
+   "organization": "Sussex Strategy Group",
+   "client": "Clear Channel Outdoor Company Canada",
+   "subject": "Signs",
+   "method": "Meetings"
+  },
+  {
+   "date": "2015-07-07",
+   "lobbyist": "Jamie Besner",
+   "organization": "Sussex Strategy Group",
+   "client": "Clear Channel Outdoor Canada",
+   "subject": "Signs",
+   "method": "Emails"
+  },
+  {
+   "date": "2015-07-06",
+   "lobbyist": "James J. Lawson",
+   "organization": "Woodbine Entertainment Group",
+   "client": null,
+   "subject": "Attractions / Tourism",
+   "method": "Written"
+  },
+  {
+   "date": "2015-07-03",
+   "lobbyist": "Maggie Bassani",
+   "organization": "Stikeman Elliott LLP",
+   "client": "RioCan Real Estate Investment Trust",
+   "subject": "Planning and Development, Combined Application",
+   "method": "Emails"
+  },
+  {
+   "date": "2015-06-29",
+   "lobbyist": "Daniel A Bordonali",
+   "organization": "Sutherland & Associates",
+   "client": "Woodbine Entertainment Group",
+   "subject": "Attractions / Tourism",
+   "method": "Meetings"
+  },
+  {
+   "date": "2015-06-29",
+   "lobbyist": "David Bronskill",
+   "organization": "Goodmans LLP",
+   "client": "North Drive Investments",
+   "subject": "Planning and Development Application, Zoning By-law",
+   "method": "Meetings"
+  },
+  {
+   "date": "2015-06-26",
+   "lobbyist": "Melissa Cristofoli",
+   "organization": "RioCan Real estate Investment Trust",
+   "client": null,
+   "subject": "Planning and Development, Combined Application",
+   "method": "Emails"
+  },
+  {
+   "date": "2015-06-25",
+   "lobbyist": "Brendan Charters",
+   "organization": "Building Industry and Land Development Association",
+   "client": null,
+   "subject": "Transportation - Roads / Bridges",
+   "method": "Meetings"
+  },
+  {
+   "date": "2015-06-25",
+   "lobbyist": "Sam Lapidus",
+   "organization": "Building Industry and Land Development Association",
+   "client": null,
+   "subject": "Transportation - Roads / Bridges",
+   "method": "Meetings"
+  },
+  {
+   "date": "2015-06-25",
+   "lobbyist": "Jon Carlos Tsilfidis",
+   "organization": "Building Industry and Land Development Association",
+   "client": null,
+   "subject": "Transportation - Roads / Bridges",
+   "method": "Meetings"
+  },
+  {
+   "date": "2015-06-25",
+   "lobbyist": "Paula Tenuta",
+   "organization": "Building Industry and Land Development Association",
+   "client": null,
+   "subject": "Transportation - Roads / Bridges",
+   "method": "Meetings"
+  },
+  {
+   "date": "2015-06-25",
+   "lobbyist": "Brendan Charters",
+   "organization": "Building Industry and Land Development Association",
+   "client": null,
+   "subject": "Planning and Development: Planning Policies/Studies",
+   "method": "Meetings"
+  },
+  {
+   "date": "2015-06-25",
+   "lobbyist": "Sam Lapidus",
+   "organization": "Building Industry and Land Development Association",
+   "client": null,
+   "subject": "Planning and Development: Planning Policies/Studies",
+   "method": "Meetings"
+  },
+  {
+   "date": "2015-06-25",
+   "lobbyist": "Jon Carlos Tsilfidis",
+   "organization": "Building Industry and Land Development Association",
+   "client": null,
+   "subject": "Planning and Development: Planning Policies/Studies",
+   "method": "Meetings"
+  },
+  {
+   "date": "2015-06-25",
+   "lobbyist": "Paula J Tenuta",
+   "organization": "Building Industry and Land Development Association",
+   "client": null,
+   "subject": "Planning and Development: Planning Policies/Studies",
+   "method": "Meetings"
+  },
+  {
+   "date": "2015-06-23",
+   "lobbyist": "Robert O'Donnell",
+   "organization": "Greater Toronto Electrical Contractors Association",
+   "client": null,
+   "subject": "Procurement",
+   "method": "Written"
+  },
+  {
+   "date": "2015-06-18",
+   "lobbyist": "Kim Wright",
+   "organization": "Sussex Strategy Group",
+   "client": "Clear Channel Outdoor Company Canada",
+   "subject": "Signs",
+   "method": "Meetings"
+  },
+  {
+   "date": "2015-06-18",
+   "lobbyist": "Jamie Besner",
+   "organization": "Sussex Strategy Group",
+   "client": "Clear Channel Outdoor Canada",
+   "subject": "Signs",
+   "method": "Meetings"
+  },
+  {
+   "date": "2015-06-18",
+   "lobbyist": "Sean Hill",
+   "organization": "The Advantage Group",
+   "client": "Outfront Media LLC",
+   "subject": "Signs",
+   "method": "Meetings"
+  },
+  {
+   "date": "2015-06-17",
+   "lobbyist": "Jamie Besner",
+   "organization": "Sussex Strategy Group",
+   "client": "Clear Channel Outdoor Canada",
+   "subject": "Signs",
+   "method": "Meetings"
+  },
+  {
+   "date": "2015-06-17",
+   "lobbyist": "David A McKay",
+   "organization": "MacNaughton Hermsen Britton Clarkson Planning Limited",
+   "client": "RioCan",
+   "subject": "Planning and Development Application, Zoning By-law;Planning and Development Application, Site Plan",
+   "method": "Meetings"
+  },
+  {
+   "date": "2015-06-09",
+   "lobbyist": "Chris Schafer",
+   "organization": "Uber Canada, Inc.",
+   "client": null,
+   "subject": "By-law / Regulation;Economic Development;Licences / Licensing",
+   "method": "Emails"
+  },
+  {
+   "date": "2015-06-09",
+   "lobbyist": "Frank Notte",
+   "organization": "Trillium Automobile Dealers Association",
+   "client": null,
+   "subject": "Transportation - Roads / Bridges",
+   "method": "Emails"
+  },
+  {
+   "date": "2015-06-03",
+   "lobbyist": "Mike Yorke",
+   "organization": "Carpenters' District Council of Ontario",
+   "client": null,
+   "subject": "Transportation - Roads / Bridges",
+   "method": "Written"
+  },
+  {
+   "date": "2015-06-02",
+   "lobbyist": "Chris Schafer",
+   "organization": "Uber Canada, Inc.",
+   "client": null,
+   "subject": "By-law / Regulation;Economic Development;Licences / Licensing",
+   "method": "Emails"
+  },
+  {
+   "date": "2015-06-02",
+   "lobbyist": "David Bronskill",
+   "organization": "Goodmans LLP",
+   "client": "North Drive Investments",
+   "subject": "Planning and Development Application, Zoning By-law",
+   "method": "Meetings"
+  },
+  {
+   "date": "2015-06-01",
+   "lobbyist": "Elliott Silverstein",
+   "organization": "CAA South Central Ontario",
+   "client": null,
+   "subject": "Transportation - Roads / Bridges",
+   "method": "Meetings"
+  },
+  {
+   "date": "2015-05-27",
+   "lobbyist": "James St. John",
+   "organization": "Central Ontario Building Trades",
+   "client": null,
+   "subject": "Transit / TTC",
+   "method": "Emails"
+  },
+  {
+   "date": "2015-05-26",
+   "lobbyist": "Chris Schafer",
+   "organization": "Uber Canada, Inc.",
+   "client": null,
+   "subject": "By-law / Regulation;Economic Development;Licences / Licensing",
+   "method": "Meetings"
+  },
+  {
+   "date": "2015-05-26",
+   "lobbyist": "Courtney Glen",
+   "organization": "StrategyCorp Inc.",
+   "client": "Uber Canada Inc.",
+   "subject": "By-law / Regulation;Economic Development;Licences / Licensing",
+   "method": "Meetings"
+  },
+  {
+   "date": "2015-05-21",
+   "lobbyist": "James St. John",
+   "organization": "Central Ontario Building Trades",
+   "client": null,
+   "subject": "Transit / TTC",
+   "method": "Emails"
+  },
+  {
+   "date": "2015-05-20",
+   "lobbyist": "Amber Crawford",
+   "organization": "StrategyCorp Inc.",
+   "client": "Uber Canada Inc.",
+   "subject": "By-law / Regulation;Economic Development;Licences / Licensing",
+   "method": "Emails"
+  },
+  {
+   "date": "2015-05-19",
+   "lobbyist": "Amber Crawford",
+   "organization": "StrategyCorp Inc.",
+   "client": "Uber Canada Inc.",
+   "subject": "By-law / Regulation;Economic Development;Licences / Licensing",
+   "method": "Emails"
+  },
+  {
+   "date": "2015-05-12",
+   "lobbyist": "David Gerofsky",
+   "organization": "Great Gulf Group of Companies",
+   "client": null,
+   "subject": "Planning and Development, Planning Policy / Study;Planning and Development Application, Zoning By-law;Transportation - Roads / Bridges",
+   "method": "Written"
+  },
+  {
+   "date": "2015-05-11",
+   "lobbyist": "Jamie Besner",
+   "organization": "Sussex Strategy Group",
+   "client": "Clear Channel Outdoor Canada",
+   "subject": "Signs",
+   "method": "Phone calls"
+  },
+  {
+   "date": "2015-05-11",
+   "lobbyist": "John A. Macintyre",
+   "organization": "Cresa Toronto Inc.",
+   "client": null,
+   "subject": "Planning and Development, Planning Policy / Study",
+   "method": "Meetings"
+  },
+  {
+   "date": "2015-05-11",
+   "lobbyist": "Jeffrey Good",
+   "organization": "Cresa Toronto Inc.",
+   "client": null,
+   "subject": "Planning and Development, Planning Policy / Study",
+   "method": "Meetings"
+  },
+  {
+   "date": "2015-05-07",
+   "lobbyist": "James J. Lawson",
+   "organization": "Woodbine Entertainment Group",
+   "client": null,
+   "subject": "Attractions / Tourism",
+   "method": "Written"
+  },
+  {
+   "date": "2015-05-05",
+   "lobbyist": "Chris Schafer",
+   "organization": "Uber Canada, Inc.",
+   "client": null,
+   "subject": "By-law / Regulation;Economic Development;Licences / Licensing",
+   "method": "Emails"
+  },
+  {
+   "date": "2015-05-04",
+   "lobbyist": "Amarjeet K Chhabra",
+   "organization": "Taxiworkers Association of Ontario",
+   "client": null,
+   "subject": "Licences / Licensing",
+   "method": "Meetings"
+  },
+  {
+   "date": "2015-05-04",
+   "lobbyist": "Sam Moini",
+   "organization": "Toronto Taxi Alliance",
+   "client": null,
+   "subject": "Licences / Licensing;Transit / TTC",
+   "method": "Meetings"
+  },
+  {
+   "date": "2015-04-30",
+   "lobbyist": "Sid Catalano",
+   "organization": "Pattison Outdoor Advertising",
+   "client": null,
+   "subject": "Signs",
+   "method": "Emails"
+  },
+  {
+   "date": "2015-04-16",
+   "lobbyist": "Jamie Besner",
+   "organization": "Sussex Strategy Group",
+   "client": "Toronto Taxi Alliance",
+   "subject": "Licences / Licensing",
+   "method": "Meetings"
+  },
+  {
+   "date": "2015-04-16",
+   "lobbyist": "Jamie Besner",
+   "organization": "Sussex Strategy Group",
+   "client": "Clear Channel Outdoor Canada",
+   "subject": "Signs",
+   "method": "Meetings"
+  },
+  {
+   "date": "2015-04-12",
+   "lobbyist": "Sid Catalano",
+   "organization": "Pattison Outdoor Advertising",
+   "client": null,
+   "subject": "Signs",
+   "method": "Emails"
+  },
+  {
+   "date": "2015-04-10",
+   "lobbyist": "Manny Sousa",
+   "organization": "Sutherland & Associates",
+   "client": "Porter Aviation Holdings Inc.",
+   "subject": "Economic Development;Waterfront Revitalization",
+   "method": "Meetings"
+  },
+  {
+   "date": "2015-04-10",
+   "lobbyist": "Daniel A Bordonali",
+   "organization": "Sutherland & Associates",
+   "client": "Porter Aviation Holdings Inc.",
+   "subject": "Economic Development;Waterfront Revitalization",
+   "method": "Meetings"
+  },
+  {
+   "date": "2015-04-02",
+   "lobbyist": "Jamie Besner",
+   "organization": "Sussex Strategy Group",
+   "client": "Toronto Taxi Alliance",
+   "subject": "Licences / Licensing",
+   "method": "Meetings"
+  },
+  {
+   "date": "2015-04-01",
+   "lobbyist": "Jamie Besner",
+   "organization": "Sussex Strategy Group",
+   "client": "Toronto Taxi Alliance",
+   "subject": "Licences / Licensing",
+   "method": "Meetings"
+  },
+  {
+   "date": "2015-03-31",
+   "lobbyist": "Jamie Besner",
+   "organization": "Sussex Strategy Group",
+   "client": "Toronto Taxi Alliance",
+   "subject": "Licences / Licensing",
+   "method": "Meetings"
+  },
+  {
+   "date": "2015-03-30",
+   "lobbyist": "Jamie Besner",
+   "organization": "Sussex Strategy Group",
+   "client": "Toronto Taxi Alliance",
+   "subject": "Licences / Licensing",
+   "method": "Meetings"
+  },
+  {
+   "date": "2015-03-26",
+   "lobbyist": "Stephen McGregor",
+   "organization": "Outfront Media Canada LP",
+   "client": null,
+   "subject": "Signs",
+   "method": "Meetings"
+  },
+  {
+   "date": "2015-03-25",
+   "lobbyist": "Sid Catalano",
+   "organization": "Pattison Outdoor Advertising",
+   "client": null,
+   "subject": "Signs",
+   "method": "Emails"
+  },
+  {
+   "date": "2015-03-25",
+   "lobbyist": "David A McKay",
+   "organization": "MacNaughton Hermsen Britton Clarkson Planning Limited",
+   "client": "RioCan",
+   "subject": "Planning and Development Application, Zoning By-law;Planning and Development Application, Site Plan",
+   "method": "Meetings"
+  },
+  {
+   "date": "2015-03-25",
+   "lobbyist": "Melissa Bruzzese",
+   "organization": "RioCan Real estate Investment Trust",
+   "client": null,
+   "subject": "Planning and Development, Combined Application",
+   "method": "Meetings"
+  },
+  {
+   "date": "2015-03-25",
+   "lobbyist": "Jordan M Robins",
+   "organization": "RioCan Real estate Investment Trust",
+   "client": null,
+   "subject": "Planning and Development, Combined Application",
+   "method": "Meetings"
+  },
+  {
+   "date": "2015-03-24",
+   "lobbyist": "Jamie Besner",
+   "organization": "Sussex Strategy Group",
+   "client": "Toronto Taxi Alliance",
+   "subject": "Licences / Licensing",
+   "method": "Meetings"
+  },
+  {
+   "date": "2015-03-15",
+   "lobbyist": "Alan J Slobodsky",
+   "organization": "Slobodsky Associates",
+   "client": "Mizrahi Developments",
+   "subject": "Planning and Development, Heritage;Planning and Development Application, Zoning By-law;Planning and Development Application, Site Plan",
+   "method": "Emails"
+  },
+  {
+   "date": "2015-02-26",
+   "lobbyist": "Natalie Dash",
+   "organization": "Campbell Strategies Inc.",
+   "client": "Air Canada",
+   "subject": "Economic Development",
+   "method": "Meetings"
+  },
+  {
+   "date": "2015-02-17",
+   "lobbyist": "David A McKay",
+   "organization": "MacNaughton Hermsen Britton Clarkson Planning Limited",
+   "client": "Sobeys Developments",
+   "subject": "Planning and Development, Combined Application",
+   "method": "Meetings"
+  },
+  {
+   "date": "2015-02-09",
+   "lobbyist": "Stephen McGregor",
+   "organization": "Outfront Media Canada LP",
+   "client": null,
+   "subject": "Signs",
+   "method": "Emails"
+  },
+  {
+   "date": "2015-02-06",
+   "lobbyist": "Natalie Dash",
+   "organization": "Campbell Strategies Inc.",
+   "client": "Air Canada",
+   "subject": "Economic Development",
+   "method": "Emails"
+  },
+  {
+   "date": "2015-02-04",
+   "lobbyist": "ARVIND KUMAR AGARWAL",
+   "organization": "ARVIND KUMAR AGARWAL TAXI SERVICE",
+   "client": null,
+   "subject": "Licences / Licensing",
+   "method": "Emails"
+  },
+  {
+   "date": "2015-02-04",
+   "lobbyist": "Laura Lane",
+   "organization": "UPS Canada",
+   "client": null,
+   "subject": "Parking",
+   "method": "Meetings"
+  },
+  {
+   "date": "2015-02-04",
+   "lobbyist": "Cristina Falcone",
+   "organization": "UPS Canada",
+   "client": null,
+   "subject": "Parking",
+   "method": "Meetings"
+  },
+  {
+   "date": "2015-02-04",
+   "lobbyist": "Kim Wright",
+   "organization": "Sussex Strategy Group",
+   "client": "UPS",
+   "subject": "Economic Development;Parking",
+   "method": "Meetings"
+  },
+  {
+   "date": "2015-02-02",
+   "lobbyist": "Patrick Gill",
+   "organization": "Toronto Region Board of Trade",
+   "client": null,
+   "subject": "Budget",
+   "method": "Written"
+  },
+  {
+   "date": "2015-01-23",
+   "lobbyist": "Sid Catalano",
+   "organization": "Pattison Outdoor Advertising",
+   "client": null,
+   "subject": "Signs",
+   "method": "Meetings"
+  },
+  {
+   "date": "2015-01-20",
+   "lobbyist": "Robert Fidani",
+   "organization": "North Drive Investments Inc.",
+   "client": null,
+   "subject": "Planning and Development, Rental Housing Demolition or Conversion;Planning and Development Application, Zoning By-law;Planning and Development Application, Site Plan",
+   "method": "Meetings"
+  },
+  {
+   "date": "2015-01-20",
+   "lobbyist": "Jordan Morassutti",
+   "organization": "North Drive Investments Inc.",
+   "client": null,
+   "subject": "Planning and Development, Rental Housing Demolition or Conversion;Planning and Development Application, Zoning By-law;Planning and Development Application, Site Plan",
+   "method": "Meetings"
+  },
+  {
+   "date": "2015-01-13",
+   "lobbyist": "Paul Scrivener",
+   "organization": "Toronto Industry Network",
+   "client": null,
+   "subject": "By-law / Regulation;Economic Development;Environment",
+   "method": "Emails"
+  },
+  {
+   "date": "2015-01-12",
+   "lobbyist": "Paul Scrivener",
+   "organization": "Toronto Industry Network",
+   "client": null,
+   "subject": "By-law / Regulation;Economic Development;Environment",
+   "method": "Meetings"
+  },
+  {
+   "date": "2015-01-12",
+   "lobbyist": "Anima Doyle",
+   "organization": "Redpath Sugar Ltd.",
+   "client": null,
+   "subject": "Budget",
+   "method": "Meetings"
+  },
+  {
+   "date": "2015-01-12",
+   "lobbyist": "George Carter",
+   "organization": "Redpath Sugar Ltd.",
+   "client": null,
+   "subject": "Budget",
+   "method": "Meetings"
+  },
+  {
+   "date": "2015-01-07",
+   "lobbyist": "Stephen McGregor",
+   "organization": "Outfront Media Canada LP",
+   "client": null,
+   "subject": "Signs",
+   "method": "Meetings"
+  },
+  {
+   "date": "2014-12-31",
+   "lobbyist": "Chris Schafer",
+   "organization": "Uber Canada, Inc.",
+   "client": null,
+   "subject": "By-law / Regulation;Economic Development;Licences / Licensing",
+   "method": "Emails"
+  },
+  {
+   "date": "2014-12-17",
+   "lobbyist": "Ian Black",
+   "organization": "Uber Canada, Inc.",
+   "client": null,
+   "subject": "By-law / Regulation;Economic Development;Licences / Licensing",
+   "method": "Meetings"
+  },
+  {
+   "date": "2014-12-17",
+   "lobbyist": "Michael J Westcott",
+   "organization": "Crestview Strategy Inc.",
+   "client": "Uber Canada Inc.",
+   "subject": "By-law / Regulation;Economic Development;Licences / Licensing",
+   "method": "Meetings"
+  },
+  {
+   "date": "2014-12-10",
+   "lobbyist": "Luc J Cote",
+   "organization": "Fivestar Water Taxi",
+   "client": null,
+   "subject": "Waterfront Revitalization",
+   "method": "Emails"
+  },
+  {
+   "date": "2014-12-09",
+   "lobbyist": "Barry A. Horosko",
+   "organization": "Horosko Planning Law",
+   "client": "Remington on the Queensway Inc.",
+   "subject": "Planning Applications: Plan of Subdivision, Site Plan Approval and Variances",
+   "method": "Meetings"
+  },
+  {
+   "date": "2014-12-07",
+   "lobbyist": "Luc J Cote",
+   "organization": "Fivestar Water Taxi",
+   "client": null,
+   "subject": "Waterfront Revitalization",
+   "method": "Emails"
+  },
+  {
+   "date": "2014-12-04",
+   "lobbyist": "Ian Bacque",
+   "organization": "TELUS",
+   "client": null,
+   "subject": "Technology",
+   "method": "Emails"
+  },
+  {
+   "date": "2014-12-04",
+   "lobbyist": "Luc J Cote",
+   "organization": "Fivestar Water Taxi",
+   "client": null,
+   "subject": "Waterfront Revitalization",
+   "method": "Emails"
+  },
+  {
+   "date": "2014-12-02",
+   "lobbyist": "Chris Bentler",
+   "organization": "Cieslok Media",
+   "client": null,
+   "subject": "Signs",
+   "method": "Written"
+  },
+  {
+   "date": "2014-12-02",
+   "lobbyist": "Vanessa Rosa",
+   "organization": "Cieslok Media",
+   "client": null,
+   "subject": "Signs",
+   "method": "Written"
+  }
+ ]
+}

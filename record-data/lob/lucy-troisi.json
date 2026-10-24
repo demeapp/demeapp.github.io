@@ -1,0 +1,859 @@
+{
+ "member": "lucy-troisi",
+ "source": {
+  "name": "City of Toronto Lobbyist Registry (Open Data)",
+  "url": "https://open.toronto.ca/dataset/lobbyist-registry/"
+ },
+ "snapshot": "2026-10-23",
+ "count": 106,
+ "communications": [
+  {
+   "date": "2018-11-21",
+   "lobbyist": "Celine Chang",
+   "organization": "Crestview Strategy",
+   "client": "Sonder",
+   "subject": "Attractions / Tourism;Economic Development",
+   "method": "Emails"
+  },
+  {
+   "date": "2018-11-09",
+   "lobbyist": "Ian Bacque",
+   "organization": "TELUS",
+   "client": null,
+   "subject": "Arts / Culture",
+   "method": "Emails"
+  },
+  {
+   "date": "2018-08-29",
+   "lobbyist": "Salvatore Cavarretta",
+   "organization": "Deltera Inc.",
+   "client": null,
+   "subject": "Planning and Development Application, Zoning By-law;Planning and Development Application, Plan of Condominium;Planning and Development, Combined Application",
+   "method": "Meetings"
+  },
+  {
+   "date": "2018-08-14",
+   "lobbyist": "Kevin Whyte",
+   "organization": "Sutherland Corporation Ltd",
+   "client": "Toronto Civic Employees Union Local 416",
+   "subject": "Garbage / Recycling;Toronto Parking Authority;Water",
+   "method": "Emails"
+  },
+  {
+   "date": "2018-07-26",
+   "lobbyist": "Angela Drennan",
+   "organization": "Sussex Strategy Group",
+   "client": "Mount Pleasant Group of Cemeteries",
+   "subject": "Attractions / Tourism;Economic Development",
+   "method": "Phone calls"
+  },
+  {
+   "date": "2018-07-24",
+   "lobbyist": "Amir Remtulla",
+   "organization": "Amir Remtulla and Associates",
+   "client": "Maple Leaf Sports and Entertainment",
+   "subject": "Planning and Development Application, Site Plan;Real Estate / Property (City-owned);Signs",
+   "method": "Meetings"
+  },
+  {
+   "date": "2018-07-20",
+   "lobbyist": "Michael Foderick",
+   "organization": "McCarthy Tetrault LLP",
+   "client": "Maple Leaf Sports and Entertainment",
+   "subject": "Planning and Development, Combined Application",
+   "method": "Emails"
+  },
+  {
+   "date": "2018-07-19",
+   "lobbyist": "Michael Foderick",
+   "organization": "McCarthy Tetrault LLP",
+   "client": "Maple Leaf Sports and Entertainment",
+   "subject": "Planning and Development, Combined Application",
+   "method": "Emails"
+  },
+  {
+   "date": "2018-07-19",
+   "lobbyist": "Amir Remtulla",
+   "organization": "Amir Remtulla and Associates",
+   "client": "Maple Leaf Sports and Entertainment",
+   "subject": "Planning and Development Application, Site Plan;Real Estate / Property (City-owned);Signs",
+   "method": "Emails"
+  },
+  {
+   "date": "2018-07-18",
+   "lobbyist": "Michael Foderick",
+   "organization": "McCarthy Tetrault LLP",
+   "client": "Maple Leaf Sports and Entertainment",
+   "subject": "Planning and Development, Combined Application",
+   "method": "Emails"
+  },
+  {
+   "date": "2018-07-11",
+   "lobbyist": "Natalie Dash",
+   "organization": "Campbell Strategies Inc.",
+   "client": "Menkes Development",
+   "subject": "Economic Development;Emergency Services;Transportation - Roads / Bridges",
+   "method": "Meetings"
+  },
+  {
+   "date": "2018-07-11",
+   "lobbyist": "Natalie Dash",
+   "organization": "Campbell Strategies Inc.",
+   "client": "Cadillac Fairview",
+   "subject": "Economic Development;Emergency Services;Transportation - Roads / Bridges",
+   "method": "Meetings"
+  },
+  {
+   "date": "2018-07-11",
+   "lobbyist": "Natalie Dash",
+   "organization": "Campbell Strategies Inc.",
+   "client": "QuadReal",
+   "subject": "Economic Development;Emergency Services;Transportation - Roads / Bridges",
+   "method": "Meetings"
+  },
+  {
+   "date": "2018-07-11",
+   "lobbyist": "Amir Remtulla",
+   "organization": "Amir Remtulla and Associates",
+   "client": "Alterra-Finer (Corktown) LP",
+   "subject": "Planning and Development Application, Zoning By-law",
+   "method": "Meetings"
+  },
+  {
+   "date": "2018-07-09",
+   "lobbyist": "Adidharma Purnomo",
+   "organization": "Graywood Developments Ltd.",
+   "client": null,
+   "subject": "Planning and Development, Combined Application",
+   "method": "Emails"
+  },
+  {
+   "date": "2018-06-28",
+   "lobbyist": "Amir Remtulla",
+   "organization": "Amir Remtulla and Associates",
+   "client": "Alterra-Finer (Corktown) LP",
+   "subject": "Planning and Development Application, Zoning By-law",
+   "method": "Emails"
+  },
+  {
+   "date": "2018-06-27",
+   "lobbyist": "Justin Van Dette",
+   "organization": "Deltera Inc.",
+   "client": null,
+   "subject": "Planning and Development Application, Site Plan",
+   "method": "Phone calls"
+  },
+  {
+   "date": "2018-06-19",
+   "lobbyist": "Justin Van Dette",
+   "organization": "Deltera Inc.",
+   "client": null,
+   "subject": "Planning and Development Application, Site Plan",
+   "method": "Phone calls"
+  },
+  {
+   "date": "2018-06-19",
+   "lobbyist": "Angela Drennan",
+   "organization": "Sussex Strategy Group",
+   "client": "Mount Pleasant Group of Cemeteries",
+   "subject": "Attractions / Tourism;Economic Development",
+   "method": "Meetings"
+  },
+  {
+   "date": "2018-06-13",
+   "lobbyist": "Amir Remtulla",
+   "organization": "Amir Remtulla and Associates",
+   "client": "Alterra-Finer (Corktown) LP",
+   "subject": "Planning and Development Application, Zoning By-law",
+   "method": "Emails"
+  },
+  {
+   "date": "2018-06-11",
+   "lobbyist": "Lauren Goethel",
+   "organization": "Sussex Strategy Group",
+   "client": "William Beasley Enterprises Limited",
+   "subject": "Attractions / Tourism;Licences / Licensing;Water",
+   "method": "Emails"
+  },
+  {
+   "date": "2018-06-11",
+   "lobbyist": "Angela Drennan",
+   "organization": "Sussex Strategy Group",
+   "client": "William Beasley Enterprises Limited",
+   "subject": "Attractions / Tourism;Licences / Licensing;Water",
+   "method": "Emails"
+  },
+  {
+   "date": "2018-05-30",
+   "lobbyist": "Otto Wramhed",
+   "organization": "OPGI Management GP Inc.",
+   "client": null,
+   "subject": "Planning and Development Application, Site Plan",
+   "method": "Meetings"
+  },
+  {
+   "date": "2018-05-30",
+   "lobbyist": "Andrew O'Neil",
+   "organization": "OPGI Management GP Inc.",
+   "client": null,
+   "subject": "Planning and Development Application, Site Plan",
+   "method": "Meetings"
+  },
+  {
+   "date": "2018-05-29",
+   "lobbyist": "Lauren Goethel",
+   "organization": "Sussex Strategy Group",
+   "client": "Mount Pleasant Group of Cemeteries",
+   "subject": "Attractions / Tourism;Economic Development",
+   "method": "Emails"
+  },
+  {
+   "date": "2018-05-29",
+   "lobbyist": "Angela Drennan",
+   "organization": "Sussex Strategy Group",
+   "client": "Mount Pleasant Group of Cemeteries",
+   "subject": "Attractions / Tourism;Economic Development",
+   "method": "Emails"
+  },
+  {
+   "date": "2018-05-28",
+   "lobbyist": "Amir Remtulla",
+   "organization": "Amir Remtulla and Associates",
+   "client": "Alterra-Finer (Corktown) LP",
+   "subject": "Planning and Development Application, Zoning By-law",
+   "method": "Emails"
+  },
+  {
+   "date": "2018-05-24",
+   "lobbyist": "Christine Chea",
+   "organization": "Graywood Developments Ltd.",
+   "client": null,
+   "subject": "Planning and Development, Combined Application",
+   "method": "Phone calls"
+  },
+  {
+   "date": "2018-05-23",
+   "lobbyist": "Christine Chea",
+   "organization": "Graywood Developments Ltd.",
+   "client": null,
+   "subject": "Planning and Development, Combined Application",
+   "method": "Emails"
+  },
+  {
+   "date": "2018-05-17",
+   "lobbyist": "Yash Dogra",
+   "organization": "Capital Hill Group",
+   "client": "Rogers Communications Inc.",
+   "subject": "Arts / Culture;Film and TV",
+   "method": "Emails"
+  },
+  {
+   "date": "2018-05-16",
+   "lobbyist": "Michael Foderick",
+   "organization": "McCarthy Tetrault LLP",
+   "client": "Maple Leaf Sports and Entertainment",
+   "subject": "Planning and Development Application, Site Plan;Real Estate / Property (City-owned);Signs",
+   "method": "Meetings"
+  },
+  {
+   "date": "2018-05-16",
+   "lobbyist": "Nick Eaves",
+   "organization": "Maple Leaf Sports &Entertainment Ltd.",
+   "client": null,
+   "subject": "Planning and Development Application, Site Plan;Signs;Transportation - Roads / Bridges",
+   "method": "Meetings"
+  },
+  {
+   "date": "2018-05-16",
+   "lobbyist": "Caroline Wright",
+   "organization": "Maple Leaf Sports &Entertainment Ltd.",
+   "client": null,
+   "subject": "Planning and Development Application, Site Plan;Signs;Transportation - Roads / Bridges",
+   "method": "Meetings"
+  },
+  {
+   "date": "2018-05-15",
+   "lobbyist": "Michael Foderick",
+   "organization": "McCarthy Tetrault LLP",
+   "client": "Maple Leaf Sports and Entertainment",
+   "subject": "Planning and Development Application, Site Plan;Real Estate / Property (City-owned);Signs",
+   "method": "Emails"
+  },
+  {
+   "date": "2018-05-13",
+   "lobbyist": "Mark Wilson",
+   "organization": "Enbridge Gas Distribution Inc.",
+   "client": null,
+   "subject": "Energy;Parks / Open Space;Real Estate / Property (City-owned)",
+   "method": "Meetings"
+  },
+  {
+   "date": "2018-05-13",
+   "lobbyist": "Byron Madrid",
+   "organization": "Enbridge Gas Distribution Inc.",
+   "client": null,
+   "subject": "Energy;Parks / Open Space;Real Estate / Property (City-owned)",
+   "method": "Meetings"
+  },
+  {
+   "date": "2018-05-09",
+   "lobbyist": "Jude Tersigni",
+   "organization": "Menkes Developments Ltd",
+   "client": null,
+   "subject": "Planning and Development, Combined Application",
+   "method": "Meetings"
+  },
+  {
+   "date": "2018-05-09",
+   "lobbyist": "Peter Menkes",
+   "organization": "Menkes Developments Ltd",
+   "client": null,
+   "subject": "Planning and Development, Combined Application",
+   "method": "Meetings"
+  },
+  {
+   "date": "2018-05-09",
+   "lobbyist": "Jude Tersigni",
+   "organization": "Menkes Developments Ltd",
+   "client": null,
+   "subject": "Planning and Development, Combined Application",
+   "method": "Meetings"
+  },
+  {
+   "date": "2018-05-09",
+   "lobbyist": "Peter Menkes",
+   "organization": "Menkes Developments Ltd",
+   "client": null,
+   "subject": "Planning and Development, Combined Application",
+   "method": "Meetings"
+  },
+  {
+   "date": "2018-05-09",
+   "lobbyist": "Jude Tersigni",
+   "organization": "Menkes Developments Ltd",
+   "client": null,
+   "subject": "Planning and Development, Combined Application",
+   "method": "Meetings"
+  },
+  {
+   "date": "2018-05-09",
+   "lobbyist": "Peter Menkes",
+   "organization": "Menkes Developments Ltd",
+   "client": null,
+   "subject": "Planning and Development, Combined Application",
+   "method": "Meetings"
+  },
+  {
+   "date": "2018-05-08",
+   "lobbyist": "Steve Daniels",
+   "organization": "Deltera Inc.",
+   "client": null,
+   "subject": "Planning and Development Application, Site Plan",
+   "method": "Meetings"
+  },
+  {
+   "date": "2018-05-08",
+   "lobbyist": "Michael Mestyan",
+   "organization": "Deltera Inc.",
+   "client": null,
+   "subject": "Planning and Development Application, Site Plan",
+   "method": "Meetings"
+  },
+  {
+   "date": "2018-05-08",
+   "lobbyist": "Justin Van Dette",
+   "organization": "Deltera Inc.",
+   "client": null,
+   "subject": "Planning and Development Application, Site Plan",
+   "method": "Meetings"
+  },
+  {
+   "date": "2018-05-08",
+   "lobbyist": "Michael Foderick",
+   "organization": "McCarthy Tetrault LLP",
+   "client": "Maple Leaf Sports and Entertainment",
+   "subject": "Planning and Development Application, Site Plan;Real Estate / Property (City-owned);Signs",
+   "method": "Emails"
+  },
+  {
+   "date": "2018-05-01",
+   "lobbyist": "Michael Foderick",
+   "organization": "McCarthy Tetrault LLP",
+   "client": "Maple Leaf Sports and Entertainment",
+   "subject": "Planning and Development Application, Site Plan;Real Estate / Property (City-owned);Signs",
+   "method": "Emails"
+  },
+  {
+   "date": "2018-04-30",
+   "lobbyist": "Michael Foderick",
+   "organization": "McCarthy Tetrault LLP",
+   "client": "Maple Leaf Sports and Entertainment",
+   "subject": "Planning and Development, Combined Application",
+   "method": "Meetings"
+  },
+  {
+   "date": "2018-04-30",
+   "lobbyist": "Michael Foderick",
+   "organization": "McCarthy Tetrault LLP",
+   "client": "Maple Leaf Sports and Entertainment",
+   "subject": "Planning and Development Application, Site Plan;Real Estate / Property (City-owned);Signs",
+   "method": "Meetings"
+  },
+  {
+   "date": "2018-04-27",
+   "lobbyist": "Nick Eaves",
+   "organization": "Maple Leaf Sports &Entertainment Ltd.",
+   "client": null,
+   "subject": "Planning and Development Application, Site Plan;Signs;Transportation - Roads / Bridges",
+   "method": "Meetings"
+  },
+  {
+   "date": "2018-04-27",
+   "lobbyist": "Caroline Wright",
+   "organization": "Maple Leaf Sports &Entertainment Ltd.",
+   "client": null,
+   "subject": "Planning and Development Application, Site Plan;Signs;Transportation - Roads / Bridges",
+   "method": "Meetings"
+  },
+  {
+   "date": "2018-04-25",
+   "lobbyist": "Sean Hill",
+   "organization": "The Advantage Group",
+   "client": "Outfront Media LLC",
+   "subject": "Signs",
+   "method": "Meetings"
+  },
+  {
+   "date": "2018-04-20",
+   "lobbyist": "Kristine Zwicker",
+   "organization": "Marlin Spring Developments",
+   "client": null,
+   "subject": "Planning and Development, Combined Application",
+   "method": "Meetings"
+  },
+  {
+   "date": "2018-04-20",
+   "lobbyist": "Zev Mandelbaum",
+   "organization": "Marlin Spring Developments",
+   "client": null,
+   "subject": "Planning and Development, Combined Application",
+   "method": "Meetings"
+  },
+  {
+   "date": "2018-04-18",
+   "lobbyist": "Michael Dobrijevic",
+   "organization": "Oldstonehenge Development Corporation",
+   "client": null,
+   "subject": "Planning and Development, Combined Application",
+   "method": "Meetings"
+  },
+  {
+   "date": "2018-04-16",
+   "lobbyist": "Tony Medeiros",
+   "organization": "Dream Asset Management Corporation",
+   "client": null,
+   "subject": "Planning and Development Application, Zoning By-law",
+   "method": "Meetings"
+  },
+  {
+   "date": "2018-04-16",
+   "lobbyist": "Andrew Dagliesh",
+   "organization": "Dream Asset Management Corporation",
+   "client": null,
+   "subject": "Planning and Development Application, Zoning By-law",
+   "method": "Meetings"
+  },
+  {
+   "date": "2018-04-16",
+   "lobbyist": "Pino Di Mascio",
+   "organization": "Urban Strategies Inc.",
+   "client": "DAT 49 Ontario Street LP",
+   "subject": "Planning and Development Application, Zoning By-law",
+   "method": "Meetings"
+  },
+  {
+   "date": "2018-04-11",
+   "lobbyist": "Michael Foderick",
+   "organization": "McCarthy Tetrault LLP",
+   "client": "Maple Leaf Sports and Entertainment",
+   "subject": "Planning and Development Application, Site Plan;Real Estate / Property (City-owned);Signs",
+   "method": "Emails"
+  },
+  {
+   "date": "2018-04-06",
+   "lobbyist": "David Huynh",
+   "organization": "Bousfields Inc.",
+   "client": "ONE Properties",
+   "subject": "Planning and Development Application, Official Plan;Planning and Development Application, Zoning By-law",
+   "method": "Meetings"
+  },
+  {
+   "date": "2018-04-06",
+   "lobbyist": "David Huynh",
+   "organization": "Bousfields Inc.",
+   "client": "ONE Properties",
+   "subject": "Planning and Development Application, Zoning By-law",
+   "method": "Meetings"
+  },
+  {
+   "date": "2018-04-05",
+   "lobbyist": "Adam J. Brown",
+   "organization": "Sherman Brown Dryer Karol",
+   "client": "Menkes Developments Ltd.",
+   "subject": "Planning and Development Application, Official Plan;Planning and Development Application, Zoning By-law",
+   "method": "Emails"
+  },
+  {
+   "date": "2018-04-05",
+   "lobbyist": "Sasha Lauzon",
+   "organization": "Bousfields Inc.",
+   "client": "Alterra Development Group",
+   "subject": "Planning and Development Application, Official Plan;Planning and Development Application, Zoning By-law",
+   "method": "Meetings"
+  },
+  {
+   "date": "2018-04-04",
+   "lobbyist": "Sean Hill",
+   "organization": "The Advantage Group",
+   "client": "Outfront Media LLC",
+   "subject": "Signs",
+   "method": "Meetings"
+  },
+  {
+   "date": "2018-03-23",
+   "lobbyist": "Justin K Dempsey",
+   "organization": "Outfront Media Canada LP",
+   "client": null,
+   "subject": "Signs",
+   "method": "Meetings"
+  },
+  {
+   "date": "2018-03-19",
+   "lobbyist": "Adam J. Brown",
+   "organization": "Sherman Brown Dryer Karol",
+   "client": "Northam Realty Advisors Ltd",
+   "subject": "Planning and Development, Combined Application",
+   "method": "Emails"
+  },
+  {
+   "date": "2018-03-16",
+   "lobbyist": "Michael Foderick",
+   "organization": "McCarthy Tetrault LLP",
+   "client": "Maple Leaf Sports and Entertainment",
+   "subject": "Planning and Development Application, Site Plan;Real Estate / Property (City-owned);Signs",
+   "method": "Other or unreported"
+  },
+  {
+   "date": "2018-03-12",
+   "lobbyist": "Michael Foderick",
+   "organization": "McCarthy Tetrault LLP",
+   "client": "Maple Leaf Sports and Entertainment",
+   "subject": "Planning and Development Application, Site Plan;Real Estate / Property (City-owned);Signs",
+   "method": "Other or unreported"
+  },
+  {
+   "date": "2018-03-08",
+   "lobbyist": "Michael Foderick",
+   "organization": "McCarthy Tetrault LLP",
+   "client": "Maple Leaf Sports and Entertainment",
+   "subject": "Planning and Development Application, Site Plan;Real Estate / Property (City-owned);Signs",
+   "method": "Phone calls"
+  },
+  {
+   "date": "2018-03-07",
+   "lobbyist": "Michael Foderick",
+   "organization": "McCarthy Tetrault LLP",
+   "client": "Maple Leaf Sports and Entertainment",
+   "subject": "Planning and Development, Combined Application",
+   "method": "Meetings"
+  },
+  {
+   "date": "2018-03-07",
+   "lobbyist": "Michael Foderick",
+   "organization": "McCarthy Tetrault LLP",
+   "client": "Maple Leaf Sports and Entertainment",
+   "subject": "Planning and Development Application, Site Plan;Real Estate / Property (City-owned);Signs",
+   "method": "Phone calls"
+  },
+  {
+   "date": "2018-03-05",
+   "lobbyist": "David Huynh",
+   "organization": "Bousfields Inc.",
+   "client": "Options for Homes",
+   "subject": "Planning and Development Application, Zoning By-law",
+   "method": "Meetings"
+  },
+  {
+   "date": "2018-03-05",
+   "lobbyist": "Lauren Gerhardt",
+   "organization": "Sussex Strategy Group",
+   "client": "Redpath Sugar",
+   "subject": "Economic Development;Waterfront Revitalization",
+   "method": "Meetings"
+  },
+  {
+   "date": "2018-03-01",
+   "lobbyist": "Stuart Bowden",
+   "organization": "SAS Institute (Canada) Inc.",
+   "client": null,
+   "subject": "Planning and Development Application, Site Plan",
+   "method": "Written"
+  },
+  {
+   "date": "2018-02-27",
+   "lobbyist": "Adidharma Purnomo",
+   "organization": "Graywood Developments Ltd.",
+   "client": null,
+   "subject": "Planning and Development, Combined Application",
+   "method": "Emails"
+  },
+  {
+   "date": "2018-02-14",
+   "lobbyist": "Caitlin Allan",
+   "organization": "Bousfields Inc.",
+   "client": "THe Downing Street Group",
+   "subject": "Planning and Development Application, Official Plan;Planning and Development Application, Zoning By-law",
+   "method": "Meetings"
+  },
+  {
+   "date": "2018-02-08",
+   "lobbyist": "ROBERT G GLOVER",
+   "organization": "BOUSFIELDS, INC.",
+   "client": "Brett Smith",
+   "subject": "Planning and Development Application, Official Plan",
+   "method": "Meetings"
+  },
+  {
+   "date": "2018-02-08",
+   "lobbyist": "Kelly Graham",
+   "organization": "Weston Consulting",
+   "client": "Gilead Place Residents Group",
+   "subject": "Planning and Development, Combined Application",
+   "method": "Meetings"
+  },
+  {
+   "date": "2018-02-08",
+   "lobbyist": "Ryan M. Guetter",
+   "organization": "Weston Consulting Group Inc.",
+   "client": "Gilead Place Residents Group",
+   "subject": "Planning and Development, Combined Application",
+   "method": "Meetings"
+  },
+  {
+   "date": "2018-02-05",
+   "lobbyist": "Adam J. Brown",
+   "organization": "Sherman Brown Dryer Karol",
+   "client": "Northam Realty Advisors Ltd",
+   "subject": "Planning and Development, Combined Application",
+   "method": "Emails"
+  },
+  {
+   "date": "2018-01-31",
+   "lobbyist": "Adidharma Purnomo",
+   "organization": "Graywood Developments Ltd.",
+   "client": null,
+   "subject": "Planning and Development, Combined Application",
+   "method": "Emails"
+  },
+  {
+   "date": "2018-01-30",
+   "lobbyist": "Sean Hill",
+   "organization": "The Advantage Group",
+   "client": "Outfront Media LLC",
+   "subject": "Signs",
+   "method": "Meetings"
+  },
+  {
+   "date": "2018-01-23",
+   "lobbyist": "Nate Jenkins",
+   "organization": "Sidewalk Labs Employees LLC",
+   "client": null,
+   "subject": "Economic Development;Waterfront Revitalization",
+   "method": "Meetings"
+  },
+  {
+   "date": "2018-01-23",
+   "lobbyist": "Micah Lasher",
+   "organization": "Sidewalk Labs Employees LLC",
+   "client": null,
+   "subject": "Economic Development;Waterfront Revitalization",
+   "method": "Meetings"
+  },
+  {
+   "date": "2018-01-22",
+   "lobbyist": "Michael Foderick",
+   "organization": "McCarthy Tetrault LLP",
+   "client": "Maple Leaf Sports and Entertainment",
+   "subject": "Planning and Development, Combined Application",
+   "method": "Meetings"
+  },
+  {
+   "date": "2018-01-22",
+   "lobbyist": "Jim Burnett",
+   "organization": "Pathway Group",
+   "client": "BAI Communications",
+   "subject": "Technology;Transit / TTC;Transportation - Metrolinx",
+   "method": "Emails"
+  },
+  {
+   "date": "2018-01-11",
+   "lobbyist": "Alan M Heisey",
+   "organization": "Papazian Heisey Myers",
+   "client": "1.\tJames Gault Holdings Inc , 2.\t1175484 Ontario Inc. 3.\t1606077 Ontario Inc.",
+   "subject": "Planning and Development, Combined Application",
+   "method": "Meetings"
+  },
+  {
+   "date": "2018-01-10",
+   "lobbyist": "Kristine Zwicker",
+   "organization": "Marlin Spring Developments",
+   "client": null,
+   "subject": "Planning and Development, Combined Application",
+   "method": "Meetings"
+  },
+  {
+   "date": "2018-01-10",
+   "lobbyist": "Zev Mandelbaum",
+   "organization": "Marlin Spring Developments",
+   "client": null,
+   "subject": "Planning and Development, Combined Application",
+   "method": "Meetings"
+  },
+  {
+   "date": "2018-01-02",
+   "lobbyist": "Dayna Dobrowolski",
+   "organization": "Canadian Beverage Association",
+   "client": null,
+   "subject": "Economic Development;Public Health",
+   "method": "Emails"
+  },
+  {
+   "date": "2017-12-15",
+   "lobbyist": "Alan M Heisey",
+   "organization": "Papazian Heisey Myers",
+   "client": "1.\tJames Gault Holdings Inc , 2.\t1175484 Ontario Inc. 3.\t1606077 Ontario Inc.",
+   "subject": "Planning and Development, Combined Application",
+   "method": "Meetings"
+  },
+  {
+   "date": "2017-12-15",
+   "lobbyist": "Leslie M M Klein",
+   "organization": "BDP Quadrangle",
+   "client": "Berkeley Events",
+   "subject": "Planning and Development Application, Zoning By-law",
+   "method": "Meetings"
+  },
+  {
+   "date": "2017-12-14",
+   "lobbyist": "Toby Wu",
+   "organization": "QuadReal Property Group Limited Partnership",
+   "client": null,
+   "subject": "By-law / Regulation;Planning and Development, Heritage;Planning and Development Application, Zoning By-law",
+   "method": "Meetings"
+  },
+  {
+   "date": "2017-12-11",
+   "lobbyist": "Adidharma Purnomo",
+   "organization": "Graywood Developments Ltd.",
+   "client": null,
+   "subject": "Planning and Development, Combined Application",
+   "method": "Emails"
+  },
+  {
+   "date": "2017-12-06",
+   "lobbyist": "Ange Valentini",
+   "organization": "Airbnb Canada Inc.",
+   "client": null,
+   "subject": "Economic Development;Licences / Licensing;Planning and Development Application, Zoning By-law",
+   "method": "Emails"
+  },
+  {
+   "date": "2017-12-05",
+   "lobbyist": "Rebecca Grundy",
+   "organization": "Stosic & Associates",
+   "client": "Home Sharing Service Providers (Association)",
+   "subject": "Affordable Housing;Economic Development;Planning and Development, Planning Policy / Study",
+   "method": "Emails"
+  },
+  {
+   "date": "2017-12-04",
+   "lobbyist": "Joseph Montano",
+   "organization": "Expedia Group, Inc.",
+   "client": null,
+   "subject": "Economic Development;Licences / Licensing;Planning and Development Application, Zoning By-law",
+   "method": "Emails"
+  },
+  {
+   "date": "2017-11-29",
+   "lobbyist": "Thorben Wieditz",
+   "organization": "Fairbnb.ca Coalition",
+   "client": null,
+   "subject": "Affordable Housing;Attractions / Tourism;By-law / Regulation",
+   "method": "Written"
+  },
+  {
+   "date": "2017-11-27",
+   "lobbyist": "Thorben Wieditz",
+   "organization": "Fairbnb.ca Coalition",
+   "client": null,
+   "subject": "Affordable Housing;Attractions / Tourism;By-law / Regulation",
+   "method": "Emails"
+  },
+  {
+   "date": "2017-11-27",
+   "lobbyist": "Lis Pimentel",
+   "organization": "Fairbnb.ca Coalition",
+   "client": null,
+   "subject": "Affordable Housing;Attractions / Tourism;By-law / Regulation",
+   "method": "Written"
+  },
+  {
+   "date": "2017-11-22",
+   "lobbyist": "Yash Dogra",
+   "organization": "Capital Hill Group",
+   "client": "Pegah Construction Ltd.",
+   "subject": "By-law / Regulation;Licences / Licensing",
+   "method": "Emails"
+  },
+  {
+   "date": "2017-11-21",
+   "lobbyist": "Kelly Graham",
+   "organization": "Weston Consulting",
+   "client": "Gilead Place Residents Group",
+   "subject": "Planning and Development, Combined Application",
+   "method": "Emails"
+  },
+  {
+   "date": "2017-11-20",
+   "lobbyist": "Patrick Harris",
+   "organization": "PVH Consulting",
+   "client": "Fairbnb.ca Coalition",
+   "subject": "Affordable Housing;Attractions / Tourism;By-law / Regulation",
+   "method": "Emails"
+  },
+  {
+   "date": "2017-11-16",
+   "lobbyist": "Alan M Heisey",
+   "organization": "Papazian Heisey Myers",
+   "client": "1.\tJames Gault Holdings Inc , 2.\t1175484 Ontario Inc. 3.\t1606077 Ontario Inc.",
+   "subject": "Planning and Development, Combined Application",
+   "method": "Emails"
+  },
+  {
+   "date": "2017-11-14",
+   "lobbyist": "Chris Schafer",
+   "organization": "Uber Canada, Inc.",
+   "client": null,
+   "subject": "By-law / Regulation;Economic Development;Licences / Licensing",
+   "method": "Emails"
+  },
+  {
+   "date": "2017-11-13",
+   "lobbyist": "Ange Valentini",
+   "organization": "Airbnb Canada Inc.",
+   "client": null,
+   "subject": "Economic Development;Licences / Licensing;Planning and Development Application, Zoning By-law",
+   "method": "Emails"
+  }
+ ]
+}

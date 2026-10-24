@@ -1,0 +1,651 @@
+{
+ "member": "peter-leon",
+ "source": {
+  "name": "City of Toronto Lobbyist Registry (Open Data)",
+  "url": "https://open.toronto.ca/dataset/lobbyist-registry/"
+ },
+ "snapshot": "2026-10-23",
+ "count": 80,
+ "communications": [
+  {
+   "date": "2014-11-17",
+   "lobbyist": "Jim Goetz",
+   "organization": "Canadian Beverage Association",
+   "client": null,
+   "subject": "Health & Safety",
+   "method": "Written"
+  },
+  {
+   "date": "2014-10-14",
+   "lobbyist": "Calvin W Lantz",
+   "organization": "Stikeman Elliott LLP",
+   "client": "Windsor Property Management",
+   "subject": "Planning and Development - Zoning Bylaw Amendment",
+   "method": "Phone calls"
+  },
+  {
+   "date": "2014-08-25",
+   "lobbyist": "Michael Ruff",
+   "organization": "PepsiCo Beverages Canada",
+   "client": null,
+   "subject": "Health & Safety",
+   "method": "Written"
+  },
+  {
+   "date": "2014-08-25",
+   "lobbyist": "Jim Goetz",
+   "organization": "Canadian Beverage Association",
+   "client": null,
+   "subject": "Health & Safety",
+   "method": "Written"
+  },
+  {
+   "date": "2014-08-20",
+   "lobbyist": "Anne Fitzgerald",
+   "organization": "Cineplex Inc.",
+   "client": null,
+   "subject": "Licences / Licensing",
+   "method": "Emails"
+  },
+  {
+   "date": "2014-08-18",
+   "lobbyist": "Alan J Slobodsky",
+   "organization": "Slobodsky Associates",
+   "client": "Maple Leaf Sports and Entertainment Ltd",
+   "subject": "Economic Development;Grants / Funding;Recreation",
+   "method": "Meetings"
+  },
+  {
+   "date": "2014-07-03",
+   "lobbyist": "Daniel A Bordonali",
+   "organization": "Sutherland Corporation",
+   "client": "Allvision Canada",
+   "subject": "Signs",
+   "method": "Meetings"
+  },
+  {
+   "date": "2014-06-09",
+   "lobbyist": "Michael Farace",
+   "organization": "Devry Smith Frank LLP",
+   "client": "614128 Ontario Ltd.",
+   "subject": "Procurement",
+   "method": "Written"
+  },
+  {
+   "date": "2014-06-09",
+   "lobbyist": "Cory Estrela",
+   "organization": "Devry Smith Frank LLP",
+   "client": "614128 Ontario Ltd.",
+   "subject": "Procurement",
+   "method": "Written"
+  },
+  {
+   "date": "2014-05-22",
+   "lobbyist": "Ian Bacque",
+   "organization": "TELUS",
+   "client": null,
+   "subject": "Economic Development",
+   "method": "Emails"
+  },
+  {
+   "date": "2014-05-01",
+   "lobbyist": "Ian Black",
+   "organization": "Uber Canada, Inc.",
+   "client": null,
+   "subject": "By-law / Regulation;Economic Development;Licences / Licensing",
+   "method": "Meetings"
+  },
+  {
+   "date": "2014-05-01",
+   "lobbyist": "William Guernier",
+   "organization": "Uber Canada, Inc.",
+   "client": null,
+   "subject": "By-law / Regulation;Economic Development;Licences / Licensing",
+   "method": "Meetings"
+  },
+  {
+   "date": "2014-05-01",
+   "lobbyist": "Michael J Westcott",
+   "organization": "Crestview Strategy Inc.",
+   "client": "Uber Canada Inc.",
+   "subject": "By-law / Regulation;Economic Development;Licences / Licensing",
+   "method": "Meetings"
+  },
+  {
+   "date": "2014-04-02",
+   "lobbyist": "Kim Wright",
+   "organization": "Sussex Strategy Group",
+   "client": "Caplansky's Delicatessen",
+   "subject": "Licences / Licensing",
+   "method": "Meetings"
+  },
+  {
+   "date": "2014-04-02",
+   "lobbyist": "Zane Caplansky",
+   "organization": "Caplansky's Delicatessen",
+   "client": null,
+   "subject": "Licences / Licensing",
+   "method": "Meetings"
+  },
+  {
+   "date": "2014-04-01",
+   "lobbyist": "Jamie Besner",
+   "organization": "Sussex Strategy Group",
+   "client": "Porter Airlines",
+   "subject": "Economic Development;Waterfront Revitalization",
+   "method": "Meetings"
+  },
+  {
+   "date": "2014-04-01",
+   "lobbyist": "Jerry Dias",
+   "organization": "Unifor",
+   "client": null,
+   "subject": "Economic Development",
+   "method": "Emails"
+  },
+  {
+   "date": "2014-03-31",
+   "lobbyist": "Aaron Barbarian",
+   "organization": "Ontario Restaurant Hotel & Motel Association",
+   "client": null,
+   "subject": "Licences / Licensing",
+   "method": "Emails"
+  },
+  {
+   "date": "2014-03-31",
+   "lobbyist": "Fittipauld Lourenco",
+   "organization": "Air Canada",
+   "client": null,
+   "subject": "Economic Development;Waterfront Revitalization",
+   "method": "Emails"
+  },
+  {
+   "date": "2014-03-28",
+   "lobbyist": "Rachael RF Factor",
+   "organization": "Porter Aviation Holdings Inc.",
+   "client": null,
+   "subject": "Economic Development;Waterfront Revitalization",
+   "method": "Written"
+  },
+  {
+   "date": "2014-03-28",
+   "lobbyist": "Jeffrey Brown",
+   "organization": "Porter Aviation Holdings Inc.",
+   "client": null,
+   "subject": "Economic Development;Waterfront Revitalization",
+   "method": "Phone calls"
+  },
+  {
+   "date": "2014-03-27",
+   "lobbyist": "Ian Bacque",
+   "organization": "TELUS",
+   "client": null,
+   "subject": "Arts / Culture;Environment;Parks / Open Space",
+   "method": "Emails"
+  },
+  {
+   "date": "2014-03-27",
+   "lobbyist": "Alan J Slobodsky",
+   "organization": "Slobodsky Associates",
+   "client": "Maple Leaf Sports and Entertainment Ltd",
+   "subject": "Economic Development;Grants / Funding;Recreation",
+   "method": "Emails"
+  },
+  {
+   "date": "2014-03-25",
+   "lobbyist": "Jerry Dias",
+   "organization": "Unifor",
+   "client": null,
+   "subject": "Economic Development",
+   "method": "Emails"
+  },
+  {
+   "date": "2014-03-25",
+   "lobbyist": "Robert Deluce",
+   "organization": "Porter Aviation Holdings Inc.",
+   "client": null,
+   "subject": "Economic Development;Waterfront Revitalization",
+   "method": "Phone calls"
+  },
+  {
+   "date": "2014-03-21",
+   "lobbyist": "Robert Deluce",
+   "organization": "Porter Aviation Holdings Inc.",
+   "client": null,
+   "subject": "Economic Development;Waterfront Revitalization",
+   "method": "Meetings"
+  },
+  {
+   "date": "2014-03-21",
+   "lobbyist": "Jason Locklin",
+   "organization": "Bombardier Inc.",
+   "client": null,
+   "subject": "Economic Development",
+   "method": "Meetings"
+  },
+  {
+   "date": "2014-03-20",
+   "lobbyist": "Rachael RF Factor",
+   "organization": "Porter Aviation Holdings Inc.",
+   "client": null,
+   "subject": "Economic Development;Waterfront Revitalization",
+   "method": "Emails"
+  },
+  {
+   "date": "2014-03-19",
+   "lobbyist": "Natalie Dash",
+   "organization": "Campbell Strategies Inc.",
+   "client": "Air Canada",
+   "subject": "Economic Development",
+   "method": "Meetings"
+  },
+  {
+   "date": "2014-03-19",
+   "lobbyist": "Fittipauld Lourenco",
+   "organization": "Air Canada",
+   "client": null,
+   "subject": "Economic Development;Waterfront Revitalization",
+   "method": "Meetings"
+  },
+  {
+   "date": "2014-03-18",
+   "lobbyist": "Phil Dewan",
+   "organization": "Counsel Public Affairs Inc.",
+   "client": "WestJet",
+   "subject": "Economic Development;Waterfront Revitalization",
+   "method": "Meetings"
+  },
+  {
+   "date": "2014-03-13",
+   "lobbyist": "Rachael RF Factor",
+   "organization": "Porter Aviation Holdings Inc.",
+   "client": null,
+   "subject": "Economic Development;Waterfront Revitalization",
+   "method": "Emails"
+  },
+  {
+   "date": "2014-03-10",
+   "lobbyist": "Rachael RF Factor",
+   "organization": "Porter Aviation Holdings Inc.",
+   "client": null,
+   "subject": "Economic Development;Waterfront Revitalization",
+   "method": "Emails"
+  },
+  {
+   "date": "2014-03-05",
+   "lobbyist": "Rudi Czekalla Martinez",
+   "organization": "Municipal Policy Consultants",
+   "client": "Adult Entertainment Association of Canada",
+   "subject": "Licences / Licensing",
+   "method": "Emails"
+  },
+  {
+   "date": "2014-03-04",
+   "lobbyist": "Rachael RF Factor",
+   "organization": "Porter Aviation Holdings Inc.",
+   "client": null,
+   "subject": "Economic Development;Waterfront Revitalization",
+   "method": "Emails"
+  },
+  {
+   "date": "2014-03-03",
+   "lobbyist": "Terry Mundell",
+   "organization": "Greater Toronto Hotel Association",
+   "client": null,
+   "subject": "Economic Development",
+   "method": "Written"
+  },
+  {
+   "date": "2014-02-26",
+   "lobbyist": "Michelle Wasylyshen",
+   "organization": "Enbridge Gas Distribution Inc.",
+   "client": null,
+   "subject": "Energy",
+   "method": "Emails"
+  },
+  {
+   "date": "2014-02-26",
+   "lobbyist": "Faye Lyons",
+   "organization": "CAA South Central Ontario",
+   "client": null,
+   "subject": "Transportation - Roads / Bridges",
+   "method": "Meetings"
+  },
+  {
+   "date": "2014-02-24",
+   "lobbyist": "David Gerofsky",
+   "organization": "Great Gulf Group of Companies",
+   "client": null,
+   "subject": "Planning and Development, Planning Policy / Study;Planning and Development Application, Zoning By-law;Transportation - Roads / Bridges",
+   "method": "Emails"
+  },
+  {
+   "date": "2014-02-24",
+   "lobbyist": "Graham Henderson",
+   "organization": "Music Canada",
+   "client": null,
+   "subject": "Economic Development",
+   "method": "Written"
+  },
+  {
+   "date": "2014-02-21",
+   "lobbyist": "Michelle Wasylyshen",
+   "organization": "Enbridge Gas Distribution Inc.",
+   "client": null,
+   "subject": "Energy",
+   "method": "Emails"
+  },
+  {
+   "date": "2014-02-21",
+   "lobbyist": "Derek Vanstone",
+   "organization": "Air Canada",
+   "client": null,
+   "subject": "Economic Development;Waterfront Revitalization",
+   "method": "Written"
+  },
+  {
+   "date": "2014-02-19",
+   "lobbyist": "Jamie Besner",
+   "organization": "Sussex Strategy Group",
+   "client": "Co-op Cabs",
+   "subject": "Licences / Licensing",
+   "method": "Meetings"
+  },
+  {
+   "date": "2014-02-13",
+   "lobbyist": "John Nunziata",
+   "organization": "John Nunziata, Barrister & Solicitor",
+   "client": "Toronto Para Transit",
+   "subject": "Transit / TTC",
+   "method": "Emails"
+  },
+  {
+   "date": "2014-02-12",
+   "lobbyist": "Kristine Hubbard",
+   "organization": "Beck Taxi Limited",
+   "client": null,
+   "subject": "By-law / Regulation;Licences / Licensing",
+   "method": "Meetings"
+  },
+  {
+   "date": "2014-02-12",
+   "lobbyist": "Rob Davis",
+   "organization": "Rob Davis & Associates",
+   "client": "Toronto Taxi Alliance",
+   "subject": "Licences / Licensing",
+   "method": "Meetings"
+  },
+  {
+   "date": "2014-01-31",
+   "lobbyist": "Joe Pantalone",
+   "organization": "Joe Pantalone Consulting",
+   "client": "Lanterra East Mall Ltd",
+   "subject": "Planning and Development Application, Zoning By-law",
+   "method": "Phone calls"
+  },
+  {
+   "date": "2014-01-27",
+   "lobbyist": "Dianne Usher",
+   "organization": "Toronto Regional Real Estate Board",
+   "client": null,
+   "subject": "Budget",
+   "method": "Written"
+  },
+  {
+   "date": "2014-01-27",
+   "lobbyist": "Mauro Ritacca",
+   "organization": "Toronto Regional Real Estate Board",
+   "client": null,
+   "subject": "Budget",
+   "method": "Emails"
+  },
+  {
+   "date": "2014-01-22",
+   "lobbyist": "Ian Bacque",
+   "organization": "TELUS",
+   "client": null,
+   "subject": "Economic Development",
+   "method": "Emails"
+  },
+  {
+   "date": "2014-01-20",
+   "lobbyist": "Dianne Usher",
+   "organization": "Toronto Regional Real Estate Board",
+   "client": null,
+   "subject": "Budget",
+   "method": "Written"
+  },
+  {
+   "date": "2014-01-20",
+   "lobbyist": "Mauro Ritacca",
+   "organization": "Toronto Regional Real Estate Board",
+   "client": null,
+   "subject": "Budget",
+   "method": "Emails"
+  },
+  {
+   "date": "2014-01-17",
+   "lobbyist": "Robert Deluce",
+   "organization": "Porter Aviation Holdings Inc.",
+   "client": null,
+   "subject": "Economic Development;Waterfront Revitalization",
+   "method": "Emails"
+  },
+  {
+   "date": "2014-01-14",
+   "lobbyist": "Alan J Slobodsky",
+   "organization": "Slobodsky Associates",
+   "client": "Westmall  Investments",
+   "subject": "Planning and Development Application, Zoning By-law",
+   "method": "Meetings"
+  },
+  {
+   "date": "2014-01-13",
+   "lobbyist": "Joe Pantalone",
+   "organization": "Joe Pantalone Consulting",
+   "client": "Lanterra East Mall Ltd",
+   "subject": "Planning and Development Application, Zoning By-law",
+   "method": "Phone calls"
+  },
+  {
+   "date": "2014-01-09",
+   "lobbyist": "Mauro Ritacca",
+   "organization": "Toronto Regional Real Estate Board",
+   "client": null,
+   "subject": "Budget",
+   "method": "Phone calls"
+  },
+  {
+   "date": "2014-01-07",
+   "lobbyist": "Calvin W Lantz",
+   "organization": "Stikeman Elliott LLP",
+   "client": "Windsor Property Management",
+   "subject": "Planning and Development - Zoning Bylaw Amendment",
+   "method": "Phone calls"
+  },
+  {
+   "date": "2013-12-20",
+   "lobbyist": "Nick Eaves",
+   "organization": "Woodbine Entertainment Group",
+   "client": null,
+   "subject": "Attractions / Tourism",
+   "method": "Written"
+  },
+  {
+   "date": "2013-12-20",
+   "lobbyist": "Calvin W Lantz",
+   "organization": "Stikeman Elliott LLP",
+   "client": "Windsor Property Management",
+   "subject": "Planning and Development - Zoning Bylaw Amendment",
+   "method": "Emails"
+  },
+  {
+   "date": "2013-12-18",
+   "lobbyist": "Joe Pantalone",
+   "organization": "Joe Pantalone Consulting",
+   "client": "Lanterra East Mall Ltd",
+   "subject": "Planning and Development Application, Zoning By-law",
+   "method": "Meetings"
+  },
+  {
+   "date": "2013-12-12",
+   "lobbyist": "Sean Hill",
+   "organization": "The Capital Hill Group",
+   "client": "Don Mills Civitan Club",
+   "subject": "Real Estate / Property (City-owned);Recreation",
+   "method": "Emails"
+  },
+  {
+   "date": "2013-12-11",
+   "lobbyist": "Keith Medenblik",
+   "organization": "Greater Toronto Airports Authority",
+   "client": null,
+   "subject": "Economic Development;Transit / TTC;Transportation - Metrolinx",
+   "method": "Meetings"
+  },
+  {
+   "date": "2013-12-11",
+   "lobbyist": "Aleem Kanji",
+   "organization": "Greater Toronto Airports Authority",
+   "client": null,
+   "subject": "Economic Development;Transit / TTC;Transportation - Metrolinx",
+   "method": "Meetings"
+  },
+  {
+   "date": "2013-12-06",
+   "lobbyist": "Howard Wunch",
+   "organization": "Windsor Property Management",
+   "client": null,
+   "subject": "Planning and Development Application, Zoning By-law",
+   "method": "Meetings"
+  },
+  {
+   "date": "2013-12-06",
+   "lobbyist": "Calvin W Lantz",
+   "organization": "Stikeman Elliott LLP",
+   "client": "Windsor Property Management",
+   "subject": "Planning and Development - Zoning Bylaw Amendment",
+   "method": "Meetings"
+  },
+  {
+   "date": "2013-12-01",
+   "lobbyist": "Paul Scrivener",
+   "organization": "Toronto Industry Network",
+   "client": null,
+   "subject": "By-law / Regulation;Economic Development;Environment",
+   "method": "Emails"
+  },
+  {
+   "date": "2013-11-29",
+   "lobbyist": "Joe Pantalone",
+   "organization": "Joe Pantalone Consulting",
+   "client": "Lanterra East Mall Ltd",
+   "subject": "Planning and Development Application, Zoning By-law",
+   "method": "Phone calls"
+  },
+  {
+   "date": "2013-11-29",
+   "lobbyist": "Robert Deluce",
+   "organization": "Porter Aviation Holdings Inc.",
+   "client": null,
+   "subject": "Economic Development;Waterfront Revitalization",
+   "method": "Meetings"
+  },
+  {
+   "date": "2013-11-29",
+   "lobbyist": "Jeffrey Brown",
+   "organization": "Porter Aviation Holdings Inc.",
+   "client": null,
+   "subject": "Economic Development;Waterfront Revitalization",
+   "method": "Meetings"
+  },
+  {
+   "date": "2013-11-27",
+   "lobbyist": "Nick Eaves",
+   "organization": "Woodbine Entertainment Group",
+   "client": null,
+   "subject": "Attractions / Tourism",
+   "method": "Meetings"
+  },
+  {
+   "date": "2013-11-20",
+   "lobbyist": "Paul Scrivener",
+   "organization": "Toronto Industry Network",
+   "client": null,
+   "subject": "By-law / Regulation;Economic Development;Environment",
+   "method": "Meetings"
+  },
+  {
+   "date": "2013-11-08",
+   "lobbyist": "Robert Deluce",
+   "organization": "Porter Aviation Holdings Inc.",
+   "client": null,
+   "subject": "Economic Development;Waterfront Revitalization",
+   "method": "Meetings"
+  },
+  {
+   "date": "2013-11-08",
+   "lobbyist": "Jeffrey Brown",
+   "organization": "Porter Aviation Holdings Inc.",
+   "client": null,
+   "subject": "Economic Development;Waterfront Revitalization",
+   "method": "Meetings"
+  },
+  {
+   "date": "2013-10-30",
+   "lobbyist": "Von Palmer",
+   "organization": "Toronto Regional Real Estate Board",
+   "client": null,
+   "subject": "Budget",
+   "method": "Emails"
+  },
+  {
+   "date": "2013-10-28",
+   "lobbyist": "Von Palmer",
+   "organization": "Toronto Regional Real Estate Board",
+   "client": null,
+   "subject": "Budget",
+   "method": "Meetings"
+  },
+  {
+   "date": "2013-10-28",
+   "lobbyist": "Mauro Ritacca",
+   "organization": "Toronto Regional Real Estate Board",
+   "client": null,
+   "subject": "Budget",
+   "method": "Meetings"
+  },
+  {
+   "date": "2013-10-21",
+   "lobbyist": "May Lui",
+   "organization": "Taxiworkers Association of Ontario",
+   "client": null,
+   "subject": "Licences / Licensing",
+   "method": "Emails"
+  },
+  {
+   "date": "2013-10-17",
+   "lobbyist": "Dianne Usher",
+   "organization": "Toronto Regional Real Estate Board",
+   "client": null,
+   "subject": "Budget",
+   "method": "Written"
+  },
+  {
+   "date": "2013-10-17",
+   "lobbyist": "Mauro Ritacca",
+   "organization": "Toronto Regional Real Estate Board",
+   "client": null,
+   "subject": "Budget",
+   "method": "Emails"
+  },
+  {
+   "date": "2013-10-10",
+   "lobbyist": "Tony Genco",
+   "organization": "Northcliffe Group Inc.",
+   "client": "CBS Outdoor",
+   "subject": "Signs",
+   "method": "Meetings"
+  }
+ ]
+}

@@ -1,0 +1,59 @@
+{
+ "member": "rose-milczyn",
+ "source": {
+  "name": "City of Toronto Lobbyist Registry (Open Data)",
+  "url": "https://open.toronto.ca/dataset/lobbyist-registry/"
+ },
+ "snapshot": "2026-10-23",
+ "count": 6,
+ "communications": [
+  {
+   "date": "2022-11-09",
+   "lobbyist": "Andrew Pask",
+   "organization": "AP Public Affairs Inc.",
+   "client": "Woodbine Entertainment Group",
+   "subject": "Attractions / Tourism;Economic Development",
+   "method": "Meetings"
+  },
+  {
+   "date": "2022-11-07",
+   "lobbyist": "Andrew Pask",
+   "organization": "AP Public Affairs Inc.",
+   "client": "Woodbine Entertainment Group",
+   "subject": "Attractions / Tourism;Economic Development",
+   "method": "Meetings"
+  },
+  {
+   "date": "2022-10-14",
+   "lobbyist": "Aleem Kanji",
+   "organization": "AleemKanji.com",
+   "client": "Toronto Police Association",
+   "subject": "Budget;Health & Safety;Covid19 Pandemic",
+   "method": "Phone calls"
+  },
+  {
+   "date": "2022-10-12",
+   "lobbyist": "Tristan Downe-Dewdney",
+   "organization": "Sussex Strategy Group",
+   "client": "Danarc Incorporated",
+   "subject": "Planning and Development Application;Planning and Development Application, Zoning By-law",
+   "method": "Phone calls"
+  },
+  {
+   "date": "2022-10-11",
+   "lobbyist": "Tristan Downe-Dewdney",
+   "organization": "Sussex Strategy Group",
+   "client": "Danarc Incorporated",
+   "subject": "Planning and Development Application;Planning and Development Application, Zoning By-law",
+   "method": "Meetings"
+  },
+  {
+   "date": "2022-09-21",
+   "lobbyist": "Jamie Besner",
+   "organization": "Sussex Strategy Group",
+   "client": "Danarc Incorporated",
+   "subject": "Planning and Development Application;Planning and Development Application, Zoning By-law",
+   "method": "Emails"
+  }
+ ]
+}

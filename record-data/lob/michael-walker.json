@@ -1,0 +1,683 @@
+{
+ "member": "michael-walker",
+ "source": {
+  "name": "City of Toronto Lobbyist Registry (Open Data)",
+  "url": "https://open.toronto.ca/dataset/lobbyist-registry/"
+ },
+ "snapshot": "2026-10-23",
+ "count": 84,
+ "communications": [
+  {
+   "date": "2010-08-24",
+   "lobbyist": "Michelle Saunders",
+   "organization": "Ontario Restaurant Hotel & Motel Association",
+   "client": null,
+   "subject": "Planning and Development, Planning Policy / Study",
+   "method": "Emails"
+  },
+  {
+   "date": "2009-06-14",
+   "lobbyist": "Robert E Millward",
+   "organization": "R.E. Millward & Associates",
+   "client": "Sammy Koundouros",
+   "subject": "Planning and Development, Combined Application, Zoning By-law, Site Plan",
+   "method": "Meetings"
+  },
+  {
+   "date": null,
+   "lobbyist": "Mauro Ritacca",
+   "organization": "Toronto Regional Real Estate Board",
+   "client": null,
+   "subject": "Budget",
+   "method": "Emails"
+  },
+  {
+   "date": null,
+   "lobbyist": "Daniel A Bordonali",
+   "organization": "Sutherland & Associates",
+   "client": "Abcon Media",
+   "subject": "Signs",
+   "method": "Meetings"
+  },
+  {
+   "date": null,
+   "lobbyist": "Michelle Ribout",
+   "organization": "Canadian Council of Grocery Distributors",
+   "client": null,
+   "subject": "Environment, By-law / Regulation",
+   "method": "Phone calls"
+  },
+  {
+   "date": null,
+   "lobbyist": "Ashley Dent",
+   "organization": "Canadian Council of Grocery Distributors",
+   "client": null,
+   "subject": "Environment, By-law / Regulation",
+   "method": "Emails"
+  },
+  {
+   "date": null,
+   "lobbyist": "Michelle Ribout",
+   "organization": "Canadian Council of Grocery Distributors",
+   "client": null,
+   "subject": "By-law / Regulation",
+   "method": "Emails"
+  },
+  {
+   "date": null,
+   "lobbyist": "Ashley Dent",
+   "organization": "Canadian Council of Grocery Distributors",
+   "client": null,
+   "subject": "By-law / Regulation",
+   "method": "Emails"
+  },
+  {
+   "date": null,
+   "lobbyist": "Daniel A Bordonali",
+   "organization": "Sutherland & Associates",
+   "client": "AutoShare",
+   "subject": "Parking",
+   "method": "Phone calls"
+  },
+  {
+   "date": null,
+   "lobbyist": "Irene Jones",
+   "organization": "Global Public Affairs Inc.",
+   "client": "Astral Media Outdoor L.P.",
+   "subject": "Signs",
+   "method": "Other or unreported"
+  },
+  {
+   "date": null,
+   "lobbyist": "Irene Jones",
+   "organization": "Global Public Affairs Inc.",
+   "client": "Astral Media Outdoor, L.P.",
+   "subject": "Signs",
+   "method": "Other or unreported"
+  },
+  {
+   "date": null,
+   "lobbyist": "Irene Jones",
+   "organization": "Global Public Affairs Inc.",
+   "client": "Astral Media Outdoor, L.P.",
+   "subject": "Signs",
+   "method": "Other or unreported"
+  },
+  {
+   "date": null,
+   "lobbyist": "Irene Jones",
+   "organization": "Global Public Affairs Inc.",
+   "client": "Astral Media Outdoor, L.P.",
+   "subject": "Signs",
+   "method": "Other or unreported"
+  },
+  {
+   "date": null,
+   "lobbyist": "Irene Jones",
+   "organization": "Global Public Affairs Inc.",
+   "client": "Astral Media Outdoor, L.P.",
+   "subject": "Signs",
+   "method": "Other or unreported"
+  },
+  {
+   "date": null,
+   "lobbyist": "Irene Jones",
+   "organization": "Global Public Affairs Inc.",
+   "client": "Astral Media Outdoor, L.P.",
+   "subject": "Signs",
+   "method": "Other or unreported"
+  },
+  {
+   "date": null,
+   "lobbyist": "Irene Jones",
+   "organization": "Global Public Affairs Inc.",
+   "client": "Astral Media Outdoor, L.P.",
+   "subject": "Signs",
+   "method": "Other or unreported"
+  },
+  {
+   "date": null,
+   "lobbyist": "Irene Jones",
+   "organization": "Global Public Affairs Inc.",
+   "client": "Astral Media Outdoor, L.P.",
+   "subject": "Signs",
+   "method": "Other or unreported"
+  },
+  {
+   "date": null,
+   "lobbyist": "Irene Jones",
+   "organization": "Global Public Affairs Inc.",
+   "client": "Astral Media Outdoor, L.P.",
+   "subject": "Signs",
+   "method": "Other or unreported"
+  },
+  {
+   "date": null,
+   "lobbyist": "Glenn McClary",
+   "organization": "Mount Pleasant Group of Cemeteries",
+   "client": null,
+   "subject": "Street Furniture",
+   "method": "Meetings"
+  },
+  {
+   "date": null,
+   "lobbyist": "Norris P. Zucchet",
+   "organization": "Mount Pleasant Group of Cemeteries",
+   "client": null,
+   "subject": "Street Furniture",
+   "method": "Meetings"
+  },
+  {
+   "date": null,
+   "lobbyist": "John Morrison",
+   "organization": "TESSC Inc",
+   "client": null,
+   "subject": "Recreation",
+   "method": "Emails"
+  },
+  {
+   "date": null,
+   "lobbyist": "Faye Lyons",
+   "organization": "Canadian Automobile Association South Central Onta",
+   "client": null,
+   "subject": "Transportation - Cycling / Bicycle Lanes",
+   "method": "Emails"
+  },
+  {
+   "date": null,
+   "lobbyist": "Daniel A Bordonali",
+   "organization": "Sutherland & Associates",
+   "client": "Liberty Energy Resources Inc.",
+   "subject": "Water",
+   "method": "Meetings"
+  },
+  {
+   "date": null,
+   "lobbyist": "Daniel A Bordonali",
+   "organization": "Sutherland & Associates",
+   "client": "Abcon Media",
+   "subject": "Signs",
+   "method": "Meetings"
+  },
+  {
+   "date": null,
+   "lobbyist": "Nick Javor",
+   "organization": "The TDL Group Corporation",
+   "client": null,
+   "subject": "Lobbying Environmental Matters - In store Packaging Report",
+   "method": "Written"
+  },
+  {
+   "date": null,
+   "lobbyist": "Matias R Marin",
+   "organization": "Public Nature Corporation",
+   "client": null,
+   "subject": "Transportation - Cycling / Bicycle Lanes",
+   "method": "Emails"
+  },
+  {
+   "date": null,
+   "lobbyist": "Marc Hollin",
+   "organization": "UNITE HERE Local 75",
+   "client": null,
+   "subject": "Planning and Development Application, OP and Zoning By-law",
+   "method": "Emails"
+  },
+  {
+   "date": null,
+   "lobbyist": "Brigitte Shim",
+   "organization": "Shim-Sutcliffe Architects Inc.",
+   "client": "Sisters of St. Joseph",
+   "subject": "Planning and Development, Combined Application: Zoning By-law and Official Plan",
+   "method": "Meetings"
+  },
+  {
+   "date": null,
+   "lobbyist": "Luc P Levasseur",
+   "organization": "Edelman Public Relations Worldwide Canada Inc.",
+   "client": "Cara Operations Limited",
+   "subject": "Garbage / Recycling",
+   "method": "Written"
+  },
+  {
+   "date": null,
+   "lobbyist": "Joseph P Hruska",
+   "organization": "Hruska & Associates",
+   "client": "Environment Plastics Industry Council",
+   "subject": "Environment",
+   "method": "Meetings"
+  },
+  {
+   "date": null,
+   "lobbyist": "Adam J. Brown",
+   "organization": "Sherman Brown Dryer Karol",
+   "client": "Robert Perry",
+   "subject": "Planning and Development Application, Minor Variance",
+   "method": "Other or unreported"
+  },
+  {
+   "date": null,
+   "lobbyist": "Adam J. Brown",
+   "organization": "Sherman Brown Dryer Karol",
+   "client": "Podium Developments",
+   "subject": "Planning and Development, Combined Application, Site Plan Approval, Committee of Adjustment Minor Variance Application",
+   "method": "Meetings"
+  },
+  {
+   "date": null,
+   "lobbyist": "Adam J. Brown",
+   "organization": "Sherman Brown Dryer Karol",
+   "client": "Zinc Construction Inc.",
+   "subject": "Planning Act Application - Zoning By-law Amendment, Site Plan Approval",
+   "method": "Phone calls"
+  },
+  {
+   "date": null,
+   "lobbyist": "Adam J. Brown",
+   "organization": "Sherman Brown Dryer Karol",
+   "client": "Greenpark Group of Companies",
+   "subject": "Planning and Development Application, Zoning By-law",
+   "method": "Meetings"
+  },
+  {
+   "date": null,
+   "lobbyist": "Mary L Flynn-Guglietti",
+   "organization": "McMillan LLP",
+   "client": "MTCC 626, MTCC 1276, 130 Bloor KS Inc., Standard Toronto Condominium Corporation 1920",
+   "subject": "Planning and Development, Combined Application",
+   "method": "Phone calls"
+  },
+  {
+   "date": null,
+   "lobbyist": "Garth Whyte",
+   "organization": "Canadian Restaurant and Foodservices Association",
+   "client": null,
+   "subject": "Strike of City Workers, Garbage / Recycling, Tourism",
+   "method": "Written"
+  },
+  {
+   "date": null,
+   "lobbyist": "Calvin W Lantz",
+   "organization": "Stikeman Elliott LLP",
+   "client": "Sisters of St. Joseph",
+   "subject": "Planning and Development, Combined Application (Zoning By-law and Official Plan)",
+   "method": "Meetings"
+  },
+  {
+   "date": null,
+   "lobbyist": "Calvin W Lantz",
+   "organization": "Stikeman Elliott LLP",
+   "client": "Greenwood College School",
+   "subject": "Planning and Development - Minor Variance",
+   "method": "Meetings"
+  },
+  {
+   "date": null,
+   "lobbyist": "Faye Lyons",
+   "organization": "Canadian Automobile Association South Central Onta",
+   "client": null,
+   "subject": "Toronto Walking Strategy, Transportation - Pedestrian Crossovers",
+   "method": "Written"
+  },
+  {
+   "date": null,
+   "lobbyist": "Michael N Lende",
+   "organization": "Zipcar Canada Inc",
+   "client": null,
+   "subject": "Parking",
+   "method": "Written"
+  },
+  {
+   "date": null,
+   "lobbyist": "J Harry Prenger",
+   "organization": "Dennis Consulting Services",
+   "client": "International Bio Recovery Corporation",
+   "subject": "Garbage / Recycling",
+   "method": "Emails"
+  },
+  {
+   "date": null,
+   "lobbyist": "Peter J Higgins",
+   "organization": "Peter Higgins Architect Inc.",
+   "client": "Bernard Luttmer",
+   "subject": "Planning and Development, Combined Application",
+   "method": "Meetings"
+  },
+  {
+   "date": null,
+   "lobbyist": "Robert E Millward",
+   "organization": "R.E. Millward & Associates",
+   "client": "Retirement Life Communities",
+   "subject": "Planning and Development Aplication, Site Plan",
+   "method": "Other or unreported"
+  },
+  {
+   "date": null,
+   "lobbyist": "Ron Hutchinson",
+   "organization": "Astral Media Outdoor, L.P.",
+   "client": null,
+   "subject": "Signs",
+   "method": "Meetings"
+  },
+  {
+   "date": null,
+   "lobbyist": "Ron Hutchinson",
+   "organization": "Astral Media Outdoor, L.P.",
+   "client": null,
+   "subject": "Signs",
+   "method": "Meetings"
+  },
+  {
+   "date": null,
+   "lobbyist": "Daniel A Bordonali",
+   "organization": "Sutherland & Associates",
+   "client": "Abcon Media",
+   "subject": "Signs",
+   "method": "Meetings"
+  },
+  {
+   "date": null,
+   "lobbyist": "Bob Blazevski",
+   "organization": "Diamondcorp",
+   "client": null,
+   "subject": "Planning and Development Application, Zoning By-law",
+   "method": "Meetings"
+  },
+  {
+   "date": null,
+   "lobbyist": "Stephen H Diamond",
+   "organization": "Diamondcorp",
+   "client": null,
+   "subject": "Planning and Development Application, Zoning By-law",
+   "method": "Meetings"
+  },
+  {
+   "date": null,
+   "lobbyist": "John Capobianco",
+   "organization": "Edelman",
+   "client": "Cara Operations Limited",
+   "subject": "Garbage / Recycling",
+   "method": "Written"
+  },
+  {
+   "date": null,
+   "lobbyist": "Justin Sherwood",
+   "organization": "Canadian Beverage Association",
+   "client": null,
+   "subject": "Public Health",
+   "method": "Written"
+  },
+  {
+   "date": null,
+   "lobbyist": "Alan Grant",
+   "organization": "Canadian Beverage Association",
+   "client": null,
+   "subject": "Public Health",
+   "method": "Phone calls"
+  },
+  {
+   "date": null,
+   "lobbyist": "Carol Wilding",
+   "organization": "Toronto Board of Trade",
+   "client": null,
+   "subject": "Development Charges Act",
+   "method": "Written"
+  },
+  {
+   "date": null,
+   "lobbyist": "Marion E Axmith",
+   "organization": "Canadian Plastics Industry Association",
+   "client": null,
+   "subject": "Environment",
+   "method": "Meetings"
+  },
+  {
+   "date": null,
+   "lobbyist": "Sid Catalano",
+   "organization": "Pattison Outdoor Advertising",
+   "client": null,
+   "subject": "Sign By-law",
+   "method": "Meetings"
+  },
+  {
+   "date": null,
+   "lobbyist": "Mark G Bales",
+   "organization": "MintoUrban Communities Inc.",
+   "client": null,
+   "subject": "Planning Application, Official Plan, Zoning by-law, Site Plan",
+   "method": "Meetings"
+  },
+  {
+   "date": null,
+   "lobbyist": "Barry Lyon",
+   "organization": "N Barry Lyon Consultants Limited",
+   "client": "Aspen Ridge Homes",
+   "subject": "Planning Application - Zoning By-law Amendment",
+   "method": "Other or unreported"
+  },
+  {
+   "date": null,
+   "lobbyist": "Paul H. Scrivener",
+   "organization": "Paul H. Scrivener & Associates",
+   "client": "Toronto Industry Network",
+   "subject": "environment",
+   "method": "Meetings"
+  },
+  {
+   "date": null,
+   "lobbyist": "Edward H Weinberg",
+   "organization": "Edward Weinberg Architect",
+   "client": "Dr. Philip Seltzer",
+   "subject": "Planning and Development Application, Zoning By-law",
+   "method": "Meetings"
+  },
+  {
+   "date": null,
+   "lobbyist": "mohammed Hakimzadah",
+   "organization": "Abc Ambassador Taxi Services Inc.",
+   "client": null,
+   "subject": "transit ttc",
+   "method": "Written"
+  },
+  {
+   "date": null,
+   "lobbyist": "mike l roberts",
+   "organization": "Casavant",
+   "client": null,
+   "subject": "Affordable Housing",
+   "method": "Emails"
+  },
+  {
+   "date": null,
+   "lobbyist": "John McCallum",
+   "organization": "2224899 Ontario Ltd",
+   "client": null,
+   "subject": "Child Care",
+   "method": "Meetings"
+  },
+  {
+   "date": null,
+   "lobbyist": "Holton Hunter",
+   "organization": "2224899 Ontario Ltd",
+   "client": null,
+   "subject": "Child Care",
+   "method": "Meetings"
+  },
+  {
+   "date": null,
+   "lobbyist": "Adam J. Brown",
+   "organization": "Sherman Brown Dryer Karol",
+   "client": "Andrin Cherrytree Limited",
+   "subject": "Combined Planning and Development Application, Official Plan, Zoning By-law and Site Plan",
+   "method": "Other or unreported"
+  },
+  {
+   "date": null,
+   "lobbyist": "Johan E Eideberg",
+   "organization": "Edelman",
+   "client": "Cara Operations Limited",
+   "subject": "Garbage / Recycling",
+   "method": "Written"
+  },
+  {
+   "date": null,
+   "lobbyist": "Stephen Diamond",
+   "organization": "Diamondcorp",
+   "client": "Woodbine Live!",
+   "subject": "planning and development: Planning Application, Zoning by-law, Site Plan Approval",
+   "method": "Written"
+  },
+  {
+   "date": null,
+   "lobbyist": "Ron Hutchinson",
+   "organization": "Astral Media Outdoor, L.P.",
+   "client": null,
+   "subject": "By-law/Regulation",
+   "method": "Meetings"
+  },
+  {
+   "date": null,
+   "lobbyist": "Neil Antymis",
+   "organization": "PepsiCo Beverages Canada",
+   "client": null,
+   "subject": "Public Health",
+   "method": "Phone calls"
+  },
+  {
+   "date": null,
+   "lobbyist": "Scott Collier",
+   "organization": "PepsiCo Beverages Canada",
+   "client": null,
+   "subject": "Public Health",
+   "method": "Written"
+  },
+  {
+   "date": null,
+   "lobbyist": "Robin V Sears",
+   "organization": "Navigator",
+   "client": "City of Toronto Administrative Prof. Supervisory Asssoc. Inc.",
+   "subject": "Budget",
+   "method": "Phone calls"
+  },
+  {
+   "date": null,
+   "lobbyist": "Stephen McGregor",
+   "organization": "CBS Outdoor Canada",
+   "client": null,
+   "subject": "Signs",
+   "method": "Written"
+  },
+  {
+   "date": null,
+   "lobbyist": "Daniel A Bordonali",
+   "organization": "Sutherland & Associates",
+   "client": "ZipCar Canada Inc",
+   "subject": "Parking",
+   "method": "Phone calls"
+  },
+  {
+   "date": null,
+   "lobbyist": "Moez Jouini",
+   "organization": "Street Food Vendors Association",
+   "client": null,
+   "subject": "licenses, transportation",
+   "method": "Meetings"
+  },
+  {
+   "date": null,
+   "lobbyist": "Mary Di Mambro",
+   "organization": "Sutherland Corporation Ltd",
+   "client": "Canada Running Series",
+   "subject": "recreation",
+   "method": "Meetings"
+  },
+  {
+   "date": null,
+   "lobbyist": "Justin Sherwood",
+   "organization": "Canadian Beverage Association",
+   "client": null,
+   "subject": "Environment, garbage/recycling, water.",
+   "method": "Written"
+  },
+  {
+   "date": null,
+   "lobbyist": "Christa Kroboth",
+   "organization": "A Stroll in The Park",
+   "client": null,
+   "subject": "Grants/Funding",
+   "method": "Emails"
+  },
+  {
+   "date": null,
+   "lobbyist": "Christa Kroboth",
+   "organization": "A Stroll in The Park",
+   "client": null,
+   "subject": "Toronto's Walking Strategy -Transportation - Lobbying for fair inclusion and program support.",
+   "method": "Meetings"
+  },
+  {
+   "date": null,
+   "lobbyist": "Ray A Morand",
+   "organization": "Global Emissions Systems Inc",
+   "client": null,
+   "subject": "Technology",
+   "method": "Emails"
+  },
+  {
+   "date": null,
+   "lobbyist": "Athan Gadanidis",
+   "organization": "Global Emissions Systems Inc",
+   "client": null,
+   "subject": "Technology",
+   "method": "Emails"
+  },
+  {
+   "date": null,
+   "lobbyist": "John Morand",
+   "organization": "Global Emissions Systems Inc",
+   "client": null,
+   "subject": "Technology",
+   "method": "Meetings"
+  },
+  {
+   "date": null,
+   "lobbyist": "Paul H. Scrivener",
+   "organization": "Paul H. Scrivener & Associates",
+   "client": "Toronto Industry Network",
+   "subject": "Planning and Development, Planning Policy / Study",
+   "method": "Emails"
+  },
+  {
+   "date": null,
+   "lobbyist": "Darius Rybak",
+   "organization": "Aspen Ridge Homes",
+   "client": null,
+   "subject": "Planning and Development Application, Official Plan",
+   "method": "Meetings"
+  },
+  {
+   "date": null,
+   "lobbyist": "Chris Korwin-Kuczynski",
+   "organization": "Chris Korwin-Kuczynski",
+   "client": "Pattison Outdoor Advertising",
+   "subject": "Signage and billboard issues",
+   "method": "Other or unreported"
+  },
+  {
+   "date": null,
+   "lobbyist": "Daniel A Bordonali",
+   "organization": "Sutherland Corporation",
+   "client": "Canada Running Series",
+   "subject": "Recreation",
+   "method": "Meetings"
+  },
+  {
+   "date": null,
+   "lobbyist": "Stephanie E Jones",
+   "organization": "Restaurants Canada",
+   "client": null,
+   "subject": "Garbage/Recycling",
+   "method": "Written"
+  }
+ ]
+}

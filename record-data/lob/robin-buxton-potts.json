@@ -1,0 +1,147 @@
+{
+ "member": "robin-buxton-potts",
+ "source": {
+  "name": "City of Toronto Lobbyist Registry (Open Data)",
+  "url": "https://open.toronto.ca/dataset/lobbyist-registry/"
+ },
+ "snapshot": "2026-10-23",
+ "count": 17,
+ "communications": [
+  {
+   "date": "2022-10-13",
+   "lobbyist": "Aleem Kanji",
+   "organization": "AleemKanji.com",
+   "client": "Toronto Civic Employees Union - CUPE Local 416",
+   "subject": "Affordable Housing;Toronto Parking Authority;Transportation",
+   "method": "Phone calls"
+  },
+  {
+   "date": "2022-09-12",
+   "lobbyist": "Tristan Downe-Dewdney",
+   "organization": "Sussex Strategy Group",
+   "client": "Just For Laughs",
+   "subject": "Arts / Culture;Attractions / Tourism;Economic Development",
+   "method": "Emails"
+  },
+  {
+   "date": "2022-08-29",
+   "lobbyist": "Jake Brockman",
+   "organization": "Uber Canada, Inc.",
+   "client": null,
+   "subject": "By-law / Regulation;Economic Development;Licences / Licensing",
+   "method": "Emails"
+  },
+  {
+   "date": "2022-08-17",
+   "lobbyist": "Damien Hope",
+   "organization": "Canada Running Series",
+   "client": null,
+   "subject": "Recreation",
+   "method": "Emails"
+  },
+  {
+   "date": "2022-08-03",
+   "lobbyist": "Tristan Downe-Dewdney",
+   "organization": "Sussex Strategy Group",
+   "client": "Greatwise Developments",
+   "subject": "Planning and Development Application, Zoning By-law;Planning and Development Application, Site Plan",
+   "method": "Emails"
+  },
+  {
+   "date": "2022-07-08",
+   "lobbyist": "Tristan Downe-Dewdney",
+   "organization": "Sussex Strategy Group",
+   "client": "Just For Laughs",
+   "subject": "Arts / Culture;Attractions / Tourism;Economic Development",
+   "method": "Emails"
+  },
+  {
+   "date": "2022-06-28",
+   "lobbyist": "Janice J Fueser",
+   "organization": "RideFairTO",
+   "client": null,
+   "subject": "By-law / Regulation;Licences / Licensing;Transportation",
+   "method": "Emails"
+  },
+  {
+   "date": "2022-06-26",
+   "lobbyist": "Glenn De Baeremaeker",
+   "organization": "Glenn De Baeremaeker Consulting",
+   "client": "Toronto Wildlife Centre",
+   "subject": "Grants / Funding;Planning and Development Application, Site Plan",
+   "method": "Phone calls"
+  },
+  {
+   "date": "2022-06-23",
+   "lobbyist": "Janice J Fueser",
+   "organization": "RideFairTO",
+   "client": null,
+   "subject": "By-law / Regulation;Licences / Licensing;Transportation",
+   "method": "Emails"
+  },
+  {
+   "date": "2022-06-22",
+   "lobbyist": "Brendan Agnew-Iler",
+   "organization": "RideFairTO",
+   "client": null,
+   "subject": "By-law / Regulation;Licences / Licensing;Transportation",
+   "method": "Meetings"
+  },
+  {
+   "date": "2022-06-22",
+   "lobbyist": "Janice J Fueser",
+   "organization": "RideFairTO",
+   "client": null,
+   "subject": "By-law / Regulation;Licences / Licensing;Transportation",
+   "method": "Meetings"
+  },
+  {
+   "date": "2022-06-22",
+   "lobbyist": "Thorben Wieditz",
+   "organization": "RideFairTO",
+   "client": null,
+   "subject": "By-law / Regulation;Licences / Licensing;Transportation",
+   "method": "Meetings"
+  },
+  {
+   "date": "2022-06-20",
+   "lobbyist": "Adam J. Brown",
+   "organization": "Brown Dryer Gold Smuskowitz",
+   "client": "399Y Corporation",
+   "subject": "Planning and Development, Planning Policy / Study;Planning and Development Application, Zoning By-law;Planning and Development, Combined Application",
+   "method": "Other or unreported"
+  },
+  {
+   "date": "2022-06-16",
+   "lobbyist": "Mike Kasij",
+   "organization": "Sutera Canada Inc.",
+   "client": null,
+   "subject": "Garbage / Recycling;Hazardous Waste;Parks / Open Space",
+   "method": "Emails"
+  },
+  {
+   "date": "2022-06-13",
+   "lobbyist": "Stephanie Dunlop",
+   "organization": "H+K Strategies",
+   "client": "Nespresso",
+   "subject": "Environment;Garbage / Recycling",
+   "method": "Emails"
+  },
+  {
+   "date": "2022-06-06",
+   "lobbyist": "Tristan Downe-Dewdney",
+   "organization": "Sussex Strategy Group",
+   "client": "Just For Laughs",
+   "subject": "Arts / Culture;Attractions / Tourism;Economic Development",
+   "method": "Meetings"
+  },
+  {
+   "date": "2022-06-02",
+   "lobbyist": "Tristan Downe-Dewdney",
+   "organization": "Sussex Strategy Group",
+   "client": "Just For Laughs",
+   "subject": "Arts / Culture;Attractions / Tourism;Economic Development",
+   "method": "Emails"
+  }
+ ]
+}

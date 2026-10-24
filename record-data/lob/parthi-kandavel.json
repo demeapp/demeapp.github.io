@@ -1,0 +1,2051 @@
+{
+ "member": "parthi-kandavel",
+ "source": {
+  "name": "City of Toronto Lobbyist Registry (Open Data)",
+  "url": "https://open.toronto.ca/dataset/lobbyist-registry/"
+ },
+ "snapshot": "2026-10-23",
+ "count": 255,
+ "communications": [
+  {
+   "date": "2026-10-08",
+   "lobbyist": "Gary E. Benner",
+   "organization": "Underground Consulting Incorporated",
+   "client": null,
+   "subject": "Transit / TTC;Transportation - Metrolinx",
+   "method": "Emails"
+  },
+  {
+   "date": "2026-09-03",
+   "lobbyist": "Margot Zuckerman",
+   "organization": "Automotus, Inc.",
+   "client": null,
+   "subject": "Technology;Toronto Parking Authority;Transportation",
+   "method": "Emails"
+  },
+  {
+   "date": "2026-08-28",
+   "lobbyist": "Margot Zuckerman",
+   "organization": "Automotus, Inc.",
+   "client": null,
+   "subject": "Technology;Toronto Parking Authority;Transportation",
+   "method": "Emails"
+  },
+  {
+   "date": "2026-07-28",
+   "lobbyist": "Gary E. Benner",
+   "organization": "Underground Consulting Incorporated",
+   "client": null,
+   "subject": "Transit / TTC;Transportation - Metrolinx",
+   "method": "Emails"
+  },
+  {
+   "date": "2026-07-21",
+   "lobbyist": "Joe Mihevc",
+   "organization": "Mihevc Consulting and Mediation Ltd",
+   "client": "Equiton Development Inc",
+   "subject": "Planning and Development;Planning and Development Application, Official Plan;Planning and Development Application, Zoning By-law",
+   "method": "Emails"
+  },
+  {
+   "date": "2026-05-22",
+   "lobbyist": "Kim Wright",
+   "organization": "Wright Strategies",
+   "client": "Bluffers Park Marina Limite",
+   "subject": "Economic Development;Real Estate / Property (City-owned);Waterfront Revitalization",
+   "method": "Phone calls"
+  },
+  {
+   "date": "2026-05-21",
+   "lobbyist": "Madeleine Sarick",
+   "organization": "Samuel Sarick Limited",
+   "client": null,
+   "subject": "Planning and Development, Planning Policy / Study",
+   "method": "Emails"
+  },
+  {
+   "date": "2026-05-21",
+   "lobbyist": "Kim Wright",
+   "organization": "Wright Strategies",
+   "client": "Bluffers Park Marina Limite",
+   "subject": "Economic Development;Real Estate / Property (City-owned);Waterfront Revitalization",
+   "method": "Phone calls"
+  },
+  {
+   "date": "2026-05-04",
+   "lobbyist": "Donna Bravo",
+   "organization": "Samuel Sarick Limited",
+   "client": null,
+   "subject": "Planning and Development, Planning Policy / Study",
+   "method": "Meetings"
+  },
+  {
+   "date": "2026-05-04",
+   "lobbyist": "Harsh Trivedi",
+   "organization": "Samuel Sarick Limited",
+   "client": null,
+   "subject": "Planning and Development, Planning Policy / Study",
+   "method": "Meetings"
+  },
+  {
+   "date": "2026-05-04",
+   "lobbyist": "Madeleine Sarick",
+   "organization": "Samuel Sarick Limited",
+   "client": null,
+   "subject": "Planning and Development, Planning Policy / Study",
+   "method": "Meetings"
+  },
+  {
+   "date": "2026-04-27",
+   "lobbyist": "Heena Kapoor",
+   "organization": "Temple Scott Associates Inc.",
+   "client": "Moose Hide Campaign Development Society",
+   "subject": "Arts / Culture;Budget",
+   "method": "Emails"
+  },
+  {
+   "date": "2026-04-21",
+   "lobbyist": "Jim Karygiannis",
+   "organization": "GTA Strategies",
+   "client": "Profile Development",
+   "subject": "Planning and Development;Planning and Development Application, Official Plan;Planning and Development Application, Plan of Subdivision",
+   "method": "Meetings"
+  },
+  {
+   "date": "2026-04-20",
+   "lobbyist": "Jim Karygiannis",
+   "organization": "GTA Strategies",
+   "client": "Profile Development",
+   "subject": "Planning and Development;Planning and Development Application, Official Plan;Planning and Development Application, Plan of Subdivision",
+   "method": "Emails"
+  },
+  {
+   "date": "2026-04-13",
+   "lobbyist": "Jim Karygiannis",
+   "organization": "GTA Strategies",
+   "client": "Profile Development",
+   "subject": "Planning and Development;Planning and Development Application, Official Plan;Planning and Development Application, Plan of Subdivision",
+   "method": "Emails"
+  },
+  {
+   "date": "2026-03-27",
+   "lobbyist": "Jim Karygiannis",
+   "organization": "GTA Strategies",
+   "client": "Profile Development",
+   "subject": "Planning and Development;Planning and Development Application, Official Plan;Planning and Development Application, Plan of Subdivision",
+   "method": "Emails"
+  },
+  {
+   "date": "2026-03-25",
+   "lobbyist": "Kim Wright",
+   "organization": "Wright Strategies",
+   "client": "Nieuport Aviation Infrastructure Partners",
+   "subject": "Economic Development;Transportation",
+   "method": "Meetings"
+  },
+  {
+   "date": "2026-03-02",
+   "lobbyist": "Jim Karygiannis",
+   "organization": "GTA Strategies",
+   "client": "Profile Development",
+   "subject": "Planning and Development;Planning and Development Application, Official Plan;Planning and Development Application, Plan of Subdivision",
+   "method": "Emails"
+  },
+  {
+   "date": "2026-02-20",
+   "lobbyist": "Jim Karygiannis",
+   "organization": "GTA Strategies",
+   "client": "Profile Development",
+   "subject": "Planning and Development;Planning and Development Application, Official Plan;Planning and Development Application, Plan of Subdivision",
+   "method": "Emails"
+  },
+  {
+   "date": "2026-01-28",
+   "lobbyist": "Sara Anghel",
+   "organization": "Greater Toronto Hotel Association",
+   "client": null,
+   "subject": "Attractions / Tourism;Business Improvement Area (BIA);By-law / Regulation",
+   "method": "Written"
+  },
+  {
+   "date": "2026-01-21",
+   "lobbyist": "Mike Dror",
+   "organization": "Bousfields Inc.",
+   "client": "Pinemount Developments Ltd.",
+   "subject": "Planning and Development Application;Planning and Development Application, Zoning By-law;Planning and Development Application, Site Plan",
+   "method": "Meetings"
+  },
+  {
+   "date": "2026-01-06",
+   "lobbyist": "Simran Bhatti",
+   "organization": "Bousfields Inc",
+   "client": "The Sud Group",
+   "subject": "Planning and Development;Planning and Development, Combined Application",
+   "method": "Meetings"
+  },
+  {
+   "date": "2026-01-06",
+   "lobbyist": "Joe Mihevc",
+   "organization": "Mihevc Consulting and Mediation Ltd",
+   "client": "The Sud Group",
+   "subject": "Planning and Development;Planning and Development Application;Planning and Development Application, Zoning By-law",
+   "method": "Meetings"
+  },
+  {
+   "date": "2026-01-06",
+   "lobbyist": "David Morse",
+   "organization": "Bousfields Inc.",
+   "client": "The Sud Group",
+   "subject": "Planning and Development;Planning and Development, Combined Application",
+   "method": "Meetings"
+  },
+  {
+   "date": "2025-12-12",
+   "lobbyist": "Madeleine Sarick",
+   "organization": "Samuel Sarick Limited",
+   "client": null,
+   "subject": "Planning and Development, Planning Policy / Study",
+   "method": "Emails"
+  },
+  {
+   "date": "2025-12-11",
+   "lobbyist": "Donna Bravo",
+   "organization": "Samuel Sarick Limited",
+   "client": null,
+   "subject": "Planning and Development, Planning Policy / Study",
+   "method": "Meetings"
+  },
+  {
+   "date": "2025-12-11",
+   "lobbyist": "Harsh Trivedi",
+   "organization": "Samuel Sarick Limited",
+   "client": null,
+   "subject": "Planning and Development, Planning Policy / Study",
+   "method": "Meetings"
+  },
+  {
+   "date": "2025-12-11",
+   "lobbyist": "Madeleine Sarick",
+   "organization": "Samuel Sarick Limited",
+   "client": null,
+   "subject": "Planning and Development, Planning Policy / Study",
+   "method": "Meetings"
+  },
+  {
+   "date": "2025-12-11",
+   "lobbyist": "Aidan Grove-White",
+   "organization": "StrategyCorp",
+   "client": "Samuel Sarick Limited",
+   "subject": "Planning and Development;Planning and Development, Planning Policy / Study;Planning and Development, Environmental Assessment",
+   "method": "Meetings"
+  },
+  {
+   "date": "2025-12-11",
+   "lobbyist": "Alex Glista",
+   "organization": "StrategyCorp Inc.",
+   "client": "Samuel Sarick Limited",
+   "subject": "Planning and Development;Planning and Development, Planning Policy / Study;Planning and Development, Environmental Assessment",
+   "method": "Meetings"
+  },
+  {
+   "date": "2025-12-05",
+   "lobbyist": "Dillon M Waldron",
+   "organization": "Sussex Strategy Group",
+   "client": "Capital Infrastructure Group Inc.",
+   "subject": "Procurement",
+   "method": "Emails"
+  },
+  {
+   "date": "2025-11-17",
+   "lobbyist": "Jim Karygiannis",
+   "organization": "GTA Strategies",
+   "client": "H & G Control",
+   "subject": "Garbage / Recycling;Hazardous Waste",
+   "method": "Emails"
+  },
+  {
+   "date": "2025-10-24",
+   "lobbyist": "Jim Karygiannis",
+   "organization": "GTA Strategies",
+   "client": "Profile Development",
+   "subject": "Planning and Development;Planning and Development Application, Official Plan;Planning and Development Application, Plan of Subdivision",
+   "method": "Emails"
+  },
+  {
+   "date": "2025-10-21",
+   "lobbyist": "Jim Karygiannis",
+   "organization": "GTA Strategies",
+   "client": "Trans-Plan Transportation Engineering Firm",
+   "subject": "Toronto Parking Authority;Transit / TTC;Transportation - Metrolinx",
+   "method": "Emails"
+  },
+  {
+   "date": "2025-10-18",
+   "lobbyist": "Jim Karygiannis",
+   "organization": "GTA Strategies",
+   "client": "Profile Development",
+   "subject": "Planning and Development;Planning and Development Application, Official Plan;Planning and Development Application, Plan of Subdivision",
+   "method": "Emails"
+  },
+  {
+   "date": "2025-10-07",
+   "lobbyist": "Patrick Graham",
+   "organization": "Bird Canada",
+   "client": null,
+   "subject": "By-law / Regulation;Transportation - Cycling / Bicycle Lanes;Transportation - Roads / Bridges",
+   "method": "Emails"
+  },
+  {
+   "date": "2025-10-07",
+   "lobbyist": "Erica Wallis",
+   "organization": "Blackbird Strategies",
+   "client": "Oneida Investment Corporation",
+   "subject": "Economic Development;Garbage / Recycling;Real Estate / Property (City-owned)",
+   "method": "Emails"
+  },
+  {
+   "date": "2025-09-07",
+   "lobbyist": "Spencer Feeley",
+   "organization": "Gwillimbury Investments Limited",
+   "client": null,
+   "subject": "Planning and Development Application;Planning and Development Application, Plan of Condominium;Planning and Development Application, Site Plan",
+   "method": "Meetings"
+  },
+  {
+   "date": "2025-09-05",
+   "lobbyist": "Brian Feeley",
+   "organization": "Gwillimbury Investments Limited",
+   "client": null,
+   "subject": "Planning and Development Application;Planning and Development Application, Plan of Condominium;Planning and Development Application, Site Plan",
+   "method": "Phone calls"
+  },
+  {
+   "date": "2025-08-29",
+   "lobbyist": "Aaron Binder",
+   "organization": "Segway of Ontario",
+   "client": null,
+   "subject": "Economic Development;Transportation;Transportation - Cycling / Bicycle Lanes",
+   "method": "Emails"
+  },
+  {
+   "date": "2025-07-30",
+   "lobbyist": "Adam Rubinoff",
+   "organization": "462017 Ontario Limited",
+   "client": null,
+   "subject": "Planning and Development Application, Official Plan;Planning and Development Application, Zoning By-law;Planning and Development Application, Plan of Subdivision",
+   "method": "Meetings"
+  },
+  {
+   "date": "2025-07-30",
+   "lobbyist": "Phillip Rubinoff",
+   "organization": "462017 Ontario Limited",
+   "client": null,
+   "subject": "Planning and Development Application, Official Plan;Planning and Development Application, Zoning By-law;Planning and Development Application, Plan of Subdivision",
+   "method": "Meetings"
+  },
+  {
+   "date": "2025-07-30",
+   "lobbyist": "Adam Rubinoff",
+   "organization": "462017 Ontario Limited",
+   "client": null,
+   "subject": "Planning and Development Application, Official Plan;Planning and Development Application, Zoning By-law;Planning and Development Application, Plan of Subdivision",
+   "method": "Meetings"
+  },
+  {
+   "date": "2025-07-30",
+   "lobbyist": "Adam Rubinoff",
+   "organization": "Laurier Paradise CC 347-357 Kennedy Inc.",
+   "client": null,
+   "subject": "Planning and Development Application",
+   "method": "Meetings"
+  },
+  {
+   "date": "2025-07-30",
+   "lobbyist": "Adam Rubinoff",
+   "organization": "Laurier Paradise CC 375 Kennedy Inc.",
+   "client": null,
+   "subject": "Planning and Development Application",
+   "method": "Meetings"
+  },
+  {
+   "date": "2025-07-29",
+   "lobbyist": "Clare M Casey",
+   "organization": "Vantage Canada LP",
+   "client": "2868415 Ontario Inc",
+   "subject": "Transportation;Transportation - Cycling / Bicycle Lanes;Transportation - Roads / Bridges",
+   "method": "Emails"
+  },
+  {
+   "date": "2025-07-24",
+   "lobbyist": "Kim Wright",
+   "organization": "Wright Strategies",
+   "client": "Bluffers Park Marina Limite",
+   "subject": "Economic Development;Real Estate / Property (City-owned);Waterfront Revitalization",
+   "method": "Emails"
+  },
+  {
+   "date": "2025-07-24",
+   "lobbyist": "John J Corbo",
+   "organization": "IPAC Paving Limited",
+   "client": null,
+   "subject": "Procurement",
+   "method": "Meetings"
+  },
+  {
+   "date": "2025-07-23",
+   "lobbyist": "Kim Wright",
+   "organization": "Wright Strategies",
+   "client": "Bluffers Park Marina Limite",
+   "subject": "Economic Development;Real Estate / Property (City-owned);Waterfront Revitalization",
+   "method": "Emails"
+  },
+  {
+   "date": "2025-07-22",
+   "lobbyist": "Fausto Di Carlo",
+   "organization": "2868415 Ontario Inc",
+   "client": null,
+   "subject": "Transportation;Transportation - Cycling / Bicycle Lanes;Transportation - Roads / Bridges",
+   "method": "Emails"
+  },
+  {
+   "date": "2025-07-22",
+   "lobbyist": "Jim Karygiannis",
+   "organization": "GTA Strategies",
+   "client": "IPAC Paving",
+   "subject": "Procurement",
+   "method": "Other or unreported"
+  },
+  {
+   "date": "2025-07-19",
+   "lobbyist": "Fausto Di Carlo",
+   "organization": "2868415 Ontario Inc",
+   "client": null,
+   "subject": "Transportation;Transportation - Cycling / Bicycle Lanes;Transportation - Roads / Bridges",
+   "method": "Emails"
+  },
+  {
+   "date": "2025-07-17",
+   "lobbyist": "John J Corbo",
+   "organization": "IPAC Paving Limited",
+   "client": null,
+   "subject": "Procurement",
+   "method": "Phone calls"
+  },
+  {
+   "date": "2025-07-16",
+   "lobbyist": "Shabnum Durrani",
+   "organization": "Live Nation Canada, Inc.",
+   "client": null,
+   "subject": "Arts / Culture;Attractions / Tourism;Economic Development",
+   "method": "Phone calls"
+  },
+  {
+   "date": "2025-07-16",
+   "lobbyist": "Alex Chreston",
+   "organization": "Crestview Strategy",
+   "client": "Live Nation Canada, Inc.",
+   "subject": "Arts / Culture;Attractions / Tourism;Economic Development",
+   "method": "Phone calls"
+  },
+  {
+   "date": "2025-07-10",
+   "lobbyist": "Alex Chreston",
+   "organization": "Crestview Strategy",
+   "client": "Live Nation Canada, Inc.",
+   "subject": "Arts / Culture;Attractions / Tourism;Economic Development",
+   "method": "Phone calls"
+  },
+  {
+   "date": "2025-06-24",
+   "lobbyist": "Shabnum Durrani",
+   "organization": "Live Nation Canada, Inc.",
+   "client": null,
+   "subject": "Arts / Culture;Attractions / Tourism;Economic Development",
+   "method": "Phone calls"
+  },
+  {
+   "date": "2025-06-19",
+   "lobbyist": "Tristan Downe-Dewdney",
+   "organization": "Downe Dewdney Consulting Services Corporation",
+   "client": "Myhold Inc.",
+   "subject": "Affordable Housing;Planning and Development Application;Social Services",
+   "method": "Emails"
+  },
+  {
+   "date": "2025-06-18",
+   "lobbyist": "Shabnum Durrani",
+   "organization": "Live Nation Canada, Inc.",
+   "client": null,
+   "subject": "Arts / Culture;Attractions / Tourism;Economic Development",
+   "method": "Meetings"
+  },
+  {
+   "date": "2025-06-18",
+   "lobbyist": "Alex Chreston",
+   "organization": "Crestview Strategy",
+   "client": "Live Nation Canada, Inc.",
+   "subject": "Arts / Culture;Attractions / Tourism;Economic Development",
+   "method": "Meetings"
+  },
+  {
+   "date": "2025-06-17",
+   "lobbyist": "Madeleine Sarick",
+   "organization": "Samuel Sarick Limited",
+   "client": null,
+   "subject": "Planning and Development, Planning Policy / Study",
+   "method": "Emails"
+  },
+  {
+   "date": "2025-06-17",
+   "lobbyist": "Jim Karygiannis",
+   "organization": "GTA Strategies",
+   "client": "Commerx",
+   "subject": "Parks / Open Space;Real Estate / Property (City-owned);Transportation - Cycling / Bicycle Lanes",
+   "method": "Emails"
+  },
+  {
+   "date": "2025-06-10",
+   "lobbyist": "Madeleine Sarick",
+   "organization": "Samuel Sarick Limited",
+   "client": null,
+   "subject": "Planning and Development, Planning Policy / Study",
+   "method": "Emails"
+  },
+  {
+   "date": "2025-06-10",
+   "lobbyist": "Alex Chreston",
+   "organization": "Crestview Strategy",
+   "client": "Live Nation Canada, Inc.",
+   "subject": "Arts / Culture;Attractions / Tourism;Economic Development",
+   "method": "Emails"
+  },
+  {
+   "date": "2025-06-09",
+   "lobbyist": "Donna Bravo",
+   "organization": "Samuel Sarick Limited",
+   "client": null,
+   "subject": "Planning and Development, Planning Policy / Study",
+   "method": "Meetings"
+  },
+  {
+   "date": "2025-06-09",
+   "lobbyist": "Harsh Trivedi",
+   "organization": "Samuel Sarick Limited",
+   "client": null,
+   "subject": "Planning and Development, Planning Policy / Study",
+   "method": "Meetings"
+  },
+  {
+   "date": "2025-06-09",
+   "lobbyist": "Madeleine Sarick",
+   "organization": "Samuel Sarick Limited",
+   "client": null,
+   "subject": "Planning and Development, Planning Policy / Study",
+   "method": "Meetings"
+  },
+  {
+   "date": "2025-06-09",
+   "lobbyist": "Jim Karygiannis",
+   "organization": "GTA Strategies",
+   "client": "Profile Development",
+   "subject": "Planning and Development;Planning and Development Application, Official Plan;Planning and Development Application, Plan of Subdivision",
+   "method": "Emails"
+  },
+  {
+   "date": "2025-06-02",
+   "lobbyist": "Kim Wright",
+   "organization": "Wright Strategies",
+   "client": "Bluffers Park Marina Limite",
+   "subject": "Economic Development;Real Estate / Property (City-owned);Waterfront Revitalization",
+   "method": "Meetings"
+  },
+  {
+   "date": "2025-05-27",
+   "lobbyist": "Kevin Wassermuhl",
+   "organization": "Watermill Management Ltd.",
+   "client": "2872136 Ontario Inc.",
+   "subject": "Planning and Development Application;Planning and Development Application, Zoning By-law;Planning and Development Application, Site Plan",
+   "method": "Meetings"
+  },
+  {
+   "date": "2025-05-21",
+   "lobbyist": "Kim Wright",
+   "organization": "Wright Strategies",
+   "client": "Bluffers Park Marina Limite",
+   "subject": "Economic Development;Real Estate / Property (City-owned);Waterfront Revitalization",
+   "method": "Meetings"
+  },
+  {
+   "date": "2025-05-21",
+   "lobbyist": "Samia Hashi",
+   "organization": "Unifor",
+   "client": null,
+   "subject": "By-law / Regulation",
+   "method": "Emails"
+  },
+  {
+   "date": "2025-05-21",
+   "lobbyist": "Marco Bianchi",
+   "organization": "StrategyCorp Inc.",
+   "client": "JOLT Charge",
+   "subject": "By-law / Regulation;Signs",
+   "method": "Emails"
+  },
+  {
+   "date": "2025-05-15",
+   "lobbyist": "Kevin Wassermuhl",
+   "organization": "Watermill Management Ltd.",
+   "client": "2872136 Ontario Inc.",
+   "subject": "Planning and Development Application;Planning and Development Application, Zoning By-law;Planning and Development Application, Site Plan",
+   "method": "Phone calls"
+  },
+  {
+   "date": "2025-05-15",
+   "lobbyist": "Joe Mihevc",
+   "organization": "Mihevc Consulting and Mediation Ltd",
+   "client": "The Sud Group",
+   "subject": "Planning and Development;Planning and Development Application;Planning and Development Application, Zoning By-law",
+   "method": "Meetings"
+  },
+  {
+   "date": "2025-05-09",
+   "lobbyist": "Kevin Wassermuhl",
+   "organization": "Watermill Management Ltd.",
+   "client": "2872136 Ontario Inc.",
+   "subject": "Planning and Development Application;Planning and Development Application, Zoning By-law;Planning and Development Application, Site Plan",
+   "method": "Meetings"
+  },
+  {
+   "date": "2025-05-01",
+   "lobbyist": "Kevin Wassermuhl",
+   "organization": "Watermill Management Ltd.",
+   "client": "2872136 Ontario Inc.",
+   "subject": "Planning and Development Application;Planning and Development Application, Zoning By-law;Planning and Development Application, Site Plan",
+   "method": "Phone calls"
+  },
+  {
+   "date": "2025-04-30",
+   "lobbyist": "Ryan Moore",
+   "organization": "BentallGreenOak (Canada) Limited Partnership",
+   "client": null,
+   "subject": "Planning and Development Application",
+   "method": "Meetings"
+  },
+  {
+   "date": "2025-04-30",
+   "lobbyist": "Brad Caco",
+   "organization": "BentallGreenOak (Canada) Limited Partnership",
+   "client": null,
+   "subject": "Planning and Development Application",
+   "method": "Meetings"
+  },
+  {
+   "date": "2025-04-29",
+   "lobbyist": "Kevin Wassermuhl",
+   "organization": "Watermill Management Ltd.",
+   "client": "2872136 Ontario Inc.",
+   "subject": "Planning and Development Application;Planning and Development Application, Zoning By-law;Planning and Development Application, Site Plan",
+   "method": "Phone calls"
+  },
+  {
+   "date": "2025-04-24",
+   "lobbyist": "Kevin Wassermuhl",
+   "organization": "Watermill Management Ltd.",
+   "client": "2872136 Ontario Inc.",
+   "subject": "Planning and Development Application;Planning and Development Application, Zoning By-law;Planning and Development Application, Site Plan",
+   "method": "Other or unreported"
+  },
+  {
+   "date": "2025-04-15",
+   "lobbyist": "Kim Wright",
+   "organization": "Wright Strategies",
+   "client": "Bluffers Park Marina Limite",
+   "subject": "Economic Development;Real Estate / Property (City-owned);Waterfront Revitalization",
+   "method": "Emails"
+  },
+  {
+   "date": "2025-04-11",
+   "lobbyist": "Kim Wright",
+   "organization": "Wright Strategies",
+   "client": "Bluffers Park Marina Limite",
+   "subject": "Economic Development;Real Estate / Property (City-owned);Waterfront Revitalization",
+   "method": "Emails"
+  },
+  {
+   "date": "2025-04-09",
+   "lobbyist": "Joe Mihevc",
+   "organization": "Mihevc Consulting and Mediation Ltd",
+   "client": "The Sud Group",
+   "subject": "Planning and Development;Planning and Development Application;Planning and Development Application, Zoning By-law",
+   "method": "Meetings"
+  },
+  {
+   "date": "2025-04-08",
+   "lobbyist": "Kevin Wassermuhl",
+   "organization": "Watermill Management Ltd.",
+   "client": "2872136 Ontario Inc.",
+   "subject": "Planning and Development Application;Planning and Development Application, Zoning By-law;Planning and Development Application, Site Plan",
+   "method": "Phone calls"
+  },
+  {
+   "date": "2025-04-03",
+   "lobbyist": "Kevin Wassermuhl",
+   "organization": "Watermill Management Ltd.",
+   "client": "2872136 Ontario Inc.",
+   "subject": "Planning and Development Application;Planning and Development Application, Zoning By-law;Planning and Development Application, Site Plan",
+   "method": "Emails"
+  },
+  {
+   "date": "2025-03-11",
+   "lobbyist": "Fausto Di Carlo",
+   "organization": "2868415 Ontario Inc",
+   "client": null,
+   "subject": "Transportation;Transportation - Cycling / Bicycle Lanes;Transportation - Roads / Bridges",
+   "method": "Emails"
+  },
+  {
+   "date": "2025-03-07",
+   "lobbyist": "Glenn De Baeremaeker",
+   "organization": "Glenn De Baeremaeker Consulting",
+   "client": "Co-op Cabs",
+   "subject": "Transit / TTC",
+   "method": "Emails"
+  },
+  {
+   "date": "2025-03-06",
+   "lobbyist": "Lee A Boswell",
+   "organization": "Crestview Strategy",
+   "client": "Labourers' International Union of North America Ontario Provincial District Council (LiUNA OPDC)",
+   "subject": "City infrastructure - Emergency planning and/or restoration;Economic Development",
+   "method": "Emails"
+  },
+  {
+   "date": "2025-03-03",
+   "lobbyist": "Stephen Hamilton",
+   "organization": "Progressive Contractors Association",
+   "client": null,
+   "subject": "City infrastructure - Emergency planning and/or restoration;Procurement;Restart and rebuild related to Covid19 pandemic",
+   "method": "Emails"
+  },
+  {
+   "date": "2025-02-20",
+   "lobbyist": "Mike Dror",
+   "organization": "Bousfields Inc.",
+   "client": "Pinemount Developments Ltd.",
+   "subject": "Planning and Development Application;Planning and Development Application, Zoning By-law;Planning and Development Application, Site Plan",
+   "method": "Meetings"
+  },
+  {
+   "date": "2025-02-13",
+   "lobbyist": "Mike Kasij",
+   "organization": "Sutera Canada Inc.",
+   "client": null,
+   "subject": "Grants / Funding;Hazardous Waste;Real Estate / Property (City-owned)",
+   "method": "Emails"
+  },
+  {
+   "date": "2025-02-07",
+   "lobbyist": "Paul Scrivener",
+   "organization": "Toronto Industry Network",
+   "client": null,
+   "subject": "By-law / Regulation;Economic Development;Environment",
+   "method": "Emails"
+  },
+  {
+   "date": "2025-02-04",
+   "lobbyist": "Paul Scrivener",
+   "organization": "Toronto Industry Network",
+   "client": null,
+   "subject": "By-law / Regulation;Economic Development;Environment",
+   "method": "Emails"
+  },
+  {
+   "date": "2025-01-15",
+   "lobbyist": "Spencer Feeley",
+   "organization": "Gwillimbury Investments Limited",
+   "client": null,
+   "subject": "Planning and Development Application;Planning and Development Application, Plan of Condominium;Planning and Development Application, Site Plan",
+   "method": "Emails"
+  },
+  {
+   "date": "2025-01-13",
+   "lobbyist": "Spencer Feeley",
+   "organization": "Gwillimbury Investments Limited",
+   "client": null,
+   "subject": "Planning and Development Application;Planning and Development Application, Plan of Condominium;Planning and Development Application, Site Plan",
+   "method": "Emails"
+  },
+  {
+   "date": "2025-01-13",
+   "lobbyist": "Paul Scrivener",
+   "organization": "Toronto Industry Network",
+   "client": null,
+   "subject": "By-law / Regulation;Economic Development;Environment",
+   "method": "Emails"
+  },
+  {
+   "date": "2025-01-12",
+   "lobbyist": "Brian Feeley",
+   "organization": "Gwillimbury Investments Limited",
+   "client": null,
+   "subject": "Planning and Development Application;Planning and Development Application, Plan of Condominium;Planning and Development Application, Site Plan",
+   "method": "Phone calls"
+  },
+  {
+   "date": "2025-01-07",
+   "lobbyist": "Spencer Feeley",
+   "organization": "Gwillimbury Investments Limited",
+   "client": null,
+   "subject": "Planning and Development Application;Planning and Development Application, Plan of Condominium;Planning and Development Application, Site Plan",
+   "method": "Meetings"
+  },
+  {
+   "date": "2025-01-07",
+   "lobbyist": "Brian Feeley",
+   "organization": "Gwillimbury Investments Limited",
+   "client": null,
+   "subject": "Planning and Development Application;Planning and Development Application, Plan of Condominium;Planning and Development Application, Site Plan",
+   "method": "Meetings"
+  },
+  {
+   "date": "2025-01-06",
+   "lobbyist": "Brian Feeley",
+   "organization": "Gwillimbury Investments Limited",
+   "client": null,
+   "subject": "Planning and Development Application;Planning and Development Application, Plan of Condominium;Planning and Development Application, Site Plan",
+   "method": "Phone calls"
+  },
+  {
+   "date": "2024-12-09",
+   "lobbyist": "Brad Caco",
+   "organization": "BentallGreenOak (Canada) Limited Partnership",
+   "client": null,
+   "subject": "Planning and Development Application",
+   "method": "Meetings"
+  },
+  {
+   "date": "2024-12-09",
+   "lobbyist": "Ryan Moore",
+   "organization": "BentallGreenOak (Canada) Limited Partnership",
+   "client": null,
+   "subject": "Planning and Development Application",
+   "method": "Meetings"
+  },
+  {
+   "date": "2024-12-08",
+   "lobbyist": "Jim Karygiannis",
+   "organization": "GTA Strategies",
+   "client": "Christian Music festival",
+   "subject": "Arts / Culture",
+   "method": "Emails"
+  },
+  {
+   "date": "2024-12-05",
+   "lobbyist": "Austin Spademan",
+   "organization": "Bird Canada",
+   "client": null,
+   "subject": "By-law / Regulation;Transportation - Cycling / Bicycle Lanes;Transportation - Roads / Bridges",
+   "method": "Emails"
+  },
+  {
+   "date": "2024-11-29",
+   "lobbyist": "Ingrid Buday",
+   "organization": "No More Noise Toronto",
+   "client": "Intelligent Instruments",
+   "subject": "By-law / Regulation;Planning and Development, Planning Policy / Study;Public Health",
+   "method": "Emails"
+  },
+  {
+   "date": "2024-11-25",
+   "lobbyist": "Mustapha Khamissa",
+   "organization": "Rubicon Strategy Inc.",
+   "client": "Bolt Services CA Inc",
+   "subject": "Economic Development;Licences / Licensing;Transportation",
+   "method": "Emails"
+  },
+  {
+   "date": "2024-11-20",
+   "lobbyist": "Ingrid Buday",
+   "organization": "No More Noise Toronto",
+   "client": "Intelligent Instruments",
+   "subject": "By-law / Regulation;Planning and Development, Planning Policy / Study;Public Health",
+   "method": "Emails"
+  },
+  {
+   "date": "2024-11-18",
+   "lobbyist": "Donna Bravo",
+   "organization": "Samuel Sarick Limited",
+   "client": null,
+   "subject": "Planning and Development, Planning Policy / Study",
+   "method": "Emails"
+  },
+  {
+   "date": "2024-11-15",
+   "lobbyist": "Emma Teitel",
+   "organization": "Navigator Ltd",
+   "client": "Tercot Communities",
+   "subject": "Affordable Housing;Parks / Open Space;Planning and Development",
+   "method": "Meetings"
+  },
+  {
+   "date": "2024-11-14",
+   "lobbyist": "Mustapha Khamissa",
+   "organization": "Rubicon Strategy Inc.",
+   "client": "Bolt Services CA Inc",
+   "subject": "Economic Development;Licences / Licensing;Transportation",
+   "method": "Emails"
+  },
+  {
+   "date": "2024-11-13",
+   "lobbyist": "Brian Feeley",
+   "organization": "Gwillimbury Investments Limited",
+   "client": null,
+   "subject": "Planning and Development Application;Planning and Development Application, Plan of Condominium;Planning and Development Application, Site Plan",
+   "method": "Phone calls"
+  },
+  {
+   "date": "2024-11-12",
+   "lobbyist": "Spencer Feeley",
+   "organization": "Gwillimbury Investments Limited",
+   "client": null,
+   "subject": "Planning and Development Application;Planning and Development Application, Plan of Condominium;Planning and Development Application, Site Plan",
+   "method": "Meetings"
+  },
+  {
+   "date": "2024-11-12",
+   "lobbyist": "Brian Feeley",
+   "organization": "Gwillimbury Investments Limited",
+   "client": null,
+   "subject": "Planning and Development Application;Planning and Development Application, Plan of Condominium;Planning and Development Application, Site Plan",
+   "method": "Meetings"
+  },
+  {
+   "date": "2024-11-11",
+   "lobbyist": "Spencer Feeley",
+   "organization": "Gwillimbury Investments Limited",
+   "client": null,
+   "subject": "Planning and Development Application;Planning and Development Application, Plan of Condominium;Planning and Development Application, Site Plan",
+   "method": "Phone calls"
+  },
+  {
+   "date": "2024-11-11",
+   "lobbyist": "Brian Feeley",
+   "organization": "Gwillimbury Investments Limited",
+   "client": null,
+   "subject": "Planning and Development Application;Planning and Development Application, Plan of Condominium;Planning and Development Application, Site Plan",
+   "method": "Phone calls"
+  },
+  {
+   "date": "2024-11-07",
+   "lobbyist": "Donna Bravo",
+   "organization": "Samuel Sarick Limited",
+   "client": null,
+   "subject": "Planning and Development, Planning Policy / Study",
+   "method": "Emails"
+  },
+  {
+   "date": "2024-11-06",
+   "lobbyist": "Jake Brockman",
+   "organization": "Uber Canada, Inc.",
+   "client": null,
+   "subject": "By-law / Regulation;Economic Development;Licences / Licensing",
+   "method": "Emails"
+  },
+  {
+   "date": "2024-11-06",
+   "lobbyist": "Austin Spademan",
+   "organization": "Bird Canada",
+   "client": null,
+   "subject": "By-law / Regulation;Transportation - Cycling / Bicycle Lanes;Transportation - Roads / Bridges",
+   "method": "Emails"
+  },
+  {
+   "date": "2024-11-04",
+   "lobbyist": "Glenn De Baeremaeker",
+   "organization": "Glenn De Baeremaeker Consulting",
+   "client": "Co-op Cabs",
+   "subject": "Transit / TTC",
+   "method": "Emails"
+  },
+  {
+   "date": "2024-10-28",
+   "lobbyist": "Donna Bravo",
+   "organization": "Samuel Sarick Limited",
+   "client": null,
+   "subject": "Planning and Development, Planning Policy / Study",
+   "method": "Meetings"
+  },
+  {
+   "date": "2024-10-28",
+   "lobbyist": "Harsh Trivedi",
+   "organization": "Samuel Sarick Limited",
+   "client": null,
+   "subject": "Planning and Development, Planning Policy / Study",
+   "method": "Meetings"
+  },
+  {
+   "date": "2024-10-28",
+   "lobbyist": "Madeleine Sarick",
+   "organization": "Samuel Sarick Limited",
+   "client": null,
+   "subject": "Planning and Development, Planning Policy / Study",
+   "method": "Meetings"
+  },
+  {
+   "date": "2024-10-28",
+   "lobbyist": "Spencer Feeley",
+   "organization": "Gwillimbury Investments Limited",
+   "client": null,
+   "subject": "Planning and Development Application;Planning and Development Application, Plan of Condominium;Planning and Development Application, Site Plan",
+   "method": "Meetings"
+  },
+  {
+   "date": "2024-10-28",
+   "lobbyist": "Brian Feeley",
+   "organization": "Gwillimbury Investments Limited",
+   "client": null,
+   "subject": "Planning and Development Application;Planning and Development Application, Plan of Condominium;Planning and Development Application, Site Plan",
+   "method": "Meetings"
+  },
+  {
+   "date": "2024-10-28",
+   "lobbyist": "Marco Bianchi",
+   "organization": "StrategyCorp Inc.",
+   "client": "Samuel Sarick Limited",
+   "subject": "Planning and Development;Planning and Development, Planning Policy / Study;Planning and Development, Environmental Assessment",
+   "method": "Meetings"
+  },
+  {
+   "date": "2024-10-23",
+   "lobbyist": "Adam Rubinoff",
+   "organization": "462017 Ontario Limited",
+   "client": null,
+   "subject": "Planning and Development Application, Official Plan;Planning and Development Application, Zoning By-law;Planning and Development Application, Plan of Subdivision",
+   "method": "Meetings"
+  },
+  {
+   "date": "2024-10-23",
+   "lobbyist": "Adam Rubinoff",
+   "organization": "462017 Ontario Limited",
+   "client": null,
+   "subject": "Planning and Development Application, Official Plan;Planning and Development Application, Zoning By-law;Planning and Development Application, Plan of Subdivision",
+   "method": "Meetings"
+  },
+  {
+   "date": "2024-10-22",
+   "lobbyist": "Spencer Feeley",
+   "organization": "Gwillimbury Investments Limited",
+   "client": null,
+   "subject": "Planning and Development Application;Planning and Development Application, Plan of Condominium;Planning and Development Application, Site Plan",
+   "method": "Meetings"
+  },
+  {
+   "date": "2024-10-22",
+   "lobbyist": "Brian Feeley",
+   "organization": "Gwillimbury Investments Limited",
+   "client": null,
+   "subject": "Planning and Development Application;Planning and Development Application, Plan of Condominium;Planning and Development Application, Site Plan",
+   "method": "Meetings"
+  },
+  {
+   "date": "2024-10-18",
+   "lobbyist": "James Wielgosz",
+   "organization": "Greater Toronto Hotel Association",
+   "client": null,
+   "subject": "Attractions / Tourism;Business Improvement Area (BIA);By-law / Regulation",
+   "method": "Emails"
+  },
+  {
+   "date": "2024-10-17",
+   "lobbyist": "Brian Feeley",
+   "organization": "Gwillimbury Investments Limited",
+   "client": null,
+   "subject": "Planning and Development Application;Planning and Development Application, Plan of Condominium;Planning and Development Application, Site Plan",
+   "method": "Meetings"
+  },
+  {
+   "date": "2024-10-16",
+   "lobbyist": "Spencer Feeley",
+   "organization": "Gwillimbury Investments Limited",
+   "client": null,
+   "subject": "Planning and Development Application;Planning and Development Application, Plan of Condominium;Planning and Development Application, Site Plan",
+   "method": "Meetings"
+  },
+  {
+   "date": "2024-10-09",
+   "lobbyist": "Kim Wright",
+   "organization": "Wright Strategies",
+   "client": "Nieuport Aviation Infrastructure Partners",
+   "subject": "Economic Development;Transportation",
+   "method": "Meetings"
+  },
+  {
+   "date": "2024-10-09",
+   "lobbyist": "Kim Wright",
+   "organization": "Wright Strategies",
+   "client": "PortsToronto",
+   "subject": "Economic Development;Transportation;Waterfront Revitalization",
+   "method": "Meetings"
+  },
+  {
+   "date": "2024-10-09",
+   "lobbyist": "Tristan Downe-Dewdney",
+   "organization": "Downe Dewdney Consulting Services Corporation",
+   "client": "Habitat for Humanity Greater Toronto Area",
+   "subject": "Affordable Housing;Financial Services;Planning and Development, Planning Policy / Study",
+   "method": "Meetings"
+  },
+  {
+   "date": "2024-10-07",
+   "lobbyist": "Sean Hill",
+   "organization": "Wright Strategies",
+   "client": "Nieuport Aviation Infrastructure Partners",
+   "subject": "Economic Development;Transportation",
+   "method": "Meetings"
+  },
+  {
+   "date": "2024-09-25",
+   "lobbyist": "Jim Karygiannis",
+   "organization": "GTA Strategies",
+   "client": "Profile Development",
+   "subject": "Planning and Development;Planning and Development Application, Official Plan;Planning and Development Application, Plan of Subdivision",
+   "method": "Phone calls"
+  },
+  {
+   "date": "2024-09-24",
+   "lobbyist": "Spencer Feeley",
+   "organization": "Gwillimbury Investments Limited",
+   "client": null,
+   "subject": "Planning and Development Application;Planning and Development Application, Plan of Condominium;Planning and Development Application, Site Plan",
+   "method": "Meetings"
+  },
+  {
+   "date": "2024-09-24",
+   "lobbyist": "Brian Feeley",
+   "organization": "Gwillimbury Investments Limited",
+   "client": null,
+   "subject": "Planning and Development Application;Planning and Development Application, Plan of Condominium;Planning and Development Application, Site Plan",
+   "method": "Meetings"
+  },
+  {
+   "date": "2024-09-24",
+   "lobbyist": "Sonia Kandola",
+   "organization": "Lime Technology Inc.",
+   "client": null,
+   "subject": "By-law / Regulation;Toronto Parking Authority;Transportation - Cycling / Bicycle Lanes",
+   "method": "Emails"
+  },
+  {
+   "date": "2024-09-23",
+   "lobbyist": "Spencer Feeley",
+   "organization": "Gwillimbury Investments Limited",
+   "client": null,
+   "subject": "Planning and Development Application;Planning and Development Application, Plan of Condominium;Planning and Development Application, Site Plan",
+   "method": "Emails"
+  },
+  {
+   "date": "2024-09-20",
+   "lobbyist": "Spencer Feeley",
+   "organization": "Gwillimbury Investments Limited",
+   "client": null,
+   "subject": "Planning and Development Application;Planning and Development Application, Plan of Condominium;Planning and Development Application, Site Plan",
+   "method": "Phone calls"
+  },
+  {
+   "date": "2024-09-20",
+   "lobbyist": "Brian Feeley",
+   "organization": "Gwillimbury Investments Limited",
+   "client": null,
+   "subject": "Planning and Development Application;Planning and Development Application, Plan of Condominium;Planning and Development Application, Site Plan",
+   "method": "Phone calls"
+  },
+  {
+   "date": "2024-09-16",
+   "lobbyist": "Spencer Feeley",
+   "organization": "Gwillimbury Investments Limited",
+   "client": null,
+   "subject": "Planning and Development Application;Planning and Development Application, Plan of Condominium;Planning and Development Application, Site Plan",
+   "method": "Meetings"
+  },
+  {
+   "date": "2024-09-16",
+   "lobbyist": "Brian Feeley",
+   "organization": "Gwillimbury Investments Limited",
+   "client": null,
+   "subject": "Planning and Development Application;Planning and Development Application, Plan of Condominium;Planning and Development Application, Site Plan",
+   "method": "Meetings"
+  },
+  {
+   "date": "2024-09-02",
+   "lobbyist": "Sean Hill",
+   "organization": "Wright Strategies",
+   "client": "Nieuport Aviation Infrastructure Partners",
+   "subject": "Economic Development;Transportation",
+   "method": "Meetings"
+  },
+  {
+   "date": "2024-08-26",
+   "lobbyist": "Sean Hill",
+   "organization": "Wright Strategies",
+   "client": "Atlantic Packaging",
+   "subject": "Economic Development;Planning and Development;Transportation - Metrolinx",
+   "method": "Meetings"
+  },
+  {
+   "date": "2024-08-14",
+   "lobbyist": "Renee Gomes",
+   "organization": "DIAMOND Corp",
+   "client": null,
+   "subject": "Planning and Development Application, Zoning By-law",
+   "method": "Emails"
+  },
+  {
+   "date": "2024-07-30",
+   "lobbyist": "Tasnia Khan",
+   "organization": "Amir Remtulla and Associates",
+   "client": "2129152 Ontario Ltd.",
+   "subject": "Planning and Development;Planning and Development Application, Zoning By-law;Planning and Development Application, Site Plan",
+   "method": "Phone calls"
+  },
+  {
+   "date": "2024-07-25",
+   "lobbyist": "Kim Wright",
+   "organization": "Wright Strategies",
+   "client": "Nieuport Aviation Infrastructure Partners",
+   "subject": "Economic Development;Transportation",
+   "method": "Emails"
+  },
+  {
+   "date": "2024-07-25",
+   "lobbyist": "Kim Wright",
+   "organization": "Wright Strategies",
+   "client": "PortsToronto",
+   "subject": "Economic Development;Transportation;Waterfront Revitalization",
+   "method": "Emails"
+  },
+  {
+   "date": "2024-07-24",
+   "lobbyist": "Sean Hill",
+   "organization": "Wright Strategies",
+   "client": "Nieuport Aviation Infrastructure Partners",
+   "subject": "Economic Development;Transportation",
+   "method": "Meetings"
+  },
+  {
+   "date": "2024-07-22",
+   "lobbyist": "Victoria Armit",
+   "organization": "Centre for Inclusive Economic Opportunity, Golden Mile",
+   "client": null,
+   "subject": "Economic Development;Procurement",
+   "method": "Meetings"
+  },
+  {
+   "date": "2024-07-19",
+   "lobbyist": "Jim Karygiannis",
+   "organization": "GTA Strategies",
+   "client": "Christian Music festival",
+   "subject": "Arts / Culture",
+   "method": "Emails"
+  },
+  {
+   "date": "2024-07-18",
+   "lobbyist": "Kim Wright",
+   "organization": "Wright Strategies",
+   "client": "Nieuport Aviation Infrastructure Partners",
+   "subject": "Economic Development;Transportation",
+   "method": "Meetings"
+  },
+  {
+   "date": "2024-07-18",
+   "lobbyist": "Kim Wright",
+   "organization": "Wright Strategies",
+   "client": "PortsToronto",
+   "subject": "Economic Development;Transportation;Waterfront Revitalization",
+   "method": "Meetings"
+  },
+  {
+   "date": "2024-07-11",
+   "lobbyist": "Tasnia Khan",
+   "organization": "Amir Remtulla and Associates",
+   "client": "2129152 Ontario Ltd.",
+   "subject": "Planning and Development;Planning and Development Application, Zoning By-law;Planning and Development Application, Site Plan",
+   "method": "Meetings"
+  },
+  {
+   "date": "2024-07-09",
+   "lobbyist": "Peter F. Smith",
+   "organization": "Bousfields Inc.",
+   "client": "Parkcrest Holdings Inc.",
+   "subject": "Planning and Development Application, Official Plan;Planning and Development Application, Zoning By-law",
+   "method": "Other or unreported"
+  },
+  {
+   "date": "2024-07-08",
+   "lobbyist": "Peter F. Smith",
+   "organization": "Bousfields Inc.",
+   "client": "Parkcrest Holdings Inc.",
+   "subject": "Planning and Development Application, Official Plan;Planning and Development Application, Zoning By-law",
+   "method": "Phone calls"
+  },
+  {
+   "date": "2024-06-27",
+   "lobbyist": "Kim Wright",
+   "organization": "Wright Strategies",
+   "client": "Nieuport Aviation Infrastructure Partners",
+   "subject": "Economic Development;Transportation",
+   "method": "Emails"
+  },
+  {
+   "date": "2024-06-27",
+   "lobbyist": "Kim Wright",
+   "organization": "Wright Strategies",
+   "client": "PortsToronto",
+   "subject": "Economic Development;Transportation;Waterfront Revitalization",
+   "method": "Emails"
+  },
+  {
+   "date": "2024-06-21",
+   "lobbyist": "Jim Karygiannis",
+   "organization": "GTA Strategies",
+   "client": "Oasis Clothing Bank",
+   "subject": "Licences / Licensing;Parking;Real Estate / Property (City-owned)",
+   "method": "Emails"
+  },
+  {
+   "date": "2024-06-20",
+   "lobbyist": "Joe Mihevc",
+   "organization": "Mihevc Consulting and Mediation Ltd",
+   "client": "The Sud Group",
+   "subject": "Planning and Development;Planning and Development Application;Planning and Development Application, Zoning By-law",
+   "method": "Meetings"
+  },
+  {
+   "date": "2024-06-18",
+   "lobbyist": "Peter F. Smith",
+   "organization": "Bousfields Inc.",
+   "client": "Parkcrest Holdings Inc.",
+   "subject": "Planning and Development Application, Official Plan;Planning and Development Application, Zoning By-law",
+   "method": "Meetings"
+  },
+  {
+   "date": "2024-06-14",
+   "lobbyist": "Paul Scrivener",
+   "organization": "Toronto Industry Network",
+   "client": null,
+   "subject": "By-law / Regulation;Economic Development;Environment",
+   "method": "Emails"
+  },
+  {
+   "date": "2024-06-14",
+   "lobbyist": "Peter F. Smith",
+   "organization": "Bousfields Inc.",
+   "client": "Parkcrest Holdings Inc.",
+   "subject": "Planning and Development Application, Official Plan;Planning and Development Application, Zoning By-law",
+   "method": "Emails"
+  },
+  {
+   "date": "2024-06-13",
+   "lobbyist": "Paul Scrivener",
+   "organization": "Toronto Industry Network",
+   "client": null,
+   "subject": "By-law / Regulation;Economic Development;Environment",
+   "method": "Emails"
+  },
+  {
+   "date": "2024-06-13",
+   "lobbyist": "Peter F. Smith",
+   "organization": "Bousfields Inc.",
+   "client": "Parkcrest Holdings Inc.",
+   "subject": "Planning and Development Application, Official Plan;Planning and Development Application, Zoning By-law",
+   "method": "Phone calls"
+  },
+  {
+   "date": "2024-06-12",
+   "lobbyist": "Paul Scrivener",
+   "organization": "Toronto Industry Network",
+   "client": null,
+   "subject": "By-law / Regulation;Economic Development;Environment",
+   "method": "Emails"
+  },
+  {
+   "date": "2024-06-10",
+   "lobbyist": "Donna Bravo",
+   "organization": "Samuel Sarick Limited",
+   "client": null,
+   "subject": "Planning and Development, Planning Policy / Study",
+   "method": "Meetings"
+  },
+  {
+   "date": "2024-06-10",
+   "lobbyist": "Madeleine Sarick",
+   "organization": "Samuel Sarick Limited",
+   "client": null,
+   "subject": "Planning and Development, Planning Policy / Study",
+   "method": "Meetings"
+  },
+  {
+   "date": "2024-06-10",
+   "lobbyist": "Marco Bianchi",
+   "organization": "StrategyCorp Inc.",
+   "client": "Samuel Sarick Limited",
+   "subject": "Planning and Development;Planning and Development, Planning Policy / Study;Planning and Development, Environmental Assessment",
+   "method": "Meetings"
+  },
+  {
+   "date": "2024-05-31",
+   "lobbyist": "Kim Wright",
+   "organization": "Wright Strategies",
+   "client": "Bluffers Park Marina Limite",
+   "subject": "Economic Development;Real Estate / Property (City-owned);Waterfront Revitalization",
+   "method": "Meetings"
+  },
+  {
+   "date": "2024-05-30",
+   "lobbyist": "Justin Van Dette",
+   "organization": "Deltera Inc.",
+   "client": null,
+   "subject": "Planning and Development;Planning and Development Application, Plan of Subdivision;Planning and Development, Combined Application",
+   "method": "Meetings"
+  },
+  {
+   "date": "2024-05-30",
+   "lobbyist": "Michael Mestyan",
+   "organization": "Deltera Inc.",
+   "client": null,
+   "subject": "Planning and Development;Planning and Development Application, Plan of Subdivision;Planning and Development, Combined Application",
+   "method": "Meetings"
+  },
+  {
+   "date": "2024-05-28",
+   "lobbyist": "Marco Bianchi",
+   "organization": "StrategyCorp Inc.",
+   "client": "Samuel Sarick Limited",
+   "subject": "Planning and Development;Planning and Development, Planning Policy / Study;Planning and Development, Environmental Assessment",
+   "method": "Emails"
+  },
+  {
+   "date": "2024-05-27",
+   "lobbyist": "Alla Groznaya",
+   "organization": "Cope Group Inc.",
+   "client": null,
+   "subject": "Planning and Development",
+   "method": "Emails"
+  },
+  {
+   "date": "2024-05-21",
+   "lobbyist": "Sean Hill",
+   "organization": "Wright Strategies",
+   "client": "St. Gaspar's Development Corporation",
+   "subject": "Affordable Housing;Economic Development;Planning and Development",
+   "method": "Emails"
+  },
+  {
+   "date": "2024-05-14",
+   "lobbyist": "Donna Bravo",
+   "organization": "Samuel Sarick Limited",
+   "client": null,
+   "subject": "Planning and Development, Planning Policy / Study",
+   "method": "Meetings"
+  },
+  {
+   "date": "2024-05-14",
+   "lobbyist": "Madeleine Sarick",
+   "organization": "Samuel Sarick Limited",
+   "client": null,
+   "subject": "Planning and Development, Planning Policy / Study",
+   "method": "Meetings"
+  },
+  {
+   "date": "2024-05-14",
+   "lobbyist": "Aidan Grove-White",
+   "organization": "StrategyCorp",
+   "client": "Samuel Sarick Limited",
+   "subject": "Planning and Development;Planning and Development, Planning Policy / Study;Planning and Development, Environmental Assessment",
+   "method": "Meetings"
+  },
+  {
+   "date": "2024-05-14",
+   "lobbyist": "Marco Bianchi",
+   "organization": "StrategyCorp Inc.",
+   "client": "Samuel Sarick Limited",
+   "subject": "Planning and Development;Planning and Development, Planning Policy / Study;Planning and Development, Environmental Assessment",
+   "method": "Meetings"
+  },
+  {
+   "date": "2024-05-09",
+   "lobbyist": "Aidan Grove-White",
+   "organization": "StrategyCorp",
+   "client": "Samuel Sarick Limited",
+   "subject": "Planning and Development;Planning and Development, Planning Policy / Study;Planning and Development, Environmental Assessment",
+   "method": "Emails"
+  },
+  {
+   "date": "2024-05-09",
+   "lobbyist": "Paul Scrivener",
+   "organization": "Toronto Industry Network",
+   "client": null,
+   "subject": "By-law / Regulation;Economic Development;Environment",
+   "method": "Emails"
+  },
+  {
+   "date": "2024-05-07",
+   "lobbyist": "Brian Feeley",
+   "organization": "Gwillimbury Investments Limited",
+   "client": null,
+   "subject": "Planning and Development Application;Planning and Development Application, Plan of Condominium;Planning and Development Application, Site Plan",
+   "method": "Meetings"
+  },
+  {
+   "date": "2024-05-07",
+   "lobbyist": "Spencer Feeley",
+   "organization": "Gwillimbury Investments Limited",
+   "client": null,
+   "subject": "Planning and Development Application;Planning and Development Application, Plan of Condominium;Planning and Development Application, Site Plan",
+   "method": "Meetings"
+  },
+  {
+   "date": "2024-05-07",
+   "lobbyist": "Ryan Doherty",
+   "organization": "Bousfields Inc.",
+   "client": "Feeley Group",
+   "subject": "Planning and Development;Planning and Development Application;Planning and Development Application, Site Plan",
+   "method": "Meetings"
+  },
+  {
+   "date": "2024-05-03",
+   "lobbyist": "Paul Scrivener",
+   "organization": "Toronto Industry Network",
+   "client": null,
+   "subject": "By-law / Regulation;Economic Development;Environment",
+   "method": "Emails"
+  },
+  {
+   "date": "2024-05-03",
+   "lobbyist": "mathew laing",
+   "organization": "MA Development Services Inc.",
+   "client": null,
+   "subject": "Planning and Development;Planning and Development Application",
+   "method": "Meetings"
+  },
+  {
+   "date": "2024-05-01",
+   "lobbyist": "Mustapha Khamissa",
+   "organization": "Rubicon Strategy Inc.",
+   "client": "Bolt Services CA Inc",
+   "subject": "Economic Development;Licences / Licensing;Transportation",
+   "method": "Emails"
+  },
+  {
+   "date": "2024-04-25",
+   "lobbyist": "mathew laing",
+   "organization": "MA Development Services Inc.",
+   "client": null,
+   "subject": "Planning and Development;Planning and Development Application",
+   "method": "Meetings"
+  },
+  {
+   "date": "2024-04-24",
+   "lobbyist": "Sean Hill",
+   "organization": "Wright Strategies",
+   "client": "Atlantic Packaging",
+   "subject": "Economic Development;Planning and Development;Transportation - Metrolinx",
+   "method": "Meetings"
+  },
+  {
+   "date": "2024-04-23",
+   "lobbyist": "Kim Wright",
+   "organization": "Wright Strategies",
+   "client": "Bluffers Park Marina Limite",
+   "subject": "Economic Development;Real Estate / Property (City-owned);Waterfront Revitalization",
+   "method": "Emails"
+  },
+  {
+   "date": "2024-04-12",
+   "lobbyist": "Madeleine Sarick",
+   "organization": "Samuel Sarick Limited",
+   "client": null,
+   "subject": "Planning and Development, Planning Policy / Study",
+   "method": "Meetings"
+  },
+  {
+   "date": "2024-04-11",
+   "lobbyist": "Daryl Chong",
+   "organization": "Greater Toronto Apartment Association",
+   "client": null,
+   "subject": "Affordable Housing",
+   "method": "Meetings"
+  },
+  {
+   "date": "2024-04-11",
+   "lobbyist": "Daryl Chong",
+   "organization": "Greater Toronto Apartment Association",
+   "client": null,
+   "subject": "By-law / Regulation",
+   "method": "Meetings"
+  },
+  {
+   "date": "2024-04-11",
+   "lobbyist": "Daryl Chong",
+   "organization": "Greater Toronto Apartment Association",
+   "client": null,
+   "subject": "Affordable Housing;Planning and Development, Planning Policy / Study",
+   "method": "Meetings"
+  },
+  {
+   "date": "2024-04-11",
+   "lobbyist": "Daryl Chong",
+   "organization": "Greater Toronto Apartment Association",
+   "client": null,
+   "subject": "Planning and Development",
+   "method": "Meetings"
+  },
+  {
+   "date": "2024-04-11",
+   "lobbyist": "Daryl Chong",
+   "organization": "Greater Toronto Apartment Association",
+   "client": null,
+   "subject": "Budget",
+   "method": "Meetings"
+  },
+  {
+   "date": "2024-04-03",
+   "lobbyist": "Alex Howell",
+   "organization": "Airbnb Canada Inc.",
+   "client": null,
+   "subject": "Economic Development;Licences / Licensing;Planning and Development Application, Zoning By-law",
+   "method": "Emails"
+  },
+  {
+   "date": "2024-04-03",
+   "lobbyist": "John F Campbell",
+   "organization": "Sutherland Corp",
+   "client": "Outfront Media Canada",
+   "subject": "Signs",
+   "method": "Written"
+  },
+  {
+   "date": "2024-04-02",
+   "lobbyist": "Adam Rubinoff",
+   "organization": "462017 Ontario Limited",
+   "client": null,
+   "subject": "Planning and Development Application, Official Plan;Planning and Development Application, Zoning By-law;Planning and Development Application, Plan of Subdivision",
+   "method": "Meetings"
+  },
+  {
+   "date": "2024-04-02",
+   "lobbyist": "Adam Rubinoff",
+   "organization": "462017 Ontario Limited",
+   "client": null,
+   "subject": "Planning and Development Application, Official Plan;Planning and Development Application, Zoning By-law;Planning and Development Application, Plan of Subdivision",
+   "method": "Meetings"
+  },
+  {
+   "date": "2024-04-02",
+   "lobbyist": "Phillip Rubinoff",
+   "organization": "462017 Ontario Limited",
+   "client": null,
+   "subject": "Planning and Development Application, Official Plan;Planning and Development Application, Zoning By-law;Planning and Development Application, Plan of Subdivision",
+   "method": "Meetings"
+  },
+  {
+   "date": "2024-04-02",
+   "lobbyist": "Adam Rubinoff",
+   "organization": "Laurier Paradise CC 347-357 Kennedy Inc.",
+   "client": null,
+   "subject": "Planning and Development Application",
+   "method": "Meetings"
+  },
+  {
+   "date": "2024-04-02",
+   "lobbyist": "Adam Rubinoff",
+   "organization": "Laurier Paradise CC 375 Kennedy Inc.",
+   "client": null,
+   "subject": "Planning and Development Application",
+   "method": "Meetings"
+  },
+  {
+   "date": "2024-04-02",
+   "lobbyist": "Miles A Cope",
+   "organization": "Cope Group Inc.",
+   "client": null,
+   "subject": "Planning and Development",
+   "method": "Meetings"
+  },
+  {
+   "date": "2024-04-02",
+   "lobbyist": "Chris Schafer",
+   "organization": "VAN HORNE OUTDOOR LP",
+   "client": null,
+   "subject": "Signs",
+   "method": "Emails"
+  },
+  {
+   "date": "2024-03-25",
+   "lobbyist": "Jake Brockman",
+   "organization": "Uber Canada, Inc.",
+   "client": null,
+   "subject": "By-law / Regulation;Economic Development;Licences / Licensing",
+   "method": "Meetings"
+  },
+  {
+   "date": "2024-03-25",
+   "lobbyist": "Laura Miller",
+   "organization": "Uber Canada, Inc.",
+   "client": null,
+   "subject": "By-law / Regulation;Economic Development;Licences / Licensing",
+   "method": "Meetings"
+  },
+  {
+   "date": "2024-03-25",
+   "lobbyist": "Kim Wright",
+   "organization": "Wright Strategies",
+   "client": "Uber Canada, Inc.",
+   "subject": "By-law / Regulation;Economic Development;Transportation - Roads / Bridges",
+   "method": "Meetings"
+  },
+  {
+   "date": "2024-03-25",
+   "lobbyist": "Lauren Gerhardt",
+   "organization": "Sussex Strategy Group",
+   "client": "Dolphin Gaming",
+   "subject": "Planning and Development;Planning and Development, Planning Policy / Study",
+   "method": "Emails"
+  },
+  {
+   "date": "2024-03-25",
+   "lobbyist": "Justin Van Dette",
+   "organization": "DelSuites Inc",
+   "client": null,
+   "subject": "By-law / Regulation;Licences / Licensing;Planning and Development, Planning Policy / Study",
+   "method": "Meetings"
+  },
+  {
+   "date": "2024-03-25",
+   "lobbyist": "Dan Henderson",
+   "organization": "DelSuites Inc",
+   "client": null,
+   "subject": "By-law / Regulation;Licences / Licensing;Planning and Development, Planning Policy / Study",
+   "method": "Meetings"
+  },
+  {
+   "date": "2024-03-20",
+   "lobbyist": "Lauren Gerhardt",
+   "organization": "Sussex Strategy Group",
+   "client": "Dolphin Gaming",
+   "subject": "Planning and Development;Planning and Development, Planning Policy / Study",
+   "method": "Emails"
+  },
+  {
+   "date": "2024-03-14",
+   "lobbyist": "Renee Gomes",
+   "organization": "DIAMOND Corp",
+   "client": null,
+   "subject": "Planning and Development Application, Zoning By-law",
+   "method": "Emails"
+  },
+  {
+   "date": "2024-03-12",
+   "lobbyist": "Melissa Walker",
+   "organization": "Kilmer Brownfield Management Limited",
+   "client": null,
+   "subject": "Planning and Development, Combined Application",
+   "method": "Meetings"
+  },
+  {
+   "date": "2024-03-12",
+   "lobbyist": "Renee Gomes",
+   "organization": "DIAMOND Corp",
+   "client": null,
+   "subject": "Planning and Development Application, Zoning By-law",
+   "method": "Meetings"
+  },
+  {
+   "date": "2024-03-12",
+   "lobbyist": "Stephen H Diamond",
+   "organization": "DIAMOND Corp",
+   "client": null,
+   "subject": "Planning and Development Application, Zoning By-law",
+   "method": "Meetings"
+  },
+  {
+   "date": "2024-03-12",
+   "lobbyist": "Jim Karygiannis",
+   "organization": "GTA Strategies",
+   "client": "Ming Pao Daily Newspaper",
+   "subject": "Grants / Funding",
+   "method": "Emails"
+  },
+  {
+   "date": "2024-03-06",
+   "lobbyist": "Glenn De Baeremaeker",
+   "organization": "Glenn De Baeremaeker Consulting",
+   "client": "Master Soft and Delight",
+   "subject": "Licences / Licensing",
+   "method": "Emails"
+  },
+  {
+   "date": "2024-02-27",
+   "lobbyist": "Jim Karygiannis",
+   "organization": "GTA Strategies",
+   "client": "Master Soft Delight Dairy",
+   "subject": "Licences / Licensing;Transportation - Cycling / Bicycle Lanes",
+   "method": "Phone calls"
+  },
+  {
+   "date": "2024-02-27",
+   "lobbyist": "Jim Karygiannis",
+   "organization": "GTA Strategies",
+   "client": "Aero Future Canada",
+   "subject": "Emergency Services",
+   "method": "Meetings"
+  },
+  {
+   "date": "2024-02-26",
+   "lobbyist": "Amir Remtulla",
+   "organization": "Amir Remtulla and Associates",
+   "client": "Samuel Sarick Limited",
+   "subject": "Planning and Development;Planning and Development Application, Zoning By-law;Planning and Development Application, Site Plan",
+   "method": "Emails"
+  },
+  {
+   "date": "2024-02-12",
+   "lobbyist": "Aleem Kanji",
+   "organization": "AleemKanji.com",
+   "client": "Toronto Police Association",
+   "subject": "Budget;Health & Safety;Covid19 Pandemic",
+   "method": "Meetings"
+  },
+  {
+   "date": "2024-02-06",
+   "lobbyist": "Tristan Downe-Dewdney",
+   "organization": "Downe Dewdney Consulting Services Corporation",
+   "client": "Republic Developments Inc.",
+   "subject": "Affordable Housing;Planning and Development Application, Official Plan;Planning and Development Application, Zoning By-law",
+   "method": "Meetings"
+  },
+  {
+   "date": "2024-02-06",
+   "lobbyist": "Matt Young",
+   "organization": "Republic Developments Inc.",
+   "client": null,
+   "subject": "Planning and Development Application;Planning and Development Application, Official Plan;Planning and Development Application, Plan of Subdivision",
+   "method": "Meetings"
+  },
+  {
+   "date": "2024-02-03",
+   "lobbyist": "Aleem Kanji",
+   "organization": "AleemKanji.com",
+   "client": "Toronto Police Association",
+   "subject": "Budget;Health & Safety;Covid19 Pandemic",
+   "method": "Phone calls"
+  },
+  {
+   "date": "2024-02-01",
+   "lobbyist": "Aleem Kanji",
+   "organization": "AleemKanji.com",
+   "client": "Toronto Civic Employees Union - CUPE Local 416",
+   "subject": "Affordable Housing;Toronto Parking Authority;Transportation",
+   "method": "Meetings"
+  },
+  {
+   "date": "2024-01-31",
+   "lobbyist": "Jamie Yoon",
+   "organization": "Mount Pleasant Group",
+   "client": null,
+   "subject": "Attractions / Tourism;Economic Development;Planning and Development",
+   "method": "Emails"
+  },
+  {
+   "date": "2024-01-31",
+   "lobbyist": "Aleem Kanji",
+   "organization": "AleemKanji.com",
+   "client": "Toronto Police Association",
+   "subject": "Budget;Health & Safety;Covid19 Pandemic",
+   "method": "Phone calls"
+  },
+  {
+   "date": "2024-01-31",
+   "lobbyist": "Jim Karygiannis",
+   "organization": "GTA Strategies",
+   "client": "Aero Future Canada",
+   "subject": "Emergency Services",
+   "method": "Emails"
+  },
+  {
+   "date": "2024-01-29",
+   "lobbyist": "Kim Wright",
+   "organization": "Wright Strategies",
+   "client": "Uber Canada, Inc.",
+   "subject": "By-law / Regulation;Economic Development;Transportation - Roads / Bridges",
+   "method": "Meetings"
+  },
+  {
+   "date": "2024-01-29",
+   "lobbyist": "Jim Karygiannis",
+   "organization": "GTA Strategies",
+   "client": "Aero Future Canada",
+   "subject": "Emergency Services",
+   "method": "Emails"
+  },
+  {
+   "date": "2024-01-26",
+   "lobbyist": "Jamie Yoon",
+   "organization": "Mount Pleasant Group",
+   "client": null,
+   "subject": "Attractions / Tourism;Economic Development;Planning and Development",
+   "method": "Meetings"
+  },
+  {
+   "date": "2024-01-26",
+   "lobbyist": "Jeff Dennis",
+   "organization": "Mount Pleasant Group",
+   "client": null,
+   "subject": "Attractions / Tourism;Economic Development;Planning and Development",
+   "method": "Meetings"
+  },
+  {
+   "date": "2024-01-26",
+   "lobbyist": "John Monahan",
+   "organization": "Mount Pleasant Group",
+   "client": null,
+   "subject": "Attractions / Tourism;Economic Development;Planning and Development",
+   "method": "Meetings"
+  },
+  {
+   "date": "2024-01-26",
+   "lobbyist": "Aleem Kanji",
+   "organization": "AleemKanji.com",
+   "client": "Toronto Civic Employees Union - CUPE Local 416",
+   "subject": "Affordable Housing;Toronto Parking Authority;Transportation",
+   "method": "Phone calls"
+  },
+  {
+   "date": "2024-01-25",
+   "lobbyist": "Kim Wright",
+   "organization": "Wright Strategies",
+   "client": "Uber Canada, Inc.",
+   "subject": "By-law / Regulation;Economic Development;Transportation - Roads / Bridges",
+   "method": "Emails"
+  },
+  {
+   "date": "2024-01-24",
+   "lobbyist": "Aleem Kanji",
+   "organization": "AleemKanji.com",
+   "client": "Toronto Police Association",
+   "subject": "Budget;Health & Safety;Covid19 Pandemic",
+   "method": "Phone calls"
+  },
+  {
+   "date": "2024-01-23",
+   "lobbyist": "Renee Gomes",
+   "organization": "DIAMOND Corp",
+   "client": null,
+   "subject": "Planning and Development Application, Zoning By-law",
+   "method": "Phone calls"
+  },
+  {
+   "date": "2024-01-23",
+   "lobbyist": "Kim Wright",
+   "organization": "Wright Strategies",
+   "client": "Uber Canada, Inc.",
+   "subject": "By-law / Regulation;Economic Development;Transportation - Roads / Bridges",
+   "method": "Emails"
+  },
+  {
+   "date": "2024-01-23",
+   "lobbyist": "Aleem Kanji",
+   "organization": "AleemKanji.com",
+   "client": "Toronto Civic Employees Union - CUPE Local 416",
+   "subject": "Affordable Housing;Toronto Parking Authority;Transportation",
+   "method": "Phone calls"
+  },
+  {
+   "date": "2024-01-23",
+   "lobbyist": "Ryan RD Dorman",
+   "organization": "1161 Kingston Road Limited Partnership",
+   "client": null,
+   "subject": "Building Permits;Planning and Development Application, Site Plan",
+   "method": "Meetings"
+  },
+  {
+   "date": "2024-01-23",
+   "lobbyist": "Sonia Kandola",
+   "organization": "Lime Technology Inc.",
+   "client": null,
+   "subject": "By-law / Regulation;Toronto Parking Authority;Transportation - Cycling / Bicycle Lanes",
+   "method": "Meetings"
+  },
+  {
+   "date": "2024-01-22",
+   "lobbyist": "Aleem Kanji",
+   "organization": "AleemKanji.com",
+   "client": "Toronto Police Association",
+   "subject": "Budget;Health & Safety;Covid19 Pandemic",
+   "method": "Phone calls"
+  },
+  {
+   "date": "2024-01-22",
+   "lobbyist": "Peter Milczyn",
+   "organization": "PM Strategies Inc",
+   "client": "SoFra Federation Inc.",
+   "subject": "By-law / Regulation;Licences / Licensing;Planning and Development",
+   "method": "Emails"
+  },
+  {
+   "date": "2024-01-16",
+   "lobbyist": "Joe Mihevc",
+   "organization": "Mihevc Consulting and Mediation Ltd",
+   "client": "NJS Capital",
+   "subject": "Planning and Development;Planning and Development, Rental Housing Demolition or Conversion;Planning and Development Application",
+   "method": "Meetings"
+  },
+  {
+   "date": "2024-01-09",
+   "lobbyist": "Ryan J Cole",
+   "organization": "Policy Concepts Inc.",
+   "client": "Republic Developments",
+   "subject": "Parks / Open Space;Planning and Development;Planning and Development Application",
+   "method": "Emails"
+  },
+  {
+   "date": "2023-12-28",
+   "lobbyist": "Aleem Kanji",
+   "organization": "AleemKanji.com",
+   "client": "Toronto Police Association",
+   "subject": "Budget;Health & Safety;Covid19 Pandemic",
+   "method": "Meetings"
+  },
+  {
+   "date": "2023-12-25",
+   "lobbyist": "Aleem Kanji",
+   "organization": "AleemKanji.com",
+   "client": "Toronto Police Association",
+   "subject": "Budget;Health & Safety;Covid19 Pandemic",
+   "method": "Meetings"
+  },
+  {
+   "date": "2023-12-15",
+   "lobbyist": "Ryan J Cole",
+   "organization": "Policy Concepts Inc.",
+   "client": "Republic Developments",
+   "subject": "Parks / Open Space;Planning and Development;Planning and Development Application",
+   "method": "Emails"
+  },
+  {
+   "date": "2023-12-14",
+   "lobbyist": "Kim Wright",
+   "organization": "Wright Strategies",
+   "client": "Uber Canada, Inc.",
+   "subject": "By-law / Regulation;Economic Development;Transportation - Roads / Bridges",
+   "method": "Emails"
+  },
+  {
+   "date": "2023-12-14",
+   "lobbyist": "Kim Wright",
+   "organization": "Wright Strategies",
+   "client": "Heritage Funeral Centre",
+   "subject": "Economic Development;Planning and Development",
+   "method": "Emails"
+  }
+ ]
+}

@@ -1,0 +1,195 @@
+{
+ "member": "ceta-ramkhalawansingh",
+ "source": {
+  "name": "City of Toronto Lobbyist Registry (Open Data)",
+  "url": "https://open.toronto.ca/dataset/lobbyist-registry/"
+ },
+ "snapshot": "2026-10-23",
+ "count": 23,
+ "communications": [
+  {
+   "date": "2014-11-17",
+   "lobbyist": "Jim Goetz",
+   "organization": "Canadian Beverage Association",
+   "client": null,
+   "subject": "Health & Safety",
+   "method": "Written"
+  },
+  {
+   "date": "2014-10-01",
+   "lobbyist": "N. Jane Pepino",
+   "organization": "Aird & Berlis LLP",
+   "client": "Royal St. George's College",
+   "subject": "Planning and Development Application, Site Plan",
+   "method": "Written"
+  },
+  {
+   "date": "2014-10-01",
+   "lobbyist": "Eileen P. Costello",
+   "organization": "Aird & Berlis LLP",
+   "client": "Royal St. George's College",
+   "subject": "Planning and Development Application, Site Plan",
+   "method": "Written"
+  },
+  {
+   "date": "2014-09-29",
+   "lobbyist": "Adam Schneiderman",
+   "organization": "GWL Realty Advisors Inc.",
+   "client": "bcIMC HOLDCO (2007) Inc.",
+   "subject": "Building Permits;Planning and Development Application, Site Plan",
+   "method": "Meetings"
+  },
+  {
+   "date": "2014-09-29",
+   "lobbyist": "Mervin McCoubrey",
+   "organization": "GWL Realty Advisors Inc.",
+   "client": "BcIMC HOLDCO (2007) INC.",
+   "subject": "Building Permits;Planning and Development Application, Site Plan",
+   "method": "Meetings"
+  },
+  {
+   "date": "2014-09-10",
+   "lobbyist": "N. Jane Pepino",
+   "organization": "Aird & Berlis LLP",
+   "client": "Royal St. George's College",
+   "subject": "Planning and Development Application, Site Plan",
+   "method": "Phone calls"
+  },
+  {
+   "date": "2014-08-28",
+   "lobbyist": "Kim Wright",
+   "organization": "Sussex Strategy Group",
+   "client": "Terracap Management Inc.",
+   "subject": "Planning and Development, Combined Application",
+   "method": "Emails"
+  },
+  {
+   "date": "2014-08-25",
+   "lobbyist": "Michael Ruff",
+   "organization": "PepsiCo Beverages Canada",
+   "client": null,
+   "subject": "Health & Safety",
+   "method": "Written"
+  },
+  {
+   "date": "2014-08-25",
+   "lobbyist": "Jim Goetz",
+   "organization": "Canadian Beverage Association",
+   "client": null,
+   "subject": "Health & Safety",
+   "method": "Written"
+  },
+  {
+   "date": "2014-08-25",
+   "lobbyist": "Patrick J. Devine",
+   "organization": "Kagan Shastri DeMelo Winer Park LLP",
+   "client": "The Cadillac Fairview Corporation Limited",
+   "subject": "Planning and Development Application, Zoning By-law",
+   "method": "Emails"
+  },
+  {
+   "date": "2014-08-22",
+   "lobbyist": "Sean Hill",
+   "organization": "Stratagem",
+   "client": "Festival Management Committee",
+   "subject": "Arts / Culture;Attractions / Tourism",
+   "method": "Phone calls"
+  },
+  {
+   "date": "2014-08-22",
+   "lobbyist": "Patrick J. Devine",
+   "organization": "Devine Park LLP",
+   "client": "Projectcore Inc.",
+   "subject": "Planning and Development, Combined Application",
+   "method": "Emails"
+  },
+  {
+   "date": "2014-08-20",
+   "lobbyist": "Anne Fitzgerald",
+   "organization": "Cineplex Inc.",
+   "client": null,
+   "subject": "Licences / Licensing",
+   "method": "Emails"
+  },
+  {
+   "date": "2014-08-12",
+   "lobbyist": "Kim Wright",
+   "organization": "Sussex Strategy Group",
+   "client": "Terracap Management Inc.",
+   "subject": "Planning and Development, Combined Application",
+   "method": "Meetings"
+  },
+  {
+   "date": "2014-08-11",
+   "lobbyist": "Kim Wright",
+   "organization": "Sussex Strategy Group",
+   "client": "Terracap Management Inc.",
+   "subject": "Planning and Development, Combined Application",
+   "method": "Phone calls"
+  },
+  {
+   "date": "2014-08-02",
+   "lobbyist": "Sean Hill",
+   "organization": "Stratagem",
+   "client": "Festival Management Committee",
+   "subject": "Arts / Culture;Attractions / Tourism",
+   "method": "Meetings"
+  },
+  {
+   "date": "2014-07-30",
+   "lobbyist": "George S Belza",
+   "organization": "ANALOGICA",
+   "client": "Adam J. Brown Professional Corporation",
+   "subject": "Planning and Development, Rental Housing Demolition or Conversion;Planning and Development Application, Zoning By-law;Planning and Development Application, Site Plan",
+   "method": "Meetings"
+  },
+  {
+   "date": "2014-07-30",
+   "lobbyist": "Adam J. Brown",
+   "organization": "Sherman Brown Dryer Karol",
+   "client": "Shiu Pong Group of Companies",
+   "subject": "Planning and Development Application, Zoning By-law;Planning and Development Application, Site Plan;Planning and Development, Combined Application",
+   "method": "Meetings"
+  },
+  {
+   "date": "2014-07-25",
+   "lobbyist": "Sean Hill",
+   "organization": "Stratagem",
+   "client": "Festival Management Committee",
+   "subject": "Arts / Culture;Attractions / Tourism",
+   "method": "Meetings"
+  },
+  {
+   "date": "2014-07-21",
+   "lobbyist": "Sean Hill",
+   "organization": "Stratagem",
+   "client": "Festival Management Committee",
+   "subject": "Arts / Culture;Attractions / Tourism",
+   "method": "Meetings"
+  },
+  {
+   "date": "2014-07-18",
+   "lobbyist": "Bob Blazevski",
+   "organization": "Diamond Corp.",
+   "client": "Whitecastle New Urban Fund 2",
+   "subject": "Planning and Development Application, Zoning By-law",
+   "method": "Meetings"
+  },
+  {
+   "date": "2014-07-18",
+   "lobbyist": "Stephen Diamond",
+   "organization": "Diamondcorp",
+   "client": "Whitecastle New Urban Fund 2",
+   "subject": "Planning and Development Application, Zoning By-law",
+   "method": "Meetings"
+  },
+  {
+   "date": "2014-07-08",
+   "lobbyist": "Patrick J. Devine",
+   "organization": "Devine Park LLP",
+   "client": "Projectcore Inc.",
+   "subject": "Planning and Development, Combined Application",
+   "method": "Emails"
+  }
+ ]
+}

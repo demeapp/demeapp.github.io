@@ -1,0 +1,43 @@
+{
+ "member": "jonathan-tsao",
+ "source": {
+  "name": "City of Toronto Lobbyist Registry (Open Data)",
+  "url": "https://open.toronto.ca/dataset/lobbyist-registry/"
+ },
+ "snapshot": "2026-10-23",
+ "count": 4,
+ "communications": [
+  {
+   "date": "2018-10-31",
+   "lobbyist": "Mauro Ritacca",
+   "organization": "Toronto Regional Real Estate Board",
+   "client": null,
+   "subject": "Transportation - Roads / Bridges",
+   "method": "Emails"
+  },
+  {
+   "date": "2018-07-05",
+   "lobbyist": "Justin Van Dette",
+   "organization": "Deltera Inc.",
+   "client": null,
+   "subject": "Planning and Development Application, Official Plan;Planning and Development Application, Site Plan;Planning and Development, Combined Application",
+   "method": "Phone calls"
+  },
+  {
+   "date": "2018-07-03",
+   "lobbyist": "Justin Van Dette",
+   "organization": "Deltera Inc.",
+   "client": null,
+   "subject": "Planning and Development Application, Official Plan;Planning and Development Application, Site Plan;Planning and Development, Combined Application",
+   "method": "Phone calls"
+  },
+  {
+   "date": "2018-07-03",
+   "lobbyist": "Steve P Daniels",
+   "organization": "Deltera Inc.",
+   "client": null,
+   "subject": "Planning and Development Application, Official Plan;Planning and Development Application, Site Plan;Planning and Development, Combined Application",
+   "method": "Phone calls"
+  }
+ ]
+}

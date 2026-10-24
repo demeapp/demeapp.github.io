@@ -1,0 +1,5939 @@
+{
+ "member": "dianne-saxe",
+ "source": {
+  "name": "City of Toronto Lobbyist Registry (Open Data)",
+  "url": "https://open.toronto.ca/dataset/lobbyist-registry/"
+ },
+ "snapshot": "2026-10-23",
+ "count": 741,
+ "communications": [
+  {
+   "date": "2026-10-08",
+   "lobbyist": "Gary E. Benner",
+   "organization": "Underground Consulting Incorporated",
+   "client": null,
+   "subject": "Transit / TTC;Transportation - Metrolinx",
+   "method": "Emails"
+  },
+  {
+   "date": "2026-07-29",
+   "lobbyist": "Kim Wright",
+   "organization": "Wright Strategies",
+   "client": "Nieuport Aviation Infrastructure Partners",
+   "subject": "Economic Development;Transportation",
+   "method": "Meetings"
+  },
+  {
+   "date": "2026-07-28",
+   "lobbyist": "Gary E. Benner",
+   "organization": "Underground Consulting Incorporated",
+   "client": null,
+   "subject": "Transit / TTC;Transportation - Metrolinx",
+   "method": "Emails"
+  },
+  {
+   "date": "2026-07-27",
+   "lobbyist": "Eileen P. Costello",
+   "organization": "Aird & Berlis LLP",
+   "client": "Meric and Joanna Gertler",
+   "subject": "Planning and Development Application;Minor Variance",
+   "method": "Written"
+  },
+  {
+   "date": "2026-07-24",
+   "lobbyist": "Linda Lum",
+   "organization": "Canadian Tire Corporation, Limited",
+   "client": null,
+   "subject": "Planning and Development Application;Planning and Development Application, Zoning By-law",
+   "method": "Emails"
+  },
+  {
+   "date": "2026-07-23",
+   "lobbyist": "Emily Chow",
+   "organization": "Canadian Tire Corporation, Limited",
+   "client": null,
+   "subject": "Planning and Development Application;Planning and Development Application, Zoning By-law",
+   "method": "Meetings"
+  },
+  {
+   "date": "2026-07-23",
+   "lobbyist": "Jocelyn Deeks",
+   "organization": "Bousfields Inc.",
+   "client": "Canadian Tire Real Estate Limited",
+   "subject": "Planning and Development",
+   "method": "Meetings"
+  },
+  {
+   "date": "2026-07-23",
+   "lobbyist": "Tyler Grinyer",
+   "organization": "Bousfields Inc.",
+   "client": "Canadian Tire Real Estate Limited",
+   "subject": "Planning and Development",
+   "method": "Meetings"
+  },
+  {
+   "date": "2026-07-21",
+   "lobbyist": "Joe Mihevc",
+   "organization": "Mihevc Consulting and Mediation Ltd",
+   "client": "Equiton Development Inc",
+   "subject": "Planning and Development;Planning and Development Application, Official Plan;Planning and Development Application, Zoning By-law",
+   "method": "Emails"
+  },
+  {
+   "date": "2026-07-21",
+   "lobbyist": "Kim Wright",
+   "organization": "Wright Strategies",
+   "client": "Youth Without Shelter",
+   "subject": "Affordable Housing;Shelters;Restart and rebuild related to Covid19 pandemic",
+   "method": "Emails"
+  },
+  {
+   "date": "2026-07-16",
+   "lobbyist": "Paige M Lehman",
+   "organization": "Selvam Public Affairs",
+   "client": "Motorola Solutions Canada Inc.",
+   "subject": "Emergency Services;Procurement;Technology",
+   "method": "Emails"
+  },
+  {
+   "date": "2026-07-15",
+   "lobbyist": "Kim Wright",
+   "organization": "Wright Strategies",
+   "client": "Youth Without Shelter",
+   "subject": "Affordable Housing;Shelters;Restart and rebuild related to Covid19 pandemic",
+   "method": "Meetings"
+  },
+  {
+   "date": "2026-07-15",
+   "lobbyist": "Kim Wright",
+   "organization": "Wright Strategies",
+   "client": "16607179 Canada Foundation",
+   "subject": "Arts / Culture;Environment;Parks / Open Space",
+   "method": "Meetings"
+  },
+  {
+   "date": "2026-07-10",
+   "lobbyist": "Gary E. Benner",
+   "organization": "Underground Consulting Incorporated",
+   "client": null,
+   "subject": "Transit / TTC;Transportation - Metrolinx",
+   "method": "Emails"
+  },
+  {
+   "date": "2026-07-07",
+   "lobbyist": "Emily Chow",
+   "organization": "Canadian Tire Corporation, Limited",
+   "client": null,
+   "subject": "Planning and Development Application;Planning and Development Application, Zoning By-law",
+   "method": "Phone calls"
+  },
+  {
+   "date": "2026-06-30",
+   "lobbyist": "Lee A Boswell",
+   "organization": "Crestview Strategy",
+   "client": "Rogers Communications Inc.",
+   "subject": "Technology",
+   "method": "Meetings"
+  },
+  {
+   "date": "2026-06-29",
+   "lobbyist": "Gary E. Benner",
+   "organization": "Underground Consulting Incorporated",
+   "client": null,
+   "subject": "Transit / TTC;Transportation - Metrolinx",
+   "method": "Emails"
+  },
+  {
+   "date": "2026-06-25",
+   "lobbyist": "Merdod Zopyrus",
+   "organization": "Hivectra",
+   "client": null,
+   "subject": "Grants / Funding;Procurement;Transportation - Roads / Bridges",
+   "method": "Emails"
+  },
+  {
+   "date": "2026-06-25",
+   "lobbyist": "Kim Wright",
+   "organization": "Wright Strategies",
+   "client": "16607179 Canada Foundation",
+   "subject": "Arts / Culture;Environment;Parks / Open Space",
+   "method": "Meetings"
+  },
+  {
+   "date": "2026-06-24",
+   "lobbyist": "Kim Wright",
+   "organization": "Wright Strategies",
+   "client": "16607179 Canada Foundation",
+   "subject": "Arts / Culture;Environment;Parks / Open Space",
+   "method": "Meetings"
+  },
+  {
+   "date": "2026-06-23",
+   "lobbyist": "Emily Chow",
+   "organization": "Canadian Tire Corporation, Limited",
+   "client": null,
+   "subject": "Planning and Development Application;Planning and Development Application, Zoning By-law",
+   "method": "Emails"
+  },
+  {
+   "date": "2026-06-11",
+   "lobbyist": "Kim Wright",
+   "organization": "Wright Strategies",
+   "client": "16607179 Canada Foundation",
+   "subject": "Arts / Culture;Environment;Parks / Open Space",
+   "method": "Meetings"
+  },
+  {
+   "date": "2026-06-10",
+   "lobbyist": "Kim Wright",
+   "organization": "Wright Strategies",
+   "client": "16607179 Canada Foundation",
+   "subject": "Arts / Culture;Environment;Parks / Open Space",
+   "method": "Meetings"
+  },
+  {
+   "date": "2026-06-05",
+   "lobbyist": "Rachael Hillier",
+   "organization": "Sussex Strategy Group",
+   "client": "The Boulevard Club",
+   "subject": "Real Estate / Property (City-owned)",
+   "method": "Emails"
+  },
+  {
+   "date": "2026-06-02",
+   "lobbyist": "Linda Lum",
+   "organization": "Canadian Tire Corporation, Limited",
+   "client": null,
+   "subject": "Planning and Development Application;Planning and Development Application, Zoning By-law",
+   "method": "Meetings"
+  },
+  {
+   "date": "2026-06-02",
+   "lobbyist": "Jocelyn Deeks",
+   "organization": "Bousfields Inc.",
+   "client": "Canadian Tire Real Estate Limited",
+   "subject": "Planning and Development",
+   "method": "Meetings"
+  },
+  {
+   "date": "2026-06-02",
+   "lobbyist": "Tyler Grinyer",
+   "organization": "Bousfields Inc.",
+   "client": "Canadian Tire Real Estate Limited",
+   "subject": "Planning and Development",
+   "method": "Meetings"
+  },
+  {
+   "date": "2026-06-01",
+   "lobbyist": "KRISTINE ZWICKER",
+   "organization": "Cityzen Development Group",
+   "client": null,
+   "subject": "Building Permits;Planning and Development Application;Transportation - Roads / Bridges",
+   "method": "Emails"
+  },
+  {
+   "date": "2026-05-15",
+   "lobbyist": "Laura Lambie",
+   "organization": "GHD Limited",
+   "client": null,
+   "subject": "Environment;Transportation;Water",
+   "method": "Emails"
+  },
+  {
+   "date": "2026-05-14",
+   "lobbyist": "Kim Wright",
+   "organization": "Wright Strategies",
+   "client": "16607179 Canada Foundation",
+   "subject": "Arts / Culture;Environment;Parks / Open Space",
+   "method": "Meetings"
+  },
+  {
+   "date": "2026-05-06",
+   "lobbyist": "Kim Wright",
+   "organization": "Wright Strategies",
+   "client": "16607179 Canada Foundation",
+   "subject": "Arts / Culture;Environment;Parks / Open Space",
+   "method": "Meetings"
+  },
+  {
+   "date": "2026-04-30",
+   "lobbyist": "Kim Wright",
+   "organization": "Wright Strategies",
+   "client": "16607179 Canada Foundation",
+   "subject": "Arts / Culture;Environment;Parks / Open Space",
+   "method": "Phone calls"
+  },
+  {
+   "date": "2026-04-27",
+   "lobbyist": "Heena Kapoor",
+   "organization": "Temple Scott Associates Inc.",
+   "client": "Moose Hide Campaign Development Society",
+   "subject": "Arts / Culture;Budget",
+   "method": "Emails"
+  },
+  {
+   "date": "2026-04-27",
+   "lobbyist": "Adam J. Brown",
+   "organization": "Brown Dryer Gold Smuskowitz",
+   "client": "1233Y Development Limited Partnership",
+   "subject": "Planning and Development Application;Zoning By-law",
+   "method": "Phone calls"
+  },
+  {
+   "date": "2026-03-31",
+   "lobbyist": "Claire E.C. Malcolmson",
+   "organization": "Claire Malcolmson Consulting",
+   "client": "Environmental Defence Canada",
+   "subject": "Planning and Development;Planning Policy / Study",
+   "method": "Emails"
+  },
+  {
+   "date": "2026-03-30",
+   "lobbyist": "Eileen P. Costello",
+   "organization": "Aird & Berlis LLP",
+   "client": "University of St. Michael's College",
+   "subject": "Planning and Development Application;Planning and Development Application, Zoning By-law",
+   "method": "Meetings"
+  },
+  {
+   "date": "2026-03-26",
+   "lobbyist": "Aleem Kanji",
+   "organization": "AleemKanji.com",
+   "client": "Toronto Civic Employees Union - CUPE Local 416",
+   "subject": "Affordable Housing;Toronto Parking Authority;Transportation",
+   "method": "Phone calls"
+  },
+  {
+   "date": "2026-03-23",
+   "lobbyist": "Andrew L Jeanrie",
+   "organization": "Bennett Jones LLP",
+   "client": "Freed (Anx) Ltd.",
+   "subject": "Planning and Development, Planning Policy / Study;Planning and Development Application;Planning and Development Application, Official Plan",
+   "method": "Emails"
+  },
+  {
+   "date": "2026-03-21",
+   "lobbyist": "Joe Mihevc",
+   "organization": "Mihevc Consulting and Mediation Ltd",
+   "client": "The Sud Group",
+   "subject": "Planning and Development;Planning and Development Application;Planning and Development Application, Zoning By-law",
+   "method": "Emails"
+  },
+  {
+   "date": "2026-03-18",
+   "lobbyist": "Jessica Smuskowitz",
+   "organization": "Brown Dryer Gold Smuskowitz",
+   "client": "1233Y Development Limited Partnership",
+   "subject": "Planning and Development Application;Zoning By-law",
+   "method": "Other or unreported"
+  },
+  {
+   "date": "2026-03-18",
+   "lobbyist": "Adam J. Brown",
+   "organization": "Brown Dryer Gold Smuskowitz",
+   "client": "1233Y Development Limited Partnership",
+   "subject": "Planning and Development Application;Zoning By-law",
+   "method": "Other or unreported"
+  },
+  {
+   "date": "2026-03-17",
+   "lobbyist": "Yash Dogra",
+   "organization": "Hill and Knowlton",
+   "client": "Kids & Company",
+   "subject": "Child Care",
+   "method": "Emails"
+  },
+  {
+   "date": "2026-03-16",
+   "lobbyist": "Clare M Casey",
+   "organization": "Vantage Canada LP",
+   "client": "2868415 Ontario Inc",
+   "subject": "Transportation;Transportation - Cycling / Bicycle Lanes;Transportation - Roads / Bridges",
+   "method": "Emails"
+  },
+  {
+   "date": "2026-03-16",
+   "lobbyist": "Natalie Dash",
+   "organization": "StrategyCorp Inc",
+   "client": "Power Workers' Union",
+   "subject": "Economic Development;Energy;Environment",
+   "method": "Emails"
+  },
+  {
+   "date": "2026-03-12",
+   "lobbyist": "Yash Dogra",
+   "organization": "Hill and Knowlton",
+   "client": "Kids & Company",
+   "subject": "Child Care",
+   "method": "Emails"
+  },
+  {
+   "date": "2026-02-25",
+   "lobbyist": "Aleem Kanji",
+   "organization": "AleemKanji.com",
+   "client": "Toronto Civic Employees Union - CUPE Local 416",
+   "subject": "Affordable Housing;Toronto Parking Authority;Transportation",
+   "method": "Phone calls"
+  },
+  {
+   "date": "2026-02-24",
+   "lobbyist": "Andrew L Jeanrie",
+   "organization": "Bennett Jones LLP",
+   "client": "Muzzo Brothers Group Inc.",
+   "subject": "Parks / Open Space;Planning and Development Application",
+   "method": "Meetings"
+  },
+  {
+   "date": "2026-02-18",
+   "lobbyist": "Natalie Dash",
+   "organization": "StrategyCorp Inc",
+   "client": "Power Workers' Union",
+   "subject": "Economic Development;Energy;Environment",
+   "method": "Emails"
+  },
+  {
+   "date": "2026-02-02",
+   "lobbyist": "Gary E. Benner",
+   "organization": "Underground Consulting Incorporated",
+   "client": null,
+   "subject": "Transit / TTC;Transportation - Metrolinx",
+   "method": "Emails"
+  },
+  {
+   "date": "2026-01-30",
+   "lobbyist": "Clare M Casey",
+   "organization": "Vantage Canada LP",
+   "client": "2868415 Ontario Inc",
+   "subject": "Transportation;Transportation - Cycling / Bicycle Lanes;Transportation - Roads / Bridges",
+   "method": "Emails"
+  },
+  {
+   "date": "2026-01-28",
+   "lobbyist": "Sara Anghel",
+   "organization": "Greater Toronto Hotel Association",
+   "client": null,
+   "subject": "Attractions / Tourism;Business Improvement Area (BIA);By-law / Regulation",
+   "method": "Written"
+  },
+  {
+   "date": "2026-01-27",
+   "lobbyist": "Matthew Kruger",
+   "organization": "TENBLOCK MANAGEMENT INC.",
+   "client": null,
+   "subject": "Planning and Development Application, Zoning By-law;Planning and Development Application, Site Plan",
+   "method": "Emails"
+  },
+  {
+   "date": "2026-01-23",
+   "lobbyist": "Matthew Kruger",
+   "organization": "TENBLOCK MANAGEMENT INC.",
+   "client": null,
+   "subject": "Planning and Development Application, Zoning By-law;Planning and Development Application, Site Plan",
+   "method": "Emails"
+  },
+  {
+   "date": "2026-01-16",
+   "lobbyist": "Matthew Kruger",
+   "organization": "TENBLOCK MANAGEMENT INC.",
+   "client": null,
+   "subject": "Planning and Development Application, Zoning By-law;Planning and Development Application, Site Plan",
+   "method": "Emails"
+  },
+  {
+   "date": "2026-01-15",
+   "lobbyist": "Matthew Kruger",
+   "organization": "TENBLOCK MANAGEMENT INC.",
+   "client": null,
+   "subject": "Planning and Development Application, Zoning By-law;Planning and Development Application, Site Plan",
+   "method": "Emails"
+  },
+  {
+   "date": "2026-01-14",
+   "lobbyist": "Matthew Kruger",
+   "organization": "TENBLOCK MANAGEMENT INC.",
+   "client": null,
+   "subject": "Planning and Development Application, Zoning By-law;Planning and Development Application, Site Plan",
+   "method": "Emails"
+  },
+  {
+   "date": "2026-01-12",
+   "lobbyist": "Ashley Millman",
+   "organization": "McMillan Vantage",
+   "client": "Robert and Cecily Bradshaw",
+   "subject": "Building Permits;By-law / Regulation;Planning and Development Application",
+   "method": "Emails"
+  },
+  {
+   "date": "2026-01-12",
+   "lobbyist": "Matthew Kruger",
+   "organization": "TENBLOCK MANAGEMENT INC.",
+   "client": null,
+   "subject": "Planning and Development Application, Zoning By-law;Planning and Development Application, Site Plan",
+   "method": "Emails"
+  },
+  {
+   "date": "2026-01-09",
+   "lobbyist": "Matthew Kruger",
+   "organization": "TENBLOCK MANAGEMENT INC.",
+   "client": null,
+   "subject": "Planning and Development Application, Zoning By-law;Planning and Development Application, Site Plan",
+   "method": "Phone calls"
+  },
+  {
+   "date": "2026-01-08",
+   "lobbyist": "Ashley Millman",
+   "organization": "McMillan Vantage",
+   "client": "Robert and Cecily Bradshaw",
+   "subject": "Building Permits;By-law / Regulation;Planning and Development Application",
+   "method": "Emails"
+  },
+  {
+   "date": "2025-12-18",
+   "lobbyist": "Ashley Millman",
+   "organization": "McMillan Vantage",
+   "client": "Robert and Cecily Bradshaw",
+   "subject": "Building Permits;By-law / Regulation;Planning and Development Application",
+   "method": "Emails"
+  },
+  {
+   "date": "2025-12-18",
+   "lobbyist": "Jordon Daniels",
+   "organization": "StrategyCorp Inc.",
+   "client": "JCD Property Ltd.",
+   "subject": "Planning and Development;Combined Application",
+   "method": "Emails"
+  },
+  {
+   "date": "2025-12-18",
+   "lobbyist": "Aidan Grove-White",
+   "organization": "StrategyCorp",
+   "client": "JCD Property Ltd.",
+   "subject": "Planning and Development;Planning and Development, Combined Application",
+   "method": "Emails"
+  },
+  {
+   "date": "2025-12-12",
+   "lobbyist": "Lindsay Wiginton",
+   "organization": "6893449 Canada Inc.",
+   "client": null,
+   "subject": "Environment",
+   "method": "Emails"
+  },
+  {
+   "date": "2025-12-09",
+   "lobbyist": "Ashley Millman",
+   "organization": "McMillan Vantage",
+   "client": "Robert and Cecily Bradshaw",
+   "subject": "Building Permits;By-law / Regulation;Planning and Development Application",
+   "method": "Emails"
+  },
+  {
+   "date": "2025-12-09",
+   "lobbyist": "Matthew M Lakatos-Hayward",
+   "organization": "Cassels Brock & Blackwell LLP",
+   "client": "Jo-Ann Terrence",
+   "subject": "Licences / Licensing",
+   "method": "Other or unreported"
+  },
+  {
+   "date": "2025-12-05",
+   "lobbyist": "Dillon M Waldron",
+   "organization": "Sussex Strategy Group",
+   "client": "Capital Infrastructure Group Inc.",
+   "subject": "Procurement",
+   "method": "Emails"
+  },
+  {
+   "date": "2025-12-02",
+   "lobbyist": "Ashley Millman",
+   "organization": "McMillan Vantage",
+   "client": "Robert and Cecily Bradshaw",
+   "subject": "Building Permits;By-law / Regulation;Planning and Development Application",
+   "method": "Phone calls"
+  },
+  {
+   "date": "2025-11-26",
+   "lobbyist": "Lindsay Wiginton",
+   "organization": "6893449 Canada Inc.",
+   "client": null,
+   "subject": "Environment",
+   "method": "Meetings"
+  },
+  {
+   "date": "2025-11-17",
+   "lobbyist": "Jim Karygiannis",
+   "organization": "GTA Strategies",
+   "client": "H & G Control",
+   "subject": "Garbage / Recycling;Hazardous Waste",
+   "method": "Emails"
+  },
+  {
+   "date": "2025-10-21",
+   "lobbyist": "Jim Karygiannis",
+   "organization": "GTA Strategies",
+   "client": "Trans-Plan Transportation Engineering Firm",
+   "subject": "Toronto Parking Authority;Transit / TTC;Transportation - Metrolinx",
+   "method": "Emails"
+  },
+  {
+   "date": "2025-10-07",
+   "lobbyist": "Patrick Graham",
+   "organization": "Bird Canada",
+   "client": null,
+   "subject": "By-law / Regulation;Transportation - Cycling / Bicycle Lanes;Transportation - Roads / Bridges",
+   "method": "Emails"
+  },
+  {
+   "date": "2025-10-07",
+   "lobbyist": "Aidan Grove-White",
+   "organization": "StrategyCorp",
+   "client": "Toronto Standard Condominium Corporation No. 2058",
+   "subject": "By-law / Regulation;City infrastructure - Emergency planning and/or restoration;Parks / Open Space",
+   "method": "Emails"
+  },
+  {
+   "date": "2025-10-07",
+   "lobbyist": "Richard Ositashvili",
+   "organization": "StrategyCorp Inc.",
+   "client": "Toronto Standard Condominium Corporation No. 2058",
+   "subject": "By-law / Regulation;City infrastructure - Emergency planning and/or restoration;Parks / Open Space",
+   "method": "Emails"
+  },
+  {
+   "date": "2025-10-07",
+   "lobbyist": "Erica Wallis",
+   "organization": "Blackbird Strategies",
+   "client": "Oneida Investment Corporation",
+   "subject": "Economic Development;Garbage / Recycling;Real Estate / Property (City-owned)",
+   "method": "Emails"
+  },
+  {
+   "date": "2025-10-03",
+   "lobbyist": "Angela Drennan",
+   "organization": "Canadian Federation of Independent Business",
+   "client": null,
+   "subject": "Transit / TTC;Transportation;FIFA World Cup 2026 Toronto",
+   "method": "Emails"
+  },
+  {
+   "date": "2025-09-30",
+   "lobbyist": "Stephanie Kwast",
+   "organization": "Bousfields Inc.",
+   "client": "The Toronto Lawn Tennis Club",
+   "subject": "Planning and Development;Planning and Development Application, Site Plan",
+   "method": "Meetings"
+  },
+  {
+   "date": "2025-09-25",
+   "lobbyist": "Barry Stern",
+   "organization": "The Muzzo Group of Companies",
+   "client": null,
+   "subject": "Planning and Development;Planning and Development, Combined Application",
+   "method": "Emails"
+  },
+  {
+   "date": "2025-09-24",
+   "lobbyist": "Marco Viviani",
+   "organization": "Communauto inc.",
+   "client": null,
+   "subject": "Transportation",
+   "method": "Other or unreported"
+  },
+  {
+   "date": "2025-09-17",
+   "lobbyist": "Barry Stern",
+   "organization": "The Muzzo Group of Companies",
+   "client": null,
+   "subject": "Planning and Development;Planning and Development, Combined Application",
+   "method": "Meetings"
+  },
+  {
+   "date": "2025-09-17",
+   "lobbyist": "Stephen A Adler",
+   "organization": "NATIONAL Public Relations",
+   "client": "La Maison Simons Inc.",
+   "subject": "Budget;Economic Development",
+   "method": "Emails"
+  },
+  {
+   "date": "2025-09-12",
+   "lobbyist": "Mike Dror",
+   "organization": "Bousfields Inc.",
+   "client": "The Brown Group of Companies",
+   "subject": "Planning and Development Application, Official Plan;Planning and Development Application, Zoning By-law",
+   "method": "Meetings"
+  },
+  {
+   "date": "2025-09-12",
+   "lobbyist": "Michelle German",
+   "organization": "StrategyCorp Inc.",
+   "client": "Bolt Services CA Inc",
+   "subject": "Economic Development;Licences / Licensing;Transportation",
+   "method": "Emails"
+  },
+  {
+   "date": "2025-09-05",
+   "lobbyist": "Lee A Boswell",
+   "organization": "Crestview Strategy",
+   "client": "Rogers Communications Inc.",
+   "subject": "Technology",
+   "method": "Emails"
+  },
+  {
+   "date": "2025-09-04",
+   "lobbyist": "Lee A Boswell",
+   "organization": "Crestview Strategy",
+   "client": "Rogers Communications Inc.",
+   "subject": "Technology",
+   "method": "Emails"
+  },
+  {
+   "date": "2025-09-01",
+   "lobbyist": "Lee A Boswell",
+   "organization": "Crestview Strategy",
+   "client": "Rogers Communications Inc.",
+   "subject": "Technology",
+   "method": "Emails"
+  },
+  {
+   "date": "2025-08-29",
+   "lobbyist": "Aidan Grove-White",
+   "organization": "StrategyCorp",
+   "client": "Toronto Standard Condominium Corporation No. 2058",
+   "subject": "By-law / Regulation;City infrastructure - Emergency planning and/or restoration;Parks / Open Space",
+   "method": "Phone calls"
+  },
+  {
+   "date": "2025-08-29",
+   "lobbyist": "Aaron Binder",
+   "organization": "Segway of Ontario",
+   "client": null,
+   "subject": "Economic Development;Transportation;Transportation - Cycling / Bicycle Lanes",
+   "method": "Emails"
+  },
+  {
+   "date": "2025-08-28",
+   "lobbyist": "Aidan Grove-White",
+   "organization": "StrategyCorp",
+   "client": "Toronto Standard Condominium Corporation No. 2058",
+   "subject": "By-law / Regulation;City infrastructure - Emergency planning and/or restoration;Parks / Open Space",
+   "method": "Phone calls"
+  },
+  {
+   "date": "2025-08-28",
+   "lobbyist": "Jonathan Munro",
+   "organization": "Bolt Services CA Inc",
+   "client": null,
+   "subject": "Economic Development;Licences / Licensing;Transportation",
+   "method": "Emails"
+  },
+  {
+   "date": "2025-08-25",
+   "lobbyist": "Aidan Grove-White",
+   "organization": "StrategyCorp",
+   "client": "Toronto Standard Condominium Corporation No. 2058",
+   "subject": "By-law / Regulation;City infrastructure - Emergency planning and/or restoration;Parks / Open Space",
+   "method": "Other or unreported"
+  },
+  {
+   "date": "2025-08-21",
+   "lobbyist": "Aidan Grove-White",
+   "organization": "StrategyCorp",
+   "client": "Toronto Standard Condominium Corporation No. 2058",
+   "subject": "By-law / Regulation;City infrastructure - Emergency planning and/or restoration;Parks / Open Space",
+   "method": "Phone calls"
+  },
+  {
+   "date": "2025-08-21",
+   "lobbyist": "Peter Milczyn",
+   "organization": "PM Strategies Inc",
+   "client": "Berenice S.R.L.",
+   "subject": "Technology",
+   "method": "Emails"
+  },
+  {
+   "date": "2025-08-15",
+   "lobbyist": "Jeff Rutledge",
+   "organization": "McMillan Vantage",
+   "client": "2868415 Ontario Inc",
+   "subject": "Transportation;Transportation - Cycling / Bicycle Lanes;Transportation - Roads / Bridges",
+   "method": "Meetings"
+  },
+  {
+   "date": "2025-08-15",
+   "lobbyist": "Joey Furfari",
+   "organization": "2868415 Ontario Inc",
+   "client": null,
+   "subject": "Transportation;Transportation - Cycling / Bicycle Lanes;Transportation - Roads / Bridges",
+   "method": "Meetings"
+  },
+  {
+   "date": "2025-08-15",
+   "lobbyist": "Jonathan Matson",
+   "organization": "2868415 Ontario Inc",
+   "client": null,
+   "subject": "Transportation;Transportation - Cycling / Bicycle Lanes;Transportation - Roads / Bridges",
+   "method": "Meetings"
+  },
+  {
+   "date": "2025-08-15",
+   "lobbyist": "Fausto Di Carlo",
+   "organization": "2868415 Ontario Inc",
+   "client": null,
+   "subject": "Transportation;Transportation - Cycling / Bicycle Lanes;Transportation - Roads / Bridges",
+   "method": "Meetings"
+  },
+  {
+   "date": "2025-08-08",
+   "lobbyist": "Matthew Kruger",
+   "organization": "TENBLOCK MANAGEMENT INC.",
+   "client": null,
+   "subject": "Planning and Development Application, Zoning By-law;Planning and Development Application, Site Plan",
+   "method": "Emails"
+  },
+  {
+   "date": "2025-08-06",
+   "lobbyist": "Lee A Boswell",
+   "organization": "Crestview Strategy",
+   "client": "Rogers Communications Inc.",
+   "subject": "Technology",
+   "method": "Emails"
+  },
+  {
+   "date": "2025-07-29",
+   "lobbyist": "Clare M Casey",
+   "organization": "Vantage Canada LP",
+   "client": "2868415 Ontario Inc",
+   "subject": "Transportation;Transportation - Cycling / Bicycle Lanes;Transportation - Roads / Bridges",
+   "method": "Emails"
+  },
+  {
+   "date": "2025-07-25",
+   "lobbyist": "Carlos M. Meta",
+   "organization": "carlos meta",
+   "client": null,
+   "subject": "Affordable Housing;Energy;Environment",
+   "method": "Phone calls"
+  },
+  {
+   "date": "2025-07-23",
+   "lobbyist": "Aidan Grove-White",
+   "organization": "StrategyCorp",
+   "client": "Penguin Living",
+   "subject": "Affordable Housing;By-law / Regulation;Planning and Development",
+   "method": "Emails"
+  },
+  {
+   "date": "2025-07-22",
+   "lobbyist": "Fausto Di Carlo",
+   "organization": "2868415 Ontario Inc",
+   "client": null,
+   "subject": "Transportation;Transportation - Cycling / Bicycle Lanes;Transportation - Roads / Bridges",
+   "method": "Emails"
+  },
+  {
+   "date": "2025-07-21",
+   "lobbyist": "Saad Baig",
+   "organization": "StrategyCorp Inc.",
+   "client": "Penguin Living",
+   "subject": "Affordable Housing;By-law / Regulation;Planning and Development",
+   "method": "Emails"
+  },
+  {
+   "date": "2025-07-19",
+   "lobbyist": "Fausto Di Carlo",
+   "organization": "2868415 Ontario Inc",
+   "client": null,
+   "subject": "Transportation;Transportation - Cycling / Bicycle Lanes;Transportation - Roads / Bridges",
+   "method": "Emails"
+  },
+  {
+   "date": "2025-07-17",
+   "lobbyist": "John J Corbo",
+   "organization": "IPAC Paving Limited",
+   "client": null,
+   "subject": "Procurement",
+   "method": "Phone calls"
+  },
+  {
+   "date": "2025-07-09",
+   "lobbyist": "Saad Baig",
+   "organization": "StrategyCorp Inc.",
+   "client": "Penguin Living",
+   "subject": "Affordable Housing;By-law / Regulation;Planning and Development",
+   "method": "Emails"
+  },
+  {
+   "date": "2025-07-07",
+   "lobbyist": "Justin Van Dette",
+   "organization": "Deltera Inc.",
+   "client": null,
+   "subject": "Planning and Development;Combined Application",
+   "method": "Phone calls"
+  },
+  {
+   "date": "2025-07-03",
+   "lobbyist": "Adam J. Brown",
+   "organization": "Brown Dryer Gold Smuskowitz",
+   "client": "Starlight Investments",
+   "subject": "Planning and Development Application, Official Plan;Planning and Development Application, Zoning By-law",
+   "method": "Meetings"
+  },
+  {
+   "date": "2025-07-03",
+   "lobbyist": "Jessica Smuskowitz",
+   "organization": "Brown Dryer Gold Smuskowitz",
+   "client": "Starlight Investments",
+   "subject": "Planning and Development Application, Official Plan;Planning and Development Application, Zoning By-law",
+   "method": "Meetings"
+  },
+  {
+   "date": "2025-06-25",
+   "lobbyist": "Kim Wright",
+   "organization": "Wright Strategies",
+   "client": "FER-PAL Infrastructure",
+   "subject": "Budget;Economic Development;Water",
+   "method": "Meetings"
+  },
+  {
+   "date": "2025-06-17",
+   "lobbyist": "Jim Karygiannis",
+   "organization": "GTA Strategies",
+   "client": "Commerx",
+   "subject": "Parks / Open Space;Real Estate / Property (City-owned);Transportation - Cycling / Bicycle Lanes",
+   "method": "Emails"
+  },
+  {
+   "date": "2025-06-02",
+   "lobbyist": "John Bitove",
+   "organization": "Bird Canada",
+   "client": null,
+   "subject": "By-law / Regulation;Transportation - Cycling / Bicycle Lanes;Transportation - Roads / Bridges",
+   "method": "Emails"
+  },
+  {
+   "date": "2025-05-28",
+   "lobbyist": "Glenn De Baeremaeker",
+   "organization": "Glenn De Baeremaeker Consulting",
+   "client": "Paul Christie",
+   "subject": "Transit / TTC",
+   "method": "Meetings"
+  },
+  {
+   "date": "2025-05-26",
+   "lobbyist": "Austin Spademan",
+   "organization": "Bird Canada",
+   "client": null,
+   "subject": "By-law / Regulation;Transportation - Cycling / Bicycle Lanes;Transportation - Roads / Bridges",
+   "method": "Emails"
+  },
+  {
+   "date": "2025-05-21",
+   "lobbyist": "Kim Wright",
+   "organization": "Wright Strategies",
+   "client": "Uber Canada, Inc.",
+   "subject": "By-law / Regulation;Economic Development;Transportation - Roads / Bridges",
+   "method": "Meetings"
+  },
+  {
+   "date": "2025-05-21",
+   "lobbyist": "Kim Wright",
+   "organization": "Wright Strategies",
+   "client": "Nieuport Aviation Infrastructure Partners",
+   "subject": "Economic Development;Transportation",
+   "method": "Meetings"
+  },
+  {
+   "date": "2025-05-20",
+   "lobbyist": "Austin Spademan",
+   "organization": "Bird Canada",
+   "client": null,
+   "subject": "By-law / Regulation;Transportation - Cycling / Bicycle Lanes;Transportation - Roads / Bridges",
+   "method": "Emails"
+  },
+  {
+   "date": "2025-05-20",
+   "lobbyist": "Glenn De Baeremaeker",
+   "organization": "Glenn De Baeremaeker Consulting",
+   "client": "Paul Christie",
+   "subject": "Transit / TTC",
+   "method": "Emails"
+  },
+  {
+   "date": "2025-05-13",
+   "lobbyist": "Matthew Kruger",
+   "organization": "TENBLOCK MANAGEMENT INC.",
+   "client": null,
+   "subject": "Planning and Development Application, Zoning By-law;Planning and Development Application, Site Plan",
+   "method": "Emails"
+  },
+  {
+   "date": "2025-05-12",
+   "lobbyist": "Ali Saneinejad",
+   "organization": "Collage Works",
+   "client": "Helberg Properties Limited",
+   "subject": "Planning and Development;Planning and Development Application, Official Plan;Planning and Development Application, Zoning By-law",
+   "method": "Emails"
+  },
+  {
+   "date": "2025-05-06",
+   "lobbyist": "Dex Battista",
+   "organization": "Magna International Inc.",
+   "client": null,
+   "subject": "Technology;Transportation",
+   "method": "Phone calls"
+  },
+  {
+   "date": "2025-05-06",
+   "lobbyist": "Misti Rice",
+   "organization": "Magna International Inc.",
+   "client": null,
+   "subject": "Technology;Transportation",
+   "method": "Emails"
+  },
+  {
+   "date": "2025-05-06",
+   "lobbyist": "Stephen Job",
+   "organization": "TENBLOCK MANAGEMENT INC.",
+   "client": null,
+   "subject": "Planning and Development Application, Zoning By-law;Planning and Development Application, Site Plan",
+   "method": "Phone calls"
+  },
+  {
+   "date": "2025-05-06",
+   "lobbyist": "Matthew Kruger",
+   "organization": "TENBLOCK MANAGEMENT INC.",
+   "client": null,
+   "subject": "Planning and Development Application, Zoning By-law;Planning and Development Application, Site Plan",
+   "method": "Phone calls"
+  },
+  {
+   "date": "2025-05-01",
+   "lobbyist": "Caroline Liethen",
+   "organization": "Magna International Inc.",
+   "client": null,
+   "subject": "Technology;Transportation",
+   "method": "Meetings"
+  },
+  {
+   "date": "2025-05-01",
+   "lobbyist": "John-Paul Sado",
+   "organization": "Magna International Inc.",
+   "client": null,
+   "subject": "Technology;Transportation",
+   "method": "Meetings"
+  },
+  {
+   "date": "2025-05-01",
+   "lobbyist": "Chris Hannesson",
+   "organization": "Magna International Inc.",
+   "client": null,
+   "subject": "Technology;Transportation",
+   "method": "Meetings"
+  },
+  {
+   "date": "2025-05-01",
+   "lobbyist": "Dex Battista",
+   "organization": "Magna International Inc.",
+   "client": null,
+   "subject": "Technology;Transportation",
+   "method": "Meetings"
+  },
+  {
+   "date": "2025-04-30",
+   "lobbyist": "Dex Battista",
+   "organization": "Magna International Inc.",
+   "client": null,
+   "subject": "Technology;Transportation",
+   "method": "Emails"
+  },
+  {
+   "date": "2025-04-29",
+   "lobbyist": "Caroline Liethen",
+   "organization": "Magna International Inc.",
+   "client": null,
+   "subject": "Technology;Transportation",
+   "method": "Emails"
+  },
+  {
+   "date": "2025-04-28",
+   "lobbyist": "Will Smith",
+   "organization": "Knightsbridge Development Corporation",
+   "client": "Alvarez & Marsal",
+   "subject": "Building Permits;Planning and Development;Planning and Development, Combined Application",
+   "method": "Other or unreported"
+  },
+  {
+   "date": "2025-04-25",
+   "lobbyist": "Aidan Grove-White",
+   "organization": "StrategyCorp",
+   "client": "Toronto Standard Condominium Corporation No. 2058",
+   "subject": "By-law / Regulation;City infrastructure - Emergency planning and/or restoration;Parks / Open Space",
+   "method": "Other or unreported"
+  },
+  {
+   "date": "2025-04-24",
+   "lobbyist": "Jordon Daniels",
+   "organization": "StrategyCorp Inc.",
+   "client": "Alvarez & Marsal Canada Inc.",
+   "subject": "Building Permits;Planning and Development Application",
+   "method": "Emails"
+  },
+  {
+   "date": "2025-04-24",
+   "lobbyist": "Sara Abdella",
+   "organization": "StrategyCorp Inc.",
+   "client": "Alvarez & Marsal Canada Inc.",
+   "subject": "Building Permits;Planning and Development Application",
+   "method": "Emails"
+  },
+  {
+   "date": "2025-04-23",
+   "lobbyist": "Kim Wright",
+   "organization": "Wright Strategies",
+   "client": "Uber Canada, Inc.",
+   "subject": "By-law / Regulation;Economic Development;Transportation - Roads / Bridges",
+   "method": "Meetings"
+  },
+  {
+   "date": "2025-04-23",
+   "lobbyist": "Kim Wright",
+   "organization": "Wright Strategies",
+   "client": "FER-PAL Infrastructure",
+   "subject": "Budget;Economic Development;Water",
+   "method": "Meetings"
+  },
+  {
+   "date": "2025-04-14",
+   "lobbyist": "Jordon Daniels",
+   "organization": "StrategyCorp Inc.",
+   "client": "Alvarez & Marsal Canada Inc.",
+   "subject": "Building Permits;Planning and Development Application",
+   "method": "Emails"
+  },
+  {
+   "date": "2025-04-14",
+   "lobbyist": "Aidan Grove-White",
+   "organization": "StrategyCorp",
+   "client": "Alvarez & Marsal Canada Inc.",
+   "subject": "Building Permits;Planning and Development Application",
+   "method": "Emails"
+  },
+  {
+   "date": "2025-04-14",
+   "lobbyist": "Sara Abdella",
+   "organization": "StrategyCorp Inc.",
+   "client": "Alvarez & Marsal Canada Inc.",
+   "subject": "Building Permits;Planning and Development Application",
+   "method": "Emails"
+  },
+  {
+   "date": "2025-04-09",
+   "lobbyist": "Jordon Daniels",
+   "organization": "StrategyCorp Inc.",
+   "client": "Alvarez & Marsal Canada Inc.",
+   "subject": "Building Permits;Planning and Development Application",
+   "method": "Emails"
+  },
+  {
+   "date": "2025-04-09",
+   "lobbyist": "Aidan Grove-White",
+   "organization": "StrategyCorp",
+   "client": "Alvarez & Marsal Canada Inc.",
+   "subject": "Building Permits;Planning and Development Application",
+   "method": "Emails"
+  },
+  {
+   "date": "2025-04-09",
+   "lobbyist": "Sara Abdella",
+   "organization": "StrategyCorp Inc.",
+   "client": "Alvarez & Marsal Canada Inc.",
+   "subject": "Building Permits;Planning and Development Application",
+   "method": "Emails"
+  },
+  {
+   "date": "2025-04-04",
+   "lobbyist": "Monika Wyrzykowska",
+   "organization": "Toronto Region Board of Trade",
+   "client": null,
+   "subject": "Transit / TTC;Transportation - Metrolinx;Transportation - Roads / Bridges",
+   "method": "Meetings"
+  },
+  {
+   "date": "2025-04-04",
+   "lobbyist": "Dominic Roszak",
+   "organization": "Toronto Region Board of Trade",
+   "client": null,
+   "subject": "Transit / TTC;Transportation - Metrolinx;Transportation - Roads / Bridges",
+   "method": "Meetings"
+  },
+  {
+   "date": "2025-04-01",
+   "lobbyist": "Courtney Heron-Monk",
+   "organization": "Bousfields Inc.",
+   "client": "Helberg Properties Limited",
+   "subject": "Planning and Development Application, Zoning By-law;Planning and Development Application, Minor Variance",
+   "method": "Meetings"
+  },
+  {
+   "date": "2025-04-01",
+   "lobbyist": "Nadine Sarich",
+   "organization": "Helberg Properties Limited",
+   "client": null,
+   "subject": "Planning and Development;Planning and Development Application, Official Plan;Planning and Development Application, Zoning By-law",
+   "method": "Meetings"
+  },
+  {
+   "date": "2025-04-01",
+   "lobbyist": "Ali Saneinejad",
+   "organization": "Collage Works",
+   "client": "Helberg Properties Limited",
+   "subject": "Planning and Development;Planning and Development Application, Official Plan;Planning and Development Application, Zoning By-law",
+   "method": "Meetings"
+  },
+  {
+   "date": "2025-03-31",
+   "lobbyist": "Dominic Roszak",
+   "organization": "Toronto Region Board of Trade",
+   "client": null,
+   "subject": "Transit / TTC;Transportation - Metrolinx;Transportation - Roads / Bridges",
+   "method": "Emails"
+  },
+  {
+   "date": "2025-03-25",
+   "lobbyist": "Jordon Daniels",
+   "organization": "StrategyCorp Inc.",
+   "client": "Alvarez & Marsal Canada Inc.",
+   "subject": "Building Permits;Planning and Development Application",
+   "method": "Emails"
+  },
+  {
+   "date": "2025-03-25",
+   "lobbyist": "Sara Abdella",
+   "organization": "StrategyCorp Inc.",
+   "client": "Alvarez & Marsal Canada Inc.",
+   "subject": "Building Permits;Planning and Development Application",
+   "method": "Emails"
+  },
+  {
+   "date": "2025-03-24",
+   "lobbyist": "Will Smith",
+   "organization": "Knightsbridge Development Corporation",
+   "client": "Alvarez & Marsal",
+   "subject": "Building Permits;Planning and Development;Planning and Development, Combined Application",
+   "method": "Other or unreported"
+  },
+  {
+   "date": "2025-03-20",
+   "lobbyist": "Jordon Daniels",
+   "organization": "StrategyCorp Inc.",
+   "client": "Alvarez & Marsal Canada Inc.",
+   "subject": "Building Permits;Planning and Development Application",
+   "method": "Emails"
+  },
+  {
+   "date": "2025-03-20",
+   "lobbyist": "Sara Abdella",
+   "organization": "StrategyCorp Inc.",
+   "client": "Alvarez & Marsal Canada Inc.",
+   "subject": "Building Permits;Planning and Development Application",
+   "method": "Emails"
+  },
+  {
+   "date": "2025-03-17",
+   "lobbyist": "Aidan Grove-White",
+   "organization": "StrategyCorp",
+   "client": "Toronto Standard Condominium Corporation No. 2058",
+   "subject": "By-law / Regulation;City infrastructure - Emergency planning and/or restoration;Parks / Open Space",
+   "method": "Emails"
+  },
+  {
+   "date": "2025-03-17",
+   "lobbyist": "Richard Ositashvili",
+   "organization": "StrategyCorp Inc.",
+   "client": "Toronto Standard Condominium Corporation No. 2058",
+   "subject": "By-law / Regulation;City infrastructure - Emergency planning and/or restoration;Parks / Open Space",
+   "method": "Emails"
+  },
+  {
+   "date": "2025-03-17",
+   "lobbyist": "Katherine Chislett",
+   "organization": "StrategyCorp Inc.",
+   "client": "Toronto Standard Condominium Corporation No. 2058",
+   "subject": "By-law / Regulation;City infrastructure - Emergency planning and/or restoration;Parks / Open Space",
+   "method": "Emails"
+  },
+  {
+   "date": "2025-03-13",
+   "lobbyist": "Jordon Daniels",
+   "organization": "StrategyCorp Inc.",
+   "client": "Alvarez & Marsal Canada Inc.",
+   "subject": "Building Permits;Planning and Development Application",
+   "method": "Emails"
+  },
+  {
+   "date": "2025-03-13",
+   "lobbyist": "Sara Abdella",
+   "organization": "StrategyCorp Inc.",
+   "client": "Alvarez & Marsal Canada Inc.",
+   "subject": "Building Permits;Planning and Development Application",
+   "method": "Emails"
+  },
+  {
+   "date": "2025-03-12",
+   "lobbyist": "Jordon Daniels",
+   "organization": "StrategyCorp Inc.",
+   "client": "Alvarez & Marsal Canada Inc.",
+   "subject": "Building Permits;Planning and Development Application",
+   "method": "Emails"
+  },
+  {
+   "date": "2025-03-12",
+   "lobbyist": "Sara Abdella",
+   "organization": "StrategyCorp Inc.",
+   "client": "Alvarez & Marsal Canada Inc.",
+   "subject": "Building Permits;Planning and Development Application",
+   "method": "Emails"
+  },
+  {
+   "date": "2025-03-11",
+   "lobbyist": "Fausto Di Carlo",
+   "organization": "2868415 Ontario Inc",
+   "client": null,
+   "subject": "Transportation;Transportation - Cycling / Bicycle Lanes;Transportation - Roads / Bridges",
+   "method": "Emails"
+  },
+  {
+   "date": "2025-03-11",
+   "lobbyist": "Owen Crawford-Lem",
+   "organization": "Crestview Strategy",
+   "client": "Labourers' International Union of North America Ontario Provincial District Council (LiUNA OPDC)",
+   "subject": "City infrastructure - Emergency planning and/or restoration;Economic Development",
+   "method": "Emails"
+  },
+  {
+   "date": "2025-03-07",
+   "lobbyist": "Glenn De Baeremaeker",
+   "organization": "Glenn De Baeremaeker Consulting",
+   "client": "Co-op Cabs",
+   "subject": "Transit / TTC",
+   "method": "Emails"
+  },
+  {
+   "date": "2025-03-05",
+   "lobbyist": "Aidan Grove-White",
+   "organization": "StrategyCorp",
+   "client": "JCD Property Ltd.",
+   "subject": "Planning and Development;Planning and Development, Combined Application",
+   "method": "Phone calls"
+  },
+  {
+   "date": "2025-03-03",
+   "lobbyist": "Stephen Hamilton",
+   "organization": "Progressive Contractors Association",
+   "client": null,
+   "subject": "City infrastructure - Emergency planning and/or restoration;Procurement;Restart and rebuild related to Covid19 pandemic",
+   "method": "Emails"
+  },
+  {
+   "date": "2025-03-03",
+   "lobbyist": "Mustapha Khamissa",
+   "organization": "Rubicon Strategy Inc.",
+   "client": "Bolt Services CA Inc",
+   "subject": "Economic Development;Licences / Licensing;Transportation",
+   "method": "Emails"
+  },
+  {
+   "date": "2025-02-24",
+   "lobbyist": "Jordon Daniels",
+   "organization": "StrategyCorp Inc.",
+   "client": "Alvarez & Marsal Canada Inc.",
+   "subject": "Building Permits;Planning and Development Application",
+   "method": "Emails"
+  },
+  {
+   "date": "2025-02-24",
+   "lobbyist": "Sara Abdella",
+   "organization": "StrategyCorp Inc.",
+   "client": "Alvarez & Marsal Canada Inc.",
+   "subject": "Building Permits;Planning and Development Application",
+   "method": "Emails"
+  },
+  {
+   "date": "2025-02-20",
+   "lobbyist": "Aleem Kanji",
+   "organization": "AleemKanji.com",
+   "client": "Safer Smart Zones Inc.",
+   "subject": "Technology;Transit / TTC",
+   "method": "Emails"
+  },
+  {
+   "date": "2025-02-20",
+   "lobbyist": "Aidan Grove-White",
+   "organization": "StrategyCorp",
+   "client": "Alvarez & Marsal Canada Inc.",
+   "subject": "Building Permits;Planning and Development Application",
+   "method": "Other or unreported"
+  },
+  {
+   "date": "2025-02-19",
+   "lobbyist": "Aidan Grove-White",
+   "organization": "StrategyCorp",
+   "client": "Alvarez & Marsal Canada Inc.",
+   "subject": "Building Permits;Planning and Development Application",
+   "method": "Other or unreported"
+  },
+  {
+   "date": "2025-02-13",
+   "lobbyist": "Mike Kasij",
+   "organization": "Sutera Canada Inc.",
+   "client": null,
+   "subject": "Grants / Funding;Hazardous Waste;Real Estate / Property (City-owned)",
+   "method": "Emails"
+  },
+  {
+   "date": "2025-02-11",
+   "lobbyist": "Jordon Daniels",
+   "organization": "StrategyCorp Inc.",
+   "client": "Alvarez & Marsal Canada Inc.",
+   "subject": "Building Permits;Planning and Development Application",
+   "method": "Emails"
+  },
+  {
+   "date": "2025-02-11",
+   "lobbyist": "Sara Abdella",
+   "organization": "StrategyCorp Inc.",
+   "client": "Alvarez & Marsal Canada Inc.",
+   "subject": "Building Permits;Planning and Development Application",
+   "method": "Emails"
+  },
+  {
+   "date": "2025-02-10",
+   "lobbyist": "Jordon Daniels",
+   "organization": "StrategyCorp Inc.",
+   "client": "Alvarez & Marsal Canada Inc.",
+   "subject": "Building Permits;Planning and Development Application",
+   "method": "Emails"
+  },
+  {
+   "date": "2025-02-10",
+   "lobbyist": "Sara Abdella",
+   "organization": "StrategyCorp Inc.",
+   "client": "Alvarez & Marsal Canada Inc.",
+   "subject": "Building Permits;Planning and Development Application",
+   "method": "Emails"
+  },
+  {
+   "date": "2025-02-07",
+   "lobbyist": "Jordon Daniels",
+   "organization": "StrategyCorp Inc.",
+   "client": "Alvarez & Marsal Canada Inc.",
+   "subject": "Building Permits;Planning and Development Application",
+   "method": "Emails"
+  },
+  {
+   "date": "2025-02-07",
+   "lobbyist": "Jordon Daniels",
+   "organization": "StrategyCorp Inc.",
+   "client": "JCD Property Ltd.",
+   "subject": "Planning and Development;Combined Application",
+   "method": "Emails"
+  },
+  {
+   "date": "2025-02-04",
+   "lobbyist": "Paul Scrivener",
+   "organization": "Toronto Industry Network",
+   "client": null,
+   "subject": "By-law / Regulation;Economic Development;Environment",
+   "method": "Emails"
+  },
+  {
+   "date": "2025-02-04",
+   "lobbyist": "Aidan Grove-White",
+   "organization": "StrategyCorp",
+   "client": "Toronto Standard Condominium Corporation No. 2058",
+   "subject": "By-law / Regulation;City infrastructure - Emergency planning and/or restoration;Parks / Open Space",
+   "method": "Other or unreported"
+  },
+  {
+   "date": "2025-02-03",
+   "lobbyist": "Michael Mestyan",
+   "organization": "Deltera Inc.",
+   "client": null,
+   "subject": "Planning and Development;Combined Application",
+   "method": "Meetings"
+  },
+  {
+   "date": "2025-02-03",
+   "lobbyist": "Gavin Bailey",
+   "organization": "Deltera Inc.",
+   "client": null,
+   "subject": "Planning and Development;Combined Application",
+   "method": "Meetings"
+  },
+  {
+   "date": "2025-02-03",
+   "lobbyist": "Justin Van Dette",
+   "organization": "Deltera Inc.",
+   "client": null,
+   "subject": "Planning and Development;Combined Application",
+   "method": "Meetings"
+  },
+  {
+   "date": "2025-01-29",
+   "lobbyist": "Francisca H Quinn",
+   "organization": "Prince Arthur Real Estate Corporation",
+   "client": null,
+   "subject": "Planning and Development, Heritage;Planning and Development Application",
+   "method": "Emails"
+  },
+  {
+   "date": "2025-01-27",
+   "lobbyist": "Jordon Daniels",
+   "organization": "StrategyCorp Inc.",
+   "client": "Alvarez & Marsal Canada Inc.",
+   "subject": "Building Permits;Planning and Development Application",
+   "method": "Emails"
+  },
+  {
+   "date": "2025-01-27",
+   "lobbyist": "Sara Abdella",
+   "organization": "StrategyCorp Inc.",
+   "client": "Alvarez & Marsal Canada Inc.",
+   "subject": "Building Permits;Planning and Development Application",
+   "method": "Emails"
+  },
+  {
+   "date": "2025-01-27",
+   "lobbyist": "Will Smith",
+   "organization": "Knightsbridge Development Corporation",
+   "client": "Alvarez & Marsal",
+   "subject": "Building Permits;Planning and Development;Planning and Development, Combined Application",
+   "method": "Meetings"
+  },
+  {
+   "date": "2025-01-13",
+   "lobbyist": "Jordon Daniels",
+   "organization": "StrategyCorp Inc.",
+   "client": "Alvarez & Marsal Canada Inc.",
+   "subject": "Building Permits;Planning and Development Application",
+   "method": "Emails"
+  },
+  {
+   "date": "2025-01-13",
+   "lobbyist": "Sara Abdella",
+   "organization": "StrategyCorp Inc.",
+   "client": "Alvarez & Marsal Canada Inc.",
+   "subject": "Building Permits;Planning and Development Application",
+   "method": "Emails"
+  },
+  {
+   "date": "2025-01-09",
+   "lobbyist": "Jordon Daniels",
+   "organization": "StrategyCorp Inc.",
+   "client": "Alvarez & Marsal Canada Inc.",
+   "subject": "Building Permits;Planning and Development Application",
+   "method": "Emails"
+  },
+  {
+   "date": "2025-01-09",
+   "lobbyist": "Sara Abdella",
+   "organization": "StrategyCorp Inc.",
+   "client": "Alvarez & Marsal Canada Inc.",
+   "subject": "Building Permits;Planning and Development Application",
+   "method": "Emails"
+  },
+  {
+   "date": "2025-01-08",
+   "lobbyist": "Steve Deveaux",
+   "organization": "Tribute Communities",
+   "client": null,
+   "subject": "Planning and Development Application, Zoning By-law;Planning and Development Application, Site Plan",
+   "method": "Meetings"
+  },
+  {
+   "date": "2025-01-03",
+   "lobbyist": "Aidan Grove-White",
+   "organization": "StrategyCorp",
+   "client": "Alvarez & Marsal Canada Inc.",
+   "subject": "Building Permits;Planning and Development Application",
+   "method": "Emails"
+  },
+  {
+   "date": "2025-01-02",
+   "lobbyist": "Aidan Grove-White",
+   "organization": "StrategyCorp",
+   "client": "Alvarez & Marsal Canada Inc.",
+   "subject": "Building Permits;Planning and Development Application",
+   "method": "Emails"
+  },
+  {
+   "date": "2024-12-20",
+   "lobbyist": "Jordon Daniels",
+   "organization": "StrategyCorp Inc.",
+   "client": "Alvarez & Marsal Canada Inc.",
+   "subject": "Building Permits;Planning and Development Application",
+   "method": "Emails"
+  },
+  {
+   "date": "2024-12-20",
+   "lobbyist": "Jordon Daniels",
+   "organization": "StrategyCorp Inc.",
+   "client": "JCD Property Ltd.",
+   "subject": "Planning and Development;Combined Application",
+   "method": "Emails"
+  },
+  {
+   "date": "2024-12-18",
+   "lobbyist": "Kim Wright",
+   "organization": "Wright Strategies",
+   "client": "Youth Without Shelter",
+   "subject": "Affordable Housing;Shelters;Restart and rebuild related to Covid19 pandemic",
+   "method": "Meetings"
+  },
+  {
+   "date": "2024-12-17",
+   "lobbyist": "Aidan Grove-White",
+   "organization": "StrategyCorp",
+   "client": "Alvarez & Marsal Canada Inc.",
+   "subject": "Building Permits;Planning and Development Application",
+   "method": "Other or unreported"
+  },
+  {
+   "date": "2024-12-11",
+   "lobbyist": "Aidan Grove-White",
+   "organization": "StrategyCorp",
+   "client": "Alvarez & Marsal Canada Inc.",
+   "subject": "Building Permits;Planning and Development Application",
+   "method": "Other or unreported"
+  },
+  {
+   "date": "2024-12-11",
+   "lobbyist": "Aidan Grove-White",
+   "organization": "StrategyCorp",
+   "client": "Toronto Standard Condominium Corporation No. 2058",
+   "subject": "By-law / Regulation;City infrastructure - Emergency planning and/or restoration;Parks / Open Space",
+   "method": "Emails"
+  },
+  {
+   "date": "2024-12-10",
+   "lobbyist": "Aidan Grove-White",
+   "organization": "StrategyCorp",
+   "client": "Toronto Standard Condominium Corporation No. 2058",
+   "subject": "By-law / Regulation;City infrastructure - Emergency planning and/or restoration;Parks / Open Space",
+   "method": "Emails"
+  },
+  {
+   "date": "2024-12-09",
+   "lobbyist": "Jordon Daniels",
+   "organization": "StrategyCorp Inc.",
+   "client": "Alvarez & Marsal Canada Inc.",
+   "subject": "Building Permits;Planning and Development Application",
+   "method": "Emails"
+  },
+  {
+   "date": "2024-12-09",
+   "lobbyist": "Sara Abdella",
+   "organization": "StrategyCorp Inc.",
+   "client": "Alvarez & Marsal Canada Inc.",
+   "subject": "Building Permits;Planning and Development Application",
+   "method": "Emails"
+  },
+  {
+   "date": "2024-12-08",
+   "lobbyist": "Jim Karygiannis",
+   "organization": "GTA Strategies",
+   "client": "Christian Music festival",
+   "subject": "Arts / Culture",
+   "method": "Emails"
+  },
+  {
+   "date": "2024-12-06",
+   "lobbyist": "Gary E. Benner",
+   "organization": "Underground Consulting Incorporated",
+   "client": null,
+   "subject": "Transit / TTC;Transportation - Metrolinx",
+   "method": "Emails"
+  },
+  {
+   "date": "2024-12-05",
+   "lobbyist": "Austin Spademan",
+   "organization": "Bird Canada",
+   "client": null,
+   "subject": "By-law / Regulation;Transportation - Cycling / Bicycle Lanes;Transportation - Roads / Bridges",
+   "method": "Emails"
+  },
+  {
+   "date": "2024-12-05",
+   "lobbyist": "Alex Spears",
+   "organization": "Navigator LTD.",
+   "client": "Tercot Communities",
+   "subject": "Affordable Housing;Parks / Open Space;Planning and Development",
+   "method": "Meetings"
+  },
+  {
+   "date": "2024-12-05",
+   "lobbyist": "Emma Teitel",
+   "organization": "Navigator Ltd",
+   "client": "Tercot Communities",
+   "subject": "Affordable Housing;Parks / Open Space;Planning and Development",
+   "method": "Meetings"
+  },
+  {
+   "date": "2024-12-05",
+   "lobbyist": "Tasnia Khan",
+   "organization": "Amir Remtulla and Associates",
+   "client": "GWL Realty Advisors Inc.",
+   "subject": "Planning and Development;Planning and Development Application, Zoning By-law;Planning and Development Application, Site Plan",
+   "method": "Meetings"
+  },
+  {
+   "date": "2024-12-04",
+   "lobbyist": "Mustapha Khamissa",
+   "organization": "Rubicon Strategy Inc.",
+   "client": "Bolt Services CA Inc",
+   "subject": "Economic Development;Licences / Licensing;Transportation",
+   "method": "Emails"
+  },
+  {
+   "date": "2024-12-03",
+   "lobbyist": "Jordon Daniels",
+   "organization": "StrategyCorp Inc.",
+   "client": "Alvarez & Marsal Canada Inc.",
+   "subject": "Building Permits;Planning and Development Application",
+   "method": "Emails"
+  },
+  {
+   "date": "2024-12-03",
+   "lobbyist": "Aidan Grove-White",
+   "organization": "StrategyCorp",
+   "client": "Alvarez & Marsal Canada Inc.",
+   "subject": "Building Permits;Planning and Development Application",
+   "method": "Emails"
+  },
+  {
+   "date": "2024-12-03",
+   "lobbyist": "Sara Abdella",
+   "organization": "StrategyCorp Inc.",
+   "client": "Alvarez & Marsal Canada Inc.",
+   "subject": "Building Permits;Planning and Development Application",
+   "method": "Emails"
+  },
+  {
+   "date": "2024-12-02",
+   "lobbyist": "Alex Spears",
+   "organization": "Navigator LTD.",
+   "client": "Tercot Communities",
+   "subject": "Affordable Housing;Parks / Open Space;Planning and Development",
+   "method": "Emails"
+  },
+  {
+   "date": "2024-12-02",
+   "lobbyist": "Jordon Daniels",
+   "organization": "StrategyCorp Inc.",
+   "client": "Alvarez & Marsal Canada Inc.",
+   "subject": "Building Permits;Planning and Development Application",
+   "method": "Emails"
+  },
+  {
+   "date": "2024-12-02",
+   "lobbyist": "Aidan Grove-White",
+   "organization": "StrategyCorp",
+   "client": "Alvarez & Marsal Canada Inc.",
+   "subject": "Building Permits;Planning and Development Application",
+   "method": "Phone calls"
+  },
+  {
+   "date": "2024-12-02",
+   "lobbyist": "Sara Abdella",
+   "organization": "StrategyCorp Inc.",
+   "client": "Alvarez & Marsal Canada Inc.",
+   "subject": "Building Permits;Planning and Development Application",
+   "method": "Emails"
+  },
+  {
+   "date": "2024-11-29",
+   "lobbyist": "Ingrid Buday",
+   "organization": "No More Noise Toronto",
+   "client": "Intelligent Instruments",
+   "subject": "By-law / Regulation;Planning and Development, Planning Policy / Study;Public Health",
+   "method": "Emails"
+  },
+  {
+   "date": "2024-11-26",
+   "lobbyist": "Glenn De Baeremaeker",
+   "organization": "Glenn De Baeremaeker Consulting",
+   "client": "Co-op Cabs",
+   "subject": "Transit / TTC",
+   "method": "Meetings"
+  },
+  {
+   "date": "2024-11-25",
+   "lobbyist": "Will Smith",
+   "organization": "Knightsbridge Development Corporation",
+   "client": "Alvarez & Marsal",
+   "subject": "Building Permits;Planning and Development;Planning and Development, Combined Application",
+   "method": "Other or unreported"
+  },
+  {
+   "date": "2024-11-20",
+   "lobbyist": "Ingrid Buday",
+   "organization": "No More Noise Toronto",
+   "client": "Intelligent Instruments",
+   "subject": "By-law / Regulation;Planning and Development, Planning Policy / Study;Public Health",
+   "method": "Emails"
+  },
+  {
+   "date": "2024-11-20",
+   "lobbyist": "Jordon Daniels",
+   "organization": "StrategyCorp Inc.",
+   "client": "Alvarez & Marsal Canada Inc.",
+   "subject": "Building Permits;Planning and Development Application",
+   "method": "Emails"
+  },
+  {
+   "date": "2024-11-20",
+   "lobbyist": "Sara Abdella",
+   "organization": "StrategyCorp Inc.",
+   "client": "Alvarez & Marsal Canada Inc.",
+   "subject": "Building Permits;Planning and Development Application",
+   "method": "Emails"
+  },
+  {
+   "date": "2024-11-19",
+   "lobbyist": "Jordon Daniels",
+   "organization": "StrategyCorp Inc.",
+   "client": "Alvarez & Marsal Canada Inc.",
+   "subject": "Building Permits;Planning and Development Application",
+   "method": "Emails"
+  },
+  {
+   "date": "2024-11-19",
+   "lobbyist": "Sara Abdella",
+   "organization": "StrategyCorp Inc.",
+   "client": "Alvarez & Marsal Canada Inc.",
+   "subject": "Building Permits;Planning and Development Application",
+   "method": "Emails"
+  },
+  {
+   "date": "2024-11-18",
+   "lobbyist": "Jordon Daniels",
+   "organization": "StrategyCorp Inc.",
+   "client": "Alvarez & Marsal Canada Inc.",
+   "subject": "Building Permits;Planning and Development Application",
+   "method": "Emails"
+  },
+  {
+   "date": "2024-11-18",
+   "lobbyist": "Aidan Grove-White",
+   "organization": "StrategyCorp",
+   "client": "Alvarez & Marsal Canada Inc.",
+   "subject": "Building Permits;Planning and Development Application",
+   "method": "Emails"
+  },
+  {
+   "date": "2024-11-18",
+   "lobbyist": "Sara Abdella",
+   "organization": "StrategyCorp Inc.",
+   "client": "Alvarez & Marsal Canada Inc.",
+   "subject": "Building Permits;Planning and Development Application",
+   "method": "Emails"
+  },
+  {
+   "date": "2024-11-15",
+   "lobbyist": "Amir Remtulla",
+   "organization": "Amir Remtulla and Associates",
+   "client": "GWL Realty Advisors Inc.",
+   "subject": "Planning and Development;Planning and Development, Rental Housing Demolition or Conversion;Planning and Development Application, Zoning By-law",
+   "method": "Emails"
+  },
+  {
+   "date": "2024-11-15",
+   "lobbyist": "Amir Remtulla",
+   "organization": "Amir Remtulla and Associates",
+   "client": "GWL Realty Advisors Inc.",
+   "subject": "Planning and Development;Planning and Development Application, Zoning By-law;Planning and Development Application, Site Plan",
+   "method": "Emails"
+  },
+  {
+   "date": "2024-11-15",
+   "lobbyist": "Amir Remtulla",
+   "organization": "Amir Remtulla and Associates",
+   "client": "GWL Realty Advisors Inc.",
+   "subject": "Planning and Development;Planning and Development Application, Zoning By-law;Planning and Development Application, Site Plan",
+   "method": "Emails"
+  },
+  {
+   "date": "2024-11-14",
+   "lobbyist": "Mustapha Khamissa",
+   "organization": "Rubicon Strategy Inc.",
+   "client": "Bolt Services CA Inc",
+   "subject": "Economic Development;Licences / Licensing;Transportation",
+   "method": "Emails"
+  },
+  {
+   "date": "2024-11-12",
+   "lobbyist": "Emma Teitel",
+   "organization": "Navigator Ltd",
+   "client": "Tercot Communities",
+   "subject": "Affordable Housing;Parks / Open Space;Planning and Development",
+   "method": "Meetings"
+  },
+  {
+   "date": "2024-11-12",
+   "lobbyist": "Jordon Daniels",
+   "organization": "StrategyCorp Inc.",
+   "client": "Alvarez & Marsal Canada Inc.",
+   "subject": "Building Permits;Planning and Development Application",
+   "method": "Emails"
+  },
+  {
+   "date": "2024-11-12",
+   "lobbyist": "Sara Abdella",
+   "organization": "StrategyCorp Inc.",
+   "client": "Alvarez & Marsal Canada Inc.",
+   "subject": "Building Permits;Planning and Development Application",
+   "method": "Emails"
+  },
+  {
+   "date": "2024-11-08",
+   "lobbyist": "Debbie MacDonald",
+   "organization": "Tenblock",
+   "client": null,
+   "subject": "Planning and Development;Combined Application",
+   "method": "Emails"
+  },
+  {
+   "date": "2024-11-06",
+   "lobbyist": "Jake Brockman",
+   "organization": "Uber Canada, Inc.",
+   "client": null,
+   "subject": "By-law / Regulation;Economic Development;Licences / Licensing",
+   "method": "Emails"
+  },
+  {
+   "date": "2024-11-06",
+   "lobbyist": "Adam J. Brown",
+   "organization": "Brown Dryer Gold Smuskowitz",
+   "client": "Starlight Investments",
+   "subject": "Planning and Development Application, Official Plan;Planning and Development Application, Zoning By-law",
+   "method": "Meetings"
+  },
+  {
+   "date": "2024-11-06",
+   "lobbyist": "Jessica Smuskowitz",
+   "organization": "Brown Dryer Gold Smuskowitz",
+   "client": "Starlight Investments",
+   "subject": "Planning and Development Application, Official Plan;Planning and Development Application, Zoning By-law",
+   "method": "Meetings"
+  },
+  {
+   "date": "2024-11-06",
+   "lobbyist": "Austin Spademan",
+   "organization": "Bird Canada",
+   "client": null,
+   "subject": "By-law / Regulation;Transportation - Cycling / Bicycle Lanes;Transportation - Roads / Bridges",
+   "method": "Emails"
+  },
+  {
+   "date": "2024-11-06",
+   "lobbyist": "Adam J. Brown",
+   "organization": "Brown Dryer Gold Smuskowitz",
+   "client": "1233Y Development Limited Partnership",
+   "subject": "Planning and Development Application;Zoning By-law",
+   "method": "Meetings"
+  },
+  {
+   "date": "2024-11-05",
+   "lobbyist": "Aleem Kanji",
+   "organization": "AleemKanji.com",
+   "client": "Toronto Civic Employees Union - CUPE Local 416",
+   "subject": "Affordable Housing;Toronto Parking Authority;Transportation",
+   "method": "Meetings"
+  },
+  {
+   "date": "2024-11-05",
+   "lobbyist": "Stephen Job",
+   "organization": "Tenblock",
+   "client": null,
+   "subject": "Environment;Grants / Funding;Planning and Development",
+   "method": "Phone calls"
+  },
+  {
+   "date": "2024-11-04",
+   "lobbyist": "Glenn De Baeremaeker",
+   "organization": "Glenn De Baeremaeker Consulting",
+   "client": "Co-op Cabs",
+   "subject": "Transit / TTC",
+   "method": "Emails"
+  },
+  {
+   "date": "2024-11-01",
+   "lobbyist": "Meredith Moore",
+   "organization": "Ouroboros Deconstruction Corporation",
+   "client": null,
+   "subject": "By-law / Regulation;Environment;Planning and Development, Heritage",
+   "method": "Meetings"
+  },
+  {
+   "date": "2024-11-01",
+   "lobbyist": "Stephanie Bonic",
+   "organization": "Ouroboros Deconstruction Corporation",
+   "client": null,
+   "subject": "By-law / Regulation;Environment;Planning and Development, Heritage",
+   "method": "Meetings"
+  },
+  {
+   "date": "2024-10-30",
+   "lobbyist": "Patrick McManus",
+   "organization": "Greater Toronto Sewer and Watermain Contractors Association",
+   "client": null,
+   "subject": "City infrastructure - Emergency planning and/or restoration;Procurement;Water",
+   "method": "Meetings"
+  },
+  {
+   "date": "2024-10-30",
+   "lobbyist": "Tasnia Khan",
+   "organization": "Amir Remtulla and Associates",
+   "client": "Environmental 360 Solutions Ltd.",
+   "subject": "Environment;Garbage / Recycling",
+   "method": "Emails"
+  },
+  {
+   "date": "2024-10-29",
+   "lobbyist": "Kim Wright",
+   "organization": "Wright Strategies",
+   "client": "Uber Canada, Inc.",
+   "subject": "By-law / Regulation;Economic Development;Transportation - Roads / Bridges",
+   "method": "Meetings"
+  },
+  {
+   "date": "2024-10-28",
+   "lobbyist": "Anthony Fernando",
+   "organization": "TELUS",
+   "client": null,
+   "subject": "Procurement;Technology",
+   "method": "Written"
+  },
+  {
+   "date": "2024-10-23",
+   "lobbyist": "Tasnia Khan",
+   "organization": "Amir Remtulla and Associates",
+   "client": "Environmental 360 Solutions Ltd.",
+   "subject": "Environment;Garbage / Recycling",
+   "method": "Emails"
+  },
+  {
+   "date": "2024-10-23",
+   "lobbyist": "Daryl Chong",
+   "organization": "Greater Toronto Apartment Association",
+   "client": null,
+   "subject": "Health & Safety",
+   "method": "Meetings"
+  },
+  {
+   "date": "2024-10-22",
+   "lobbyist": "Tasnia Khan",
+   "organization": "Amir Remtulla and Associates",
+   "client": "RSR Road Surface Recycling Limited",
+   "subject": "Environment;Technology;Transportation",
+   "method": "Emails"
+  },
+  {
+   "date": "2024-10-21",
+   "lobbyist": "Laura Lambie",
+   "organization": "Association of Consulting Engineering Companies - Ontario",
+   "client": null,
+   "subject": "Procurement",
+   "method": "Emails"
+  },
+  {
+   "date": "2024-10-21",
+   "lobbyist": "Sara Abdella",
+   "organization": "StrategyCorp Inc.",
+   "client": "Alvarez & Marsal Canada Inc.",
+   "subject": "Building Permits;Planning and Development Application",
+   "method": "Emails"
+  },
+  {
+   "date": "2024-10-21",
+   "lobbyist": "Will Smith",
+   "organization": "Knightsbridge Development Corporation",
+   "client": "Alvarez & Marsal",
+   "subject": "Building Permits;Planning and Development;Planning and Development, Combined Application",
+   "method": "Other or unreported"
+  },
+  {
+   "date": "2024-10-18",
+   "lobbyist": "James Wielgosz",
+   "organization": "Greater Toronto Hotel Association",
+   "client": null,
+   "subject": "Attractions / Tourism;Business Improvement Area (BIA);By-law / Regulation",
+   "method": "Emails"
+  },
+  {
+   "date": "2024-10-09",
+   "lobbyist": "Kim Wright",
+   "organization": "Wright Strategies",
+   "client": "Nieuport Aviation Infrastructure Partners",
+   "subject": "Economic Development;Transportation",
+   "method": "Meetings"
+  },
+  {
+   "date": "2024-10-09",
+   "lobbyist": "Kim Wright",
+   "organization": "Wright Strategies",
+   "client": "PortsToronto",
+   "subject": "Economic Development;Transportation;Waterfront Revitalization",
+   "method": "Meetings"
+  },
+  {
+   "date": "2024-10-04",
+   "lobbyist": "Jordon Daniels",
+   "organization": "StrategyCorp Inc.",
+   "client": "Alvarez & Marsal Canada Inc.",
+   "subject": "Building Permits;Planning and Development Application",
+   "method": "Emails"
+  },
+  {
+   "date": "2024-10-04",
+   "lobbyist": "Sara Abdella",
+   "organization": "StrategyCorp Inc.",
+   "client": "Alvarez & Marsal Canada Inc.",
+   "subject": "Building Permits;Planning and Development Application",
+   "method": "Emails"
+  },
+  {
+   "date": "2024-10-02",
+   "lobbyist": "Aleem Kanji",
+   "organization": "AleemKanji.com",
+   "client": "Toronto Civic Employees Union - CUPE Local 416",
+   "subject": "Affordable Housing;Toronto Parking Authority;Transportation",
+   "method": "Phone calls"
+  },
+  {
+   "date": "2024-10-02",
+   "lobbyist": "Jordon Daniels",
+   "organization": "StrategyCorp Inc.",
+   "client": "Alvarez & Marsal Canada Inc.",
+   "subject": "Building Permits;Planning and Development Application",
+   "method": "Emails"
+  },
+  {
+   "date": "2024-10-02",
+   "lobbyist": "Sara Abdella",
+   "organization": "StrategyCorp Inc.",
+   "client": "Alvarez & Marsal Canada Inc.",
+   "subject": "Building Permits;Planning and Development Application",
+   "method": "Emails"
+  },
+  {
+   "date": "2024-10-01",
+   "lobbyist": "Aidan Grove-White",
+   "organization": "StrategyCorp",
+   "client": "110 Avenue Road LP",
+   "subject": "Planning and Development Application;Planning and Development Application, Zoning By-law",
+   "method": "Meetings"
+  },
+  {
+   "date": "2024-10-01",
+   "lobbyist": "Raly Chakarova",
+   "organization": "TARBA",
+   "client": null,
+   "subject": "By-law / Regulation;Procurement;Transportation - Roads / Bridges",
+   "method": "Emails"
+  },
+  {
+   "date": "2024-09-24",
+   "lobbyist": "Graeme Kennedy",
+   "organization": "Tenblock",
+   "client": null,
+   "subject": "Environment;Grants / Funding;Planning and Development",
+   "method": "Emails"
+  },
+  {
+   "date": "2024-09-24",
+   "lobbyist": "Sonia Kandola",
+   "organization": "Lime Technology Inc.",
+   "client": null,
+   "subject": "By-law / Regulation;Toronto Parking Authority;Transportation - Cycling / Bicycle Lanes",
+   "method": "Emails"
+  },
+  {
+   "date": "2024-09-23",
+   "lobbyist": "Stephen A Adler",
+   "organization": "NATIONAL Public Relations",
+   "client": "Groupe Atwill-Morin Inc.",
+   "subject": "Economic Development;Planning and Development;Signs",
+   "method": "Emails"
+  },
+  {
+   "date": "2024-09-20",
+   "lobbyist": "Graeme Kennedy",
+   "organization": "Tenblock",
+   "client": null,
+   "subject": "Environment;Grants / Funding;Planning and Development",
+   "method": "Emails"
+  },
+  {
+   "date": "2024-09-16",
+   "lobbyist": "Aleem Kanji",
+   "organization": "AleemKanji.com",
+   "client": "Safer Smart Zones Inc.",
+   "subject": "Technology;Transit / TTC",
+   "method": "Phone calls"
+  },
+  {
+   "date": "2024-09-16",
+   "lobbyist": "Will Smith",
+   "organization": "Knightsbridge Development Corporation",
+   "client": "Alvarez & Marsal",
+   "subject": "Building Permits;Planning and Development;Planning and Development, Combined Application",
+   "method": "Meetings"
+  },
+  {
+   "date": "2024-09-10",
+   "lobbyist": "Graeme Kennedy",
+   "organization": "Tenblock",
+   "client": null,
+   "subject": "Planning and Development, Planning Policy / Study;Transportation - Cycling / Bicycle Lanes;Transportation - Roads / Bridges",
+   "method": "Emails"
+  },
+  {
+   "date": "2024-09-05",
+   "lobbyist": "Mazyar Mortazavi",
+   "organization": "TAS",
+   "client": null,
+   "subject": "Planning and Development;Planning and Development Application, Zoning By-law;Planning and Development Application, Site Plan",
+   "method": "Emails"
+  },
+  {
+   "date": "2024-09-04",
+   "lobbyist": "Stephen Job",
+   "organization": "Tenblock",
+   "client": null,
+   "subject": "Environment;Grants / Funding;Planning and Development",
+   "method": "Emails"
+  },
+  {
+   "date": "2024-09-03",
+   "lobbyist": "Stephen Job",
+   "organization": "Tenblock",
+   "client": null,
+   "subject": "Environment;Grants / Funding;Planning and Development",
+   "method": "Emails"
+  },
+  {
+   "date": "2024-08-12",
+   "lobbyist": "Mazyar Mortazavi",
+   "organization": "TAS",
+   "client": null,
+   "subject": "Planning and Development;Planning and Development Application, Zoning By-law;Planning and Development Application, Site Plan",
+   "method": "Emails"
+  },
+  {
+   "date": "2024-08-09",
+   "lobbyist": "Debbie MacDonald",
+   "organization": "Tenblock",
+   "client": null,
+   "subject": "Planning and Development;Combined Application",
+   "method": "Emails"
+  },
+  {
+   "date": "2024-08-08",
+   "lobbyist": "Aidan Grove-White",
+   "organization": "StrategyCorp",
+   "client": "110 Avenue Road LP",
+   "subject": "Planning and Development Application;Planning and Development Application, Zoning By-law",
+   "method": "Emails"
+  },
+  {
+   "date": "2024-07-31",
+   "lobbyist": "Stephen A Adler",
+   "organization": "NATIONAL Public Relations",
+   "client": "Groupe Atwill-Morin Inc.",
+   "subject": "Economic Development;Planning and Development;Signs",
+   "method": "Emails"
+  },
+  {
+   "date": "2024-07-26",
+   "lobbyist": "Jordon Daniels",
+   "organization": "StrategyCorp Inc.",
+   "client": "State Building Group",
+   "subject": "Planning and Development Application;Planning and Development Application, Minor Variance",
+   "method": "Emails"
+  },
+  {
+   "date": "2024-07-26",
+   "lobbyist": "Jordon Daniels",
+   "organization": "StrategyCorp Inc.",
+   "client": "Alvarez & Marsal Canada Inc.",
+   "subject": "Building Permits;Planning and Development Application",
+   "method": "Emails"
+  },
+  {
+   "date": "2024-07-25",
+   "lobbyist": "Stephen Job",
+   "organization": "Tenblock",
+   "client": null,
+   "subject": "Planning and Development;Combined Application",
+   "method": "Phone calls"
+  },
+  {
+   "date": "2024-07-24",
+   "lobbyist": "Kim Wright",
+   "organization": "Wright Strategies",
+   "client": "Toronto Outdoor Picture Show",
+   "subject": "Attractions / Tourism;Parks / Open Space;Recreation",
+   "method": "Meetings"
+  },
+  {
+   "date": "2024-07-24",
+   "lobbyist": "Kim Wright",
+   "organization": "Wright Strategies",
+   "client": "PortsToronto",
+   "subject": "Economic Development;Transportation;Waterfront Revitalization",
+   "method": "Emails"
+  },
+  {
+   "date": "2024-07-24",
+   "lobbyist": "Stephen Job",
+   "organization": "Tenblock",
+   "client": null,
+   "subject": "Planning and Development;Combined Application",
+   "method": "Meetings"
+  },
+  {
+   "date": "2024-07-24",
+   "lobbyist": "Stephen Job",
+   "organization": "Tenblock",
+   "client": null,
+   "subject": "Planning and Development;Combined Application",
+   "method": "Meetings"
+  },
+  {
+   "date": "2024-07-23",
+   "lobbyist": "Stephen Job",
+   "organization": "Tenblock",
+   "client": null,
+   "subject": "Planning and Development;Combined Application",
+   "method": "Emails"
+  },
+  {
+   "date": "2024-07-22",
+   "lobbyist": "Tasnia Khan",
+   "organization": "Amir Remtulla and Associates",
+   "client": "2129152 Ontario Ltd.",
+   "subject": "Planning and Development;Planning and Development Application, Zoning By-law;Planning and Development Application, Site Plan",
+   "method": "Phone calls"
+  },
+  {
+   "date": "2024-07-19",
+   "lobbyist": "Jim Karygiannis",
+   "organization": "GTA Strategies",
+   "client": "Christian Music festival",
+   "subject": "Arts / Culture",
+   "method": "Emails"
+  },
+  {
+   "date": "2024-07-17",
+   "lobbyist": "Kim Wright",
+   "organization": "Wright Strategies",
+   "client": "Toronto Outdoor Picture Show",
+   "subject": "Attractions / Tourism;Parks / Open Space;Recreation",
+   "method": "Emails"
+  },
+  {
+   "date": "2024-07-12",
+   "lobbyist": "Jordon Daniels",
+   "organization": "StrategyCorp Inc.",
+   "client": "Alvarez & Marsal Canada Inc.",
+   "subject": "Building Permits;Planning and Development Application",
+   "method": "Emails"
+  },
+  {
+   "date": "2024-07-11",
+   "lobbyist": "Jordon Daniels",
+   "organization": "StrategyCorp Inc.",
+   "client": "Alvarez & Marsal Canada Inc.",
+   "subject": "Building Permits;Planning and Development Application",
+   "method": "Emails"
+  },
+  {
+   "date": "2024-07-11",
+   "lobbyist": "Aidan Grove-White",
+   "organization": "StrategyCorp",
+   "client": "Alvarez & Marsal Canada Inc.",
+   "subject": "Building Permits;Planning and Development Application",
+   "method": "Emails"
+  },
+  {
+   "date": "2024-07-10",
+   "lobbyist": "Aidan Grove-White",
+   "organization": "StrategyCorp",
+   "client": "Alvarez & Marsal Canada Inc.",
+   "subject": "Building Permits;Planning and Development Application",
+   "method": "Emails"
+  },
+  {
+   "date": "2024-07-09",
+   "lobbyist": "Laura Lambie",
+   "organization": "Association of Consulting Engineering Companies - Ontario",
+   "client": null,
+   "subject": "Transit / TTC",
+   "method": "Meetings"
+  },
+  {
+   "date": "2024-07-09",
+   "lobbyist": "Donald Riendeau",
+   "organization": "Atwill-Morin",
+   "client": null,
+   "subject": "Economic Development;Planning and Development, Planning Policy / Study",
+   "method": "Meetings"
+  },
+  {
+   "date": "2024-07-09",
+   "lobbyist": "Stephen A Adler",
+   "organization": "NATIONAL Public Relations",
+   "client": "Groupe Atwill-Morin Inc.",
+   "subject": "Economic Development;Planning and Development;Signs",
+   "method": "Meetings"
+  },
+  {
+   "date": "2024-07-09",
+   "lobbyist": "Aidan Grove-White",
+   "organization": "StrategyCorp",
+   "client": "Alvarez & Marsal Canada Inc.",
+   "subject": "Building Permits;Planning and Development Application",
+   "method": "Other or unreported"
+  },
+  {
+   "date": "2024-07-08",
+   "lobbyist": "Aidan Grove-White",
+   "organization": "StrategyCorp",
+   "client": "Alvarez & Marsal Canada Inc.",
+   "subject": "Building Permits;Planning and Development Application",
+   "method": "Other or unreported"
+  },
+  {
+   "date": "2024-07-04",
+   "lobbyist": "Kim Wright",
+   "organization": "Wright Strategies",
+   "client": "Nieuport Aviation Infrastructure Partners",
+   "subject": "Economic Development;Transportation",
+   "method": "Meetings"
+  },
+  {
+   "date": "2024-07-04",
+   "lobbyist": "Kim Wright",
+   "organization": "Wright Strategies",
+   "client": "PortsToronto",
+   "subject": "Economic Development;Transportation;Waterfront Revitalization",
+   "method": "Meetings"
+  },
+  {
+   "date": "2024-06-27",
+   "lobbyist": "Kim Wright",
+   "organization": "Wright Strategies",
+   "client": "Nieuport Aviation Infrastructure Partners",
+   "subject": "Economic Development;Transportation",
+   "method": "Emails"
+  },
+  {
+   "date": "2024-06-27",
+   "lobbyist": "Kim Wright",
+   "organization": "Wright Strategies",
+   "client": "PortsToronto",
+   "subject": "Economic Development;Transportation;Waterfront Revitalization",
+   "method": "Emails"
+  },
+  {
+   "date": "2024-06-27",
+   "lobbyist": "Jordon Daniels",
+   "organization": "StrategyCorp Inc.",
+   "client": "Alvarez & Marsal Canada Inc.",
+   "subject": "Building Permits;Planning and Development Application",
+   "method": "Emails"
+  },
+  {
+   "date": "2024-06-26",
+   "lobbyist": "Stephen A Adler",
+   "organization": "NATIONAL Public Relations",
+   "client": "Groupe Atwill-Morin Inc.",
+   "subject": "Economic Development;Planning and Development;Signs",
+   "method": "Emails"
+  },
+  {
+   "date": "2024-06-24",
+   "lobbyist": "Glenn De Baeremaeker",
+   "organization": "Glenn De Baeremaeker Consulting",
+   "client": "Co-op Cabs",
+   "subject": "Transit / TTC",
+   "method": "Emails"
+  },
+  {
+   "date": "2024-06-21",
+   "lobbyist": "Jim Karygiannis",
+   "organization": "GTA Strategies",
+   "client": "Oasis Clothing Bank",
+   "subject": "Licences / Licensing;Parking;Real Estate / Property (City-owned)",
+   "method": "Emails"
+  },
+  {
+   "date": "2024-06-20",
+   "lobbyist": "Aidan Grove-White",
+   "organization": "StrategyCorp",
+   "client": "110 Avenue Road LP",
+   "subject": "Planning and Development Application;Planning and Development Application, Zoning By-law",
+   "method": "Other or unreported"
+  },
+  {
+   "date": "2024-06-18",
+   "lobbyist": "Stefano Hollands",
+   "organization": "Crestview Strategy",
+   "client": "InductEV, Inc.",
+   "subject": "Transit / TTC;Transportation;Transportation - Metrolinx",
+   "method": "Meetings"
+  },
+  {
+   "date": "2024-06-14",
+   "lobbyist": "Glenn De Baeremaeker",
+   "organization": "Glenn De Baeremaeker Consulting",
+   "client": "Co-op Cabs",
+   "subject": "Transit / TTC",
+   "method": "Meetings"
+  },
+  {
+   "date": "2024-06-12",
+   "lobbyist": "Jordon Daniels",
+   "organization": "StrategyCorp Inc.",
+   "client": "State Building Group",
+   "subject": "Planning and Development Application;Planning and Development Application, Minor Variance",
+   "method": "Emails"
+  },
+  {
+   "date": "2024-06-12",
+   "lobbyist": "Jordon Daniels",
+   "organization": "StrategyCorp Inc.",
+   "client": "Alvarez & Marsal Canada Inc.",
+   "subject": "Building Permits;Planning and Development Application",
+   "method": "Meetings"
+  },
+  {
+   "date": "2024-06-12",
+   "lobbyist": "Sara Abdella",
+   "organization": "StrategyCorp Inc.",
+   "client": "Alvarez & Marsal Canada Inc.",
+   "subject": "Building Permits;Planning and Development Application",
+   "method": "Meetings"
+  },
+  {
+   "date": "2024-06-12",
+   "lobbyist": "Will Smith",
+   "organization": "Knightsbridge Development Corporation",
+   "client": "Alvarez & Marsal",
+   "subject": "Building Permits;Planning and Development;Planning and Development, Combined Application",
+   "method": "Other or unreported"
+  },
+  {
+   "date": "2024-06-10",
+   "lobbyist": "Sara Abdella",
+   "organization": "StrategyCorp Inc.",
+   "client": "Kensington Market Community Land Trust",
+   "subject": "Affordable Housing;Economic Development;Grants / Funding",
+   "method": "Emails"
+  },
+  {
+   "date": "2024-06-10",
+   "lobbyist": "Stefano Hollands",
+   "organization": "Crestview Strategy",
+   "client": "InductEV, Inc.",
+   "subject": "Transit / TTC;Transportation;Transportation - Metrolinx",
+   "method": "Emails"
+  },
+  {
+   "date": "2024-06-06",
+   "lobbyist": "Graeme Kennedy",
+   "organization": "Tenblock",
+   "client": null,
+   "subject": "Planning and Development, Planning Policy / Study;Transportation - Cycling / Bicycle Lanes;Transportation - Roads / Bridges",
+   "method": "Emails"
+  },
+  {
+   "date": "2024-06-05",
+   "lobbyist": "Stephen A Adler",
+   "organization": "NATIONAL Public Relations",
+   "client": "Groupe Atwill-Morin Inc.",
+   "subject": "Economic Development;Planning and Development;Signs",
+   "method": "Emails"
+  },
+  {
+   "date": "2024-06-05",
+   "lobbyist": "Aidan Grove-White",
+   "organization": "StrategyCorp",
+   "client": "Alvarez & Marsal Canada Inc.",
+   "subject": "Building Permits;Planning and Development Application",
+   "method": "Emails"
+  },
+  {
+   "date": "2024-06-04",
+   "lobbyist": "Mustapha Khamissa",
+   "organization": "Rubicon Strategy Inc.",
+   "client": "Bolt Services CA Inc",
+   "subject": "Economic Development;Licences / Licensing;Transportation",
+   "method": "Meetings"
+  },
+  {
+   "date": "2024-06-04",
+   "lobbyist": "Christopher Dunn",
+   "organization": "DC Dev Corp",
+   "client": null,
+   "subject": "Planning and Development Application;Planning and Development Application, Zoning By-law;Planning and Development Application, Site Plan",
+   "method": "Meetings"
+  },
+  {
+   "date": "2024-06-04",
+   "lobbyist": "Dani Cohen",
+   "organization": "DC Dev Corp",
+   "client": null,
+   "subject": "Planning and Development Application;Planning and Development Application, Zoning By-law;Planning and Development Application, Site Plan",
+   "method": "Meetings"
+  },
+  {
+   "date": "2024-06-03",
+   "lobbyist": "Amir Remtulla",
+   "organization": "Amir Remtulla and Associates",
+   "client": "Tessa Virtue and Morgan Rielly",
+   "subject": "Planning and Development;Planning and Development Application, Zoning By-law;Planning and Development Application, Site Plan",
+   "method": "Other or unreported"
+  },
+  {
+   "date": "2024-05-31",
+   "lobbyist": "Aleem Kanji",
+   "organization": "AleemKanji.com",
+   "client": "Safer Smart Zones Inc.",
+   "subject": "Technology;Transit / TTC",
+   "method": "Meetings"
+  },
+  {
+   "date": "2024-05-28",
+   "lobbyist": "Aidan Grove-White",
+   "organization": "StrategyCorp",
+   "client": "Samuel Sarick Limited",
+   "subject": "Planning and Development;Planning and Development, Planning Policy / Study;Planning and Development, Environmental Assessment",
+   "method": "Emails"
+  },
+  {
+   "date": "2024-05-28",
+   "lobbyist": "Marco Bianchi",
+   "organization": "StrategyCorp Inc.",
+   "client": "Samuel Sarick Limited",
+   "subject": "Planning and Development;Planning and Development, Planning Policy / Study;Planning and Development, Environmental Assessment",
+   "method": "Emails"
+  },
+  {
+   "date": "2024-05-27",
+   "lobbyist": "Graeme Kennedy",
+   "organization": "Tenblock",
+   "client": null,
+   "subject": "Planning and Development, Planning Policy / Study;Transportation - Cycling / Bicycle Lanes;Transportation - Roads / Bridges",
+   "method": "Emails"
+  },
+  {
+   "date": "2024-05-26",
+   "lobbyist": "Aidan Grove-White",
+   "organization": "StrategyCorp",
+   "client": "Samuel Sarick Limited",
+   "subject": "Planning and Development;Planning and Development, Planning Policy / Study;Planning and Development, Environmental Assessment",
+   "method": "Phone calls"
+  },
+  {
+   "date": "2024-05-23",
+   "lobbyist": "Aidan Grove-White",
+   "organization": "StrategyCorp",
+   "client": "Samuel Sarick Limited",
+   "subject": "Planning and Development;Planning and Development, Planning Policy / Study;Planning and Development, Environmental Assessment",
+   "method": "Other or unreported"
+  },
+  {
+   "date": "2024-05-13",
+   "lobbyist": "Tristan Downe-Dewdney",
+   "organization": "Downe Dewdney Consulting Services Corporation",
+   "client": "145 St. George Company Partnership",
+   "subject": "Planning and Development;Rental Housing Demolition or Conversion",
+   "method": "Emails"
+  },
+  {
+   "date": "2024-05-10",
+   "lobbyist": "Stuart Bustard",
+   "organization": "Communauto inc.",
+   "client": null,
+   "subject": "Parking;Toronto Parking Authority;Transportation",
+   "method": "Emails"
+  },
+  {
+   "date": "2024-05-09",
+   "lobbyist": "Aidan Grove-White",
+   "organization": "StrategyCorp",
+   "client": "Samuel Sarick Limited",
+   "subject": "Planning and Development;Planning and Development, Planning Policy / Study;Planning and Development, Environmental Assessment",
+   "method": "Emails"
+  },
+  {
+   "date": "2024-05-07",
+   "lobbyist": "Austin Spademan",
+   "organization": "Bird Canada",
+   "client": null,
+   "subject": "By-law / Regulation;Transportation - Cycling / Bicycle Lanes;Transportation - Roads / Bridges",
+   "method": "Emails"
+  },
+  {
+   "date": "2024-05-06",
+   "lobbyist": "Glenn De Baeremaeker",
+   "organization": "Glenn De Baeremaeker Consulting",
+   "client": "Co-op Cabs",
+   "subject": "Transit / TTC",
+   "method": "Emails"
+  },
+  {
+   "date": "2024-05-03",
+   "lobbyist": "Paul Scrivener",
+   "organization": "Toronto Industry Network",
+   "client": null,
+   "subject": "By-law / Regulation;Economic Development;Environment",
+   "method": "Emails"
+  },
+  {
+   "date": "2024-05-02",
+   "lobbyist": "Marco Viviani",
+   "organization": "Communauto inc.",
+   "client": null,
+   "subject": "By-law / Regulation;Transportation",
+   "method": "Meetings"
+  },
+  {
+   "date": "2024-05-02",
+   "lobbyist": "Isaac Ransom",
+   "organization": "Neuron Mobility (Canada) Limited",
+   "client": null,
+   "subject": "Exhibition Place;Toronto Zoo;Transportation",
+   "method": "Emails"
+  },
+  {
+   "date": "2024-05-01",
+   "lobbyist": "Austin Spademan",
+   "organization": "Bird Canada",
+   "client": null,
+   "subject": "By-law / Regulation;Transportation - Cycling / Bicycle Lanes;Transportation - Roads / Bridges",
+   "method": "Meetings"
+  },
+  {
+   "date": "2024-05-01",
+   "lobbyist": "Mustapha Khamissa",
+   "organization": "Rubicon Strategy Inc.",
+   "client": "Bolt Services CA Inc",
+   "subject": "Economic Development;Licences / Licensing;Transportation",
+   "method": "Emails"
+  },
+  {
+   "date": "2024-05-01",
+   "lobbyist": "Dillon M Waldron",
+   "organization": "Sussex Strategy Group",
+   "client": "Neuron Mobility (Canada) Limited",
+   "subject": "Transportation;Transportation - Roads / Bridges",
+   "method": "Meetings"
+  },
+  {
+   "date": "2024-05-01",
+   "lobbyist": "Isaac Ransom",
+   "organization": "Neuron Mobility (Canada) Limited",
+   "client": null,
+   "subject": "Exhibition Place;Toronto Zoo;Transportation",
+   "method": "Meetings"
+  },
+  {
+   "date": "2024-04-29",
+   "lobbyist": "Aidan Grove-White",
+   "organization": "StrategyCorp",
+   "client": "Alvarez & Marsal Canada Inc.",
+   "subject": "Building Permits;Planning and Development Application",
+   "method": "Emails"
+  },
+  {
+   "date": "2024-04-29",
+   "lobbyist": "Sonia Kandola",
+   "organization": "Lime Technology Inc.",
+   "client": null,
+   "subject": "By-law / Regulation;Toronto Parking Authority;Transportation - Cycling / Bicycle Lanes",
+   "method": "Emails"
+  },
+  {
+   "date": "2024-04-29",
+   "lobbyist": "Isaac Ransom",
+   "organization": "Neuron Mobility (Canada) Limited",
+   "client": null,
+   "subject": "Exhibition Place;Toronto Zoo;Transportation",
+   "method": "Emails"
+  },
+  {
+   "date": "2024-04-26",
+   "lobbyist": "Glenn De Baeremaeker",
+   "organization": "Glenn De Baeremaeker Consulting",
+   "client": "Co-op Cabs",
+   "subject": "Transit / TTC",
+   "method": "Emails"
+  },
+  {
+   "date": "2024-04-26",
+   "lobbyist": "Jim Karygiannis",
+   "organization": "GTA Strategies",
+   "client": "Oasis Clothing Bank",
+   "subject": "Licences / Licensing;Parking;Real Estate / Property (City-owned)",
+   "method": "Emails"
+  },
+  {
+   "date": "2024-04-24",
+   "lobbyist": "Aleem Kanji",
+   "organization": "AleemKanji.com",
+   "client": "Safer Smart Zones Inc.",
+   "subject": "Technology;Transit / TTC",
+   "method": "Emails"
+  },
+  {
+   "date": "2024-04-22",
+   "lobbyist": "Stratis Gavrilidis",
+   "organization": "Sherwood Electromotion Inc",
+   "client": null,
+   "subject": "Transit / TTC",
+   "method": "Emails"
+  },
+  {
+   "date": "2024-04-16",
+   "lobbyist": "Tristan Downe-Dewdney",
+   "organization": "Downe Dewdney Consulting Services Corporation",
+   "client": "145 St. George Company Partnership",
+   "subject": "Planning and Development;Rental Housing Demolition or Conversion",
+   "method": "Emails"
+  },
+  {
+   "date": "2024-04-16",
+   "lobbyist": "Tristan Downe-Dewdney",
+   "organization": "Downe Dewdney Consulting Services Corporation",
+   "client": "Tenblock Developments Inc.",
+   "subject": "Planning and Development;Combined Application",
+   "method": "Emails"
+  },
+  {
+   "date": "2024-04-15",
+   "lobbyist": "Daryl Chong",
+   "organization": "Greater Toronto Apartment Association",
+   "client": null,
+   "subject": "Planning and Development, Planning Policy / Study",
+   "method": "Meetings"
+  },
+  {
+   "date": "2024-04-15",
+   "lobbyist": "Daryl Chong",
+   "organization": "Greater Toronto Apartment Association",
+   "client": null,
+   "subject": "Affordable Housing",
+   "method": "Meetings"
+  },
+  {
+   "date": "2024-04-15",
+   "lobbyist": "Daryl Chong",
+   "organization": "Greater Toronto Apartment Association",
+   "client": null,
+   "subject": "By-law / Regulation",
+   "method": "Meetings"
+  },
+  {
+   "date": "2024-04-15",
+   "lobbyist": "Daryl Chong",
+   "organization": "Greater Toronto Apartment Association",
+   "client": null,
+   "subject": "Affordable Housing;Planning and Development, Planning Policy / Study",
+   "method": "Meetings"
+  },
+  {
+   "date": "2024-04-15",
+   "lobbyist": "Daryl Chong",
+   "organization": "Greater Toronto Apartment Association",
+   "client": null,
+   "subject": "Planning and Development",
+   "method": "Meetings"
+  },
+  {
+   "date": "2024-04-15",
+   "lobbyist": "Daryl Chong",
+   "organization": "Greater Toronto Apartment Association",
+   "client": null,
+   "subject": "Budget",
+   "method": "Meetings"
+  },
+  {
+   "date": "2024-04-11",
+   "lobbyist": "Aidan Grove-White",
+   "organization": "StrategyCorp",
+   "client": "Alvarez & Marsal Canada Inc.",
+   "subject": "Building Permits;Planning and Development Application",
+   "method": "Emails"
+  },
+  {
+   "date": "2024-04-10",
+   "lobbyist": "Aidan Grove-White",
+   "organization": "StrategyCorp",
+   "client": "Alvarez & Marsal Canada Inc.",
+   "subject": "Building Permits;Planning and Development Application",
+   "method": "Emails"
+  },
+  {
+   "date": "2024-04-08",
+   "lobbyist": "Jordon Daniels",
+   "organization": "StrategyCorp Inc.",
+   "client": "Alvarez & Marsal Canada Inc.",
+   "subject": "Building Permits;Planning and Development Application",
+   "method": "Emails"
+  },
+  {
+   "date": "2024-04-05",
+   "lobbyist": "Christopher Dunn",
+   "organization": "DC Dev Corp",
+   "client": null,
+   "subject": "Planning and Development Application, Zoning By-law;Planning and Development Application, Site Plan;Planning and Development, Combined Application",
+   "method": "Emails"
+  },
+  {
+   "date": "2024-04-05",
+   "lobbyist": "Aidan Grove-White",
+   "organization": "StrategyCorp",
+   "client": "Alvarez & Marsal Canada Inc.",
+   "subject": "Building Permits;Planning and Development Application",
+   "method": "Emails"
+  },
+  {
+   "date": "2024-04-04",
+   "lobbyist": "Aidan Grove-White",
+   "organization": "StrategyCorp",
+   "client": "Alvarez & Marsal Canada Inc.",
+   "subject": "Building Permits;Planning and Development Application",
+   "method": "Emails"
+  },
+  {
+   "date": "2024-04-02",
+   "lobbyist": "Aidan Grove-White",
+   "organization": "StrategyCorp",
+   "client": "Alvarez & Marsal Canada Inc.",
+   "subject": "Building Permits;Planning and Development Application",
+   "method": "Emails"
+  },
+  {
+   "date": "2024-03-27",
+   "lobbyist": "Mustapha Khamissa",
+   "organization": "Rubicon Strategy Inc.",
+   "client": "Walker Industries",
+   "subject": "Environment;Garbage / Recycling;Hazardous Waste",
+   "method": "Emails"
+  },
+  {
+   "date": "2024-03-27",
+   "lobbyist": "Joel Farber",
+   "organization": "Fogler Rubinoff LLP",
+   "client": "1707397 Ontario Inc. and Dr. Philip Solomon",
+   "subject": "Building Permits;By-law / Regulation;Planning and Development Application, Site Plan",
+   "method": "Emails"
+  },
+  {
+   "date": "2024-03-26",
+   "lobbyist": "LAURIE PAYNE",
+   "organization": "OSMINGTON GEROFSKY DEVELOPMENT CORP",
+   "client": null,
+   "subject": "Planning and Development Application, Zoning By-law;Planning and Development Application, Site Plan;Planning and Development, Combined Application",
+   "method": "Meetings"
+  },
+  {
+   "date": "2024-03-26",
+   "lobbyist": "John Mallovy",
+   "organization": "Rogers Communications Inc.",
+   "client": null,
+   "subject": "Planning and Development Application, Zoning By-law;Planning and Development Application, Site Plan;Planning and Development, Combined Application",
+   "method": "Meetings"
+  },
+  {
+   "date": "2024-03-25",
+   "lobbyist": "Jordon Daniels",
+   "organization": "StrategyCorp Inc.",
+   "client": "Alvarez & Marsal Canada Inc.",
+   "subject": "Building Permits;Planning and Development Application",
+   "method": "Meetings"
+  },
+  {
+   "date": "2024-03-25",
+   "lobbyist": "Aidan Grove-White",
+   "organization": "StrategyCorp",
+   "client": "Alvarez & Marsal Canada Inc.",
+   "subject": "Building Permits;Planning and Development Application",
+   "method": "Meetings"
+  },
+  {
+   "date": "2024-03-25",
+   "lobbyist": "Will Smith",
+   "organization": "Knightsbridge Development Corporation",
+   "client": "Alvarez & Marsal",
+   "subject": "Building Permits;Planning and Development;Planning and Development, Combined Application",
+   "method": "Other or unreported"
+  },
+  {
+   "date": "2024-03-22",
+   "lobbyist": "Graeme Kennedy",
+   "organization": "Tenblock",
+   "client": null,
+   "subject": "Planning and Development, Planning Policy / Study;Transportation - Cycling / Bicycle Lanes;Transportation - Roads / Bridges",
+   "method": "Emails"
+  },
+  {
+   "date": "2024-03-22",
+   "lobbyist": "Aleem Kanji",
+   "organization": "AleemKanji.com",
+   "client": "Toronto Police Association",
+   "subject": "Budget;Health & Safety;Covid19 Pandemic",
+   "method": "Meetings"
+  },
+  {
+   "date": "2024-03-21",
+   "lobbyist": "Aidan Grove-White",
+   "organization": "StrategyCorp",
+   "client": "Alvarez & Marsal Canada Inc.",
+   "subject": "Building Permits;Planning and Development Application",
+   "method": "Emails"
+  },
+  {
+   "date": "2024-03-19",
+   "lobbyist": "Aidan Grove-White",
+   "organization": "StrategyCorp",
+   "client": "Alvarez & Marsal Canada Inc.",
+   "subject": "Building Permits;Planning and Development Application",
+   "method": "Other or unreported"
+  },
+  {
+   "date": "2024-03-18",
+   "lobbyist": "Joe Mihevc",
+   "organization": "Mihevc Consulting and Mediation Ltd",
+   "client": "Reserve Properties Ltd",
+   "subject": "Planning and Development Application;Planning and Development Application, Official Plan;Planning and Development Application, Zoning By-law",
+   "method": "Emails"
+  },
+  {
+   "date": "2024-03-18",
+   "lobbyist": "Aidan Grove-White",
+   "organization": "StrategyCorp",
+   "client": "Alvarez & Marsal Canada Inc.",
+   "subject": "Building Permits;Planning and Development Application",
+   "method": "Emails"
+  },
+  {
+   "date": "2024-03-14",
+   "lobbyist": "Aaron Binder",
+   "organization": "Segway of Ontario",
+   "client": null,
+   "subject": "Attractions / Tourism;Economic Development;Transportation - Cycling / Bicycle Lanes",
+   "method": "Meetings"
+  },
+  {
+   "date": "2024-03-12",
+   "lobbyist": "Jim Karygiannis",
+   "organization": "GTA Strategies",
+   "client": "Ming Pao Daily Newspaper",
+   "subject": "Grants / Funding",
+   "method": "Emails"
+  },
+  {
+   "date": "2024-03-01",
+   "lobbyist": "Jordan Ingster",
+   "organization": "Ice River Sustainable Solutions",
+   "client": null,
+   "subject": "Environment;Garbage / Recycling",
+   "method": "Emails"
+  },
+  {
+   "date": "2024-02-29",
+   "lobbyist": "Peter Milczyn",
+   "organization": "PM Strategies Inc",
+   "client": "Ari Huber",
+   "subject": "Transportation",
+   "method": "Emails"
+  },
+  {
+   "date": "2024-02-28",
+   "lobbyist": "Aaron Binder",
+   "organization": "Segway of Ontario",
+   "client": null,
+   "subject": "Attractions / Tourism;Economic Development;Transportation - Cycling / Bicycle Lanes",
+   "method": "Emails"
+  },
+  {
+   "date": "2024-02-23",
+   "lobbyist": "Aidan Grove-White",
+   "organization": "StrategyCorp",
+   "client": "Alvarez & Marsal Canada Inc.",
+   "subject": "Building Permits;Planning and Development Application",
+   "method": "Emails"
+  },
+  {
+   "date": "2024-02-22",
+   "lobbyist": "Shoaib Ahmed",
+   "organization": "Scooty Mobility Inc.",
+   "client": null,
+   "subject": "Transit / TTC;Transportation - Cycling / Bicycle Lanes;Transportation - Metrolinx",
+   "method": "Emails"
+  },
+  {
+   "date": "2024-02-21",
+   "lobbyist": "Aidan Grove-White",
+   "organization": "StrategyCorp",
+   "client": "Alvarez & Marsal Canada Inc.",
+   "subject": "Building Permits;Planning and Development Application",
+   "method": "Other or unreported"
+  },
+  {
+   "date": "2024-02-20",
+   "lobbyist": "Aidan Grove-White",
+   "organization": "StrategyCorp",
+   "client": "Alvarez & Marsal Canada Inc.",
+   "subject": "Building Permits;Planning and Development Application",
+   "method": "Phone calls"
+  },
+  {
+   "date": "2024-02-15",
+   "lobbyist": "Aidan Grove-White",
+   "organization": "StrategyCorp",
+   "client": "State Building Group",
+   "subject": "Planning and Development Application;Planning and Development Application, Minor Variance",
+   "method": "Emails"
+  },
+  {
+   "date": "2024-02-14",
+   "lobbyist": "Aidan Grove-White",
+   "organization": "StrategyCorp",
+   "client": "State Building Group",
+   "subject": "Planning and Development Application;Planning and Development Application, Minor Variance",
+   "method": "Phone calls"
+  },
+  {
+   "date": "2024-02-14",
+   "lobbyist": "Jordon Daniels",
+   "organization": "StrategyCorp Inc.",
+   "client": "Alvarez & Marsal Canada Inc.",
+   "subject": "Building Permits;Planning and Development Application",
+   "method": "Emails"
+  },
+  {
+   "date": "2024-02-14",
+   "lobbyist": "Aidan Grove-White",
+   "organization": "StrategyCorp",
+   "client": "Alvarez & Marsal Canada Inc.",
+   "subject": "Building Permits;Planning and Development Application",
+   "method": "Emails"
+  },
+  {
+   "date": "2024-02-13",
+   "lobbyist": "Aidan Grove-White",
+   "organization": "StrategyCorp",
+   "client": "First Capital Realty Inc.",
+   "subject": "Planning and Development Application, Zoning By-law;Planning and Development Application, Plan of Subdivision;Planning and Development Application, Site Plan",
+   "method": "Phone calls"
+  },
+  {
+   "date": "2024-02-13",
+   "lobbyist": "Aidan Grove-White",
+   "organization": "StrategyCorp",
+   "client": "State Building Group",
+   "subject": "Planning and Development Application;Planning and Development Application, Minor Variance",
+   "method": "Phone calls"
+  },
+  {
+   "date": "2024-02-13",
+   "lobbyist": "Aleem Kanji",
+   "organization": "AleemKanji.com",
+   "client": "Toronto Police Association",
+   "subject": "Budget;Health & Safety;Covid19 Pandemic",
+   "method": "Meetings"
+  },
+  {
+   "date": "2024-02-08",
+   "lobbyist": "Aleem Kanji",
+   "organization": "AleemKanji.com",
+   "client": "Toronto Police Association",
+   "subject": "Budget;Health & Safety;Covid19 Pandemic",
+   "method": "Phone calls"
+  },
+  {
+   "date": "2024-02-08",
+   "lobbyist": "Jim Karygiannis",
+   "organization": "GTA Strategies",
+   "client": "Aero Future Canada",
+   "subject": "Emergency Services",
+   "method": "Emails"
+  },
+  {
+   "date": "2024-02-06",
+   "lobbyist": "Tristan Downe-Dewdney",
+   "organization": "Downe Dewdney Consulting Services Corporation",
+   "client": "Republic Developments Inc.",
+   "subject": "Affordable Housing;Planning and Development Application, Official Plan;Planning and Development Application, Zoning By-law",
+   "method": "Emails"
+  },
+  {
+   "date": "2024-02-05",
+   "lobbyist": "Aidan Grove-White",
+   "organization": "StrategyCorp",
+   "client": "State Building Group",
+   "subject": "Planning and Development Application;Planning and Development Application, Minor Variance",
+   "method": "Emails"
+  },
+  {
+   "date": "2024-02-04",
+   "lobbyist": "Aidan Grove-White",
+   "organization": "StrategyCorp",
+   "client": "State Building Group",
+   "subject": "Planning and Development Application;Planning and Development Application, Minor Variance",
+   "method": "Phone calls"
+  },
+  {
+   "date": "2024-02-03",
+   "lobbyist": "Aleem Kanji",
+   "organization": "AleemKanji.com",
+   "client": "Toronto Police Association",
+   "subject": "Budget;Health & Safety;Covid19 Pandemic",
+   "method": "Phone calls"
+  },
+  {
+   "date": "2024-02-01",
+   "lobbyist": "Christopher May",
+   "organization": "Electric Mobility Canada",
+   "client": null,
+   "subject": "Energy;Licences / Licensing;Transportation",
+   "method": "Phone calls"
+  },
+  {
+   "date": "2024-02-01",
+   "lobbyist": "Aidan Grove-White",
+   "organization": "StrategyCorp",
+   "client": "State Building Group",
+   "subject": "Planning and Development Application;Planning and Development Application, Minor Variance",
+   "method": "Other or unreported"
+  },
+  {
+   "date": "2024-02-01",
+   "lobbyist": "Aleem Kanji",
+   "organization": "AleemKanji.com",
+   "client": "Toronto Police Association",
+   "subject": "Budget;Health & Safety;Covid19 Pandemic",
+   "method": "Phone calls"
+  },
+  {
+   "date": "2024-01-31",
+   "lobbyist": "Aidan Grove-White",
+   "organization": "StrategyCorp",
+   "client": "State Building Group",
+   "subject": "Planning and Development Application;Planning and Development Application, Minor Variance",
+   "method": "Other or unreported"
+  },
+  {
+   "date": "2024-01-30",
+   "lobbyist": "Aidan Grove-White",
+   "organization": "StrategyCorp",
+   "client": "State Building Group",
+   "subject": "Planning and Development Application;Planning and Development Application, Minor Variance",
+   "method": "Phone calls"
+  },
+  {
+   "date": "2024-01-30",
+   "lobbyist": "Ziana Moledina",
+   "organization": "TAS",
+   "client": null,
+   "subject": "Planning and Development",
+   "method": "Meetings"
+  },
+  {
+   "date": "2024-01-30",
+   "lobbyist": "Matthew Segal",
+   "organization": "StrategyCorp Inc.",
+   "client": "Republic Services",
+   "subject": "By-law / Regulation;Environment;Garbage / Recycling",
+   "method": "Meetings"
+  },
+  {
+   "date": "2024-01-30",
+   "lobbyist": "Matthew Pressey",
+   "organization": "Republic Services",
+   "client": null,
+   "subject": "By-law / Regulation;Garbage / Recycling",
+   "method": "Meetings"
+  },
+  {
+   "date": "2024-01-29",
+   "lobbyist": "Jim Karygiannis",
+   "organization": "GTA Strategies",
+   "client": "Aero Future Canada",
+   "subject": "Emergency Services",
+   "method": "Emails"
+  },
+  {
+   "date": "2024-01-25",
+   "lobbyist": "Aidan Grove-White",
+   "organization": "StrategyCorp",
+   "client": "State Building Group",
+   "subject": "Planning and Development Application;Planning and Development Application, Minor Variance",
+   "method": "Emails"
+  },
+  {
+   "date": "2024-01-24",
+   "lobbyist": "Aleem Kanji",
+   "organization": "AleemKanji.com",
+   "client": "Toronto Police Association",
+   "subject": "Budget;Health & Safety;Covid19 Pandemic",
+   "method": "Phone calls"
+  },
+  {
+   "date": "2024-01-23",
+   "lobbyist": "Aleem Kanji",
+   "organization": "AleemKanji.com",
+   "client": "Toronto Civic Employees Union - CUPE Local 416",
+   "subject": "Affordable Housing;Toronto Parking Authority;Transportation",
+   "method": "Meetings"
+  },
+  {
+   "date": "2024-01-18",
+   "lobbyist": "Matthew Segal",
+   "organization": "StrategyCorp Inc.",
+   "client": "Republic Services",
+   "subject": "By-law / Regulation;Environment;Garbage / Recycling",
+   "method": "Emails"
+  },
+  {
+   "date": "2024-01-08",
+   "lobbyist": "Graeme Kennedy",
+   "organization": "Tenblock",
+   "client": null,
+   "subject": "Planning and Development, Planning Policy / Study;Transportation - Cycling / Bicycle Lanes;Transportation - Roads / Bridges",
+   "method": "Emails"
+  },
+  {
+   "date": "2024-01-08",
+   "lobbyist": "Peter Milczyn",
+   "organization": "PM Strategies Inc",
+   "client": "SoFra Federation Inc.",
+   "subject": "By-law / Regulation;Licences / Licensing;Planning and Development",
+   "method": "Meetings"
+  },
+  {
+   "date": "2024-01-05",
+   "lobbyist": "Barry Zagdanski",
+   "organization": "State Building Group",
+   "client": null,
+   "subject": "Planning and Development Application, Plan of Condominium",
+   "method": "Phone calls"
+  },
+  {
+   "date": "2024-01-03",
+   "lobbyist": "Aidan Grove-White",
+   "organization": "StrategyCorp",
+   "client": "Alvarez & Marsal Canada Inc.",
+   "subject": "Building Permits;Planning and Development Application",
+   "method": "Emails"
+  },
+  {
+   "date": "2023-12-19",
+   "lobbyist": "Esteban Yanquelevech",
+   "organization": "Mizrahi Development Group (The One) Inc.",
+   "client": null,
+   "subject": "Building Permits;Planning and Development",
+   "method": "Meetings"
+  },
+  {
+   "date": "2023-12-19",
+   "lobbyist": "Jonny Cracower",
+   "organization": "Mizrahi Development Group (The One) Inc.",
+   "client": null,
+   "subject": "Building Permits;Planning and Development",
+   "method": "Meetings"
+  },
+  {
+   "date": "2023-12-19",
+   "lobbyist": "Jordon Daniels",
+   "organization": "StrategyCorp Inc.",
+   "client": "Alvarez & Marsal Canada Inc.",
+   "subject": "Building Permits;Planning and Development Application",
+   "method": "Meetings"
+  },
+  {
+   "date": "2023-12-19",
+   "lobbyist": "Aidan Grove-White",
+   "organization": "StrategyCorp",
+   "client": "Alvarez & Marsal Canada Inc.",
+   "subject": "Building Permits;Planning and Development Application",
+   "method": "Meetings"
+  },
+  {
+   "date": "2023-12-19",
+   "lobbyist": "Will Smith",
+   "organization": "Knightsbridge Development Corporation",
+   "client": "Alvarez & Marsal",
+   "subject": "Building Permits;Planning and Development;Planning and Development, Combined Application",
+   "method": "Meetings"
+  },
+  {
+   "date": "2023-12-18",
+   "lobbyist": "Melissa Bruno",
+   "organization": "Earnscliffe Strategies",
+   "client": "Lime Technologies",
+   "subject": "By-law / Regulation;Toronto Parking Authority;Transportation - Cycling / Bicycle Lanes",
+   "method": "Emails"
+  },
+  {
+   "date": "2023-12-11",
+   "lobbyist": "Steven Caron",
+   "organization": "McDonald's Restaurants of Canada Limited",
+   "client": null,
+   "subject": "By-law / Regulation;Environment;Planning and Development, Environmental Assessment",
+   "method": "Meetings"
+  },
+  {
+   "date": "2023-12-11",
+   "lobbyist": "Tammy Alamrieh",
+   "organization": "McDonald's Restaurants of Canada Limited",
+   "client": null,
+   "subject": "By-law / Regulation;Environment;Planning and Development, Environmental Assessment",
+   "method": "Meetings"
+  },
+  {
+   "date": "2023-12-11",
+   "lobbyist": "Doug Mehan",
+   "organization": "Lyft Canada Inc.",
+   "client": null,
+   "subject": "Environment;Transportation",
+   "method": "Meetings"
+  },
+  {
+   "date": "2023-12-06",
+   "lobbyist": "Jordon Daniels",
+   "organization": "StrategyCorp Inc.",
+   "client": "Alvarez & Marsal Canada Inc.",
+   "subject": "Building Permits;Planning and Development Application",
+   "method": "Meetings"
+  },
+  {
+   "date": "2023-12-06",
+   "lobbyist": "Aidan Grove-White",
+   "organization": "StrategyCorp",
+   "client": "Alvarez & Marsal Canada Inc.",
+   "subject": "Building Permits;Planning and Development Application",
+   "method": "Meetings"
+  },
+  {
+   "date": "2023-12-05",
+   "lobbyist": "Thorben Wieditz",
+   "organization": "RideFairTO",
+   "client": null,
+   "subject": "Licences / Licensing;Transit / TTC;Transportation",
+   "method": "Emails"
+  },
+  {
+   "date": "2023-12-04",
+   "lobbyist": "Jake Brockman",
+   "organization": "Uber Canada, Inc.",
+   "client": null,
+   "subject": "By-law / Regulation;Economic Development;Licences / Licensing",
+   "method": "Emails"
+  },
+  {
+   "date": "2023-11-30",
+   "lobbyist": "Eric Turcotte",
+   "organization": "Urban Strategies Inc.",
+   "client": "Toronto Sick Kids",
+   "subject": "Building Permits;Planning and Development Application, Zoning By-law;Planning and Development Application, Site Plan",
+   "method": "Written"
+  },
+  {
+   "date": "2023-11-29",
+   "lobbyist": "Aidan Grove-White",
+   "organization": "StrategyCorp",
+   "client": "Alvarez & Marsal Canada Inc.",
+   "subject": "Building Permits;Planning and Development Application",
+   "method": "Emails"
+  },
+  {
+   "date": "2023-11-28",
+   "lobbyist": "Dan Kwak",
+   "organization": "Tenblock",
+   "client": null,
+   "subject": "Planning and Development;Combined Application",
+   "method": "Emails"
+  },
+  {
+   "date": "2023-11-28",
+   "lobbyist": "Eric Turcotte",
+   "organization": "Urban Strategies Inc.",
+   "client": "Toronto Sick Kids",
+   "subject": "Building Permits;Planning and Development Application, Zoning By-law;Planning and Development Application, Site Plan",
+   "method": "Meetings"
+  },
+  {
+   "date": "2023-11-23",
+   "lobbyist": "Andrew L Jeanrie",
+   "organization": "Bennett Jones LLP",
+   "client": "Freed (Anx) Ltd.",
+   "subject": "Planning and Development, Planning Policy / Study;Planning and Development Application",
+   "method": "Meetings"
+  },
+  {
+   "date": "2023-11-08",
+   "lobbyist": "Peter Jakovcic",
+   "organization": "Tribute Communities",
+   "client": null,
+   "subject": "Planning and Development Application, Zoning By-law;Planning and Development Application, Site Plan",
+   "method": "Emails"
+  },
+  {
+   "date": "2023-10-27",
+   "lobbyist": "Jasmine Ashfield",
+   "organization": "Spotlight Development",
+   "client": null,
+   "subject": "Affordable Housing;Planning and Development Application;Planning and Development, Combined Application",
+   "method": "Emails"
+  },
+  {
+   "date": "2023-10-25",
+   "lobbyist": "Marco Viviani",
+   "organization": "Communauto inc.",
+   "client": null,
+   "subject": "Parking",
+   "method": "Written"
+  },
+  {
+   "date": "2023-10-24",
+   "lobbyist": "Carin Mahon",
+   "organization": "StrategyCorp Inc.",
+   "client": "Mizrahi Development Group (The One) Inc.",
+   "subject": "Building Permits;Economic Development",
+   "method": "Emails"
+  },
+  {
+   "date": "2023-10-24",
+   "lobbyist": "Jordon Daniels",
+   "organization": "StrategyCorp Inc.",
+   "client": "Mizrahi Development Group (The One) Inc.",
+   "subject": "Building Permits;Economic Development",
+   "method": "Emails"
+  },
+  {
+   "date": "2023-10-24",
+   "lobbyist": "Stephen Job",
+   "organization": "Tenblock",
+   "client": null,
+   "subject": "Planning and Development, Planning Policy / Study;Transportation - Cycling / Bicycle Lanes;Transportation - Roads / Bridges",
+   "method": "Phone calls"
+  },
+  {
+   "date": "2023-10-24",
+   "lobbyist": "Jasmine Ashfield",
+   "organization": "Spotlight Development",
+   "client": null,
+   "subject": "Affordable Housing;Planning and Development Application;Planning and Development, Combined Application",
+   "method": "Emails"
+  },
+  {
+   "date": "2023-10-23",
+   "lobbyist": "Dan Kwak",
+   "organization": "Tenblock",
+   "client": null,
+   "subject": "Parks / Open Space;Transportation - Cycling / Bicycle Lanes",
+   "method": "Meetings"
+  },
+  {
+   "date": "2023-10-23",
+   "lobbyist": "Graeme Kennedy",
+   "organization": "Tenblock",
+   "client": null,
+   "subject": "Parks / Open Space;Transportation - Cycling / Bicycle Lanes",
+   "method": "Emails"
+  },
+  {
+   "date": "2023-10-23",
+   "lobbyist": "Stephen Job",
+   "organization": "Tenblock",
+   "client": null,
+   "subject": "Parks / Open Space;Transportation - Cycling / Bicycle Lanes",
+   "method": "Meetings"
+  },
+  {
+   "date": "2023-10-23",
+   "lobbyist": "Dan Kwak",
+   "organization": "Tenblock",
+   "client": null,
+   "subject": "Planning and Development;Combined Application",
+   "method": "Meetings"
+  },
+  {
+   "date": "2023-10-23",
+   "lobbyist": "Stephen Job",
+   "organization": "Tenblock",
+   "client": null,
+   "subject": "Planning and Development;Combined Application",
+   "method": "Meetings"
+  },
+  {
+   "date": "2023-10-20",
+   "lobbyist": "Stephen Job",
+   "organization": "Tenblock",
+   "client": null,
+   "subject": "Planning and Development, Planning Policy / Study;Transportation - Cycling / Bicycle Lanes;Transportation - Roads / Bridges",
+   "method": "Emails"
+  },
+  {
+   "date": "2023-10-20",
+   "lobbyist": "Graeme Kennedy",
+   "organization": "Tenblock",
+   "client": null,
+   "subject": "Planning and Development, Planning Policy / Study;Transportation - Cycling / Bicycle Lanes;Transportation - Roads / Bridges",
+   "method": "Emails"
+  },
+  {
+   "date": "2023-10-19",
+   "lobbyist": "Aidan Grove-White",
+   "organization": "StrategyCorp",
+   "client": "Mizrahi Development Group (The One) Inc.",
+   "subject": "Building Permits;Economic Development",
+   "method": "Phone calls"
+  },
+  {
+   "date": "2023-10-19",
+   "lobbyist": "Katrina Pieper",
+   "organization": "Collecdev Markee Limited Partnership",
+   "client": null,
+   "subject": "Planning and Development Application;Site Plan",
+   "method": "Meetings"
+  },
+  {
+   "date": "2023-10-19",
+   "lobbyist": "Natascha NP Pieper",
+   "organization": "Collecdev Markee Limited Partnership",
+   "client": null,
+   "subject": "Planning and Development Application;Site Plan",
+   "method": "Meetings"
+  },
+  {
+   "date": "2023-10-18",
+   "lobbyist": "Aidan Grove-White",
+   "organization": "StrategyCorp",
+   "client": "Mizrahi Development Group (The One) Inc.",
+   "subject": "Building Permits;Economic Development",
+   "method": "Emails"
+  },
+  {
+   "date": "2023-10-17",
+   "lobbyist": "Marc Hollin",
+   "organization": "Unifor",
+   "client": null,
+   "subject": "Planning and Development Application;Planning and Development Application, Official Plan;Planning and Development Application, Zoning By-law",
+   "method": "Written"
+  },
+  {
+   "date": "2023-10-14",
+   "lobbyist": "Thorben Wieditz",
+   "organization": "RideFairTO",
+   "client": null,
+   "subject": "By-law / Regulation;Licences / Licensing;Transportation",
+   "method": "Emails"
+  },
+  {
+   "date": "2023-10-13",
+   "lobbyist": "Carin Mahon",
+   "organization": "StrategyCorp Inc.",
+   "client": "Mizrahi Development Group (The One) Inc.",
+   "subject": "Building Permits;Economic Development",
+   "method": "Emails"
+  },
+  {
+   "date": "2023-10-13",
+   "lobbyist": "Jordon Daniels",
+   "organization": "StrategyCorp Inc.",
+   "client": "Mizrahi Development Group (The One) Inc.",
+   "subject": "Building Permits;Economic Development",
+   "method": "Emails"
+  },
+  {
+   "date": "2023-10-13",
+   "lobbyist": "Aidan Grove-White",
+   "organization": "StrategyCorp",
+   "client": "Mizrahi Development Group (The One) Inc.",
+   "subject": "Building Permits;Economic Development",
+   "method": "Emails"
+  },
+  {
+   "date": "2023-10-12",
+   "lobbyist": "Aidan Grove-White",
+   "organization": "StrategyCorp",
+   "client": "Mizrahi Development Group (The One) Inc.",
+   "subject": "Building Permits;Economic Development",
+   "method": "Emails"
+  },
+  {
+   "date": "2023-10-11",
+   "lobbyist": "Aidan Grove-White",
+   "organization": "StrategyCorp",
+   "client": "Mizrahi Development Group (The One) Inc.",
+   "subject": "Building Permits;Economic Development",
+   "method": "Emails"
+  },
+  {
+   "date": "2023-10-06",
+   "lobbyist": "Peter Milczyn",
+   "organization": "PM Strategies Inc",
+   "client": "1000009801 Ontario Ltd.",
+   "subject": "Affordable Housing;Economic Development;Planning and Development Application, Official Plan",
+   "method": "Emails"
+  },
+  {
+   "date": "2023-10-05",
+   "lobbyist": "Matthew Kofsky",
+   "organization": "Toronto Region Board of Trade",
+   "client": null,
+   "subject": "Budget;Economic Development;Planning and Development, Planning Policy / Study",
+   "method": "Emails"
+  },
+  {
+   "date": "2023-10-04",
+   "lobbyist": "Kathleen Freeman",
+   "organization": "Canadian Tire Corporation, Limited",
+   "client": null,
+   "subject": "Planning and Development Application, Official Plan;Planning and Development Application, Zoning By-law;Planning and Development Application, Plan of Subdivision",
+   "method": "Meetings"
+  },
+  {
+   "date": "2023-10-03",
+   "lobbyist": "Jake Brockman",
+   "organization": "Uber Canada, Inc.",
+   "client": null,
+   "subject": "By-law / Regulation;Economic Development;Licences / Licensing",
+   "method": "Emails"
+  },
+  {
+   "date": "2023-10-03",
+   "lobbyist": "Dan Kwak",
+   "organization": "Tenblock",
+   "client": null,
+   "subject": "Planning and Development;Combined Application",
+   "method": "Emails"
+  },
+  {
+   "date": "2023-09-29",
+   "lobbyist": "Dani Cohen",
+   "organization": "DC Dev Corp",
+   "client": null,
+   "subject": "Planning and Development Application;Planning and Development Application, Zoning By-law;Planning and Development Application, Site Plan",
+   "method": "Meetings"
+  },
+  {
+   "date": "2023-09-29",
+   "lobbyist": "Christopher Dunn",
+   "organization": "DC Dev Corp",
+   "client": null,
+   "subject": "Planning and Development Application;Planning and Development Application, Zoning By-law;Planning and Development Application, Site Plan",
+   "method": "Meetings"
+  },
+  {
+   "date": "2023-09-29",
+   "lobbyist": "Jessica Smuskowitz",
+   "organization": "Brown Dryer Gold Smuskowitz",
+   "client": "1233Y Development Limited Partnership",
+   "subject": "Planning and Development Application;Zoning By-law",
+   "method": "Other or unreported"
+  },
+  {
+   "date": "2023-09-29",
+   "lobbyist": "Adam J. Brown",
+   "organization": "Brown Dryer Gold Smuskowitz",
+   "client": "1233Y Development Limited Partnership",
+   "subject": "Planning and Development Application;Zoning By-law",
+   "method": "Other or unreported"
+  },
+  {
+   "date": "2023-09-28",
+   "lobbyist": "Jordon Daniels",
+   "organization": "StrategyCorp Inc.",
+   "client": "Mizrahi Development Group (The One) Inc.",
+   "subject": "Building Permits;Economic Development",
+   "method": "Meetings"
+  },
+  {
+   "date": "2023-09-28",
+   "lobbyist": "Aidan Grove-White",
+   "organization": "StrategyCorp",
+   "client": "Mizrahi Development Group (The One) Inc.",
+   "subject": "Building Permits;Economic Development",
+   "method": "Meetings"
+  },
+  {
+   "date": "2023-09-27",
+   "lobbyist": "Jordon Daniels",
+   "organization": "StrategyCorp Inc.",
+   "client": "Veolia Canada",
+   "subject": "Energy;Environment;Water",
+   "method": "Emails"
+  },
+  {
+   "date": "2023-09-27",
+   "lobbyist": "Aleem Kanji",
+   "organization": "AleemKanji.com",
+   "client": "CUPE Local 79",
+   "subject": "Long-term Care;Public Health;Water",
+   "method": "Phone calls"
+  },
+  {
+   "date": "2023-09-21",
+   "lobbyist": "Aidan Grove-White",
+   "organization": "StrategyCorp",
+   "client": "Mizrahi Development Group (The One) Inc.",
+   "subject": "Planning and Development Application, Zoning By-law;Planning and Development Application, Consent to Sever",
+   "method": "Meetings"
+  },
+  {
+   "date": "2023-09-20",
+   "lobbyist": "Aleem Kanji",
+   "organization": "AleemKanji.com",
+   "client": "Toronto Civic Employees Union - CUPE Local 416",
+   "subject": "Affordable Housing;Toronto Parking Authority;Transportation",
+   "method": "Phone calls"
+  },
+  {
+   "date": "2023-09-19",
+   "lobbyist": "Jake Brockman",
+   "organization": "Uber Canada, Inc.",
+   "client": null,
+   "subject": "By-law / Regulation;Economic Development;Licences / Licensing",
+   "method": "Emails"
+  },
+  {
+   "date": "2023-09-19",
+   "lobbyist": "Dan Kwak",
+   "organization": "Tenblock",
+   "client": null,
+   "subject": "Planning and Development;Combined Application",
+   "method": "Emails"
+  },
+  {
+   "date": "2023-09-19",
+   "lobbyist": "Stephen Job",
+   "organization": "Tenblock",
+   "client": null,
+   "subject": "Planning and Development;Combined Application",
+   "method": "Emails"
+  },
+  {
+   "date": "2023-09-18",
+   "lobbyist": "Damien Hope",
+   "organization": "Canada Running Series",
+   "client": null,
+   "subject": "Recreation",
+   "method": "Emails"
+  },
+  {
+   "date": "2023-09-14",
+   "lobbyist": "Evan Perlman",
+   "organization": "Tenblock",
+   "client": null,
+   "subject": "Planning and Development;Combined Application",
+   "method": "Emails"
+  },
+  {
+   "date": "2023-09-13",
+   "lobbyist": "Aleem Kanji",
+   "organization": "AleemKanji.com",
+   "client": "CUPE Local 79",
+   "subject": "Long-term Care;Public Health;Water",
+   "method": "Phone calls"
+  },
+  {
+   "date": "2023-09-13",
+   "lobbyist": "Eileen P. Costello",
+   "organization": "Aird & Berlis LLP",
+   "client": "906 Yonge Street Development Inc.",
+   "subject": "Planning and Development Application;Zoning By-law",
+   "method": "Phone calls"
+  },
+  {
+   "date": "2023-09-12",
+   "lobbyist": "Evan Perlman",
+   "organization": "Tenblock",
+   "client": null,
+   "subject": "Planning and Development;Combined Application",
+   "method": "Meetings"
+  },
+  {
+   "date": "2023-09-12",
+   "lobbyist": "Stephen Job",
+   "organization": "Tenblock",
+   "client": null,
+   "subject": "Planning and Development;Combined Application",
+   "method": "Meetings"
+  },
+  {
+   "date": "2023-09-11",
+   "lobbyist": "Damien Hope",
+   "organization": "Canada Running Series",
+   "client": null,
+   "subject": "Recreation",
+   "method": "Emails"
+  },
+  {
+   "date": "2023-09-11",
+   "lobbyist": "Evan Perlman",
+   "organization": "Tenblock",
+   "client": null,
+   "subject": "Planning and Development;Combined Application",
+   "method": "Emails"
+  },
+  {
+   "date": "2023-09-07",
+   "lobbyist": "Jake Brockman",
+   "organization": "Uber Canada, Inc.",
+   "client": null,
+   "subject": "By-law / Regulation;Economic Development;Licences / Licensing",
+   "method": "Meetings"
+  },
+  {
+   "date": "2023-09-05",
+   "lobbyist": "Ian Bacque",
+   "organization": "TELUS",
+   "client": null,
+   "subject": "Arts / Culture;Social Services;Technology",
+   "method": "Emails"
+  },
+  {
+   "date": "2023-08-30",
+   "lobbyist": "Dan Kwak",
+   "organization": "Tenblock",
+   "client": null,
+   "subject": "Planning and Development;Combined Application",
+   "method": "Emails"
+  },
+  {
+   "date": "2023-08-29",
+   "lobbyist": "Stephen Job",
+   "organization": "Tenblock",
+   "client": null,
+   "subject": "Planning and Development;Combined Application",
+   "method": "Emails"
+  },
+  {
+   "date": "2023-08-25",
+   "lobbyist": "Anthony Fernando",
+   "organization": "TELUS",
+   "client": null,
+   "subject": "Procurement;Technology",
+   "method": "Emails"
+  },
+  {
+   "date": "2023-08-22",
+   "lobbyist": "Mario Angelucci",
+   "organization": "1293446 Ontario Inc.",
+   "client": null,
+   "subject": "Planning and Development;Planning and Development, Heritage;Planning and Development Application",
+   "method": "Emails"
+  },
+  {
+   "date": "2023-08-17",
+   "lobbyist": "Aidan Grove-White",
+   "organization": "StrategyCorp",
+   "client": "Kensington Market Community Land Trust",
+   "subject": "Affordable Housing;Grants / Funding",
+   "method": "Phone calls"
+  },
+  {
+   "date": "2023-08-17",
+   "lobbyist": "Aidan Grove-White",
+   "organization": "StrategyCorp",
+   "client": "Mizrahi Development Group (The One) Inc.",
+   "subject": "Building Permits;Economic Development",
+   "method": "Phone calls"
+  },
+  {
+   "date": "2023-08-16",
+   "lobbyist": "Tahereh Granpayehvaghei",
+   "organization": "StrategyCorp Inc.",
+   "client": "Mizrahi Development Group (The One) Inc.",
+   "subject": "Planning and Development Application, Zoning By-law;Planning and Development Application, Consent to Sever",
+   "method": "Emails"
+  },
+  {
+   "date": "2023-08-16",
+   "lobbyist": "Tahereh Granpayehvaghei",
+   "organization": "StrategyCorp Inc.",
+   "client": "Mizrahi Development Group (The One) Inc.",
+   "subject": "Building Permits;Economic Development",
+   "method": "Emails"
+  },
+  {
+   "date": "2023-08-15",
+   "lobbyist": "Tahereh Granpayehvaghei",
+   "organization": "StrategyCorp Inc.",
+   "client": "Mizrahi Development Group (The One) Inc.",
+   "subject": "Planning and Development Application, Zoning By-law;Planning and Development Application, Consent to Sever",
+   "method": "Emails"
+  },
+  {
+   "date": "2023-08-15",
+   "lobbyist": "Tahereh Granpayehvaghei",
+   "organization": "StrategyCorp Inc.",
+   "client": "Mizrahi Development Group (The One) Inc.",
+   "subject": "Building Permits;Economic Development",
+   "method": "Emails"
+  },
+  {
+   "date": "2023-08-14",
+   "lobbyist": "Jordon Daniels",
+   "organization": "StrategyCorp Inc.",
+   "client": "Mizrahi Development Group (The One) Inc.",
+   "subject": "Building Permits;Economic Development",
+   "method": "Emails"
+  },
+  {
+   "date": "2023-08-10",
+   "lobbyist": "Mike Kasij",
+   "organization": "Sutera Canada Inc.",
+   "client": null,
+   "subject": "Grants / Funding;Hazardous Waste;Real Estate / Property (City-owned)",
+   "method": "Emails"
+  },
+  {
+   "date": "2023-08-10",
+   "lobbyist": "Mike Kasij",
+   "organization": "Sutera Canada Inc.",
+   "client": null,
+   "subject": "Environment;Garbage / Recycling;Hazardous Waste",
+   "method": "Emails"
+  },
+  {
+   "date": "2023-08-10",
+   "lobbyist": "Aidan Grove-White",
+   "organization": "StrategyCorp",
+   "client": "Mizrahi Development Group (The One) Inc.",
+   "subject": "Planning and Development Application, Zoning By-law;Planning and Development Application, Consent to Sever",
+   "method": "Emails"
+  },
+  {
+   "date": "2023-08-10",
+   "lobbyist": "Aidan Grove-White",
+   "organization": "StrategyCorp",
+   "client": "Mizrahi Development Group (The One) Inc.",
+   "subject": "Building Permits;Economic Development",
+   "method": "Emails"
+  },
+  {
+   "date": "2023-07-29",
+   "lobbyist": "Sonia Kandola",
+   "organization": "Lime Technology Inc.",
+   "client": null,
+   "subject": "By-law / Regulation;Toronto Parking Authority;Transportation - Cycling / Bicycle Lanes",
+   "method": "Emails"
+  },
+  {
+   "date": "2023-07-26",
+   "lobbyist": "Mario Angelucci",
+   "organization": "1293446 Ontario Inc.",
+   "client": null,
+   "subject": "Planning and Development;Planning and Development, Heritage;Planning and Development Application",
+   "method": "Emails"
+  },
+  {
+   "date": "2023-07-20",
+   "lobbyist": "Jake Brockman",
+   "organization": "Uber Canada, Inc.",
+   "client": null,
+   "subject": "By-law / Regulation;Economic Development;Licences / Licensing",
+   "method": "Emails"
+  },
+  {
+   "date": "2023-07-19",
+   "lobbyist": "Aidan Grove-White",
+   "organization": "StrategyCorp",
+   "client": "Mizrahi Development Group (The One) Inc.",
+   "subject": "Building Permits;Economic Development",
+   "method": "Phone calls"
+  },
+  {
+   "date": "2023-07-19",
+   "lobbyist": "Stephen Job",
+   "organization": "Tenblock",
+   "client": null,
+   "subject": "Planning and Development;Combined Application",
+   "method": "Meetings"
+  },
+  {
+   "date": "2023-07-18",
+   "lobbyist": "Stephen Job",
+   "organization": "Tenblock",
+   "client": null,
+   "subject": "Planning and Development;Combined Application",
+   "method": "Emails"
+  },
+  {
+   "date": "2023-07-17",
+   "lobbyist": "Moaz Ahmad",
+   "organization": "Scooty Mobility Inc.",
+   "client": null,
+   "subject": "Transit / TTC;Transportation - Cycling / Bicycle Lanes;Transportation - Metrolinx",
+   "method": "Emails"
+  },
+  {
+   "date": "2023-07-17",
+   "lobbyist": "Shoaib Ahmed",
+   "organization": "Scooty Mobility Inc.",
+   "client": null,
+   "subject": "Transit / TTC;Transportation - Cycling / Bicycle Lanes;Transportation - Metrolinx",
+   "method": "Emails"
+  },
+  {
+   "date": "2023-07-17",
+   "lobbyist": "Paul Godfrey",
+   "organization": "Arenjay Developments Ltd.",
+   "client": "Diamante Development Corporation",
+   "subject": "Planning and Development;Planning and Development Application, Zoning By-law",
+   "method": "Phone calls"
+  },
+  {
+   "date": "2023-07-17",
+   "lobbyist": "Erik Cunnington",
+   "organization": "Colliers Strategy & Consulting",
+   "client": "Forgestone Capital",
+   "subject": "Planning and Development Application, Official Plan;Planning and Development Application, Zoning By-law;Planning and Development, Combined Application",
+   "method": "Meetings"
+  },
+  {
+   "date": "2023-07-17",
+   "lobbyist": "Aidan Grove-White",
+   "organization": "StrategyCorp",
+   "client": "Mizrahi Development Group (The One) Inc.",
+   "subject": "Building Permits;Economic Development",
+   "method": "Phone calls"
+  },
+  {
+   "date": "2023-07-17",
+   "lobbyist": "Stephen Job",
+   "organization": "Tenblock",
+   "client": null,
+   "subject": "Planning and Development;Combined Application",
+   "method": "Emails"
+  },
+  {
+   "date": "2023-07-16",
+   "lobbyist": "Stephen Job",
+   "organization": "Tenblock",
+   "client": null,
+   "subject": "Planning and Development;Combined Application",
+   "method": "Emails"
+  },
+  {
+   "date": "2023-07-14",
+   "lobbyist": "Paul Godfrey",
+   "organization": "Arenjay Developments Ltd.",
+   "client": "Diamante Development Corporation",
+   "subject": "Planning and Development;Planning and Development Application, Zoning By-law",
+   "method": "Phone calls"
+  },
+  {
+   "date": "2023-07-14",
+   "lobbyist": "Stephen Job",
+   "organization": "Tenblock",
+   "client": null,
+   "subject": "Planning and Development;Combined Application",
+   "method": "Emails"
+  },
+  {
+   "date": "2023-07-13",
+   "lobbyist": "Aidan Grove-White",
+   "organization": "StrategyCorp",
+   "client": "Mizrahi Development Group (The One) Inc.",
+   "subject": "Building Permits;Economic Development",
+   "method": "Emails"
+  },
+  {
+   "date": "2023-07-13",
+   "lobbyist": "Dan Kwak",
+   "organization": "Tenblock",
+   "client": null,
+   "subject": "Planning and Development;Combined Application",
+   "method": "Emails"
+  },
+  {
+   "date": "2023-07-13",
+   "lobbyist": "Evan Perlman",
+   "organization": "Tenblock",
+   "client": null,
+   "subject": "Planning and Development;Combined Application",
+   "method": "Emails"
+  },
+  {
+   "date": "2023-07-13",
+   "lobbyist": "Stephen Job",
+   "organization": "Tenblock",
+   "client": null,
+   "subject": "Planning and Development;Combined Application",
+   "method": "Emails"
+  },
+  {
+   "date": "2023-07-12",
+   "lobbyist": "Moaz Ahmad",
+   "organization": "Scooty Mobility Inc.",
+   "client": null,
+   "subject": "Transit / TTC;Transportation - Cycling / Bicycle Lanes;Transportation - Metrolinx",
+   "method": "Emails"
+  },
+  {
+   "date": "2023-07-12",
+   "lobbyist": "Shoaib Ahmed",
+   "organization": "Scooty Mobility Inc.",
+   "client": null,
+   "subject": "Transit / TTC;Transportation - Cycling / Bicycle Lanes;Transportation - Metrolinx",
+   "method": "Emails"
+  },
+  {
+   "date": "2023-07-12",
+   "lobbyist": "Aidan Grove-White",
+   "organization": "StrategyCorp",
+   "client": "Mizrahi Development Group (The One) Inc.",
+   "subject": "Building Permits;Economic Development",
+   "method": "Phone calls"
+  },
+  {
+   "date": "2023-07-12",
+   "lobbyist": "Dan Kwak",
+   "organization": "Tenblock",
+   "client": null,
+   "subject": "Planning and Development;Combined Application",
+   "method": "Meetings"
+  },
+  {
+   "date": "2023-07-12",
+   "lobbyist": "Stephen Job",
+   "organization": "Tenblock",
+   "client": null,
+   "subject": "Planning and Development;Combined Application",
+   "method": "Meetings"
+  },
+  {
+   "date": "2023-07-11",
+   "lobbyist": "Aidan Grove-White",
+   "organization": "StrategyCorp",
+   "client": "Mizrahi Development Group (The One) Inc.",
+   "subject": "Building Permits;Economic Development",
+   "method": "Phone calls"
+  },
+  {
+   "date": "2023-07-11",
+   "lobbyist": "Stephen Job",
+   "organization": "Tenblock",
+   "client": null,
+   "subject": "Planning and Development;Combined Application",
+   "method": "Phone calls"
+  },
+  {
+   "date": "2023-07-10",
+   "lobbyist": "Aidan Grove-White",
+   "organization": "StrategyCorp",
+   "client": "Kensington Market Community Land Trust",
+   "subject": "Affordable Housing;Grants / Funding",
+   "method": "Phone calls"
+  },
+  {
+   "date": "2023-07-10",
+   "lobbyist": "Aidan Grove-White",
+   "organization": "StrategyCorp",
+   "client": "Mizrahi Development Group (The One) Inc.",
+   "subject": "Building Permits;Economic Development",
+   "method": "Phone calls"
+  },
+  {
+   "date": "2023-07-05",
+   "lobbyist": "John Bitove",
+   "organization": "Bird Canada",
+   "client": null,
+   "subject": "By-law / Regulation;Transportation - Cycling / Bicycle Lanes;Transportation - Roads / Bridges",
+   "method": "Emails"
+  },
+  {
+   "date": "2023-06-27",
+   "lobbyist": "Jordon Daniels",
+   "organization": "StrategyCorp Inc.",
+   "client": "Mizrahi Development Group (The One) Inc.",
+   "subject": "Building Permits;Economic Development",
+   "method": "Emails"
+  },
+  {
+   "date": "2023-06-27",
+   "lobbyist": "Aidan Grove-White",
+   "organization": "StrategyCorp",
+   "client": "Mizrahi Development Group (The One) Inc.",
+   "subject": "Building Permits;Economic Development",
+   "method": "Emails"
+  },
+  {
+   "date": "2023-06-27",
+   "lobbyist": "Dan Kwak",
+   "organization": "Tenblock",
+   "client": null,
+   "subject": "Planning and Development;Combined Application",
+   "method": "Emails"
+  },
+  {
+   "date": "2023-06-27",
+   "lobbyist": "Stephen Job",
+   "organization": "Tenblock",
+   "client": null,
+   "subject": "Planning and Development;Combined Application",
+   "method": "Emails"
+  },
+  {
+   "date": "2023-06-26",
+   "lobbyist": "Dan Kwak",
+   "organization": "Tenblock",
+   "client": null,
+   "subject": "Planning and Development;Combined Application",
+   "method": "Emails"
+  },
+  {
+   "date": "2023-06-26",
+   "lobbyist": "Stephen Job",
+   "organization": "Tenblock",
+   "client": null,
+   "subject": "Planning and Development;Combined Application",
+   "method": "Emails"
+  },
+  {
+   "date": "2023-06-22",
+   "lobbyist": "Tristan Downe-Dewdney",
+   "organization": "Downe Dewdney Consulting Services Corporation",
+   "client": "145 St. George Company Partnership",
+   "subject": "Planning and Development, Rental Housing Demolition or Conversion;Planning and Development Application, Zoning By-law",
+   "method": "Meetings"
+  },
+  {
+   "date": "2023-06-22",
+   "lobbyist": "Dan Kwak",
+   "organization": "Tenblock",
+   "client": null,
+   "subject": "Planning and Development;Combined Application",
+   "method": "Meetings"
+  },
+  {
+   "date": "2023-06-22",
+   "lobbyist": "Stephen Job",
+   "organization": "Tenblock",
+   "client": null,
+   "subject": "Planning and Development;Combined Application",
+   "method": "Emails"
+  },
+  {
+   "date": "2023-06-21",
+   "lobbyist": "Tristan Downe-Dewdney",
+   "organization": "Downe Dewdney Consulting Services Corporation",
+   "client": "145 St. George Company Partnership",
+   "subject": "Planning and Development, Rental Housing Demolition or Conversion;Planning and Development Application, Zoning By-law",
+   "method": "Phone calls"
+  },
+  {
+   "date": "2023-06-21",
+   "lobbyist": "Aidan Grove-White",
+   "organization": "StrategyCorp",
+   "client": "Mizrahi Development Group (The One) Inc.",
+   "subject": "Building Permits;Economic Development",
+   "method": "Emails"
+  },
+  {
+   "date": "2023-06-21",
+   "lobbyist": "Dan Kwak",
+   "organization": "Tenblock",
+   "client": null,
+   "subject": "Planning and Development;Combined Application",
+   "method": "Emails"
+  },
+  {
+   "date": "2023-06-21",
+   "lobbyist": "Stephen Job",
+   "organization": "Tenblock",
+   "client": null,
+   "subject": "Planning and Development;Combined Application",
+   "method": "Emails"
+  },
+  {
+   "date": "2023-06-20",
+   "lobbyist": "Peter Jakovcic",
+   "organization": "Tribute Communities",
+   "client": null,
+   "subject": "Building Permits;Planning and Development",
+   "method": "Written"
+  },
+  {
+   "date": "2023-06-20",
+   "lobbyist": "Dan Kwak",
+   "organization": "Tenblock",
+   "client": null,
+   "subject": "Planning and Development;Combined Application",
+   "method": "Phone calls"
+  },
+  {
+   "date": "2023-06-20",
+   "lobbyist": "Stephen Job",
+   "organization": "Tenblock",
+   "client": null,
+   "subject": "Planning and Development;Combined Application",
+   "method": "Phone calls"
+  },
+  {
+   "date": "2023-06-19",
+   "lobbyist": "Aidan Grove-White",
+   "organization": "StrategyCorp",
+   "client": "Mizrahi Development Group (The One) Inc.",
+   "subject": "Building Permits;Economic Development",
+   "method": "Emails"
+  },
+  {
+   "date": "2023-06-16",
+   "lobbyist": "Aidan Grove-White",
+   "organization": "StrategyCorp",
+   "client": "Mizrahi Development Group (The One) Inc.",
+   "subject": "Planning and Development Application, Zoning By-law;Planning and Development Application, Consent to Sever",
+   "method": "Emails"
+  },
+  {
+   "date": "2023-06-16",
+   "lobbyist": "Aidan Grove-White",
+   "organization": "StrategyCorp",
+   "client": "Mizrahi Development Group (The One) Inc.",
+   "subject": "Building Permits;Economic Development",
+   "method": "Emails"
+  },
+  {
+   "date": "2023-06-16",
+   "lobbyist": "Stephen Job",
+   "organization": "Tenblock",
+   "client": null,
+   "subject": "Environment;Grants / Funding;Planning and Development",
+   "method": "Emails"
+  },
+  {
+   "date": "2023-06-15",
+   "lobbyist": "Moaz Ahmad",
+   "organization": "Scooty Mobility Inc.",
+   "client": null,
+   "subject": "Transit / TTC;Transportation - Cycling / Bicycle Lanes;Transportation - Metrolinx",
+   "method": "Emails"
+  },
+  {
+   "date": "2023-06-15",
+   "lobbyist": "Shoaib Ahmed",
+   "organization": "Scooty Mobility Inc.",
+   "client": null,
+   "subject": "Transit / TTC;Transportation - Cycling / Bicycle Lanes;Transportation - Metrolinx",
+   "method": "Emails"
+  },
+  {
+   "date": "2023-06-15",
+   "lobbyist": "Stephen Job",
+   "organization": "Tenblock",
+   "client": null,
+   "subject": "Planning and Development;Combined Application",
+   "method": "Emails"
+  },
+  {
+   "date": "2023-06-12",
+   "lobbyist": "Tahereh Granpayehvaghei",
+   "organization": "StrategyCorp Inc.",
+   "client": "Mizrahi Development Group (The One) Inc.",
+   "subject": "Planning and Development Application, Zoning By-law;Planning and Development Application, Consent to Sever",
+   "method": "Meetings"
+  },
+  {
+   "date": "2023-06-12",
+   "lobbyist": "Tahereh Granpayehvaghei",
+   "organization": "StrategyCorp Inc.",
+   "client": "Mizrahi Development Group (The One) Inc.",
+   "subject": "Building Permits;Economic Development",
+   "method": "Meetings"
+  },
+  {
+   "date": "2023-06-12",
+   "lobbyist": "Jordon Daniels",
+   "organization": "StrategyCorp Inc.",
+   "client": "Mizrahi Development Group (The One) Inc.",
+   "subject": "Building Permits;Economic Development",
+   "method": "Meetings"
+  },
+  {
+   "date": "2023-06-12",
+   "lobbyist": "Aidan Grove-White",
+   "organization": "StrategyCorp",
+   "client": "Mizrahi Development Group (The One) Inc.",
+   "subject": "Planning and Development Application, Zoning By-law;Planning and Development Application, Consent to Sever",
+   "method": "Other or unreported"
+  },
+  {
+   "date": "2023-06-12",
+   "lobbyist": "Aidan Grove-White",
+   "organization": "StrategyCorp",
+   "client": "Mizrahi Development Group (The One) Inc.",
+   "subject": "Building Permits;Economic Development",
+   "method": "Other or unreported"
+  },
+  {
+   "date": "2023-06-12",
+   "lobbyist": "Dan Kwak",
+   "organization": "Tenblock",
+   "client": null,
+   "subject": "Planning and Development;Combined Application",
+   "method": "Meetings"
+  },
+  {
+   "date": "2023-06-12",
+   "lobbyist": "Stephen Job",
+   "organization": "Tenblock",
+   "client": null,
+   "subject": "Planning and Development;Combined Application",
+   "method": "Meetings"
+  },
+  {
+   "date": "2023-06-09",
+   "lobbyist": "Aidan Grove-White",
+   "organization": "StrategyCorp",
+   "client": "Kensington Market Community Land Trust",
+   "subject": "Affordable Housing;Grants / Funding",
+   "method": "Emails"
+  },
+  {
+   "date": "2023-06-09",
+   "lobbyist": "Aidan Grove-White",
+   "organization": "StrategyCorp",
+   "client": "Mizrahi Development Group (The One) Inc.",
+   "subject": "Building Permits;Economic Development",
+   "method": "Emails"
+  },
+  {
+   "date": "2023-06-08",
+   "lobbyist": "Aidan Grove-White",
+   "organization": "StrategyCorp",
+   "client": "Mizrahi Development Group (The One) Inc.",
+   "subject": "Planning and Development Application, Zoning By-law;Planning and Development Application, Consent to Sever",
+   "method": "Emails"
+  },
+  {
+   "date": "2023-06-08",
+   "lobbyist": "Dan Kwak",
+   "organization": "Tenblock",
+   "client": null,
+   "subject": "Planning and Development;Combined Application",
+   "method": "Emails"
+  },
+  {
+   "date": "2023-06-08",
+   "lobbyist": "Stephen Job",
+   "organization": "Tenblock",
+   "client": null,
+   "subject": "Planning and Development;Combined Application",
+   "method": "Emails"
+  },
+  {
+   "date": "2023-06-07",
+   "lobbyist": "Peter Jakovcic",
+   "organization": "Tribute Communities",
+   "client": null,
+   "subject": "Building Permits;Planning and Development",
+   "method": "Meetings"
+  },
+  {
+   "date": "2023-06-07",
+   "lobbyist": "Stephen Job",
+   "organization": "Tenblock",
+   "client": null,
+   "subject": "Planning and Development;Combined Application",
+   "method": "Phone calls"
+  },
+  {
+   "date": "2023-06-06",
+   "lobbyist": "Stephen Job",
+   "organization": "Tenblock",
+   "client": null,
+   "subject": "Planning and Development;Combined Application",
+   "method": "Phone calls"
+  },
+  {
+   "date": "2023-06-01",
+   "lobbyist": "Aidan Grove-White",
+   "organization": "StrategyCorp",
+   "client": "First Capital Realty Inc.",
+   "subject": "Planning and Development Application, Zoning By-law;Planning and Development Application, Plan of Subdivision;Planning and Development Application, Site Plan",
+   "method": "Phone calls"
+  },
+  {
+   "date": "2023-06-01",
+   "lobbyist": "Aidan Grove-White",
+   "organization": "StrategyCorp",
+   "client": "Kensington Market Community Land Trust",
+   "subject": "Affordable Housing;Grants / Funding",
+   "method": "Phone calls"
+  },
+  {
+   "date": "2023-05-31",
+   "lobbyist": "MICHAEL FORIAN-ZYTYNSKY",
+   "organization": "Keurig Dr. Pepper Canada",
+   "client": null,
+   "subject": "Garbage / Recycling",
+   "method": "Written"
+  },
+  {
+   "date": "2023-05-31",
+   "lobbyist": "Stephen Job",
+   "organization": "Tenblock",
+   "client": null,
+   "subject": "Planning and Development;Combined Application",
+   "method": "Meetings"
+  },
+  {
+   "date": "2023-05-31",
+   "lobbyist": "Anna Milner",
+   "organization": "Passive House Canada",
+   "client": null,
+   "subject": "Planning and Development;Planning and Development, Planning Policy / Study;Tower Renewal",
+   "method": "Meetings"
+  },
+  {
+   "date": "2023-05-31",
+   "lobbyist": "Isaac Ransom",
+   "organization": "Neuron Mobility (Canada) Limited",
+   "client": null,
+   "subject": "Exhibition Place;Toronto Zoo;Transportation",
+   "method": "Written"
+  },
+  {
+   "date": "2023-05-30",
+   "lobbyist": "Aidan Grove-White",
+   "organization": "StrategyCorp",
+   "client": "First Capital Realty Inc.",
+   "subject": "Planning and Development Application, Zoning By-law;Planning and Development Application, Plan of Subdivision;Planning and Development Application, Site Plan",
+   "method": "Phone calls"
+  },
+  {
+   "date": "2023-05-30",
+   "lobbyist": "Aidan Grove-White",
+   "organization": "StrategyCorp",
+   "client": "Kensington Market Community Land Trust",
+   "subject": "Affordable Housing;Grants / Funding",
+   "method": "Phone calls"
+  },
+  {
+   "date": "2023-05-30",
+   "lobbyist": "Aidan Grove-White",
+   "organization": "StrategyCorp",
+   "client": "Mizrahi Development Group (The One) Inc.",
+   "subject": "Planning and Development Application, Zoning By-law;Planning and Development Application, Consent to Sever",
+   "method": "Phone calls"
+  },
+  {
+   "date": "2023-05-30",
+   "lobbyist": "Aidan Grove-White",
+   "organization": "StrategyCorp",
+   "client": "Mizrahi Development Group (The One) Inc.",
+   "subject": "Building Permits;Economic Development",
+   "method": "Phone calls"
+  },
+  {
+   "date": "2023-05-30",
+   "lobbyist": "Stephen Job",
+   "organization": "Tenblock",
+   "client": null,
+   "subject": "Planning and Development;Combined Application",
+   "method": "Emails"
+  },
+  {
+   "date": "2023-05-29",
+   "lobbyist": "Peter Jakovcic",
+   "organization": "Tribute Communities",
+   "client": null,
+   "subject": "Building Permits;Planning and Development",
+   "method": "Emails"
+  },
+  {
+   "date": "2023-05-26",
+   "lobbyist": "Stephen Job",
+   "organization": "Tenblock",
+   "client": null,
+   "subject": "Planning and Development;Combined Application",
+   "method": "Emails"
+  },
+  {
+   "date": "2023-05-24",
+   "lobbyist": "Stephen Job",
+   "organization": "Tenblock",
+   "client": null,
+   "subject": "Planning and Development;Combined Application",
+   "method": "Emails"
+  },
+  {
+   "date": "2023-05-23",
+   "lobbyist": "Stephen Job",
+   "organization": "Tenblock",
+   "client": null,
+   "subject": "Planning and Development;Combined Application",
+   "method": "Emails"
+  },
+  {
+   "date": "2023-05-19",
+   "lobbyist": "Stephen Job",
+   "organization": "Tenblock",
+   "client": null,
+   "subject": "Planning and Development;Combined Application",
+   "method": "Emails"
+  },
+  {
+   "date": "2023-05-17",
+   "lobbyist": "Stephen Job",
+   "organization": "Tenblock",
+   "client": null,
+   "subject": "Planning and Development;Combined Application",
+   "method": "Emails"
+  },
+  {
+   "date": "2023-05-16",
+   "lobbyist": "Paul Godfrey",
+   "organization": "Arenjay Developments Ltd.",
+   "client": "Diamante Development Corporation",
+   "subject": "Planning and Development;Planning and Development Application, Zoning By-law",
+   "method": "Meetings"
+  },
+  {
+   "date": "2023-05-16",
+   "lobbyist": "Dan Kwak",
+   "organization": "Tenblock",
+   "client": null,
+   "subject": "Planning and Development;Combined Application",
+   "method": "Meetings"
+  },
+  {
+   "date": "2023-05-16",
+   "lobbyist": "Stephen Job",
+   "organization": "Tenblock",
+   "client": null,
+   "subject": "Planning and Development;Combined Application",
+   "method": "Meetings"
+  },
+  {
+   "date": "2023-05-15",
+   "lobbyist": "Jordon Daniels",
+   "organization": "StrategyCorp Inc.",
+   "client": "Mizrahi Development Group (The One) Inc.",
+   "subject": "Building Permits;Economic Development",
+   "method": "Emails"
+  },
+  {
+   "date": "2023-05-15",
+   "lobbyist": "Stephen Job",
+   "organization": "Tenblock",
+   "client": null,
+   "subject": "Planning and Development;Combined Application",
+   "method": "Emails"
+  },
+  {
+   "date": "2023-05-12",
+   "lobbyist": "Aidan Grove-White",
+   "organization": "StrategyCorp",
+   "client": "Mizrahi Development Group (The One) Inc.",
+   "subject": "Building Permits;Economic Development",
+   "method": "Emails"
+  },
+  {
+   "date": "2023-05-11",
+   "lobbyist": "Aleem Kanji",
+   "organization": "AleemKanji.com",
+   "client": "CUPE Local 79",
+   "subject": "Long-term Care;Public Health;Water",
+   "method": "Phone calls"
+  },
+  {
+   "date": "2023-05-09",
+   "lobbyist": "John Bitove",
+   "organization": "Bird Canada",
+   "client": null,
+   "subject": "By-law / Regulation;Transportation - Cycling / Bicycle Lanes;Transportation - Roads / Bridges",
+   "method": "Meetings"
+  },
+  {
+   "date": "2023-05-09",
+   "lobbyist": "Mark Chemij",
+   "organization": "TAS",
+   "client": null,
+   "subject": "Planning and Development, Heritage;Planning and Development Application, Zoning By-law;Planning and Development Application, Site Plan",
+   "method": "Meetings"
+  },
+  {
+   "date": "2023-05-09",
+   "lobbyist": "Mazyar Mortazavi",
+   "organization": "TAS",
+   "client": null,
+   "subject": "Planning and Development, Heritage;Planning and Development Application, Zoning By-law;Planning and Development Application, Site Plan",
+   "method": "Meetings"
+  },
+  {
+   "date": "2023-05-08",
+   "lobbyist": "Jake Brockman",
+   "organization": "Uber Canada, Inc.",
+   "client": null,
+   "subject": "By-law / Regulation;Economic Development;Licences / Licensing",
+   "method": "Phone calls"
+  },
+  {
+   "date": "2023-05-08",
+   "lobbyist": "Stephen Job",
+   "organization": "Tenblock",
+   "client": null,
+   "subject": "Planning and Development;Combined Application",
+   "method": "Phone calls"
+  },
+  {
+   "date": "2023-05-05",
+   "lobbyist": "Jake Brockman",
+   "organization": "Uber Canada, Inc.",
+   "client": null,
+   "subject": "By-law / Regulation;Economic Development;Licences / Licensing",
+   "method": "Emails"
+  },
+  {
+   "date": "2023-05-04",
+   "lobbyist": "Aidan Grove-White",
+   "organization": "StrategyCorp",
+   "client": "First Capital Realty Inc.",
+   "subject": "Planning and Development Application, Zoning By-law;Planning and Development Application, Plan of Subdivision;Planning and Development Application, Site Plan",
+   "method": "Other or unreported"
+  },
+  {
+   "date": "2023-05-04",
+   "lobbyist": "Fraser Macdonald",
+   "organization": "StrategyCorp Inc.",
+   "client": "First Capital Realty Inc.",
+   "subject": "Planning and Development Application, Zoning By-law;Planning and Development Application, Plan of Subdivision;Planning and Development Application, Site Plan",
+   "method": "Other or unreported"
+  },
+  {
+   "date": "2023-05-04",
+   "lobbyist": "Madeleine Bradshaw",
+   "organization": "First Capital Realty Inc.",
+   "client": null,
+   "subject": "Planning and Development Application, Zoning By-law;Planning and Development Application, Plan of Subdivision;Planning and Development Application, Site Plan",
+   "method": "Meetings"
+  },
+  {
+   "date": "2023-05-04",
+   "lobbyist": "Chris Atkins",
+   "organization": "First Capital Realty Inc.",
+   "client": null,
+   "subject": "Planning and Development Application, Zoning By-law;Planning and Development Application, Plan of Subdivision;Planning and Development Application, Site Plan",
+   "method": "Meetings"
+  },
+  {
+   "date": "2023-05-04",
+   "lobbyist": "Naureen Rizvi",
+   "organization": "Unifor",
+   "client": null,
+   "subject": "By-law / Regulation",
+   "method": "Written"
+  },
+  {
+   "date": "2023-05-04",
+   "lobbyist": "Aleem Kanji",
+   "organization": "AleemKanji.com",
+   "client": "CUPE Local 79",
+   "subject": "Long-term Care;Public Health;Water",
+   "method": "Phone calls"
+  },
+  {
+   "date": "2023-05-04",
+   "lobbyist": "Aidan Grove-White",
+   "organization": "StrategyCorp",
+   "client": "Mizrahi Development Group (The One) Inc.",
+   "subject": "Building Permits;Economic Development",
+   "method": "Emails"
+  },
+  {
+   "date": "2023-05-03",
+   "lobbyist": "Amir Remtulla",
+   "organization": "Amir Remtulla and Associates",
+   "client": "PR Bloor Street LP",
+   "subject": "Planning and Development;Planning and Development Application, Zoning By-law;Planning and Development Application, Site Plan",
+   "method": "Other or unreported"
+  },
+  {
+   "date": "2023-05-03",
+   "lobbyist": "Nigel Lawson",
+   "organization": "Parallax",
+   "client": null,
+   "subject": "Planning and Development Application",
+   "method": "Meetings"
+  },
+  {
+   "date": "2023-05-02",
+   "lobbyist": "Stephen Job",
+   "organization": "Tenblock",
+   "client": null,
+   "subject": "Planning and Development;Combined Application",
+   "method": "Emails"
+  },
+  {
+   "date": "2023-04-27",
+   "lobbyist": "Stephen Job",
+   "organization": "Tenblock",
+   "client": null,
+   "subject": "Planning and Development;Combined Application",
+   "method": "Phone calls"
+  },
+  {
+   "date": "2023-04-26",
+   "lobbyist": "Stephen Job",
+   "organization": "Tenblock",
+   "client": null,
+   "subject": "Planning and Development;Combined Application",
+   "method": "Emails"
+  },
+  {
+   "date": "2023-04-21",
+   "lobbyist": "Stephen Job",
+   "organization": "Tenblock",
+   "client": null,
+   "subject": "Planning and Development;Combined Application",
+   "method": "Emails"
+  },
+  {
+   "date": "2023-04-21",
+   "lobbyist": "Stephen Job",
+   "organization": "Tenblock",
+   "client": null,
+   "subject": "Planning and Development;Combined Application",
+   "method": "Emails"
+  },
+  {
+   "date": "2023-04-20",
+   "lobbyist": "Jordon Daniels",
+   "organization": "StrategyCorp Inc.",
+   "client": "Mizrahi Development Group (The One) Inc.",
+   "subject": "Planning and Development Application, Zoning By-law;Planning and Development Application, Consent to Sever",
+   "method": "Emails"
+  },
+  {
+   "date": "2023-04-20",
+   "lobbyist": "Jordon Daniels",
+   "organization": "StrategyCorp Inc.",
+   "client": "Mizrahi Development Group (The One) Inc.",
+   "subject": "Building Permits;Economic Development",
+   "method": "Emails"
+  },
+  {
+   "date": "2023-04-19",
+   "lobbyist": "Jake Brockman",
+   "organization": "Uber Canada, Inc.",
+   "client": null,
+   "subject": "By-law / Regulation;Economic Development;Licences / Licensing",
+   "method": "Meetings"
+  },
+  {
+   "date": "2023-04-19",
+   "lobbyist": "Aleem Kanji",
+   "organization": "AleemKanji.com",
+   "client": "CUPE Local 79",
+   "subject": "Long-term Care;Public Health;Water",
+   "method": "Phone calls"
+  },
+  {
+   "date": "2023-04-19",
+   "lobbyist": "Aidan Grove-White",
+   "organization": "StrategyCorp",
+   "client": "Mizrahi Development Group (The One) Inc.",
+   "subject": "Building Permits;Economic Development",
+   "method": "Emails"
+  },
+  {
+   "date": "2023-04-18",
+   "lobbyist": "Tahereh Granpayehvaghei",
+   "organization": "StrategyCorp Inc.",
+   "client": "Mizrahi Development Group (The One) Inc.",
+   "subject": "Planning and Development Application, Zoning By-law;Planning and Development Application, Consent to Sever",
+   "method": "Emails"
+  },
+  {
+   "date": "2023-04-18",
+   "lobbyist": "Stephen Job",
+   "organization": "Tenblock",
+   "client": null,
+   "subject": "Planning and Development;Combined Application",
+   "method": "Phone calls"
+  },
+  {
+   "date": "2023-04-15",
+   "lobbyist": "Stephen Job",
+   "organization": "Tenblock",
+   "client": null,
+   "subject": "Planning and Development;Combined Application",
+   "method": "Emails"
+  },
+  {
+   "date": "2023-04-14",
+   "lobbyist": "Stephen Job",
+   "organization": "Tenblock",
+   "client": null,
+   "subject": "Planning and Development;Combined Application",
+   "method": "Phone calls"
+  },
+  {
+   "date": "2023-04-13",
+   "lobbyist": "Aidan Grove-White",
+   "organization": "StrategyCorp",
+   "client": "Mizrahi Development Group (The One) Inc.",
+   "subject": "Building Permits;Economic Development",
+   "method": "Emails"
+  },
+  {
+   "date": "2023-04-12",
+   "lobbyist": "Mike Kasij",
+   "organization": "Sutera Canada Inc.",
+   "client": null,
+   "subject": "Environment;Garbage / Recycling;Hazardous Waste",
+   "method": "Emails"
+  },
+  {
+   "date": "2023-04-12",
+   "lobbyist": "Dina Awad",
+   "organization": "Dentons Canada LLP",
+   "client": "Mizrahi Development Group (The One) Inc.",
+   "subject": "By-law / Regulation",
+   "method": "Meetings"
+  },
+  {
+   "date": "2023-04-12",
+   "lobbyist": "Kristopher Gaier",
+   "organization": "StrategyCorp Inc.",
+   "client": "Therme Group RHTG GmbH",
+   "subject": "Arts / Culture;Attractions / Tourism",
+   "method": "Emails"
+  },
+  {
+   "date": "2023-04-12",
+   "lobbyist": "Stephen Job",
+   "organization": "Tenblock",
+   "client": null,
+   "subject": "Planning and Development;Combined Application",
+   "method": "Phone calls"
+  },
+  {
+   "date": "2023-04-06",
+   "lobbyist": "Tahereh Granpayehvaghei",
+   "organization": "StrategyCorp Inc.",
+   "client": "Mizrahi Development Group (The One) Inc.",
+   "subject": "Planning and Development Application, Zoning By-law;Planning and Development Application, Consent to Sever",
+   "method": "Emails"
+  },
+  {
+   "date": "2023-04-06",
+   "lobbyist": "Tahereh Granpayehvaghei",
+   "organization": "StrategyCorp Inc.",
+   "client": "Mizrahi Development Group (The One) Inc.",
+   "subject": "Building Permits;Economic Development",
+   "method": "Emails"
+  },
+  {
+   "date": "2023-04-06",
+   "lobbyist": "Esteban Yanquelevech",
+   "organization": "Mizrahi Development Group (The One) Inc.",
+   "client": null,
+   "subject": "Building Permits;Planning and Development",
+   "method": "Meetings"
+  },
+  {
+   "date": "2023-04-06",
+   "lobbyist": "Jonny Cracower",
+   "organization": "Mizrahi Development Group (The One) Inc.",
+   "client": null,
+   "subject": "Building Permits;Planning and Development",
+   "method": "Meetings"
+  },
+  {
+   "date": "2023-04-03",
+   "lobbyist": "Alex Chreston",
+   "organization": "Crestview Strategy",
+   "client": "Live Nation Canada, Inc.",
+   "subject": "Arts / Culture;Attractions / Tourism;Economic Development",
+   "method": "Emails"
+  },
+  {
+   "date": "2023-03-31",
+   "lobbyist": "Tristan Downe-Dewdney",
+   "organization": "Downe Dewdney Consulting Services Corporation",
+   "client": "25 St. Mary Developments Inc.",
+   "subject": "Planning and Development, Rental Housing Demolition or Conversion;Planning and Development Application, Zoning By-law",
+   "method": "Emails"
+  },
+  {
+   "date": "2023-03-31",
+   "lobbyist": "Tristan Downe-Dewdney",
+   "organization": "Downe Dewdney Consulting Services Corporation",
+   "client": "145 St. George Company Partnership",
+   "subject": "Planning and Development, Rental Housing Demolition or Conversion;Planning and Development Application, Zoning By-law",
+   "method": "Emails"
+  },
+  {
+   "date": "2023-03-31",
+   "lobbyist": "Aidan Grove-White",
+   "organization": "StrategyCorp",
+   "client": "Mizrahi Development Group (The One) Inc.",
+   "subject": "Building Permits;Economic Development",
+   "method": "Emails"
+  },
+  {
+   "date": "2023-03-30",
+   "lobbyist": "Aleem Kanji",
+   "organization": "AleemKanji.com",
+   "client": "CUPE Local 79",
+   "subject": "Long-term Care;Public Health;Water",
+   "method": "Meetings"
+  },
+  {
+   "date": "2023-03-29",
+   "lobbyist": "Aidan Grove-White",
+   "organization": "StrategyCorp",
+   "client": "Mizrahi Development Group (The One) Inc.",
+   "subject": "Building Permits;Economic Development",
+   "method": "Emails"
+  },
+  {
+   "date": "2023-03-28",
+   "lobbyist": "Aidan Grove-White",
+   "organization": "StrategyCorp",
+   "client": "Hullmark Asset Management",
+   "subject": "Planning and Development Application, Zoning By-law;Planning and Development Application, Site Plan",
+   "method": "Meetings"
+  },
+  {
+   "date": "2023-03-28",
+   "lobbyist": "Charles Arbez",
+   "organization": "Hullmark Developments Ltd.",
+   "client": null,
+   "subject": "Planning and Development Application, Minor Variance;Planning and Development, Combined Application",
+   "method": "Meetings"
+  },
+  {
+   "date": "2023-03-28",
+   "lobbyist": "Jeffrey Hull",
+   "organization": "Hullmark Developments Ltd.",
+   "client": null,
+   "subject": "Planning and Development Application, Minor Variance;Planning and Development, Combined Application",
+   "method": "Meetings"
+  },
+  {
+   "date": "2023-03-28",
+   "lobbyist": "Ana Salvagna",
+   "organization": "StrategyCorp Inc.",
+   "client": "Hullmark Asset Management",
+   "subject": "Planning and Development Application, Zoning By-law;Planning and Development Application, Site Plan",
+   "method": "Meetings"
+  },
+  {
+   "date": "2023-03-28",
+   "lobbyist": "Aidan Grove-White",
+   "organization": "StrategyCorp",
+   "client": "Mizrahi Development Group (The One) Inc.",
+   "subject": "Building Permits;Economic Development",
+   "method": "Emails"
+  },
+  {
+   "date": "2023-03-27",
+   "lobbyist": "Tahereh Granpayehvaghei",
+   "organization": "StrategyCorp Inc.",
+   "client": "Mizrahi Development Group (The One) Inc.",
+   "subject": "Building Permits;Economic Development",
+   "method": "Emails"
+  },
+  {
+   "date": "2023-03-24",
+   "lobbyist": "Peter Jakovcic",
+   "organization": "Tribute Communities",
+   "client": null,
+   "subject": "Planning and Development Application, Zoning By-law;Planning and Development Application, Site Plan",
+   "method": "Emails"
+  },
+  {
+   "date": "2023-03-22",
+   "lobbyist": "Mike Kasij",
+   "organization": "Sutera Canada Inc.",
+   "client": null,
+   "subject": "Environment;Garbage / Recycling;Hazardous Waste",
+   "method": "Emails"
+  },
+  {
+   "date": "2023-03-22",
+   "lobbyist": "Aidan Grove-White",
+   "organization": "StrategyCorp",
+   "client": "Mizrahi Development Group (The One) Inc.",
+   "subject": "Building Permits;Economic Development",
+   "method": "Emails"
+  },
+  {
+   "date": "2023-03-20",
+   "lobbyist": "Mike Kasij",
+   "organization": "Sutera Canada Inc.",
+   "client": null,
+   "subject": "Environment;Garbage / Recycling;Hazardous Waste",
+   "method": "Emails"
+  },
+  {
+   "date": "2023-03-20",
+   "lobbyist": "Aidan Grove-White",
+   "organization": "StrategyCorp",
+   "client": "Mizrahi Development Group (The One) Inc.",
+   "subject": "Building Permits;Economic Development",
+   "method": "Emails"
+  },
+  {
+   "date": "2023-03-15",
+   "lobbyist": "Andrew D Pariser",
+   "organization": "Residential Construction Council of Ontario",
+   "client": null,
+   "subject": "Building Permits;Economic Development;Planning and Development, Planning Policy / Study",
+   "method": "Other or unreported"
+  },
+  {
+   "date": "2023-03-15",
+   "lobbyist": "Aidan Grove-White",
+   "organization": "StrategyCorp",
+   "client": "Mizrahi Development Group (The One) Inc.",
+   "subject": "Building Permits;Economic Development",
+   "method": "Emails"
+  },
+  {
+   "date": "2023-03-14",
+   "lobbyist": "Peter Jakovcic",
+   "organization": "Tribute Communities",
+   "client": null,
+   "subject": "Planning and Development Application, Zoning By-law;Planning and Development Application, Site Plan",
+   "method": "Phone calls"
+  },
+  {
+   "date": "2023-03-14",
+   "lobbyist": "Aidan Grove-White",
+   "organization": "StrategyCorp",
+   "client": "Mizrahi Development Group (The One) Inc.",
+   "subject": "Building Permits;Economic Development",
+   "method": "Emails"
+  },
+  {
+   "date": "2023-03-10",
+   "lobbyist": "Malini Giridhar",
+   "organization": "Enbridge Gas Inc.",
+   "client": null,
+   "subject": "Energy;Environment",
+   "method": "Meetings"
+  },
+  {
+   "date": "2023-03-10",
+   "lobbyist": "Neil MacNeil",
+   "organization": "Enbridge Gas Inc.",
+   "client": null,
+   "subject": "Energy;Environment",
+   "method": "Meetings"
+  },
+  {
+   "date": "2023-03-10",
+   "lobbyist": "Patrick Osland",
+   "organization": "Enbridge Gas Inc.",
+   "client": null,
+   "subject": "Energy;Environment",
+   "method": "Meetings"
+  },
+  {
+   "date": "2023-03-10",
+   "lobbyist": "Tahereh Granpayehvaghei",
+   "organization": "StrategyCorp Inc.",
+   "client": "Mizrahi Development Group (The One) Inc.",
+   "subject": "Building Permits;Economic Development",
+   "method": "Emails"
+  },
+  {
+   "date": "2023-03-09",
+   "lobbyist": "Tahereh Granpayehvaghei",
+   "organization": "StrategyCorp Inc.",
+   "client": "Mizrahi Development Group (The One) Inc.",
+   "subject": "Planning and Development Application, Zoning By-law;Planning and Development Application, Consent to Sever",
+   "method": "Emails"
+  },
+  {
+   "date": "2023-03-09",
+   "lobbyist": "Tahereh Granpayehvaghei",
+   "organization": "StrategyCorp Inc.",
+   "client": "Mizrahi Development Group (The One) Inc.",
+   "subject": "Building Permits;Economic Development",
+   "method": "Emails"
+  },
+  {
+   "date": "2023-03-08",
+   "lobbyist": "Stephen Job",
+   "organization": "Tenblock",
+   "client": null,
+   "subject": "Planning and Development;Combined Application",
+   "method": "Emails"
+  },
+  {
+   "date": "2023-03-07",
+   "lobbyist": "Tristan Downe-Dewdney",
+   "organization": "Sussex Strategy Group",
+   "client": "25 St. Mary Developments Inc.",
+   "subject": "Planning and Development, Rental Housing Demolition or Conversion;Planning and Development Application, Zoning By-law",
+   "method": "Emails"
+  },
+  {
+   "date": "2023-03-06",
+   "lobbyist": "Howard Brown",
+   "organization": "Brown & Cohen Communications and Public Affairs",
+   "client": "Rene DeSantis",
+   "subject": "Arts / Culture;Attractions / Tourism;Signs",
+   "method": "Emails"
+  },
+  {
+   "date": "2023-03-05",
+   "lobbyist": "Stephen Job",
+   "organization": "Tenblock",
+   "client": null,
+   "subject": "Planning and Development;Combined Application",
+   "method": "Meetings"
+  },
+  {
+   "date": "2023-03-02",
+   "lobbyist": "Tahereh Granpayehvaghei",
+   "organization": "StrategyCorp Inc.",
+   "client": "Mizrahi Development Group (The One) Inc.",
+   "subject": "Planning and Development Application, Zoning By-law;Planning and Development Application, Consent to Sever",
+   "method": "Emails"
+  },
+  {
+   "date": "2023-03-02",
+   "lobbyist": "Tahereh Granpayehvaghei",
+   "organization": "StrategyCorp Inc.",
+   "client": "Mizrahi Development Group (The One) Inc.",
+   "subject": "Building Permits;Economic Development",
+   "method": "Emails"
+  },
+  {
+   "date": "2023-03-02",
+   "lobbyist": "Jordon Daniels",
+   "organization": "StrategyCorp Inc.",
+   "client": "Mizrahi Development Group (The One) Inc.",
+   "subject": "Planning and Development Application, Zoning By-law;Planning and Development Application, Consent to Sever",
+   "method": "Emails"
+  },
+  {
+   "date": "2023-03-02",
+   "lobbyist": "Jordon Daniels",
+   "organization": "StrategyCorp Inc.",
+   "client": "Mizrahi Development Group (The One) Inc.",
+   "subject": "Building Permits;Economic Development",
+   "method": "Emails"
+  },
+  {
+   "date": "2023-03-02",
+   "lobbyist": "Aidan Grove-White",
+   "organization": "StrategyCorp",
+   "client": "Mizrahi Development Group (The One) Inc.",
+   "subject": "Planning and Development Application, Zoning By-law;Planning and Development Application, Consent to Sever",
+   "method": "Emails"
+  },
+  {
+   "date": "2023-03-02",
+   "lobbyist": "Aidan Grove-White",
+   "organization": "StrategyCorp",
+   "client": "Mizrahi Development Group (The One) Inc.",
+   "subject": "Building Permits;Economic Development",
+   "method": "Emails"
+  },
+  {
+   "date": "2023-03-01",
+   "lobbyist": "Aleem Kanji",
+   "organization": "AleemKanji.com",
+   "client": "Toronto Civic Employees Union - CUPE Local 416",
+   "subject": "Affordable Housing;Toronto Parking Authority;Transportation",
+   "method": "Meetings"
+  },
+  {
+   "date": "2023-03-01",
+   "lobbyist": "Tahereh Granpayehvaghei",
+   "organization": "StrategyCorp Inc.",
+   "client": "Mizrahi Development Group (The One) Inc.",
+   "subject": "Planning and Development Application, Zoning By-law;Planning and Development Application, Consent to Sever",
+   "method": "Emails"
+  },
+  {
+   "date": "2023-03-01",
+   "lobbyist": "Tahereh Granpayehvaghei",
+   "organization": "StrategyCorp Inc.",
+   "client": "Mizrahi Development Group (The One) Inc.",
+   "subject": "Building Permits;Economic Development",
+   "method": "Emails"
+  },
+  {
+   "date": "2023-02-24",
+   "lobbyist": "Mary Ellen Bench",
+   "organization": "Dentons",
+   "client": "Mizrahi Development Group (The One) Inc.",
+   "subject": "By-law / Regulation;Licences / Licensing;Planning and Development",
+   "method": "Meetings"
+  },
+  {
+   "date": "2023-02-24",
+   "lobbyist": "Tahereh Granpayehvaghei",
+   "organization": "StrategyCorp Inc.",
+   "client": "Mizrahi Development Group (The One) Inc.",
+   "subject": "Planning and Development Application, Zoning By-law;Planning and Development Application, Consent to Sever",
+   "method": "Other or unreported"
+  },
+  {
+   "date": "2023-02-24",
+   "lobbyist": "Tahereh Granpayehvaghei",
+   "organization": "StrategyCorp Inc.",
+   "client": "Mizrahi Development Group (The One) Inc.",
+   "subject": "Building Permits;Economic Development",
+   "method": "Other or unreported"
+  },
+  {
+   "date": "2023-02-24",
+   "lobbyist": "Aidan Grove-White",
+   "organization": "StrategyCorp",
+   "client": "Mizrahi Development Group (The One) Inc.",
+   "subject": "Planning and Development Application, Zoning By-law;Planning and Development Application, Consent to Sever",
+   "method": "Emails"
+  },
+  {
+   "date": "2023-02-24",
+   "lobbyist": "Aidan Grove-White",
+   "organization": "StrategyCorp",
+   "client": "Mizrahi Development Group (The One) Inc.",
+   "subject": "Building Permits;Economic Development",
+   "method": "Emails"
+  },
+  {
+   "date": "2023-02-24",
+   "lobbyist": "Sam Mizrahi",
+   "organization": "Mizrahi Development Group (The One) Inc.",
+   "client": null,
+   "subject": "Building Permits;Planning and Development",
+   "method": "Meetings"
+  },
+  {
+   "date": "2023-02-24",
+   "lobbyist": "Esteban Yanquelevech",
+   "organization": "Mizrahi Development Group (The One) Inc.",
+   "client": null,
+   "subject": "Building Permits;Planning and Development",
+   "method": "Meetings"
+  },
+  {
+   "date": "2023-02-24",
+   "lobbyist": "Jonny Cracower",
+   "organization": "Mizrahi Development Group (The One) Inc.",
+   "client": null,
+   "subject": "Building Permits;Planning and Development",
+   "method": "Meetings"
+  },
+  {
+   "date": "2023-02-16",
+   "lobbyist": "Aidan Grove-White",
+   "organization": "StrategyCorp",
+   "client": "Mizrahi Development Group (The One) Inc.",
+   "subject": "Building Permits;Economic Development",
+   "method": "Meetings"
+  },
+  {
+   "date": "2023-02-15",
+   "lobbyist": "Shaun Mckaigue",
+   "organization": "Fer-Pal Construction Ltd.",
+   "client": null,
+   "subject": "Water",
+   "method": "Emails"
+  },
+  {
+   "date": "2023-02-10",
+   "lobbyist": "Jeremy D Beamer",
+   "organization": "GTA Strategies",
+   "client": "Poppy Health Canada, Inc.",
+   "subject": "Health & Safety;Public Health;Covid19 Pandemic",
+   "method": "Emails"
+  },
+  {
+   "date": "2023-02-10",
+   "lobbyist": "Ana Salvagna",
+   "organization": "StrategyCorp Inc.",
+   "client": "Hullmark Asset Management",
+   "subject": "Planning and Development Application, Zoning By-law;Planning and Development Application, Site Plan;Transportation - Metrolinx",
+   "method": "Emails"
+  },
+  {
+   "date": "2023-02-08",
+   "lobbyist": "Peter Jakovcic",
+   "organization": "Tribute Communities",
+   "client": null,
+   "subject": "Building Permits;Planning and Development",
+   "method": "Emails"
+  },
+  {
+   "date": "2023-02-07",
+   "lobbyist": "Kim Wright",
+   "organization": "Wright Strategies",
+   "client": "Youth Without Shelter",
+   "subject": "Affordable Housing;Shelters;Restart and rebuild related to Covid19 pandemic",
+   "method": "Meetings"
+  },
+  {
+   "date": "2023-02-07",
+   "lobbyist": "Peter Jakovcic",
+   "organization": "Tribute Communities",
+   "client": null,
+   "subject": "Building Permits;Planning and Development",
+   "method": "Phone calls"
+  },
+  {
+   "date": "2023-02-07",
+   "lobbyist": "Steve Deveaux",
+   "organization": "Tribute Communities",
+   "client": null,
+   "subject": "Building Permits;Planning and Development",
+   "method": "Phone calls"
+  },
+  {
+   "date": "2023-02-06",
+   "lobbyist": "Peter Jakovcic",
+   "organization": "Tribute Communities",
+   "client": null,
+   "subject": "Building Permits;Planning and Development",
+   "method": "Meetings"
+  },
+  {
+   "date": "2023-02-06",
+   "lobbyist": "Steve Deveaux",
+   "organization": "Tribute Communities",
+   "client": null,
+   "subject": "Building Permits;Planning and Development",
+   "method": "Meetings"
+  },
+  {
+   "date": "2023-02-06",
+   "lobbyist": "Kathleen Freeman",
+   "organization": "Canadian Tire Corporation, Limited",
+   "client": null,
+   "subject": "Planning and Development Application, Official Plan;Planning and Development Application, Zoning By-law;Planning and Development Application, Plan of Subdivision",
+   "method": "Emails"
+  },
+  {
+   "date": "2023-02-05",
+   "lobbyist": "Tahereh Granpayehvaghei",
+   "organization": "StrategyCorp Inc.",
+   "client": "Mizrahi Development Group (The One) Inc.",
+   "subject": "Building Permits;Economic Development",
+   "method": "Other or unreported"
+  },
+  {
+   "date": "2023-02-05",
+   "lobbyist": "Aidan Grove-White",
+   "organization": "StrategyCorp",
+   "client": "Mizrahi Development Group (The One) Inc.",
+   "subject": "Building Permits;Economic Development",
+   "method": "Other or unreported"
+  },
+  {
+   "date": "2023-02-02",
+   "lobbyist": "Peter Jakovcic",
+   "organization": "Tribute Communities",
+   "client": null,
+   "subject": "Building Permits;Planning and Development",
+   "method": "Phone calls"
+  },
+  {
+   "date": "2023-02-02",
+   "lobbyist": "Jeremy D Beamer",
+   "organization": "GTA Strategies",
+   "client": "Poppy Health Canada, Inc.",
+   "subject": "Health & Safety;Public Health;Covid19 Pandemic",
+   "method": "Emails"
+  },
+  {
+   "date": "2023-01-31",
+   "lobbyist": "Kristopher Gaier",
+   "organization": "StrategyCorp Inc.",
+   "client": "Therme Group RHTG GmbH",
+   "subject": "Arts / Culture;Attractions / Tourism",
+   "method": "Emails"
+  },
+  {
+   "date": "2023-01-27",
+   "lobbyist": "Peter Jakovcic",
+   "organization": "Tribute Communities",
+   "client": null,
+   "subject": "Building Permits;Planning and Development",
+   "method": "Meetings"
+  },
+  {
+   "date": "2023-01-27",
+   "lobbyist": "Steve Deveaux",
+   "organization": "Tribute Communities",
+   "client": null,
+   "subject": "Building Permits;Planning and Development",
+   "method": "Meetings"
+  },
+  {
+   "date": "2023-01-27",
+   "lobbyist": "Andrew Pruss",
+   "organization": "ERA Architects",
+   "client": "ASG Equities",
+   "subject": "Planning and Development;Planning and Development, Heritage",
+   "method": "Meetings"
+  },
+  {
+   "date": "2023-01-25",
+   "lobbyist": "Paul Godfrey",
+   "organization": "Arenjay Developments Ltd.",
+   "client": "Diamante Development Corporation",
+   "subject": "Planning and Development;Planning and Development Application, Zoning By-law",
+   "method": "Meetings"
+  },
+  {
+   "date": "2023-01-23",
+   "lobbyist": "Ana Salvagna",
+   "organization": "StrategyCorp Inc.",
+   "client": "Hullmark Asset Management",
+   "subject": "Planning and Development Application, Zoning By-law;Planning and Development Application, Site Plan",
+   "method": "Emails"
+  },
+  {
+   "date": "2023-01-20",
+   "lobbyist": "May Luong",
+   "organization": "May Luong",
+   "client": "Cheong Family Holdings Ltd.",
+   "subject": "Planning and Development Application;Planning and Development Application, Official Plan;Planning and Development, Combined Application",
+   "method": "Meetings"
+  },
+  {
+   "date": "2023-01-20",
+   "lobbyist": "Jeff Leung",
+   "organization": "Loyalto Corporation",
+   "client": "Cheong Family Holdings Ltd.",
+   "subject": "Planning and Development Application;Planning and Development Application, Zoning By-law;Planning and Development Application, Site Plan",
+   "method": "Meetings"
+  },
+  {
+   "date": "2023-01-17",
+   "lobbyist": "Stephen Job",
+   "organization": "Tenblock",
+   "client": null,
+   "subject": "Planning and Development;Combined Application",
+   "method": "Emails"
+  },
+  {
+   "date": "2023-01-16",
+   "lobbyist": "Leslie M Klein",
+   "organization": "BDP Quadrangle",
+   "client": "Cartareal Corporation N.V.",
+   "subject": "Planning and Development Application;Zoning By-law",
+   "method": "Other or unreported"
+  },
+  {
+   "date": "2023-01-16",
+   "lobbyist": "Mary L Flynn-Guglietti",
+   "organization": "McMillan LLP",
+   "client": "Cartareal Corporation NV",
+   "subject": "Planning and Development;Planning and Development, Heritage;Planning and Development Application, Zoning By-law",
+   "method": "Meetings"
+  },
+  {
+   "date": "2023-01-13",
+   "lobbyist": "Stephen Job",
+   "organization": "Tenblock",
+   "client": null,
+   "subject": "Planning and Development;Combined Application",
+   "method": "Emails"
+  },
+  {
+   "date": "2023-01-09",
+   "lobbyist": "Stephen Job",
+   "organization": "Tenblock",
+   "client": null,
+   "subject": "Planning and Development;Combined Application",
+   "method": "Emails"
+  },
+  {
+   "date": "2023-01-04",
+   "lobbyist": "Amina Dibe",
+   "organization": "Residential Construction Council of Ontario",
+   "client": null,
+   "subject": "Affordable Housing",
+   "method": "Emails"
+  },
+  {
+   "date": "2023-01-04",
+   "lobbyist": "Aidan Grove-White",
+   "organization": "StrategyCorp",
+   "client": "Mizrahi Development Group (The One) Inc.",
+   "subject": "Planning and Development Application, Zoning By-law;Planning and Development Application, Consent to Sever",
+   "method": "Emails"
+  },
+  {
+   "date": "2023-01-04",
+   "lobbyist": "Peter Milczyn",
+   "organization": "PM Strategies Inc",
+   "client": "SoFra Federation Inc.",
+   "subject": "By-law / Regulation;Licences / Licensing;Planning and Development",
+   "method": "Emails"
+  },
+  {
+   "date": "2022-12-30",
+   "lobbyist": "Stephen Job",
+   "organization": "Tenblock",
+   "client": null,
+   "subject": "Planning and Development;Combined Application",
+   "method": "Emails"
+  },
+  {
+   "date": "2022-12-23",
+   "lobbyist": "Jeremy D Beamer",
+   "organization": "GTA Strategies",
+   "client": "MDM Contracting",
+   "subject": "City infrastructure - Emergency planning and/or restoration;Real Estate / Property (City-owned)",
+   "method": "Emails"
+  },
+  {
+   "date": "2022-12-23",
+   "lobbyist": "Jeremy D Beamer",
+   "organization": "GTA Strategies",
+   "client": "Poppy Health Canada, Inc.",
+   "subject": "Health & Safety;Public Health;Covid19 Pandemic",
+   "method": "Emails"
+  },
+  {
+   "date": "2022-12-21",
+   "lobbyist": "Stephen Job",
+   "organization": "Tenblock",
+   "client": null,
+   "subject": "Planning and Development;Combined Application",
+   "method": "Emails"
+  },
+  {
+   "date": "2022-12-20",
+   "lobbyist": "Stephen Job",
+   "organization": "Tenblock",
+   "client": null,
+   "subject": "Planning and Development;Combined Application",
+   "method": "Phone calls"
+  },
+  {
+   "date": "2022-12-19",
+   "lobbyist": "Stephen Job",
+   "organization": "Tenblock",
+   "client": null,
+   "subject": "Planning and Development;Combined Application",
+   "method": "Emails"
+  },
+  {
+   "date": "2022-12-17",
+   "lobbyist": "Stephen Job",
+   "organization": "Tenblock",
+   "client": null,
+   "subject": "Planning and Development;Combined Application",
+   "method": "Phone calls"
+  },
+  {
+   "date": "2022-12-16",
+   "lobbyist": "Aleem Kanji",
+   "organization": "AleemKanji.com",
+   "client": "Toronto Civic Employees Union - CUPE Local 416",
+   "subject": "Affordable Housing;Toronto Parking Authority;Transportation",
+   "method": "Written"
+  },
+  {
+   "date": "2022-12-15",
+   "lobbyist": "Stephen Job",
+   "organization": "Tenblock",
+   "client": null,
+   "subject": "Planning and Development;Combined Application",
+   "method": "Emails"
+  },
+  {
+   "date": "2022-12-15",
+   "lobbyist": "Aleem Kanji",
+   "organization": "AleemKanji.com",
+   "client": "Toronto Police Association",
+   "subject": "Budget;Health & Safety;Covid19 Pandemic",
+   "method": "Written"
+  },
+  {
+   "date": "2022-12-14",
+   "lobbyist": "Peter Milczyn",
+   "organization": "PM Strategies Inc",
+   "client": "SoFra Federation Inc.",
+   "subject": "By-law / Regulation;Licences / Licensing;Planning and Development",
+   "method": "Phone calls"
+  },
+  {
+   "date": "2022-12-13",
+   "lobbyist": "Isaac Ransom",
+   "organization": "Neuron Mobility (Canada) Limited",
+   "client": null,
+   "subject": "Exhibition Place;Toronto Zoo;Transportation",
+   "method": "Emails"
+  },
+  {
+   "date": "2022-12-12",
+   "lobbyist": "Tristan Downe-Dewdney",
+   "organization": "Sussex Strategy Group",
+   "client": "Delta Property Holdings Inc.",
+   "subject": "Planning and Development;Planning and Development, Planning Policy / Study",
+   "method": "Emails"
+  },
+  {
+   "date": "2022-12-12",
+   "lobbyist": "Stephen Job",
+   "organization": "Tenblock",
+   "client": null,
+   "subject": "Planning and Development;Combined Application",
+   "method": "Phone calls"
+  },
+  {
+   "date": "2022-12-09",
+   "lobbyist": "Stephen Job",
+   "organization": "Tenblock",
+   "client": null,
+   "subject": "Planning and Development;Combined Application",
+   "method": "Phone calls"
+  },
+  {
+   "date": "2022-12-08",
+   "lobbyist": "Tristan Downe-Dewdney",
+   "organization": "Sussex Strategy Group",
+   "client": "Delta Property Holdings Inc.",
+   "subject": "Planning and Development;Planning and Development, Planning Policy / Study",
+   "method": "Emails"
+  },
+  {
+   "date": "2022-12-08",
+   "lobbyist": "Mazyar Mortazavi",
+   "organization": "TAS",
+   "client": null,
+   "subject": "Planning and Development, Heritage;Planning and Development Application, Zoning By-law;Planning and Development Application, Site Plan",
+   "method": "Meetings"
+  },
+  {
+   "date": "2022-12-08",
+   "lobbyist": "Mark Chemij",
+   "organization": "TAS",
+   "client": null,
+   "subject": "Planning and Development, Heritage;Planning and Development Application, Zoning By-law;Planning and Development Application, Site Plan",
+   "method": "Meetings"
+  },
+  {
+   "date": "2022-12-08",
+   "lobbyist": "Kenneth Wilcox",
+   "organization": "TAS",
+   "client": null,
+   "subject": "Planning and Development, Heritage;Planning and Development Application, Zoning By-law;Planning and Development Application, Site Plan",
+   "method": "Meetings"
+  },
+  {
+   "date": "2022-12-08",
+   "lobbyist": "Stephen Job",
+   "organization": "Tenblock",
+   "client": null,
+   "subject": "Planning and Development;Combined Application",
+   "method": "Phone calls"
+  },
+  {
+   "date": "2022-12-07",
+   "lobbyist": "Stephen Job",
+   "organization": "Tenblock",
+   "client": null,
+   "subject": "Planning and Development;Combined Application",
+   "method": "Phone calls"
+  },
+  {
+   "date": "2022-12-06",
+   "lobbyist": "Angela Tsementzis",
+   "organization": "Angela Tsementzis Architect",
+   "client": "Francisca Quinn",
+   "subject": "Planning and Development Application;Planning and Development Application, Minor Variance",
+   "method": "Meetings"
+  },
+  {
+   "date": "2022-12-05",
+   "lobbyist": "Peter Jakovcic",
+   "organization": "Tribute Communities",
+   "client": null,
+   "subject": "Building Permits;Planning and Development",
+   "method": "Emails"
+  },
+  {
+   "date": "2022-11-29",
+   "lobbyist": "Jeff Slater",
+   "organization": "Progressive Nation",
+   "client": null,
+   "subject": "Technology",
+   "method": "Meetings"
+  },
+  {
+   "date": "2022-11-29",
+   "lobbyist": "Allison Speigel",
+   "organization": "Speigel Nichols Fox LLP",
+   "client": "Mappro Realty Inc.",
+   "subject": "Planning and Development, Planning Policy / Study;Planning and Development, Heritage;Transportation",
+   "method": "Phone calls"
+  },
+  {
+   "date": "2022-11-28",
+   "lobbyist": "Allison Speigel",
+   "organization": "Speigel Nichols Fox LLP",
+   "client": "Mappro Realty Inc.",
+   "subject": "Planning and Development, Planning Policy / Study;Planning and Development, Heritage;Transportation",
+   "method": "Emails"
+  },
+  {
+   "date": "2022-11-28",
+   "lobbyist": "Ana Salvagna",
+   "organization": "StrategyCorp Inc.",
+   "client": "Therme Group RHTG AG",
+   "subject": "Arts / Culture;Attractions / Tourism",
+   "method": "Emails"
+  },
+  {
+   "date": "2022-11-25",
+   "lobbyist": "Ana Salvagna",
+   "organization": "StrategyCorp Inc.",
+   "client": "Therme Group RHTG AG",
+   "subject": "Arts / Culture;Attractions / Tourism",
+   "method": "Emails"
+  },
+  {
+   "date": "2022-11-23",
+   "lobbyist": "Michele Erskine",
+   "organization": "OUTEDGE Media Canada LP",
+   "client": null,
+   "subject": "By-law / Regulation;Signs",
+   "method": "Emails"
+  },
+  {
+   "date": "2022-11-17",
+   "lobbyist": "Mark Lawson",
+   "organization": "Therme Group RHTG AG",
+   "client": null,
+   "subject": "Arts / Culture;Attractions / Tourism",
+   "method": "Emails"
+  }
+ ]
+}

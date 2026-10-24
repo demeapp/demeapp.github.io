@@ -1229,6 +1229,11 @@ html.js .entry-shell { min-height: 25.4rem; }
 .lob-year .bar span { display: block; height: 100%; background: var(--bronze); }
 .lob-year b { text-align: right; font-variant-numeric: tabular-nums; }
 .lob-note { font-size: .875rem; color: var(--ink-faint); margin-top: 1rem; max-width: 44rem; }
+/* WS2b: per-communication list inside the lobbying panel — rows reuse
+   the history-rows list styles; the heading takes the panel's h3
+   metrics (same as improvements.css sets for .lob-cols h3). */
+.lob-comms { margin-top: 1.4rem; }
+.lob-comms h3 { margin: 0 0 .5rem; font-size: .98rem; }
 
 /* Outcome filter chips over a member's history */
 .history-chips { display: flex; gap: .5rem; flex-wrap: wrap; align-items: center; margin: 1rem 0 .4rem; }

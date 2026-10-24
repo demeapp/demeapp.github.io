@@ -1,0 +1,219 @@
+{
+ "member": "james-maloney",
+ "source": {
+  "name": "City of Toronto Lobbyist Registry (Open Data)",
+  "url": "https://open.toronto.ca/dataset/lobbyist-registry/"
+ },
+ "snapshot": "2026-10-23",
+ "count": 26,
+ "communications": [
+  {
+   "date": "2014-11-24",
+   "lobbyist": "Robert Fidani",
+   "organization": "North Drive Investments Inc.",
+   "client": null,
+   "subject": "Planning and Development, Rental Housing Demolition or Conversion;Planning and Development Application, Zoning By-law;Planning and Development Application, Site Plan",
+   "method": "Meetings"
+  },
+  {
+   "date": "2014-11-24",
+   "lobbyist": "Jordan Morassutti",
+   "organization": "North Drive Investments Inc.",
+   "client": null,
+   "subject": "Planning and Development, Rental Housing Demolition or Conversion;Planning and Development Application, Zoning By-law;Planning and Development Application, Site Plan",
+   "method": "Meetings"
+  },
+  {
+   "date": "2014-11-24",
+   "lobbyist": "Taylor P Morassutti",
+   "organization": "North Drive Investments Inc.",
+   "client": null,
+   "subject": "Planning and Development, Rental Housing Demolition or Conversion;Planning and Development Application, Zoning By-law;Planning and Development Application, Site Plan",
+   "method": "Meetings"
+  },
+  {
+   "date": "2014-11-21",
+   "lobbyist": "Taylor P Morassutti",
+   "organization": "North Drive Investments Inc.",
+   "client": null,
+   "subject": "Planning and Development, Rental Housing Demolition or Conversion;Planning and Development Application, Zoning By-law;Planning and Development Application, Site Plan",
+   "method": "Emails"
+  },
+  {
+   "date": "2014-11-17",
+   "lobbyist": "Jim Goetz",
+   "organization": "Canadian Beverage Association",
+   "client": null,
+   "subject": "Health & Safety",
+   "method": "Written"
+  },
+  {
+   "date": "2014-10-31",
+   "lobbyist": "Robert Fidani",
+   "organization": "North Drive Investments Inc.",
+   "client": null,
+   "subject": "Planning and Development, Rental Housing Demolition or Conversion;Planning and Development Application, Zoning By-law;Planning and Development Application, Site Plan",
+   "method": "Meetings"
+  },
+  {
+   "date": "2014-10-31",
+   "lobbyist": "Jordan Morassutti",
+   "organization": "North Drive Investments Inc.",
+   "client": null,
+   "subject": "Planning and Development, Rental Housing Demolition or Conversion;Planning and Development Application, Zoning By-law;Planning and Development Application, Site Plan",
+   "method": "Meetings"
+  },
+  {
+   "date": "2014-10-31",
+   "lobbyist": "Taylor P Morassutti",
+   "organization": "North Drive Investments Inc.",
+   "client": null,
+   "subject": "Planning and Development, Rental Housing Demolition or Conversion;Planning and Development Application, Zoning By-law;Planning and Development Application, Site Plan",
+   "method": "Meetings"
+  },
+  {
+   "date": "2014-10-28",
+   "lobbyist": "Taylor P Morassutti",
+   "organization": "North Drive Investments Inc.",
+   "client": null,
+   "subject": "Planning and Development, Rental Housing Demolition or Conversion;Planning and Development Application, Zoning By-law;Planning and Development Application, Site Plan",
+   "method": "Emails"
+  },
+  {
+   "date": "2014-09-24",
+   "lobbyist": "Jordan Morassutti",
+   "organization": "North Drive Investments Inc.",
+   "client": null,
+   "subject": "Planning and Development, Rental Housing Demolition or Conversion;Planning and Development Application, Zoning By-law;Planning and Development Application, Site Plan",
+   "method": "Meetings"
+  },
+  {
+   "date": "2014-09-24",
+   "lobbyist": "Taylor P Morassutti",
+   "organization": "North Drive Investments Inc.",
+   "client": null,
+   "subject": "Planning and Development, Rental Housing Demolition or Conversion;Planning and Development Application, Zoning By-law;Planning and Development Application, Site Plan",
+   "method": "Meetings"
+  },
+  {
+   "date": "2014-08-28",
+   "lobbyist": "Walter G Pastorious",
+   "organization": "Pantera Promotions& Productions",
+   "client": null,
+   "subject": "Transit / TTC",
+   "method": "Emails"
+  },
+  {
+   "date": "2014-08-28",
+   "lobbyist": "Taylor P Morassutti",
+   "organization": "North Drive Investments Inc.",
+   "client": null,
+   "subject": "Planning and Development, Rental Housing Demolition or Conversion;Planning and Development Application, Zoning By-law;Planning and Development Application, Site Plan",
+   "method": "Emails"
+  },
+  {
+   "date": "2014-08-27",
+   "lobbyist": "David Bronskill",
+   "organization": "Goodmans LLP",
+   "client": "North Drive Investments",
+   "subject": "Planning and Development Application, Zoning By-law",
+   "method": "Meetings"
+  },
+  {
+   "date": "2014-08-26",
+   "lobbyist": "Joseph Sciabbarrasi",
+   "organization": "Capital North Commercial Realty Corp., Brokerage",
+   "client": "Teresa Sciabbarrasi",
+   "subject": "Shelters",
+   "method": "Meetings"
+  },
+  {
+   "date": "2014-08-26",
+   "lobbyist": "David Bronskill",
+   "organization": "Goodmans LLP",
+   "client": "North Drive Investments",
+   "subject": "Planning and Development Application, Zoning By-law",
+   "method": "Meetings"
+  },
+  {
+   "date": "2014-08-25",
+   "lobbyist": "Kim Wright",
+   "organization": "Sussex Strategy Group",
+   "client": "Canadian Beverage Association",
+   "subject": "Public Health",
+   "method": "Meetings"
+  },
+  {
+   "date": "2014-08-25",
+   "lobbyist": "Paul A Pellegrini",
+   "organization": "Sussex Strategy Group",
+   "client": "Canadian Beverage Association",
+   "subject": "Public Health",
+   "method": "Meetings"
+  },
+  {
+   "date": "2014-08-25",
+   "lobbyist": "Michael Ruff",
+   "organization": "PepsiCo Beverages Canada",
+   "client": null,
+   "subject": "Health & Safety",
+   "method": "Written"
+  },
+  {
+   "date": "2014-08-25",
+   "lobbyist": "Jim Goetz",
+   "organization": "Canadian Beverage Association",
+   "client": null,
+   "subject": "Health & Safety",
+   "method": "Written"
+  },
+  {
+   "date": "2014-08-20",
+   "lobbyist": "Anne Fitzgerald",
+   "organization": "Cineplex Inc.",
+   "client": null,
+   "subject": "Licences / Licensing",
+   "method": "Emails"
+  },
+  {
+   "date": "2014-08-06",
+   "lobbyist": "Barry A. Horosko",
+   "organization": "Horosko Planning Law",
+   "client": "Remington on the Queensway Inc.",
+   "subject": "Planning Applications: Plan of Subdivision, Site Plan Approval and Variances",
+   "method": "Meetings"
+  },
+  {
+   "date": "2014-08-05",
+   "lobbyist": "Robert Fidani",
+   "organization": "North Drive Investments Inc.",
+   "client": null,
+   "subject": "Planning and Development, Rental Housing Demolition or Conversion;Planning and Development Application, Zoning By-law;Planning and Development Application, Site Plan",
+   "method": "Meetings"
+  },
+  {
+   "date": "2014-08-05",
+   "lobbyist": "Jordan Morassutti",
+   "organization": "North Drive Investments Inc.",
+   "client": null,
+   "subject": "Planning and Development, Rental Housing Demolition or Conversion;Planning and Development Application, Zoning By-law;Planning and Development Application, Site Plan",
+   "method": "Meetings"
+  },
+  {
+   "date": "2014-08-05",
+   "lobbyist": "Taylor P Morassutti",
+   "organization": "North Drive Investments Inc.",
+   "client": null,
+   "subject": "Planning and Development, Rental Housing Demolition or Conversion;Planning and Development Application, Zoning By-law;Planning and Development Application, Site Plan",
+   "method": "Meetings"
+  },
+  {
+   "date": "2014-07-31",
+   "lobbyist": "David A McKay",
+   "organization": "MacNaughton Hermsen Britton Clarkson Planning Limited",
+   "client": "Quaestus Management Corp.",
+   "subject": "Planning and Development, Environmental Assessment;Planning and Development Application, Zoning By-law",
+   "method": "Phone calls"
+  }
+ ]
+}

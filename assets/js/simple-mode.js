@@ -161,8 +161,15 @@ const DemeSimple = (() => {
       "No campaign promises on record for this member.",
     "Lobbyists must file every communication with a member of Council — any contact a registered lobbyist reported naming this member, whether a meeting, a call or an email. It records the lobbyist's activity, not anything the member sought or did, and is never a claim about influence.":
       "Lobbyists must report every time they contact a member of Council. This counts any contact a registered lobbyist reported with this member — a meeting, a call, or an email. It shows what the lobbyist did. It does not show anything the member asked for or did. It is never a claim about influence.",
-    "Counts are communications as filed in the City of Toronto Lobbyist Registry, grouped to the member the filing names — a contact with a member’s staff is not counted here. Registry snapshot: October 8, 2026. Source:":
-      "These counts come from reports filed in the City of Toronto Lobbyist Registry. They are grouped by the member named in the report. A contact with a member's staff is not counted here. Registry snapshot: October 8, 2026. Source:",
+    /* Lobbying note pair RETIRED (WS2b, Oct 23): the note's registry
+       snapshot date is now read from lobbying.json at render time, so
+       the string is built, not static — councillor.js renders it
+       through a simpleOn() branch with the date interpolated
+       identically in both modes (the simple wording there is the one
+       this pair carried). No exact-match pair can carry a data-driven
+       date, and a stale pair here would freeze the old date. */
+    "Communications by year": "Communications in each year",
+    "All communications, as filed": "All contacts, as reported",
     "Gifts and benefits this member disclosed, as published in the Integrity Commissioner's Gift Disclosure Registry. Values are as published.":
       "Gifts and benefits this member reported, as published in the Integrity Commissioner's Gift Disclosure Registry. Values are as published.",
     "Declared interests — the official register": "Declared interests — the official list",

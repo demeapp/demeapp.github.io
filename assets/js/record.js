@@ -19,14 +19,17 @@ renderChrome("my-record.html");
    dependency so the spec's §10 fixtures run against them in Node with
    no DOM (the fixture runner extracts exactly this marked section).
 
-   comparableVote(detail, memberName, memberTerms): the member's value
-   in the first motion whose stage is exactly "City Council" AND in
-   which the member has a usable row (Decision S-1 — a committee vote
-   is a recommendation, never the decision; Phase 2 audit A-2 — every
-   Council-stage motion is consulted, not only the first, so a later
-   motion carrying the member's named vote is never masked by an
-   earlier one that does not). Name match is exact string equality
-   (S-4); an unrecognized value is "none", never coerced. Returns one of:
+   comparableVote(detail, memberName, memberTerms): the member's cast
+   vote in the first Council-stage motion in which they cast one
+   (Decision S-1 — a committee vote is a recommendation, never the
+   decision; Phase 2 audit A-2 — every Council-stage motion is
+   consulted, not only the first, so a later motion carrying the
+   member's named vote is never masked by an earlier one that does
+   not; final-gate D1 — an Absent/interest listing on an early motion
+   never masks a cast vote on a later motion of the same item: absent
+   and interest are returned only when the member cast no vote on the
+   item). Name match is exact string equality (S-4); an unrecognized
+   value is "none", never coerced. Returns one of:
      {kind:"vote", value:"Yes"|"No"} | {kind:"absent"} |
      {kind:"interest"} | {kind:"none", reason:"no-council-vote"|"no-row"
        |"tally-only"|"not-in-office"}
@@ -76,6 +79,14 @@ function comparableVote(detail, memberName, memberTerms) {
   if (!councilMotions.length) return { kind: "none", reason: "no-council-vote" };
   let sawTallyOnly = false;
   let sawNamedRows = false;
+  /* A cast vote anywhere among the item's Council-stage motions is the
+     member's comparable vote. An Absent / interest listing on an early
+     motion (e.g. a waive-referral motion) must not mask a cast vote on a
+     later motion of the same item: the absent state applies only when
+     the member cast no vote on the item at all (final-gate defect D1,
+     Oct 24, 2026 — item 2023.MM7.23). The first non-cast listing is
+     remembered and returned only when no cast vote exists. */
+  let firstNonCast = null;
   for (const motion of councilMotions) {
     const votes = Array.isArray(motion.votes) ? motion.votes : [];
     if (!votes.length) {
@@ -91,12 +102,19 @@ function comparableVote(detail, memberName, memberTerms) {
     if (!row) continue;
     const value = row[1];
     if (value === "Yes" || value === "No") return { kind: "vote", value };
-    if (value === "Absent") return { kind: "absent" };
-    if (typeof value === "string" && value.startsWith("Absent(Interest")) {
-      return { kind: "interest" };
+    if (value === "Absent") {
+      if (firstNonCast === null || firstNonCast.kind === "none") {
+        firstNonCast = { kind: "absent" };
+      }
+    } else if (typeof value === "string" && value.startsWith("Absent(Interest")) {
+      if (firstNonCast === null || firstNonCast.kind === "none") {
+        firstNonCast = { kind: "interest" };
+      }
+    } else if (firstNonCast === null) {
+      firstNonCast = { kind: "none", reason: "no-row" };
     }
-    return { kind: "none", reason: "no-row" };
   }
+  if (firstNonCast) return firstNonCast;
   if (sawTallyOnly && !sawNamedRows) return { kind: "none", reason: "tally-only" };
   if (!sawNamedRows) return { kind: "none", reason: "no-council-vote" };
   /* Named Council votes exist and the member is in none of them. The

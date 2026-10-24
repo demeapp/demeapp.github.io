@@ -115,6 +115,30 @@ t = run({ motions: [cc([], { yes: null, no: null, tallyOnly: true, result: "Carr
 check("mixed tally+named item lands in B4, not B5", t.B4 === 1 && t.B5 === 0, JSON.stringify(t));
 check("mixed-item explainer does not claim no names were recorded", !/tally only/.test(copy(t)), copy(t));
 
+/* 9c — D1 MASKING (final gate, Oct 24, 2026): the member is Absent on
+   the first listing motion (a procedural motion) but CASTS votes on
+   later motions of the same item — the real item 2023.MM7.23 shape
+   (Absent / No / Yes / Yes). The comparable vote is the first cast vote;
+   the item must NOT be classified absent ("nothing to line up against"
+   would be false — the member's votes are on the record). */
+t = run({ motions: [cc([[MEMBER, "Absent"], ["Other", "Yes"]], { yes: 1, no: 0 }),
+  cc([[MEMBER, "No"], ["Other", "Yes"]], { yes: 1, no: 1 }),
+  cc([[MEMBER, "Yes"], ["Other", "No"]], { yes: 1, no: 1 })] }, "oppose");
+check("D1: cast vote past an absent first listing is the comparable vote", t.comparable === 1 && t.matched === 1 && t.B1 === 0, JSON.stringify(t));
+
+/* 9d — D1 CONTROL: absent on EVERY listing motion → still B1 absent
+   (the Bravo 2023.BL13.1 shape). The fix must not dissolve the genuine
+   absent state. */
+t = run({ motions: [cc([[MEMBER, "Absent"], ["Other", "Yes"]], { yes: 1, no: 0 }),
+  cc([[MEMBER, "Absent"], ["Other", "No"]], { yes: 0, no: 1 })] });
+check("D1 control: absent on all motions still lands in B1", t.B1 === 1 && t.comparable === 0, JSON.stringify(t));
+
+/* 9e — D1 INTEREST VARIANT: interest listing first, cast vote later →
+   the cast vote is comparable; the interest state must not mask it. */
+t = run({ motions: [cc([[MEMBER, "Absent(Interest Declared)"], ["Other", "Yes"]], { yes: 1, no: 0 }),
+  cc([[MEMBER, "Yes"], ["Other", "No"]], { yes: 1, no: 1 })] });
+check("D1: cast vote past an interest first listing is the comparable vote", t.comparable === 1 && t.matched === 1 && t.B2 === 0, JSON.stringify(t));
+
 /* 10 — Council motion with an empty vote list and NO tallyOnly flag:
    no record at all → B3 (decided without a recorded vote), never B5/B4. */
 t = run({ motions: [cc([], {})] });

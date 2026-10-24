@@ -249,7 +249,8 @@ async function init() {
       <span class="skel-el sm"></span><span class="skel-el title"></span>
       <span class="skel-el"></span><span class="skel-el short"></span></div></div>
     <div id="official"></div>
-    <p style="margin-top:2rem"><a class="ext" href="${tmmisUrl(card.ref)}"
+    <div id="provenance"></div>
+    <p style="margin-top:2rem"><a class="ext" id="official-record-link" href="${tmmisUrl(card.ref)}"
       target="_blank" rel="noopener">Read the full official record at the
       City of Toronto →<span class="visually-hidden"> (opens in a new tab)</span></a></p>`;
 
@@ -386,6 +387,47 @@ async function init() {
         ${t[0] ? `<h3 style="margin-top:1.2rem">What the item proposed</h3><p style="max-width:44rem">${esc(t[0])}</p>` : ""}
         ${t[1] ? `<h3>What was decided</h3><p style="max-width:44rem">${esc(t[1])}</p>` : ""}
       </details>`;
+  }
+
+  /* Provenance (Phase 2, stage 1; PROVENANCE-SCHEMA.md display rules):
+     surface the brief's OWN source fields — the link is the record's
+     stored sourceUrl, not a render-time reconstruction — and claim only
+     the verification status the record actually carries. The corpus is
+     pattern-verified: the URL follows the City's canonical reference
+     scheme and the fields passed structural checks; no individual record
+     has been re-read at the source and no retrieval date is stored, and
+     the line says so rather than implying more. Degrades silently when
+     the detail file or its source fields are unavailable — the official
+     record link above remains either way. */
+  const pv = document.getElementById("provenance");
+  if (pv && detail && detail.sourceUrl) {
+    /* P0-3 unification (Wave 1, Phase 2 audit): the main official-record
+       link must be the record's stored sourceUrl — the same link the
+       provenance block below renders and the audits verify. The
+       tmmisUrl() reconstruction survives only as the pre-load href and
+       the fallback for a detail file carrying no sourceUrl. */
+    const officialLink = document.getElementById("official-record-link");
+    if (officialLink) officialLink.href = detail.sourceUrl;
+    let coverage = "";
+    try {
+      const meta = await loadJSON(dataPath("meta.json"));
+      if (meta && meta.generatedAt) coverage = fmtDate(meta.generatedAt);
+    } catch (e) { /* coverage clause is omitted, never guessed */ }
+    const STATUS_LABEL = {
+      "pattern-verified": "pattern-verified",
+      "sample-verified": "sample-verified",
+      "record-verified": "record-verified",
+      "unverified": "unverified",
+      "conflict": "sources conflict",
+    };
+    const status = STATUS_LABEL[detail.verificationStatus] || "";
+    const srcName = detail.sourceName || "Toronto TMMIS — agenda item";
+    pv.innerHTML = `
+      <p class="small" style="margin-top:2rem">${simpleT("Source", "Where this comes from")}:
+        <a class="ext" href="${esc(detail.sourceUrl)}" target="_blank" rel="noopener">${esc(srcName)} ${esc(detail.sourceId || ref)}<span class="visually-hidden"> (opens in a new tab)</span></a>${status ? ` · ${esc(status)}` : ""}</p>
+      <p class="small">${simpleT(
+        "The source link follows the City of Toronto's canonical reference pattern, and this record's fields passed structural checks against that pattern. The individual record has not been re-read at the source, and no retrieval date is stored for it.",
+        "The source link is built from the City of Toronto's standard reference pattern, and this record's fields passed pattern checks. This one record has not been re-read at the source, and no retrieval date is stored for it.")}${coverage ? simpleT(` Deme's archive runs through ${coverage}.`, ` Deme's archive goes up to ${coverage}.`) : ""}</p>`;
   }
 }
 /* Print (D4): Chromium does not render the children of a CLOSED

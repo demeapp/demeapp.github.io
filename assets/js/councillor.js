@@ -518,6 +518,48 @@ async function renderDeclaredInterests(person) {
   </section>`;
 }
 
+/* ---------- register counts summary (v30) ----------
+   A one-line summary of the official-register counts, directly
+   under the stat tiles on EVERY profile (current + past). It reads
+   ONLY the small register-counts.json (generated from the two
+   register files) — never another load of the big files; the full
+   register section below keeps loading those itself, unchanged.
+   These counts are the City Clerk's Registry of Declared Interest
+   (2007–2026) and the Gift Disclosure Registry (2011–2025) — a
+   separate record from the recorded-vote "Interest declared ·
+   stepped back" tile above, and the line says so. Era wording
+   matches the directory rows: a member who served into a
+   register's era with no entries gets the true 0 in words; service
+   that ended before a register existed gets plain words, never a
+   bare dash or an unsupported 0. If the counts file fails to load,
+   the line simply does not appear. */
+async function renderRegisterSummary(person) {
+  const host = document.getElementById("register-summary");
+  if (!host) return;
+  let data = null;
+  try { data = await loadJSON(dataPath("register-counts.json")); }
+  catch (e) { return; /* no line — the full register section still renders */ }
+  const rc = data && data.members ? data.members[person.slug] : null;
+  if (!rc) return;
+  const regN = Number(rc.registerEntries) || 0;
+  const giftN = Number(rc.giftDisclosures) || 0;
+  const reg = rc.registerEraNA
+    ? simpleT("No declared-interest register existed during their service",
+        "No official list of declared interests existed while they served")
+    : regN === 0
+      ? simpleT("0 declarations in the official register",
+          "0 declarations in the official list")
+      : `${fmtNum(regN)} ${regN === 1 ? "declaration" : "declarations"}`;
+  const gift = rc.giftEraNA
+    ? simpleT("No gift register existed during their service",
+        "No gift list existed while they served")
+    : giftN === 0
+      ? simpleT("0 gift disclosures in the gift registry",
+          "0 gift disclosures in the gift list")
+      : `${fmtNum(giftN)} gift ${giftN === 1 ? "disclosure" : "disclosures"}`;
+  host.innerHTML = `<p class="small" style="max-width:44rem;margin-top:.9rem"><strong>${simpleT("Official register:", "Official list:")}</strong> ${esc(reg)} · ${esc(gift)} ${simpleT("— a separate record from the recorded-vote count above.", "— a separate list from the recorded-vote count above.")} <a href="#declared-interests">${simpleT("See the full list ↓", "See the full list ↓")}</a><br><span style="color:var(--ink-faint)">${simpleT("City Clerk’s Registry of Declared Interest (2007–2026) · Gift Disclosure Registry (2011–2025)", "City Clerk's official list (2007–2026) · Gift Disclosure Registry (2011–2025)")}</span></p>`;
+}
+
 /* The interest counter reads only vote rows the source flags
    Absent(Interest Declared) — a flag that exists only from June 2023
    (earlier declarations were recorded as ordinary absences). A member
@@ -967,6 +1009,7 @@ async function init() {
       <div class="stat"><span class="num">${interestFigure(person)}</span>
         <span class="lab">${simpleT("Interest declared · stepped back", "Declared an interest · did not vote")}</span></div>
     </div>
+    <div id="register-summary"></div>
     <p class="small" style="max-width:44rem">${simpleT("Recorded-vote participation is the share of recorded votes where the member was present and voting — not a count of meetings attended, and declared interests are never counted against it.", "This number is the share of recorded votes where the member was there and voted. It is not a count of meetings they went to. Declared interests never count against them.")}
     <a href="about.html#how-we-count">How we count</a>${simpleT(" explains each figure on this page.", " explains each number on this page.")}</p>
     ${basisNote}
@@ -998,6 +1041,7 @@ async function init() {
   document.getElementById("record-card-btn")
     .addEventListener("click", () => openRecordCard(person));
   setupShareButton(document.getElementById("share-btn"));
+  renderRegisterSummary(person);
 
   const wrap = document.getElementById("historyWrap");
   try {

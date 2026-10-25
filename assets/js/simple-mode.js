@@ -144,6 +144,8 @@ const DemeSimple = (() => {
       "Each card shows four facts: recorded votes they took part in, votes cast, how long they have served, and — from the recorded votes — times they declared an interest and did not vote. Open a member to see the full record. The photos are the members' official photos. If none is published, the card shows initials instead.",
     "Members from earlier terms, in the same archive.":
       "Members from earlier terms, in the same archive.",
+    "“Interest declared · stepped back” counts recorded votes where a member declared an interest and did not vote. The voting record only carries that flag from June 2023 — earlier declarations were recorded as ordinary absences — so a dash marks a member whose service ended before June 2023. Each member’s page also lists the declarations on the City’s official register, counted separately. Those register counts now appear on each earlier member’s row below too, in the mint band under their stats, labelled with the registers they come from.":
+      "“Declared an interest · did not vote” counts recorded votes where a member declared an interest and did not vote. The voting record only carries that mark from June 2023. Before that, declarations were written down as plain absences. So a dash means the member's service ended before June 2023. Each member's page also lists the declarations on the City's official list, counted on its own. Those counts now appear on each earlier member's row below too, in the green band under their stats, with the names of the lists they come from.",
 
     /* ----- member profile: JS-rendered panels ----- */
     "Standing assignments in this member profile.":

@@ -76,9 +76,28 @@
   letter-spacing: .05em; text-transform: uppercase;
 }
 .em-stats strong { display: block; margin-top: .15rem; font-size: 1.05rem; line-height: 1.25; color: var(--ink); }
+/* Register-counts line (v30): the official registers are a SEPARATE
+   record from the vote-flag stat above, so the line sits in its own
+   mint band under the stats — never inside .em-stats, never wearing
+   the vote-flag label. */
+.em-register {
+  margin: .65rem 0 0; max-width: 36rem; padding: .45rem .6rem;
+  background: var(--mint-light); border-left: 3px solid var(--bronze-dark);
+  font-size: .9rem; line-height: 1.45; color: var(--ink-soft);
+}
+.em-register-src { display: block; margin-top: .15rem; color: var(--ink-faint); font-size: .8rem; }
 @media (max-width: 480px) {
   .em-stats { gap: .55rem .8rem; }
   .em-stats span { font-size: .66rem; }
+  /* Fix D1 (visitor-eye, v30 fix round): the earlier rows' 3-across
+     stats squeeze to ~74px per column at 390px and the middle label
+     overflows into the third column. Scoped to #earlier-details —
+     the only context .em-stats renders in — switch to two columns
+     at narrow widths and let labels break cleanly rather than
+     overflow. Desktop layout, current-member cards and the
+     .em-register band are untouched. */
+  #earlier-details .em-stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  #earlier-details .em-stats span { overflow-wrap: break-word; }
 }
 </style>
 <link rel="icon" href="favicon-navy-mint-v2.svg" type="image/svg+xml">
@@ -155,7 +174,7 @@
       <details class="filters" id="earlier-details" style="margin-top:3rem">
         <summary><h2>Earlier members (2006–2026)</h2> <span class="small" id="earlier-count-note"></span></summary>
         <p class="small" style="margin-top:.8rem">Members from earlier terms, in the same archive.</p>
-        <p class="small earlier-note">“Interest declared · stepped back” counts recorded votes where a member declared an interest and did not vote. The voting record only carries that flag from June 2023 — earlier declarations were recorded as ordinary absences — so a dash marks a member whose service ended before June 2023. Each member’s page also lists the declarations on the City’s official register, counted separately.</p>
+        <p class="small earlier-note">“Interest declared · stepped back” counts recorded votes where a member declared an interest and did not vote. The voting record only carries that flag from June 2023 — earlier declarations were recorded as ordinary absences — so a dash marks a member whose service ended before June 2023. Each member’s page also lists the declarations on the City’s official register, counted separately. Those register counts now appear on each earlier member’s row below too, in the mint band under their stats, labelled with the registers they come from.</p>
         <div class="earlier-search">
           <label class="visually-hidden" for="eq">Search earlier members</label>
           <input type="text" id="eq" placeholder="Search earlier members — a name, or a ward then or now" autocomplete="off" spellcheck="false">
@@ -205,9 +224,14 @@ function matches(c, q) {
    (era ward lists + predecessor/successor mapping) load LAZILY, only
    when the Earlier details is first opened (or the section search is
    first used). Until then — and if the load fails — rows render exactly
-   as before, just without ward info. Unknown wards are omitted. */
+   as before, just without ward info. Unknown wards are omitted.
+   register-counts.json (v30) rides the same lazy load: the official-
+   register counts line on each row appears only once it has loaded,
+   and a failed load leaves the row exactly as before — never a
+   register line, never a 0 invented from the failure. */
 let earlierWards = null;
 let wardCrosswalk = null;
+let registerCounts = null;
 let earlierDataPromise = null;
 let earlierQuery = "";
 function loadEarlierData() {
@@ -215,9 +239,11 @@ function loadEarlierData() {
   earlierDataPromise = Promise.all([
     loadJSON(dataPath("earlier-wards.json")).catch(() => null),
     loadJSON(dataPath("ward-crosswalk.json")).catch(() => null),
-  ]).then(([w, x]) => {
+    loadJSON(dataPath("register-counts.json")).catch(() => null),
+  ]).then(([w, x, rc]) => {
     earlierWards = w;
     wardCrosswalk = x;
+    registerCounts = rc;
     render(filter);
     return true;
   });
@@ -273,6 +299,42 @@ function earlierInterest(c) {
   if (!c.lastSeen || c.lastSeen < "2023-06-01") return "—";
   return fmtNum(Number(c.interest) || 0);
 }
+/* Official-register counts for an earlier row (v30) — a SEPARATE
+   record from the vote-flag stat above it: entries in the City
+   Clerk's Registry of Declared Interest (2007–2026) and disclosures
+   in the Gift Disclosure Registry (2011–2025), from
+   register-counts.json. A member who served into a register's era
+   with no entries gets the true 0 in words; a member whose service
+   ended before a register existed gets plain words — never a bare
+   dash, never a 0 the era cannot support. Returns "" until the
+   counts file has loaded, so rows render exactly as before without
+   it (and stay that way if the load failed). */
+function registerSegments(rc) {
+  const regN = Number(rc.registerEntries) || 0;
+  const giftN = Number(rc.giftDisclosures) || 0;
+  const reg = rc.registerEraNA
+    ? simpleT("No declared-interest register existed during their service",
+        "No official list of declared interests existed while they served")
+    : regN === 0
+      ? simpleT("0 declarations in the official register",
+          "0 declarations in the official list")
+      : `${fmtNum(regN)} ${regN === 1 ? "declaration" : "declarations"}`;
+  const gift = rc.giftEraNA
+    ? simpleT("No gift register existed during their service",
+        "No gift list existed while they served")
+    : giftN === 0
+      ? simpleT("0 gift disclosures in the gift registry",
+          "0 gift disclosures in the gift list")
+      : `${fmtNum(giftN)} gift ${giftN === 1 ? "disclosure" : "disclosures"}`;
+  return { reg, gift };
+}
+function registerLineHTML(c) {
+  if (!registerCounts || !registerCounts.members) return "";
+  const rc = registerCounts.members[c.slug];
+  if (!rc) return "";
+  const { reg, gift } = registerSegments(rc);
+  return `<p class="em-register"><strong>${simpleT("Official register:", "Official list:")}</strong> ${esc(reg)} · ${esc(gift)}<span class="em-register-src">${simpleT("City Clerk’s Registry of Declared Interest (2007–2026) · Gift Disclosure Registry (2011–2025)", "City Clerk's official list (2007–2026) · Gift Disclosure Registry (2011–2025)")}</span></p>`;
+}
 function earlierRow(c) {
   const wards = wardGroups(c).map((w) => `<span>${esc(w)}</span>`).join("");
   return `<li>${avatarHTML(c, "sm")}<div class="em-main">
@@ -284,6 +346,7 @@ function earlierRow(c) {
       <div><span>${simpleT("Recorded-vote participation", "Recorded votes they took part in")}</span><strong>${esc(fmtAtt(c))}</strong></div>
       <div><span>${simpleT("Interest declared · stepped back", "Declared an interest · did not vote")}</span><strong>${earlierInterest(c)}</strong></div>
     </div>
+    ${registerLineHTML(c)}
   </div></li>`;
 }
 function render(q) {

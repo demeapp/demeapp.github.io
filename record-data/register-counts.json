@@ -1,0 +1,584 @@
+{
+ "source": {
+  "register": {
+   "name": "Registry of Declared Interest",
+   "publisher": "City Clerk's Office, City of Toronto",
+   "era": "2007–2026",
+   "refreshed": "September 26, 2026",
+   "verified": "October 23, 2026"
+  },
+  "gifts": {
+   "name": "Gift Disclosure Registry for Members of Council",
+   "publisher": "Integrity Commissioner, City of Toronto",
+   "era": "2011–2025",
+   "refreshed": "September 26, 2026",
+   "verified": "October 23, 2026"
+  }
+ },
+ "members": {
+  "a-a-heaps": {
+   "registerEntries": 5,
+   "giftDisclosures": 0,
+   "registerEraNA": false,
+   "giftEraNA": true
+  },
+  "adam-giambrone": {
+   "registerEntries": 9,
+   "giftDisclosures": 0,
+   "registerEraNA": false,
+   "giftEraNA": true
+  },
+  "adam-vaughan": {
+   "registerEntries": 16,
+   "giftDisclosures": 10,
+   "registerEraNA": false,
+   "giftEraNA": false
+  },
+  "alejandra-bravo": {
+   "registerEntries": 1,
+   "giftDisclosures": 2,
+   "registerEraNA": false,
+   "giftEraNA": false
+  },
+  "amber-morley": {
+   "registerEntries": 0,
+   "giftDisclosures": 12,
+   "registerEraNA": false,
+   "giftEraNA": false
+  },
+  "ana-bailao": {
+   "registerEntries": 0,
+   "giftDisclosures": 60,
+   "registerEraNA": false,
+   "giftEraNA": false
+  },
+  "anthony-perruzza": {
+   "registerEntries": 13,
+   "giftDisclosures": 1,
+   "registerEraNA": false,
+   "giftEraNA": false
+  },
+  "ausma-malik": {
+   "registerEntries": 1,
+   "giftDisclosures": 0,
+   "registerEraNA": false,
+   "giftEraNA": false
+  },
+  "bill-saundercook": {
+   "registerEntries": 0,
+   "giftDisclosures": 0,
+   "registerEraNA": false,
+   "giftEraNA": true
+  },
+  "brad-bradford": {
+   "registerEntries": 37,
+   "giftDisclosures": 1,
+   "registerEraNA": false,
+   "giftEraNA": false
+  },
+  "brian-ashton": {
+   "registerEntries": 5,
+   "giftDisclosures": 0,
+   "registerEraNA": false,
+   "giftEraNA": true
+  },
+  "case-ootes": {
+   "registerEntries": 5,
+   "giftDisclosures": 0,
+   "registerEraNA": false,
+   "giftEraNA": true
+  },
+  "cesar-palacio": {
+   "registerEntries": 24,
+   "giftDisclosures": 1,
+   "registerEraNA": false,
+   "giftEraNA": false
+  },
+  "ceta-ramkhalawansingh": {
+   "registerEntries": 0,
+   "giftDisclosures": 0,
+   "registerEraNA": false,
+   "giftEraNA": false
+  },
+  "chin-lee": {
+   "registerEntries": 0,
+   "giftDisclosures": 1,
+   "registerEraNA": false,
+   "giftEraNA": false
+  },
+  "chris-moise": {
+   "registerEntries": 4,
+   "giftDisclosures": 1,
+   "registerEraNA": false,
+   "giftEraNA": false
+  },
+  "christin-carmichael-greb": {
+   "registerEntries": 7,
+   "giftDisclosures": 0,
+   "registerEraNA": false,
+   "giftEraNA": false
+  },
+  "cliff-jenkins": {
+   "registerEntries": 6,
+   "giftDisclosures": 0,
+   "registerEraNA": false,
+   "giftEraNA": true
+  },
+  "cynthia-lai": {
+   "registerEntries": 3,
+   "giftDisclosures": 2,
+   "registerEraNA": false,
+   "giftEraNA": false
+  },
+  "david-miller": {
+   "registerEntries": 6,
+   "giftDisclosures": 0,
+   "registerEraNA": false,
+   "giftEraNA": true
+  },
+  "david-shiner": {
+   "registerEntries": 61,
+   "giftDisclosures": 0,
+   "registerEraNA": false,
+   "giftEraNA": false
+  },
+  "denzil-minnan-wong": {
+   "registerEntries": 22,
+   "giftDisclosures": 8,
+   "registerEraNA": false,
+   "giftEraNA": false
+  },
+  "dianne-saxe": {
+   "registerEntries": 1,
+   "giftDisclosures": 2,
+   "registerEraNA": false,
+   "giftEraNA": false
+  },
+  "doug-ford": {
+   "registerEntries": 4,
+   "giftDisclosures": 0,
+   "registerEraNA": false,
+   "giftEraNA": false
+  },
+  "doug-holyday": {
+   "registerEntries": 11,
+   "giftDisclosures": 0,
+   "registerEraNA": false,
+   "giftEraNA": false
+  },
+  "frances-nunziata": {
+   "registerEntries": 32,
+   "giftDisclosures": 18,
+   "registerEraNA": false,
+   "giftEraNA": false
+  },
+  "frank-di-giorgio": {
+   "registerEntries": 22,
+   "giftDisclosures": 0,
+   "registerEraNA": false,
+   "giftEraNA": false
+  },
+  "gary-crawford": {
+   "registerEntries": 1,
+   "giftDisclosures": 25,
+   "registerEraNA": false,
+   "giftEraNA": false
+  },
+  "giorgio-mammoliti": {
+   "registerEntries": 35,
+   "giftDisclosures": 2,
+   "registerEraNA": false,
+   "giftEraNA": false
+  },
+  "glenn-de-baeremaeker": {
+   "registerEntries": 3,
+   "giftDisclosures": 17,
+   "registerEraNA": false,
+   "giftEraNA": false
+  },
+  "gloria-lindsay-luby": {
+   "registerEntries": 0,
+   "giftDisclosures": 0,
+   "registerEraNA": false,
+   "giftEraNA": false
+  },
+  "gord-perks": {
+   "registerEntries": 16,
+   "giftDisclosures": 0,
+   "registerEraNA": false,
+   "giftEraNA": false
+  },
+  "howard-moscoe": {
+   "registerEntries": 36,
+   "giftDisclosures": 0,
+   "registerEraNA": false,
+   "giftEraNA": true
+  },
+  "jamaal-myers": {
+   "registerEntries": 3,
+   "giftDisclosures": 14,
+   "registerEraNA": false,
+   "giftEraNA": false
+  },
+  "james-maloney": {
+   "registerEntries": 0,
+   "giftDisclosures": 0,
+   "registerEraNA": false,
+   "giftEraNA": false
+  },
+  "james-pasternak": {
+   "registerEntries": 148,
+   "giftDisclosures": 4,
+   "registerEraNA": false,
+   "giftEraNA": false
+  },
+  "janet-davis": {
+   "registerEntries": 8,
+   "giftDisclosures": 17,
+   "registerEraNA": false,
+   "giftEraNA": false
+  },
+  "jaye-robinson": {
+   "registerEntries": 13,
+   "giftDisclosures": 1,
+   "registerEraNA": false,
+   "giftEraNA": false
+  },
+  "jennifer-mckelvie": {
+   "registerEntries": 2,
+   "giftDisclosures": 20,
+   "registerEraNA": false,
+   "giftEraNA": false
+  },
+  "jim-hart": {
+   "registerEntries": 6,
+   "giftDisclosures": 0,
+   "registerEraNA": false,
+   "giftEraNA": false
+  },
+  "jim-karygiannis": {
+   "registerEntries": 17,
+   "giftDisclosures": 4,
+   "registerEraNA": false,
+   "giftEraNA": false
+  },
+  "joe-cressy": {
+   "registerEntries": 4,
+   "giftDisclosures": 0,
+   "registerEraNA": false,
+   "giftEraNA": false
+  },
+  "joe-mihevc": {
+   "registerEntries": 17,
+   "giftDisclosures": 0,
+   "registerEraNA": false,
+   "giftEraNA": false
+  },
+  "joe-pantalone": {
+   "registerEntries": 23,
+   "giftDisclosures": 0,
+   "registerEraNA": false,
+   "giftEraNA": true
+  },
+  "john-campbell": {
+   "registerEntries": 0,
+   "giftDisclosures": 1,
+   "registerEraNA": false,
+   "giftEraNA": false
+  },
+  "john-filion": {
+   "registerEntries": 14,
+   "giftDisclosures": 1,
+   "registerEraNA": false,
+   "giftEraNA": false
+  },
+  "john-parker": {
+   "registerEntries": 0,
+   "giftDisclosures": 0,
+   "registerEraNA": false,
+   "giftEraNA": false
+  },
+  "john-tory": {
+   "registerEntries": 88,
+   "giftDisclosures": 13,
+   "registerEraNA": false,
+   "giftEraNA": false
+  },
+  "jon-burnside": {
+   "registerEntries": 3,
+   "giftDisclosures": 0,
+   "registerEraNA": false,
+   "giftEraNA": false
+  },
+  "jonathan-tsao": {
+   "registerEntries": 0,
+   "giftDisclosures": 0,
+   "registerEraNA": false,
+   "giftEraNA": false
+  },
+  "josh-colle": {
+   "registerEntries": 4,
+   "giftDisclosures": 1,
+   "registerEraNA": false,
+   "giftEraNA": false
+  },
+  "josh-matlow": {
+   "registerEntries": 11,
+   "giftDisclosures": 30,
+   "registerEraNA": false,
+   "giftEraNA": false
+  },
+  "justin-j-di-ciano": {
+   "registerEntries": 5,
+   "giftDisclosures": 0,
+   "registerEraNA": false,
+   "giftEraNA": false
+  },
+  "karen-stintz": {
+   "registerEntries": 2,
+   "giftDisclosures": 0,
+   "registerEraNA": false,
+   "giftEraNA": false
+  },
+  "kristyn-wong-tam": {
+   "registerEntries": 56,
+   "giftDisclosures": 1,
+   "registerEraNA": false,
+   "giftEraNA": false
+  },
+  "kyle-rae": {
+   "registerEntries": 7,
+   "giftDisclosures": 0,
+   "registerEraNA": false,
+   "giftEraNA": true
+  },
+  "lily-cheng": {
+   "registerEntries": 0,
+   "giftDisclosures": 9,
+   "registerEraNA": false,
+   "giftEraNA": false
+  },
+  "lucy-troisi": {
+   "registerEntries": 0,
+   "giftDisclosures": 0,
+   "registerEraNA": false,
+   "giftEraNA": false
+  },
+  "maria-augimeri": {
+   "registerEntries": 45,
+   "giftDisclosures": 0,
+   "registerEraNA": false,
+   "giftEraNA": false
+  },
+  "mark-grimes": {
+   "registerEntries": 37,
+   "giftDisclosures": 1,
+   "registerEraNA": false,
+   "giftEraNA": false
+  },
+  "mary-fragedakis": {
+   "registerEntries": 2,
+   "giftDisclosures": 1,
+   "registerEraNA": false,
+   "giftEraNA": false
+  },
+  "mary-margaret-mcmahon": {
+   "registerEntries": 6,
+   "giftDisclosures": 0,
+   "registerEraNA": false,
+   "giftEraNA": false
+  },
+  "michael-ford": {
+   "registerEntries": 3,
+   "giftDisclosures": 0,
+   "registerEraNA": false,
+   "giftEraNA": false
+  },
+  "michael-thompson": {
+   "registerEntries": 5,
+   "giftDisclosures": 16,
+   "registerEraNA": false,
+   "giftEraNA": false
+  },
+  "michael-walker": {
+   "registerEntries": 10,
+   "giftDisclosures": 0,
+   "registerEraNA": false,
+   "giftEraNA": true
+  },
+  "michelle-berardinetti": {
+   "registerEntries": 3,
+   "giftDisclosures": 1,
+   "registerEraNA": false,
+   "giftEraNA": false
+  },
+  "michelle-holland": {
+   "registerEntries": 0,
+   "giftDisclosures": 0,
+   "registerEraNA": false,
+   "giftEraNA": false
+  },
+  "miganoush-megardichian": {
+   "registerEntries": 0,
+   "giftDisclosures": 0,
+   "registerEraNA": false,
+   "giftEraNA": false
+  },
+  "mike-colle": {
+   "registerEntries": 33,
+   "giftDisclosures": 3,
+   "registerEraNA": false,
+   "giftEraNA": false
+  },
+  "mike-del-grande": {
+   "registerEntries": 7,
+   "giftDisclosures": 0,
+   "registerEraNA": false,
+   "giftEraNA": false
+  },
+  "mike-feldman": {
+   "registerEntries": 4,
+   "giftDisclosures": 0,
+   "registerEraNA": false,
+   "giftEraNA": true
+  },
+  "mike-layton": {
+   "registerEntries": 71,
+   "giftDisclosures": 8,
+   "registerEraNA": false,
+   "giftEraNA": false
+  },
+  "neethan-shan": {
+   "registerEntries": 0,
+   "giftDisclosures": 0,
+   "registerEraNA": false,
+   "giftEraNA": false
+  },
+  "nick-mantas": {
+   "registerEntries": 19,
+   "giftDisclosures": 1,
+   "registerEraNA": false,
+   "giftEraNA": false
+  },
+  "norman-kelly": {
+   "registerEntries": 33,
+   "giftDisclosures": 3,
+   "registerEraNA": false,
+   "giftEraNA": false
+  },
+  "olivia-chow": {
+   "registerEntries": 5,
+   "giftDisclosures": 0,
+   "registerEraNA": false,
+   "giftEraNA": false
+  },
+  "pam-mcconnell": {
+   "registerEntries": 12,
+   "giftDisclosures": 3,
+   "registerEraNA": false,
+   "giftEraNA": false
+  },
+  "parthi-kandavel": {
+   "registerEntries": 1,
+   "giftDisclosures": 1,
+   "registerEraNA": false,
+   "giftEraNA": false
+  },
+  "paul-ainslie": {
+   "registerEntries": 6,
+   "giftDisclosures": 2,
+   "registerEraNA": false,
+   "giftEraNA": false
+  },
+  "paula-fletcher": {
+   "registerEntries": 7,
+   "giftDisclosures": 0,
+   "registerEraNA": false,
+   "giftEraNA": false
+  },
+  "peter-leon": {
+   "registerEntries": 6,
+   "giftDisclosures": 0,
+   "registerEraNA": false,
+   "giftEraNA": false
+  },
+  "peter-milczyn": {
+   "registerEntries": 38,
+   "giftDisclosures": 0,
+   "registerEraNA": false,
+   "giftEraNA": false
+  },
+  "rachel-chernos-lin": {
+   "registerEntries": 1,
+   "giftDisclosures": 2,
+   "registerEraNA": false,
+   "giftEraNA": false
+  },
+  "raymond-cho": {
+   "registerEntries": 4,
+   "giftDisclosures": 0,
+   "registerEraNA": false,
+   "giftEraNA": false
+  },
+  "rob-ford": {
+   "registerEntries": 26,
+   "giftDisclosures": 0,
+   "registerEraNA": false,
+   "giftEraNA": false
+  },
+  "robin-buxton-potts": {
+   "registerEntries": 0,
+   "giftDisclosures": 0,
+   "registerEraNA": false,
+   "giftEraNA": false
+  },
+  "ron-moeser": {
+   "registerEntries": 4,
+   "giftDisclosures": 0,
+   "registerEraNA": false,
+   "giftEraNA": false
+  },
+  "rose-milczyn": {
+   "registerEntries": 0,
+   "giftDisclosures": 0,
+   "registerEraNA": false,
+   "giftEraNA": false
+  },
+  "sandra-bussin": {
+   "registerEntries": 8,
+   "giftDisclosures": 0,
+   "registerEraNA": false,
+   "giftEraNA": true
+  },
+  "sarah-doucette": {
+   "registerEntries": 6,
+   "giftDisclosures": 0,
+   "registerEraNA": false,
+   "giftEraNA": false
+  },
+  "shelley-carroll": {
+   "registerEntries": 10,
+   "giftDisclosures": 9,
+   "registerEraNA": false,
+   "giftEraNA": false
+  },
+  "stephen-holyday": {
+   "registerEntries": 8,
+   "giftDisclosures": 0,
+   "registerEraNA": false,
+   "giftEraNA": false
+  },
+  "suzan-hall": {
+   "registerEntries": 0,
+   "giftDisclosures": 0,
+   "registerEraNA": false,
+   "giftEraNA": true
+  },
+  "vincent-crisanti": {
+   "registerEntries": 12,
+   "giftDisclosures": 10,
+   "registerEraNA": false,
+   "giftEraNA": false
+  }
+ }
+}

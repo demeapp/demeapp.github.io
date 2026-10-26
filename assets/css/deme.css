@@ -327,6 +327,13 @@ p { margin: 0 0 1rem; }
   font-size: .875rem; font-weight: 700; letter-spacing: .16em;
   text-transform: uppercase; color: var(--bronze-dark); margin: 0 0 .55rem;
 }
+/* Page-top eyebrows (audit F-6/D-5, Oct 26): on pages that open with
+   a kicker, it sat flush against the sticky header — no breathing
+   room. Give the first section's kicker a top margin. The hero is
+   excluded: it carries its own padding inside the navy panel. */
+main > .wrap > section:first-child:not(.hero) > .kicker:first-child {
+  margin-top: 1.15rem;
+}
 .rule { width: 56px; height: 3px; background: var(--bronze); border: 0; margin: 0 0 1.1rem; }
 .small { font-size: .98rem; color: var(--ink-soft); }
 .muted { color: var(--ink-faint); }
@@ -759,7 +766,7 @@ table.record th { font-size: .8rem; letter-spacing: .08em; text-transform: upper
   min-height: 48px; padding: .5rem .7rem; font: inherit; border: 1.5px solid var(--field-line);
   border-radius: 12px; background: #fff; color: var(--ink);
 }
-.pager { display: flex; gap: .8rem; align-items: center; margin-top: 1.6rem; flex-wrap: wrap; }
+.pager { display: flex; gap: .8rem; align-items: center; margin-top: 1.6rem; margin-bottom: 1.8rem; flex-wrap: wrap; }
 a.ext { color: var(--bronze-dark); font-weight: 600; }
 footer .fineprint { font-size: .82rem; color: var(--ink-faint); }
 

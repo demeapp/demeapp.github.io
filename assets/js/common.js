@@ -99,15 +99,14 @@ function setupCountUps(scope) {
         io.unobserve(el);
         animateCount(el, Number(el.dataset.count),
           countDuration(Number(el.dataset.count)));
-      } else if (!el.dataset.countArmed) {
-        /* Still off-screen: park it at zero so the count-up is seen
-           from the start when the band arrives — never a flash of
-           the final figure first. */
-        el.dataset.countArmed = "1";
-        el.textContent = fmtNum(0);
       }
+      /* Audit F-6/D-4 (Oct 26): off-screen counters are NO LONGER
+         parked at zero. The band renders with its true figures in
+         place, and the count-up runs when the band comes into view —
+         a visitor resting with the band half-visible sees the real
+         numbers, never zeros on the headline stats. */
     });
-  }, { rootMargin: "0px 0px -8% 0px" });
+  }, { rootMargin: "0px" });
   els.forEach((el) => { el.dataset.countWired = "1"; io.observe(el); });
 }
 
@@ -319,10 +318,25 @@ const PHOTO_SLUGS = new Set(["alejandra-bravo", "amber-morley",
   "norman-kelly", "sarah-doucette"]);
 const initialsOf = (name) => String(name || "").split(/\s+/)
   .filter(Boolean).slice(0, 2).map((w) => w.charAt(0)).join("").toUpperCase();
+/* Avatar photo failure handling (audit F-2, Oct 26): the old
+   onerror removed the <img> on the FIRST failure, so one transient
+   fetch error cost that page-view its portrait even though every
+   headshot file exists. Retry once with a cache-busting query; only
+   a second failure removes the image, leaving the initials disc
+   that sits behind it in avatarHTML. */
+function demeAvatarError(img) {
+  if (!img.dataset.avatarRetried) {
+    img.dataset.avatarRetried = "1";
+    const src = img.getAttribute("src") || "";
+    img.src = src + (src.includes("?") ? "&" : "?") + "retry=1";
+  } else {
+    img.remove();
+  }
+}
 function avatarHTML(person, size = "") {
   const img = PHOTO_SLUGS.has(person.slug)
     ? `<img src="assets/headshots/${encodeURIComponent(person.slug)}.webp"
-        alt="" loading="lazy" decoding="async" onerror="this.remove()">`
+        alt="" loading="lazy" decoding="async" onerror="demeAvatarError(this)">`
     : "";
   return `<span class="avatar ${size}" aria-hidden="true"><span>${esc(initialsOf(person.name))}</span>${img}</span>`;
 }

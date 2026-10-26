@@ -85,6 +85,7 @@ function effectiveFilters() {
   return {
     freeTokens: parsed ? parsed.freeTokens : tokens($("q").value),
     topicGroups: parsed ? parsed.topicTokens : [],
+    ref: parsed && parsed.ref ? parsed.ref : null,
     yearFrom, yearTo,
     body: $("f-body").value || null,
     statusCodes, statusLabel,
@@ -106,6 +107,7 @@ function computeFiltered() {
   const profileActive = Boolean(profileFilter
     && (profileFilter.wards.length || profileFilter.interestRefs));
   const list = rows.filter((r) =>
+    (!eff.ref || (r.ref && String(r.ref).toUpperCase() === eff.ref)) &&
     matches(r, eff.freeTokens) &&
     askRowMatchesTopics(r, eff.topicGroups) &&
     (eff.yearFrom == null || (Number(r.year) >= eff.yearFrom && Number(r.year) <= eff.yearTo)) &&
@@ -194,7 +196,7 @@ function renderInterpretation(eff) {
   const raw = $("q").value.trim();
   const parsedActive = Boolean(parsed && (parsed.member || parsed.statusGroup
     || parsed.voteOnly || parsed.closeOnly || parsed.yearFrom != null
-    || parsed.ward != null || parsed.topicTokens.length));
+    || parsed.ward != null || parsed.topicTokens.length || parsed.ref));
   if (parsed && !parsedActive) {
     /* Nothing was recognized. If the raw text looks like a question,
        say so plainly and let the plain search stand on its own. */
@@ -211,6 +213,9 @@ function renderInterpretation(eff) {
   if (!parsedActive) { box.hidden = true; box.innerHTML = ""; return; }
 
   const parts = [];
+  if (eff.ref) {
+    parts.push(`Showing decisions for Council item “${esc(eff.ref)}”`);
+  }
   if (eff.topicGroups.length) {
     parts.push(`Showing decisions about ${eff.topicGroups.map((g) => esc(g.label)).join(", ")}`);
   }
@@ -525,7 +530,7 @@ async function init() {
   /* Manual control changes clear the conflicting parsed pieces. */
   $("f-year").addEventListener("change", () => {
     userEngaged = true;
-    if (parsed) { parsed.yearFrom = null; parsed.yearTo = null; }
+    if (parsed) { parsed.yearFrom = null; parsed.yearTo = null; parsed.ref = null; }
     applyFilters();
   });
   $("f-status").addEventListener("change", () => {

@@ -73,9 +73,21 @@ function parseAsk(q, ctx) {
   const out = {
     member: null, voteOnly: false, closeOnly: false, statusGroup: null,
     yearFrom: null, yearTo: null, ward: null, topicTokens: [],
-    freeTokens: [], recognized: false, raw: original,
+    freeTokens: [], recognized: false, raw: original, ref: null,
   };
   const cut = (re) => { work = work.replace(re, " "); };
+
+  /* 0 — an exact item reference ("2023.NY9.2", the identifier on
+     every City document) is a lookup, not a question (audit F-3,
+     Oct 26): return it as a ref filter and nothing else, before the
+     year/token parsing below can mangle it into the words "ny9 2"
+     plus a year filter and dead-end the search. */
+  const refMatch = work.match(/\b((?:19|20)\d{2})\.([a-z]{1,4}\d{1,3})\.(\d{1,3})\b/);
+  if (refMatch) {
+    out.ref = `${refMatch[1]}.${refMatch[2].toUpperCase()}.${refMatch[3]}`;
+    out.recognized = true;
+    return out;
+  }
 
   /* 1 — member names: full name first, else a unique last name. */
   const byNameLen = [...members].sort(

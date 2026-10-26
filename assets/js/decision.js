@@ -192,7 +192,7 @@ async function init() {
      string). Split them into single chips and drop near-duplicates
      ("ferry boats" / "ferryboats") — render-time only; the data and
      the search it feeds stay exactly as published. */
-  const normTopic = (t) => t.toLowerCase().replace(/\s+/g, "")
+  const normTopic = (t) => t.toLowerCase().replace(/[\s-]+/g, "")
     .replace(/ies$/, "y").replace(/s$/, "");
   /* Two City-keyword artefacts never reach a chip (render-time only,
      same philosophy as the split above — the data and the search it
@@ -212,13 +212,50 @@ async function init() {
   }
   const plainKeys = new Set(rawParts.filter((t) => !/[()]/.test(t))
     .map(normTopic));
-  const seenT = new Set();
-  const topicTerms = [];
+  const candTerms = [];
   for (const term of rawParts) {
     if (TOPIC_CODE_FRAGMENTS.has(term.toLowerCase())) continue;
     const paren = /\(([^)]+)\)\s*$/.exec(term);
     if (paren && plainKeys.has(normTopic(paren[1].trim()))) continue;
-    const key = normTopic(term);
+    candTerms.push(term);
+  }
+  /* Canonical folds (audit F-6/D-6, Oct 26) — the City keyword list
+     restates the same subject several ways on one item ("zoning
+     bylaws" / "zoning by-law amendment applications" / "zoning
+     project"; "by-laws" beside "bylaws"), which reads as clutter.
+     Render-time only, like everything in this block:
+       - hyphen/spelling variants fold into one key via normTopic;
+       - a term that only extends a plainer term on this same item
+         with "amendment"/"project" folds into that base term;
+       - within a family sharing a head word whose remaining words
+         are all generic (bylaw / amendment / application /
+         project), only the shortest — earliest on a tie — stands.
+     A term whose family has no plainer sibling always stands. */
+  const GENERIC_TAIL = new Set(["bylaw", "amendment", "application", "project"]);
+  const tailWords = (t) => t.toLowerCase().split(/\s+/).slice(1)
+    .map((w) => w.replace(/-/g, "").replace(/ies$/, "y").replace(/s$/, ""));
+  const headWord = (t) => t.toLowerCase().split(/\s+/)[0];
+  const candKeys = candTerms.map(normTopic);
+  const candKeySet = new Set(candKeys);
+  const seenT = new Set();
+  const topicTerms = [];
+  for (let i = 0; i < candTerms.length; i++) {
+    const term = candTerms[i];
+    const key = candKeys[i];
+    const foldBase = key.endsWith("amendment") ? key.slice(0, -"amendment".length)
+      : key.endsWith("project") ? key.slice(0, -"project".length) : null;
+    if (foldBase && candKeySet.has(foldBase)) continue;
+    const toks = term.toLowerCase().split(/\s+/);
+    if (toks.length >= 2 && tailWords(term).every((w) => GENERIC_TAIL.has(w))) {
+      const hasKeeper = candTerms.some((other, j) => {
+        if (j === i || headWord(other) !== headWord(term)) return false;
+        const oToks = other.toLowerCase().split(/\s+/);
+        if (!(oToks.length === 1 || tailWords(other).every((w) => GENERIC_TAIL.has(w)))) return false;
+        return oToks.length < toks.length
+          || (oToks.length === toks.length && j < i);
+      });
+      if (hasKeeper) continue;
+    }
     if (seenT.has(key)) continue;
     seenT.add(key);
     topicTerms.push(term);

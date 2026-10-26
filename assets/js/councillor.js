@@ -685,6 +685,16 @@ async function renderPayExpenses(person) {
           : "",
         ...(r.categories || []).map((c) => catRow(r, c)),
       ].join("");
+      /* Audit F-4 / decision D-2 (Oct 26): a period whose disclosure
+         total is $0 with no category rows must not read as a settled
+         full-period zero — quarterly postings arrive as they come
+         in, and the newest year is incomplete for every member.
+         Label only: the figure itself is shown exactly as
+         published. */
+      const zeroNote = (r.officeExpense === 0
+        && !(r.categories && r.categories.length))
+        ? `<p class="small" style="max-width:44rem;margin-top:.5rem">${simpleT("The City's disclosure shows $0 for this period, exactly as published. These figures are posted quarterly, as they come in, and the most recent year is incomplete for every member — so a $0 in the most recent year is the figure posted to date, not proof that nothing was spent.", "The City's report shows $0 for this period, just as the City posted it. New figures are posted every three months, and the newest year is not complete yet for any member. So a $0 in the newest year means the amount posted so far — not proof that nothing was spent.")}</p>`
+        : "";
       const personal = (r.personalFunds != null && r.personalFunds !== 0)
         ? `<p style="margin:.7rem 0 .4rem"><strong>Paid from personal funds</strong>
       <span class="small">· the member's own money, as the City reports it</span></p>
@@ -694,6 +704,7 @@ async function renderPayExpenses(person) {
       <p style="margin:0 0 .4rem"><strong>Office-expense detail (routine disclosure)</strong>
       ${meta ? `<span class="small">· ${esc(meta)}</span>` : ""}</p>
       ${rows ? `<ul class="lob-list">${rows}</ul>` : ""}
+      ${zeroNote}
       ${personal}
       ${r.nameChangeNote ? `<p class="small" style="max-width:44rem;margin-top:.5rem">${esc(r.nameChangeNote)}</p>` : ""}
       ${r.sourceUrl ? `<p class="small" style="margin-top:.5rem"><a href="${esc(r.sourceUrl)}" target="_blank" rel="noopener noreferrer">This period on the City's disclosure site<span class="visually-hidden"> (opens in a new tab)</span></a></p>` : ""}
@@ -872,7 +883,7 @@ function recordCardHTML(person, standalone) {
     : "Former member of Toronto City Council";
   const photo = PHOTO_SLUGS.has(person.slug)
     ? (standalone
-      ? `<img src="https://demeapp.github.io/assets/headshots/${person.slug}.webp" alt="" width="72" height="72" style="border-radius:50%;object-fit:cover" onerror="this.remove()">`
+      ? `<img src="https://demeapp.github.io/assets/headshots/${person.slug}.webp" alt="" width="72" height="72" style="border-radius:50%;object-fit:cover" onerror="demeAvatarError(this)">`
       : avatarHTML(person))
     : avatarHTML(person);
   const votes = cardVotes().map((r) => standalone

@@ -32,6 +32,12 @@
   margin-top: 1.35rem;
 }
 .account-entry .signin-link { font-weight: 600; color: var(--bronze-dark); }
+/* Locked headline (audit F-1, Oct 26): the H1 carries the locked
+   line; the previous H1 sits under it as the hero subhead. */
+.hero-sub {
+  font-size: clamp(1.22rem, 2.6vw, 1.5rem); font-weight: 600;
+  line-height: 1.32; color: #E7EEF5; margin: 0 0 .9rem; max-width: 42rem;
+}
 .upcoming-sec { margin-top: var(--sp-4); }
 .upcoming-line {
   background: var(--mint-wash); border: 1px solid rgba(11,122,92,.18);
@@ -156,8 +162,9 @@
 
     <section class="hero" aria-labelledby="hero-h">
       <p class="kicker">Toronto City Council · The record, in plain language</p>
-      <h1 id="hero-h">Know what City Hall decided — and how everyone voted.</h1>
-      <p class="lede">Deme turns the City of Toronto's published council records into plain language. Search a topic, a street, or a name, and see the decision — and the vote behind it.</p>
+      <h1 id="hero-h">THE RECORD IS PUBLIC. NOW IT'S READABLE.</h1>
+      <p class="hero-sub">Know what City Hall decided — and how everyone voted.</p>
+      <p class="lede">Search a topic, a street, or a name.</p>
       <form class="searchbox" action="explore.html" method="get" role="search">
         <label class="visually-hidden" for="q">Search decisions</label>
         <input type="search" id="q" name="q"
@@ -263,16 +270,6 @@
           <p class="who">GovTrack<small>United States</small></p>
           <p><strong>What it does well:</strong> tracks US Congress bills and member voting records.</p>
           <p><strong>What's missing:</strong> US federal only — nothing for Canadian municipal voters.</p>
-        </li>
-        <li class="gap-row">
-          <p class="who">Countable<small>United States</small></p>
-          <p><strong>What it does well:</strong> plain-language summaries, polls, contact your lawmaker.</p>
-          <p><strong>What's missing:</strong> US federal &amp; state only; contact tool is US-only.</p>
-        </li>
-        <li class="gap-row">
-          <p class="who">VoteSpotter<small>United States</small></p>
-          <p><strong>What it does well:</strong> clean mobile app, push alerts, rep voting records.</p>
-          <p><strong>What's missing:</strong> US only; advocacy-driven priorities, not a neutral record.</p>
         </li>
         <li class="gap-row">
           <p class="who">openparliament.ca<small>Canada (federal)</small></p>

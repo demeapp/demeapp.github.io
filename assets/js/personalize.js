@@ -448,8 +448,20 @@ const HomeStore = (() => {
     else renderWard(state);
   }
 
-  loadJSON(dataPath("councillors.json")).then((list) => {
+  loadJSON(dataPath("councillors.json")).then(async (list) => {
     people = list;
+    /* R1 (register, Oct 24; fixed Oct 26): this script loads BEFORE
+       account.js, and the account layer restores a stored session
+       asynchronously — until that restore settles, its in-memory
+       answer to "signed in?" is no, so deciding here on the fetch
+       alone raced the restore and showed a returning signed-in
+       visitor the signed-out signpost on a cold load. Wait for the
+       account layer's own settle signal (authReady resolves at the
+       end of its boot, signed in or out) before asking. If the
+       account layer is absent, decide immediately, as before. */
+    if (window.DemeAccount && typeof window.DemeAccount.authReady === "function") {
+      await window.DemeAccount.authReady();
+    }
     if (typeof demeSignedOut === "function" && demeSignedOut()) {
       /* Signed out with live accounts: no device ward is read,
          adopted, or written, no rep snapshot is primed, and the

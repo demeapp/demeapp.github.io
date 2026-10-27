@@ -892,5 +892,61 @@
   "committees": [],
   "contact": null,
   "promises": []
+ },
+ "diana-chan-mcnally": {
+  "name": "Diana Chan McNally",
+  "ward": "Ward 4, Parkdale—High Park",
+  "bio": "Long-time Parkdale frontline homelessness-services worker and housing/human-rights advocate — about 12 years on the front line, including at the Parkdale Activity-Recreation Centre (PARC) and Parkdale Queen West Community Health Centre; served on the City of Toronto’s Housing Rights Advisory Committee.",
+  "committees": [],
+  "contact": {},
+  "promises": []
+ },
+ "chiara-padovani": {
+  "name": "Chiara Padovani",
+  "ward": "Ward 5, York South—Weston",
+  "bio": "Tenant advocate and founding member of the York South—Weston Tenant Union; runner-up in Ward 5 in the 2022 municipal election (lost to Nunziata by 94 votes); endorsed in 2026 by the Toronto & York Region Labour Council and Progress Toronto.",
+  "committees": [],
+  "contact": {},
+  "promises": []
+ },
+ "mike-layton": {
+  "name": "Mike Layton",
+  "ward": "Ward 11, University—Rosedale",
+  "bio": "Toronto city councillor 2010–2022 who did not seek re-election in 2022 and became York University’s chief sustainability officer in March 2023; son of former federal NDP leader Jack Layton.",
+  "committees": [],
+  "contact": {},
+  "promises": []
+ },
+ "curran-stikuts": {
+  "name": "Curran Stikuts",
+  "ward": "Ward 13, Toronto Centre",
+  "bio": "Toronto Centre community leader with 15+ years working in the ward — began in co-operative housing in the Downtown East, then community health; spent over a decade at The 519 Community Centre leading advocacy and community programs, and has served on foundation and social-policy boards.",
+  "committees": [],
+  "contact": {},
+  "promises": []
+ },
+ "sara-ehrhardt": {
+  "name": "Sara Ehrhardt",
+  "ward": "Ward 14, Toronto—Danforth",
+  "bio": "Elected Toronto District School Board trustee for Ward 15 Toronto-Danforth since November 2022, representing the same east-end community at the TDSB before moving to council; ran with retiring councillor Paula Fletcher’s endorsement.",
+  "committees": [],
+  "contact": {},
+  "promises": []
+ },
+ "nate-erskine-smith": {
+  "name": "Nate Erskine-Smith",
+  "ward": "Ward 19, Beaches—East York",
+  "bio": "Liberal MP for Beaches—East York 2015–2026 and federal Minister of Housing, Infrastructure and Communities (Dec 2024–May 2025); a commercial litigation lawyer before politics; resigned from Parliament July 7, 2026 and announced his council run August 18, 2026.",
+  "committees": [],
+  "contact": {},
+  "promises": []
+ },
+ "shaun-chen": {
+  "name": "Shaun Chen",
+  "ward": "Ward 23, Scarborough North",
+  "bio": "Liberal MP for Scarborough North 2015–2026 (resigned from Parliament August 15, 2026, citing health effects of a 2025 car accident, then ran municipally); before federal politics, a Toronto District School Board trustee from 2006 and the TDSB’s chair in 2014–2015 — the first Scarborough trustee to hold the post.",
+  "committees": [],
+  "contact": {},
+  "promises": []
  }
 }

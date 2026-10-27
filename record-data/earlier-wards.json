@@ -946,5 +946,23 @@
    "ward": 22,
    "wardName": "Scarborough-Agincourt"
   }
+ },
+ "dianne-saxe": {
+  "2022-2026": {
+   "ward": 11,
+   "wardName": "University—Rosedale"
+  }
+ },
+ "chris-moise": {
+  "2022-2026": {
+   "ward": 13,
+   "wardName": "Toronto Centre"
+  }
+ },
+ "jamaal-myers": {
+  "2022-2026": {
+   "ward": 23,
+   "wardName": "Scarborough North"
+  }
  }
 }

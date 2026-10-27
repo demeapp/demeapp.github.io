@@ -294,11 +294,18 @@ function memberStatsHTML(person) {
 
 /* ---------------- member avatars ----------------
    Official portraits exist for the members in PHOTO_SLUGS (the
-   files live in assets/headshots/, named by slug): all 26 current
-   members, plus 21 earlier members whose portraits come from the
-   City of Toronto Archives' official councillor portrait series
-   (Fonds 219, Series 2311, via Wikimedia Commons — polish wave,
-   Oct 22, 2026; full provenance in the wave's D/E report).
+   files live in assets/headshots/, named by slug): the 19 returning
+   current members, plus 27 earlier members — 20 whose portraits come
+   from the City of Toronto Archives' official councillor portrait
+   series (Fonds 219, Series 2311, via Wikimedia Commons — polish
+   wave, Oct 22, 2026; full provenance in that wave's D/E report)
+   and the 7 who left council in 2026, whose official portraits ran
+   while they served. The 7 members elected in 2026 are NOT in the
+   set: the City has not published official portraits of the
+   incoming council, so they get the initials disc — no campaign or
+   substitute photos are used. (Mike Layton's archive portrait file
+   stays on disk, unreferenced, until the parent decides whether to
+   link his earlier-service portrait; v32 roster wave, Oct 27, 2026.)
    Everyone else — and any photo that fails to load — falls back
    to the member's initials on a navy disc, the old build's
    pattern. */
@@ -314,7 +321,7 @@ const PHOTO_SLUGS = new Set(["alejandra-bravo", "amber-morley",
   "doug-holyday", "frank-di-giorgio", "gary-crawford", "janet-davis",
   "jaye-robinson", "joe-mihevc", "john-parker", "josh-colle",
   "karen-stintz", "kristyn-wong-tam", "maria-augimeri", "mark-grimes",
-  "mary-fragedakis", "mary-margaret-mcmahon", "mike-layton",
+  "mary-fragedakis", "mary-margaret-mcmahon",
   "norman-kelly", "sarah-doucette"]);
 const initialsOf = (name) => String(name || "").split(/\s+/)
   .filter(Boolean).slice(0, 2).map((w) => w.charAt(0)).join("").toUpperCase();

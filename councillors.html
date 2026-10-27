@@ -99,6 +99,10 @@
   #earlier-details .em-stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   #earlier-details .em-stats span { overflow-wrap: break-word; }
 }
+/* Incoming-member card note (v32): replaces the four-stat block on the
+   seven cards for members elected Oct 26, 2026 whose record has not
+   begun. Navy & Mint system colours only. */
+.incoming-note { margin: 0; padding: 1.25rem 1.45rem 1.45rem; font-size: .82rem; line-height: 1.45; color: var(--ink-faint); }
 </style>
 <link rel="icon" href="favicon-navy-mint-v2.svg" type="image/svg+xml">
 <link rel="icon" href="assets/icons/favicon-32.png" sizes="32x32" type="image/png">
@@ -165,7 +169,13 @@
 
       <p style="margin-top:1.2rem"><a class="btn secondary" href="compare.html">Compare two representatives →</a></p>
 
-      <h2 style="margin-top:2.4rem">Council today</h2>
+      <h2 style="margin-top:2.4rem">The incoming council</h2>
+      <p class="small" style="max-width:44rem">Elected on October 26, 2026
+        (unofficial results). The new council term begins
+        <strong>November 15, 2026</strong>. Members returning from the
+        2022–2026 council carry their records forward; a first-time
+        member’s record begins with the new term — there are no votes
+        to show for them yet, and none are invented.</p>
       <div class="people" id="current"><span class="visually-hidden">Loading…</span>
         <div class="skel-card" aria-hidden="true"><span class="skel-el title"></span><span class="skel-el sm"></span><span class="skel-el short"></span></div>
         <div class="skel-card" aria-hidden="true"><span class="skel-el title"></span><span class="skel-el sm"></span><span class="skel-el short"></span></div>
@@ -197,6 +207,15 @@ let filter = "";
 function personCard(c) {
   const role = c.mayor ? "Mayor of Toronto"
     : `Councillor · Ward ${c.ward} — ${esc(c.wardName)}`;
+  /* Incoming members (elected Oct 26, 2026; term begins Nov 15, 2026)
+     carry no summary stats yet — their record begins with the new
+     term. The card says so plainly instead of printing four dashes.
+     (Layton's card takes the same treatment; his 2010–2022 record
+     stays on his profile page, labelled as his earlier service.) */
+  const stats = c.incoming
+    ? `<p class="incoming-note">Elected October 26, 2026 · Term begins
+        November 15, 2026 — record begins with the new term.</p>`
+    : memberStatsHTML(c);
   return `<article class="person${c.mayor ? " is-mayor" : ""}">
     <div class="person-top">${avatarHTML(c)}
       <div>
@@ -204,7 +223,7 @@ function personCard(c) {
         <p class="ward">${role}</p>
       </div>
     </div>
-    ${memberStatsHTML(c)}
+    ${stats}
   </article>`;
 }
 /* One filter for the grid: a name, as before — and now also a ward

@@ -770,7 +770,14 @@ async function renderHaveYourSay(person) {
         are listed in the record. To reach the office that holds the seat
         today, use the City's official
         <a href="${CITY_MEMBERS_URL}" target="_blank" rel="noopener noreferrer">members of Council directory<span class="visually-hidden"> (opens in a new tab)</span></a>.</p>`;
-  const intro = person.current
+  const intro = person.incoming
+    ? `${esc(person.name)} was elected on October 26, 2026, and takes
+       office when the new term begins on November 15, 2026. Until then,
+       the City's
+       <a href="${CITY_MEMBERS_URL}" target="_blank" rel="noopener noreferrer">members of Council directory<span class="visually-hidden"> (opens in a new tab)</span></a>
+       reaches the office that holds the seat today. The committee
+       route below still applies to questions before council.`
+    : person.current
     ? (simpleOn()
       ? `The record above shows what ${esc(person.name)} decided and how they voted. If you live in ${where}, this person represents you at City Hall. How to reach their office is below. While an item is still being decided, you can also speak to the committee yourself.`
       : `The record above is what ${esc(person.name)} decided and how they voted. If you live in ${where}, this is your representative at City Hall — the office route is below. While an item is still being decided, you can speak to the committee considering it yourself.`)
@@ -1002,16 +1009,20 @@ async function init() {
   const basisNote = person.participationBasis === "aggregate"
     ? `<p class="small" style="max-width:44rem">${simpleT("This member's participation and vote totals include their pre-2018 aggregate record, kept as totals rather than stored vote by vote; some or all of those earlier votes are not stored individually.", "This member's participation and vote totals include their record from before 2018, kept as totals, not stored one by one. Some or all of those earlier votes are not stored one by one.")}</p>`
     : "";
-  box.innerHTML = `
-    <p class="kicker">${person.current ? "Council today" : "Earlier member"}</p>
-    <div class="profile-head">${avatarHTML(person, "lg")}
-      <div>
-        <h1>${esc(person.name)}</h1>
-        <p class="lede" style="margin-bottom:.3rem">${role}</p>
-        <p class="small">Term${person.terms.length > 1 ? "s" : ""} in the record:
-          ${person.terms.map((t) => esc(fmtTerm(t))).join(" · ")}</p>
-      </div>
-    </div>
+  /* Incoming members (v32): elected Oct 26, 2026; the new term begins
+     Nov 15, 2026. A first-time member (votesCast null in the data)
+     has no record yet — the page says so in one notice instead of
+     printing dash tiles and figure explanations for votes that do
+     not exist. An incoming member WITH a stored record (Layton,
+     2010–2022) keeps his real figures; the notice labels them as his
+     earlier service so nothing reads as new-term record. */
+  const emptyRecord = !!person.incoming && person.votesCast == null;
+  const incomingNote = person.incoming
+    ? (emptyRecord
+      ? `<div class="notice" style="max-width:44rem;margin-top:1rem">Elected on October 26, 2026 (unofficial results). ${esc(person.name)}’s term begins November 15, 2026, and their record on Deme begins with the new term — there are no votes to show yet, and none are invented.</div>`
+      : `<div class="notice" style="max-width:44rem;margin-top:1rem">Elected on October 26, 2026 (unofficial results). ${esc(person.name)} returns to the Ward ${person.ward} seat he held in 2018–2022. The record below is from his earlier service on council (2010–2022); his new-term record begins November 15, 2026.</div>`)
+    : "";
+  const recordSection = emptyRecord ? "" : `
     <div class="statTiles">
       <div class="stat"><span class="num">${fmtAtt(person)}</span>
         <span class="lab">${simpleT("Recorded-vote participation — present and voting, out of recorded votes where a vote was theirs to cast", "Recorded votes they took part in — they were there and voted, out of the recorded votes they could vote on")}</span>${attBar}</div>
@@ -1025,10 +1036,21 @@ async function init() {
     <a href="about.html#how-we-count">How we count</a>${simpleT(" explains each figure on this page.", " explains each number on this page.")}</p>
     ${basisNote}
     ${compositionStrip(person)}
-    <p class="small" style="max-width:44rem">${simpleT("The totals count the full record: member totals back to 2006; item-by-item rows from 2018. The “Interest declared · stepped back” figure is narrower: the voting record flags a declared interest only from June 2023, so the figure counts flagged votes from June 2023 on — earlier declarations were recorded as ordinary absences. A dash marks a member whose service ended before June 2023. The figure is not the City’s declarations register; the register entries Deme serves for this member are listed on this page under “Declared interests — the official register”, with their own count.", "The totals cover the full record. Member totals go back to 2006. Rows for each item start in 2018. The “Declared an interest · did not vote” number is narrower. The voting record only marks a declared interest from June 2023. So the number counts marked votes from June 2023 on. Before that, declarations were written down as plain absences. A dash means the member’s service ended before June 2023. This number is not the City’s official list of declared interests. That list is on this page too, under its own heading, with its own count.")}</p>
-    <p style="margin-top:1rem"><button class="btn secondary" id="record-card-btn"
+    <p class="small" style="max-width:44rem">${simpleT("The totals count the full record: member totals back to 2006; item-by-item rows from 2018. The “Interest declared · stepped back” figure is narrower: the voting record flags a declared interest only from June 2023, so the figure counts flagged votes from June 2023 on — earlier declarations were recorded as ordinary absences. A dash marks a member whose service ended before June 2023. The figure is not the City’s declarations register; the register entries Deme serves for this member are listed on this page under “Declared interests — the official register”, with their own count.", "The totals cover the full record. Member totals go back to 2006. Rows for each item start in 2018. The “Declared an interest · did not vote” number is narrower. The voting record only marks a declared interest from June 2023. So the number counts marked votes from June 2023 on. Before that, declarations were written down as plain absences. A dash means the member’s service ended before June 2023. This number is not the City’s official list of declared interests. That list is on this page too, under its own heading, with its own count.")}</p>`;
+  box.innerHTML = `
+    <p class="kicker">${person.incoming ? "Incoming council" : person.current ? "Council today" : "Earlier member"}</p>
+    <div class="profile-head">${avatarHTML(person, "lg")}
+      <div>
+        <h1>${esc(person.name)}</h1>
+        <p class="lede" style="margin-bottom:.3rem">${role}</p>
+        <p class="small">Term${person.terms.length > 1 ? "s" : ""} in the record:
+          ${person.terms.map((t) => esc(fmtTerm(t))).join(" · ")}</p>
+      </div>
+    </div>
+    ${incomingNote}${recordSection}
+    <p style="margin-top:1rem">${emptyRecord ? "" : `<button class="btn secondary" id="record-card-btn"
       type="button">${simpleT("Print / download record card", "Print or download record card")}</button>
-    <button class="btn secondary" id="share-btn" type="button">Copy link</button></p>
+    `}<button class="btn secondary" id="share-btn" type="button">Copy link</button></p>
     <nav class="profile-contents" id="profile-contents" aria-label="On this page">
       <span class="pc-lab">On this page</span>
       <a data-pc="about" href="#about-member">About</a>
@@ -1049,10 +1071,10 @@ async function init() {
       <span class="skel-el sm"></span><span class="skel-el title"></span>
       <span class="skel-el"></span><span class="skel-el short"></span></div></div>
     <div id="have-your-say"></div>`;
-  document.getElementById("record-card-btn")
-    .addEventListener("click", () => openRecordCard(person));
+  const rcb = document.getElementById("record-card-btn");
+  if (rcb) rcb.addEventListener("click", () => openRecordCard(person));
   setupShareButton(document.getElementById("share-btn"));
-  renderRegisterSummary(person);
+  if (!emptyRecord) renderRegisterSummary(person);
 
   const wrap = document.getElementById("historyWrap");
   try {
@@ -1062,7 +1084,11 @@ async function init() {
     memberSlug = person.slug;
     restLoaded = memberTotal <= memberRows.length;
     if (!memberRows.length) {
-      wrap.innerHTML = `<div class="notice">This member's recorded votes
+      wrap.innerHTML = person.incoming
+        ? `<div class="notice">No recorded votes yet. ${esc(person.name)}’s
+          record begins with the new council term on November 15, 2026 —
+          this section fills as the new council votes.</div>`
+        : `<div class="notice">This member's recorded votes
         predate the searchable decision archive, which begins in 2018.
         Their votes are counted in the totals above; the item-by-item
         record starts with the 2018 term.</div>`;

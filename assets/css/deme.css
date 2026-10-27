@@ -2005,3 +2005,59 @@ details.pay-year[open] > summary::after { content: "\25B4"; }
 .search-panel .filters-in[hidden] { display: none !important; }
 .filters-toggle { display: none; }
 @media (max-width: 700px) { .filters-toggle { display: inline-flex; margin: 0 0 .9rem; } }
+
+
+/* Expansion wave (Oct 27, 2026): legislature level switcher + the
+   Ontario / Canada layer components. Additive only — no Toronto rule
+   above is changed. Navy & Mint throughout. */
+.level-switcher {
+  display: flex; flex-wrap: wrap; align-items: center; gap: .45rem;
+  margin-top: .8rem;
+}
+.level-switcher .ls-label {
+  font-size: .72rem; font-weight: 700; letter-spacing: .07em;
+  text-transform: uppercase; color: var(--ink-faint); margin-right: .15rem;
+}
+.level-switcher a {
+  border: 1.5px solid var(--line); border-radius: 999px;
+  padding: .3rem .85rem; font-size: .92rem; font-weight: 600;
+  color: var(--navy-ink); text-decoration: none; background: #fff;
+}
+.level-switcher a:hover { border-color: var(--bronze-dark); }
+.level-switcher a[aria-current="true"] {
+  background: var(--navy); border-color: var(--navy); color: #fff;
+}
+.votePair { background: #E4EAF2; color: var(--navy-ink); }
+@media (forced-colors: active) {
+  .votePair { border: 1px solid ButtonText; }
+}
+.person .party-line, .profile-head .party-line {
+  margin: .1rem 0 0; color: var(--ink-soft); font-size: .92rem;
+}
+.layer-table {
+  width: 100%; border-collapse: collapse; margin-top: .8rem;
+  font-size: .95rem;
+}
+.layer-table th, .layer-table td {
+  text-align: left; padding: .45rem .6rem; border-bottom: 1px solid var(--line);
+  vertical-align: top;
+}
+.layer-table th {
+  font-size: .74rem; letter-spacing: .05em; text-transform: uppercase;
+  color: var(--ink-faint); font-weight: 700;
+}
+.layer-table td.num, .layer-table th.num { text-align: right; font-variant-numeric: tabular-nums; }
+.doc-list details { margin-top: .8rem; }
+.doc-list summary { cursor: pointer; font-weight: 600; color: var(--navy-ink); }
+.doc-text {
+  white-space: pre-wrap; overflow-wrap: break-word; max-width: 46rem;
+  margin-top: .6rem; font-size: .94rem; line-height: 1.55; color: var(--ink);
+}
+.by-year { display: flex; flex-wrap: wrap; gap: .4rem .9rem; margin-top: .6rem; }
+.by-year span { font-size: .9rem; color: var(--ink-soft); }
+.by-year strong { color: var(--ink); }
+.coverage-note {
+  margin-top: 2.6rem; padding: .8rem 1rem; max-width: 46rem;
+  background: var(--mint-light); border-left: 3px solid var(--bronze-dark);
+  font-size: .92rem; line-height: 1.5; color: var(--ink-soft);
+}

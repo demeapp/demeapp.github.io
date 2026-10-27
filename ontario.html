@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Members of Provincial Parliament — Deme</title>
+<meta name="description" content="Every current Ontario MPP in the record, and every former member with a recorded vote since 2022: voting record, expenses, disclosure statements and lobbying registrations — facts only, no grades.">
+<link rel="stylesheet" href="assets/css/deme.css">
+<link rel="manifest" href="manifest.webmanifest">
+<style>
+/* Layer directory: the Toronto directory's page-local styles, carried
+   over unchanged (expansion wave, Oct 27, 2026). */
+.finder-panel {
+  margin-top: 1.4rem; border-radius: 16px; position: relative;
+  overflow: hidden; padding-top: 1.5rem;
+  box-shadow: 0 10px 30px rgba(10, 31, 56, .10);
+}
+.finder-panel::before {
+  content: ""; position: absolute; inset: 0 0 auto 0; height: 5px;
+  background: linear-gradient(90deg, var(--navy) 0%, var(--bronze) 100%);
+}
+.finder-panel h2 { font-size: 1.3rem; margin: 0 0 .4rem; color: var(--navy-ink); }
+.finder-row { display: flex; gap: .6rem; flex-wrap: wrap; margin-top: .8rem; }
+.finder-row input[type="text"] {
+  flex: 1 1 14rem; min-width: 0; font-size: 1.05rem;
+  padding: .75rem 1rem; border: 1.5px solid var(--line);
+  border-radius: 12px; background: #fff; color: var(--ink);
+}
+.finder-row input[type="text"]:focus {
+  outline: none; border-color: var(--bronze-dark);
+  box-shadow: 0 0 0 3px var(--mint-light);
+}
+.finder-row .btn { border-radius: 12px; }
+.earlier-search { margin: 1rem 0 .4rem; }
+.earlier-search input[type="text"] {
+  width: 100%; box-sizing: border-box; font-size: 1rem;
+  padding: .65rem .9rem; border: 1.5px solid var(--line);
+  border-radius: 12px; background: #fff; color: var(--ink);
+}
+.earlier-search input[type="text"]:focus {
+  outline: none; border-color: var(--bronze-dark);
+  box-shadow: 0 0 0 3px var(--mint-light);
+}
+#earlier-details summary h2 { display: inline; font-size: 1.05rem; margin: 0; }
+.earlier-note { max-width: 44rem; }
+#earlier-details .personlist li { justify-content: flex-start; flex-wrap: nowrap; align-items: flex-start; }
+#earlier-details .personlist li > .avatar { flex: none; }
+.em-main { flex: 1 1 auto; min-width: 0; }
+.em-name { margin: 0; font-size: 1.08rem; line-height: 1.3; }
+.em-terms { margin: .2rem 0 0; color: var(--ink-soft); font-size: .92rem; }
+.em-wards { margin: .15rem 0 0; color: var(--ink-faint); font-size: .875rem; }
+.em-wards span { display: block; }
+.em-stats {
+  display: grid; grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: .55rem 1.25rem; margin-top: .65rem; max-width: 36rem;
+}
+.em-stats > div { min-width: 0; }
+.em-stats span {
+  display: block; color: var(--ink-faint); font-size: .72rem; font-weight: 600;
+  letter-spacing: .05em; text-transform: uppercase;
+}
+.em-stats strong { display: block; margin-top: .15rem; font-size: 1.05rem; line-height: 1.25; color: var(--ink); }
+@media (max-width: 480px) {
+  .em-stats { gap: .55rem .8rem; }
+  #earlier-details .em-stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  #earlier-details .em-stats span { overflow-wrap: break-word; }
+}
+</style>
+<link rel="stylesheet" href="assets/css/improvements.css">
+<link rel="icon" href="favicon-navy-mint-v2.svg" type="image/svg+xml">
+<link rel="icon" href="assets/icons/favicon-32.png" sizes="32x32" type="image/png">
+<meta name="theme-color" content="#0E2A47">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Deme">
+<meta property="og:title" content="Members of Provincial Parliament — Deme">
+<meta property="og:description" content="Every current Ontario MPP in the record: voting record, expenses, disclosure statements and lobbying registrations — facts only, no grades.">
+<meta property="og:image" content="https://demeapp.github.io/assets/og-image-navy-2026-v2.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Members of Provincial Parliament — Deme">
+<meta name="twitter:description" content="Every current Ontario MPP in the record: voting record, expenses, disclosure statements and lobbying registrations — facts only, no grades.">
+<meta name="twitter:image" content="https://demeapp.github.io/assets/og-image-navy-2026-v2.png">
+<link rel="apple-touch-icon" href="assets/icons/apple-touch-icon-2026-v2.png">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to main content</a>
+<header class="site-header"></header>
+<main id="main">
+  <div class="wrap">
+    <section aria-labelledby="people-h">
+      <p class="kicker">Representatives — Ontario</p>
+      <h1 id="people-h">Members of Provincial Parliament</h1>
+      <hr class="rule">
+      <p class="lede">Facts only — no grades, no rankings. Recorded-vote
+      participation is the share of recorded divisions in a member's
+      time in the Assembly where the member cast a vote — not a count
+      of sittings attended. Ontario publishes no pairing record: a
+      member who is not listed in a division did not vote in it, for
+      any reason.</p>
+
+      <div class="card finder-panel" id="member-lookup">
+        <h2>Find a member — by name or riding</h2>
+        <p class="small" style="max-width:44rem;margin-top:0">Type a name
+          or a riding to filter the members below.</p>
+        <form class="finder-row" id="finder-form" role="search">
+          <label class="visually-hidden" for="q">Find a member by name or riding</label>
+          <input type="text" id="q" placeholder="A name, or a riding" autocomplete="off" spellcheck="false">
+        </form>
+        <div id="finder-result" aria-live="polite"></div>
+      </div>
+
+      <p class="small" style="margin-top:.9rem">Looking for someone who
+    served earlier in this record?
+    <a href="#earlier-details">Earlier members (2022–2026) — <span id="earlier-count">…</span> members ↓</a></p>
+
+      <div class="directory-bar">
+        <label class="sortlab" for="dir-sort">Sort members
+          <select id="dir-sort">
+            <option value="riding">By riding, A to Z</option>
+            <option value="name">Name, A to Z</option>
+          </select>
+        </label>
+      </div>
+      <p class="small">Each card carries four facts — recorded-vote
+        participation, votes cast, tenure, and disclosure statements
+        on file: the member's annual disclosure statements to the
+        Integrity Commissioner (2005–present), counted as statements,
+        not as dated declarations of individual interests. Open a
+        member for the full record. Official portraits could not be
+        gathered for this layer, so every member is shown with
+        initials — no substitute photos are used.</p>
+
+      <h2 style="margin-top:2.4rem">Current members</h2>
+      <div class="people" id="current"><span class="visually-hidden">Loading…</span>
+        <div class="skel-card" aria-hidden="true"><span class="skel-el title"></span><span class="skel-el sm"></span><span class="skel-el short"></span></div>
+        <div class="skel-card" aria-hidden="true"><span class="skel-el title"></span><span class="skel-el sm"></span><span class="skel-el short"></span></div>
+        <div class="skel-card" aria-hidden="true"><span class="skel-el title"></span><span class="skel-el sm"></span><span class="skel-el short"></span></div></div>
+
+      <details class="filters" id="earlier-details" style="margin-top:3rem">
+        <summary><h2>Earlier members (2022–2026)</h2> <span class="small" id="earlier-count-note"></span></summary>
+        <p class="small" style="margin-top:.8rem">Members who cast recorded votes in this archive and have since left the Assembly, in the same record.</p>
+        <div class="earlier-search">
+          <label class="visually-hidden" for="eq">Search earlier members</label>
+          <input type="text" id="eq" placeholder="Search earlier members — a name, or a riding" autocomplete="off" spellcheck="false">
+        </div>
+        <ul class="personlist" id="earlier"></ul>
+      </details>
+
+      <div class="coverage-note">
+        <strong>Coverage.</strong> This layer is the archive as gathered
+        on October 20, 2026. Recorded votes: 315 divisions, August 10,
+        2022 – June 2, 2026 (the last sitting captured); the Assembly
+        publishes searchable name-by-name votes only from the 43rd
+        Parliament (2022) on, so no record here reaches further back.
+        Disclosure statements: the complete series, 2005–2025.
+        Expenses: payments from April 2024 to December 2025, plus
+        annual totals back to 2015–16 — some early annual figures rest
+        on scanned documents, and ministers' expenses are published in
+        a separate provincial system and are not included. Lobbying:
+        Ontario publishes lobbyist registrations — statements of intent
+        to lobby — not records of contacts or meetings; each current
+        member's page shows the registration picture for their office,
+        labelled as such.
+      </div>
+    </section>
+  </div>
+</main>
+<footer class="site-footer"></footer>
+<script>window.__demeLayer = "ontario";
+window.DEME_LAYER_PAGE = {
+  layer: "ontario", directoryPage: "ontario.html",
+  dataDir: "record-data/ontario/", profilePage: "mpp.html", idParam: "m",
+  photoDir: null,
+  roleNoun: "Member of Provincial Parliament",
+  roleLine: (p) => `MPP · ${p.riding}`,
+  tenureCurrent: (p) => `Since ${p.firstYear}`,
+  interestsLabel: "Disclosure statements on file (annual statements, 2005–present)",
+  interestsValue: (p) => p.pdsStatements
+};</script>
+<script src="assets/js/simple-mode.js"></script>
+<script src="assets/js/common.js"></script>
+<script src="assets/js/layer-directory.js"></script>
+<script data-goatcounter="https://demecivic.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>

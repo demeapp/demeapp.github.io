@@ -177,9 +177,30 @@ const SOCIAL_LINKS = [
       <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
     </svg>`],
 ];
+/* Legislature layers (expansion wave, Oct 27, 2026): Toronto is the
+   original layer and the default. The Ontario (MPP) and Canada (MP)
+   layers carry their own directories and profile pages; the level
+   switcher below is the only chrome they add to the Toronto pages.
+   A page declares its layer with window.__demeLayer before this
+   script loads; anything undeclared is Toronto. */
+const DEME_LEVELS = [
+  ["toronto", "Toronto", "councillors.html"],
+  ["ontario", "Ontario", "ontario.html"],
+  ["canada", "Canada", "canada.html"],
+];
+function demeLayer() {
+  if (typeof window !== "undefined" && window.__demeLayer)
+    return window.__demeLayer;
+  const p = (typeof location !== "undefined" ? location.pathname : "")
+    .toLowerCase();
+  if (p.includes("ontario") || p.endsWith("/mpp.html")) return "ontario";
+  if (p.includes("canada") || p.endsWith("/mp.html")) return "canada";
+  return "toronto";
+}
 function renderChrome(active) {
   window.__demeChromeActive = active;
   renderElectionBanner();
+  const layer = demeLayer();
   const header = document.querySelector(".site-header");
   if (header) {
     header.innerHTML = `<div class="wrap">
@@ -194,6 +215,11 @@ function renderChrome(active) {
         ${NAV.map(([href, label]) =>
           `<a href="${href}"${href === "my-record.html" ? ' class="nav-record"' : ""}${href === active ? ' aria-current="page"' : ""}>${label}</a>`).join("")}
       </nav>
+      <nav class="level-switcher" aria-label="Choose a legislature">
+        <span class="ls-label" aria-hidden="true">Legislature</span>
+        ${DEME_LEVELS.map(([key, label, href]) =>
+          `<a href="${href}" data-level="${key}"${key === layer ? ' aria-current="true"' : ""}>${label}</a>`).join("")}
+      </nav>
       <div class="simple-mode-wrap">
         <button class="simple-mode-toggle" id="simple-mode-toggle" type="button"
           aria-pressed="${simpleOn()}" aria-describedby="simple-mode-help">
@@ -205,11 +231,38 @@ function renderChrome(active) {
   }
   const footer = document.querySelector(".site-footer");
   if (footer) {
+    /* Layer-aware brand line: Toronto's is the original string; the
+       Ontario and Canada layers name their own legislature so no
+       Toronto wording leaks into their pages. */
+    const brandLine = layer === "ontario"
+      ? `<strong>Deme</strong> — the Ontario Legislature's record, in plain
+          language. Non-partisan. No grades, no endorsements — just the record.`
+      : layer === "canada"
+      ? `<strong>Deme</strong> — the House of Commons' record, in plain
+          language. Non-partisan. No grades, no endorsements — just the record.`
+      : `<strong>Deme</strong> — Toronto City Council's record, in plain
+          language. Non-partisan. No grades, no endorsements — just the record.`;
+    const fineprint = layer === "ontario"
+      ? `Built from the Legislative Assembly of Ontario's published records
+      and the Integrity Commissioner's disclosure registry. Voting record:
+      name-by-name rows 2022–2026, as gathered Oct 20, 2026 ·
+      Disclosure statements: 2005–2025 — see
+      <a href="about.html">About &amp; method</a>.`
+      : layer === "canada"
+      ? `Built from the House of Commons' published records, the Conflict of
+      Interest and Ethics Commissioner's registry, and the Office of the
+      Commissioner of Lobbying's registry. Voting record: name-by-name
+      rows 2004–2026 — see
+      <a href="about.html">About &amp; method</a>.`
+      : `Built from the City of Toronto's published council
+      records. Decision archive: 2018–2026 · Voting record: name-by-name
+      rows 2018–2026, member totals back to 2006 ·
+      Archive current to Oct 19, 2026 — see
+      <a href="about.html">About &amp; method</a>.`;
     footer.innerHTML = `<div class="wrap"><div class="rule"></div>
       <div class="footer-grid">
         <div class="footer-brand">
-          <p><strong>Deme</strong> — Toronto City Council's record, in plain
-          language. Non-partisan. No grades, no endorsements — just the record.</p>
+          <p>${brandLine}</p>
           <nav class="footer-group footer-social" aria-label="Follow Deme">
             <p class="footer-h">Follow Deme</p>
             <ul>
@@ -239,11 +292,7 @@ function renderChrome(active) {
           </ul>
         </nav>
       </div>
-      <p class="fineprint">Built from the City of Toronto's published council
-      records. Decision archive: 2018–2026 · Voting record: name-by-name
-      rows 2018–2026, member totals back to 2006 ·
-      Archive current to Oct 19, 2026 — see
-      <a href="about.html">About &amp; method</a>.</p>
+      <p class="fineprint">${fineprint}</p>
       </div>`;
   }
 }

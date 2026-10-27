@@ -205,8 +205,36 @@ function interestsSection(p) {
     const ints = p.interests || { summaries: [], other: [] };
     const total = ints.summaries.length + ints.other.length;
     let body = "";
+    // The registry extract concatenates a summary's fragments with
+    // no separator at all — section headers, list items and sentences
+    // run together ("AssetsShares of:- Bank of Nova Scotia-
+    // Enbridge…") — so the collapsed label reads as one block. Only
+    // this label is normalized: whitespace collapsed and the missing
+    // separators restored. The document text shown on expansion is
+    // untouched. Word joins are not split where they are really one
+    // name: Mc/Mac/Le prefixes (McGill, MacKinnon, LeBlanc), lettered
+    // names like B2Gold, and "iShares".
     const snippet = (s) => {
-      s = String(s || "");
+      s = String(s || "").replace(/\s+/g, " ").trim();
+      s = s.replace(/([:;,.])(?=[A-Za-z])/g, "$1 ")
+           .replace(/:(?=-)/g, ": ")
+           .replace(/([A-Za-z])- (?=[A-Z])/g, "$1 - ");
+      let out = "";
+      for (let i = 0; i < s.length; i++) {
+        out += s[i];
+        const c = s[i], n = s[i + 1] || "";
+        if (!/[A-Z]/.test(n)) continue;
+        if (/[a-z]/.test(c)) {
+          const frag = (out.match(/[A-Za-z]+$/) || [""])[0];
+          if (frag === "Mc" || frag === "Mac" || frag === "Le") continue;
+          if (c === "i" && s.startsWith("Shares", i + 1)) continue;
+          out += " ";
+        } else if (/[0-9]/.test(c)) {
+          const run = (out.match(/[A-Za-z0-9]+$/) || [""])[0];
+          if (/^[0-9]+$/.test(run)) out += " ";
+        }
+      }
+      s = out;
       return s.length > 90 ? `${s.slice(0, 90)}…` : s;
     };
     if (!total) {
@@ -365,6 +393,14 @@ function lobbyingSection(p) {
       .map(([y, n]) => `<span>${esc(y)}: <strong>${fmtNum(n)}</strong></span>`).join("");
     const listOf = (pairs) => `<ul>${pairs.map(([k, n]) =>
       `<li>${esc(k)} — ${fmtNum(n)}</li>`).join("")}</ul>`;
+    // A member's reports can carry no subject strings at all in the
+    // extract (113 of 931 lobbying profiles): the panel then takes
+    // the N9 absence line naming the coverage instead of rendering
+    // an empty box. Top organizations gets the same guard.
+    const topPanel = (title, pairs, emptyLine) =>
+      `<section class="profile-panel"><h3>${title}</h3>${
+        pairs && pairs.length ? listOf(pairs)
+          : `<p class="small">${emptyLine}</p>`}</section>`;
     return `<section style="margin-top:2.4rem" aria-labelledby="lobbying-h">
       <h2 id="lobbying-h">Lobbying record</h2><hr class="rule">
       <p class="small" style="max-width:44rem">Communication reports
@@ -379,8 +415,10 @@ function lobbyingSection(p) {
       below are the per-member lobbying record.</p>
       <div class="by-year">${years}</div>
       <div class="profile-grid" style="margin-top:1.4rem">
-        <section class="profile-panel"><h3>Top subject matters</h3>${listOf(lob.topSubjects)}</section>
-        <section class="profile-panel"><h3>Top organizations</h3>${listOf(lob.topOrgs)}</section>
+        ${topPanel("Top subject matters", lob.topSubjects,
+          "No subject matters are recorded for this member's reports in the registry extract (2008 – October 23, 2026).")}
+        ${topPanel("Top organizations", lob.topOrgs,
+          "No organizations are recorded for this member's reports in the registry extract (2008 – October 23, 2026).")}
       </div>
       <details id="lob-details" style="margin-top:1.2rem">
         <summary><strong>All communications, as filed (${fmtNum(lob.total)})</strong></summary>

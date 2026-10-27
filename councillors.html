@@ -184,7 +184,8 @@
       <details class="filters" id="earlier-details" style="margin-top:3rem">
         <summary><h2>Earlier members (2006–2026)</h2> <span class="small" id="earlier-count-note"></span></summary>
         <p class="small" style="margin-top:.8rem">Members from earlier terms, in the same archive.</p>
-        <p class="small earlier-note">“Interest declared · stepped back” counts recorded votes where a member declared an interest and did not vote. The voting record only carries that flag from June 2023 — earlier declarations were recorded as ordinary absences — so a dash marks a member whose service ended before June 2023. Each member’s page also lists the declarations on the City’s official register, counted separately. Those register counts now appear on each earlier member’s row below too, in the mint band under their stats, labelled with the registers they come from.</p>
+        <p class="small earlier-note">Of the 74 earlier Toronto members listed here, 27 have a published official portrait; the rest are shown with initials.</p>
+        <p class="small earlier-note">“Interest declared on a recorded vote · stepped back (since Jun 2023)” counts recorded votes where a member declared an interest and did not vote. The voting record only carries that flag from June 2023 — earlier declarations were recorded as ordinary absences — so a dash marks a member whose service ended before June 2023. Each member’s page also lists the declarations on the City’s official register, counted separately. Those register counts now appear on each earlier member’s row below too, in the mint band under their stats, labelled with the registers they come from.</p>
         <div class="earlier-search">
           <label class="visually-hidden" for="eq">Search earlier members</label>
           <input type="text" id="eq" placeholder="Search earlier members — a name, or a ward then or now" autocomplete="off" spellcheck="false">
@@ -363,7 +364,7 @@ function earlierRow(c) {
     <div class="em-stats" aria-label="Record summary">
       <div><span>Votes cast</span><strong>${fmtNum(c.votesCast)}</strong></div>
       <div><span>${simpleT("Recorded-vote participation", "Recorded votes they took part in")}</span><strong>${esc(fmtAtt(c))}</strong></div>
-      <div><span>${simpleT("Interest declared · stepped back", "Declared an interest · did not vote")}</span><strong>${earlierInterest(c)}</strong></div>
+      <div><span>${simpleT("Interest declared on a recorded vote · stepped back (since Jun 2023)", "Declared an interest on a recorded vote · did not vote (since Jun 2023)")}</span><strong>${earlierInterest(c)}</strong></div>
     </div>
     ${registerLineHTML(c)}
   </div></li>`;

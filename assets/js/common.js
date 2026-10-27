@@ -353,7 +353,7 @@ function memberStatsHTML(person) {
     <div><span>${simpleT("Recorded-vote participation", "Votes they took part in")}</span><strong>${fmtAtt(person)}</strong>${meter}</div>
     <div><span>Votes cast</span><strong>${fmtNum(person.votesCast)}</strong></div>
     <div><span>${simpleT("Tenure", "How long on Council")}</span><strong>${esc(memberTenure(person))}</strong></div>
-    <div><span>${simpleT("Interest declared · stepped back", "Declared an interest · did not vote")}</span><strong>${fmtNum(interest)}</strong></div>
+    <div><span>${simpleT("Interest declared on a recorded vote · stepped back (since Jun 2023)", "Declared an interest on a recorded vote · did not vote (since Jun 2023)")}</span><strong>${fmtNum(interest)}</strong></div>
   </div>`;
 }
 

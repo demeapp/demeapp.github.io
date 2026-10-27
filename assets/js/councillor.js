@@ -408,11 +408,10 @@ async function renderExtras(person) {
    and did not vote. A member with no matched register entries gets
    NO register section at all — absence here only means no matched
    records in the published files, never a claim of "no declarations".
-   The gifts block is independent of the register section: it renders
-   whenever the member has gift disclosures — inside the register
-   section when that renders, and standing alone (under its own
-   heading, with its own Gift Disclosure Registry source line) when
-   it does not. */
+   The gifts block is independent of the register entries: it renders
+   whenever the member has gift disclosures, inside the register
+   section under its own subheading — the section keeps the same
+   shape for every profile, gifts-only members included (T-4). */
 async function renderDeclaredInterests(person) {
   const host = document.getElementById("declared-interests");
   if (!host) return;
@@ -456,7 +455,7 @@ async function renderDeclaredInterests(person) {
     }
     return;
   }
-  const rows = hasEntries ? entries.map((r) => {
+  const rowItems = hasEntries ? entries.map((r) => {
     const meta = [fmtDate(r.VerbalDeclarationDate), r.Committee, r.Item]
       .filter(Boolean).join(" · ");
     return `<li><span class="h-title">${esc(r.ItemTitle || r.Item || "")}
@@ -465,7 +464,7 @@ async function renderDeclaredInterests(person) {
       ${r.capacityNote ? `<span class="h-meta">${esc(r.capacityNote)}</span>` : ""}
       ${r.WrittenDeclaration ? `<span class="h-meta"><a href="${esc(r.WrittenDeclaration)}" target="_blank" rel="noopener noreferrer">Written declaration (PDF)<span class="visually-hidden"> (opens in a new tab)</span></a></span>` : ""}
       </span></li>`;
-  }).join("") : "";
+  }) : [];
   let giftsBody = "";
   if (hasGifts) {
     const grows = gifts.map((g) => {
@@ -483,9 +482,16 @@ async function renderDeclaredInterests(person) {
   }
   const regN = entries ? entries.length : 0;
   const giftN = gifts ? gifts.length : 0;
+  /* T-3 (audit, Oct 27, 2026): the "separate records, never added
+     together" caveat used to repeat on this one profile up to four
+     times — summary line, section intro, this counts line, source
+     line. It is now said ONCE, in the section intro; the labels
+     themselves carry the distinction (the tile names the recorded
+     vote; this line and the summary name the official register).
+     This line is just the counts. */
   const countsLine = `<p class="small" style="max-width:44rem">${simpleOn()
-    ? `<strong>Served on this page:</strong> ${fmtNum(regN)} ${regN === 1 ? "entry" : "entries"} from the City Clerk's official list${giftsEraNA ? "" : ` and ${fmtNum(giftN)} gift ${giftN === 1 ? "disclosure" : "disclosures"}`} — two separate lists, counted on their own, never added together.`
-    : `<strong>Served on this page:</strong> ${fmtNum(regN)} ${regN === 1 ? "entry" : "entries"} from the official register${giftsEraNA ? "" : ` · ${fmtNum(giftN)} gift ${giftN === 1 ? "disclosure" : "disclosures"}`} — separate records, counted separately, never added together.`}</p>`;
+    ? `<strong>Served on this page:</strong> ${fmtNum(regN)} ${regN === 1 ? "entry" : "entries"} from the City Clerk's official list${giftsEraNA ? "" : ` · ${fmtNum(giftN)} gift ${giftN === 1 ? "disclosure" : "disclosures"}`}.`
+    : `<strong>Served on this page:</strong> ${fmtNum(regN)} ${regN === 1 ? "entry" : "entries"} from the official register${giftsEraNA ? "" : ` · ${fmtNum(giftN)} gift ${giftN === 1 ? "disclosure" : "disclosures"}`}.`}</p>`;
   if (hasEntries || hasVoteInterests) {
     const giftsHTML = hasGifts
       ? `<h3 style="margin-top:1.8rem">Gifts and benefits disclosed</h3>
@@ -497,24 +503,53 @@ async function renderDeclaredInterests(person) {
       ? `This is the City Clerk's official list — the interests ${esc(person.name)} declared on the record, one item at a time. It is not the same as the recorded-vote count above. That count comes from recorded votes where the member declared an interest and did not vote. The two lists count different things, so their totals will not match. A member can declare an interest out loud in the chamber and still not appear in this list. The vote record above may show a declaration that this list does not have.`
       : `The City Clerk's official register — the declarations ${esc(person.name)} made on the record, item by item. It is separate from the recorded-vote count above it, counted from recorded votes where the member declared an interest and did not vote; the two count different things and their totals will not match. <strong>This register is the City Clerk's published file of declarations. A declaration made out loud in the chamber — for example under Article 8 of the Code of Conduct — may not appear in that file, so this list can miss a declaration that the vote record shows.</strong>`}</p>
     ${countsLine}
-    ${hasEntries ? `<ul class="personlist history-rows">${rows}</ul>` : `<p class="small">${simpleOn() ? `No declaration for ${esc(person.name)} appears in the City Clerk's published list. The vote count above records declarations made on votes, including ones said out loud in the chamber, that may be missing from this list.` : `No declaration by ${esc(person.name)} appears in the City Clerk's published register file. The recorded-vote count above counts declarations recorded on votes, including declarations made out loud in the chamber, which the published file can miss.`}</p>`}
+    ${hasEntries ? `<ul class="personlist history-rows" id="reg-list">${rowItems.slice(0, PAGE).join("")}</ul><div class="pager" id="reg-pager"></div>` : `<p class="small">${simpleOn() ? `No declaration for ${esc(person.name)} appears in the City Clerk's published list. The vote count above records declarations made on votes, including ones said out loud in the chamber, that may be missing from this list.` : `No declaration by ${esc(person.name)} appears in the City Clerk's published register file. The recorded-vote count above counts declarations recorded on votes, including declarations made out loud in the chamber, which the published file can miss.`}</p>`}
     ${giftsHTML}
     <p class="small" style="max-width:44rem;margin-top:1rem">Source: City Clerk's Office · Registry of Declared Interest (published 2007–2026; the City publishes no declarations dated 2006 or earlier) + Gift Disclosure Registry (published 2011–2025; 2026 not yet published) (Integrity Commissioner) · Open Data refreshed September 26, 2026</p>
   </section>`;
+    /* T-2 (audit, Oct 27, 2026): the register list was the only
+       major list on the site with no structure — up to 148 rows in
+       one unpaginated wall. It now pages at 25, like the recorded
+       votes above it: same slice size, same Show more button, same
+       remaining count. Every entry still renders; paging only
+       defers the rows past the first page behind the button. */
+    const regPager = document.getElementById("reg-pager");
+    if (regPager && rowItems.length > PAGE) {
+      let regShown = PAGE;
+      const paintRegPager = () => {
+        regPager.innerHTML = regShown < rowItems.length
+          ? `<button class="btn secondary" id="reg-more">Show more (${fmtNum(rowItems.length - regShown)} remaining)</button>`
+          : "";
+        const b = document.getElementById("reg-more");
+        if (b) b.addEventListener("click", () => {
+          const slice = rowItems.slice(regShown, regShown + PAGE);
+          regShown += slice.length;
+          document.getElementById("reg-list")
+            .insertAdjacentHTML("beforeend", slice.join(""));
+          paintRegPager();
+        });
+      };
+      paintRegPager();
+    }
     return;
   }
-  /* Gifts only — no matched register entries: the gifts block stands
-     alone in the same page area, under its own heading and its own
-     Gift Disclosure Registry source line. It speaks only to the
-     gifts record and says nothing about the member's declarations. */
-  host.innerHTML = `<section style="margin-top:2.4rem" aria-labelledby="gift-disclosures-h">
-    <h2 id="gift-disclosures-h">Gifts and benefits disclosed</h2><hr class="rule">
+  /* Gifts only — no matched register entries. T-4 (audit, Oct 27,
+     2026): this case used to get a different section shape — no
+     "Declared interests" heading at all, the gifts promoted to the
+     section title. Every profile now carries the same section: the
+     register heading, the verified-zero line for the register, the
+     counts line, then the gifts block inside it under its own
+     subheading, over the same combined source line as every other
+     profile. */
+  host.innerHTML = `<section style="margin-top:2.4rem" aria-labelledby="declared-interests-h">
+    <h2 id="declared-interests-h">Declared interests — the official register</h2><hr class="rule">
     ${entriesLoaded ? `<p class="small" style="max-width:44rem">${simpleOn()
-      ? `The City Clerk's published list has no declaration for ${esc(person.name)} (2007–2026). The gifts below come from a different list, the Gift Disclosure Registry.`
-      : `No declaration by ${esc(person.name)} appears in the City Clerk's published register (2007–2026) — a verified zero in that file. The gifts below are the separate Gift Disclosure Registry record.`}</p>` : ""}
+      ? `The City Clerk's published list has no declaration for ${esc(person.name)} (2007–2026).`
+      : `No declaration by ${esc(person.name)} appears in the City Clerk's published register (2007–2026) — a verified zero in that file.`}</p>` : ""}
     ${countsLine}
+    <h3 style="margin-top:1.8rem">Gifts and benefits disclosed</h3>
     ${giftsBody}
-    <p class="small" style="max-width:44rem;margin-top:1rem">Source: Gift Disclosure Registry (Integrity Commissioner) · published 2011–2025 (no registry was published for 2010 or earlier; 2026 not yet published) · Open Data refreshed September 26, 2026</p>
+    <p class="small" style="max-width:44rem;margin-top:1rem">Source: City Clerk's Office · Registry of Declared Interest (published 2007–2026; the City publishes no declarations dated 2006 or earlier) + Gift Disclosure Registry (published 2011–2025; 2026 not yet published) (Integrity Commissioner) · Open Data refreshed September 26, 2026</p>
   </section>`;
 }
 
@@ -526,8 +561,10 @@ async function renderDeclaredInterests(person) {
    register section below keeps loading those itself, unchanged.
    These counts are the City Clerk's Registry of Declared Interest
    (2007–2026) and the Gift Disclosure Registry (2011–2025) — a
-   separate record from the recorded-vote "Interest declared ·
-   stepped back" tile above, and the line says so. Era wording
+   separate record from the recorded-vote "Interest declared on a
+   recorded vote · stepped back (since Jun 2023)" tile above; the
+   line names both registers, and the distinction itself is stated
+   once, in the register section's intro (T-3). Era wording
    matches the directory rows: a member who served into a
    register's era with no entries gets the true 0 in words; service
    that ended before a register existed gets plain words, never a
@@ -557,7 +594,11 @@ async function renderRegisterSummary(person) {
       ? simpleT("0 gift disclosures in the gift registry",
           "0 gift disclosures in the gift list")
       : `${fmtNum(giftN)} gift ${giftN === 1 ? "disclosure" : "disclosures"}`;
-  host.innerHTML = `<p class="small" style="max-width:44rem;margin-top:.9rem"><strong>${simpleT("Official register:", "Official list:")}</strong> ${esc(reg)} · ${esc(gift)} ${simpleT("— a separate record from the recorded-vote count above.", "— a separate list from the recorded-vote count above.")} <a href="#declared-interests">${simpleT("See the full list ↓", "See the full list ↓")}</a><br><span style="color:var(--ink-faint)">${simpleT("City Clerk’s Registry of Declared Interest (2007–2026) · Gift Disclosure Registry (2011–2025)", "City Clerk's official list (2007–2026) · Gift Disclosure Registry (2011–2025)")}</span></p>`;
+  /* T-3 (audit, Oct 27, 2026): this summary line no longer repeats
+     the "separate record" caveat — the distinction is said once, in
+     the register section's intro. The line is the counts, the link,
+     and the names of the two registers the counts come from. */
+  host.innerHTML = `<p class="small" style="max-width:44rem;margin-top:.9rem"><strong>${simpleT("Official register:", "Official list:")}</strong> ${esc(reg)} · ${esc(gift)} <a href="#declared-interests">${simpleT("See the full list ↓", "See the full list ↓")}</a><br><span style="color:var(--ink-faint)">${simpleT("City Clerk’s Registry of Declared Interest (2007–2026) · Gift Disclosure Registry (2011–2025)", "City Clerk's official list (2007–2026) · Gift Disclosure Registry (2011–2025)")}</span></p>`;
 }
 
 /* The interest counter reads only vote rows the source flags
@@ -890,7 +931,7 @@ function recordCardHTML(person, standalone) {
     : "Former member of Toronto City Council";
   const photo = PHOTO_SLUGS.has(person.slug)
     ? (standalone
-      ? `<img src="https://demeapp.github.io/assets/headshots/${person.slug}.webp" alt="" width="72" height="72" style="border-radius:50%;object-fit:cover" onerror="demeAvatarError(this)">`
+      ? `<img src="assets/headshots/${person.slug}.webp" alt="" width="72" height="72" style="border-radius:50%;object-fit:cover" onerror="demeAvatarError(this)">`
       : avatarHTML(person))
     : avatarHTML(person);
   const votes = cardVotes().map((r) => standalone
@@ -908,7 +949,7 @@ function recordCardHTML(person, standalone) {
       <div class="rc-stat"><span>Votes cast</span><strong>${fmtNum(person.votesCast)}</strong></div>
       <div class="rc-stat"><span>Yes</span><strong>${fmtNum(person.yes)}</strong></div>
       <div class="rc-stat"><span>No</span><strong>${fmtNum(person.no)}</strong></div>
-      <div class="rc-stat"><span>${simpleT("Interest declared · stepped back", "Declared an interest · did not vote")}</span><strong>${interestFigure(person)}</strong></div>
+      <div class="rc-stat"><span>${simpleT("Interest declared on a recorded vote · stepped back (since Jun 2023)", "Declared an interest on a recorded vote · did not vote (since Jun 2023)")}</span><strong>${interestFigure(person)}</strong></div>
     </div>
     <h3>${simpleT("Five most recent recorded votes", "Their five newest recorded votes")}</h3>
     ${votes || `<p>${simpleT("No recorded votes in the searchable archive.", "No recorded votes in the archive you can search.")}</p>`}
@@ -1029,14 +1070,14 @@ async function init() {
       <div class="stat"><span class="num">${fmtNum(person.votesCast)}</span>
         <span class="lab">${simpleT("Votes cast (yes or no) across their record", "Votes they cast (yes or no) in their whole record")}</span></div>
       <div class="stat"><span class="num">${interestFigure(person)}</span>
-        <span class="lab">${simpleT("Interest declared · stepped back", "Declared an interest · did not vote")}</span></div>
+        <span class="lab">${simpleT("Interest declared on a recorded vote · stepped back (since Jun 2023)", "Declared an interest on a recorded vote · did not vote (since Jun 2023)")}</span></div>
     </div>
     <div id="register-summary"></div>
     <p class="small" style="max-width:44rem">${simpleT("Recorded-vote participation is the share of recorded votes where the member was present and voting — not a count of meetings attended, and declared interests are never counted against it.", "This number is the share of recorded votes where the member was there and voted. It is not a count of meetings they went to. Declared interests never count against them.")}
     <a href="about.html#how-we-count">How we count</a>${simpleT(" explains each figure on this page.", " explains each number on this page.")}</p>
     ${basisNote}
     ${compositionStrip(person)}
-    <p class="small" style="max-width:44rem">${simpleT("The totals count the full record: member totals back to 2006; item-by-item rows from 2018. The “Interest declared · stepped back” figure is narrower: the voting record flags a declared interest only from June 2023, so the figure counts flagged votes from June 2023 on — earlier declarations were recorded as ordinary absences. A dash marks a member whose service ended before June 2023. The figure is not the City’s declarations register; the register entries Deme serves for this member are listed on this page under “Declared interests — the official register”, with their own count.", "The totals cover the full record. Member totals go back to 2006. Rows for each item start in 2018. The “Declared an interest · did not vote” number is narrower. The voting record only marks a declared interest from June 2023. So the number counts marked votes from June 2023 on. Before that, declarations were written down as plain absences. A dash means the member’s service ended before June 2023. This number is not the City’s official list of declared interests. That list is on this page too, under its own heading, with its own count.")}</p>`;
+    <p class="small" style="max-width:44rem">${simpleT("The totals count the full record: member totals back to 2006; item-by-item rows from 2018. The “Interest declared on a recorded vote · stepped back (since Jun 2023)” figure is narrower: the voting record flags a declared interest only from June 2023, so the figure counts flagged votes from June 2023 on — earlier declarations were recorded as ordinary absences. A dash marks a member whose service ended before June 2023.", "The totals cover the full record. Member totals go back to 2006. Rows for each item start in 2018. The “Declared an interest on a recorded vote · did not vote (since Jun 2023)” number is narrower. The voting record only marks a declared interest from June 2023. So the number counts marked votes from June 2023 on. Before that, declarations were written down as plain absences. A dash means the member’s service ended before June 2023.")}</p>`;
   box.innerHTML = `
     <p class="kicker">${person.incoming ? "Incoming council" : person.current ? "Council today" : "Earlier member"}</p>
     <div class="profile-head">${avatarHTML(person, "lg")}

@@ -1079,6 +1079,9 @@ html.js .entry-shell { min-height: 25.4rem; }
 }
 .avatar.lg { width: 96px; height: 96px; font-size: 1.7rem; }
 .avatar.sm { width: 40px; height: 40px; font-size: .85rem; }
+/* People-search hits pair the avatar with the name line (P-2,
+   fix round Oct 27, 2026). */
+.notice.person-hit { display: flex; align-items: center; gap: .8rem; }
 
 /* Directory person cards with photo + recent votes */
 /* Card header: hairline divider underneath (polish wave, Oct 22 —

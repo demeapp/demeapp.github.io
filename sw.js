@@ -1,6 +1,7 @@
-// Deme service worker (v34 — framing wave: election banner removed,
-// all-levels site framing, cross-layer people search, Ontario and
-// federal portraits; routes unchanged from v33).
+// Deme service worker (v35 — fix round: disclosure labels and
+// statement dates, Toronto register paging and section shape,
+// people-search and My Record avatars, portrait-coverage lines;
+// routes unchanged from v34).
 // Caches: app shell + static assets, visited pages, and the PUBLIC record JSON
 // (read-only, for offline browsing of what was already loaded).
 // Never caches: non-GET requests, cross-origin requests (Supabase auth, picks,
@@ -14,7 +15,7 @@
 // deploy, so assets are network-first too; cache is the offline fallback.
 // VERSION bumps rename every cache, and activate deletes the old ones —
 // bump VERSION whenever this file ships a strategy change.
-const VERSION = 'v34';
+const VERSION = 'v35';
 const SHELL = 'deme-shell-' + VERSION;
 const PAGES = 'deme-pages-' + VERSION;
 const DATA = 'deme-data-' + VERSION;

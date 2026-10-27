@@ -377,8 +377,18 @@ function renderProfileChrome() {
   if (alertsVal != null) {
     parts.push(`Council alerts ${alertsVal ? "on" : "off"}`);
   }
+  /* P-2 (audit, Oct 27, 2026): the visitor's own representative is
+     presented here as a name in a text line only, while every other
+     surface pairs a person with their avatar. The representative
+     gets the same treatment — avatar (photo or initials) beside
+     the name, linking to their record. */
+  const rep = ward != null ? myCouncillor() : null;
+  const repLine = rep
+    ? `<p style="margin:.6rem 0 0;display:flex;align-items:center;gap:.6rem">${avatarHTML(rep, "sm")}<span>Your representative: <a href="councillor.html?m=${encodeURIComponent(rep.slug)}">${esc(rep.name)}</a>${rep.wardName ? ` — Ward ${rep.ward} · ${esc(rep.wardName)}` : ""}</span></p>`
+    : "";
   summary.innerHTML = `<h2 style="font-size:1.25rem">Your profile</h2>
     <p class="wf-set"><span>${parts.join(" · ")}</span></p>
+    ${repLine}
     <p class="small" style="margin:.3rem 0 0">Your wards were set when
     you created your account — change them any time in
     <a href="#account-zone">your account</a> above.</p>`;
@@ -405,7 +415,7 @@ function renderContinuity() {
     <p>When the new Council took office, Ward ${c.ward}'s seat changed
     hands. ${esc(snap.name)} was the councillor on record when you set
     your ward; ${esc(c.name)} represents Ward ${c.ward} now.</p>
-    <p><a href="councillor.html?m=${encodeURIComponent(c.slug)}">See ${esc(c.name)}'s record →</a>
+    <p style="display:flex;align-items:center;gap:.6rem;flex-wrap:wrap">${avatarHTML(c, "sm")}<span><a href="councillor.html?m=${encodeURIComponent(c.slug)}">See ${esc(c.name)}'s record →</a></span>
     <button class="btn secondary small" type="button" id="continuity-gotit">Got it</button></p></div>`;
   document.getElementById("continuity-gotit").addEventListener("click", () => {
     VoteStore.setWardRep(c.slug, c.name);

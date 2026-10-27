@@ -237,23 +237,138 @@ function interestsSection(p) {
       s = out;
       return s.length > 90 ? `${s.slice(0, 90)}…` : s;
     };
+    /* F-1 (audit, Oct 27, 2026): a document's registry description
+       can be empty — every Sponsored Travel and Gifts document is —
+       and the label used to be built from that field alone, so 646
+       documents on 168 profiles rendered as a bare "Type — ". The
+       identifying details live in the document's own metadata, which
+       is never rendered today. Build the label from the metadata
+       when the description is empty: destination and dates for
+       travel; nature and source for gifts; the metadata description
+       for the rest. A document with no metadata at all is labelled
+       from the disclosure date its own text carries. Labels that
+       STILL collide inside one type group are separated by that
+       same date, then by their order in the registry listing — no
+       label is ever left blank, and no document's text, count or
+       order changes. */
+    const cleanMeta = (v) => String(v || "")
+      .replace(/[\u200b-\u200d\ufeff]/g, "").replace(/\s+/g, " ").trim();
+    const metaGet = (d, ...names) => {
+      const meta = d.meta || {};
+      for (const k of Object.keys(meta)) {
+        if (names.includes(cleanMeta(k).toLowerCase())) {
+          const v = cleanMeta(meta[k]);
+          if (v) return v;
+        }
+      }
+      return "";
+    };
+    const disclosedOn = (d) => {
+      const m = /Disclosed on ([A-Z][a-z]+ \d{1,2}, \d{4})/
+        .exec(d.text || "");
+      return m ? m[1] : "";
+    };
+    const docLabel = (d) => {
+      const desc = snippet(d.desc);
+      if (desc) return `${d.type} — ${desc}`;
+      if (d.type === "Sponsored Travel") {
+        const dest = metaGet(d, "destination(s)");
+        const dates = metaGet(d, "dates");
+        const sponsor = metaGet(d, "sponsor of the trip");
+        const head = [dest, dates ? `(${dates})` : ""]
+          .filter(Boolean).join(" ");
+        const label = [head, sponsor ? `sponsored by ${sponsor}` : ""]
+          .filter(Boolean).join(" — ");
+        if (label) return `Sponsored Travel — ${label}`;
+      }
+      if (d.type === "Gifts (Code)" || d.type === "Gifts (Act)") {
+        const nature = metaGet(d, "nature");
+        const source = metaGet(d, "source");
+        const received = metaGet(d, "gift received date");
+        const label = [nature, source ? `from ${source}` : "",
+          received ? `received ${received}` : ""]
+          .filter(Boolean).join(" · ");
+        if (label) return `${d.type} — ${label}`;
+      }
+      const metaDesc = snippet(metaGet(d, "description"));
+      if (metaDesc) return `${d.type} — ${metaDesc}`;
+      const on = disclosedOn(d);
+      if (on) return `${d.type} — disclosed ${on}`;
+      return d.type;
+    };
+    /* Separate any labels still identical inside one group: first
+       by the document's own disclosed-on date, then — for filings
+       that share even that — by their place in the registry
+       listing, which is the one thing that always differs. */
+    const dedupeLabels = (docs, labels) => {
+      const seen = new Map();
+      labels.forEach((l, i) => {
+        if (!seen.has(l)) { seen.set(l, i); return; }
+        const on = disclosedOn(docs[i]);
+        labels[i] = on && !labels.includes(`${l} · disclosed ${on}`)
+          ? `${l} · disclosed ${on}` : `${l} · ${i + 1} of ${docs.length} in the registry listing`;
+      });
+      return labels;
+    };
     if (!total) {
       body = `<p>No documents for this member in the Commissioner's
         public registry as gathered for this archive.</p>`;
     } else {
       if (ints.summaries.length) {
+        /* F-2 (audit, Oct 27, 2026): summaries carry no filing date
+           in the registry extract, and members with several summaries
+           hold the SAME summary repeated in the extract — identical
+           description, text and registry page — so a content snippet
+           cannot tell them apart, and pretending otherwise would
+           invent a difference. Identical repeats are labelled by
+           their order in the registry listing, with one note saying
+           plainly that the listings are identical. Where summaries
+           genuinely differ, each label starts where their texts
+           stop agreeing, skipping the shared opening sections. */
+        const descs = ints.summaries.map((d) => String(d.desc || "")
+          .replace(/\s+/g, " ").trim());
+        const n = ints.summaries.length;
+        const allSame = n > 1 && descs.every((x) => x === descs[0]);
+        let labels;
+        if (n === 1) {
+          labels = [`Disclosure summary — ${snippet(descs[0])}`];
+        } else if (allSame) {
+          labels = ints.summaries.map((_, i) =>
+            `Disclosure summary ${i + 1} of ${n}`);
+        } else {
+          let cp = 0;
+          const minLen = Math.min(...descs.map((x) => x.length));
+          while (cp < minLen
+              && descs.every((x) => x[cp] === descs[0][cp])) cp++;
+          labels = ints.summaries.map((d, i) => {
+            let rest = descs[i].slice(cp).replace(/^[\s:;,.—-]+/, "");
+            const cut = rest.indexOf(" ", 40);
+            if (rest.length > 90) {
+              rest = `${rest.slice(0, cut > 40 ? cut : 90)}…`;
+            }
+            return rest
+              ? `Disclosure summary ${i + 1} of ${n} — ${rest}`
+              : `Disclosure summary ${i + 1} of ${n}`;
+          });
+          labels = dedupeLabels(ints.summaries, labels);
+        }
         body += `<div class="doc-list">${ints.summaries.map((d, i) =>
-          docDetails(
-            `Disclosure summary${ints.summaries.length > 1 ? ` ${i + 1} of ${ints.summaries.length}` : ""} — ${snippet(d.desc)}`,
-            d.text || d.desc, d.url,
+          docDetails(labels[i], d.text || d.desc, d.url,
             "Registry page (ethicscanada.ca)")).join("")}</div>`;
+        if (allSame) {
+          body += `<p class="small" style="max-width:44rem">The
+            Commissioner's registry extract lists the same disclosure
+            summary ${n} times for this member. The listings are
+            identical, and they are shown in the registry's order.</p>`;
+        }
       }
       const byType = {};
       for (const d of ints.other) (byType[d.type] ||= []).push(d);
       for (const [type, docs] of Object.entries(byType)) {
+        const labels = dedupeLabels(docs, docs.map(docLabel));
         body += `<h3 style="margin-top:1.6rem">${esc(type)} (${docs.length})</h3>
-          <div class="doc-list">${docs.map((d) =>
-            docDetails(`${type} — ${snippet(d.desc)}`,
+          <div class="doc-list">${docs.map((d, i) =>
+            docDetails(labels[i],
               d.text || d.desc, d.url,
               "Registry page (ethicscanada.ca)")).join("")}</div>`;
       }
@@ -268,16 +383,52 @@ function interestsSection(p) {
       interests.</p>${body}</section>`;
   }
   const ints = p.interests || { count: 0, years: [], statements: [] };
-  const stmts = ints.statements.map((s) =>
-    docDetails(`${s.year} statement`, s.text, null, "")).join("");
+  /* O-2 (audit, Oct 27, 2026): nine members filed twice in one year
+     and showed two identical "YYYY statement" rows. Every statement's
+     own text carries its as-of date ("As of March 10, 2018", the
+     first line of the filing), so the label takes that date — the
+     two 2018 filings read as what they are. O-3: statements list
+     newest first, like every vote list on the site. Sorting is by
+     year, then as-of date; the count and the texts do not change. */
+  const MONTHS = { January: 0, February: 1, March: 2, April: 3,
+    May: 4, June: 5, July: 6, August: 7, September: 8, October: 9,
+    November: 10, December: 11 };
+  const asOf = (s) => {
+    const m = /As of ([A-Z][a-z]+) (\d{1,2}),? (\d{4})/
+      .exec(s.text || "");
+    if (!m) return null;
+    return { label: `${m[1]} ${Number(m[2])}, ${m[3]}`,
+      time: (Number(m[3]) * 100 + MONTHS[m[1]]) * 100 + Number(m[2]) };
+  };
+  const sortedStmts = ints.statements.slice().sort((a, b) => {
+    const ta = asOf(a), tb = asOf(b);
+    return (b.year - a.year)
+      || ((tb ? tb.time : 0) - (ta ? ta.time : 0));
+  });
+  const stmts = sortedStmts.map((s) => {
+    const a = asOf(s);
+    return docDetails(
+      `${s.year} statement${a ? ` — as of ${a.label}` : ""}`,
+      s.text, null, "");
+  }).join("");
   const textYears = new Set(ints.statements.map((s) => s.year));
   const missingYears = (ints.years || []).filter((y) => !textYears.has(y));
-  const missingNote = missingYears.length
+  /* O-1 (audit, Oct 27, 2026): when NO texts were gathered, the old
+     note rendered "Statement texts are shown for ." above an empty
+     list. The no-texts case now says the true state in full and the
+     empty list does not render (below). */
+  const missingNote = !missingYears.length ? ""
+    : ints.statements.length
     ? `<p class="small" style="max-width:44rem">Statement texts are
-      shown for ${[...textYears].sort().join(", ")}. The statements for
+      shown for ${[...textYears].sort((a, b) => a - b).join(", ")}. The statements for
       ${missingYears.join(", ")} are counted from the Commissioner's
       index; their texts were not gathered for this archive.</p>`
-    : "";
+    : `<p class="small" style="max-width:44rem">No statement texts
+      were gathered for this archive. The count above comes from the
+      Commissioner's published index, which counts
+      ${fmtNum(ints.count)} ${ints.count === 1 ? "statement" : "statements"}
+      for this member (${missingYears.join(", ")}); the texts
+      themselves were not gathered.</p>`;
   return `<section style="margin-top:2.4rem" aria-labelledby="interests-h">
     <h2 id="interests-h">Disclosure statements — Integrity Commissioner</h2><hr class="rule">
     <p><strong>Disclosure statements on file: ${fmtNum(ints.count)} (annual statements, 2005–present)</strong></p>
@@ -290,7 +441,8 @@ function interestsSection(p) {
     statements carry no dollar amounts, and they are snapshots by
     year, not a register of dated declarations.</p>
     ${missingNote}
-    ${ints.count ? `<div class="doc-list">${stmts}</div>`
+    ${ints.statements.length ? `<div class="doc-list">${stmts}</div>`
+      : ints.count ? ""
       : `<p>No disclosure statements on file for this member in the series gathered (2005–2025).</p>`}
     </section>`;
 }

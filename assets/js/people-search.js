@@ -45,6 +45,15 @@
       p._asq = p._at.join("");
       people.push(p);
     };
+    /* P-2 (audit, Oct 27, 2026): each hit also carries the person's
+       portrait path, from the same photo flags the directories
+       render from — Ontario/Canada from the member files' own
+       flags; Toronto from the photo-slug set the caller passes in
+       (Toronto's member file carries no flag; the set lives with
+       the Toronto avatar helper). No path = initials, exactly as
+       on the directories. */
+    const tps = layers.torontoPhotoSlugs
+      ? new Set(layers.torontoPhotoSlugs) : null;
     (layers.toronto || []).forEach((c) => push({
       name: c.name, layer: "Toronto",
       role: c.mayor ? "Mayor" : "Councillor",
@@ -52,18 +61,24 @@
         : c.wardName ? `Ward ${c.ward} — ${c.wardName}`
         : c.ward ? `Ward ${c.ward}` : "",
       current: Boolean(c.current),
+      photoSrc: tps && tps.has(c.slug)
+        ? `assets/headshots/${encodeURIComponent(c.slug)}.webp` : null,
       href: `councillor.html?m=${encodeURIComponent(c.slug)}`,
     }));
     (layers.ontario || []).forEach((m) => push({
       name: m.name, layer: "Ontario", role: "MPP",
       area: m.riding || "",
       current: Boolean(m.current),
+      photoSrc: m.photo
+        ? `assets/headshots/ontario/${encodeURIComponent(m.slug)}.webp` : null,
       href: `mpp.html?m=${encodeURIComponent(m.slug)}`,
     }));
     (layers.canada || []).forEach((m) => push({
       name: m.name, layer: "Canada", role: "MP",
       area: m.province ? `${m.riding || ""}, ${m.province}` : (m.riding || ""),
       current: Boolean(m.current),
+      photoSrc: m.photo
+        ? `assets/headshots/federal/${encodeURIComponent(m.id)}.webp` : null,
       href: `mp.html?m=${encodeURIComponent(m.id)}`,
     }));
     return people;
@@ -114,11 +129,24 @@
 
   /* The notice lines, in the same shape as Explore's own member
      hit: a link to the person's record, labelled by layer, role
-     and area — so the visitor lands in the right legislature. */
+     and area — so the visitor lands in the right legislature.
+     P-2: the hit pairs the name with the same avatar the
+     directories and profiles use — the portrait where one exists,
+     the initials disc where none does — instead of bare text. */
+  function psInitials(name) {
+    return String(name || "").split(/\s+/).filter(Boolean)
+      .slice(0, 2).map((w) => w.charAt(0)).join("").toUpperCase();
+  }
+  function psAvatar(p) {
+    const img = p.photoSrc
+      ? `<img src="${p.photoSrc}" alt="" loading="lazy" decoding="async" onerror="demeAvatarError(this)">`
+      : "";
+    return `<span class="avatar sm" aria-hidden="true"><span>${psEsc(psInitials(p.name))}</span>${img}</span>`;
+  }
   function peopleHitHTML(hits) {
-    return hits.map((p) => `<div class="notice">Looking for the person? See
+    return hits.map((p) => `<div class="notice person-hit">${psAvatar(p)}<span>Looking for the person? See
       <a href="${p.href}">${psEsc(p.name)}'s record</a> — ${psEsc(p.layer)}
-      · ${psEsc(p.role)}${p.area ? ` · ${psEsc(p.area)}` : ""}</div>`).join("");
+      · ${psEsc(p.role)}${p.area ? ` · ${psEsc(p.area)}` : ""}</span></div>`).join("");
   }
 
   global.DemePeople = { buildPeople, findPeople, peopleHitHTML, psNorm, psTokens };

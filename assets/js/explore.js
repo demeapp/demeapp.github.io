@@ -173,10 +173,14 @@ function applyFilters(opts) {
 function memberHit(eff) {
   const box = $("memberhit");
   let html = "";
+  /* P-2 (audit, Oct 27, 2026): the classic Toronto hits get the
+     same avatar as the cross-layer hits below — portrait where one
+     exists, initials where none does — never bare text. */
   if (eff.member) {
-    html = `<div class="notice">Looking for the person? See
+    const mc = councillors.find((c) => c.slug === eff.member.slug);
+    html = `<div class="notice person-hit">${mc ? avatarHTML(mc, "sm") : ""}<span>Looking for the person? See
        <a href="councillor.html?m=${encodeURIComponent(eff.member.slug)}">
-       ${esc(eff.member.name)}'s voting record →</a></div>`;
+       ${esc(eff.member.name)}'s voting record →</a></span></div>`;
   } else {
     /* Base behaviour, unchanged: a bare name in the search box. */
     const qTokens = tokens($("q").value);
@@ -184,9 +188,9 @@ function memberHit(eff) {
       const q = qTokens.join(" ");
       const hit = councillors.find((c) => c.name.toLowerCase().includes(q));
       if (hit) {
-        html = `<div class="notice">Looking for the person? See
+        html = `<div class="notice person-hit">${avatarHTML(hit, "sm")}<span>Looking for the person? See
        <a href="councillor.html?m=${encodeURIComponent(hit.slug)}">
-       ${esc(hit.name)}'s voting record →</a></div>`;
+       ${esc(hit.name)}'s voting record →</a></span></div>`;
       }
     }
   }
@@ -532,6 +536,10 @@ async function init() {
   if (typeof DemePeople !== "undefined") {
     peopleIndex = DemePeople.buildPeople({
       toronto: councillors, ontario: onMembers, canada: caMembers,
+      /* Toronto's member file carries no photo flag; the photo set
+         lives in common.js beside the Toronto avatar helper. */
+      torontoPhotoSlugs: typeof PHOTO_SLUGS !== "undefined"
+        ? PHOTO_SLUGS : null,
     });
   }
   archiveLoading = true;

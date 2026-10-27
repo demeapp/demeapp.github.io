@@ -218,7 +218,7 @@
       <div class="statband" id="statband" aria-label="The record in numbers — Toronto City Council, the Ontario Legislature and the House of Commons">
         <!-- filled from data/stats.json + the Ontario and Canada layers' meta files -->
       </div>
-      <p class="counting-note on-dark"><span class="pulse-dot" aria-hidden="true"></span>And counting — the record grows with every sitting.</p>
+      <p class="counting-note on-dark"><span class="pulse-dot" aria-hidden="true"></span>And counting — the record keeps growing as new decisions and recorded divisions are added.</p>
     </section>
 
     <section class="reveal layers-sec" aria-labelledby="layers-h">
@@ -446,25 +446,35 @@ Promise.all([loadJSON(dataPath("stats.json")), loadJSON(dataPath("latest.json"))
      and Toronto's deeper archive stats (votes cast, recorded-vote
      share) belong to the Toronto pages, not the whole-site band.
      A layer whose meta file fails to load is left out of the band
-     rather than guessed at. The Ontario span is the divisions
-     file's own (first sitting Aug 10, 2022, latest Jun 2, 2026);
-     Canada's span is read from its meta file's votesSpan. */
+     rather than guessed at (and out of its aria-label). Both
+     legislatures' year spans are read from their meta files'
+     votesSpan. */
+  const spanOf = (meta) => Array.isArray(meta.votesSpan) && meta.votesSpan.length === 2
+    ? ` (${String(meta.votesSpan[0]).slice(0, 4)}–${String(meta.votesSpan[1]).slice(0, 4)})` : "";
   const bandStats = [`
     <div class="stat"><span class="num" data-count="${stats.decisions}">${fmtNum(stats.decisions)}</span>
       <span class="lab">decisions in plain language — Toronto City Council (${stats.decisionsFrom}–${stats.decisionsTo})</span></div>`];
+  const bandNames = ["Toronto City Council"];
   if (onMeta && onMeta.divisions) {
     bandStats.push(`
     <div class="stat"><span class="num" data-count="${onMeta.divisions}">${fmtNum(onMeta.divisions)}</span>
-      <span class="lab">recorded divisions — the Ontario Legislature (2022–2026)</span></div>`);
+      <span class="lab">recorded divisions — the Ontario Legislature${spanOf(onMeta) || " (2022–2026)"}</span></div>`);
+    bandNames.push("the Ontario Legislature");
   }
   if (caMeta && caMeta.divisions) {
-    const caSpan = Array.isArray(caMeta.votesSpan) && caMeta.votesSpan.length === 2
-      ? ` (${String(caMeta.votesSpan[0]).slice(0, 4)}–${String(caMeta.votesSpan[1]).slice(0, 4)})` : "";
     bandStats.push(`
     <div class="stat"><span class="num" data-count="${caMeta.divisions}">${fmtNum(caMeta.divisions)}</span>
-      <span class="lab">recorded divisions — the House of Commons${caSpan}</span></div>`);
+      <span class="lab">recorded divisions — the House of Commons${spanOf(caMeta)}</span></div>`);
+    bandNames.push("the House of Commons");
   }
-  document.getElementById("statband").innerHTML = bandStats.join("");
+  const band = document.getElementById("statband");
+  band.innerHTML = bandStats.join("");
+  /* The aria-label names only the legislatures actually rendered, so
+     a layer left out after a failed meta load is not announced. */
+  band.setAttribute("aria-label", "The record in numbers — " +
+    (bandNames.length > 1
+      ? bandNames.slice(0, -1).join(", ") + " and " + bandNames[bandNames.length - 1]
+      : bandNames[0]));
   /* All three headline stats count up once when the band scrolls
      into view (setupCountUps wires every [data-count] in the band).
      Each animation lands on exactly fmtNum(target) and stops. */

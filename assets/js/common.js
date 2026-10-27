@@ -182,7 +182,13 @@ const SOCIAL_LINKS = [
    layers carry their own directories and profile pages; the level
    switcher below is the only chrome they add to the Toronto pages.
    A page declares its layer with window.__demeLayer before this
-   script loads; anything undeclared is Toronto. */
+   script loads; anything undeclared is Toronto. The site-level
+   pages — homepage, About & method, Explore, My Record, Privacy,
+   For reporters, Open data and the 404 page — declare "site"
+   (framing wave, Oct 27, 2026): their footer speaks for all three
+   legislatures at once and the switcher marks no layer current,
+   because the site's frame is every level of government, with
+   Toronto one layer of three. */
 const DEME_LEVELS = [
   ["toronto", "Toronto", "councillors.html"],
   ["ontario", "Ontario", "ontario.html"],
@@ -200,11 +206,6 @@ function demeLayer() {
 function renderChrome(active) {
   window.__demeChromeActive = active;
   const layer = demeLayer();
-  /* The election banner is Toronto municipal copy (it links to the
-     Toronto directory); it renders on the Toronto layer only, so no
-     Toronto-specific wording leaks into the Ontario/Canada layers.
-     Toronto pages are unaffected. */
-  if (layer === "toronto") renderElectionBanner();
   const header = document.querySelector(".site-header");
   if (header) {
     header.innerHTML = `<div class="wrap">
@@ -237,8 +238,14 @@ function renderChrome(active) {
   if (footer) {
     /* Layer-aware brand line: Toronto's is the original string; the
        Ontario and Canada layers name their own legislature so no
-       Toronto wording leaks into their pages. */
-    const brandLine = layer === "ontario"
+       Toronto wording leaks into their pages. The site-level pages
+       (layer "site") carry the general line — the site's identity
+       is all three legislatures, not one of them. */
+    const brandLine = layer === "site"
+      ? `<strong>Deme</strong> — the public record of your elected
+          representatives, in plain language — municipal, provincial and
+          federal. Non-partisan. No grades, no endorsements — just the record.`
+      : layer === "ontario"
       ? `<strong>Deme</strong> — the Ontario Legislature's record, in plain
           language. Non-partisan. No grades, no endorsements — just the record.`
       : layer === "canada"
@@ -246,7 +253,12 @@ function renderChrome(active) {
           language. Non-partisan. No grades, no endorsements — just the record.`
       : `<strong>Deme</strong> — Toronto City Council's record, in plain
           language. Non-partisan. No grades, no endorsements — just the record.`;
-    const fineprint = layer === "ontario"
+    const fineprint = layer === "site"
+      ? `Built from the published records of the City of Toronto, the
+      Legislative Assembly of Ontario and the House of Commons. Coverage
+      for each legislature is stated in full on its directory and on
+      <a href="about.html">About &amp; method</a>.`
+      : layer === "ontario"
       ? `Built from the Legislative Assembly of Ontario's published records
       and the Integrity Commissioner's disclosure registry. Voting record:
       name-by-name rows 2022–2026, as gathered Oct 20, 2026 ·
@@ -403,31 +415,6 @@ function avatarHTML(person, size = "") {
 /* Term strings in the data use ASCII hyphens ("2022-2026"); display
    copy everywhere else uses en dashes. Normalise at render. */
 const fmtTerm = (t) => String(t).replace(/(\d{4})-(\d{4})/g, "$1–$2");
-
-/* ---------------- election banner ----------------
-   Dismissible, factual, and self-expiring: it renders only until
-   the Oct 26, 2026 municipal election is over, and a dismissal
-   lasts the session. Injected ahead of the header by renderChrome. */
-function renderElectionBanner() {
-  if (document.getElementById("election-banner")) return;
-  if (new Date() > new Date("2026-10-27T23:59:59")) return;
-  try {
-    if (sessionStorage.getItem("deme.electionBanner") === "off") return;
-  } catch (e) { /* storage unavailable — show it */ }
-  const aside = document.createElement("aside");
-  aside.className = "election-banner";
-  aside.id = "election-banner";
-  aside.setAttribute("aria-label", "Municipal election reminder");
-  aside.innerHTML = `<div class="wrap">
-    <a href="councillors.html">${esc(simpleT("Municipal election — Monday, October 26, 2026 — check your representative’s record before you vote.", "City election — Monday, October 26, 2026 — look at your representative's record before you vote."))}</a>
-    <button class="election-close" type="button"
-      aria-label="Dismiss election reminder">×</button></div>`;
-  document.body.insertBefore(aside, document.body.firstChild);
-  aside.querySelector(".election-close").addEventListener("click", () => {
-    aside.hidden = true;
-    try { sessionStorage.setItem("deme.electionBanner", "off"); } catch (e) {}
-  });
-}
 
 /* ---------------- past-voice briefs (W1) ----------------
    Archive briefs were written in preview voice ("City Council will

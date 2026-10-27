@@ -239,7 +239,7 @@
         <a class="layer-card" href="ontario.html">
           <span class="layer-k">Provincial · Ontario</span>
           <span class="layer-t">The Ontario Legislature</span>
-          <span class="layer-d">Every MPP's record: 315 recorded divisions,
+          <span class="layer-d">Every MPP's record: 505 recorded divisions,
           disclosure statements back to 2005, and lobbying
           registrations.</span>
           <span class="layer-go">See the Ontario record →</span>
@@ -458,7 +458,7 @@ Promise.all([loadJSON(dataPath("stats.json")), loadJSON(dataPath("latest.json"))
   if (onMeta && onMeta.divisions) {
     bandStats.push(`
     <div class="stat"><span class="num" data-count="${onMeta.divisions}">${fmtNum(onMeta.divisions)}</span>
-      <span class="lab">recorded divisions — the Ontario Legislature${spanOf(onMeta) || " (2022–2026)"}</span></div>`);
+      <span class="lab">recorded divisions — the Ontario Legislature${spanOf(onMeta) || " (2018–2026)"}</span></div>`);
     bandNames.push("the Ontario Legislature");
   }
   if (caMeta && caMeta.divisions) {

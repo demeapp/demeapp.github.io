@@ -1,8 +1,5 @@
-// Deme service worker (v36 — homepage data round: the headline
-// stat band is one labelled stat per legislature, Toronto-scoped
-// Upcoming/Latest kickers, a Toronto label on the council-status
-// band, and verified cross-layer example searches; routes
-// unchanged from v35).
+// Deme service worker (v37 — Ontario 2018–2022 backfill: 505 divisions,
+// 190 members; Toronto and Commons layers unchanged).
 // Caches: app shell + static assets, visited pages, and the PUBLIC record JSON
 // (read-only, for offline browsing of what was already loaded).
 // Never caches: non-GET requests, cross-origin requests (Supabase auth, picks,
@@ -16,7 +13,7 @@
 // deploy, so assets are network-first too; cache is the offline fallback.
 // VERSION bumps rename every cache, and activate deletes the old ones —
 // bump VERSION whenever this file ships a strategy change.
-const VERSION = 'v36';
+const VERSION = 'v37';
 const SHELL = 'deme-shell-' + VERSION;
 const PAGES = 'deme-pages-' + VERSION;
 const DATA = 'deme-data-' + VERSION;

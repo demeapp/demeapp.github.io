@@ -261,7 +261,8 @@ function renderChrome(active) {
       : layer === "ontario"
       ? `Built from the Legislative Assembly of Ontario's published records
       and the Integrity Commissioner's disclosure registry. Voting record:
-      name-by-name rows 2022–2026, as gathered Oct 20, 2026 ·
+      name-by-name rows 2018–2026, as gathered Oct 20, 2026 and extended
+      Oct 27, 2026 ·
       Disclosure statements: 2005–2025 — coverage is stated in full on the
       <a href="ontario.html">Ontario directory</a>.`
       : layer === "canada"

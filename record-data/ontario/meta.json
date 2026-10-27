@@ -1,1 +1,12 @@
-{"layer":"ontario","generated":"2026-10-27","members":151,"current":124,"divisions":315,"coverageNote":"Recorded votes, bills and member details are the archive as gathered October 20, 2026 — divisions run to the June 2, 2026 sitting."}
+{
+ "layer": "ontario",
+ "generated": "2026-10-27",
+ "members": 190,
+ "current": 124,
+ "divisions": 505,
+ "votesSpan": [
+  "2018-07-19",
+  "2026-06-02"
+ ],
+ "coverageNote": "Recorded votes, bills and member details are the archive as gathered October 20, 2026, with the 2018–2022 divisions added October 27, 2026, extracted from the Assembly's published House documents. The extracted span is not the Assembly's official searchable record (which begins with the 43rd Parliament) and may miss a small number of divisions. Divisions run from July 19, 2018 to the June 2, 2026 sitting."
+}

@@ -741,7 +741,7 @@ async function renderProfile() {
     <div id="historyWrap"></div>
     <div class="coverage-note">${PCFG.layer === "canada"
       ? `<strong>Coverage.</strong> Recorded votes in this archive run from October 18, 2004 to October 8, 2026; the three most recent divisions (45-1 #179–181) are not yet included.`
-      : `<strong>Coverage.</strong> This layer is the archive as gathered on October 20, 2026; recorded votes run from August 10, 2022 to the June 2, 2026 sitting.`}
+      : `<strong>Coverage.</strong> This layer is the archive as gathered on October 20, 2026 and extended on October 27, 2026; recorded votes run from July 19, 2018 to the June 2, 2026 sitting. The 2018–2022 divisions were extracted from the Assembly's published House documents — they are not part of its official searchable record, which begins in 2022.`}
     </div>`;
   const wrap = document.getElementById("historyWrap");
   if (!voteTotal) {

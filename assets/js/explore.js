@@ -18,7 +18,7 @@ const STATUS_LABELS = {
   INT_FAIL: "Not introduced", OOORDER: "Ruled out of order",
 };
 const PAGE = 25;
-let rows = [], councillors = [], filtered = [], shown = 0;
+let rows = [], councillors = [], peopleIndex = [], filtered = [], shown = 0;
 /* Render generations: applyFilters bumps renderSeq on every reset,
    and page renders run one at a time off renderTail. A render whose
    generation has been superseded — by a streamed shard landing, a
@@ -172,22 +172,44 @@ function applyFilters(opts) {
 
 function memberHit(eff) {
   const box = $("memberhit");
+  let html = "";
   if (eff.member) {
-    box.innerHTML = `<div class="notice">Looking for the person? See
+    html = `<div class="notice">Looking for the person? See
        <a href="councillor.html?m=${encodeURIComponent(eff.member.slug)}">
        ${esc(eff.member.name)}'s voting record →</a></div>`;
-    return;
-  }
-  /* Base behaviour, unchanged: a bare name in the search box. */
-  const qTokens = tokens($("q").value);
-  if (!qTokens.length) { box.innerHTML = ""; return; }
-  const q = qTokens.join(" ");
-  const hit = councillors.find((c) => c.name.toLowerCase().includes(q));
-  box.innerHTML = hit
-    ? `<div class="notice">Looking for the person? See
+  } else {
+    /* Base behaviour, unchanged: a bare name in the search box. */
+    const qTokens = tokens($("q").value);
+    if (qTokens.length) {
+      const q = qTokens.join(" ");
+      const hit = councillors.find((c) => c.name.toLowerCase().includes(q));
+      if (hit) {
+        html = `<div class="notice">Looking for the person? See
        <a href="councillor.html?m=${encodeURIComponent(hit.slug)}">
-       ${esc(hit.name)}'s voting record →</a></div>`
-    : "";
+       ${esc(hit.name)}'s voting record →</a></div>`;
+      }
+    }
+  }
+  /* Cross-layer people search (framing wave, Oct 27, 2026): the
+     archive below is Toronto's decisions, but a name or riding can
+     belong to an MPP or an MP. Their hits ride with the Toronto
+     one, labelled by layer, so the search never dead-ends in the
+     wrong legislature. A Toronto ward name the paths above don't
+     catch falls through to the same index (labelled Toronto,
+     current member first) instead of rendering nothing. */
+  if (typeof DemePeople !== "undefined" && peopleIndex.length) {
+    const hadClassic = html !== "";
+    const hits = DemePeople.findPeople(peopleIndex, $("q").value);
+    let peopleHTML = "";
+    if (!hadClassic) {
+      const torontoHit = hits.find((p) => p.layer === "Toronto" && p.current);
+      if (torontoHit) peopleHTML += DemePeople.peopleHitHTML([torontoHit]);
+    }
+    const layerHits = hits.filter((p) => p.layer !== "Toronto");
+    if (layerHits.length) peopleHTML += DemePeople.peopleHitHTML(layerHits);
+    html += peopleHTML;
+  }
+  box.innerHTML = html;
 }
 
 function renderInterpretation(eff) {
@@ -499,6 +521,19 @@ async function streamRest() {
 }
 async function init() {
   councillors = await loadJSON(dataPath("councillors.json"));
+  /* The people index spans all three legislatures (framing wave):
+     the two layer member files are the same public files their
+     directories render from. A layer that fails to load simply
+     contributes nobody — the Toronto paths above are untouched. */
+  const [onMembers, caMembers] = await Promise.all([
+    loadJSON(dataPath("ontario/members.json")).catch(() => []),
+    loadJSON(dataPath("federal/members.json")).catch(() => []),
+  ]);
+  if (typeof DemePeople !== "undefined") {
+    peopleIndex = DemePeople.buildPeople({
+      toronto: councillors, ontario: onMembers, canada: caMembers,
+    });
+  }
   archiveLoading = true;
   const first = await Promise.all(SEARCH_YEARS.slice(0, 2).map((y) =>
     loadJSON(dataPath(`search-${y}.json`)).catch(() => [])));

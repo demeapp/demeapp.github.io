@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>The Record — Deme</title>
-<meta name="description" content="Search 33,795 decisions from Toronto's council record, most with a plain-language brief. Filter by year, topic, ward, outcome — and find every decision with a recorded vote.">
+<meta name="description" content="Search the record on Deme: 33,795 Toronto council decisions with plain-language briefs — and people across all three legislatures. A name or a riding finds the person's record, whichever legislature they sit in.">
 <link rel="stylesheet" href="assets/css/deme.css">
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="icon" href="favicon-navy-mint-v2.svg" type="image/svg+xml">
@@ -14,11 +14,11 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Deme">
 <meta property="og:title" content="The Record — Deme">
-<meta property="og:description" content="Search 33,795 decisions from Toronto's council record, most with a plain-language brief. Filter by year, topic, ward, outcome — and find every decision with a recorded vote.">
+<meta property="og:description" content="Search the record on Deme: 33,795 Toronto council decisions with plain-language briefs — and people across all three legislatures. A name or a riding finds the person's record, whichever legislature they sit in.">
 <meta property="og:image" content="https://demeapp.github.io/assets/og-image-navy-2026-v2.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="The Record — Deme">
-<meta name="twitter:description" content="Search 33,795 decisions from Toronto's council record, most with a plain-language brief. Filter by year, topic, ward, outcome — and find every decision with a recorded vote.">
+<meta name="twitter:description" content="Search the record on Deme: 33,795 Toronto council decisions with plain-language briefs — and people across all three legislatures. A name or a riding finds the person's record, whichever legislature they sit in.">
 <meta name="twitter:image" content="https://demeapp.github.io/assets/og-image-navy-2026-v2.png">
 <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon-2026-v2.png">
 </head>
@@ -31,14 +31,16 @@
       <p class="kicker">The Record</p>
       <h1 id="explore-h">Search the record</h1>
       <hr class="rule">
-      <p class="lede">Every decision in the archive — nearly all with a plain-language brief.
+      <p class="lede">Every Toronto council decision in the archive — nearly all with a plain-language brief.
       Search words from the title or topic — or use the filters to narrow
-      by year, ward, or outcome.</p>
+      by year, ward, or outcome. Looking for a person? A name or a riding
+      finds them in any of the three legislatures — Toronto, Ontario
+      or Canada.</p>
       <div class="search-panel">
         <form class="searchbox" id="searchform" role="search">
-          <label class="visually-hidden" for="q">Search decisions</label>
+          <label class="visually-hidden" for="q">Search the record</label>
           <div class="search-field">
-            <input type="search" id="q" name="q" placeholder="Search decisions, topics, places…" autocomplete="off">
+            <input type="search" id="q" name="q" placeholder="Search decisions, topics, names, ridings…" autocomplete="off">
             <span class="search-hint" aria-hidden="true"><kbd>/</kbd> to focus</span>
           </div>
           <button class="btn" type="submit">Search</button>
@@ -101,8 +103,10 @@
   </div>
 </main>
 <footer class="site-footer"></footer>
+<script>window.__demeLayer = "site";</script>
 <script src="assets/js/simple-mode.js"></script>
 <script src="assets/js/common.js"></script>
+<script src="assets/js/people-search.js"></script>
 <script src="assets/js/ask.js"></script>
 <script src="assets/js/explore.js"></script>
 <script data-goatcounter="https://demecivic.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>

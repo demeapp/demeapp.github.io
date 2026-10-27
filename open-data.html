@@ -192,19 +192,31 @@
               <a href="record-data/meta.json">build record</a></td>
             <td>The headline counts quoted across this site, and the record of how the published files were built.</td>
           </tr>
+          <tr>
+            <td><a href="record-data/ontario/members.json">Ontario members</a><br>
+              <code>record-data/ontario/members.json</code> ·
+              <code>record-data/ontario/member/&lt;name&gt;.json</code></td>
+            <td>All 151 Ontario members the Ontario directory carries — the 124 current MPPs and 27 earlier members: riding, party, and the record counts behind each profile. One file per member sits beside the index, carrying their divisions, disclosure statements and lobbying counts.</td>
+          </tr>
+          <tr>
+            <td><a href="record-data/federal/members.json">Canada members</a><br>
+              <code>record-data/federal/members.json</code> ·
+              <code>record-data/federal/member/&lt;name&gt;.json</code></td>
+            <td>All 1,070 Canada members the Canada directory carries — the 337 current MPs and 733 earlier members: riding, province, party, and the record counts behind each profile. One file per member sits beside the index, carrying their divisions, registry documents and lobbying communications.</td>
+          </tr>
         </tbody>
       </table>
 
       <h2 style="margin-top:2.6rem">Where the record comes from</h2>
-      <p style="max-width:44rem">Everything starts with the City of Toronto's published council records: the agendas, decisions, and voting records the City Clerk posts through TMMIS, the Toronto Meeting Management Information System — the City's official proceedings. Every decision page on Deme links its item's official record in that system.</p>
+      <p style="max-width:44rem">The Toronto archive starts with the City of Toronto's published council records: the agendas, decisions, and voting records the City Clerk posts through TMMIS, the Toronto Meeting Management Information System — the City's official proceedings. Every decision page on Deme links its item's official record in that system. The Ontario and Canada member files listed above come from the Legislative Assembly of Ontario and the House of Commons — the same sources their directories cite.</p>
       <p style="max-width:44rem">The City publishes members' voting
       records itself, two ways: as the
       <a href="https://open.toronto.ca/dataset/members-of-toronto-city-council-voting-record/" target="_blank" rel="noopener">Members
       of Toronto City Council Voting Record<span class="visually-hidden"> (opens in a new tab)</span></a> dataset on the Toronto
       Open Data Portal, and as
-      <a href="https://www.toronto.ca/legdocs/tmmis/votes-and-attendance.htm" target="_blank" rel="noopener">votes
-      and attendance reports<span class="visually-hidden"> (opens in a new tab)</span></a> in TMMIS. The City publishes no
-      attendance register; Deme's participation figure is derived from the voting record, as the method notes below explain. Deme reorganizes the record; it does not originate it. Where Deme and the official record differ, the official record is right.</p>
+      <a href="https://www.toronto.ca/legdocs/tmmis/votes-and-attendance.htm" target="_blank" rel="noopener">council
+      votes reports<span class="visually-hidden"> (opens in a new tab)</span></a> in TMMIS. The City publishes no
+      register of who attended its meetings; Deme's participation figure is derived from the voting record, as the method notes below explain. Deme reorganizes the record; it does not originate it. Where Deme and the official record differ, the official record is right.</p>
 
       <h2 style="margin-top:2.2rem">How Deme processes it</h2>
       <p style="max-width:44rem">Each decision's brief is a
@@ -239,7 +251,7 @@
       declarations register; the nature of each interest is not in
       this data.</p>
       <p style="max-width:44rem"><strong>Recorded-vote participation is a plain
-      statistic.</strong> A member's votes cast divided by their votes cast plus their absences, across recorded votes where a vote was theirs to cast — the share of recorded votes where the member was present and voting. It is not a count of meetings attended; the City of Toronto publishes no attendance register. Declared
+      statistic.</strong> A member's votes cast divided by their votes cast plus their absences, across recorded votes where a vote was theirs to cast — the share of recorded votes where the member was present and voting. It is not a count of meetings attended; Toronto publishes no register of who attended. Declared
       interests are left out of the count entirely: stepping back from
       a vote for a declared interest is a duty, not an absence, and
       Deme never counts it as one.</p>
@@ -259,6 +271,7 @@
   </div>
 </main>
 <footer class="site-footer"></footer>
+<script>window.__demeLayer = "site";</script>
 <script src="assets/js/simple-mode.js"></script>
 <script src="assets/js/common.js"></script>
 <script>renderChrome("open-data.html");</script>

@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Deme — Toronto City Council's record, in plain language</title>
-<meta name="description" content="Deme makes Toronto's council record readable: 33,795 decisions, most with a plain-language brief, searchable by topic, ward, and councillor.">
+<title>Deme — the public record of your elected representatives, in plain language</title>
+<meta name="description" content="Deme puts the public record of your elected representatives into plain language — Toronto City Council, the Ontario Legislature and the House of Commons: the decisions, the votes, and what members declared.">
 <link rel="stylesheet" href="assets/css/deme.css">
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="icon" href="favicon-navy-mint-v2.svg" type="image/svg+xml">
@@ -13,12 +13,12 @@
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Deme">
-<meta property="og:title" content="Deme — Toronto City Council's record, in plain language">
-<meta property="og:description" content="Deme makes Toronto's council record readable: 33,795 decisions, most with a plain-language brief, searchable by topic, ward, and councillor.">
+<meta property="og:title" content="Deme — the public record of your elected representatives, in plain language">
+<meta property="og:description" content="Deme puts the public record of your elected representatives into plain language — Toronto City Council, the Ontario Legislature and the House of Commons: the decisions, the votes, and what members declared.">
 <meta property="og:image" content="https://demeapp.github.io/assets/og-image-navy-2026-v2.png">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Deme — Toronto City Council's record, in plain language">
-<meta name="twitter:description" content="Deme makes Toronto's council record readable: 33,795 decisions, most with a plain-language brief, searchable by topic, ward, and councillor.">
+<meta name="twitter:title" content="Deme — the public record of your elected representatives, in plain language">
+<meta name="twitter:description" content="Deme puts the public record of your elected representatives into plain language — Toronto City Council, the Ontario Legislature and the House of Commons: the decisions, the votes, and what members declared.">
 <meta name="twitter:image" content="https://demeapp.github.io/assets/og-image-navy-2026-v2.png">
 <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon-2026-v2.png">
 <style>
@@ -152,6 +152,30 @@
   display: inline-flex; align-items: center; min-height: 48px;
 }
 .account-reason { margin: .8rem 0 0; max-width: 46rem; }
+/* The three legislatures (framing wave, Oct 27, 2026): the homepage
+   presents Toronto, Ontario and Canada even-handedly — Toronto is
+   one layer of three, not the site's identity. Homepage-local. */
+.layers-sec { margin-top: var(--sp-4); }
+.layers-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 1rem; margin-top: 1.1rem;
+}
+.layer-card {
+  display: flex; flex-direction: column; gap: .35rem;
+  background: var(--card); border: 1px solid var(--line);
+  border-top: 4px solid var(--bronze); border-radius: var(--radius);
+  box-shadow: var(--shadow-sm); padding: 1.1rem 1.2rem;
+  text-decoration: none; color: var(--ink);
+}
+.layer-card:hover { border-color: var(--bronze-dark); }
+.layer-k {
+  font-size: .78rem; font-weight: 700; letter-spacing: .08em;
+  text-transform: uppercase; color: var(--bronze-dark);
+}
+.layer-t { font-size: 1.15rem; font-weight: 700; color: var(--navy); }
+.layer-d { font-size: .95rem; color: var(--ink-soft); flex: 1; }
+.layer-go { font-weight: 600; color: var(--bronze-dark); }
+@media (max-width: 760px) { .layers-grid { grid-template-columns: 1fr; } }
 </style>
 </head>
 <body>
@@ -161,12 +185,12 @@
   <div class="wrap">
 
     <section class="hero" aria-labelledby="hero-h">
-      <p class="kicker">Toronto City Council · The record, in plain language</p>
+      <p class="kicker">Municipal · Provincial · Federal · The record, in plain language</p>
       <h1 id="hero-h">THE RECORD IS PUBLIC. NOW IT'S READABLE.</h1>
-      <p class="hero-sub">Know what City Hall decided — and how everyone voted.</p>
-      <p class="lede">Search a topic, a street, or a name.</p>
+      <p class="hero-sub">Know what your representatives decided — and how everyone voted.</p>
+      <p class="lede">Search a topic, a street, a riding, or a name.</p>
       <form class="searchbox" action="explore.html" method="get" role="search">
-        <label class="visually-hidden" for="q">Search decisions</label>
+        <label class="visually-hidden" for="q">Search the record</label>
         <input type="search" id="q" name="q"
                placeholder="Try “rent”"
                autocomplete="off">
@@ -193,6 +217,40 @@
       <p class="counting-note on-dark"><span class="pulse-dot" aria-hidden="true"></span>And counting — the record grows with every meeting.</p>
     </section>
 
+    <section class="reveal layers-sec" aria-labelledby="layers-h">
+      <p class="kicker">Every level you vote in</p>
+      <h2 id="layers-h">Three legislatures, one record</h2>
+      <hr class="rule">
+      <p style="max-width:44rem">Deme covers the representatives you elect
+      at every level — the same plain-language record for each.</p>
+      <div class="layers-grid">
+        <a class="layer-card" href="councillors.html">
+          <span class="layer-k">Municipal · Toronto</span>
+          <span class="layer-t">Toronto City Council</span>
+          <span class="layer-d">33,795 decisions in plain language, every
+          member's votes, declared interests and expenses — and a say
+          before the next vote.</span>
+          <span class="layer-go">See the Toronto record →</span>
+        </a>
+        <a class="layer-card" href="ontario.html">
+          <span class="layer-k">Provincial · Ontario</span>
+          <span class="layer-t">The Ontario Legislature</span>
+          <span class="layer-d">Every MPP's record: 315 recorded divisions,
+          disclosure statements back to 2005, and lobbying
+          registrations.</span>
+          <span class="layer-go">See the Ontario record →</span>
+        </a>
+        <a class="layer-card" href="canada.html">
+          <span class="layer-k">Federal · Canada</span>
+          <span class="layer-t">The House of Commons</span>
+          <span class="layer-d">Every MP's record: 4,856 recorded divisions,
+          ethics registry documents, and 172,864 lobbying
+          communications.</span>
+          <span class="layer-go">See the Canada record →</span>
+        </a>
+      </div>
+    </section>
+
     <section class="reveal upcoming-sec" aria-labelledby="upcoming-h">
       <p class="kicker">Before the vote</p>
       <h2 id="upcoming-h">Upcoming at City Council</h2>
@@ -203,7 +261,7 @@
 
     <section class="reveal" aria-labelledby="latest-h">
       <p class="kicker">Catch up</p>
-      <h2 id="latest-h">Latest at City Hall</h2>
+      <h2 id="latest-h">Latest at Toronto City Council</h2>
       <hr class="rule">
       <div class="cards two" id="latest"><span class="visually-hidden">Loading…</span>
         <div class="skel-card" aria-hidden="true"><span class="skel-el sm"></span><span class="skel-el title"></span><span class="skel-el"></span><span class="skel-el short"></span></div>
@@ -252,7 +310,7 @@
       <p class="kicker">Why Deme exists</p>
       <h2 id="how-h">Most decisions leave no names behind</h2>
       <hr class="rule">
-      <p style="max-width:44rem">Most Council decisions come with no
+      <p style="max-width:44rem">Most Toronto council decisions come with no
       recorded vote — no public list of who voted yes and who voted no.
       Deme keeps the whole
       record readable, and flags every decision where the names
@@ -264,20 +322,20 @@
       <p class="kicker">The gap Deme fills</p>
       <h2 id="gap-h">Built to complete the record, not just cover it</h2>
       <hr class="rule">
-      <p style="max-width:44rem">Existing tools do part of the job. Deme picks up where they stop: a plain-language record matched to your ward.</p>
+      <p style="max-width:44rem">Existing tools do part of the job. Deme picks up where they stop: a plain-language record matched to your ward and your ridings.</p>
       <ul class="gap-list">
         <li class="gap-row">
           <p class="who">GovTrack<small>United States</small></p>
           <p><strong>What it does well:</strong> tracks US Congress bills and member voting records.</p>
-          <p><strong>What's missing:</strong> US federal only — nothing for Canadian municipal voters.</p>
+          <p><strong>What's missing:</strong> US federal only — nothing for Canadians at any level.</p>
         </li>
         <li class="gap-row">
           <p class="who">openparliament.ca<small>Canada (federal)</small></p>
           <p><strong>What it does well:</strong> excellent, searchable Hansard and House of Commons votes.</p>
-          <p><strong>What's missing:</strong> stops at the federal level — no municipal or ward-level view.</p>
+          <p><strong>What's missing:</strong> stops at the federal level — nothing provincial or municipal, and no ward-level view.</p>
         </li>
       </ul>
-      <p class="gap-close">Deme is built for Canada's cities: matched to your ward · your positions save to your account — only yours to see, never tallied · a permanent public record. <a href="explore.html">Start searching the record →</a></p>
+      <p class="gap-close">Deme is built for all three levels of government in Canada: matched to your ward and your ridings · your positions save to your account — only yours to see, never tallied · a permanent public record. <a href="explore.html">Start searching the record →</a></p>
     </section>
 
     <section class="reveal" aria-labelledby="vision-h">
@@ -292,6 +350,7 @@
   </div>
 </main>
 <footer class="site-footer"></footer>
+<script>window.__demeLayer = "site";</script>
 <script src="assets/js/simple-mode.js"></script>
 <script src="assets/js/common.js"></script>
 <script src="assets/js/council-status.js"></script>

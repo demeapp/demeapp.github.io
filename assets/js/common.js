@@ -199,8 +199,12 @@ function demeLayer() {
 }
 function renderChrome(active) {
   window.__demeChromeActive = active;
-  renderElectionBanner();
   const layer = demeLayer();
+  /* The election banner is Toronto municipal copy (it links to the
+     Toronto directory); it renders on the Toronto layer only, so no
+     Toronto-specific wording leaks into the Ontario/Canada layers.
+     Toronto pages are unaffected. */
+  if (layer === "toronto") renderElectionBanner();
   const header = document.querySelector(".site-header");
   if (header) {
     header.innerHTML = `<div class="wrap">
@@ -246,14 +250,14 @@ function renderChrome(active) {
       ? `Built from the Legislative Assembly of Ontario's published records
       and the Integrity Commissioner's disclosure registry. Voting record:
       name-by-name rows 2022–2026, as gathered Oct 20, 2026 ·
-      Disclosure statements: 2005–2025 — see
-      <a href="about.html">About &amp; method</a>.`
+      Disclosure statements: 2005–2025 — coverage is stated in full on the
+      <a href="ontario.html">Ontario directory</a>.`
       : layer === "canada"
       ? `Built from the House of Commons' published records, the Conflict of
       Interest and Ethics Commissioner's registry, and the Office of the
       Commissioner of Lobbying's registry. Voting record: name-by-name
-      rows 2004–2026 — see
-      <a href="about.html">About &amp; method</a>.`
+      rows 2004–2026 — coverage is stated in full on the
+      <a href="canada.html">Canada directory</a>.`
       : `Built from the City of Toronto's published council
       records. Decision archive: 2018–2026 · Voting record: name-by-name
       rows 2018–2026, member totals back to 2006 ·

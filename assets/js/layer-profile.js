@@ -123,12 +123,19 @@ async function setVoteFilter(f) {
 /* ---------------- sections ---------------- */
 function termsSection(p) {
   if (!p.terms || !p.terms.length) return "";
-  const rows = p.terms.map((t) => {
-    if (PCFG.layer === "canada") {
-      return `<li><strong>${ordinal(t.parliament)} Parliament</strong> — ${esc(t.riding || "")}${t.party ? ` (${esc(t.party)})` : ""} · ${esc(t.from)} – ${esc(t.to || "present")}</li>`;
-    }
-    return `<li><strong>${ordinal(t.parliament)} Parliament</strong> · ${esc(t.from)} – ${esc(t.to)}</li>`;
-  }).join("");
+  if (PCFG.layer === "canada") {
+    // Federal tenure entries are stints (a riding/party span that can
+    // cross Parliaments), so they are labelled by riding and dates —
+    // never by a single Parliament — newest first, human dates.
+    const rows = p.terms.slice().reverse().map((t) =>
+      `<li><strong>${esc(t.riding || "")}</strong>${t.party ? ` (${esc(t.party)})` : ""} · ${fmtDate(t.from)} – ${t.to ? fmtDate(t.to) : "present"}</li>`).join("");
+    return `<section style="margin-top:2.4rem" aria-labelledby="terms-h">
+    <h2 id="terms-h">Service in the record</h2><hr class="rule">
+    ${p.parliaments > 1 ? `<p class="small">Service spanning ${p.parliaments} parliaments.</p>` : ""}
+    <ul>${rows}</ul></section>`;
+  }
+  const rows = p.terms.map((t) =>
+    `<li><strong>${ordinal(t.parliament)} Parliament</strong> · ${esc(t.from)} – ${esc(t.to)}</li>`).join("");
   return `<section style="margin-top:2.4rem" aria-labelledby="terms-h">
     <h2 id="terms-h">Service in the record</h2><hr class="rule">
     <ul>${rows}</ul></section>`;
@@ -137,7 +144,7 @@ function termsSection(p) {
 function rolesSection(p) {
   if (PCFG.layer === "canada" && p.roles && p.roles.length) {
     const rows = p.roles.map((r) =>
-      `<li>${esc(r.title)} · ${esc(r.from || "")}${r.to ? ` – ${esc(r.to)}` : " – present"}</li>`).join("");
+      `<li>${esc(r.title)} · ${r.from ? fmtDate(r.from) : ""}${r.to ? ` – ${fmtDate(r.to)}` : " – present"}</li>`).join("");
     return `<section style="margin-top:2.4rem" aria-labelledby="roles-h">
       <h2 id="roles-h">Parliamentary roles</h2><hr class="rule">
       <ul>${rows}</ul></section>`;
@@ -183,7 +190,7 @@ function panelsSection(p) {
       <h3 id="contact-h">Contact</h3>
       <ul>${lines.join("")}</ul></section>`;
   }
-  return `<div class="profile-grid" style="margin-top:2.4rem">${committees}${contact}</div>`;
+  return `<div class="profile-grid" id="panels-h" style="margin-top:2.4rem">${committees}${contact}</div>`;
 }
 
 function docDetails(summary, text, url, linkLabel) {
@@ -198,6 +205,10 @@ function interestsSection(p) {
     const ints = p.interests || { summaries: [], other: [] };
     const total = ints.summaries.length + ints.other.length;
     let body = "";
+    const snippet = (s) => {
+      s = String(s || "");
+      return s.length > 90 ? `${s.slice(0, 90)}…` : s;
+    };
     if (!total) {
       body = `<p>No documents for this member in the Commissioner's
         public registry as gathered for this archive.</p>`;
@@ -205,7 +216,7 @@ function interestsSection(p) {
       if (ints.summaries.length) {
         body += `<div class="doc-list">${ints.summaries.map((d, i) =>
           docDetails(
-            `Disclosure summary ${ints.summaries.length > 1 ? `${i + 1} of ${ints.summaries.length}` : ""} — ${(d.desc || "").slice(0, 90)}…`,
+            `Disclosure summary${ints.summaries.length > 1 ? ` ${i + 1} of ${ints.summaries.length}` : ""} — ${snippet(d.desc)}`,
             d.text || d.desc, d.url,
             "Registry page (ethicscanada.ca)")).join("")}</div>`;
       }
@@ -214,7 +225,7 @@ function interestsSection(p) {
       for (const [type, docs] of Object.entries(byType)) {
         body += `<h3 style="margin-top:1.6rem">${esc(type)} (${docs.length})</h3>
           <div class="doc-list">${docs.map((d) =>
-            docDetails(`${type} — ${(d.desc || "").slice(0, 90)}…`,
+            docDetails(`${type} — ${snippet(d.desc)}`,
               d.text || d.desc, d.url,
               "Registry page (ethicscanada.ca)")).join("")}</div>`;
       }
@@ -245,8 +256,11 @@ function interestsSection(p) {
     <p class="small" style="max-width:44rem">Each statement is the
     member's annual filing to the Integrity Commissioner — income
     sources, assets, liabilities, and gifts and benefits over $200, as
-    published. The published statements carry no dollar amounts, and
-    they are snapshots by year, not a register of dated declarations.</p>
+    published. Ontario has no separate gift registry: gifts and
+    personal benefits are declared inside these annual statements, and
+    each statement shown below can be read in full. The published
+    statements carry no dollar amounts, and they are snapshots by
+    year, not a register of dated declarations.</p>
     ${missingNote}
     ${ints.count ? `<div class="doc-list">${stmts}</div>`
       : `<p>No disclosure statements on file for this member in the series gathered (2005–2025).</p>`}
@@ -257,7 +271,11 @@ function interestsSection(p) {
 function expensesSection(p) {
   if (PCFG.layer === "canada") {
     const rows = (p.expenses || []).slice().reverse();
-    if (!rows.length) return "";
+    if (!rows.length) return `<section style="margin-top:2.4rem" aria-labelledby="pay-h">
+      <h2 id="pay-h">Pay and expenses — as published</h2><hr class="rule">
+      <p class="small" style="max-width:44rem">No office-expenditure
+      reports for this member in the published quarters held
+      (2020–21 Q2 – 2026–27 Q1).</p></section>`;
     const trs = rows.map((r) => `<tr>
       <td>${esc(r.q)}</td><td class="num">${money(r.salaries)}</td>
       <td class="num">${money(r.travel)}</td>
@@ -280,7 +298,13 @@ function expensesSection(p) {
       </section>`;
   }
   const exp = p.expenses || { payments: [], annual: [] };
-  if (!exp.payments.length && !exp.annual.length) return "";
+  if (!exp.payments.length && !exp.annual.length)
+    return `<section style="margin-top:2.4rem" aria-labelledby="pay-h">
+      <h2 id="pay-h">Pay and expenses — as published</h2><hr class="rule">
+      <p class="small" style="max-width:44rem">No expenses for this
+      member in the published record held (payments as disclosed from
+      April 2024; annual totals back to 2015–16). Ministers' expenses
+      are published in a separate provincial system.</p></section>`;
   let body = "";
   if (exp.payments.length) {
     const byPeriod = {};
@@ -330,7 +354,13 @@ function expensesSection(p) {
 function lobbyingSection(p) {
   if (PCFG.layer === "canada") {
     const lob = p.lobbying;
-    if (!lob) return "";
+    if (!lob) return `<section style="margin-top:2.4rem" aria-labelledby="lobbying-h">
+      <h2 id="lobbying-h">Lobbying record</h2><hr class="rule">
+      <p class="small" style="max-width:44rem">No communication reports
+      naming this member in the registry extract (2008 – October 23,
+      2026). Lobbyist registrations themselves name the institutions
+      being lobbied, not individual members, so no per-member
+      registration count exists to show.</p></section>`;
     const years = Object.entries(lob.byYear)
       .map(([y, n]) => `<span>${esc(y)}: <strong>${fmtNum(n)}</strong></span>`).join("");
     const listOf = (pairs) => `<ul>${pairs.map(([k, n]) =>
@@ -343,7 +373,10 @@ function lobbyingSection(p) {
       holder contacted — <strong>${fmtNum(lob.total)}</strong> reports,
       ${esc(lob.first)} – ${esc(lob.last)}. A report records a
       communication as reported by the lobbyist, in the registry's own
-      terms.</p>
+      terms. Lobbyist registrations themselves name the institutions
+      being lobbied, not individual members, so no per-member
+      registration count exists to show — the communication reports
+      below are the per-member lobbying record.</p>
       <div class="by-year">${years}</div>
       <div class="profile-grid" style="margin-top:1.4rem">
         <section class="profile-panel"><h3>Top subject matters</h3>${listOf(lob.topSubjects)}</section>
@@ -356,7 +389,17 @@ function lobbyingSection(p) {
       </details></section>`;
   }
   const lob = p.lobbying;
-  if (!lob) return "";
+  if (!lob) return `<section style="margin-top:2.4rem" aria-labelledby="lobbying-h">
+    <h2 id="lobbying-h">Lobbying registrations</h2><hr class="rule">
+    <p class="small" style="max-width:44rem">${p.current
+      ? `This member's office was not among the ridings searched in the
+        October 2026 registry search, so no registration picture is
+        shown. Ontario publishes registrations — statements of intent
+        to lobby — not records of contacts or meetings.`
+      : `The October 2026 registry search covered current members'
+        offices only, so no registration picture was gathered for this
+        earlier member. Ontario publishes registrations — statements of
+        intent to lobby — not records of contacts or meetings.`}</p></section>`;
   const rows = lob.sample.map((x) => `<tr>
     <td>${esc(x.lobbyist)}</td>
     <td>${esc(x.organization || "")}${x.client ? `<br><span class="small">for ${esc(x.client)}</span>` : ""}</td>
@@ -452,7 +495,7 @@ async function renderProfile() {
     ["terms", "Service", "#terms-h"],
     ["roles", PCFG.layer === "canada" ? "Roles" : "Career",
      PCFG.layer === "canada" ? "#roles-h" : "#career-h"],
-    ["committees", "Committees & contact", "#committees-h"],
+    ["committees", "Committees & contact", "#panels-h"],
     ["interests", PCFG.layer === "canada" ? "Declared interests" : "Disclosure", "#interests-h"],
     ["pay", "Pay & expenses", "#pay-h"],
     ["lobbying", "Lobbying", "#lobbying-h"],

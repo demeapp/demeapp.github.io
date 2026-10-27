@@ -70,6 +70,10 @@
   content: ""; position: absolute; top: 0; left: 0; right: 0;
   height: 4px; background: var(--bronze);
 }
+.council-status-kicker {
+  margin: 0 0 .35rem; font-size: .76rem; font-weight: 700;
+  letter-spacing: .09em; text-transform: uppercase; color: #8FE8C4;
+}
 .council-status-head {
   display: flex; align-items: center; gap: .65rem;
   margin: 0; color: #fff; font-size: 1.32rem; line-height: 1.2;
@@ -197,11 +201,11 @@
         <button class="btn" type="submit">Search</button>
       </form>
       <p class="search-hint-row"><span class="search-hint" aria-hidden="true"><kbd>/</kbd> to focus search</span></p>
-      <div class="askchips" aria-label="Example questions you can ask">
-        <span class="askchips-label">Ask in plain words:</span>
+      <div class="askchips" aria-label="Example searches">
+        <span class="askchips-label">Ask in plain words, or search a name or riding:</span>
         <a class="chip" href="explore.html?q=How%20did%20council%20vote%20on%20housing%20since%202022%3F">How did council vote on housing since 2022?</a>
-        <a class="chip" href="explore.html?q=Close%20votes%20on%20the%20budget">Close votes on the budget</a>
         <a class="chip" href="explore.html?q=What%20did%20council%20decide%20about%20bike%20lanes%20in%202024%3F">What did council decide about bike lanes in 2024?</a>
+        <a class="chip" href="explore.html?q=Etobicoke%20North">Etobicoke North</a>
       </div>
       <div class="account-entry">
         <a class="btn bronze" href="my-record.html#account-zone">Create an account</a>
@@ -211,10 +215,10 @@
       be notified when votes land, and see where you stand against your
       representative.</p>
 
-      <div class="statband" id="statband" aria-label="The Toronto council archive, in numbers">
-        <!-- filled from data/stats.json -->
+      <div class="statband" id="statband" aria-label="The record in numbers — Toronto City Council, the Ontario Legislature and the House of Commons">
+        <!-- filled from data/stats.json + the Ontario and Canada layers' meta files -->
       </div>
-      <p class="counting-note on-dark"><span class="pulse-dot" aria-hidden="true"></span>And counting — the record grows with every meeting.</p>
+      <p class="counting-note on-dark"><span class="pulse-dot" aria-hidden="true"></span>And counting — the record grows with every sitting.</p>
     </section>
 
     <section class="reveal layers-sec" aria-labelledby="layers-h">
@@ -252,15 +256,15 @@
     </section>
 
     <section class="reveal upcoming-sec" aria-labelledby="upcoming-h">
-      <p class="kicker">Before the vote</p>
-      <h2 id="upcoming-h">Upcoming at City Council</h2>
+      <p class="kicker">Toronto · Before the vote</p>
+      <h2 id="upcoming-h">Upcoming at Toronto City Council</h2>
       <hr class="rule">
       <div id="upcoming"><span class="visually-hidden">Loading…</span>
         <p class="upcoming-line" aria-hidden="true"><span class="skel-el" style="max-width:24rem;margin-bottom:0"></span></p></div>
     </section>
 
     <section class="reveal" aria-labelledby="latest-h">
-      <p class="kicker">Catch up</p>
+      <p class="kicker">Toronto · Catch up</p>
       <h2 id="latest-h">Latest at Toronto City Council</h2>
       <hr class="rule">
       <div class="cards two" id="latest"><span class="visually-hidden">Loading…</span>
@@ -429,19 +433,40 @@ document.getElementById("upcoming").addEventListener("click", async (e) => {
 Promise.all([loadJSON(dataPath("stats.json")), loadJSON(dataPath("latest.json")),
              loadJSON(dataPath("upcoming.json")), loadJSON(dataPath("topics.json")),
              loadJSON(dataPath("threads-summary.json")).catch(() => null),
-             loadJSON(dataPath("council-status.json")).catch(() => null)])
-.then(([stats, latest, upcoming, topics, threadData, councilStatus]) => {
-  document.getElementById("statband").innerHTML = `
+             loadJSON(dataPath("council-status.json")).catch(() => null),
+             loadJSON(dataPath("ontario/meta.json")).catch(() => null),
+             loadJSON(dataPath("federal/meta.json")).catch(() => null)])
+.then(([stats, latest, upcoming, topics, threadData, councilStatus,
+        onMeta, caMeta]) => {
+  /* The headline band is one stat per legislature, each labelled
+     with its legislature (homepage data round, Oct 27, 2026):
+     Toronto's decisions from the Toronto archive stats, Ontario's
+     and Canada's recorded divisions from their own layers' meta
+     files. The layers are never added together into one total,
+     and Toronto's deeper archive stats (votes cast, recorded-vote
+     share) belong to the Toronto pages, not the whole-site band.
+     A layer whose meta file fails to load is left out of the band
+     rather than guessed at. The Ontario span is the divisions
+     file's own (first sitting Aug 10, 2022, latest Jun 2, 2026);
+     Canada's span is read from its meta file's votesSpan. */
+  const bandStats = [`
     <div class="stat"><span class="num" data-count="${stats.decisions}">${fmtNum(stats.decisions)}</span>
-      <span class="lab">decisions in the archive — City Council, its committees and boards (${stats.decisionsFrom}–${stats.decisionsTo})</span></div>
-    <div class="stat"><span class="num"><span data-count="9">9</span> in 100</span>
-      <span class="lab">decisions carry a recorded vote — ${fmtNum(stats.recordedVoteDecisions)} in all, most with every name on the record, the rest as a recorded tally</span></div>
-    <div class="stat"><span class="num" data-count="${stats.votesCast}">${fmtNum(stats.votesCast)}</span>
-      <span class="lab">votes cast by ${stats.members} members across five terms, back to ${stats.votesFrom} in member totals; name-by-name rows stored from 2018</span></div>`;
+      <span class="lab">decisions in plain language — Toronto City Council (${stats.decisionsFrom}–${stats.decisionsTo})</span></div>`];
+  if (onMeta && onMeta.divisions) {
+    bandStats.push(`
+    <div class="stat"><span class="num" data-count="${onMeta.divisions}">${fmtNum(onMeta.divisions)}</span>
+      <span class="lab">recorded divisions — the Ontario Legislature (2022–2026)</span></div>`);
+  }
+  if (caMeta && caMeta.divisions) {
+    const caSpan = Array.isArray(caMeta.votesSpan) && caMeta.votesSpan.length === 2
+      ? ` (${String(caMeta.votesSpan[0]).slice(0, 4)}–${String(caMeta.votesSpan[1]).slice(0, 4)})` : "";
+    bandStats.push(`
+    <div class="stat"><span class="num" data-count="${caMeta.divisions}">${fmtNum(caMeta.divisions)}</span>
+      <span class="lab">recorded divisions — the House of Commons${caSpan}</span></div>`);
+  }
+  document.getElementById("statband").innerHTML = bandStats.join("");
   /* All three headline stats count up once when the band scrolls
-     into view (setupCountUps wires every [data-count] in the band):
-     the two big totals, and the "9" in "9 in 100" — "in 100" and the
-     label figures (3,171, 94) carry no data-count and stay static.
+     into view (setupCountUps wires every [data-count] in the band).
      Each animation lands on exactly fmtNum(target) and stops. */
   const up = document.getElementById("upcoming");
   /* Defence in depth: only City Council items may render here, whatever
@@ -479,6 +504,7 @@ Promise.all([loadJSON(dataPath("stats.json")), loadJSON(dataPath("latest.json"))
       const weighIn = displayItems.length ? ""
         : `<p class="council-status-action"><a href="my-record.html#weigh-in">See how weighing in works →</a></p>`;
       statusBand = `<div class="council-status">` +
+        `<p class="council-status-kicker">Toronto City Council</p>` +
         `<p class="council-status-head"><strong>${esc(resolved.headline)}</strong></p>` +
         `<p class="council-status-body">${esc(resolved.body)}</p>` +
         `${weighIn}${checkedOn}</div>`;

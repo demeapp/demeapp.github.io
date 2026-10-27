@@ -1,7 +1,8 @@
-// Deme service worker (v35 — fix round: disclosure labels and
-// statement dates, Toronto register paging and section shape,
-// people-search and My Record avatars, portrait-coverage lines;
-// routes unchanged from v34).
+// Deme service worker (v36 — homepage data round: the headline
+// stat band is one labelled stat per legislature, Toronto-scoped
+// Upcoming/Latest kickers, a Toronto label on the council-status
+// band, and verified cross-layer example searches; routes
+// unchanged from v35).
 // Caches: app shell + static assets, visited pages, and the PUBLIC record JSON
 // (read-only, for offline browsing of what was already loaded).
 // Never caches: non-GET requests, cross-origin requests (Supabase auth, picks,
@@ -15,7 +16,7 @@
 // deploy, so assets are network-first too; cache is the offline fallback.
 // VERSION bumps rename every cache, and activate deletes the old ones —
 // bump VERSION whenever this file ships a strategy change.
-const VERSION = 'v35';
+const VERSION = 'v36';
 const SHELL = 'deme-shell-' + VERSION;
 const PAGES = 'deme-pages-' + VERSION;
 const DATA = 'deme-data-' + VERSION;

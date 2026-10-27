@@ -490,8 +490,8 @@ async function renderDeclaredInterests(person) {
      vote; this line and the summary name the official register).
      This line is just the counts. */
   const countsLine = `<p class="small" style="max-width:44rem">${simpleOn()
-    ? `<strong>Served on this page:</strong> ${fmtNum(regN)} ${regN === 1 ? "entry" : "entries"} from the City Clerk's official list${giftsEraNA ? "" : ` · ${fmtNum(giftN)} gift ${giftN === 1 ? "disclosure" : "disclosures"}`}.`
-    : `<strong>Served on this page:</strong> ${fmtNum(regN)} ${regN === 1 ? "entry" : "entries"} from the official register${giftsEraNA ? "" : ` · ${fmtNum(giftN)} gift ${giftN === 1 ? "disclosure" : "disclosures"}`}.`}</p>`;
+    ? `<strong>Shown on this page:</strong> ${fmtNum(regN)} ${regN === 1 ? "entry" : "entries"} from the City Clerk's official list${giftsEraNA ? "" : ` · ${fmtNum(giftN)} gift ${giftN === 1 ? "disclosure" : "disclosures"}`}.`
+    : `<strong>Shown on this page:</strong> ${fmtNum(regN)} ${regN === 1 ? "entry" : "entries"} from the official register${giftsEraNA ? "" : ` · ${fmtNum(giftN)} gift ${giftN === 1 ? "disclosure" : "disclosures"}`}.`}</p>`;
   if (hasEntries || hasVoteInterests) {
     const giftsHTML = hasGifts
       ? `<h3 style="margin-top:1.8rem">Gifts and benefits disclosed</h3>
@@ -503,7 +503,7 @@ async function renderDeclaredInterests(person) {
       ? `This is the City Clerk's official list — the interests ${esc(person.name)} declared on the record, one item at a time. It is not the same as the recorded-vote count above. That count comes from recorded votes where the member declared an interest and did not vote. The two lists count different things, so their totals will not match. A member can declare an interest out loud in the chamber and still not appear in this list. The vote record above may show a declaration that this list does not have.`
       : `The City Clerk's official register — the declarations ${esc(person.name)} made on the record, item by item. It is separate from the recorded-vote count above it, counted from recorded votes where the member declared an interest and did not vote; the two count different things and their totals will not match. <strong>This register is the City Clerk's published file of declarations. A declaration made out loud in the chamber — for example under Article 8 of the Code of Conduct — may not appear in that file, so this list can miss a declaration that the vote record shows.</strong>`}</p>
     ${countsLine}
-    ${hasEntries ? `<ul class="personlist history-rows" id="reg-list">${rowItems.slice(0, PAGE).join("")}</ul><div class="pager" id="reg-pager"></div>` : `<p class="small">${simpleOn() ? `No declaration for ${esc(person.name)} appears in the City Clerk's published list. The vote count above records declarations made on votes, including ones said out loud in the chamber, that may be missing from this list.` : `No declaration by ${esc(person.name)} appears in the City Clerk's published register file. The recorded-vote count above counts declarations recorded on votes, including declarations made out loud in the chamber, which the published file can miss.`}</p>`}
+    ${hasEntries ? `<ul class="personlist history-rows" id="reg-list">${rowItems.slice(0, PAGE).join("")}</ul><div class="pager" id="reg-pager"></div>` : `<p class="small">${simpleOn() ? `No declaration for ${esc(person.name)} appears in the City Clerk's published list. The vote count above records declarations made on votes.` : `No declaration by ${esc(person.name)} appears in the City Clerk's published register file. The recorded-vote count above counts declarations recorded on votes.`}</p>`}
     ${giftsHTML}
     <p class="small" style="max-width:44rem;margin-top:1rem">Source: City Clerk's Office · Registry of Declared Interest (published 2007–2026; the City publishes no declarations dated 2006 or earlier) + Gift Disclosure Registry (published 2011–2025; 2026 not yet published) (Integrity Commissioner) · Open Data refreshed September 26, 2026</p>
   </section>`;
@@ -545,7 +545,7 @@ async function renderDeclaredInterests(person) {
     <h2 id="declared-interests-h">Declared interests — the official register</h2><hr class="rule">
     ${entriesLoaded ? `<p class="small" style="max-width:44rem">${simpleOn()
       ? `The City Clerk's published list has no declaration for ${esc(person.name)} (2007–2026).`
-      : `No declaration by ${esc(person.name)} appears in the City Clerk's published register (2007–2026) — a verified zero in that file.`}</p>` : ""}
+      : `No declaration by ${esc(person.name)} appears in the City Clerk's published register (2007–2026) — the whole published register was checked and holds none.`}</p>` : ""}
     ${countsLine}
     <h3 style="margin-top:1.8rem">Gifts and benefits disclosed</h3>
     ${giftsBody}

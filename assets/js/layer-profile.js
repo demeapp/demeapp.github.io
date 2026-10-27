@@ -275,7 +275,7 @@ function interestsSection(p) {
         const dest = metaGet(d, "destination(s)");
         const dates = metaGet(d, "dates");
         const sponsor = metaGet(d, "sponsor of the trip");
-        const head = [dest, dates ? `(${dates})` : ""]
+        const head = [dest, dates ? `· ${dates}` : ""]
           .filter(Boolean).join(" ");
         const label = [head, sponsor ? `sponsored by ${sponsor}` : ""]
           .filter(Boolean).join(" — ");
@@ -306,7 +306,7 @@ function interestsSection(p) {
         if (!seen.has(l)) { seen.set(l, i); return; }
         const on = disclosedOn(docs[i]);
         labels[i] = on && !labels.includes(`${l} · disclosed ${on}`)
-          ? `${l} · disclosed ${on}` : `${l} · ${i + 1} of ${docs.length} in the registry listing`;
+          ? `${l} · disclosed ${on}` : `${l} · ${i + 1} of ${docs.length} in this list`;
       });
       return labels;
     };
@@ -328,7 +328,17 @@ function interestsSection(p) {
         const descs = ints.summaries.map((d) => String(d.desc || "")
           .replace(/\s+/g, " ").trim());
         const n = ints.summaries.length;
-        const allSame = n > 1 && descs.every((x) => x === descs[0]);
+        /* "Identical" must be true of the whole listing, not just
+           its description (Gate 3, Rule 5): description, text and
+           registry page all equal, or the summaries take the
+           differing-labels path below. */
+        const texts = ints.summaries.map((d) => String(d.text || "")
+          .replace(/\s+/g, " ").trim());
+        const allSame = n > 1
+          && descs.every((x) => x === descs[0])
+          && texts.every((x) => x === texts[0])
+          && ints.summaries.every((d) =>
+            (d.url || "") === (ints.summaries[0].url || ""));
         let labels;
         if (n === 1) {
           labels = [`Disclosure summary — ${snippet(descs[0])}`];
@@ -357,9 +367,14 @@ function interestsSection(p) {
             "Registry page (ethicscanada.ca)")).join("")}</div>`;
         if (allSame) {
           body += `<p class="small" style="max-width:44rem">The
-            Commissioner's registry extract lists the same disclosure
-            summary ${n} times for this member. The listings are
-            identical, and they are shown in the registry's order.</p>`;
+            Commissioner's public registry lists this disclosure
+            summary ${n} times for this member, word for word the
+            same each time; they are shown in the registry's
+            order.</p>`;
+        } else if (n > 1) {
+          body += `<p class="small" style="max-width:44rem">These
+            summaries are numbered in the order the Commissioner's
+            registry lists them.</p>`;
         }
       }
       const byType = {};
@@ -427,8 +442,7 @@ function interestsSection(p) {
       were gathered for this archive. The count above comes from the
       Commissioner's published index, which counts
       ${fmtNum(ints.count)} ${ints.count === 1 ? "statement" : "statements"}
-      for this member (${missingYears.join(", ")}); the texts
-      themselves were not gathered.</p>`;
+      for this member (statement years: ${missingYears.join(", ")}).</p>`;
   return `<section style="margin-top:2.4rem" aria-labelledby="interests-h">
     <h2 id="interests-h">Disclosure statements — Integrity Commissioner</h2><hr class="rule">
     <p><strong>Disclosure statements on file: ${fmtNum(ints.count)} (annual statements, 2005–present)</strong></p>

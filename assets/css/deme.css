@@ -2088,6 +2088,13 @@ details.pay-year[open] > summary::after { content: "\25B4"; }
   font-size: 1rem; color: var(--navy);
 }
 .pds-src { margin-top: 1.1rem; }
+/* The filings' own run-together strings (e.g. "Company:Winspire…")
+   are reproduced verbatim; at phone widths let a long unspaced
+   string wrap rather than crowd the edge (visitor-eye nit, Oct 28,
+   2026). No character changes — wrapping only. */
+@media (max-width: 700px) {
+  .pds-field p { overflow-wrap: anywhere; }
+}
 .by-year { display: flex; flex-wrap: wrap; gap: .4rem .9rem; margin-top: .6rem; }
 .by-year span { font-size: .9rem; color: var(--ink-soft); }
 .by-year strong { color: var(--ink); }

@@ -93,9 +93,19 @@ function divTokens() {
   (divNorm($("q").value).match(/\b[a-z]-\d+\b/g) || []).forEach(push);
   return toks;
 }
+const BILL_TOKEN_RE = /^[a-z]{1,2}-\d+$/;
+const NUM_TOKEN_RE = /^\d+$/;
 function computeDivFiltered(layerName) {
   const src = layerName === "ontario" ? (onRows || []) : caRows;
   const toks = divTokens();
+  /* Bill designations and bare numbers match at boundaries, never
+     as substrings: "C-39" must not return C-391–C-399, and "119"
+     must not bite into a longer number (visitor-eye blocker, Oct
+     28, 2026 — the first cut matched substrings and returned 28
+     divisions for C-39, only 9 of them C-39). Ordinary words keep
+     the archive's substring matching. */
+  const matchers = toks.map((t) => (BILL_TOKEN_RE.test(t) || NUM_TOKEN_RE.test(t))
+    ? new RegExp(`(?<![a-z0-9])${t.replace(/[-]/g, "\\-")}(?![0-9])`) : null);
   const yearSel = $("f-year").value;
   let yf = null, yt = null;
   if (yearSel) { yf = Number(yearSel); yt = Number(yearSel); }
@@ -108,7 +118,8 @@ function computeDivFiltered(layerName) {
     const y = Number(String(r.d).slice(0, 4));
     if (yf != null && (y < yf || y > yt)) return false;
     if (oc && (layerName === "ontario" ? r.o : r.r) !== oc) return false;
-    if (toks.length && !toks.every((t) => r._hay.includes(t))) return false;
+    if (toks.length && !toks.every((t, i) => matchers[i]
+      ? matchers[i].test(r._hay) : r._hay.includes(t))) return false;
     return true;
   });
 }

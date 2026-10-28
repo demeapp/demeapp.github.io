@@ -25,7 +25,7 @@ function incomingBlockHTML(c) {
   return `<div class="incoming-block">
     <p class="incoming-marker"><strong>Elected October 26, 2026 — takes office November 15, 2026</strong></p>
     <p class="incoming-record">${recordLine}</p>
-    <p class="incoming-portrait">No official portrait yet — the City of Toronto has not published one. Their initials stand in until it does; Deme adds official portraits as the City publishes them.</p>
+    <p class="incoming-portrait">No official portrait for the new term yet — the City of Toronto has not published one. Their initials stand in until it does; Deme adds official portraits as the City publishes them.</p>
   </div>`;
 }
 function personCard(c) {

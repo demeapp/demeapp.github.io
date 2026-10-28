@@ -10,17 +10,29 @@ renderChrome("representatives.html");
 let all = [];
 let currentSort = "ward";
 let filter = "";
+/* Incoming treatment (search-federation wave, Oct 28, 2026): the
+   seven members elected October 26, 2026 carry no summary stats yet.
+   The card says when they take office, what happens to their record,
+   and why the disc shows initials — official portraits are added
+   when the City of Toronto publishes them, never before. Six are
+   new; Mike Layton returns, so his card points at his earlier
+   service instead of claiming his record starts now. */
+function incomingBlockHTML(c) {
+  const prior = (c.terms || []).filter((t) => t !== "2026-2030");
+  const recordLine = prior.length
+    ? `Returning to Council — their earlier service (${esc(prior[0].slice(0, 4))}–${esc(prior[prior.length - 1].slice(5))}) is on their record page. Their new-term record begins November 15, 2026.`
+    : "No votes yet — their voting record begins with the new term.";
+  return `<div class="incoming-block">
+    <p class="incoming-marker"><strong>Elected October 26, 2026 — takes office November 15, 2026</strong></p>
+    <p class="incoming-record">${recordLine}</p>
+    <p class="incoming-portrait">No official portrait yet — the City of Toronto has not published one. Their initials stand in until it does; Deme adds official portraits as the City publishes them.</p>
+  </div>`;
+}
 function personCard(c) {
   const role = c.mayor ? "Mayor of Toronto"
     : `Councillor · Ward ${c.ward} — ${esc(c.wardName)}`;
-  /* Incoming members (elected Oct 26, 2026; term begins Nov 15, 2026)
-     carry no summary stats yet — their record begins with the new
-     term. The card says so plainly instead of printing four dashes.
-     (Layton's card takes the same treatment; his 2010–2022 record
-     stays on his profile page, labelled as his earlier service.) */
   const stats = c.incoming
-    ? `<p class="incoming-note">Elected October 26, 2026 · Term begins
-        November 15, 2026 — record begins with the new term.</p>`
+    ? incomingBlockHTML(c)
     : memberStatsHTML(c);
   return `<article class="person${c.mayor ? " is-mayor" : ""}">
     <div class="person-top">${avatarHTML(c)}
@@ -112,10 +124,26 @@ function wardSummary(c) {
 /* The finder must not dead-end on a past member's name: when no
    current member matches but earlier members do, name them and point
    into the Earlier members section (the click opens it). */
+/* Earlier members sort MOST RECENT FIRST (Amendment 3, Oct 28,
+   2026): by each member's most recent service — their last date in
+   the record (lastSeen), falling back to the end year of their last
+   term — with name A–Z as the deterministic tiebreak. */
+function lastServiceKey(c) {
+  if (c.lastSeen) return c.lastSeen;
+  const terms = c.terms || [];
+  const last = terms[terms.length - 1];
+  const end = last ? Number(String(last).slice(5, 9)) : 0;
+  return end ? `${end}-12-31` : "0000-00-00";
+}
+function byRecentService(a, b) {
+  const ka = lastServiceKey(a), kb = lastServiceKey(b);
+  if (ka !== kb) return ka < kb ? 1 : -1;
+  return a.name.localeCompare(b.name);
+}
 function earlierHintHTML(query) {
   const hits = query ? all.filter((c) => !c.current && matches(c, query)) : [];
   if (!hits.length) return `<p class="small">No current member matches.</p>`;
-  hits.sort((a, b) => a.name.localeCompare(b.name));
+  hits.sort(byRecentService);
   const names = hits.slice(0, 3).map((c) => esc(c.name)).join(", ");
   const more = hits.length > 3 ? ` and ${hits.length - 3} more` : "";
   return `<p class="small">No current member matches — but ${names}${more} ${hits.length === 1 ? "is" : "are"} in <a href="#earlier-details" data-open-earlier>Earlier members ↓</a>.</p>`;
@@ -183,7 +211,7 @@ function render(q) {
     ? cur.map(personCard).join("")
     : earlierHintHTML(query);
   const old = all.filter((c) => !c.current && matches(c, query));
-  old.sort((a, b) => a.name.localeCompare(b.name));
+  old.sort(byRecentService);
   document.getElementById("earlier").innerHTML = old.map(earlierRow).join("");
   /* The section search keeps its own state: if a section query is
      active, a main-finder re-render re-applies it on top of the fresh
@@ -246,9 +274,9 @@ function groupedRowsHTML(rows) {
     groups.get(key).members.push(r.c);
   }
   return [...groups.values()]
-    .sort((a, b) => a.term.localeCompare(b.term) || a.ward - b.ward)
+    .sort((a, b) => b.term.localeCompare(a.term) || a.ward - b.ward)
     .map((g) => {
-      g.members.sort((a, b) => a.name.localeCompare(b.name));
+      g.members.sort(byRecentService);
       return `<div class="earlier-group"><h4>${esc(fmtTerm(g.term))} · Ward ${g.ward} — ${esc(g.wardName)}</h4>
       <ul class="personlist">${g.members.map(earlierRow).join("")}</ul></div>`;
     }).join("");
@@ -272,7 +300,7 @@ function renderEarlierSearch() {
   if (!isWardQuery) {
     const q = raw.toLowerCase();
     const hits = all.filter((c) => !c.current && c.name.toLowerCase().includes(q));
-    hits.sort((a, b) => a.name.localeCompare(b.name));
+    hits.sort(byRecentService);
     box.innerHTML = hits.length
       ? `<ul class="personlist">${hits.map(earlierRow).join("")}</ul>`
       : `<p class="small">No earlier member matches “${esc(raw)}”.</p>`;

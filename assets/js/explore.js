@@ -18,7 +18,7 @@ const STATUS_LABELS = {
   INT_FAIL: "Not introduced", OOORDER: "Ruled out of order",
 };
 const PAGE = 25;
-let rows = [], councillors = [], peopleIndex = [], filtered = [], shown = 0;
+let rows = [], councillors = [], filtered = [], shown = 0;
 /* Render generations: applyFilters bumps renderSeq on every reset,
    and page renders run one at a time off renderTail. A render whose
    generation has been superseded — by a streamed shard landing, a
@@ -35,6 +35,163 @@ let profileFilter = null; // "Use my profile" filter, or null when off
 let profileSummaryBase = ""; // profile-row summary without " — filter on"
 const briefCache = new Map(); // ref -> card (filled from year shards)
 const $ = (id) => document.getElementById(id);
+
+/* Federated record search (search-federation wave, Oct 28, 2026):
+   the one box searches all three record layers — Toronto decisions
+   (the per-year shards above) plus the Ontario and federal recorded
+   divisions, read from the derived slim shards built by
+   tools/build_division_search.py out of the layers' own divisions
+   files. The level chips choose the layer; counts are always per
+   layer and never summed. People search is NOT here any more — it
+   lives in the Representatives directory; this page only answers
+   "what did the record decide". */
+const LEVELS = ["all", "toronto", "ontario", "canada"];
+let level = "all";
+let onRows = null; // Ontario slim division rows (null until loaded)
+let caRows = []; // federal slim division rows, accumulated per session
+let caManifest = null; // federal session manifest (null until loaded)
+let caStarted = false;
+let divLayer = null, divList = [], divShown = 0;
+let lastAll = null; // per-layer counts for the All-levels count line
+
+function divNorm(s) {
+  return String(s == null ? "" : s).normalize("NFD")
+    .replace(/[̀-ͯ]/g, "").toLowerCase();
+}
+/* What a division can honestly be searched by, from the layer data:
+   Ontario — title words, bill number, outcome, parliament. Federal —
+   subject words, bill (C-39 matches "c39" too), result, session.
+   Neither layer file carries per-division member or party fields, so
+   no member or party filter is offered for them. */
+function divHaystack(layerName, r) {
+  if (layerName === "ontario") {
+    return divNorm([r.t, r.o, r.b ? `bill ${r.b}` : "",
+      r.p ? `parliament ${r.p}` : ""].join(" "));
+  }
+  return divNorm([r.t, r.b || "", (r.b || "").replace(/-/g, ""),
+    r.b ? `bill ${r.b}` : "", r.r, r.s].join(" "));
+}
+/* The words the divisions are matched against: the question parser's
+   free words plus its topic labels (topics themselves are Toronto's
+   taxonomy — a division matches the topic's own word in its subject,
+   not the Toronto synonym list). */
+function divTokens() {
+  const toks = [];
+  const push = (s) => divNorm(s).split(/\s+/).forEach((t) => {
+    if (t && !toks.includes(t)) toks.push(t);
+  });
+  if (parsed) {
+    parsed.freeTokens.forEach(push);
+    parsed.topicTokens.forEach((g) => push(g.label || ""));
+  } else {
+    push($("q").value);
+  }
+  /* Bill designations stay whole: the question parser splits "C-39"
+     into "c" + "39", which would match any subject containing both
+     fragments anywhere — the compound token restores the precision
+     the visitor typed. */
+  (divNorm($("q").value).match(/\b[a-z]-\d+\b/g) || []).forEach(push);
+  return toks;
+}
+function computeDivFiltered(layerName) {
+  const src = layerName === "ontario" ? (onRows || []) : caRows;
+  const toks = divTokens();
+  const yearSel = $("f-year").value;
+  let yf = null, yt = null;
+  if (yearSel) { yf = Number(yearSel); yt = Number(yearSel); }
+  else if (parsed && parsed.yearFrom != null) {
+    yf = parsed.yearFrom; yt = parsed.yearTo;
+  }
+  const oc = layerName === "ontario"
+    ? $("f-on-outcome").value : $("f-ca-result").value;
+  return src.filter((r) => {
+    const y = Number(String(r.d).slice(0, 4));
+    if (yf != null && (y < yf || y > yt)) return false;
+    if (oc && (layerName === "ontario" ? r.o : r.r) !== oc) return false;
+    if (toks.length && !toks.every((t) => r._hay.includes(t))) return false;
+    return true;
+  });
+}
+/* Division cards follow the homepage's three-chamber Latest pattern
+   (index.html divisionCard): chamber named on every card, the title
+   links to the official record, and a closing line routes to the
+   members whose record the division sits on. */
+function onDivisionCard(r) {
+  const tally = r.o && r.ay != null && r.na != null
+    ? `${r.o} ${r.ay}–${r.na}` : (r.o || "");
+  const head = r.u
+    ? `<a href="${esc(r.u)}" target="_blank" rel="noopener">${esc(r.t)}</a>`
+    : `<a href="representatives.html?level=ontario">${esc(r.t)}</a>`;
+  return `<article class="card">
+    <div class="meta"><span>${esc(fmtDate(r.d))}</span>
+      <span>Ontario Legislature</span>
+      ${tally ? `<span class="pill">${esc(tally)}</span>` : ""}</div>
+    <h3>${head}</h3>
+    <p class="more"><a href="representatives.html?level=ontario">On the MPPs' records <span aria-hidden="true">→</span></a></p>
+  </article>`;
+}
+function caDivisionCard(r) {
+  const head = r.u
+    ? `<a href="${esc(r.u)}" target="_blank" rel="noopener">${esc(r.t)}</a>`
+    : `<a href="representatives.html?level=canada">${esc(r.t)}</a>`;
+  return `<article class="card">
+    <div class="meta"><span>${esc(fmtDate(r.d))}</span>
+      <span>House of Commons</span>
+      ${r.b ? `<span>${esc(r.b)}</span>` : ""}
+      ${r.r ? `<span class="pill">${esc(r.r)}</span>` : ""}</div>
+    <h3>${head}</h3>
+    <p class="more"><a href="representatives.html?level=canada">On the MPs' records <span aria-hidden="true">→</span></a></p>
+  </article>`;
+}
+function fillDivOutcomeSelects() {
+  if (onRows) {
+    const order = ["Carried", "Lost"];
+    const present = [...new Set(onRows.map((r) => r.o).filter(Boolean))]
+      .sort((a, b) => (order.indexOf(a) - order.indexOf(b)) || a.localeCompare(b));
+    const sel = $("f-on-outcome"), cur = sel.value;
+    fillSelect(sel, present.map((o) => [o, o]), "All outcomes");
+    if (cur && present.includes(cur)) sel.value = cur;
+  }
+  if (caManifest) {
+    const order = ["Agreed To", "Negatived", "Tie"];
+    const present = [...new Set(caRows.map((r) => r.r).filter(Boolean))]
+      .sort((a, b) => (order.indexOf(a) - order.indexOf(b)) || a.localeCompare(b));
+    const sel = $("f-ca-result"), cur = sel.value;
+    fillSelect(sel, present.map((o) => [o, o]), "All results");
+    if (cur && present.includes(cur)) sel.value = cur;
+  }
+}
+async function ensureOntario() {
+  if (onRows) return;
+  try {
+    const loaded = await loadJSON(dataPath("ontario/search-divisions.json"));
+    loaded.forEach((r) => { r._hay = divHaystack("ontario", r); });
+    onRows = loaded;
+  } catch (e) { onRows = []; }
+  fillDivOutcomeSelects();
+  if (level === "ontario" || level === "all") applyFilters();
+}
+async function ensureCanada() {
+  if (caStarted) return;
+  caStarted = true;
+  try {
+    const idx = await loadJSON(dataPath("federal/search-divisions-index.json"));
+    caManifest = idx.sessions || [];
+    fillYearOptions();
+    for (const s of caManifest) {
+      const part = await loadJSON(
+        dataPath(`federal/search-divisions-${s.s}.json`)).catch(() => []);
+      part.forEach((r) => { r._hay = divHaystack("canada", r); });
+      caRows = caRows.concat(part);
+      /* Newest sessions land first, so the visible page is already
+         the newest results — streaming only grows the counts. */
+      if (level === "canada") refreshDivCountsOnly();
+      else if (level === "all") refreshAllCountsOnly();
+    }
+  } catch (e) { /* the layer simply stays empty */ }
+  fillDivOutcomeSelects();
+  if (level === "canada" || level === "all") applyFilters();
+}
 
 function tokens(q) {
   return q.toLowerCase().split(/\s+/).filter(Boolean);
@@ -147,9 +304,20 @@ function syncFiltersToggle() {
   if ($("f-status") && $("f-status").value) n += 1;
   if ($("f-ward") && $("f-ward").value) n += 1;
   if ($("f-vote") && $("f-vote").checked) n += 1;
+  if (level === "ontario" && $("f-on-outcome") && $("f-on-outcome").value) n += 1;
+  if (level === "canada" && $("f-ca-result") && $("f-ca-result").value) n += 1;
   btn.textContent = n ? `Filters \u2014 ${n} set` : "Filters";
 }
+/* The level dispatcher: every existing caller (typing, filters, the
+   archive stream, the profile chips) calls applyFilters; the chips
+   decide which layer's renderer answers. */
 function applyFilters(opts) {
+  syncFiltersToggle();
+  if (level === "ontario" || level === "canada") { applyDivisions(); return; }
+  if (level === "all") { applyAll(); return; }
+  applyTorontoFilters(opts);
+}
+function applyTorontoFilters(opts) {
   syncFiltersToggle();
   /* keepShown (stream-triggered refreshes only): rebuild the list
      without yanking an engaged visitor back to page one. */
@@ -172,46 +340,20 @@ function applyFilters(opts) {
 
 function memberHit(eff) {
   const box = $("memberhit");
+  /* Search-federation wave (Oct 28, 2026): people search lives in
+     the Representatives directory now — the panel carries a standing
+     cross-link to it. What stays here is only the link the question
+     parser itself promised: a question that names a member ("how
+     did X vote on…") still points at that member's own record, as
+     the interpretation line above says. The bare-name and
+     cross-layer people hits are gone — one people search, in the
+     directory built for it. */
   let html = "";
-  /* P-2 (audit, Oct 27, 2026): the classic Toronto hits get the
-     same avatar as the cross-layer hits below — portrait where one
-     exists, initials where none does — never bare text. */
   if (eff.member) {
     const mc = councillors.find((c) => c.slug === eff.member.slug);
     html = `<div class="notice person-hit">${mc ? avatarHTML(mc, "sm") : ""}<span>Looking for the person? See
        <a href="councillor.html?m=${encodeURIComponent(eff.member.slug)}">
        ${esc(eff.member.name)}'s voting record →</a></span></div>`;
-  } else {
-    /* Base behaviour, unchanged: a bare name in the search box. */
-    const qTokens = tokens($("q").value);
-    if (qTokens.length) {
-      const q = qTokens.join(" ");
-      const hit = councillors.find((c) => c.name.toLowerCase().includes(q));
-      if (hit) {
-        html = `<div class="notice person-hit">${avatarHTML(hit, "sm")}<span>Looking for the person? See
-       <a href="councillor.html?m=${encodeURIComponent(hit.slug)}">
-       ${esc(hit.name)}'s voting record →</a></span></div>`;
-      }
-    }
-  }
-  /* Cross-layer people search (framing wave, Oct 27, 2026): the
-     archive below is Toronto's decisions, but a name or riding can
-     belong to an MPP or an MP. Their hits ride with the Toronto
-     one, labelled by layer, so the search never dead-ends in the
-     wrong legislature. A Toronto ward name the paths above don't
-     catch falls through to the same index (labelled Toronto,
-     current member first) instead of rendering nothing. */
-  if (typeof DemePeople !== "undefined" && peopleIndex.length) {
-    const hadClassic = html !== "";
-    const hits = DemePeople.findPeople(peopleIndex, $("q").value);
-    let peopleHTML = "";
-    if (!hadClassic) {
-      const torontoHit = hits.find((p) => p.layer === "Toronto" && p.current);
-      if (torontoHit) peopleHTML += DemePeople.peopleHitHTML([torontoHit]);
-    }
-    const layerHits = hits.filter((p) => p.layer !== "Toronto");
-    if (layerHits.length) peopleHTML += DemePeople.peopleHitHTML(layerHits);
-    html += peopleHTML;
   }
   box.innerHTML = html;
 }
@@ -398,8 +540,160 @@ function renderCount() {
    ONLY the count line. The cards on screen are the newest page and
    cannot change while older years stream in behind them. */
 function refreshCountOnly() {
+  if (level === "ontario" || level === "canada") return;
   filtered = computeFiltered().list;
+  if (level === "all") {
+    if (lastAll) { lastAll.toronto = filtered.length; renderAllCount(); }
+    return;
+  }
   renderCount();
+}
+
+/* -------- single-layer division modes (Ontario / Federal) -------- */
+function renderDivCount() {
+  const el = $("count");
+  if (!el) return;
+  const loading = divLayer === "ontario" ? !onRows : caStarted && !caManifest;
+  const n = divList.length;
+  let text;
+  if (loading) text = "Loading the record…";
+  else if (!n) text = "No divisions match. Try fewer words, or clear a filter.";
+  else text = `${fmtNum(n)} division${n === 1 ? "" : "s"} found`
+    + (divLayer === "canada" && caLoadingSuffix() ? " — older sessions are still loading." : "");
+  el.textContent = text;
+  el.setAttribute("aria-label", text);
+}
+function caLoadingSuffix() {
+  return caManifest && caRows.length < caManifest.reduce((a, s) => a + s.n, 0);
+}
+function refreshDivCountsOnly() {
+  if (level !== "canada" && level !== "ontario") return;
+  divList = computeDivFiltered(divLayer);
+  renderDivCount();
+}
+function renderDivPage() {
+  const slice = divList.slice(divShown, divShown + PAGE);
+  divShown += slice.length;
+  const html = slice.map((r) =>
+    divLayer === "ontario" ? onDivisionCard(r) : caDivisionCard(r)).join("");
+  $("results").insertAdjacentHTML("beforeend", html);
+  renderDivCount();
+  $("pager").innerHTML = divShown < divList.length
+    ? `<button class="btn secondary" id="more-div">Show more (${fmtNum(divList.length - divShown)} remaining)</button>`
+    : "";
+  const more = $("more-div");
+  if (more) more.addEventListener("click", () => { userEngaged = true; renderDivPage(); });
+}
+function applyDivisions() {
+  divLayer = level;
+  renderSeq++;
+  $("results").innerHTML = "";
+  $("memberhit").innerHTML = "";
+  const interp = $("interpretation");
+  interp.hidden = true; interp.innerHTML = "";
+  const loaded = divLayer === "ontario" ? Boolean(onRows) : Boolean(caManifest);
+  divList = loaded ? computeDivFiltered(divLayer) : [];
+  divShown = 0;
+  if (!loaded) {
+    $("results").innerHTML = `<p class="layer-empty">Loading the ${divLayer === "ontario" ? "Ontario Legislature" : "House of Commons"} record…</p>`;
+    $("pager").innerHTML = "";
+    renderDivCount();
+    return;
+  }
+  if (!divList.length) {
+    $("results").innerHTML = `<p class="layer-empty">No divisions match. Try fewer words, or clear a filter.</p>`;
+    $("pager").innerHTML = "";
+    renderDivCount();
+    return;
+  }
+  renderDivPage();
+}
+
+/* -------- All levels: one section per layer, counts per layer ---- */
+function renderAllCount() {
+  const el = $("count");
+  if (!el || !lastAll) return;
+  const seg = (name, n, unit, loading) => n == null
+    ? `${name} — loading`
+    : `${name} — ${fmtNum(n)} ${unit}${n === 1 ? "" : "s"}${loading ? " (more on the way)" : ""}`;
+  const text = [
+    seg("Toronto", lastAll.toronto, "decision", archiveLoading),
+    seg("Ontario", lastAll.ontario, "division", !onRows),
+    seg("House of Commons", lastAll.canada, "division",
+      Boolean(caManifest && caLoadingSuffix())),
+  ].join(" · ");
+  el.textContent = text;
+  el.setAttribute("aria-label", text);
+}
+function refreshAllCountsOnly() {
+  if (!lastAll) return;
+  lastAll.canada = caManifest ? computeDivFiltered("canada").length : null;
+  renderAllCount();
+}
+function fallbackCard(r) {
+  /* Shard unavailable: never guess at a title — show the item itself. */
+  return `<article class="card">
+    <div class="meta"><span>${esc(fmtDate(r.date))}</span>
+      <span>${esc(r.body)}</span>
+      <span class="pill">${esc(STATUS_LABELS[r.status] || "Decided")}</span></div>
+    <h3><a href="decision.html?ref=${encodeURIComponent(r.ref)}">Item ${esc(r.ref)}</a></h3>
+    <p class="more"><a href="decision.html?ref=${encodeURIComponent(r.ref)}">Details →</a></p>
+  </article>`;
+}
+function layerSection(layerKey, heading, list, cardsHTML) {
+  let body;
+  if (list == null) {
+    body = `<p class="layer-empty">Loading this record…</p>`;
+  } else if (!list.length) {
+    body = `<p class="layer-empty">No ${layerKey === "toronto" ? "decisions" : "divisions"} match.</p>`;
+  } else {
+    body = `<div class="cards">${cardsHTML}</div>`
+      + (list.length > 10
+        ? `<p style="margin-top:.9rem"><button type="button" class="btn secondary" data-setlevel="${layerKey}">See all ${layerKey === "toronto" ? "Toronto decisions" : layerKey === "ontario" ? "Ontario divisions" : "federal divisions"} <span aria-hidden="true">→</span></button></p>`
+        : "");
+  }
+  return `<section class="layer-block" aria-label="${esc(heading)} results">
+    <h3 class="layer-h">${esc(heading)}</h3>${body}</section>`;
+}
+function applyAll() {
+  const { list, eff } = computeFiltered();
+  filtered = list;
+  renderSeq++;
+  const seq = renderSeq;
+  memberHit(eff);
+  renderInterpretation(eff);
+  /* The ward/profile strips are Toronto controls — in All mode the
+     shared filters only rule (scope), so the strips stay hidden. */
+  const mw = $("myward-row");
+  if (mw) mw.hidden = true;
+  (async () => {
+    const top = filtered.slice(0, 10);
+    await hydrate(top);
+    if (seq !== renderSeq) return;
+    const onList = onRows ? computeDivFiltered("ontario") : null;
+    const caList = caManifest ? computeDivFiltered("canada") : null;
+    lastAll = {
+      toronto: filtered.length,
+      ontario: onList ? onList.length : null,
+      canada: caList ? caList.length : null,
+    };
+    const toCards = top.map((r) => {
+      const full = briefCache.get(r.ref);
+      return full ? decisionCard(full) : fallbackCard(r);
+    }).join("");
+    const onCards = onList
+      ? onList.slice(0, 10).map(onDivisionCard).join("") : "";
+    const caCards = caList
+      ? caList.slice(0, 10).map(caDivisionCard).join("") : "";
+    $("results").innerHTML =
+      layerSection("toronto", "Toronto City Council", filtered, toCards)
+      + layerSection("ontario", "Ontario Legislature", onList, onCards)
+      + layerSection("canada", "House of Commons", caList, caCards);
+    $("pager").innerHTML = "";
+    $("results").querySelectorAll("[data-setlevel]").forEach((b) =>
+      b.addEventListener("click", () => setLevel(b.dataset.setlevel)));
+    renderAllCount();
+  })();
 }
 
 /* Entry point for every page render (applyFilters' first page and
@@ -426,14 +720,7 @@ async function renderPage(seq) {
   const html = slice.map((r) => {
     const full = briefCache.get(r.ref);
     if (full) return decisionCard(full);
-    /* Shard unavailable: never guess at a title — show the item itself. */
-    return `<article class="card">
-      <div class="meta"><span>${esc(fmtDate(r.date))}</span>
-        <span>${esc(r.body)}</span>
-        <span class="pill">${esc(STATUS_LABELS[r.status] || "Decided")}</span></div>
-      <h3><a href="decision.html?ref=${encodeURIComponent(r.ref)}">Item ${esc(r.ref)}</a></h3>
-      <p class="more"><a href="decision.html?ref=${encodeURIComponent(r.ref)}">Details →</a></p>
-    </article>`;
+    return fallbackCard(r);
   }).join("");
   const resultsEl = $("results");
   const beforeCount = resultsEl.children.length;
@@ -461,6 +748,73 @@ async function renderPage(seq) {
   }
 }
 
+/* The Year select is level-aware: Toronto and Ontario span
+   2018–2026; the federal record runs 2004–2026 (its manifest, once
+   loaded, is the authority for the span). All levels offers the
+   union — a year simply finds nothing in a layer that has none. */
+function fillYearOptions() {
+  const sel = $("f-year");
+  if (!sel) return;
+  const cur = sel.value;
+  let yf = 2018, yt = 2026;
+  if (level === "canada" || level === "all") {
+    yf = 2004; yt = 2026;
+    if (caManifest && caManifest.length) {
+      const yrs = caManifest.flatMap((s) =>
+        [Number(String(s.from).slice(0, 4)), Number(String(s.to).slice(0, 4))]);
+      yf = Math.min(...yrs); yt = Math.max(...yrs);
+    }
+  }
+  const vals = [];
+  for (let y = yt; y >= yf; y--) vals.push([String(y), String(y)]);
+  fillSelect(sel, vals, "All years");
+  if (cur && vals.some(([v]) => v === cur)) sel.value = cur;
+}
+/* The level chips: pressed state, per-level filter visibility, the
+   ?level= URL param, and lazy layer loads. Leaving Toronto clears
+   the Toronto-only controls — a hidden filter must never keep
+   filtering in silence. */
+function setLevel(next) {
+  level = LEVELS.includes(next) ? next : "all";
+  document.querySelectorAll(".lchip").forEach((b) =>
+    b.setAttribute("aria-pressed", String(b.dataset.level === level)));
+  const torontoControls = level === "toronto";
+  $("cell-body").hidden = !torontoControls;
+  $("cell-status").hidden = !torontoControls;
+  $("cell-ward").hidden = !torontoControls;
+  $("cell-vote").hidden = !torontoControls;
+  $("note-vote").hidden = !torontoControls;
+  $("cell-on-outcome").hidden = level !== "ontario";
+  $("cell-ca-result").hidden = level !== "canada";
+  if (!torontoControls) {
+    $("f-body").value = "";
+    $("f-status").value = "";
+    $("f-ward").value = "";
+    $("f-vote").checked = false;
+    if (profileFilter) { profileFilter = null; renderProfileState(); }
+    const mw = $("myward-row");
+    if (mw) mw.hidden = true;
+    const prow = $("profile-row");
+    if (prow && !prow.hidden) {
+      prow.hidden = true;
+      prow.dataset.levelHidden = "1";
+    }
+  } else {
+    const prow = $("profile-row");
+    if (prow && prow.dataset.levelHidden) {
+      prow.hidden = false;
+      delete prow.dataset.levelHidden;
+    }
+  }
+  fillYearOptions();
+  const url = new URL(location.href);
+  if (level === "all") url.searchParams.delete("level");
+  else url.searchParams.set("level", level);
+  history.replaceState(null, "", url);
+  if (level === "ontario" || level === "all") ensureOntario();
+  if (level === "canada" || level === "all") ensureCanada();
+  applyFilters();
+}
 function fillSelect(el, values, allLabel) {
   el.innerHTML = `<option value="">${allLabel}</option>` +
     values.map(([v, label]) => `<option value="${esc(v)}">${esc(label)}</option>`).join("");
@@ -525,29 +879,10 @@ async function streamRest() {
 }
 async function init() {
   councillors = await loadJSON(dataPath("councillors.json"));
-  /* The people index spans all three legislatures (framing wave):
-     the two layer member files are the same public files their
-     directories render from. A layer that fails to load simply
-     contributes nobody — the Toronto paths above are untouched. */
-  const [onMembers, caMembers] = await Promise.all([
-    loadJSON(dataPath("ontario/members.json")).catch(() => []),
-    loadJSON(dataPath("federal/members.json")).catch(() => []),
-  ]);
-  if (typeof DemePeople !== "undefined") {
-    peopleIndex = DemePeople.buildPeople({
-      toronto: councillors, ontario: onMembers, canada: caMembers,
-      /* Toronto's member file carries no photo flag; the photo set
-         lives in common.js beside the Toronto avatar helper. */
-      torontoPhotoSlugs: typeof PHOTO_SLUGS !== "undefined"
-        ? PHOTO_SLUGS : null,
-    });
-  }
   archiveLoading = true;
   const first = await Promise.all(SEARCH_YEARS.slice(0, 2).map((y) =>
     loadJSON(dataPath(`search-${y}.json`)).catch(() => [])));
   rows = first.flat();
-  const years = SEARCH_YEARS.slice();
-  fillSelect($("f-year"), years.map((y) => [y, y]), "All years");
   fillLoadingSelect($("f-body"));
   fillLoadingSelect($("f-status"));
   fillSelect($("f-ward"),
@@ -560,9 +895,18 @@ async function init() {
 
   const params = new URLSearchParams(location.search);
   if (params.get("q")) $("q").value = params.get("q");
-  if (params.get("year")) $("f-year").value = params.get("year");
-  if (params.get("vote") === "1") $("f-vote").checked = true;
+  if (params.get("vote") === "1" && (!params.get("level") || params.get("level") === "toronto")) $("f-vote").checked = true;
   parseCurrentQuery();
+  /* Level chips (search-federation wave): the initial level comes
+     from ?level= (the doors and other pages link with it); the year
+     param is applied after setLevel fills the level's year options,
+     so a federal deep link can carry a 2004–2017 year. */
+  document.querySelectorAll(".lchip").forEach((b) =>
+    b.addEventListener("click", () => { userEngaged = true; setLevel(b.dataset.level); }));
+  setLevel(params.get("level") || "all");
+  if (params.get("year")) { $("f-year").value = params.get("year"); applyFilters(); }
+  $("f-on-outcome").addEventListener("change", () => { userEngaged = true; applyFilters(); });
+  $("f-ca-result").addEventListener("change", () => { userEngaged = true; applyFilters(); });
 
   let debounce;
   $("q").addEventListener("input", () => {

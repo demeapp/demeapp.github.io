@@ -103,10 +103,17 @@
   #earlier-details .em-stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   #earlier-details .em-stats span { overflow-wrap: break-word; }
 }
-/* Incoming-member card note (v32): replaces the four-stat block on the
-   seven cards for members elected Oct 26, 2026 whose record has not
-   begun. Navy & Mint system colours only. */
-.incoming-note { margin: 0; padding: 1.25rem 1.45rem 1.45rem; font-size: .82rem; line-height: 1.45; color: var(--ink-faint); }
+/* Incoming-member card block (v32; structured in the
+   search-federation wave, Oct 28, 2026): replaces the four-stat
+   block on the seven cards for members elected Oct 26, 2026 whose
+   record has not begun — marker, record line, portrait line. Navy &
+   Mint system colours only. */
+.incoming-block { padding: 1.1rem 1.45rem 1.35rem; }
+.incoming-block p { margin: 0 0 .45rem; font-size: .86rem; line-height: 1.45; }
+.incoming-block p:last-child { margin-bottom: 0; }
+.incoming-marker { color: var(--navy); }
+.incoming-record { color: var(--ink); }
+.incoming-portrait { color: var(--ink-faint); font-size: .8rem; }
 
 /* The directory's own level switch: the same segmented control as
    the header switcher (44px targets, short labels on small screens,

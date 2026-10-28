@@ -103,8 +103,12 @@ function renderLayerDirectory() {
   }
   const eq = document.getElementById("eq");
   const eqVal = eq ? eq.value : "";
+  /* Earlier members sort MOST RECENT FIRST (Amendment 3, Oct 28,
+     2026): by the last year of each member's service (lastYear,
+     falling back to firstYear), name A–Z as the tiebreak. */
   const shownEarlier = earlier.filter((p) => layerMatches(p, eqVal))
-    .sort((a, b) => a.name.localeCompare(b.name));
+    .sort((a, b) => ((b.lastYear ?? b.firstYear ?? 0) - (a.lastYear ?? a.firstYear ?? 0))
+      || a.name.localeCompare(b.name));
   document.getElementById("earlier").innerHTML = shownEarlier.length
     ? shownEarlier.map(layerEarlierRow).join("")
     : `<p class="small">No earlier members match that search.</p>`;

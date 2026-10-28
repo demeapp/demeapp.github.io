@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>The Record — Deme</title>
-<meta name="description" content="Search the record on Deme: 33,795 Toronto council decisions with plain-language briefs — and people across all three legislatures. A name or a riding finds the person's record, whichever legislature they sit in.">
+<meta name="description" content="Search the whole record on Deme from one box: Toronto council decisions with plain-language briefs, and the recorded divisions of the Ontario Legislature and the House of Commons — counted level by level, never blended.">
 <link rel="stylesheet" href="assets/css/deme.css">
 <link rel="manifest" href="manifest.webmanifest">
 <style>
@@ -34,6 +34,27 @@
 .door-d { font-size: .95rem; color: var(--ink-soft); flex: 1; }
 .door-go { font-weight: 600; color: var(--bronze-dark); }
 @media (max-width: 760px) { .doors-grid { grid-template-columns: 1fr; } }
+/* Federated search (search-federation wave, Oct 28, 2026): the
+   level chips sit above the search box and choose which of the
+   three records the box searches. Pressed state mirrors the site's
+   chip language — ink fill, white text. */
+.level-chips {
+  display: flex; flex-wrap: wrap; align-items: center;
+  gap: .45rem; margin-bottom: 1rem;
+}
+.level-chips .lc-label { font-weight: 700; font-size: .92rem; margin-right: .1rem; }
+.lchip {
+  font: inherit; font-size: .92rem; padding: .42rem .9rem;
+  border-radius: 999px; border: 1px solid var(--line);
+  background: var(--card); color: var(--ink); cursor: pointer;
+}
+.lchip:hover { border-color: var(--bronze-dark); }
+.lchip[aria-pressed="true"] { background: var(--ink); color: #fff; border-color: var(--ink); }
+.people-link { margin-top: 1rem; font-size: .95rem; }
+.layer-block { margin-bottom: 1.8rem; }
+.layer-h { font-size: 1.08rem; margin: 1.4rem 0 .7rem; color: var(--navy); }
+.layer-h .lh-count { font-weight: 600; color: var(--ink-soft); }
+.layer-empty { color: var(--ink-soft); }
 </style>
 <link rel="icon" href="favicon-navy-mint-v2.svg" type="image/svg+xml">
 <link rel="icon" href="assets/icons/favicon-32.png" sizes="32x32" type="image/png">
@@ -42,11 +63,11 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Deme">
 <meta property="og:title" content="The Record — Deme">
-<meta property="og:description" content="Search the record on Deme: 33,795 Toronto council decisions with plain-language briefs — and people across all three legislatures. A name or a riding finds the person's record, whichever legislature they sit in.">
+<meta property="og:description" content="Search the whole record on Deme from one box: Toronto council decisions with plain-language briefs, and the recorded divisions of the Ontario Legislature and the House of Commons — counted level by level, never blended.">
 <meta property="og:image" content="https://demeapp.github.io/assets/og-image-navy-2026-v2.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="The Record — Deme">
-<meta name="twitter:description" content="Search the record on Deme: 33,795 Toronto council decisions with plain-language briefs — and people across all three legislatures. A name or a riding finds the person's record, whichever legislature they sit in.">
+<meta name="twitter:description" content="Search the whole record on Deme from one box: Toronto council decisions with plain-language briefs, and the recorded divisions of the Ontario Legislature and the House of Commons — counted level by level, never blended.">
 <meta name="twitter:image" content="https://demeapp.github.io/assets/og-image-navy-2026-v2.png">
 <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon-2026-v2.png">
 </head>
@@ -60,45 +81,54 @@
       <h1 id="explore-h">Search the record</h1>
       <hr class="rule">
       <p class="lede">One record, three legislatures. Start with a
-      legislature — or search Toronto's decision archive below; a name
-      or a riding finds a person in any of the three.</p>
+      legislature — or search all three from the box below. A name or
+      a riding finds a person in the Representatives directory.</p>
       <div class="doors-grid">
-        <a class="door-card" href="#searchform">
+        <a class="door-card" href="?level=toronto#searchform">
           <span class="door-k">Municipal · Toronto</span>
           <span class="door-t">Toronto City Council</span>
           <span class="door-u">Decisions + recorded votes</span>
           <span class="door-d">33,795 decisions · 2018–2026 — every one
-          in plain language, with the recorded votes behind it. The
-          search and filters below are this record.</span>
+          in plain language, with the recorded votes behind it.</span>
           <span class="door-go">Search Toronto's record ↓</span>
         </a>
-        <a class="door-card" href="representatives.html?level=ontario">
+        <a class="door-card" href="?level=ontario#searchform">
           <span class="door-k">Provincial · Ontario</span>
           <span class="door-t">The Ontario Legislature</span>
           <span class="door-u">Recorded divisions</span>
           <span class="door-d">505 divisions · 2018–2026 — every
           division, on the record of the MPP who cast it.</span>
-          <span class="door-go">See the Ontario record →</span>
+          <span class="door-go">Search the Ontario record ↓</span>
         </a>
-        <a class="door-card" href="representatives.html?level=canada">
+        <a class="door-card" href="?level=canada#searchform">
           <span class="door-k">Federal · Canada</span>
           <span class="door-t">The House of Commons</span>
           <span class="door-u">Recorded divisions</span>
           <span class="door-d">4,856 divisions · 2004–2026 — every
           division, on the record of the MP who cast it.</span>
-          <span class="door-go">See the Canada record →</span>
+          <span class="door-go">Search the Canada record ↓</span>
         </a>
       </div>
-      <p class="lede" style="margin-top:1.6rem">Every Toronto council decision in the archive — nearly all with a plain-language brief.
-      Search words from the title or topic — or use the filters to narrow
-      by year, ward, or outcome. Looking for a person? A name or a riding
-      finds them in any of the three legislatures — Toronto, Ontario
-      or Canada.</p>
+      <p class="lede" style="margin-top:1.6rem">Search the whole record from one box — Toronto council
+      decisions, nearly all with a plain-language brief, and the recorded
+      divisions of the Ontario Legislature and the House of Commons.
+      Search words from a title, a topic or a bill number. The level
+      buttons choose where to search: all three legislatures, or one at
+      a time, and each level keeps the filters its record supports.
+      Looking for a person? A name or a riding finds them in the
+      <a href="representatives.html">Representatives directory</a>.</p>
       <div class="search-panel">
+        <div class="level-chips" role="group" aria-label="Choose which legislatures to search">
+          <span class="lc-label">Search in</span>
+          <button type="button" class="lchip" data-level="all" aria-pressed="true">All levels</button>
+          <button type="button" class="lchip" data-level="toronto" aria-pressed="false">Toronto</button>
+          <button type="button" class="lchip" data-level="ontario" aria-pressed="false">Ontario</button>
+          <button type="button" class="lchip" data-level="canada" aria-pressed="false">Federal</button>
+        </div>
         <form class="searchbox" id="searchform" role="search">
           <label class="visually-hidden" for="q">Search the record</label>
           <div class="search-field">
-            <input type="search" id="q" name="q" placeholder="Search decisions, topics, names, ridings…" autocomplete="off">
+            <input type="search" id="q" name="q" placeholder="Search decisions, divisions, topics, bill numbers…" autocomplete="off">
             <span class="search-hint" aria-hidden="true"><kbd>/</kbd> to focus</span>
           </div>
           <button class="btn" type="submit">Search</button>
@@ -110,26 +140,34 @@
               <label for="f-year">Year</label>
               <select id="f-year"></select>
             </div>
-            <div>
+            <div id="cell-body">
               <label for="f-body">Decided by</label>
               <select id="f-body" disabled><option>Loading…</option></select>
             </div>
-            <div>
+            <div id="cell-status">
               <label for="f-status">Outcome</label>
               <select id="f-status" disabled><option>Loading…</option></select>
             </div>
-            <div>
+            <div id="cell-ward">
               <label for="f-ward">Ward</label>
               <select id="f-ward"></select>
             </div>
-            <div>
+            <div id="cell-on-outcome" hidden>
+              <label for="f-on-outcome">Outcome</label>
+              <select id="f-on-outcome"><option value="">All outcomes</option></select>
+            </div>
+            <div id="cell-ca-result" hidden>
+              <label for="f-ca-result">Result</label>
+              <select id="f-ca-result"><option value="">All results</option></select>
+            </div>
+            <div id="cell-vote">
               <label class="checkline">
                 <input type="checkbox" id="f-vote">
                 <span>Only decisions with a recorded vote</span>
               </label>
             </div>
           </div>
-          <p class="small" style="margin-top:.8rem">A <strong>recorded vote</strong>
+          <p class="small" id="note-vote" style="margin-top:.8rem">A <strong>recorded vote</strong>
           is the public list of who voted yes and who voted no. Most decisions
           don't have one.</p>
         </div>
@@ -145,6 +183,8 @@
           <button type="button" class="chip" id="clear-profile" hidden>Clear profile filter</button>
           <button type="button" class="chip" id="dismiss-profile">Dismiss</button>
         </div>
+        <p class="people-link">Looking for a person? <a href="representatives.html">Representatives</a>
+          — search a name or a riding across Toronto, Ontario and Canada.</p>
       </div>
 
       <h2 id="results-h" style="margin-top:2rem">Results</h2>
@@ -164,7 +204,6 @@
 <script>window.__demeLayer = "toronto";</script>
 <script src="assets/js/simple-mode.js"></script>
 <script src="assets/js/common.js"></script>
-<script src="assets/js/people-search.js"></script>
 <script src="assets/js/ask.js"></script>
 <script src="assets/js/explore.js"></script>
 <script data-goatcounter="https://demecivic.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>

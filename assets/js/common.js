@@ -189,11 +189,44 @@ const SOCIAL_LINKS = [
    legislatures at once and the switcher marks no layer current,
    because the site's frame is every level of government, with
    Toronto one layer of three. */
+/* Each level: key, short label, the body named in full (shown where
+   the header has room, and always the link's accessible name), and
+   the level's directory — its representatives page, which for the
+   Ontario and Canada layers is also the layer's home page. */
 const DEME_LEVELS = [
-  ["toronto", "Toronto", "councillors.html"],
-  ["ontario", "Ontario", "ontario.html"],
-  ["canada", "Canada", "canada.html"],
+  ["toronto", "Toronto", "Toronto City Council", "councillors.html"],
+  ["ontario", "Ontario", "Ontario Legislature", "ontario.html"],
+  ["canada", "Canada", "House of Commons", "canada.html"],
 ];
+/* Equivalent-landing homes (level-navigation wave, Oct 28, 2026):
+   switching level lands in the equivalent place in the new level,
+   never on an unrelated page. From the homepage, a level's home
+   view; from a Record page, that level's record home. Ontario and
+   Canada have no separate home or record-browse page — their
+   directory is both — so those landings coincide with the
+   directory. Every other page (directories, profiles, Compare,
+   About, My Record and the other site pages, the 404 page) lands
+   on the target level's directory. */
+const DEME_LEVEL_HOME = {
+  toronto: "index.html", ontario: "ontario.html", canada: "canada.html",
+};
+const DEME_LEVEL_RECORD = {
+  toronto: "explore.html", ontario: "ontario.html", canada: "canada.html",
+};
+const DEME_RECORD_PAGES = new Set(["explore.html", "decision.html",
+  "thread.html"]);
+function demePageBase() {
+  const p = (typeof location !== "undefined" ? location.pathname : "")
+    .toLowerCase();
+  return p.split("/").pop() || "index.html";
+}
+function demeLevelHref(key) {
+  const base = demePageBase();
+  if (base === "index.html") return DEME_LEVEL_HOME[key];
+  if (DEME_RECORD_PAGES.has(base)) return DEME_LEVEL_RECORD[key];
+  const level = DEME_LEVELS.find(([k]) => k === key);
+  return level ? level[3] : "index.html";
+}
 function demeLayer() {
   if (typeof window !== "undefined" && window.__demeLayer)
     return window.__demeLayer;
@@ -220,10 +253,10 @@ function renderChrome(active) {
         ${NAV.map(([href, label]) =>
           `<a href="${href}"${href === "my-record.html" ? ' class="nav-record"' : ""}${href === active ? ' aria-current="page"' : ""}>${label}</a>`).join("")}
       </nav>
-      <nav class="level-switcher" aria-label="Choose a legislature">
-        <span class="ls-label" aria-hidden="true">Legislature</span>
-        ${DEME_LEVELS.map(([key, label, href]) =>
-          `<a href="${href}" data-level="${key}"${key === layer ? ' aria-current="true"' : ""}>${label}</a>`).join("")}
+      <nav class="level-switcher" aria-label="Choose a government level">
+        <span class="ls-label" aria-hidden="true">Level</span>
+        ${DEME_LEVELS.map(([key, label, full]) =>
+          `<a href="${demeLevelHref(key)}" data-level="${key}" aria-label="${full}"${key === layer ? ' aria-current="true"' : ""}><span class="ls-short" aria-hidden="true">${label}</span><span class="ls-full" aria-hidden="true">${full}</span></a>`).join("")}
       </nav>
       <div class="simple-mode-wrap">
         <button class="simple-mode-toggle" id="simple-mode-toggle" type="button"

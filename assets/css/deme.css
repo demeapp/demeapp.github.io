@@ -1992,22 +1992,51 @@ details.pay-year[open] > summary::after { content: "\25B4"; }
 /* Expansion wave (Oct 27, 2026): legislature level switcher + the
    Ontario / Canada layer components. Additive only — no Toronto rule
    above is changed. Navy & Mint throughout. */
+/* Level-navigation wave (Oct 28, 2026): the switcher is one
+   always-visible segmented control in the sticky header — no menu,
+   one tap switches level. Every target is at least 44px tall.
+   Short labels ("Toronto / Ontario / Canada") below 720px; from
+   720px up, where the header has the room, each segment names the
+   body in full. The current level is the filled navy segment —
+   on the site-level pages (layer "site") no segment is current,
+   because those pages speak for all three levels at once. */
 .level-switcher {
-  display: flex; flex-wrap: wrap; align-items: center; gap: .45rem;
-  margin-top: .8rem;
+  display: inline-flex; align-items: stretch; gap: 3px;
+  margin-top: .65rem; padding: 3px;
+  background: #fff; border: 1.5px solid var(--line); border-radius: 999px;
 }
 .level-switcher .ls-label {
+  display: inline-flex; align-items: center;
   font-size: .72rem; font-weight: 700; letter-spacing: .07em;
-  text-transform: uppercase; color: var(--ink-faint); margin-right: .15rem;
+  text-transform: uppercase; color: var(--ink-faint);
+  padding: 0 .35rem 0 .55rem;
 }
 .level-switcher a {
-  border: 1.5px solid var(--line); border-radius: 999px;
-  padding: .3rem .85rem; font-size: .92rem; font-weight: 600;
+  display: inline-flex; align-items: center; justify-content: center;
+  min-height: 44px; border-radius: 999px;
+  padding: .55rem .95rem; font-size: .92rem; font-weight: 600;
   color: var(--navy-ink); text-decoration: none; background: #fff;
 }
-.level-switcher a:hover { border-color: var(--bronze-dark); }
+.level-switcher a:hover { background: var(--marble-2); color: var(--ink); }
+.level-switcher a:focus-visible {
+  outline: 3px solid var(--bronze-dark); outline-offset: 2px;
+}
 .level-switcher a[aria-current="true"] {
-  background: var(--navy); border-color: var(--navy); color: #fff;
+  background: var(--navy); color: #fff; font-weight: 700;
+}
+.level-switcher a[aria-current="true"]:hover { background: var(--navy); color: #fff; }
+.level-switcher .ls-full { display: none; }
+@media (min-width: 720px) {
+  .level-switcher .ls-short { display: none; }
+  .level-switcher .ls-full { display: inline; }
+}
+@media (max-width: 719px) {
+  /* Thumb reach: the control takes its own full-width row inside
+     the sticky header and the three segments share it equally —
+     visible without scrolling and without opening any menu. */
+  .level-switcher { flex: 1 1 100%; margin-top: .35rem; }
+  .level-switcher .ls-label { display: none; }
+  .level-switcher a { flex: 1 1 0; padding-left: .3rem; padding-right: .3rem; }
 }
 .votePair { background: #E4EAF2; color: var(--navy-ink); }
 @media (forced-colors: active) {

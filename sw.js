@@ -1,8 +1,8 @@
-// Deme service worker (v39 — federated record search: the Record's
-// one search box now searches all three legislatures with per-layer
-// counts, people search lives in the Representatives directory, the
-// seven incoming Toronto councillors carry their incoming treatment,
-// and earlier members sort most-recent-first on every level).
+// Deme service worker (v40 — favicon/tab-icon lock-in: root favicon.ico
+// regenerated as a 16/32/48 multi-resolution icon from the current
+// Navy & Mint mark, root apple-touch-icon.png added, and the icon
+// link set aligned on councillors/ontario/canada; record search and
+// everything else unchanged from v39).
 // Caches: app shell + static assets, visited pages, and the PUBLIC record JSON
 // (read-only, for offline browsing of what was already loaded).
 // Never caches: non-GET requests, cross-origin requests (Supabase auth, picks,
@@ -16,7 +16,7 @@
 // deploy, so assets are network-first too; cache is the offline fallback.
 // VERSION bumps rename every cache, and activate deletes the old ones —
 // bump VERSION whenever this file ships a strategy change.
-const VERSION = 'v39';
+const VERSION = 'v40';
 const SHELL = 'deme-shell-' + VERSION;
 const PAGES = 'deme-pages-' + VERSION;
 const DATA = 'deme-data-' + VERSION;

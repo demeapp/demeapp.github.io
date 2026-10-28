@@ -641,11 +641,18 @@ function fallbackCard(r) {
   </article>`;
 }
 function layerSection(layerKey, heading, list, cardsHTML) {
+  /* The heading carries the layer's own count (visitor-eye nit,
+     Oct 28, 2026): each section is self-verifying, and the count
+     line above remains the summary — the counts sit with their
+     layers and are never added together. */
+  const unit = layerKey === "toronto" ? "decision" : "division";
+  const countTxt = list == null ? "loading…"
+    : `${fmtNum(list.length)} ${unit}${list.length === 1 ? "" : "s"}`;
   let body;
   if (list == null) {
     body = `<p class="layer-empty">Loading this record…</p>`;
   } else if (!list.length) {
-    body = `<p class="layer-empty">No ${layerKey === "toronto" ? "decisions" : "divisions"} match.</p>`;
+    body = `<p class="layer-empty">No ${unit}s match.</p>`;
   } else {
     body = `<div class="cards">${cardsHTML}</div>`
       + (list.length > 10
@@ -653,7 +660,7 @@ function layerSection(layerKey, heading, list, cardsHTML) {
         : "");
   }
   return `<section class="layer-block" aria-label="${esc(heading)} results">
-    <h3 class="layer-h">${esc(heading)}</h3>${body}</section>`;
+    <h3 class="layer-h">${esc(heading)} <span class="lh-count">— ${countTxt}</span></h3>${body}</section>`;
 }
 function applyAll() {
   const { list, eff } = computeFiltered();

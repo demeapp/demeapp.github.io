@@ -1,4 +1,12 @@
-// Deme service worker (v52 — the lobbying record page
+// Deme service worker (v53 — the lobbying record joins the
+// footer (Oct 28, 2026): the shared footer that
+// assets/js/common.js renders on every page gains one link,
+// "Lobbying record", in The Record column after Compare,
+// pointing at the lobbying page shipped in v52 — added at
+// the owner's direction; until now the page's only entry
+// points were the homepage and About sections. The footer
+// line is the only change — no page's content, data or other
+// chrome moves. (v52 — the lobbying record page
 // (Oct 28, 2026): a new page, lobbying.html, presents Deme's
 // federal lobbying record as part of Deme itself — the free
 // per-MP record, plus the coming subscriber tools for watching
@@ -35,7 +43,7 @@
 // deploy, so assets are network-first too; cache is the offline fallback.
 // VERSION bumps rename every cache, and activate deletes the old ones —
 // bump VERSION whenever this file ships a strategy change.
-const VERSION = 'v52';
+const VERSION = 'v53';
 const SHELL = 'deme-shell-' + VERSION;
 const PAGES = 'deme-pages-' + VERSION;
 const DATA = 'deme-data-' + VERSION;

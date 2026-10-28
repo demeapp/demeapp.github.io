@@ -1,9 +1,8 @@
-// Deme service worker (v41 — disclosure cleanup: Ontario MPPs'
-// disclosure statements are cleaned at the data level — the
-// Integrity Commissioner's member-picker wall and page footer
-// stripped from 243 statements, every statement parsed into its
-// labelled fields and rendered as labelled sections, wording
-// verbatim; phone-width profile tables no longer overflow).
+// Deme service worker (v42 — gate-fix for the federated search
+// wave: Explore takes the federated site footer (it was pinned to
+// Toronto's), bill/number search matches at token boundaries
+// (C-39 is no longer polluted by C-391–C-399), and the Toronto
+// door copy matches the page's own honest wording).
 // Caches: app shell + static assets, visited pages, and the PUBLIC record JSON
 // (read-only, for offline browsing of what was already loaded).
 // Never caches: non-GET requests, cross-origin requests (Supabase auth, picks,
@@ -17,7 +16,7 @@
 // deploy, so assets are network-first too; cache is the offline fallback.
 // VERSION bumps rename every cache, and activate deletes the old ones —
 // bump VERSION whenever this file ships a strategy change.
-const VERSION = 'v41';
+const VERSION = 'v42';
 const SHELL = 'deme-shell-' + VERSION;
 const PAGES = 'deme-pages-' + VERSION;
 const DATA = 'deme-data-' + VERSION;

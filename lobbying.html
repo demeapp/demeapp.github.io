@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>LobbyWatch — Deme</title>
-<meta name="description" content="LobbyWatch is Deme's coming subscriber tool for the federal lobbying record: alerts, search across the filed communications, digests and exports. The record itself stays free.">
+<title>The lobbying record — Deme</title>
+<meta name="description" content="Deme's federal lobbying record: who lobbied every MP, and on what — free on every profile, with subscriber tools for watching it coming soon. The record itself stays free.">
 <link rel="stylesheet" href="assets/css/deme.css">
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="icon" href="favicon-navy-mint-v2.svg" type="image/svg+xml">
@@ -13,36 +13,37 @@
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Deme">
-<meta property="og:title" content="LobbyWatch — Deme">
-<meta property="og:description" content="Deme's coming subscriber tool for the federal lobbying record: alerts, search across the filed communications, digests and exports. The record itself stays free.">
+<meta property="og:title" content="The lobbying record — Deme">
+<meta property="og:description" content="Deme's federal lobbying record: who lobbied every MP, and on what — free on every profile, with subscriber tools for watching it coming soon. The record itself stays free.">
 <meta property="og:image" content="https://demeapp.github.io/assets/og-image-navy-2026-v2.png">
-<link rel="canonical" href="https://demeapp.github.io/lobbywatch.html">
-<meta property="og:url" content="https://demeapp.github.io/lobbywatch.html">
+<link rel="canonical" href="https://demeapp.github.io/lobbying.html">
+<meta property="og:url" content="https://demeapp.github.io/lobbying.html">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="LobbyWatch — Deme">
-<meta name="twitter:description" content="Deme's coming subscriber tool for the federal lobbying record: alerts, search across the filed communications, digests and exports. The record itself stays free.">
+<meta name="twitter:title" content="The lobbying record — Deme">
+<meta name="twitter:description" content="Deme's federal lobbying record: who lobbied every MP, and on what — free on every profile, with subscriber tools for watching it coming soon. The record itself stays free.">
 <meta name="twitter:image" content="https://demeapp.github.io/assets/og-image-navy-2026-v2.png">
 <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon-2026-v2.png">
 <style>
-/* LobbyWatch teaser (Oct 28, 2026): page-local styles for the
-   locked sample-results preview. The rows under the veil are
-   illustrative samples — generic shape only, no record data —
-   blurred, unselectable, and covered by a lock veil that carries
-   the subscriber notice. Navy & Mint only, like the rest of Deme. */
-.lw-sample {
+/* The lobbying record (Oct 28, 2026): page-local styles for the
+   locked sample-results preview in the subscriber section. The
+   rows under the veil are illustrative samples — generic shape
+   only, no record data — blurred, unselectable, and covered by
+   a lock veil that carries the subscriber notice. Navy & Mint
+   only, like the rest of Deme. */
+.lob-sample {
   position: relative; margin: 1.3rem 0 1.6rem; max-width: 52rem;
   background: var(--card); border: 1px solid var(--line);
   border-radius: var(--radius); box-shadow: var(--shadow-sm);
   overflow: hidden;
 }
-.lw-sample-scroll { overflow-x: auto; }
-.lw-sample table.record { min-width: 580px; }
-.lw-sample tbody td {
+.lob-sample-scroll { overflow-x: auto; }
+.lob-sample table.record { min-width: 580px; }
+.lob-sample tbody td {
   filter: blur(5px); -webkit-filter: blur(5px);
   user-select: none; -webkit-user-select: none;
   color: var(--ink-soft);
 }
-.lw-veil {
+.lob-veil {
   position: absolute; inset: 0; z-index: 2;
   display: flex; flex-direction: column; align-items: center;
   justify-content: center; gap: .55rem; text-align: center;
@@ -50,19 +51,19 @@
   background: linear-gradient(180deg,
     rgba(244,247,250,.30), rgba(244,247,250,.72));
 }
-.lw-lock {
+.lob-lock {
   display: inline-flex; align-items: center; justify-content: center;
   width: 52px; height: 52px; border-radius: 50%;
   background: var(--navy); box-shadow: var(--shadow-sm);
 }
-.lw-veil-t { margin: 0; font-weight: 700; color: var(--navy); font-size: 1.08rem; }
-.lw-notice {
+.lob-veil-t { margin: 0; font-weight: 700; color: var(--navy); font-size: 1.08rem; }
+.lob-notice {
   display: inline-flex; align-items: center; min-height: 44px;
   padding: .5rem 1.2rem; border-radius: 999px;
   background: var(--bronze); color: var(--navy-ink);
   font-weight: 700;
 }
-.lw-cards { max-width: 52rem; }
+.lob-cards { max-width: 52rem; }
 </style>
 </head>
 <body>
@@ -70,47 +71,62 @@
 <header class="site-header"></header>
 <main id="main">
   <div class="wrap">
-    <section class="reveal" aria-labelledby="lw-h">
-      <p class="kicker">House of Commons · Coming soon</p>
-      <h1 id="lw-h">LobbyWatch</h1>
+    <section class="reveal" aria-labelledby="lob-h">
+      <p class="kicker">House of Commons · The record</p>
+      <h1 id="lob-h">The lobbying record</h1>
       <hr class="rule">
 
       <p style="max-width:44rem">Under the Lobbying Act, lobbyists
       report their communications with designated public office
       holders — members of Parliament among them — to the Office of
       the Commissioner of Lobbying of Canada. The reports name the
-      client, the lobbyist, the office holder, and the subject. Deme
-      already carries that record for the House of Commons: 172,864
+      client, the lobbyist, the office holder, and the subject.
+      Deme carries that record for the House of Commons: 172,864
       communications, gathered onto the profile of every MP they
-      name. LobbyWatch is the tool being built on top of it — for
-      the people who work with this record every day: journalists,
-      researchers, and government-affairs professionals.</p>
+      name, free for anyone to read.</p>
 
-      <h2 style="margin-top:2.2rem">What LobbyWatch will do</h2>
-      <div class="cards two lw-cards">
+      <h2 style="margin-top:2.2rem">Free, on every profile</h2>
+      <p style="max-width:44rem">Each MP's profile carries their
+      lobbying record — how many communications name them, the
+      organizations behind the most of them, the subjects that come
+      up most, and how the contact was made — and the data files
+      behind it are published on the
+      <a href="open-data.html">open data page</a>. That is the
+      record, and it stays free.</p>
+      <p style="max-width:44rem"><a class="btn secondary" href="representatives.html?level=canada">Browse the free record — every MP's profile</a></p>
+
+      <h2 style="margin-top:2.2rem">Coming for subscribers: watching it closely</h2>
+      <p style="max-width:44rem">Reading one profile at a time only
+      goes so far. Deme is building subscriber tools for the
+      people who watch lobbying — journalists, researchers, civic
+      and community groups, and residents who follow the file —
+      so they can follow the money, see who met whom, and spot
+      the patterns across the whole record:</p>
+      <div class="cards two lob-cards">
         <article class="card">
           <h3>Alerts</h3>
-          <p>Follow the companies, lobbying firms, issues and members
-          you cover. When a communication matching them is filed,
-          you hear about it — instead of finding it months
-          later.</p>
+          <p>Follow the companies, industries, issues and members
+          you watch. When a communication matching them is filed —
+          a meeting arranged with an office holder — you hear
+          about it, instead of finding it months later.</p>
         </article>
         <article class="card">
           <h3>Search across the whole record</h3>
           <p>One search across all 172,864 filed communications —
-          by client, by lobbying firm, by subject matter, by the
-          member lobbied — instead of one profile at a time.</p>
+          by the client paying, by subject matter, by the member
+          lobbied, by the lobbyist who filed the report — to see
+          who met whom, and how often.</p>
         </article>
         <article class="card">
           <h3>Digests</h3>
           <p>A regular digest of the newest filings for the names
-          and issues you follow: who is lobbying whom, on what, in
-          one reading.</p>
+          and issues you follow: who is seeking time with whom, on
+          what, in one reading.</p>
         </article>
         <article class="card">
           <h3>Exports</h3>
-          <p>Take any search out as a file — for your own analysis,
-          your newsroom, or your records.</p>
+          <p>Take any search out as a file — for your reporting,
+          your research, or your group's files.</p>
         </article>
       </div>
 
@@ -120,8 +136,8 @@
       publishes. The rows below are illustrative samples, shown
       locked; the results themselves are for subscribers.</p>
 
-      <div class="lw-sample">
-        <div class="lw-sample-scroll" aria-hidden="true">
+      <div class="lob-sample">
+        <div class="lob-sample-scroll" aria-hidden="true">
           <table class="record">
             <thead>
               <tr>
@@ -171,43 +187,43 @@
             </tbody>
           </table>
         </div>
-        <div class="lw-veil">
-          <span class="lw-lock" aria-hidden="true">
+        <div class="lob-veil">
+          <span class="lob-lock" aria-hidden="true">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
               <rect x="5" y="10.5" width="14" height="9" rx="2" fill="#2FBF8F"/>
               <path d="M8 10.5V8a4 4 0 0 1 8 0v2.5" stroke="#2FBF8F" stroke-width="2.2" fill="none"/>
               <circle cx="12" cy="15" r="1.8" fill="#0E2A47"/>
             </svg>
           </span>
-          <p class="lw-veil-t">Subscriber results</p>
-          <p class="lw-notice">For paid subscribers — coming soon.</p>
+          <p class="lob-veil-t">Subscriber results</p>
+          <p class="lob-notice">For paid subscribers — coming soon.</p>
         </div>
       </div>
 
       <h2 style="margin-top:2.2rem">The record stays free</h2>
-      <p style="max-width:44rem">LobbyWatch changes nothing about
-      the record itself. Every MP's lobbying record stays on their
-      profile, free, exactly as it is today, and the data files stay
-      published on the <a href="open-data.html">open data page</a>.
-      Subscribers will pay for the tools — the alerts, the
-      cross-record search, the digests, the exports — never for the
-      record, and never for anyone's votes or positions. The record
-      is public. That is the whole idea of Deme.</p>
-      <p style="max-width:44rem">LobbyWatch covers the federal
+      <p style="max-width:44rem">The subscriber tools change
+      nothing about the record itself. Every MP's lobbying record
+      stays on their profile, free, exactly as it is today, and
+      the data files stay published on the
+      <a href="open-data.html">open data page</a>. Subscribers
+      will pay for the tools — the alerts, the cross-record
+      search, the digests, the exports — never for the record,
+      and never for anyone's votes or positions. The record is
+      public. That is the whole idea of Deme.</p>
+      <p style="max-width:44rem">These tools cover the federal
       record. Ontario's registry publishes registrations, not
       communication reports, so there is no Ontario communication
-      record for a tool like this to watch — and LobbyWatch does
-      not pretend otherwise. Toronto's record is Council's own, and
+      record for a tool like this to watch — and Deme does not
+      pretend otherwise. Toronto's record is Council's own, and
       stays as it is.</p>
-      <p style="max-width:44rem"><a class="btn secondary" href="representatives.html?level=canada">Browse the free record — every MP's profile</a></p>
 
       <h2 style="margin-top:2.2rem">Until it opens</h2>
-      <p style="max-width:44rem">LobbyWatch is not open yet, and
-      there is nothing to buy today. Deme accounts are free — the
-      same account used to weigh in and watch Council items — at
-      <a href="my-record.html#account-zone">My Record</a>. How Deme
-      handles the record, and its sources, are set out in
-      <a href="about.html">About &amp; method</a>.</p>
+      <p style="max-width:44rem">The subscriber tools are not open
+      yet, and there is nothing to buy today. Deme accounts are
+      free — the same account used to weigh in and watch Council
+      items — at <a href="my-record.html#account-zone">My
+      Record</a>. How Deme handles the record, and its sources,
+      are set out in <a href="about.html">About &amp; method</a>.</p>
     </section>
   </div>
 </main>
@@ -215,7 +231,7 @@
 <script>window.__demeLayer = "site";</script>
 <script src="assets/js/simple-mode.js"></script>
 <script src="assets/js/common.js"></script>
-<script>renderChrome("lobbywatch.html");</script>
+<script>renderChrome("lobbying.html");</script>
 <script data-goatcounter="https://demecivic.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </body>
 </html>

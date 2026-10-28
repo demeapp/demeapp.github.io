@@ -1,18 +1,23 @@
-// Deme service worker (v50 — LobbyWatch teaser (Oct 28, 2026):
-// a new page, lobbywatch.html, presents the coming paid
-// subscriber tool over the federal lobbying record — alerts,
-// search across the filed communications, digests and exports —
-// with a locked, blurred sample-results preview and the notice
-// "For paid subscribers — coming soon." No prices, no payment,
-// no email capture; the lobbying record itself stays free on
-// every MP's profile, exactly as before. The homepage gains a
-// LobbyWatch section after the three-legislatures section, and
-// About & method gains a short LobbyWatch section after Sources;
-// those are the only entry points, and nothing else on either
-// page changes. The three-level Upcoming (v49), the About &
-// method level-scope copy fix (v48), shareable pages (v46),
-// briefing (v45), INC 1+2 (v44) and the party filter (v43) are
-// unchanged.
+// Deme service worker (v51 — the lobbying record page
+// (Oct 28, 2026): a new page, lobbying.html, presents Deme's
+// federal lobbying record as part of Deme itself — the free
+// per-MP record, plus the coming subscriber tools for watching
+// it (alerts, search across the filed communications, digests
+// and exports, for journalists, researchers, civic and
+// community groups and the public) — with a locked, blurred
+// sample-results preview and the notice "For paid subscribers
+// — coming soon." No prices, no payment, no email capture; the
+// lobbying record itself stays free on every MP's profile,
+// exactly as before. The homepage gains a "Watching the
+// lobbying record" section after the three-legislatures
+// section, and About & method gains a matching section after
+// Sources; those are the only entry points, and nothing else
+// on either page changes. (v51 corrects the same-day v50
+// teaser: the separate product name and the government-affairs
+// audience framing are removed at the owner's direction.)
+// The three-level Upcoming (v49), the About & method
+// level-scope copy fix (v48), shareable pages (v46), briefing
+// (v45), INC 1+2 (v44) and the party filter (v43) are unchanged.
 // Caches: app shell + static assets, visited pages, and the PUBLIC record JSON
 // (read-only, for offline browsing of what was already loaded).
 // Never caches: non-GET requests, cross-origin requests (Supabase auth, picks,
@@ -26,7 +31,7 @@
 // deploy, so assets are network-first too; cache is the offline fallback.
 // VERSION bumps rename every cache, and activate deletes the old ones —
 // bump VERSION whenever this file ships a strategy change.
-const VERSION = 'v50';
+const VERSION = 'v51';
 const SHELL = 'deme-shell-' + VERSION;
 const PAGES = 'deme-pages-' + VERSION;
 const DATA = 'deme-data-' + VERSION;

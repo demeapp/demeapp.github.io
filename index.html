@@ -236,6 +236,7 @@
           <span class="layer-d">33,795 decisions in plain language, every
           member's votes, declared interests and expenses — and a say
           before the next vote.</span>
+          <span class="layer-fresh" data-fresh="toronto">Decisions current to October 19, 2026</span>
           <span class="layer-go">See the Toronto record →</span>
         </a>
         <a class="layer-card" href="representatives.html?level=ontario">
@@ -245,6 +246,7 @@
           the 2018–2022 span extracted from House documents —
           disclosure statements, 2005–2025, and lobbying
           registrations.</span>
+          <span class="layer-fresh" data-fresh="ontario">Divisions current to June 2, 2026</span>
           <span class="layer-go">See the Ontario record →</span>
         </a>
         <a class="layer-card" href="representatives.html?level=canada">
@@ -253,6 +255,7 @@
           <span class="layer-d">Every MP's record: 4,856 recorded divisions,
           ethics registry documents, and 172,864 lobbying
           communications.</span>
+          <span class="layer-fresh" data-fresh="federal">Divisions current to October 8, 2026</span>
           <span class="layer-go">See the Canada record →</span>
         </a>
       </div>
@@ -274,6 +277,7 @@
       <p class="kicker">All three legislatures · Catch up</p>
       <h2 id="latest-h">Latest in the record</h2>
       <hr class="rule">
+      <p class="small" style="max-width:44rem">Toronto City Council's last meeting was July 29, 2026; the newly elected Council takes office November 15, 2026.</p>
       <div class="cards two" id="latest"><span class="visually-hidden">Loading…</span>
         <div class="skel-card" aria-hidden="true"><span class="skel-el sm"></span><span class="skel-el title"></span><span class="skel-el"></span><span class="skel-el short"></span></div>
         <div class="skel-card" aria-hidden="true"><span class="skel-el sm"></span><span class="skel-el title"></span><span class="skel-el"></span><span class="skel-el short"></span></div></div>
@@ -613,6 +617,32 @@ Promise.all([loadJSON(dataPath("stats.json")), loadJSON(dataPath("latest.json"))
       </a>`;
     }).join("");
   }
+
+  /* Freshness lines (product wave Phase 3, Oct 28, 2026): refresh the
+     three cards' currency lines from the same files this loader has
+     already fetched — Toronto's archiveUpdatedThrough and each layer
+     meta's votesSpan end. Each level keeps its own unit word; a layer
+     whose data is missing leaves its static line untouched. */
+  const freshMonths = ["January", "February", "March", "April", "May",
+    "June", "July", "August", "September", "October", "November",
+    "December"];
+  const fmtFresh = (iso) => {
+    const m = /^(\d{4})-(\d{2})-(\d{2})/.exec(String(iso || ""));
+    if (!m) return null;
+    const mon = freshMonths[Number(m[2]) - 1];
+    if (!mon) return null;
+    return `${mon} ${Number(m[3])}, ${m[1]}`;
+  };
+  const setFresh = (key, label, iso) => {
+    const el = document.querySelector(`[data-fresh="${key}"]`);
+    const when = fmtFresh(iso);
+    if (el && when) el.textContent = `${label} current to ${when}`;
+  };
+  setFresh("toronto", "Decisions", stats && stats.archiveUpdatedThrough);
+  setFresh("ontario", "Divisions",
+    onMeta && Array.isArray(onMeta.votesSpan) ? onMeta.votesSpan[1] : null);
+  setFresh("federal", "Divisions",
+    caMeta && Array.isArray(caMeta.votesSpan) ? caMeta.votesSpan[1] : null);
 
   /* Wire the count-up LAST, and only if the helper is actually there.
      Oct 22, 2026: a returning visitor's browser ran this page against

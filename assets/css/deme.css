@@ -469,6 +469,13 @@ html.js .statband:empty { min-height: 8.2rem; }
   display: flex; flex-wrap: wrap; gap: .45rem .9rem; align-items: center;
   font-size: .875rem; color: var(--ink-faint); margin-bottom: .5rem;
 }
+/* Freshness lines (product wave Phase 3, Oct 28, 2026): one currency
+   line per legislature on the homepage layer cards (.layer-fresh) and
+   the Explore door cards (.door-fresh) — small and muted, beside the
+   cards' other meta text, each level's own unit word kept. */
+.layer-fresh, .door-fresh {
+  font-size: .82rem; color: var(--ink-faint);
+}
 .card .more { margin-top: auto; padding-top: .8rem; font-size: .98rem; }
 .card .more a { color: var(--bronze-dark); font-weight: 600; text-decoration: none; }
 .card .more a:hover { text-decoration: underline; }

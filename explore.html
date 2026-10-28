@@ -95,6 +95,7 @@
           <span class="door-u">Decisions + recorded votes</span>
           <span class="door-d">33,795 decisions · 2018–2026 — nearly all
           in plain language, with the recorded vote where one was taken.</span>
+          <span class="door-fresh" data-fresh="toronto">Decisions current to October 19, 2026</span>
           <span class="door-go">Search Toronto's record ↓</span>
         </a>
         <a class="door-card" href="?level=ontario#searchform">
@@ -104,6 +105,7 @@
           <span class="door-d">505 divisions · 2018–2026 — each one
           on the record of the MPP who cast it. 2018–2022 extracted
           from House documents.</span>
+          <span class="door-fresh" data-fresh="ontario">Divisions current to June 2, 2026</span>
           <span class="door-go">Search the Ontario record ↓</span>
         </a>
         <a class="door-card" href="?level=canada#searchform">
@@ -112,6 +114,7 @@
           <span class="door-u">Recorded divisions</span>
           <span class="door-d">4,856 divisions · 2004–2026 — each one
           on the record of the MP who cast it.</span>
+          <span class="door-fresh" data-fresh="federal">Divisions current to October 8, 2026</span>
           <span class="door-go">Search the Canada record ↓</span>
         </a>
       </div>
@@ -221,6 +224,46 @@
 <script src="assets/js/common.js"></script>
 <script src="assets/js/ask.js"></script>
 <script src="assets/js/explore.js"></script>
+<script>
+/* Freshness lines (product wave Phase 3, Oct 28, 2026): refresh the
+   three door cards' currency lines from the record data files.
+   Self-contained, no dependencies; on any fetch failure the static
+   line in the card stays as served. Each level keeps its own unit
+   word — Toronto's decisions, the other chambers' divisions. */
+(function () {
+  var MONTHS = ["January", "February", "March", "April", "May", "June",
+    "July", "August", "September", "October", "November", "December"];
+  function fmt(iso) {
+    var m = /^(\d{4})-(\d{2})-(\d{2})/.exec(String(iso || ""));
+    if (!m) return null;
+    var mon = MONTHS[Number(m[2]) - 1];
+    if (!mon) return null;
+    return mon + " " + Number(m[3]) + ", " + m[1];
+  }
+  function setFresh(key, label, iso) {
+    var el = document.querySelector('[data-fresh="' + key + '"]');
+    var when = fmt(iso);
+    if (el && when) el.textContent = label + " current to " + when;
+  }
+  function load(url, done) {
+    fetch(url).then(function (r) {
+      if (!r.ok) throw new Error("bad response");
+      return r.json();
+    }).then(done).catch(function () { /* keep the static line */ });
+  }
+  load("record-data/stats.json", function (j) {
+    setFresh("toronto", "Decisions", j && j.archiveUpdatedThrough);
+  });
+  load("record-data/ontario/meta.json", function (j) {
+    setFresh("ontario", "Divisions",
+      j && Array.isArray(j.votesSpan) ? j.votesSpan[1] : null);
+  });
+  load("record-data/federal/meta.json", function (j) {
+    setFresh("federal", "Divisions",
+      j && Array.isArray(j.votesSpan) ? j.votesSpan[1] : null);
+  });
+})();
+</script>
 <script data-goatcounter="https://demecivic.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </body>
 </html>

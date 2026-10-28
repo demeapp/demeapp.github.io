@@ -183,12 +183,15 @@ const SOCIAL_LINKS = [
    switcher below is the only chrome they add to the Toronto pages.
    A page declares its layer with window.__demeLayer before this
    script loads; anything undeclared is Toronto. The site-level
-   pages — homepage, About & method, Explore, My Record, Privacy,
+   pages — homepage, About & method, My Record, Privacy,
    For reporters, Open data and the 404 page — declare "site"
    (framing wave, Oct 27, 2026): their footer speaks for all three
    legislatures at once and the switcher marks no layer current,
    because the site's frame is every level of government, with
-   Toronto one layer of three. */
+   Toronto one layer of three. The Record page (Explore) declares
+   "toronto": it is the Toronto council record, and its switcher
+   marks Toronto current like every other Toronto page (W2
+   pre-ship fix, Oct 28, 2026). */
 /* Each level: key, short label, the body named in full (shown where
    the header has room, and always the link's accessible name), and
    the level's directory — its representatives page, which for the

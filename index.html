@@ -261,8 +261,8 @@
       <hr class="rule">
       <p class="small" style="max-width:44rem">This section is the
       Toronto layer of the record: upcoming items and the weigh-in
-      cover Toronto City Council. The Ontario and federal legislatures
-      join Latest, below, once their votes are taken.</p>
+      cover Toronto City Council. Ontario and federal votes appear
+      in Latest, below, once they are taken.</p>
       <div id="upcoming"><span class="visually-hidden">Loading…</span>
         <p class="upcoming-line" aria-hidden="true"><span class="skel-el" style="max-width:24rem;margin-bottom:0"></span></p></div>
     </section>
@@ -398,7 +398,7 @@ function divisionCard(layer, d) {
         <span>Ontario Legislature</span>
         ${tally ? `<span class="pill">${esc(tally)}</span>` : ""}</div>
       <h3>${head}</h3>
-      <p class="more"><a href="representatives.html?level=ontario">On every MPP's record <span aria-hidden="true">→</span></a></p>
+      <p class="more"><a href="representatives.html?level=ontario">On the MPPs' records <span aria-hidden="true">→</span></a></p>
     </article>`;
   }
   const head = d.url
@@ -409,7 +409,7 @@ function divisionCard(layer, d) {
       <span>House of Commons</span>
       ${d.result ? `<span class="pill">${esc(d.result)}</span>` : ""}</div>
     <h3>${head}</h3>
-    <p class="more"><a href="representatives.html?level=canada">On every MP's record <span aria-hidden="true">→</span></a></p>
+    <p class="more"><a href="representatives.html?level=canada">On the MPs' records <span aria-hidden="true">→</span></a></p>
   </article>`;
 }
 

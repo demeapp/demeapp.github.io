@@ -832,19 +832,25 @@ document.addEventListener("keydown", (e) => {
    where the platform offers it, clipboard copy elsewhere. Static
    hosting cannot mint per-page preview cards — the button shares
    the link itself, nothing more is promised. */
-function setupShareButton(btn) {
+function setupShareButton(btn, shareUrl) {
   if (!btn) return;
+  /* shareUrl (optional): the canonical URL to share when it differs
+     from the page's own address — decision pages pass their static
+     share page (INC 3, product wave Oct 28, 2026) so the shared link
+     previews with the decision itself. Callers that pass nothing
+     share location.href, exactly as before. */
+  const url = shareUrl || location.href;
   if (typeof navigator !== "undefined" && navigator.share) {
     btn.textContent = "Share";
   }
   btn.addEventListener("click", async () => {
     if (typeof navigator !== "undefined" && navigator.share) {
-      try { await navigator.share({ title: document.title, url: location.href }); }
+      try { await navigator.share({ title: document.title, url }); }
       catch (e) { /* the visitor dismissed the share sheet */ }
       return;
     }
     try {
-      await navigator.clipboard.writeText(location.href);
+      await navigator.clipboard.writeText(url);
       const old = btn.textContent;
       btn.textContent = "Link copied";
       setTimeout(() => { btn.textContent = old; }, 2000);

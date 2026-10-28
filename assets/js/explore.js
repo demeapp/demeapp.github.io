@@ -167,26 +167,42 @@ function fillPartySelect() {
 /* Division cards follow the homepage's three-chamber Latest pattern
    (index.html divisionCard): chamber named on every card, the title
    links to the official record, and a closing line routes to the
-   members whose record the division sits on. */
+   members whose record the division sits on.
+   INC 3 (product wave, Oct 28, 2026): each card also links its static
+   division page (on/division-<i>.html / ca/division-<i>.html, built
+   by tools/build-share-pages.py). The index is the entry's TRUE
+   positional index in its layer's divisions.json — never the card's
+   position in a filtered list. The slim search shards carry it as
+   r.i, stamped when the shards were aligned to divisions.json row
+   for row (Ontario: the shard builder's own date/title sort
+   reproduced and asserted field-by-field; federal: matched on the
+   division's unique official URL). A row without r.i simply gets no
+   division-page link — the index is never guessed. (The upstream
+   shard builder in deme-revamp/tools/build_division_search.py must
+   carry "i" on its next regeneration, or the links drop out safely.) */
 function onDivisionCard(r) {
   const tally = r.o && r.ay != null && r.na != null
     ? `${r.o} ${r.ay}–${r.na}` : (r.o || "");
   const head = r.u
     ? `<a href="${esc(r.u)}" target="_blank" rel="noopener">${esc(r.t)}</a>`
     : `<a href="representatives.html?level=ontario">${esc(r.t)}</a>`;
+  const divPage = r.i != null
+    ? ` <a href="on/division-${r.i}.html">Division page <span aria-hidden="true">→</span></a>` : "";
   return `<article class="card">
     <div class="meta"><span>${esc(fmtDate(r.d))}</span>
       <span>Ontario Legislature</span>
       ${tally ? `<span class="pill">${esc(tally)}</span>` : ""}</div>
     <h3>${head}</h3>
     ${partySplitLine("ontario", r)}
-    <p class="more"><a href="representatives.html?level=ontario">On the MPPs' records <span aria-hidden="true">→</span></a></p>
+    <p class="more"><a href="representatives.html?level=ontario">On the MPPs' records <span aria-hidden="true">→</span></a>${divPage}</p>
   </article>`;
 }
 function caDivisionCard(r) {
   const head = r.u
     ? `<a href="${esc(r.u)}" target="_blank" rel="noopener">${esc(r.t)}</a>`
     : `<a href="representatives.html?level=canada">${esc(r.t)}</a>`;
+  const divPage = r.i != null
+    ? ` <a href="ca/division-${r.i}.html">Division page <span aria-hidden="true">→</span></a>` : "";
   return `<article class="card">
     <div class="meta"><span>${esc(fmtDate(r.d))}</span>
       <span>House of Commons</span>
@@ -194,7 +210,7 @@ function caDivisionCard(r) {
       ${r.r ? `<span class="pill">${esc(r.r)}</span>` : ""}</div>
     <h3>${head}</h3>
     ${partySplitLine("canada", r)}
-    <p class="more"><a href="representatives.html?level=canada">On the MPs' records <span aria-hidden="true">→</span></a></p>
+    <p class="more"><a href="representatives.html?level=canada">On the MPs' records <span aria-hidden="true">→</span></a>${divPage}</p>
   </article>`;
 }
 function fillDivOutcomeSelects() {

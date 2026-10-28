@@ -1,9 +1,11 @@
-// Deme service worker (v46 — product wave INC 3+5 (Oct 28, 2026):
-// shareable static pages for every decision and division (d/, on/,
-// ca/ — real HTML with per-record preview meta); share buttons and
-// Explore division cards link them; the slim search shards carry
-// each division's true index alongside the party splits. INC 4
-// briefing (v45), INC 1+2 (v44) and the party filter (v43) unchanged.
+// Deme service worker (v48 — About & method level-scope copy fix
+// (Oct 28, 2026): briefs, the why-it-matters line and story threads
+// re-scoped to the Toronto record where they are Toronto-only, and
+// recorded-vote coverage stated per level with counted figures.
+// Copy-only (about.html + this file). Numbered v48 because v47 is
+// the separately staged three-level Upcoming ship. INC 3+5 (v46),
+// INC 4 briefing (v45), INC 1+2 (v44) and the party filter (v43)
+// unchanged.
 // Caches: app shell + static assets, visited pages, and the PUBLIC record JSON
 // (read-only, for offline browsing of what was already loaded).
 // Never caches: non-GET requests, cross-origin requests (Supabase auth, picks,
@@ -17,7 +19,7 @@
 // deploy, so assets are network-first too; cache is the offline fallback.
 // VERSION bumps rename every cache, and activate deletes the old ones —
 // bump VERSION whenever this file ships a strategy change.
-const VERSION = 'v46';
+const VERSION = 'v48';
 const SHELL = 'deme-shell-' + VERSION;
 const PAGES = 'deme-pages-' + VERSION;
 const DATA = 'deme-data-' + VERSION;

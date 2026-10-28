@@ -48,6 +48,8 @@ const $ = (id) => document.getElementById(id);
 const LEVELS = ["all", "toronto", "ontario", "canada"];
 let level = "all";
 let onRows = null; // Ontario slim division rows (null until loaded)
+let onParties = []; // Ontario party registry [{c, n, s}] from search-parties.json
+let caParties = []; // federal party registry, carried on the session manifest
 let caRows = []; // federal slim division rows, accumulated per session
 let caManifest = null; // federal session manifest (null until loaded)
 let caStarted = false;
@@ -61,8 +63,12 @@ function divNorm(s) {
 /* What a division can honestly be searched by, from the layer data:
    Ontario — title words, bill number, outcome, parliament. Federal —
    subject words, bill (C-39 matches "c39" too), result, session.
-   Neither layer file carries per-division member or party fields, so
-   no member or party filter is offered for them. */
+   No member filter is offered for them (people search lives in the
+   Representatives directory). A PARTY filter is offered for the two
+   division layers only (party-filter wave, Oct 28, 2026): each slim
+   row carries "pt", the per-party Yea/Aye–Nay splits derived by
+   tools/build_division_search.py from the stored ballots, where the
+   party is the one stored with the ballot at the time of the vote. */
 function divHaystack(layerName, r) {
   if (layerName === "ontario") {
     return divNorm([r.t, r.o, r.b ? `bill ${r.b}` : "",
@@ -114,14 +120,49 @@ function computeDivFiltered(layerName) {
   }
   const oc = layerName === "ontario"
     ? $("f-on-outcome").value : $("f-ca-result").value;
+  /* Party filter: single-layer modes only. In All mode this function
+     also computes the Ontario/federal lists, and the party control
+     is hidden there — a hidden filter must never filter, so the
+     selection only applies when the layer IS the current level. A
+     division matches when members of the chosen party cast a
+     recorded vote in it (its pt list carries the party); a division
+     with no stored member-level votes has no pt and is excluded
+     while a party is chosen, as the filter's note says plainly. */
+  const partySel = level === layerName ? $("f-party").value : "";
   return src.filter((r) => {
     const y = Number(String(r.d).slice(0, 4));
     if (yf != null && (y < yf || y > yt)) return false;
     if (oc && (layerName === "ontario" ? r.o : r.r) !== oc) return false;
+    if (partySel && !(r.pt && r.pt.some((p) => p[0] === partySel))) return false;
     if (toks.length && !toks.every((t, i) => matchers[i]
       ? matchers[i].test(r._hay) : r._hay.includes(t))) return false;
     return true;
   });
+}
+/* The party filter's active selection for a layer, or "" — the same
+   single-layer rule as computeDivFiltered, for card rendering. */
+function activeParty(layerName) {
+  return level === layerName ? $("f-party").value : "";
+}
+function partySplitLine(layerName, r) {
+  const code = activeParty(layerName);
+  if (!code || !r.pt) return "";
+  const entry = r.pt.find((p) => p[0] === code);
+  if (!entry) return "";
+  const reg = (layerName === "ontario" ? onParties : caParties)
+    .find((p) => p.c === code);
+  const label = reg ? reg.s : code;
+  const yesWord = layerName === "ontario" ? "Aye" : "Yea";
+  return `<p class="party-split">${esc(label)}: ${fmtNum(entry[1])} ${yesWord} · ${fmtNum(entry[2])} Nay</p>`;
+}
+function fillPartySelect() {
+  const sel = $("f-party");
+  if (!sel) return;
+  const parties = level === "ontario" ? onParties
+    : level === "canada" ? caParties : [];
+  const cur = sel.value;
+  fillSelect(sel, parties.map((p) => [p.c, p.s]), "All parties");
+  if (cur && parties.some((p) => p.c === cur)) sel.value = cur;
 }
 /* Division cards follow the homepage's three-chamber Latest pattern
    (index.html divisionCard): chamber named on every card, the title
@@ -138,6 +179,7 @@ function onDivisionCard(r) {
       <span>Ontario Legislature</span>
       ${tally ? `<span class="pill">${esc(tally)}</span>` : ""}</div>
     <h3>${head}</h3>
+    ${partySplitLine("ontario", r)}
     <p class="more"><a href="representatives.html?level=ontario">On the MPPs' records <span aria-hidden="true">→</span></a></p>
   </article>`;
 }
@@ -151,6 +193,7 @@ function caDivisionCard(r) {
       ${r.b ? `<span>${esc(r.b)}</span>` : ""}
       ${r.r ? `<span class="pill">${esc(r.r)}</span>` : ""}</div>
     <h3>${head}</h3>
+    ${partySplitLine("canada", r)}
     <p class="more"><a href="representatives.html?level=canada">On the MPs' records <span aria-hidden="true">→</span></a></p>
   </article>`;
 }
@@ -179,7 +222,12 @@ async function ensureOntario() {
     loaded.forEach((r) => { r._hay = divHaystack("ontario", r); });
     onRows = loaded;
   } catch (e) { onRows = []; }
+  try {
+    const reg = await loadJSON(dataPath("ontario/search-parties.json"));
+    onParties = reg.parties || [];
+  } catch (e) { onParties = []; }
   fillDivOutcomeSelects();
+  if (level === "ontario") fillPartySelect();
   if (level === "ontario" || level === "all") applyFilters();
 }
 async function ensureCanada() {
@@ -188,6 +236,8 @@ async function ensureCanada() {
   try {
     const idx = await loadJSON(dataPath("federal/search-divisions-index.json"));
     caManifest = idx.sessions || [];
+    caParties = idx.parties || [];
+    if (level === "canada") fillPartySelect();
     fillYearOptions();
     for (const s of caManifest) {
       const part = await loadJSON(
@@ -317,6 +367,7 @@ function syncFiltersToggle() {
   if ($("f-vote") && $("f-vote").checked) n += 1;
   if (level === "ontario" && $("f-on-outcome") && $("f-on-outcome").value) n += 1;
   if (level === "canada" && $("f-ca-result") && $("f-ca-result").value) n += 1;
+  if ((level === "ontario" || level === "canada") && $("f-party") && $("f-party").value) n += 1;
   btn.textContent = n ? `Filters \u2014 ${n} set` : "Filters";
 }
 /* The level dispatcher: every existing caller (typing, filters, the
@@ -804,6 +855,20 @@ function setLevel(next) {
   $("note-vote").hidden = !torontoControls;
   $("cell-on-outcome").hidden = level !== "ontario";
   $("cell-ca-result").hidden = level !== "canada";
+  /* Party filter: Ontario and Federal single-layer modes only. In
+     All mode the layers keep separate counts and Toronto has no
+     party dimension, so the control stays hidden there (and in
+     Toronto) rather than filtering two layers and not the third.
+     Party codes overlap between the layers ("lib" is the Ontario
+     Liberal Party in one registry and the Liberal Party of Canada
+     in the other), so EVERY level change clears the selection and
+     refills the list from the newly current layer's registry — a
+     selection can never cross layers silently. */
+  const partyLevel = level === "ontario" || level === "canada";
+  $("cell-party").hidden = !partyLevel;
+  $("note-party").hidden = !partyLevel;
+  $("f-party").value = "";
+  if (partyLevel) fillPartySelect();
   if (!torontoControls) {
     $("f-body").value = "";
     $("f-status").value = "";
@@ -925,6 +990,7 @@ async function init() {
   if (params.get("year")) { $("f-year").value = params.get("year"); applyFilters(); }
   $("f-on-outcome").addEventListener("change", () => { userEngaged = true; applyFilters(); });
   $("f-ca-result").addEventListener("change", () => { userEngaged = true; applyFilters(); });
+  $("f-party").addEventListener("change", () => { userEngaged = true; applyFilters(); });
 
   let debounce;
   $("q").addEventListener("input", () => {

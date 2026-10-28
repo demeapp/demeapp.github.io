@@ -55,6 +55,10 @@
 .layer-h { font-size: 1.08rem; margin: 1.4rem 0 .7rem; color: var(--navy); }
 .layer-h .lh-count { font-weight: 600; color: var(--ink-soft); }
 .layer-empty { color: var(--ink-soft); }
+/* Party filter (party-filter wave, Oct 28, 2026): the chosen
+   party's split on a division card — the information the filter
+   exists to carry, set in the card's own type, never a pill. */
+.party-split { font-weight: 600; color: var(--navy); margin-top: .35rem; }
 </style>
 <link rel="icon" href="favicon-navy-mint-v2.svg" type="image/svg+xml">
 <link rel="icon" href="assets/icons/favicon-32.png" sizes="32x32" type="image/png">
@@ -157,6 +161,10 @@
               <label for="f-ca-result">Result</label>
               <select id="f-ca-result"><option value="">All results</option></select>
             </div>
+            <div id="cell-party" hidden>
+              <label for="f-party">Party — divisions where the party's members cast recorded votes</label>
+              <select id="f-party"><option value="">All parties</option></select>
+            </div>
             <div id="cell-vote">
               <label class="checkline">
                 <input type="checkbox" id="f-vote">
@@ -167,6 +175,13 @@
           <p class="small" id="note-vote" style="margin-top:.8rem">A <strong>recorded vote</strong>
           is the public list of who voted yes and who voted no. Most decisions
           don't have one.</p>
+          <p class="small" id="note-party" hidden style="margin-top:.8rem">Choosing a
+          <strong>party</strong> narrows the results to divisions where members of
+          that party cast a recorded vote, and each result shows that party's
+          split on the division. Divisions with no stored member-level votes
+          are not shown while a party is chosen. The party shown is the one
+          stored with a member's ballot at the time of the vote — not their
+          party today.</p>
         </div>
         <div class="profile-strip" id="myward-row" hidden>
           <p class="ps-text"><strong>Your ward</strong>

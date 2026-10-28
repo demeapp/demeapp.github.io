@@ -48,6 +48,34 @@
   padding: .85rem 1.15rem; margin: 0; max-width: 52rem;
 }
 .upcoming-line a { font-weight: 600; }
+/* Three-level Upcoming — shared fields (Oct 28, 2026): every
+   Upcoming panel carries the same labelled fields — Next sitting,
+   Next expected vote — then the classified business, the level's
+   own counts, and the as-published stamp, so no level reads
+   richer or thinner than another. Homepage-local only. */
+.up-fields { margin: 0 0 1.1rem; max-width: 52rem; }
+.up-field {
+  display: flex; gap: .9rem; padding: .55rem 0;
+  border-bottom: 1px solid var(--line);
+}
+.up-field dt {
+  flex: 0 0 9.5rem; font-weight: 700; color: var(--navy);
+  font-size: .92rem; padding-top: .1rem;
+}
+.up-field dd { margin: 0; }
+.up-counts { font-weight: 600; color: var(--navy); margin: 0 0 .4rem; }
+.up-fresh {
+  font-size: .88rem; color: var(--ink-soft);
+  margin: .35rem 0 0; max-width: 46rem;
+}
+.up-expected-h { font-size: 1.05rem; margin: 1.35rem 0 .45rem; }
+.up-expected { margin: 0; padding-left: 1.15rem; max-width: 52rem; }
+.up-expected li { margin: .4rem 0; }
+.up-expected .src { font-weight: 600; white-space: nowrap; }
+@media (max-width: 560px) {
+  .up-field { flex-direction: column; gap: .15rem; }
+  .up-field dt { flex: none; }
+}
 /* Council status band (live-council-status, Oct 22; visual warmth
    pass, Oct 22): a designed navy moment at the top of Upcoming in
    every state — the hero's navy gradient and mint glow, a mint rule
@@ -193,7 +221,7 @@
     <section class="hero" aria-labelledby="hero-h">
       <p class="kicker">Municipal · Provincial · Federal · The record, in plain language</p>
       <h1 id="hero-h">THE RECORD IS PUBLIC. NOW IT'S READABLE.</h1>
-      <p class="hero-sub">Know what your representatives decided — and how everyone voted.</p>
+      <p class="hero-sub">Every decision, every vote — City Hall, Queen's Park, and Parliament Hill, in plain language.</p>
       <p class="lede">Search a topic, a street, a riding, or a name.</p>
       <form class="searchbox" action="explore.html" method="get" role="search">
         <label class="visually-hidden" for="q">Search the record</label>
@@ -268,9 +296,39 @@
       <hr class="rule">
       <p class="small" style="max-width:44rem">This section is the
       Toronto layer of the record: upcoming items and the weigh-in
-      cover Toronto City Council. Ontario and federal votes appear
-      in Latest, below, once they are taken.</p>
+      cover Toronto City Council. Upcoming business at Queen's Park
+      and Parliament Hill follows in the next two sections — every
+      Upcoming panel on this page carries the same fields, from
+      each legislature's own published papers.</p>
+      <div id="upcoming-toronto-fields"></div>
       <div id="upcoming"><span class="visually-hidden">Loading…</span>
+        <p class="upcoming-line" aria-hidden="true"><span class="skel-el" style="max-width:24rem;margin-bottom:0"></span></p></div>
+      <div id="upcoming-toronto-tail"></div>
+    </section>
+
+    <section class="reveal upcoming-sec" id="upcoming-queens-park" aria-labelledby="upcoming-on-h">
+      <p class="kicker">Ontario Legislature · Before the vote</p>
+      <h2 id="upcoming-on-h">Upcoming at Queen's Park</h2>
+      <hr class="rule">
+      <p class="small" style="max-width:44rem">The business the
+      Legislative Assembly of Ontario has published for its sitting
+      day — bills called for debate and any vote formally scheduled
+      — from the day's Orders and Notices Paper. Published for
+      reading; the weigh-in covers Toronto City Council.</p>
+      <div id="upcoming-ontario"><span class="visually-hidden">Loading…</span>
+        <p class="upcoming-line" aria-hidden="true"><span class="skel-el" style="max-width:24rem;margin-bottom:0"></span></p></div>
+    </section>
+
+    <section class="reveal upcoming-sec" id="upcoming-parliament" aria-labelledby="upcoming-fed-h">
+      <p class="kicker">House of Commons · Before the vote</p>
+      <h2 id="upcoming-fed-h">Upcoming at Parliament Hill</h2>
+      <hr class="rule">
+      <p class="small" style="max-width:44rem">The business the
+      House of Commons has published for its sitting day, and the
+      bills closest to a vote — from the House's projected business
+      and LEGISinfo, the Commons' bill tracker. Published for
+      reading; the weigh-in covers Toronto City Council.</p>
+      <div id="upcoming-federal"><span class="visually-hidden">Loading…</span>
         <p class="upcoming-line" aria-hidden="true"><span class="skel-el" style="max-width:24rem;margin-bottom:0"></span></p></div>
     </section>
 
@@ -373,6 +431,7 @@
 <script src="assets/js/ward-finder.js"></script>
 <script src="assets/js/personalize.js"></script>
 <script src="assets/js/account.js"></script>
+<script src="assets/js/upcoming-layers.js"></script>
 <script>
 renderChrome("index.html");
 

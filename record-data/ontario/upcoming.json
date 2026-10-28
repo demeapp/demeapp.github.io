@@ -1,0 +1,50 @@
+{
+ "generatedAt": "2026-10-28",
+ "layer": "ontario",
+ "parliament": 44,
+ "session": 1,
+ "paperNo": 83,
+ "sittingDate": "2026-10-28",
+ "items": [
+  {
+   "ref": "ont:44-1:bill:140",
+   "kind": "bill",
+   "bill": "Bill 140",
+   "title": "An Act to enact two Acts and to amend various Acts",
+   "stage": "Second Reading",
+   "state": "on_todays_order_paper",
+   "date": "2026-10-28",
+   "sourceUrl": "https://www.ola.org/en/current-agenda"
+  },
+  {
+   "ref": "ont:44-1:motion:pmb-72",
+   "kind": "motion",
+   "title": "Private Members' Motion No. 72 — deferred vote",
+   "stage": "Deferred vote",
+   "state": "vote_scheduled",
+   "date": "2026-10-28",
+   "sourceUrl": "https://www.ola.org/en/current-agenda"
+  },
+  {
+   "ref": "ont:44-1:bill:117",
+   "kind": "bill",
+   "bill": "Bill 117",
+   "title": "An Act to enact the Access (Assistance for Care, Commuting and Essential Specialized Services) Act, 2026",
+   "stage": "Private Members' Public Business — Second Reading",
+   "state": "on_todays_order_paper",
+   "date": "2026-10-28",
+   "sourceUrl": "https://www.ola.org/en/current-agenda"
+  }
+ ],
+ "classification": {
+  "onTodaysOrderPaper": 2,
+  "voteScheduled": 1
+ },
+ "sources": {
+  "ordersAndNotices": {
+   "url": "https://www.ola.org/en/current-agenda",
+   "fetchedAt": "2026-10-28T20:25:24Z",
+   "route": "browser-fetched page text (ola.org refuses shell fetch)"
+  }
+ }
+}

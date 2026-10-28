@@ -68,8 +68,8 @@ const DemeSimple = (() => {
     /* ----- home ----- */
     "Municipal · Provincial · Federal · The record, in plain language":
       "Municipal · Provincial · Federal · The record, in easy words",
-    "Know what your representatives decided — and how everyone voted.":
-      "See what your representatives decided — and how each person voted.",
+    "Every decision, every vote — City Hall, Queen's Park, and Parliament Hill, in plain language.":
+      "Every decision and every vote — at City Hall, Queen's Park and Parliament Hill, in easy words.",
     "Three legislatures, one record": "Three levels of government, one record",
     "Deme covers the representatives you elect at every level — the same plain-language record for each.":
       "Deme covers the people you elect at every level. It keeps the same record for each, in easy words.",

@@ -2058,12 +2058,36 @@ details.pay-year[open] > summary::after { content: "\25B4"; }
   color: var(--ink-faint); font-weight: 700;
 }
 .layer-table td.num, .layer-table th.num { text-align: right; font-variant-numeric: tabular-nums; }
+/* Phone widths (found on the disclosure-cleanup test-case profile,
+   Oct 28, 2026): five-column layer tables' min-content width broke
+   the page sideways at 390px. Fixed layout + word wrapping keeps
+   every column on screen; desktop rendering is unchanged. */
+@media (max-width: 700px) {
+  .layer-table { table-layout: fixed; }
+  .layer-table th, .layer-table td { overflow-wrap: break-word; }
+}
 .doc-list details { margin-top: .8rem; }
 .doc-list summary { cursor: pointer; font-weight: 600; color: var(--navy-ink); }
 .doc-text {
   white-space: pre-wrap; overflow-wrap: break-word; max-width: 46rem;
   margin-top: .6rem; font-size: .94rem; line-height: 1.55; color: var(--ink);
 }
+/* Parsed disclosure statements (disclosure-cleanup wave, Oct 28,
+   2026): an Ontario PDS statement renders as its own labelled
+   fields — the form's structure — instead of one run-on block.
+   Field wording stays verbatim; only the layout is Deme's. */
+.pds { max-width: 46rem; margin-top: .6rem; }
+.pds-field { margin-top: .85rem; }
+.pds-field h4 {
+  margin: 0 0 .2rem; font-size: .78rem; font-weight: 700;
+  letter-spacing: .06em; text-transform: uppercase; color: var(--navy);
+}
+.pds-field p { margin: 0; font-size: .94rem; line-height: 1.55; color: var(--ink); }
+.pds-group {
+  margin: 1.3rem 0 0; padding-top: .8rem; border-top: 1px solid var(--line);
+  font-size: 1rem; color: var(--navy);
+}
+.pds-src { margin-top: 1.1rem; }
 .by-year { display: flex; flex-wrap: wrap; gap: .4rem .9rem; margin-top: .6rem; }
 .by-year span { font-size: .9rem; color: var(--ink-soft); }
 .by-year strong { color: var(--ink); }

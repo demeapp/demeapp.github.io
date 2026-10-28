@@ -409,6 +409,14 @@ function interestsSection(p) {
     May: 4, June: 5, July: 6, August: 7, September: 8, October: 9,
     November: 10, December: 11 };
   const asOf = (s) => {
+    /* Cleaned statements (disclosure-cleanup wave, Oct 28, 2026)
+       carry their as-of date as data; the text regex below remains
+       for any statement the cleaner has not reached. */
+    if (s.asOf) {
+      const m = /^([A-Z][a-z]+) (\d{1,2}), (\d{4})$/.exec(s.asOf);
+      if (m) return { label: s.asOf,
+        time: (Number(m[3]) * 100 + MONTHS[m[1]]) * 100 + Number(m[2]) };
+    }
     const m = /As of ([A-Z][a-z]+) (\d{1,2}),? (\d{4})/
       .exec(s.text || "");
     if (!m) return null;
@@ -420,11 +428,32 @@ function interestsSection(p) {
     return (b.year - a.year)
       || ((tb ? tb.time : 0) - (ta ? ta.time : 0));
   });
+  /* A cleaned statement renders as its labelled fields — Income,
+     Assets, Liabilities, Gifts and Personal Benefits, Offices and
+     Directorships, then the Spouse / Minor Children groups — with
+     the Integrity Commissioner credited on the statement itself.
+     Field wording is the filing's own, verbatim. A statement
+     without parsed groups falls back to its cleaned text. */
+  const stmtBody = (s) => {
+    if (!s.groups) return null;
+    const parts = [];
+    for (const g of s.groups) {
+      if (g.heading) {
+        parts.push(`<h4 class="pds-group">${esc(g.heading)}</h4>`);
+      }
+      for (const f of g.fields) {
+        parts.push(`<div class="pds-field"><h4>${esc(f.label)}</h4><p>${esc(f.text)}</p></div>`);
+      }
+    }
+    parts.push(`<p class="small pds-src">Source: Office of the Integrity Commissioner of Ontario — Members' Public Disclosure Statements.</p>`);
+    return `<div class="pds">${parts.join("")}</div>`;
+  };
   const stmts = sortedStmts.map((s) => {
     const a = asOf(s);
-    return docDetails(
-      `${s.year} statement${a ? ` — as of ${a.label}` : ""}`,
-      s.text, null, "");
+    const label = `${s.year} statement${a ? ` — as of ${a.label}` : ""}`;
+    const body = stmtBody(s);
+    if (body) return `<details><summary>${esc(label)}</summary>${body}</details>`;
+    return docDetails(label, s.text, null, "");
   }).join("");
   const textYears = new Set(ints.statements.map((s) => s.year));
   const missingYears = (ints.years || []).filter((y) => !textYears.has(y));

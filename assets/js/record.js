@@ -475,7 +475,7 @@ function weighInHTML(u) {
         Sign in to save picks to your account and to change them.</p>` : ""}
       <div class="pick-gate">
         <h3>Sign in to weigh in</h3>
-        <p>Sign in to weigh in — your picks save to your account, and we'll notify you when your voting card is ready: how the vote went, how your representative voted, and where you stand.</p>
+        <p>Sign in to weigh in — your picks save to your account, and when the vote lands, My Record shows how it went, how your representative voted, and where you stand.</p>
         <p style="margin:.6rem 0 0"><button class="btn gate-signin"
           type="button" data-ref="${esc(u.ref)}">Sign in or create
           your free account</button></p>

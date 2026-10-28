@@ -344,6 +344,7 @@ function renderChrome(active) {
             <li><a href="explore.html">The Record</a></li>
             <li><a href="representatives.html">Representatives</a></li>
             <li><a href="my-record.html#weigh-in">Weigh in</a></li>
+            <li><a href="compare.html">Compare</a></li>
           </ul>
         </nav>
         <nav class="footer-group" aria-label="How it works">

@@ -75,15 +75,15 @@ const DemeSimple = (() => {
       "Deme covers the people you elect at every level. It keeps the same record for each, in easy words.",
     "33,795 decisions in plain language, every member's votes, declared interests and expenses — and a say before the next vote.":
       "33,795 decisions in easy words, every member's votes, the interests they declared and their expenses — and a say before the next vote.",
-    "Every MPP's record: 505 recorded divisions, disclosure statements back to 2005, and lobbying registrations.":
-      "Every MPP's record: 505 recorded votes, the statements they filed about their interests back to 2005, and lobbying registrations.",
+    "Every MPP's record: 505 recorded divisions — the 2018–2022 span extracted from House documents — disclosure statements, 2005–2025, and lobbying registrations.":
+      "Every MPP's record: 505 recorded votes — the 2018–2022 span was taken from House documents — the statements they filed about their interests, 2005–2025, and lobbying registrations.",
     "Every MP's record: 4,856 recorded divisions, ethics registry documents, and 172,864 lobbying communications.":
       "Every MP's record: 4,856 recorded votes, ethics registry papers, and 172,864 lobbying contacts.",
     "Deme turns the City of Toronto's published council records into plain language. Search a topic, a street, or a name, and see the decision — and the vote behind it.":
       "Deme takes the City of Toronto's council records and puts them in easy words. Search for a topic, a street, or a name. You will see the decision — and how people voted on it.",
     "Ask in plain words:": "Ask in your own words:",
-    "Have your say on upcoming decisions, be notified when votes land, and see where you stand against your representative.":
-      "Say what you think about decisions that are coming up. Get a note when the vote happens. See how your views line up with your representative's votes.",
+    "Have your say on upcoming Council decisions, watch the ones that matter to you — we'll email you the outcome once — and see where you stand against your representative.":
+      "Have your say on Council decisions coming up. Watch an item and we will email you the result once. See how your choices compare with your representative's.",
     "And counting — the record grows with every meeting.":
       "And still counting — the record grows with each meeting.",
     "Upcoming at City Council": "Coming up at City Council",
@@ -293,8 +293,8 @@ const DemeSimple = (() => {
       "Member totals reach back to 2006 — five terms — as aggregates. Vote rows with each name are stored from 2018 onward only. So the totals for some long-serving members include votes from before the decision archive begins. Their item-by-item record starts in 2018.",
     "Toronto: the decision archive covers 2018 to 2026 and is current to October 19, 2026. Member totals reach back to 2006, as aggregates, with name-by-name rows from 2018 onward only (see":
       "Toronto: the decision archive covers 2018 to 2026. It is current to October 19, 2026. Member totals reach back to 2006, as aggregates. Rows with names start from 2018 onward only (see",
-    "Ontario: every current and earlier MPP — 505 recorded divisions, July 2018 to June 2, 2026, disclosure statements from 2005 onward, and lobbying registration counts; the full coverage statement is on the":
-      "Ontario: every current and earlier MPP — 505 recorded votes, July 2018 to June 2, 2026, statements about their interests from 2005 on, and lobbying registration counts. The full coverage statement is on the",
+    "Ontario: every current and earlier MPP — 505 recorded divisions, July 2018 to June 2, 2026 (the 2018–2022 divisions were extracted from the Assembly's House documents; its official searchable record begins in 2022), disclosure statements, 2005–2025, and lobbying registration counts; the full coverage statement is on the":
+      "Ontario: every current and earlier MPP — 505 recorded votes, July 2018 to June 2, 2026 (the 2018–2022 votes were taken from the Assembly's House documents; its official searchable record begins in 2022), statements about their interests, 2005–2025, and lobbying registration counts. The full coverage statement is on the",
     ". Canada: every current and earlier MP — 4,856 recorded divisions, registry documents from the ethics commissioner, and 172,864 lobbying communications; the full coverage statement is on the":
       ". Canada: every current and earlier MP — 4,856 recorded votes, registry papers from the ethics commissioner, and 172,864 lobbying contacts. The full coverage statement is on the",
     "). About 51% of decisions are tagged to a specific ward. The rest are citywide decisions — they apply across Toronto — or carry no ward in the record.":
@@ -303,8 +303,8 @@ const DemeSimple = (() => {
       "Yes — completely. Every decision, brief and tool is free. There is nothing to buy. There is no premium tier.",
     "No. Deme takes no side: no grades, no rankings, no endorsements, and every member in the same format. Each brief is a plain-language summary of the official record — one tap away on every decision page, so you can check the wording against the source.":
       "No. Deme takes no side. It has no grades, no rankings, and no endorsements. Every member is shown in the same format. Each brief is a plain-language summary of the official record. It is one tap away on every decision page, so you can check the wording against the source.",
-    "The published record in plain language, for all three legislatures: 33,795 Toronto council decisions, 505 Ontario divisions and 4,856 House of Commons divisions, the recorded votes — most with every name on the record, the rest as a recorded tally — your representatives' full histories, what they declared, and, on Toronto profiles, the promises they campaigned on. Set your Toronto ward and Deme shows your area first. When Council alerts launch, email digests of upcoming Council business will go to anyone who signs up for them.":
-      "The published record in plain language, for all three legislatures: 33,795 Toronto council decisions, 505 Ontario votes and 4,856 House of Commons votes. It has the recorded votes — most with every name on the record, the rest as a recorded tally. It has your representatives' full histories, what they declared, and, on Toronto profiles, the promises they campaigned on. Set your Toronto ward and Deme shows your area first. When Council alerts launch, email digests of upcoming Council business will go to anyone who signs up for them.",
+    "The published record in plain language, for all three legislatures: 33,795 Toronto council decisions, 505 Ontario divisions (the 2018–2022 divisions were extracted from the Assembly's House documents; its official searchable record begins in 2022) and 4,856 House of Commons divisions, the recorded votes — most with every name on the record, the rest as a recorded tally — your representatives' full histories, what they declared, and, on Toronto profiles, the promises they campaigned on. Set your Toronto ward and Deme shows your area first. When Council alerts launch, email digests of upcoming Council business will go to anyone who signs up for them.":
+      "The published record in plain language, for all three legislatures: 33,795 Toronto council decisions, 505 Ontario votes (the 2018–2022 votes were taken from House documents; the official searchable record begins in 2022) and 4,856 House of Commons votes. It has the recorded votes — most with every name on the record, the rest as a recorded tally. It has your representatives' full histories, what they declared, and, on Toronto profiles, the promises they campaigned on. Set your Toronto ward and Deme shows your area first. When Council alerts launch, email digests of upcoming Council business will go to anyone who signs up for them.",
     "Three, today — one for each level of government: Toronto City Council (municipal), the Ontario Legislature (provincial), and the House of Commons (federal). Each has its own directory and record, in the same plain language. Toronto's decision archive runs from 2018 to 2026, with member voting totals across five terms (individual vote rows from 2018 onward).":
       "Three, today — one for each level of government: Toronto City Council (city), the Ontario Legislature (provincial), and the House of Commons (federal). Each has its own directory and record, in the same plain language. Toronto's decision archive runs from 2018 to 2026, with member voting totals across five terms (vote rows for each person from 2018 on).",
     "It's live. Toronto's municipal election was October 26, 2026, and the new Council term begins November 15, 2026. The Toronto record keeps growing with every meeting. The Ontario and Canada records are the archives their directories describe.":
@@ -412,8 +412,8 @@ const DemeSimple = (() => {
       "The map behind the postal-code ward finder: each Toronto FSA — the first three characters of a postal code — and the ward or wards it touches, with a street or landmark hint for each. Built from the City of Toronto's ward boundaries and Statistics Canada's 2021 census FSA boundary file.",
     "— weigh in on what's coming up at Council, decision by decision.":
       "— say what you think about what is coming up at Council, one decision at a time.",
-    "— get alerted when your ward or the issues you follow hit the agenda.":
-      "— get a note when your ward or the topics you follow are on the agenda.",
+    "— your ward, your topics and your watched items, gathered on this page.":
+      "— your ward, your topics and the items you watch, all gathered on this page.",
   };
 
   /* Attribute strings (placeholder / aria-label / title). */

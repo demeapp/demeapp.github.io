@@ -3,7 +3,7 @@
    decisions where they took different positions. Yes/No votes only;
    absences and declared interests never count either way. */
 "use strict";
-renderChrome("councillors.html");
+renderChrome("representatives.html");
 
 const selA = document.getElementById("compare-a");
 const selB = document.getElementById("compare-b");

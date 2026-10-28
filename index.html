@@ -228,7 +228,7 @@
       <p style="max-width:44rem">Deme covers the representatives you elect
       at every level — the same plain-language record for each.</p>
       <div class="layers-grid">
-        <a class="layer-card" href="councillors.html">
+        <a class="layer-card" href="representatives.html?level=toronto">
           <span class="layer-k">Municipal · Toronto</span>
           <span class="layer-t">Toronto City Council</span>
           <span class="layer-d">33,795 decisions in plain language, every
@@ -236,7 +236,7 @@
           before the next vote.</span>
           <span class="layer-go">See the Toronto record →</span>
         </a>
-        <a class="layer-card" href="ontario.html">
+        <a class="layer-card" href="representatives.html?level=ontario">
           <span class="layer-k">Provincial · Ontario</span>
           <span class="layer-t">The Ontario Legislature</span>
           <span class="layer-d">Every MPP's record: 505 recorded divisions,
@@ -244,7 +244,7 @@
           registrations.</span>
           <span class="layer-go">See the Ontario record →</span>
         </a>
-        <a class="layer-card" href="canada.html">
+        <a class="layer-card" href="representatives.html?level=canada">
           <span class="layer-k">Federal · Canada</span>
           <span class="layer-t">The House of Commons</span>
           <span class="layer-d">Every MP's record: 4,856 recorded divisions,
@@ -256,16 +256,20 @@
     </section>
 
     <section class="reveal upcoming-sec" aria-labelledby="upcoming-h">
-      <p class="kicker">Toronto · Before the vote</p>
+      <p class="kicker">Toronto City Council · Before the vote</p>
       <h2 id="upcoming-h">Upcoming at Toronto City Council</h2>
       <hr class="rule">
+      <p class="small" style="max-width:44rem">This section is the
+      Toronto layer of the record: upcoming items and the weigh-in
+      cover Toronto City Council. The Ontario and federal legislatures
+      join Latest, below, once their votes are taken.</p>
       <div id="upcoming"><span class="visually-hidden">Loading…</span>
         <p class="upcoming-line" aria-hidden="true"><span class="skel-el" style="max-width:24rem;margin-bottom:0"></span></p></div>
     </section>
 
     <section class="reveal" aria-labelledby="latest-h">
-      <p class="kicker">Toronto · Catch up</p>
-      <h2 id="latest-h">Latest at Toronto City Council</h2>
+      <p class="kicker">All three legislatures · Catch up</p>
+      <h2 id="latest-h">Latest in the record</h2>
       <hr class="rule">
       <div class="cards two" id="latest"><span class="visually-hidden">Loading…</span>
         <div class="skel-card" aria-hidden="true"><span class="skel-el sm"></span><span class="skel-el title"></span><span class="skel-el"></span><span class="skel-el short"></span></div>
@@ -375,6 +379,40 @@ function voteCard(u) {
   </article>`;
 }
 
+/* Latest-division cards for the Ontario and federal layers: the
+   same card shape as Toronto's decision cards, the chamber named
+   in the meta line, the outcome as the pill. The title links to
+   the official record of the division where the layer data
+   carries one (the Assembly's bill page, the Commons' vote page);
+   the closing line lands on the layer's representatives, where
+   the division sits on each member's own record. */
+function divisionCard(layer, d) {
+  if (layer === "ontario") {
+    const tally = d.outcome && d.ayes != null && d.nays != null
+      ? `${d.outcome} ${d.ayes}–${d.nays}` : (d.outcome || "");
+    const head = d.billUrl
+      ? `<a href="${esc(d.billUrl)}" target="_blank" rel="noopener">${esc(d.title)}</a>`
+      : `<a href="representatives.html?level=ontario">${esc(d.title)}</a>`;
+    return `<article class="card">
+      <div class="meta"><span>${esc(fmtDate(d.date))}</span>
+        <span>Ontario Legislature</span>
+        ${tally ? `<span class="pill">${esc(tally)}</span>` : ""}</div>
+      <h3>${head}</h3>
+      <p class="more"><a href="representatives.html?level=ontario">On every MPP's record <span aria-hidden="true">→</span></a></p>
+    </article>`;
+  }
+  const head = d.url
+    ? `<a href="${esc(d.url)}" target="_blank" rel="noopener">${esc(d.subject)}</a>`
+    : `<a href="representatives.html?level=canada">${esc(d.subject)}</a>`;
+  return `<article class="card">
+    <div class="meta"><span>${esc(fmtDate(d.date))}</span>
+      <span>House of Commons</span>
+      ${d.result ? `<span class="pill">${esc(d.result)}</span>` : ""}</div>
+    <h3>${head}</h3>
+    <p class="more"><a href="representatives.html?level=canada">On every MP's record <span aria-hidden="true">→</span></a></p>
+  </article>`;
+}
+
 /* Watching ("close the loop", Oct 21, 2026): each upcoming card
    carries a watch line under its weigh-in link. Signed in, it is
    the same toggle My Record's weigh-in cards carry (the account
@@ -435,9 +473,10 @@ Promise.all([loadJSON(dataPath("stats.json")), loadJSON(dataPath("latest.json"))
              loadJSON(dataPath("threads-summary.json")).catch(() => null),
              loadJSON(dataPath("council-status.json")).catch(() => null),
              loadJSON(dataPath("ontario/meta.json")).catch(() => null),
-             loadJSON(dataPath("federal/meta.json")).catch(() => null)])
+             loadJSON(dataPath("federal/meta.json")).catch(() => null),
+             loadJSON(dataPath("latest-divisions.json")).catch(() => null)])
 .then(([stats, latest, upcoming, topics, threadData, councilStatus,
-        onMeta, caMeta]) => {
+        onMeta, caMeta, layerLatest]) => {
   /* The headline band is one stat per legislature, each labelled
      with its legislature (homepage data round, Oct 27, 2026):
      Toronto's decisions from the Toronto archive stats, Ontario's
@@ -533,8 +572,29 @@ Promise.all([loadJSON(dataPath("stats.json")), loadJSON(dataPath("latest.json"))
       <a href="my-record.html#weigh-in">See how weighing in works →</a></p>`;
   }
 
-  document.getElementById("latest").innerHTML =
-    latest.council.slice(0, 4).map((c) => decisionCard(c)).join("");
+  /* Latest in the record (nav-parity wave, Oct 28, 2026): the two
+     newest items from each chamber, newest first — Toronto's
+     decisions from latest.json, the Ontario and federal layers'
+     newest divisions from the derived latest-divisions.json index
+     (extracted from the layers' own divisions files at build time).
+     Every card names its chamber. If the derived index fails to
+     load, the section falls back to the Toronto decisions it
+     carried before this wave. */
+  const latestEl = document.getElementById("latest");
+  if (layerLatest && (layerLatest.ontario || layerLatest.canada)) {
+    const items = [];
+    (latest.council || []).slice(0, 2).forEach((c) =>
+      items.push({ date: c.date, html: decisionCard(c) }));
+    (layerLatest.ontario || []).slice(0, 2).forEach((d) =>
+      items.push({ date: d.date, html: divisionCard("ontario", d) }));
+    (layerLatest.canada || []).slice(0, 2).forEach((d) =>
+      items.push({ date: d.date, html: divisionCard("canada", d) }));
+    items.sort((a, b) => String(b.date).localeCompare(String(a.date)));
+    latestEl.innerHTML = items.map((i) => i.html).join("");
+  } else {
+    latestEl.innerHTML =
+      latest.council.slice(0, 4).map((c) => decisionCard(c)).join("");
+  }
 
   const picks = ["housing", "transit", "budget", "parks", "bike lanes",
     "police", "libraries", "zoning", "road safety", "climate"];

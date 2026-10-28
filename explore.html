@@ -7,6 +7,34 @@
 <meta name="description" content="Search the record on Deme: 33,795 Toronto council decisions with plain-language briefs — and people across all three legislatures. A name or a riding finds the person's record, whichever legislature they sit in.">
 <link rel="stylesheet" href="assets/css/deme.css">
 <link rel="manifest" href="manifest.webmanifest">
+<style>
+/* Three doors (nav-parity wave, Oct 28, 2026): The Record opens
+   with the three legislatures side by side, each door labelled
+   with its own unit and years — decisions for Toronto, recorded
+   divisions for Ontario and Canada. The units are never added
+   together. Same card language as the homepage's layer cards. */
+.doors-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 1rem; margin-top: 1.1rem;
+}
+.door-card {
+  display: flex; flex-direction: column; gap: .35rem;
+  background: var(--card); border: 1px solid var(--line);
+  border-top: 4px solid var(--bronze); border-radius: var(--radius);
+  box-shadow: var(--shadow-sm); padding: 1.1rem 1.2rem;
+  text-decoration: none; color: var(--ink);
+}
+.door-card:hover { border-color: var(--bronze-dark); }
+.door-k {
+  font-size: .78rem; font-weight: 700; letter-spacing: .08em;
+  text-transform: uppercase; color: var(--bronze-dark);
+}
+.door-t { font-size: 1.15rem; font-weight: 700; color: var(--navy); }
+.door-u { font-weight: 600; color: var(--ink); }
+.door-d { font-size: .95rem; color: var(--ink-soft); flex: 1; }
+.door-go { font-weight: 600; color: var(--bronze-dark); }
+@media (max-width: 760px) { .doors-grid { grid-template-columns: 1fr; } }
+</style>
 <link rel="icon" href="favicon-navy-mint-v2.svg" type="image/svg+xml">
 <link rel="icon" href="assets/icons/favicon-32.png" sizes="32x32" type="image/png">
 <meta name="theme-color" content="#0E2A47">
@@ -31,7 +59,37 @@
       <p class="kicker">The Record</p>
       <h1 id="explore-h">Search the record</h1>
       <hr class="rule">
-      <p class="lede">Every Toronto council decision in the archive — nearly all with a plain-language brief.
+      <p class="lede">One record, three legislatures. Start with a
+      legislature — or search Toronto's decision archive below; a name
+      or a riding finds a person in any of the three.</p>
+      <div class="doors-grid">
+        <a class="door-card" href="#searchform">
+          <span class="door-k">Municipal · Toronto</span>
+          <span class="door-t">Toronto City Council</span>
+          <span class="door-u">Decisions + recorded votes</span>
+          <span class="door-d">33,795 decisions · 2018–2026 — every one
+          in plain language, with the recorded votes behind it. The
+          search and filters below are this record.</span>
+          <span class="door-go">Search Toronto's record ↓</span>
+        </a>
+        <a class="door-card" href="representatives.html?level=ontario">
+          <span class="door-k">Provincial · Ontario</span>
+          <span class="door-t">The Ontario Legislature</span>
+          <span class="door-u">Recorded divisions</span>
+          <span class="door-d">505 divisions · 2018–2026 — every
+          division, on the record of the MPP who cast it.</span>
+          <span class="door-go">See the Ontario record →</span>
+        </a>
+        <a class="door-card" href="representatives.html?level=canada">
+          <span class="door-k">Federal · Canada</span>
+          <span class="door-t">The House of Commons</span>
+          <span class="door-u">Recorded divisions</span>
+          <span class="door-d">4,856 divisions · 2004–2026 — every
+          division, on the record of the MP who cast it.</span>
+          <span class="door-go">See the Canada record →</span>
+        </a>
+      </div>
+      <p class="lede" style="margin-top:1.6rem">Every Toronto council decision in the archive — nearly all with a plain-language brief.
       Search words from the title or topic — or use the filters to narrow
       by year, ward, or outcome. Looking for a person? A name or a riding
       finds them in any of the three legislatures — Toronto, Ontario

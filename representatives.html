@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Representatives — Deme</title>
+<meta name="description" content="Every representative in the record — Toronto City Council, the Ontario Legislature and the House of Commons: voting records, disclosures and expenses — facts only, no grades.">
+<link rel="stylesheet" href="assets/css/deme.css">
+<link rel="manifest" href="manifest.webmanifest">
+<style>
+/* Page-local directory styles: the Toronto directory's block,
+   carried over unchanged when the three directories combined
+   (nav-parity wave, Oct 28, 2026) — the Ontario and Canada
+   directories shared this same block. */
+/* Unified directory finder (Oct 20, 2026): one elevated Navy & Mint
+   panel takes both the name search and the postal-code lookup. Page-
+   local so the shared stylesheet stays untouched. */
+.finder-panel {
+  margin-top: 1.4rem; border-radius: 16px; position: relative;
+  overflow: hidden; padding-top: 1.5rem;
+  box-shadow: 0 10px 30px rgba(10, 31, 56, .10);
+}
+.finder-panel::before {
+  content: ""; position: absolute; inset: 0 0 auto 0; height: 5px;
+  background: linear-gradient(90deg, var(--navy) 0%, var(--bronze) 100%);
+}
+.finder-panel h2 { font-size: 1.3rem; margin: 0 0 .4rem; color: var(--navy-ink); }
+.finder-row { display: flex; gap: .6rem; flex-wrap: wrap; margin-top: .8rem; }
+.finder-row input[type="text"] {
+  flex: 1 1 14rem; min-width: 0; font-size: 1.05rem;
+  padding: .75rem 1rem; border: 1.5px solid var(--line);
+  border-radius: 12px; background: #fff; color: var(--ink);
+}
+.finder-row input[type="text"]:focus {
+  outline: none; border-color: var(--bronze-dark);
+  box-shadow: 0 0 0 3px var(--mint-light);
+}
+.finder-row .btn { border-radius: 12px; }
+/* Earlier-members section search (polish wave): page-local, light. */
+.earlier-search { margin: 1rem 0 .4rem; }
+.earlier-search input[type="text"] {
+  width: 100%; box-sizing: border-box; font-size: 1rem;
+  padding: .65rem .9rem; border: 1.5px solid var(--line);
+  border-radius: 12px; background: #fff; color: var(--ink);
+}
+.earlier-search input[type="text"]:focus {
+  outline: none; border-color: var(--bronze-dark);
+  box-shadow: 0 0 0 3px var(--mint-light);
+}
+.earlier-group { margin-top: 1.1rem; }
+.earlier-group h4 { margin: 0 0 .35rem; font-size: 1rem; color: var(--navy-ink); }
+.earlier-group h3 { margin: 0 0 .35rem; font-size: 1.08rem; color: var(--navy-ink); }
+#earlier-details summary h2 { display: inline; font-size: 1.05rem; margin: 0; }
+.earlier-note { max-width: 44rem; }
+/* Earlier rows: a fixed text column beside the avatar (polish wave,
+   visitor-eye fix). The shared .personlist row is space-between —
+   written when rows held only a name and a term list. With ward
+   history + participation added, desktop rows scattered the name to a
+   different x on every row and a long record broke its row. Scoped
+   to this section only; the shared rule is untouched. */
+/* v18 (Oct 23, 2026): the row is an organized record unit — name,
+   tenure line, ward history on its own line(s), then the summary
+   stats as aligned labelled columns in the member cards'
+   .member-stats language, so the eye can compare down the list.
+   Every fact the old running line carried is still on the row. */
+#earlier-details .personlist li { justify-content: flex-start; flex-wrap: nowrap; align-items: flex-start; }
+#earlier-details .personlist li > .avatar { flex: none; }
+.em-main { flex: 1 1 auto; min-width: 0; }
+.em-name { margin: 0; font-size: 1.08rem; line-height: 1.3; }
+.em-terms { margin: .2rem 0 0; color: var(--ink-soft); font-size: .92rem; }
+.em-wards { margin: .15rem 0 0; color: var(--ink-faint); font-size: .875rem; }
+.em-wards span { display: block; }
+.em-stats {
+  display: grid; grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: .55rem 1.25rem; margin-top: .65rem; max-width: 36rem;
+}
+.em-stats > div { min-width: 0; }
+.em-stats span {
+  display: block; color: var(--ink-faint); font-size: .72rem; font-weight: 600;
+  letter-spacing: .05em; text-transform: uppercase;
+}
+.em-stats strong { display: block; margin-top: .15rem; font-size: 1.05rem; line-height: 1.25; color: var(--ink); }
+/* Register-counts line (v30): the official registers are a SEPARATE
+   record from the vote-flag stat above, so the line sits in its own
+   mint band under the stats — never inside .em-stats, never wearing
+   the vote-flag label. */
+.em-register {
+  margin: .65rem 0 0; max-width: 36rem; padding: .45rem .6rem;
+  background: var(--mint-light); border-left: 3px solid var(--bronze-dark);
+  font-size: .9rem; line-height: 1.45; color: var(--ink-soft);
+}
+.em-register-src { display: block; margin-top: .15rem; color: var(--ink-faint); font-size: .8rem; }
+@media (max-width: 480px) {
+  .em-stats { gap: .55rem .8rem; }
+  .em-stats span { font-size: .66rem; }
+  /* Fix D1 (visitor-eye, v30 fix round): the earlier rows' 3-across
+     stats squeeze to ~74px per column at 390px and the middle label
+     overflows into the third column. Scoped to #earlier-details —
+     the only context .em-stats renders in — switch to two columns
+     at narrow widths and let labels break cleanly rather than
+     overflow. Desktop layout, current-member cards and the
+     .em-register band are untouched. */
+  #earlier-details .em-stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  #earlier-details .em-stats span { overflow-wrap: break-word; }
+}
+/* Incoming-member card note (v32): replaces the four-stat block on the
+   seven cards for members elected Oct 26, 2026 whose record has not
+   begun. Navy & Mint system colours only. */
+.incoming-note { margin: 0; padding: 1.25rem 1.45rem 1.45rem; font-size: .82rem; line-height: 1.45; color: var(--ink-faint); }
+
+/* The directory's own level switch: the same segmented control as
+   the header switcher (44px targets, short labels on small screens,
+   the body named in full from 720px up), sitting with the directory
+   it switches. The current level is the filled navy segment. */
+.rep-switch-row { margin: 1.2rem 0 .2rem; }
+.rep-switch-row .level-switcher { margin-top: 0; }
+</style>
+<link rel="stylesheet" href="assets/css/improvements.css">
+<link rel="icon" href="favicon-navy-mint-v2.svg" type="image/svg+xml">
+<link rel="icon" href="assets/icons/favicon-32.png" sizes="32x32" type="image/png">
+<meta name="theme-color" content="#0E2A47">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Deme">
+<meta property="og:title" content="Representatives — Deme">
+<meta property="og:description" content="Every representative in the record — Toronto City Council, the Ontario Legislature and the House of Commons — facts only, no grades.">
+<meta property="og:image" content="https://demeapp.github.io/assets/og-image-navy-2026-v2.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Representatives — Deme">
+<meta name="twitter:description" content="Every representative in the record — Toronto City Council, the Ontario Legislature and the House of Commons — facts only, no grades.">
+<meta name="twitter:image" content="https://demeapp.github.io/assets/og-image-navy-2026-v2.png">
+<link rel="apple-touch-icon" href="assets/icons/apple-touch-icon-2026-v2.png">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to main content</a>
+<header class="site-header"></header>
+<main id="main">
+  <div class="wrap">
+    <section aria-labelledby="people-h">
+      <p class="kicker" id="rep-kicker">Representatives</p>
+      <h1 id="people-h">The people on the record</h1>
+      <hr class="rule">
+      <div class="rep-switch-row">
+        <nav class="level-switcher" aria-label="Choose a legislature">
+          <span class="ls-label" aria-hidden="true">Level</span>
+          <a href="representatives.html?level=toronto" data-level="toronto" aria-label="Toronto City Council"><span class="ls-short" aria-hidden="true">Toronto</span><span class="ls-full" aria-hidden="true">Toronto City Council</span></a>
+          <a href="representatives.html?level=ontario" data-level="ontario" aria-label="Ontario Legislature"><span class="ls-short" aria-hidden="true">Ontario</span><span class="ls-full" aria-hidden="true">Ontario Legislature</span></a>
+          <a href="representatives.html?level=canada" data-level="canada" aria-label="House of Commons"><span class="ls-short" aria-hidden="true">Canada</span><span class="ls-full" aria-hidden="true">House of Commons</span></a>
+        </nav>
+      </div>
+      <div id="level-root"></div>
+      <noscript>
+        <p class="small" style="margin-top:1rem">The member lists load
+        with JavaScript. Each legislature's directory is also reachable
+        from the level switcher in the header.</p>
+      </noscript>
+    </section>
+  </div>
+</main>
+<footer class="site-footer"></footer>
+
+<template id="tpl-toronto">
+
+      <p class="lede">Facts only — no grades, no rankings. Recorded-vote
+      participation is the share of recorded votes where a member was
+      present and voting — not a count of meetings attended, and
+      declared interests never count against it.
+      <a href="about.html#how-we-count">How we count →</a></p>
+
+      <div class="card finder-panel" id="ward-lookup">
+        <h2>Find a representative — by name or postal code</h2>
+        <p class="small" style="max-width:44rem;margin-top:0">Type a name or a ward to filter the members below — or enter your
+          postal code to find your representative and their record.</p>
+        <form class="finder-row" id="finder-form" role="search">
+          <label class="visually-hidden" for="fq">Find a representative by name or postal code</label>
+          <input type="text" id="fq" placeholder="A name, a ward — or M5V 1J1" autocomplete="off" spellcheck="false">
+          <button class="btn" type="submit">Find</button>
+        </form>
+        <p class="wf-privacy">Only the first 3 characters of a postal
+          code are used, right here in your browser — your full postal
+          code is never stored or sent anywhere. A lookup only:
+          nothing is saved, and it sets nothing on your profile.</p>
+        <div id="finder-result" aria-live="polite"></div>
+      </div>
+
+      <p class="small" style="margin-top:.9rem">Looking for someone who served before this term?
+    <a href="#earlier-details" id="earlier-jump">Earlier members (2006–2026) — <span id="earlier-count">…</span> members ↓</a></p>
+
+  <div class="directory-bar">
+        <label class="sortlab" for="dir-sort">Sort representatives
+          <select id="dir-sort">
+            <option value="ward">Current first, by ward</option>
+            <option value="name">Name, A to Z</option>
+          </select>
+        </label>
+      </div>
+      <p class="small">Each card carries four facts — recorded-vote
+        participation, votes cast, tenure, and — from the recorded
+        votes — the times a member declared an interest and did not vote.
+        Open a member for the full record. Portraits are the members’
+        official photos; where none is published, initials instead.</p>
+
+      <p style="margin-top:1.2rem"><a class="btn secondary" href="compare.html">Compare two representatives →</a></p>
+
+      <h2 style="margin-top:2.4rem">The incoming council</h2>
+      <p class="small" style="max-width:44rem">Elected on October 26, 2026
+        (unofficial results). The new council term begins
+        <strong>November 15, 2026</strong>. Members returning from the
+        2022–2026 council carry their records forward; a first-time
+        member’s record begins with the new term — there are no votes
+        to show for them yet, and none are invented.</p>
+      <div class="people" id="current"><span class="visually-hidden">Loading…</span>
+        <div class="skel-card" aria-hidden="true"><span class="skel-el title"></span><span class="skel-el sm"></span><span class="skel-el short"></span></div>
+        <div class="skel-card" aria-hidden="true"><span class="skel-el title"></span><span class="skel-el sm"></span><span class="skel-el short"></span></div>
+        <div class="skel-card" aria-hidden="true"><span class="skel-el title"></span><span class="skel-el sm"></span><span class="skel-el short"></span></div></div>
+
+      <details class="filters" id="earlier-details" style="margin-top:3rem">
+        <summary><h2>Earlier members (2006–2026)</h2> <span class="small" id="earlier-count-note"></span></summary>
+        <p class="small" style="margin-top:.8rem">Members from earlier terms, in the same archive.</p>
+        <p class="small earlier-note">Of the 74 earlier Toronto members listed here, 27 have a published official portrait; the rest are shown with initials.</p>
+        <p class="small earlier-note">“Interest declared on a recorded vote · stepped back (since Jun 2023)” counts recorded votes where a member declared an interest and did not vote. The voting record only carries that flag from June 2023 — earlier declarations were recorded as ordinary absences — so a dash marks a member whose service ended before June 2023. Each member’s page also lists the declarations on the City’s official register, counted separately. Those register counts now appear on each earlier member’s row below too, in the mint band under their stats, labelled with the registers they come from.</p>
+        <div class="earlier-search">
+          <label class="visually-hidden" for="eq">Search earlier members</label>
+          <input type="text" id="eq" placeholder="Search earlier members — a name, or a ward then or now" autocomplete="off" spellcheck="false">
+        </div>
+        <div id="earlier-custom" hidden></div>
+        <ul class="personlist" id="earlier"></ul>
+      </details>
+
+</template>
+<template id="tpl-ontario">
+
+      <p class="lede">Facts only — no grades, no rankings. Recorded-vote
+      participation is the share of recorded divisions in a member's
+      time in the Assembly where the member cast a vote — not a count
+      of sittings attended. Ontario publishes no pairing record: a
+      member who is not listed in a division did not vote in it, for
+      any reason.</p>
+
+      <div class="card finder-panel" id="member-lookup">
+        <h2>Find a member — by name or riding</h2>
+        <p class="small" style="max-width:44rem;margin-top:0">Type a name
+          or a riding to filter the members below.</p>
+        <form class="finder-row" id="finder-form" role="search">
+          <label class="visually-hidden" for="q">Find a member by name or riding</label>
+          <input type="text" id="q" placeholder="A name, or a riding" autocomplete="off" spellcheck="false">
+        </form>
+        <div id="finder-result" aria-live="polite"></div>
+      </div>
+
+      <p class="small" style="margin-top:.9rem">Looking for someone who
+    served earlier in this record?
+    <a href="#earlier-details">Earlier members (2018–2026) — <span id="earlier-count">…</span> members ↓</a></p>
+
+      <div class="directory-bar">
+        <label class="sortlab" for="dir-sort">Sort members
+          <select id="dir-sort">
+            <option value="riding">By riding, A to Z</option>
+            <option value="name">Name, A to Z</option>
+          </select>
+        </label>
+      </div>
+      <p class="small">Each card carries four facts — recorded-vote
+        participation, votes cast, tenure, and disclosure statements
+        on file: the member's annual disclosure statements to the
+        Integrity Commissioner (2005–present), counted as statements,
+        not as dated declarations of individual interests. Open a
+        member for the full record. Portraits are the members'
+        official Legislative Assembly photos. Two current members —
+        Jeff Beattie and Susan Lahey — are shown with initials: the
+        Assembly's own site carries no portrait for them, and no
+        substitute photos are used.</p>
+
+      <h2 style="margin-top:2.4rem">Current members</h2>
+      <div class="people" id="current"><span class="visually-hidden">Loading…</span>
+        <div class="skel-card" aria-hidden="true"><span class="skel-el title"></span><span class="skel-el sm"></span><span class="skel-el short"></span></div>
+        <div class="skel-card" aria-hidden="true"><span class="skel-el title"></span><span class="skel-el sm"></span><span class="skel-el short"></span></div>
+        <div class="skel-card" aria-hidden="true"><span class="skel-el title"></span><span class="skel-el sm"></span><span class="skel-el short"></span></div></div>
+
+      <details class="filters" id="earlier-details" style="margin-top:3rem">
+        <summary><h2>Earlier members (2018–2026)</h2> <span class="small" id="earlier-count-note"></span></summary>
+        <p class="small" style="margin-top:.8rem">Members who cast recorded votes in this archive and have since left the Assembly, in the same record. Portraits were gathered for the members of the 2022–2026 Parliaments; members added with the 2018–2022 record are shown with initials.</p>
+        <div class="earlier-search">
+          <label class="visually-hidden" for="eq">Search earlier members</label>
+          <input type="text" id="eq" placeholder="Search earlier members — a name, or a riding" autocomplete="off" spellcheck="false">
+        </div>
+        <ul class="personlist" id="earlier"></ul>
+      </details>
+
+      <div class="coverage-note">
+        <strong>Coverage.</strong> This layer is the archive as gathered
+        on October 20, 2026, and extended on October 27, 2026. Recorded
+        votes: 505 divisions, July 19, 2018 – June 2, 2026 (the most
+        recent sitting in this archive). The Assembly publishes
+        searchable name-by-name votes only from the 43rd Parliament
+        (2022) on. The 2018–2022 divisions were extracted from the
+        Assembly's published House documents (Votes and Proceedings
+        and Hansard): the extraction method was checked against the
+        official searchable record for the 43rd Parliament, where it
+        recovered 194 of its 204 divisions. On that basis the
+        2018–2022 span is expected to be nearly complete, but it may
+        still miss a small number of divisions, and it is an
+        extraction, not the Assembly's official searchable record.
+        Where the House document does not name the bill behind a
+        division, the division carries no bill link. Disclosure
+        statements: the complete series, 2005–2025.
+        Expenses: payments from April 2024 to December 2025, plus
+        annual totals back to 2015–16 — some early annual figures rest
+        on scanned documents, and ministers' expenses are published in
+        a separate provincial system and are not included. Lobbying:
+        Ontario publishes lobbyist registrations — statements of intent
+        to lobby — not records of contacts or meetings; each current
+        member's page shows the registration picture for their office,
+        labelled as such.
+      </div>
+
+</template>
+<template id="tpl-canada">
+
+      <p class="lede">Facts only — no grades, no rankings. Recorded-vote
+      participation is the share of recorded divisions in a member's
+      time in the House where the member cast a vote — not a count of
+      sittings attended. A division where a member was paired (recorded
+      in the division but not voting, under the pairing convention)
+      counts as a non-vote.</p>
+
+      <div class="card finder-panel" id="member-lookup">
+        <h2>Find a member — by name or riding</h2>
+        <p class="small" style="max-width:44rem;margin-top:0">Type a name,
+          a riding, or a province to filter the members below.</p>
+        <form class="finder-row" id="finder-form" role="search">
+          <label class="visually-hidden" for="q">Find a member by name or riding</label>
+          <input type="text" id="q" placeholder="A name, a riding — or a province" autocomplete="off" spellcheck="false">
+        </form>
+        <div id="finder-result" aria-live="polite"></div>
+      </div>
+
+      <p class="small" style="margin-top:.9rem">Looking for someone who
+    is not a current member?
+    <a href="#earlier-details">Earlier members (2004–2026) — <span id="earlier-count">…</span> members ↓</a></p>
+
+      <div class="directory-bar">
+        <label class="sortlab" for="dir-sort">Sort members
+          <select id="dir-sort">
+            <option value="riding">By riding, A to Z</option>
+            <option value="name">Name, A to Z</option>
+          </select>
+        </label>
+      </div>
+      <p class="small">Each card carries four facts — recorded-vote
+        participation, votes cast, tenure, and registry documents on
+        file: the number of documents the member has filed with the
+        Conflict of Interest and Ethics Commissioner, counted as
+        documents, not as individual interests. Open a member for the
+        full record. Portraits are the members' official House of
+        Commons photos, used under the Speaker's Permission. One current
+        member — Braeden Caley (North Vancouver—Capilano) — is shown
+        with initials: no official portrait of him is published, and no
+        substitute photos are used.</p>
+
+      <h2 style="margin-top:2.4rem">Current members</h2>
+      <div class="people" id="current"><span class="visually-hidden">Loading…</span>
+        <div class="skel-card" aria-hidden="true"><span class="skel-el title"></span><span class="skel-el sm"></span><span class="skel-el short"></span></div>
+        <div class="skel-card" aria-hidden="true"><span class="skel-el title"></span><span class="skel-el sm"></span><span class="skel-el short"></span></div>
+        <div class="skel-card" aria-hidden="true"><span class="skel-el title"></span><span class="skel-el sm"></span><span class="skel-el short"></span></div></div>
+
+      <details class="filters" id="earlier-details" style="margin-top:3rem">
+        <summary><h2>Earlier members (2004–2026)</h2> <span class="small" id="earlier-count-note"></span></summary>
+        <p class="small" style="margin-top:.8rem">Everyone with a recorded vote in the archive who is not a current member, in the same record. Portraits were gathered for current members, so earlier members are shown with initials.</p>
+        <div class="earlier-search">
+          <label class="visually-hidden" for="eq">Search earlier members</label>
+          <input type="text" id="eq" placeholder="Search earlier members — a name, or a riding" autocomplete="off" spellcheck="false">
+        </div>
+        <ul class="personlist" id="earlier"></ul>
+      </details>
+
+      <div class="coverage-note">
+        <strong>Coverage.</strong> Recorded votes: 4,856 divisions,
+        October 18, 2004 – October 8, 2026. The three most recent
+        divisions of the current session (45-1 #179–181) are not yet in
+        this archive, and the House does not publish name-by-name
+        ballots from before 2004, so no record here reaches further
+        back. Expenses: members' office expenditures by quarter,
+        2020–21 Q2 – 2026–27 Q1 — the newest quarter the House has
+        published; a member's own salary is a single statutory rate and
+        is not part of those figures. Lobbying communications: 2008 –
+        October 23, 2026, as reported to the Office of the Commissioner
+        of Lobbying.
+      </div>
+
+</template>
+
+<script src="assets/js/simple-mode.js"></script>
+<script src="assets/js/common.js"></script>
+<script>
+/* Combined Representatives directory (nav-parity wave, Oct 28, 2026):
+   one directory for all three legislatures. The level comes from
+   ?level= (toronto | ontario | canada; Toronto is the default), each
+   level's directory body is the <template> above — the same body its
+   own page carried — and the level's own renderer runs underneath,
+   so profiles, finders and coverage notes behave exactly as they
+   did on the three separate pages. The page title, kicker and H1
+   take the level's own wording, and window.__demeLayer is set
+   before the renderer calls renderChrome, so the header switcher
+   and the layer-aware footer speak for the level on show. */
+(function () {
+  var LEVELS = {
+    toronto: { layer: "toronto", title: "Representatives — Deme",
+      kicker: "Representatives", h1: "The people on the record" },
+    ontario: { layer: "ontario",
+      title: "Members of Provincial Parliament — Deme",
+      kicker: "Representatives — Ontario",
+      h1: "Members of Provincial Parliament" },
+    canada: { layer: "canada", title: "Members of Parliament — Deme",
+      kicker: "Representatives — Canada",
+      h1: "Members of Parliament" }
+  };
+  var key = (new URLSearchParams(location.search).get("level")
+    || "toronto").toLowerCase();
+  if (!LEVELS[key]) key = "toronto";
+  var cfg = LEVELS[key];
+  window.__demeLayer = cfg.layer;
+  document.title = cfg.title;
+  document.getElementById("rep-kicker").textContent = cfg.kicker;
+  document.getElementById("people-h").textContent = cfg.h1;
+  document.querySelectorAll(".rep-switch-row [data-level]")
+    .forEach(function (a) {
+      if (a.getAttribute("data-level") === key)
+        a.setAttribute("aria-current", "true");
+    });
+  if (key === "ontario") {
+    window.DEME_LAYER_PAGE = {
+      layer: "ontario", directoryPage: "representatives.html",
+      dataDir: "record-data/ontario/", profilePage: "mpp.html",
+      idParam: "m",
+      photoDir: "assets/headshots/ontario/",
+      roleNoun: "Member of Provincial Parliament",
+      roleLine: (p) => `MPP · ${p.riding}`,
+      tenureCurrent: (p) => `Since ${p.firstYear}`,
+      interestsLabel: "Disclosure statements on file (annual statements, 2005–present)",
+      interestsValue: (p) => p.pdsStatements
+    };
+  }
+  if (key === "canada") {
+    window.DEME_LAYER_PAGE = {
+      layer: "canada", directoryPage: "representatives.html",
+      dataDir: "record-data/federal/", profilePage: "mp.html",
+      idParam: "m",
+      photoDir: "assets/headshots/federal/",
+      roleNoun: "Member of Parliament",
+      roleLine: (p) => `MP · ${p.riding}${p.province ? `, ${p.province}` : ""}`,
+      tenureCurrent: (p) => p.parliaments > 1
+        ? `${p.parliaments} parliaments · since ${p.firstYear}`
+        : `Since ${p.firstYear}`,
+      interestsLabel: "Ethics registry documents on file",
+      interestsValue: (p) => p.interestsDocuments
+    };
+  }
+  var tpl = document.getElementById("tpl-" + key);
+  document.getElementById("level-root")
+    .appendChild(tpl.content.cloneNode(true));
+  function loadScript(src) {
+    return new Promise(function (resolve, reject) {
+      var s = document.createElement("script");
+      s.src = src;
+      s.onload = resolve;
+      s.onerror = reject;
+      document.body.appendChild(s);
+    });
+  }
+  if (key === "toronto") {
+    loadScript("assets/js/ward-finder.js")
+      .then(function () {
+        return loadScript("assets/js/toronto-directory.js");
+      })
+      .catch(function () { /* renderers surface their own load errors */ });
+  } else {
+    loadScript("assets/js/layer-directory.js")
+      .catch(function () { /* renderers surface their own load errors */ });
+  }
+})();
+</script>
+<script data-goatcounter="https://demecivic.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>

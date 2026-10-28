@@ -4,7 +4,7 @@
    recorded-vote history, filterable and paginated. Facts only: no
    grades, no rankings. */
 "use strict";
-renderChrome("councillors.html");
+renderChrome("representatives.html");
 
 const params = new URLSearchParams(location.search);
 const box = document.getElementById("profile");
@@ -1031,7 +1031,7 @@ async function init() {
   }
   if (!person) {
     box.innerHTML = `<div class="calm"><h1>Member not found.</h1>
-      <p>See the <a href="councillors.html">full list of members</a>.</p></div>`;
+      <p>See the <a href="representatives.html?level=toronto">full list of members</a>.</p></div>`;
     return;
   }
   currentPerson = person;

@@ -434,7 +434,7 @@ const HomeStore = (() => {
           <a class="btn secondary" href="my-record.html#account-zone">Sign in</a>
         </p>
         <p class="small" style="margin:.9rem 0 0">Just looking for
-        your representative? <a href="councillors.html#ward-lookup">Find
+        your representative? <a href="representatives.html?level=toronto#ward-lookup">Find
         them by postal code in the directory</a> — a lookup only;
         nothing is saved. And nothing else on this page waits on an
         account — the whole record stays open either way.</p>

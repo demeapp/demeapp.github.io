@@ -337,7 +337,7 @@ function renderProfileChrome() {
       setSetupVisible(false);
       summary.innerHTML = `<p class="small" style="margin:0">Just
         looking for your representative?
-        <a href="councillors.html#ward-lookup">Find them by postal
+        <a href="representatives.html?level=toronto#ward-lookup">Find them by postal
         code in the directory</a>.</p>`;
       return;
     }
@@ -347,7 +347,7 @@ function renderProfileChrome() {
       account profile — it's set when you create your account, so
       your representative's votes can be lined up against your picks.
       Looking for your representative right now?
-      <a href="councillors.html#ward-lookup">Find them by postal
+      <a href="representatives.html?level=toronto#ward-lookup">Find them by postal
       code in the directory</a>.</p>`;
     return;
   }

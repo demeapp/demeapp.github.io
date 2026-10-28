@@ -144,7 +144,7 @@ const dataPath = (p) => `record-data/${p}`;
 const NAV = [
   ["index.html", "Home"],
   ["explore.html", "The Record"],
-  ["councillors.html", "Representatives"],
+  ["representatives.html", "Representatives"],
   ["about.html", "About"],
   ["my-record.html", "My Record"],
 ];
@@ -179,8 +179,10 @@ const SOCIAL_LINKS = [
 ];
 /* Legislature layers (expansion wave, Oct 27, 2026): Toronto is the
    original layer and the default. The Ontario (MPP) and Canada (MP)
-   layers carry their own directories and profile pages; the level
-   switcher below is the only chrome they add to the Toronto pages.
+   layers carry their own profile pages and share one combined
+   Representatives directory with Toronto (nav-parity wave,
+   Oct 28, 2026); the level switcher below is the only chrome they
+   add to the Toronto pages.
    A page declares its layer with window.__demeLayer before this
    script loads; anything undeclared is Toronto. The site-level
    pages — homepage, About & method, My Record, Privacy,
@@ -194,27 +196,38 @@ const SOCIAL_LINKS = [
    pre-ship fix, Oct 28, 2026). */
 /* Each level: key, short label, the body named in full (shown where
    the header has room, and always the link's accessible name), and
-   the level's directory — its representatives page, which for the
-   Ontario and Canada layers is also the layer's home page. */
+   the level's directory — its view of the combined Representatives
+   directory (nav-parity wave, Oct 28, 2026: the three directories
+   became one page, representatives.html, with a level switch),
+   which for the Ontario and Canada layers is also the layer's
+   home page. The old directory URLs (councillors.html, ontario.html,
+   canada.html) remain as moved-page stubs that land here. */
 const DEME_LEVELS = [
-  ["toronto", "Toronto", "Toronto City Council", "councillors.html"],
-  ["ontario", "Ontario", "Ontario Legislature", "ontario.html"],
-  ["canada", "Canada", "House of Commons", "canada.html"],
+  ["toronto", "Toronto", "Toronto City Council",
+   "representatives.html?level=toronto"],
+  ["ontario", "Ontario", "Ontario Legislature",
+   "representatives.html?level=ontario"],
+  ["canada", "Canada", "House of Commons",
+   "representatives.html?level=canada"],
 ];
 /* Equivalent-landing homes (level-navigation wave, Oct 28, 2026):
    switching level lands in the equivalent place in the new level,
    never on an unrelated page. From the homepage, a level's home
    view; from a Record page, that level's record home. Ontario and
    Canada have no separate home or record-browse page — their
-   directory is both — so those landings coincide with the
-   directory. Every other page (directories, profiles, Compare,
+   directory view is both — so those landings coincide with the
+   directory. Every other page (the directory, profiles, Compare,
    About, My Record and the other site pages, the 404 page) lands
-   on the target level's directory. */
+   on the target level's directory view. */
 const DEME_LEVEL_HOME = {
-  toronto: "index.html", ontario: "ontario.html", canada: "canada.html",
+  toronto: "index.html",
+  ontario: "representatives.html?level=ontario",
+  canada: "representatives.html?level=canada",
 };
 const DEME_LEVEL_RECORD = {
-  toronto: "explore.html", ontario: "ontario.html", canada: "canada.html",
+  toronto: "explore.html",
+  ontario: "representatives.html?level=ontario",
+  canada: "representatives.html?level=canada",
 };
 const DEME_RECORD_PAGES = new Set(["explore.html", "decision.html",
   "thread.html"]);
@@ -300,13 +313,13 @@ function renderChrome(active) {
       name-by-name rows 2018–2026, as gathered Oct 20, 2026 and extended
       Oct 27, 2026 ·
       Disclosure statements: 2005–2025 — coverage is stated in full on the
-      <a href="ontario.html">Ontario directory</a>.`
+      <a href="representatives.html?level=ontario">Ontario directory</a>.`
       : layer === "canada"
       ? `Built from the House of Commons' published records, the Conflict of
       Interest and Ethics Commissioner's registry, and the Office of the
       Commissioner of Lobbying's registry. Voting record: name-by-name
       rows 2004–2026 — coverage is stated in full on the
-      <a href="canada.html">Canada directory</a>.`
+      <a href="representatives.html?level=canada">Canada directory</a>.`
       : `Built from the City of Toronto's published council
       records. Decision archive: 2018–2026 · Voting record: name-by-name
       rows 2018–2026, member totals back to 2006 ·
@@ -329,7 +342,7 @@ function renderChrome(active) {
           <p class="footer-h">The Record</p>
           <ul>
             <li><a href="explore.html">The Record</a></li>
-            <li><a href="councillors.html">Representatives</a></li>
+            <li><a href="representatives.html">Representatives</a></li>
             <li><a href="my-record.html#weigh-in">Weigh in</a></li>
           </ul>
         </nav>

@@ -1,8 +1,8 @@
-// Deme service worker (v43 — party filter for the Ontario and
-// federal Explore search (WS2): the two division layers gain a
-// single-select party filter built on per-division party splits
-// derived from the stored ballots (party as stored at the time of
-// the vote); Toronto and All-levels search unchanged from v42).
+// Deme service worker (v44 — product wave INC 1+2 (Oct 28, 2026):
+// trust copy pass (notification promises scoped to what exists,
+// coverage wording corrected) and per-level freshness lines on the
+// homepage and Explore, rendered from the record data files.
+// Party filter (v43) unchanged.
 // Caches: app shell + static assets, visited pages, and the PUBLIC record JSON
 // (read-only, for offline browsing of what was already loaded).
 // Never caches: non-GET requests, cross-origin requests (Supabase auth, picks,
@@ -16,7 +16,7 @@
 // deploy, so assets are network-first too; cache is the offline fallback.
 // VERSION bumps rename every cache, and activate deletes the old ones —
 // bump VERSION whenever this file ships a strategy change.
-const VERSION = 'v43';
+const VERSION = 'v44';
 const SHELL = 'deme-shell-' + VERSION;
 const PAGES = 'deme-pages-' + VERSION;
 const DATA = 'deme-data-' + VERSION;

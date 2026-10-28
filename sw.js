@@ -1,7 +1,8 @@
-// Deme service worker (v38 — navigation & record parity: one
-// Representatives directory for all three legislatures (the old
-// directory URLs redirect into it), the Record opens with three
-// equal doors, and Latest draws from all three chambers).
+// Deme service worker (v39 — federated record search: the Record's
+// one search box now searches all three legislatures with per-layer
+// counts, people search lives in the Representatives directory, the
+// seven incoming Toronto councillors carry their incoming treatment,
+// and earlier members sort most-recent-first on every level).
 // Caches: app shell + static assets, visited pages, and the PUBLIC record JSON
 // (read-only, for offline browsing of what was already loaded).
 // Never caches: non-GET requests, cross-origin requests (Supabase auth, picks,
@@ -15,7 +16,7 @@
 // deploy, so assets are network-first too; cache is the offline fallback.
 // VERSION bumps rename every cache, and activate deletes the old ones —
 // bump VERSION whenever this file ships a strategy change.
-const VERSION = 'v38';
+const VERSION = 'v39';
 const SHELL = 'deme-shell-' + VERSION;
 const PAGES = 'deme-pages-' + VERSION;
 const DATA = 'deme-data-' + VERSION;

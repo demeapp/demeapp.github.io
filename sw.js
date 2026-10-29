@@ -1,4 +1,18 @@
-// Deme service worker (v53 — the lobbying record joins the
+// Deme service worker (v54 — 2026 campaign commitments for
+// two incoming councillors (Oct 28, 2026): the profile data
+// (record-data/profiles.json) gains the sourced 2026 campaign
+// promises for Mike Layton (27, from his own published plan
+// page) and Chiara Padovani (13, from her own published
+// issues page), rendered by the existing Campaign promises
+// section exactly as on 2022-term profiles — presented as
+// what they ran on, with no kept/broken status before the
+// new term begins November 15, 2026. The other five incoming
+// members keep the standard "No campaign promises on record"
+// line: the verified research package holds no actual
+// commitments for them (priority headings and directional
+// statements only, or no published platform at all), and
+// none were invented to fill the gap. Data-only change plus
+// this version bump. (v53 — the lobbying record joins the
 // footer (Oct 28, 2026): the shared footer that
 // assets/js/common.js renders on every page gains one link,
 // "Lobbying record", in The Record column after Compare,
@@ -43,7 +57,7 @@
 // deploy, so assets are network-first too; cache is the offline fallback.
 // VERSION bumps rename every cache, and activate deletes the old ones —
 // bump VERSION whenever this file ships a strategy change.
-const VERSION = 'v53';
+const VERSION = 'v54';
 const SHELL = 'deme-shell-' + VERSION;
 const PAGES = 'deme-pages-' + VERSION;
 const DATA = 'deme-data-' + VERSION;

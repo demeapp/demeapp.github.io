@@ -907,7 +907,60 @@
   "bio": "Tenant advocate and founding member of the York South—Weston Tenant Union; runner-up in Ward 5 in the 2022 municipal election (lost to Nunziata by 94 votes); endorsed in 2026 by the Toronto & York Region Labour Council and Progress Toronto.",
   "committees": [],
   "contact": {},
-  "promises": []
+    "promises": [
+   {
+    "text": "Fully fund, implement and enforce Vision Zero; lower speeds through road redesign; build raised intersections at the most dangerous intersections.",
+    "source": "http://www.chiarapadovani.ca/safe_neighbourhoods"
+   },
+   {
+    "text": "Build more bike lanes.",
+    "source": "http://www.chiarapadovani.ca/safe_neighbourhoods"
+   },
+   {
+    "text": "Close the Humber River Trail gap.",
+    "source": "http://www.chiarapadovani.ca/safe_neighbourhoods"
+   },
+   {
+    "text": "Deliver faster, more reliable snow removal.",
+    "source": "http://www.chiarapadovani.ca/safe_neighbourhoods"
+   },
+   {
+    "text": "Fight for more affordable, accessible, culturally appropriate child-care spaces.",
+    "source": "http://www.chiarapadovani.ca/safe_neighbourhoods"
+   },
+   {
+    "text": "Increase long-term investment in youth-led and community youth programs and after-school recreation.",
+    "source": "http://www.chiarapadovani.ca/safe_neighbourhoods"
+   },
+   {
+    "text": "Strengthen and expand the City Fair Wage policy to a $20 minimum wage and 10 paid sick days for City and City-contracted workers.",
+    "source": "http://www.chiarapadovani.ca/safe_neighbourhoods"
+   },
+   {
+    "text": "Create youth jobs through community benefits agreements.",
+    "source": "http://www.chiarapadovani.ca/safe_neighbourhoods"
+   },
+   {
+    "text": "Expand the non-police Community Crisis Support Service for mental-health crises, wellness checks, homelessness and evictions.",
+    "source": "http://www.chiarapadovani.ca/safe_neighbourhoods"
+   },
+   {
+    "text": "Fully and sustainably fund violence-prevention programs (Community Healing Project, Restorative Justice, Integrated Supports for Justice-Involved Youth).",
+    "source": "http://www.chiarapadovani.ca/safe_neighbourhoods"
+   },
+   {
+    "text": "Expand the hospital-based BRAVE violence-intervention program city-wide.",
+    "source": "http://www.chiarapadovani.ca/safe_neighbourhoods"
+   },
+   {
+    "text": "Increase Toronto Police Service Board transparency and accountability.",
+    "source": "http://www.chiarapadovani.ca/safe_neighbourhoods"
+   },
+   {
+    "text": "Fully fund a Gender Equity Strategy.",
+    "source": "http://www.chiarapadovani.ca/safe_neighbourhoods"
+   }
+  ]
  },
  "mike-layton": {
   "name": "Mike Layton",
@@ -915,7 +968,116 @@
   "bio": "Toronto city councillor 2010–2022 who did not seek re-election in 2022 and became York University’s chief sustainability officer in March 2023; son of former federal NDP leader Jack Layton.",
   "committees": [],
   "contact": {},
-  "promises": []
+    "promises": [
+   {
+    "text": "Expand resources for community land trusts, non-profit and supportive housing, and require real affordability in new development on public land.",
+    "source": "https://www.mikelayton.ca/plan"
+   },
+   {
+    "text": "Prioritize Ward 11 development applications that include affordable housing.",
+    "source": "https://www.mikelayton.ca/plan"
+   },
+   {
+    "text": "Fully fund the rent bank and eviction protection program.",
+    "source": "https://www.mikelayton.ca/plan"
+   },
+   {
+    "text": "Institute a Speculation Watch List for renovictions and rental replacement.",
+    "source": "https://www.mikelayton.ca/plan"
+   },
+   {
+    "text": "Have City inspections and repairs step in earlier in chronically deficient buildings.",
+    "source": "https://www.mikelayton.ca/plan"
+   },
+   {
+    "text": "Advocate for stronger Landlord and Tenant Board enforcement and for reinstatement and expansion of rent control.",
+    "source": "https://www.mikelayton.ca/plan"
+   },
+   {
+    "text": "Support weekly TTC fare capping and expand fare capping.",
+    "source": "https://www.mikelayton.ca/plan"
+   },
+   {
+    "text": "Expand school breakfast programs and bring universal lunch to all schools by 2030.",
+    "source": "https://www.mikelayton.ca/plan"
+   },
+   {
+    "text": "Expand food nutrition programs in City camps.",
+    "source": "https://www.mikelayton.ca/plan"
+   },
+   {
+    "text": "Uphold and update the City's fair wage policy.",
+    "source": "https://www.mikelayton.ca/plan"
+   },
+   {
+    "text": "Scale up building retrofit programs and Building Emissions Performance Standards.",
+    "source": "https://www.mikelayton.ca/plan"
+   },
+   {
+    "text": "Build a green jobs pipeline for youth.",
+    "source": "https://www.mikelayton.ca/plan"
+   },
+   {
+    "text": "Pause data-centre approvals until a City framework is in place.",
+    "source": "https://www.mikelayton.ca/plan"
+   },
+   {
+    "text": "Bring in a maximum-temperature bylaw for rental units, expand the free air-conditioning/heat-pump program, and update the Heat Relief Strategy yearly.",
+    "source": "https://www.mikelayton.ca/plan"
+   },
+   {
+    "text": "Create a street-tree resiliency strategy and grow the tree-planting budget.",
+    "source": "https://www.mikelayton.ca/plan"
+   },
+   {
+    "text": "Increase flood-infrastructure funding (Green Streets) and introduce a stormwater charge on large paved parking lots.",
+    "source": "https://www.mikelayton.ca/plan"
+   },
+   {
+    "text": "Oppose incineration and cut single-use items.",
+    "source": "https://www.mikelayton.ca/plan"
+   },
+   {
+    "text": "Finish the cycling network, defend bike lanes, and implement the Cycling Network Plan.",
+    "source": "https://www.mikelayton.ca/plan"
+   },
+   {
+    "text": "Add more RapidTO priority on College Street and Dundas West.",
+    "source": "https://www.mikelayton.ca/plan"
+   },
+   {
+    "text": "Expand the crisis-worker pilot on Line 1.",
+    "source": "https://www.mikelayton.ca/plan"
+   },
+   {
+    "text": "Fight the provincial rollback of automated speed enforcement.",
+    "source": "https://www.mikelayton.ca/plan"
+   },
+   {
+    "text": "Create a City-led snow-shovelling program.",
+    "source": "https://www.mikelayton.ca/plan"
+   },
+   {
+    "text": "Oppose Island airport expansion.",
+    "source": "https://www.mikelayton.ca/plan"
+   },
+   {
+    "text": "Keep park washrooms open year-round, including Christie Pits and Bellevue Square.",
+    "source": "https://www.mikelayton.ca/plan"
+   },
+   {
+    "text": "Review the Astral street-furniture and garbage contract.",
+    "source": "https://www.mikelayton.ca/plan"
+   },
+   {
+    "text": "Expand community-based crisis response.",
+    "source": "https://www.mikelayton.ca/plan"
+   },
+   {
+    "text": "Office commitment on his plan page: answer constituent inquiries within 24 hours and publish an annual progress report-back.",
+    "source": "https://www.mikelayton.ca/plan"
+   }
+  ]
  },
  "curran-stikuts": {
   "name": "Curran Stikuts",

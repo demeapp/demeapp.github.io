@@ -1,4 +1,9 @@
-// Deme service worker (v56 — Stories over time fix
+// Deme service worker (v60 — framing rebalance (Oct 29, 2026): the site
+// leads with all three levels — new Why-Deme headline, Canada → Ontario →
+// Toronto ordering throughout, a three-level Representatives chooser,
+// an honestly titled Compare page, and three-layer Open Data and
+// Reporters stat bands. Framing only; no record data changed.
+// Previous: Deme service worker (v56 — Stories over time fix
 // (Oct 29, 2026): the Stories section is labelled Toronto City
 // Council, its cards show each story's true latest decision
 // date from the regenerated threads data, story naming is
@@ -79,7 +84,7 @@
 // deploy, so assets are network-first too; cache is the offline fallback.
 // VERSION bumps rename every cache, and activate deletes the old ones —
 // bump VERSION whenever this file ships a strategy change.
-const VERSION = 'v59';
+const VERSION = 'v60';
 const SHELL = 'deme-shell-' + VERSION;
 const PAGES = 'deme-pages-' + VERSION;
 const DATA = 'deme-data-' + VERSION;

@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Deme — the public record of your elected representatives, in plain language</title>
-<meta name="description" content="Deme puts the public record of your elected representatives into plain language — Toronto City Council, the Ontario Legislature and the House of Commons: the decisions, the votes, and what members declared.">
+<meta name="description" content="Deme puts the public record of your elected representatives into plain language — the House of Commons, the Ontario Legislature and Toronto City Council: the decisions, the votes, and what members declared.">
 <link rel="stylesheet" href="assets/css/deme.css">
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="icon" href="favicon-navy-mint-v2.svg" type="image/svg+xml">
@@ -14,13 +14,13 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Deme">
 <meta property="og:title" content="Deme — the public record of your elected representatives, in plain language">
-<meta property="og:description" content="Deme puts the public record of your elected representatives into plain language — Toronto City Council, the Ontario Legislature and the House of Commons: the decisions, the votes, and what members declared.">
+<meta property="og:description" content="Deme puts the public record of your elected representatives into plain language — the House of Commons, the Ontario Legislature and Toronto City Council: the decisions, the votes, and what members declared.">
 <meta property="og:image" content="https://demeapp.github.io/assets/og-image-navy-2026-v2.png">
 <link rel="canonical" href="https://demeapp.github.io/">
 <meta property="og:url" content="https://demeapp.github.io/">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Deme — the public record of your elected representatives, in plain language">
-<meta name="twitter:description" content="Deme puts the public record of your elected representatives into plain language — Toronto City Council, the Ontario Legislature and the House of Commons: the decisions, the votes, and what members declared.">
+<meta name="twitter:description" content="Deme puts the public record of your elected representatives into plain language — the House of Commons, the Ontario Legislature and Toronto City Council: the decisions, the votes, and what members declared.">
 <meta name="twitter:image" content="https://demeapp.github.io/assets/og-image-navy-2026-v2.png">
 <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon-2026-v2.png">
 <style>
@@ -224,9 +224,9 @@
   <div class="wrap">
 
     <section class="hero" aria-labelledby="hero-h">
-      <p class="kicker">Municipal · Provincial · Federal · The record, in plain language</p>
+      <p class="kicker">Federal · Provincial · Municipal · The record, in plain language</p>
       <h1 id="hero-h">THE RECORD IS PUBLIC. NOW IT'S READABLE.</h1>
-      <p class="hero-sub">Every decision, every vote — City Hall, Queen's Park, and Parliament Hill, in plain language.</p>
+      <p class="hero-sub">Every decision, every vote — Parliament Hill, Queen's Park, and City Hall, in plain language.</p>
       <p class="lede">Search a topic, a street, a riding, or a name.</p>
       <form class="searchbox" action="explore.html" method="get" role="search">
         <label class="visually-hidden" for="q">Search the record</label>
@@ -235,14 +235,28 @@
                autocomplete="off">
         <button class="btn" type="submit">Search</button>
       </form>
-      <p class="small" style="margin:.9rem 0 0"><a href="#starthere">In Toronto? Find your councillor by postal code →</a> · Anywhere in Ontario, your MPP and MP are in the <a href="representatives.html?level=ontario">Ontario</a> and <a href="representatives.html?level=canada">Canada</a> directories.</p>
+      <p class="small" style="margin:.9rem 0 0">Anywhere in Ontario, your MPP and MP are in the <a href="representatives.html?level=canada">Canada</a> and <a href="representatives.html?level=ontario">Ontario</a> directories · <a href="#starthere">In Toronto? Find your councillor by postal code →</a></p>
       <p class="search-hint-row"><span class="search-hint" aria-hidden="true"><kbd>/</kbd> to focus search</span></p>
       <div class="askchips" aria-label="Example searches">
         <span class="askchips-label">Ask in plain words, or search a name or riding:</span>
-        <a class="chip" href="explore.html?q=How%20did%20council%20vote%20on%20housing%20since%202022%3F">How did council vote on housing since 2022?</a>
-        <a class="chip" href="explore.html?q=Scarborough%20Southwest">Scarborough Southwest</a>
-        <a class="chip" href="explore.html?q=Etobicoke%20North">Etobicoke North</a>
+        <a class="chip" href="explore.html?level=canada&q=How%20did%20the%20House%20of%20Commons%20vote%20on%20housing%20since%202022%3F">How did the House of Commons vote on housing since 2022?</a>
+        <a class="chip" href="explore.html?level=ontario&q=How%20did%20Queen%27s%20Park%20vote%20on%20housing%20since%202022%3F">How did Queen's Park vote on housing since 2022?</a>
+        <a class="chip" href="explore.html?level=toronto&q=How%20did%20council%20vote%20on%20housing%20since%202022%3F">How did council vote on housing since 2022?</a>
       </div>
+      <script>
+      // Example chips rotate: one per legislature, order shuffled per load
+      // so no level owns the first slot.
+      (function () {
+        var box = document.querySelector(".askchips");
+        if (!box) return;
+        var chips = Array.prototype.slice.call(box.querySelectorAll(".chip"));
+        for (var i = chips.length - 1; i > 0; i--) {
+          var j = Math.floor(Math.random() * (i + 1));
+          var t = chips[i]; chips[i] = chips[j]; chips[j] = t;
+        }
+        chips.forEach(function (c) { box.appendChild(c); });
+      })();
+      </script>
       <div class="account-entry">
         <a class="btn bronze" href="my-record.html#account-zone">Create an account</a>
         <a class="signin-link" href="my-record.html#account-zone">Sign in</a>
@@ -251,7 +265,7 @@
       watch the ones that matter to you — we'll email you the outcome
       once — and see where you stand against your councillor.</p>
 
-      <div class="statband" id="statband" aria-label="The record in numbers — Toronto City Council, the Ontario Legislature and the House of Commons">
+      <div class="statband" id="statband" aria-label="The record in numbers — the House of Commons, the Ontario Legislature and Toronto City Council">
         <!-- filled from data/stats.json + the Ontario and Canada layers' meta files -->
       </div>
       <p class="counting-note on-dark"><span class="pulse-dot" aria-hidden="true"></span>And counting — the record keeps growing as new decisions and recorded divisions are added.</p>
@@ -264,14 +278,14 @@
       <p style="max-width:44rem">Deme covers the representatives you elect
       at every level — the same plain-language record for each.</p>
       <div class="layers-grid">
-        <a class="layer-card" href="representatives.html?level=toronto">
-          <span class="layer-k">Municipal · Toronto</span>
-          <span class="layer-t">Toronto City Council</span>
-          <span class="layer-d">33,795 decisions in plain language, every
-          member's votes, declared interests and expenses — and a say
-          before the next vote.</span>
-          <span class="layer-fresh" data-fresh="toronto">Decisions current to October 19, 2026</span>
-          <span class="layer-go">See the Toronto record →</span>
+        <a class="layer-card" href="representatives.html?level=canada">
+          <span class="layer-k">Federal · Canada</span>
+          <span class="layer-t">The House of Commons</span>
+          <span class="layer-d">Every MP's record: 4,856 recorded divisions,
+          ethics registry documents, and 172,864 lobbying
+          communications.</span>
+          <span class="layer-fresh" data-fresh="federal">Divisions current to October 8, 2026</span>
+          <span class="layer-go">See the Canada record →</span>
         </a>
         <a class="layer-card" href="representatives.html?level=ontario">
           <span class="layer-k">Provincial · Ontario</span>
@@ -283,14 +297,14 @@
           <span class="layer-fresh" data-fresh="ontario">Divisions current to June 2, 2026</span>
           <span class="layer-go">See the Ontario record →</span>
         </a>
-        <a class="layer-card" href="representatives.html?level=canada">
-          <span class="layer-k">Federal · Canada</span>
-          <span class="layer-t">The House of Commons</span>
-          <span class="layer-d">Every MP's record: 4,856 recorded divisions,
-          ethics registry documents, and 172,864 lobbying
-          communications.</span>
-          <span class="layer-fresh" data-fresh="federal">Divisions current to October 8, 2026</span>
-          <span class="layer-go">See the Canada record →</span>
+        <a class="layer-card" href="representatives.html?level=toronto">
+          <span class="layer-k">Municipal · Toronto</span>
+          <span class="layer-t">Toronto City Council</span>
+          <span class="layer-d">33,795 decisions in plain language, every
+          member's votes, declared interests and expenses — and a say
+          before the next vote.</span>
+          <span class="layer-fresh" data-fresh="toronto">Decisions current to October 19, 2026</span>
+          <span class="layer-go">See the Toronto record →</span>
         </a>
       </div>
     </section>
@@ -311,20 +325,17 @@
       <p><a class="btn secondary" href="lobbying.html">See what's coming for subscribers →</a></p>
     </section>
 
-    <section class="reveal upcoming-sec" aria-labelledby="upcoming-h">
-      <p class="kicker">Toronto City Council · Before the vote</p>
-      <h2 id="upcoming-h">Upcoming at Toronto City Council</h2>
+    <section class="reveal upcoming-sec" id="upcoming-parliament" aria-labelledby="upcoming-fed-h">
+      <p class="kicker">House of Commons · Before the vote</p>
+      <h2 id="upcoming-fed-h">Upcoming at Parliament Hill</h2>
       <hr class="rule">
-      <p class="small" style="max-width:44rem">This section is the
-      Toronto layer of the record: upcoming items and the weigh-in
-      cover Toronto City Council. Upcoming business at Queen's Park
-      and Parliament Hill follows in the next two sections — every
-      Upcoming panel on this page carries the same fields, from
-      each legislature's own published papers.</p>
-      <div id="upcoming-toronto-fields"></div>
-      <div id="upcoming"><span class="visually-hidden">Loading…</span>
+      <p class="small" style="max-width:44rem">The business the
+      House of Commons has published for its sitting day, and the
+      bills closest to a vote — from the House's projected business
+      and LEGISinfo, the Commons' bill tracker. Published for
+      reading; the weigh-in covers Toronto City Council.</p>
+      <div id="upcoming-federal"><span class="visually-hidden">Loading…</span>
         <p class="upcoming-line" aria-hidden="true"><span class="skel-el" style="max-width:24rem;margin-bottom:0"></span></p></div>
-      <div id="upcoming-toronto-tail"></div>
     </section>
 
     <section class="reveal upcoming-sec" id="upcoming-queens-park" aria-labelledby="upcoming-on-h">
@@ -340,24 +351,27 @@
         <p class="upcoming-line" aria-hidden="true"><span class="skel-el" style="max-width:24rem;margin-bottom:0"></span></p></div>
     </section>
 
-    <section class="reveal upcoming-sec" id="upcoming-parliament" aria-labelledby="upcoming-fed-h">
-      <p class="kicker">House of Commons · Before the vote</p>
-      <h2 id="upcoming-fed-h">Upcoming at Parliament Hill</h2>
+    <section class="reveal upcoming-sec" aria-labelledby="upcoming-h">
+      <p class="kicker">Toronto City Council · Before the vote</p>
+      <h2 id="upcoming-h">Upcoming at Toronto City Council</h2>
       <hr class="rule">
-      <p class="small" style="max-width:44rem">The business the
-      House of Commons has published for its sitting day, and the
-      bills closest to a vote — from the House's projected business
-      and LEGISinfo, the Commons' bill tracker. Published for
-      reading; the weigh-in covers Toronto City Council.</p>
-      <div id="upcoming-federal"><span class="visually-hidden">Loading…</span>
+      <p class="small" style="max-width:44rem">This section is the
+      Toronto layer of the record: upcoming items and the weigh-in
+      cover Toronto City Council. Upcoming business at Queen's Park
+      and Parliament Hill appears in the two sections above — every
+      Upcoming panel on this page carries the same fields, from
+      each legislature's own published papers.</p>
+      <div id="upcoming-toronto-fields"></div>
+      <div id="upcoming"><span class="visually-hidden">Loading…</span>
         <p class="upcoming-line" aria-hidden="true"><span class="skel-el" style="max-width:24rem;margin-bottom:0"></span></p></div>
+      <div id="upcoming-toronto-tail"></div>
     </section>
 
     <section class="reveal" aria-labelledby="latest-h">
       <p class="kicker">All three legislatures · Catch up</p>
       <h2 id="latest-h">Latest in the record</h2>
       <hr class="rule">
-      <p class="small" style="max-width:44rem">Toronto City Council's last meeting in this record was July 29, 2026, and the newly elected Council takes office November 15, 2026. The Ontario record runs to the Assembly's sitting of June 2, 2026, and the Commons record to October 8, 2026.</p>
+      <p class="small" style="max-width:44rem">The Commons record runs to October 8, 2026, and the Ontario record to the Assembly's sitting of June 2, 2026. Toronto City Council's last meeting in this record was July 29, 2026, and the newly elected Council takes office November 15, 2026.</p>
       <div class="cards two" id="latest"><span class="visually-hidden">Loading…</span>
         <div class="skel-card" aria-hidden="true"><span class="skel-el sm"></span><span class="skel-el title"></span><span class="skel-el"></span><span class="skel-el short"></span></div>
         <div class="skel-card" aria-hidden="true"><span class="skel-el sm"></span><span class="skel-el title"></span><span class="skel-el"></span><span class="skel-el short"></span></div></div>
@@ -377,9 +391,9 @@
         <h2 id="starthere-h">Make Deme yours</h2>
         <hr class="rule">
         <div class="card starthere-card entry-panel entry-shell">
-          <p class="entry-lede">In Toronto? Set your ward to see your councillor, your area's
-          decisions, and alerts. Wherever you live in Ontario, your MPP and MP
-          and their full records are in the directories above.</p>
+          <p class="entry-lede">Wherever you live in Ontario, your MPP and MP
+          and their full records are in the directories above. In Toronto? Set your ward to see your councillor, your area's
+          decisions, and alerts.</p>
           <p style="margin:0"><a class="btn bronze" href="my-record.html">Set your Toronto ward in My Record</a></p>
         </div>
       </div>
@@ -400,33 +414,35 @@
       <h2 id="threads-h">Stories over time</h2>
       <hr class="rule">
       <p style="max-width:44rem">Each story groups decisions or recorded divisions whose titles or subject terms share a set of words, and lists them newest first, year by year. Toronto's stories draw on council decisions from January 2018 onward, Ontario's on Assembly divisions from July 2018 onward, and the federal stories on Commons divisions from October 2004 onward — each level's own span, because that is how far back each record in this archive goes. Every story runs to its latest item, shown on its card, and the cards within each legislature are ordered by that date, newest first. A story is a finding aid only — the record itself is unchanged, and an item can appear in more than one story. Not every item can be grouped: a division identified only by a motion number, with no subject in its published title — “Government motion 1”, for example — appears in no story, and a theme exists at a level only where that level's record supports one.</p>
-      <h3 class="layer-k story-group-h first">Toronto City Council — decisions</h3>
-      <div class="thread-grid" id="threads"></div>
+      <h3 class="layer-k story-group-h first">House of Commons — divisions</h3>
+      <div class="thread-grid" id="threads-canada"></div>
       <h3 class="layer-k story-group-h">Ontario Legislature — divisions</h3>
       <div class="thread-grid" id="threads-ontario"></div>
-      <h3 class="layer-k story-group-h">House of Commons — divisions</h3>
-      <div class="thread-grid" id="threads-canada"></div>
+      <h3 class="layer-k story-group-h">Toronto City Council — decisions</h3>
+      <div class="thread-grid" id="threads"></div>
     </section>
 
     <section class="reveal" aria-labelledby="how-h">
       <p class="kicker">Why Deme exists</p>
-      <h2 id="how-h">Most Toronto decisions leave no names behind</h2>
+      <h2 id="how-h">Every legislature keeps a record. Almost nobody can read it.</h2>
       <hr class="rule">
-      <p style="max-width:44rem">Most Toronto council decisions come with no
-      recorded vote — no public list of who voted yes and who voted no.
-      Deme keeps the whole
-      record readable, and flags every decision where the names
+      <p style="max-width:44rem">At Queen's Park and Parliament Hill,
+      every item Deme lists is a recorded division, with each member's
+      vote attached — published inside journals and Hansard records
+      that few residents ever open. Toronto City Council works the
+      other way: most council decisions come with no recorded vote —
+      no public list of who voted yes and who voted no. Deme keeps
+      the whole record, at all three levels, readable — and flags
+      every Toronto decision where the names
       <em>are</em> on it, so you can see exactly how your representative
-      voted. At Queen's Park and Parliament Hill the record works the other way:
-      every item Deme lists there is a recorded division, with each member's
-      vote attached. <a href="about.html">How Deme works →</a></p>
+      voted. <a href="about.html">How Deme works →</a></p>
     </section>
 
     <section class="reveal" aria-labelledby="gap-h">
       <p class="kicker">The gap Deme fills</p>
       <h2 id="gap-h">Built to complete the record, not just cover it</h2>
       <hr class="rule">
-      <p style="max-width:44rem">Existing tools do part of the job. Deme picks up where they stop: a plain-language record matched to your ward and your ridings.</p>
+      <p style="max-width:44rem">Existing tools do part of the job. Deme picks up where they stop: a plain-language record matched to your ridings and your ward.</p>
       <ul class="gap-list">
         <li class="gap-row">
           <p class="who">GovTrack<small>United States</small></p>
@@ -589,22 +605,24 @@ Promise.all([loadJSON(dataPath("stats.json")), loadJSON(dataPath("latest.json"))
      votesSpan. */
   const spanOf = (meta) => Array.isArray(meta.votesSpan) && meta.votesSpan.length === 2
     ? ` (${String(meta.votesSpan[0]).slice(0, 4)}–${String(meta.votesSpan[1]).slice(0, 4)})` : "";
-  const bandStats = [`
-    <div class="stat"><span class="num" data-count="${stats.decisions}">${fmtNum(stats.decisions)}</span>
-      <span class="lab">decisions in plain language — Toronto City Council (${stats.decisionsFrom}–${stats.decisionsTo})</span></div>`];
-  const bandNames = ["Toronto City Council"];
-  if (onMeta && onMeta.divisions) {
-    bandStats.push(`
-    <div class="stat"><span class="num" data-count="${onMeta.divisions}">${fmtNum(onMeta.divisions)}</span>
-      <span class="lab">recorded divisions — the Ontario Legislature${spanOf(onMeta) || " (2018–2026)"}</span></div>`);
-    bandNames.push("the Ontario Legislature");
-  }
+  const bandStats = [];
+  const bandNames = [];
   if (caMeta && caMeta.divisions) {
     bandStats.push(`
     <div class="stat"><span class="num" data-count="${caMeta.divisions}">${fmtNum(caMeta.divisions)}</span>
       <span class="lab">recorded divisions — the House of Commons${spanOf(caMeta)}</span></div>`);
     bandNames.push("the House of Commons");
   }
+  if (onMeta && onMeta.divisions) {
+    bandStats.push(`
+    <div class="stat"><span class="num" data-count="${onMeta.divisions}">${fmtNum(onMeta.divisions)}</span>
+      <span class="lab">recorded divisions — the Ontario Legislature${spanOf(onMeta) || " (2018–2026)"}</span></div>`);
+    bandNames.push("the Ontario Legislature");
+  }
+  bandStats.push(`
+    <div class="stat"><span class="num" data-count="${stats.decisions}">${fmtNum(stats.decisions)}</span>
+      <span class="lab">decisions in plain language — Toronto City Council (${stats.decisionsFrom}–${stats.decisionsTo})</span></div>`);
+  bandNames.push("Toronto City Council");
   const band = document.getElementById("statband");
   band.innerHTML = bandStats.join("");
   /* The aria-label names only the legislatures actually rendered, so

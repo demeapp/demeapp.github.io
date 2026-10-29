@@ -66,8 +66,8 @@ const DemeSimple = (() => {
     "Weigh in": "Weigh in",
 
     /* ----- home ----- */
-    "Municipal · Provincial · Federal · The record, in plain language":
-      "Municipal · Provincial · Federal · The record, in easy words",
+    "Federal · Provincial · Municipal · The record, in plain language":
+      "Federal · Provincial · Municipal · The record, in easy words",
     "Every decision, every vote — City Hall, Queen's Park, and Parliament Hill, in plain language.":
       "Every decision and every vote — at City Hall, Queen's Park and Parliament Hill, in easy words.",
     "Three legislatures, one record": "Three levels of government, one record",
@@ -96,8 +96,8 @@ const DemeSimple = (() => {
       "Most Toronto council decisions have no recorded vote. There is no public list of who voted yes and who voted no. Deme keeps the whole record easy to read, and marks each decision where the names",
     "are on it, so you can see exactly how your representative voted.":
       "are on it, so you can see just how your representative voted.",
-    "Existing tools do part of the job. Deme picks up where they stop: a plain-language record matched to your ward and your ridings.":
-      "Other tools do part of the job. Deme does the rest: a record in easy words, matched to your ward and your ridings.",
+    "Existing tools do part of the job. Deme picks up where they stop: a plain-language record matched to your ridings and your ward.":
+      "Other tools do part of the job. Deme does the rest: a record in easy words, matched to your ridings and your ward.",
     "tracks US Congress bills and member voting records.":
       "Tracks US Congress bills and how members voted.",
     "US federal only — nothing for Canadians at any level.":
@@ -219,8 +219,8 @@ const DemeSimple = (() => {
       "The vote record could not be loaded. The official record is linked below.",
 
     /* ----- compare ----- */
-    "Choose any two members. Deme lines up the recorded votes where both voted on the same motion — how often they landed on the same side, and where they differed.":
-      "Pick any two members. Deme lines up the recorded votes where both voted on the same motion. It shows how often they were on the same side, and where they were not.",
+    "Choose any two Toronto City Council members. Deme lines up the recorded votes where both voted on the same motion — how often they landed on the same side, and where they differed.":
+      "Pick any two Toronto City Council members. Deme lines up the recorded votes where both voted on the same motion. It shows how often they were on the same side, and where they were not.",
     "Agreement here is arithmetic, not a grade: members are compared only on shared recorded votes. Absences and declared interests are left out of the comparison — a declared interest is a duty, not a position.":
       "Agreement here is just counting. It is not a grade. Members are compared only on recorded votes they both took part in. Time away and declared interests are left out. A declared interest is a duty, not a position.",
     "Different recorded positions": "Where they voted in different ways",

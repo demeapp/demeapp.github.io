@@ -203,12 +203,12 @@ const SOCIAL_LINKS = [
    home page. The old directory URLs (councillors.html, ontario.html,
    canada.html) remain as moved-page stubs that land here. */
 const DEME_LEVELS = [
-  ["toronto", "Toronto", "Toronto City Council",
-   "representatives.html?level=toronto"],
-  ["ontario", "Ontario", "Ontario Legislature",
-   "representatives.html?level=ontario"],
   ["canada", "Canada", "House of Commons",
    "representatives.html?level=canada"],
+  ["ontario", "Ontario", "Ontario Legislature",
+   "representatives.html?level=ontario"],
+  ["toronto", "Toronto", "Toronto City Council",
+   "representatives.html?level=toronto"],
 ];
 /* Equivalent-landing homes (level-navigation wave, Oct 28, 2026):
    switching level lands in the equivalent place in the new level,
@@ -303,8 +303,8 @@ function renderChrome(active) {
       : `<strong>Deme</strong> — Toronto City Council's record, in plain
           language. Non-partisan. No grades, no endorsements — just the record.`;
     const fineprint = layer === "site"
-      ? `Built from the published records of the City of Toronto, the
-      Legislative Assembly of Ontario and the House of Commons. Coverage
+      ? `Built from the published records of the House of Commons, the
+      Legislative Assembly of Ontario and the City of Toronto. Coverage
       for each legislature is stated in full on its directory and on
       <a href="about.html">About &amp; method</a>.`
       : layer === "ontario"
@@ -343,7 +343,7 @@ function renderChrome(active) {
           <ul>
             <li><a href="explore.html">The Record</a></li>
             <li><a href="representatives.html">Representatives</a></li>
-            <li><a href="my-record.html#weigh-in">Weigh in</a></li>
+            <li><a href="my-record.html#weigh-in">Weigh in (Toronto)</a></li>
             <li><a href="compare.html">Compare</a></li>
             <li><a href="lobbying.html">Lobbying record</a></li>
           </ul>

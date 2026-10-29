@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Representatives — Deme</title>
-<meta name="description" content="Every representative in the record — Toronto City Council, the Ontario Legislature and the House of Commons: voting records, disclosures and expenses — facts only, no grades.">
+<meta name="description" content="Every representative in the record — the House of Commons, the Ontario Legislature and Toronto City Council: voting records, disclosures and expenses — facts only, no grades.">
 <link rel="stylesheet" href="assets/css/deme.css">
 <link rel="manifest" href="manifest.webmanifest">
 <style>
@@ -120,6 +120,14 @@
    the body named in full from 720px up), sitting with the directory
    it switches. The current level is the filled navy segment. */
 .rep-switch-row { margin: 1.2rem 0 .2rem; }
+.chooser-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1rem; margin-top:1.2rem; }
+.chooser-card { display:flex; flex-direction:column; gap:.35rem; background:var(--card); border:1px solid var(--line); border-radius:var(--radius); padding:1.2rem 1.3rem; text-decoration:none; color:var(--ink); box-shadow:var(--shadow-sm); }
+.chooser-card:hover { border-color:var(--navy); }
+.chooser-k { font-size:.78rem; letter-spacing:.08em; text-transform:uppercase; color:var(--bronze-dark); font-weight:700; }
+.chooser-t { font-size:1.3rem; font-weight:700; color:var(--navy); line-height:1.25; }
+.chooser-d { color:var(--ink-soft); font-size:.95rem; }
+.chooser-go { margin-top:auto; font-weight:700; color:var(--navy); }
+@media (max-width:720px){ .chooser-grid{ grid-template-columns:1fr; } }
 .rep-switch-row .level-switcher { margin-top: 0; }
 </style>
 <link rel="stylesheet" href="assets/css/improvements.css">
@@ -130,13 +138,13 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Deme">
 <meta property="og:title" content="Representatives — Deme">
-<meta property="og:description" content="Every representative in the record — Toronto City Council, the Ontario Legislature and the House of Commons — facts only, no grades.">
+<meta property="og:description" content="Every representative in the record — the House of Commons, the Ontario Legislature and Toronto City Council — facts only, no grades.">
 <meta property="og:image" content="https://demeapp.github.io/assets/og-image-navy-2026-v2.png">
 <link rel="canonical" href="https://demeapp.github.io/representatives.html">
 <meta property="og:url" content="https://demeapp.github.io/representatives.html">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Representatives — Deme">
-<meta name="twitter:description" content="Every representative in the record — Toronto City Council, the Ontario Legislature and the House of Commons — facts only, no grades.">
+<meta name="twitter:description" content="Every representative in the record — the House of Commons, the Ontario Legislature and Toronto City Council — facts only, no grades.">
 <meta name="twitter:image" content="https://demeapp.github.io/assets/og-image-navy-2026-v2.png">
 <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon-2026-v2.png">
 </head>
@@ -152,9 +160,9 @@
       <div class="rep-switch-row">
         <nav class="level-switcher" aria-label="Choose a legislature">
           <span class="ls-label" aria-hidden="true">Level</span>
-          <a href="representatives.html?level=toronto" data-level="toronto" aria-label="Toronto City Council"><span class="ls-short" aria-hidden="true">Toronto</span><span class="ls-full" aria-hidden="true">Toronto City Council</span></a>
-          <a href="representatives.html?level=ontario" data-level="ontario" aria-label="Ontario Legislature"><span class="ls-short" aria-hidden="true">Ontario</span><span class="ls-full" aria-hidden="true">Ontario Legislature</span></a>
           <a href="representatives.html?level=canada" data-level="canada" aria-label="House of Commons"><span class="ls-short" aria-hidden="true">Canada</span><span class="ls-full" aria-hidden="true">House of Commons</span></a>
+          <a href="representatives.html?level=ontario" data-level="ontario" aria-label="Ontario Legislature"><span class="ls-short" aria-hidden="true">Ontario</span><span class="ls-full" aria-hidden="true">Ontario Legislature</span></a>
+          <a href="representatives.html?level=toronto" data-level="toronto" aria-label="Toronto City Council"><span class="ls-short" aria-hidden="true">Toronto</span><span class="ls-full" aria-hidden="true">Toronto City Council</span></a>
         </nav>
       </div>
       <div id="level-root"></div>
@@ -168,7 +176,32 @@
 </main>
 <footer class="site-footer"></footer>
 
-<template id="tpl-toronto">
+<template id="tpl-chooser">
+      <p style="max-width:44rem">Three legislatures, one directory each.
+      Choose a level to start — you can switch at any time with the level
+      links above.</p>
+      <div class="chooser-grid">
+        <a class="chooser-card" href="representatives.html?level=canada">
+          <span class="chooser-k">Federal · Canada</span>
+          <span class="chooser-t">The House of Commons</span>
+          <span class="chooser-d">4,856 recorded divisions · 2004–2026 — the 337 current MPs, and every earlier member the directory carries.</span>
+          <span class="chooser-go">See the directory →</span>
+        </a>
+        <a class="chooser-card" href="representatives.html?level=ontario">
+          <span class="chooser-k">Provincial · Ontario</span>
+          <span class="chooser-t">The Ontario Legislature</span>
+          <span class="chooser-d">505 recorded divisions · 2018–2026 — the 124 current MPPs, and every earlier member the directory carries.</span>
+          <span class="chooser-go">See the directory →</span>
+        </a>
+        <a class="chooser-card" href="representatives.html?level=toronto">
+          <span class="chooser-k">Municipal · Toronto</span>
+          <span class="chooser-t">Toronto City Council</span>
+          <span class="chooser-d">33,795 decisions · 2018–2026 — the current Council, and every earlier member the directory carries.</span>
+          <span class="chooser-go">See the directory →</span>
+        </a>
+      </div>
+    </template>
+    <template id="tpl-toronto">
 
       <p class="lede">Facts only — no grades, no rankings. Recorded-vote
       participation is the share of recorded votes where a member was
@@ -425,8 +458,17 @@
       h1: "Members of Parliament" }
   };
   var key = (new URLSearchParams(location.search).get("level")
-    || "toronto").toLowerCase();
-  if (!LEVELS[key]) key = "toronto";
+    || "").toLowerCase();
+  if (!LEVELS[key]) {
+    // No level chosen: show the chooser rather than presuming a level.
+    window.__demeLayer = "site";
+    document.getElementById("level-root")
+      .appendChild(document.getElementById("tpl-chooser")
+        .content.cloneNode(true));
+    // No level renderer loads in this state, so render the chrome here.
+    renderChrome("representatives.html");
+    return;
+  }
   var cfg = LEVELS[key];
   window.__demeLayer = cfg.layer;
   document.title = cfg.title;

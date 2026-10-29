@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>The Record — Deme</title>
-<meta name="description" content="Search the whole record on Deme from one box: Toronto council decisions with plain-language briefs, and the recorded divisions of the Ontario Legislature and the House of Commons — counted level by level, never blended.">
+<meta name="description" content="Search the whole record on Deme from one box: the recorded divisions of the House of Commons and the Ontario Legislature, and Toronto council decisions with plain-language briefs — counted level by level, never blended.">
 <link rel="stylesheet" href="assets/css/deme.css">
 <link rel="manifest" href="manifest.webmanifest">
 <style>
@@ -67,13 +67,13 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Deme">
 <meta property="og:title" content="The Record — Deme">
-<meta property="og:description" content="Search the whole record on Deme from one box: Toronto council decisions with plain-language briefs, and the recorded divisions of the Ontario Legislature and the House of Commons — counted level by level, never blended.">
+<meta property="og:description" content="Search the whole record on Deme from one box: the recorded divisions of the House of Commons and the Ontario Legislature, and Toronto council decisions with plain-language briefs — counted level by level, never blended.">
 <meta property="og:image" content="https://demeapp.github.io/assets/og-image-navy-2026-v2.png">
 <link rel="canonical" href="https://demeapp.github.io/explore.html">
 <meta property="og:url" content="https://demeapp.github.io/explore.html">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="The Record — Deme">
-<meta name="twitter:description" content="Search the whole record on Deme from one box: Toronto council decisions with plain-language briefs, and the recorded divisions of the Ontario Legislature and the House of Commons — counted level by level, never blended.">
+<meta name="twitter:description" content="Search the whole record on Deme from one box: the recorded divisions of the House of Commons and the Ontario Legislature, and Toronto council decisions with plain-language briefs — counted level by level, never blended.">
 <meta name="twitter:image" content="https://demeapp.github.io/assets/og-image-navy-2026-v2.png">
 <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon-2026-v2.png">
 </head>
@@ -89,14 +89,14 @@
       <p class="lede">One record, three legislatures. Start with a
       legislature — or search all three from the box below.</p>
       <div class="doors-grid">
-        <a class="door-card" href="?level=toronto#searchform">
-          <span class="door-k">Municipal · Toronto</span>
-          <span class="door-t">Toronto City Council</span>
-          <span class="door-u">Decisions + recorded votes</span>
-          <span class="door-d">33,795 decisions · 2018–2026 — nearly all
-          in plain language, with the recorded vote where one was taken.</span>
-          <span class="door-fresh" data-fresh="toronto">Decisions current to October 19, 2026</span>
-          <span class="door-go">Search Toronto's record ↓</span>
+        <a class="door-card" href="?level=canada#searchform">
+          <span class="door-k">Federal · Canada</span>
+          <span class="door-t">The House of Commons</span>
+          <span class="door-u">Recorded divisions</span>
+          <span class="door-d">4,856 divisions · 2004–2026 — each one
+          on the record of the MP who cast it.</span>
+          <span class="door-fresh" data-fresh="federal">Divisions current to October 8, 2026</span>
+          <span class="door-go">Search the Canada record ↓</span>
         </a>
         <a class="door-card" href="?level=ontario#searchform">
           <span class="door-k">Provincial · Ontario</span>
@@ -108,19 +108,19 @@
           <span class="door-fresh" data-fresh="ontario">Divisions current to June 2, 2026</span>
           <span class="door-go">Search the Ontario record ↓</span>
         </a>
-        <a class="door-card" href="?level=canada#searchform">
-          <span class="door-k">Federal · Canada</span>
-          <span class="door-t">The House of Commons</span>
-          <span class="door-u">Recorded divisions</span>
-          <span class="door-d">4,856 divisions · 2004–2026 — each one
-          on the record of the MP who cast it.</span>
-          <span class="door-fresh" data-fresh="federal">Divisions current to October 8, 2026</span>
-          <span class="door-go">Search the Canada record ↓</span>
+        <a class="door-card" href="?level=toronto#searchform">
+          <span class="door-k">Municipal · Toronto</span>
+          <span class="door-t">Toronto City Council</span>
+          <span class="door-u">Decisions + recorded votes</span>
+          <span class="door-d">33,795 decisions · 2018–2026 — nearly all
+          in plain language, with the recorded vote where one was taken.</span>
+          <span class="door-fresh" data-fresh="toronto">Decisions current to October 19, 2026</span>
+          <span class="door-go">Search Toronto's record ↓</span>
         </a>
       </div>
-      <p class="lede" style="margin-top:1.6rem">Search the whole record from one box — Toronto council
-      decisions, nearly all with a plain-language brief, and the recorded
-      divisions of the Ontario Legislature and the House of Commons.
+      <p class="lede" style="margin-top:1.6rem">Search the whole record from one box — the recorded
+      divisions of the House of Commons and the Ontario Legislature, and Toronto council
+      decisions, nearly all with a plain-language brief.
       Search words from a title, a topic or a bill number. The level
       buttons choose where to search: all three legislatures, or one at
       a time, and each level keeps the filters its record supports.</p>
@@ -128,9 +128,9 @@
         <div class="level-chips" role="group" aria-label="Choose which legislatures to search">
           <span class="lc-label">Search in</span>
           <button type="button" class="lchip" data-level="all" aria-pressed="true">All levels</button>
-          <button type="button" class="lchip" data-level="toronto" aria-pressed="false">Toronto</button>
-          <button type="button" class="lchip" data-level="ontario" aria-pressed="false">Ontario</button>
           <button type="button" class="lchip" data-level="canada" aria-pressed="false">Federal</button>
+          <button type="button" class="lchip" data-level="ontario" aria-pressed="false">Ontario</button>
+          <button type="button" class="lchip" data-level="toronto" aria-pressed="false">Toronto</button>
         </div>
         <form class="searchbox" id="searchform" role="search">
           <label class="visually-hidden" for="q">Search the record</label>

@@ -210,6 +210,11 @@
 .layer-d { font-size: .95rem; color: var(--ink-soft); flex: 1; }
 .layer-go { font-weight: 600; color: var(--bronze-dark); }
 @media (max-width: 760px) { .layers-grid { grid-template-columns: 1fr; } }
+/* Stories at three levels (v57): one section, three labelled
+   groups in the standing order Toronto · Ontario · Canada; the
+   group headings reuse the layer cards' layer-k style. */
+.story-group-h { margin: 1.6rem 0 .7rem; }
+.story-group-h.first { margin-top: .2rem; }
 </style>
 </head>
 <body>
@@ -230,21 +235,21 @@
                autocomplete="off">
         <button class="btn" type="submit">Search</button>
       </form>
-      <p class="small" style="margin:.9rem 0 0"><a href="#starthere">In Toronto? Find your councillor by postal code →</a></p>
+      <p class="small" style="margin:.9rem 0 0"><a href="#starthere">In Toronto? Find your councillor by postal code →</a> · Anywhere in Ontario, your MPP and MP are in the <a href="representatives.html?level=ontario">Ontario</a> and <a href="representatives.html?level=canada">Canada</a> directories.</p>
       <p class="search-hint-row"><span class="search-hint" aria-hidden="true"><kbd>/</kbd> to focus search</span></p>
       <div class="askchips" aria-label="Example searches">
         <span class="askchips-label">Ask in plain words, or search a name or riding:</span>
         <a class="chip" href="explore.html?q=How%20did%20council%20vote%20on%20housing%20since%202022%3F">How did council vote on housing since 2022?</a>
-        <a class="chip" href="explore.html?q=What%20did%20council%20decide%20about%20bike%20lanes%20in%202024%3F">What did council decide about bike lanes in 2024?</a>
+        <a class="chip" href="explore.html?q=Scarborough%20Southwest">Scarborough Southwest</a>
         <a class="chip" href="explore.html?q=Etobicoke%20North">Etobicoke North</a>
       </div>
       <div class="account-entry">
         <a class="btn bronze" href="my-record.html#account-zone">Create an account</a>
         <a class="signin-link" href="my-record.html#account-zone">Sign in</a>
       </div>
-      <p class="small account-reason">Have your say on upcoming Council decisions,
+      <p class="small account-reason">Have your say on upcoming Toronto Council decisions,
       watch the ones that matter to you — we'll email you the outcome
-      once — and see where you stand against your representative.</p>
+      once — and see where you stand against your councillor.</p>
 
       <div class="statband" id="statband" aria-label="The record in numbers — Toronto City Council, the Ontario Legislature and the House of Commons">
         <!-- filled from data/stats.json + the Ontario and Canada layers' meta files -->
@@ -352,7 +357,7 @@
       <p class="kicker">All three legislatures · Catch up</p>
       <h2 id="latest-h">Latest in the record</h2>
       <hr class="rule">
-      <p class="small" style="max-width:44rem">Toronto City Council's last meeting was July 29, 2026; the newly elected Council takes office November 15, 2026.</p>
+      <p class="small" style="max-width:44rem">Toronto City Council's last meeting in this record was July 29, 2026, and the newly elected Council takes office November 15, 2026. The Ontario record runs to the Assembly's sitting of June 2, 2026, and the Commons record to October 8, 2026.</p>
       <div class="cards two" id="latest"><span class="visually-hidden">Loading…</span>
         <div class="skel-card" aria-hidden="true"><span class="skel-el sm"></span><span class="skel-el title"></span><span class="skel-el"></span><span class="skel-el short"></span></div>
         <div class="skel-card" aria-hidden="true"><span class="skel-el sm"></span><span class="skel-el title"></span><span class="skel-el"></span><span class="skel-el short"></span></div></div>
@@ -372,9 +377,10 @@
         <h2 id="starthere-h">Make Deme yours</h2>
         <hr class="rule">
         <div class="card starthere-card entry-panel entry-shell">
-          <p class="entry-lede">Set your ward to see your representative,
-          your area's decisions, and alerts.</p>
-          <p style="margin:0"><a class="btn bronze" href="my-record.html">Set your ward in My Record</a></p>
+          <p class="entry-lede">In Toronto? Set your ward to see your councillor, your area's
+          decisions, and alerts. Wherever you live in Ontario, your MPP and MP
+          and their full records are in the directories above.</p>
+          <p style="margin:0"><a class="btn bronze" href="my-record.html">Set your Toronto ward in My Record</a></p>
         </div>
       </div>
     </section>
@@ -390,23 +396,30 @@
     </section>
 
     <section class="reveal" aria-labelledby="threads-h">
-      <p class="kicker">Toronto City Council · Read one story</p>
+      <p class="kicker">All three legislatures · Read one story</p>
       <h2 id="threads-h">Stories over time</h2>
       <hr class="rule">
-      <p style="max-width:44rem">Each story groups Toronto decisions whose titles or subject terms share a set of words, and lists them newest first, year by year. Every story starts in January 2018 and runs to its latest decision, shown on its card, and the cards are ordered by that date, newest first. A story is a finding aid only — the record itself is unchanged, and a decision can appear in more than one story. Stories are Toronto-only: there is no Ontario or federal version.</p>
+      <p style="max-width:44rem">Each story groups decisions or recorded divisions whose titles or subject terms share a set of words, and lists them newest first, year by year. Toronto's stories draw on council decisions from January 2018 onward, Ontario's on Assembly divisions from July 2018 onward, and the federal stories on Commons divisions from October 2004 onward — each level's own span, because that is how far back each record in this archive goes. Every story runs to its latest item, shown on its card, and the cards within each legislature are ordered by that date, newest first. A story is a finding aid only — the record itself is unchanged, and an item can appear in more than one story. Not every item can be grouped: a division identified only by a motion number, with no subject in its published title — “Government motion 1”, for example — appears in no story, and a theme exists at a level only where that level's record supports one.</p>
+      <h3 class="layer-k story-group-h first">Toronto City Council — decisions</h3>
       <div class="thread-grid" id="threads"></div>
+      <h3 class="layer-k story-group-h">Ontario Legislature — divisions</h3>
+      <div class="thread-grid" id="threads-ontario"></div>
+      <h3 class="layer-k story-group-h">House of Commons — divisions</h3>
+      <div class="thread-grid" id="threads-canada"></div>
     </section>
 
     <section class="reveal" aria-labelledby="how-h">
       <p class="kicker">Why Deme exists</p>
-      <h2 id="how-h">Most decisions leave no names behind</h2>
+      <h2 id="how-h">Most Toronto decisions leave no names behind</h2>
       <hr class="rule">
       <p style="max-width:44rem">Most Toronto council decisions come with no
       recorded vote — no public list of who voted yes and who voted no.
       Deme keeps the whole
       record readable, and flags every decision where the names
       <em>are</em> on it, so you can see exactly how your representative
-      voted. <a href="about.html">How Deme works →</a></p>
+      voted. At Queen's Park and Parliament Hill the record works the other way:
+      every item Deme lists there is a recorded division, with each member's
+      vote attached. <a href="about.html">How Deme works →</a></p>
     </section>
 
     <section class="reveal" aria-labelledby="gap-h">
@@ -558,9 +571,11 @@ Promise.all([loadJSON(dataPath("stats.json")), loadJSON(dataPath("latest.json"))
              loadJSON(dataPath("council-status.json")).catch(() => null),
              loadJSON(dataPath("ontario/meta.json")).catch(() => null),
              loadJSON(dataPath("federal/meta.json")).catch(() => null),
-             loadJSON(dataPath("latest-divisions.json")).catch(() => null)])
+             loadJSON(dataPath("latest-divisions.json")).catch(() => null),
+             loadJSON(dataPath("ontario/threads-summary.json")).catch(() => null),
+             loadJSON(dataPath("federal/threads-summary.json")).catch(() => null)])
 .then(([stats, latest, upcoming, topics, threadData, councilStatus,
-        onMeta, caMeta, layerLatest]) => {
+        onMeta, caMeta, layerLatest, onThreadData, caThreadData]) => {
   /* The headline band is one stat per legislature, each labelled
      with its legislature (homepage data round, Oct 27, 2026):
      Toronto's decisions from the Toronto archive stats, Ontario's
@@ -680,8 +695,8 @@ Promise.all([loadJSON(dataPath("stats.json")), loadJSON(dataPath("latest.json"))
       latest.council.slice(0, 4).map((c) => decisionCard(c)).join("");
   }
 
-  const picks = ["housing", "transit", "budget", "parks", "bike lanes",
-    "police", "libraries", "zoning", "road safety", "climate"];
+  const picks = ["housing", "transit", "budget", "parks", "health care",
+    "police", "libraries", "road safety", "climate", "energy"];
   document.getElementById("topics").innerHTML = picks.map((t) =>
     `<a class="chip" href="explore.html?q=${encodeURIComponent(t)}">${esc(t)}</a>`).join("");
 
@@ -695,6 +710,29 @@ Promise.all([loadJSON(dataPath("stats.json")), loadJSON(dataPath("latest.json"))
   } else {
     document.getElementById("threads").innerHTML = `<p>The stories could not be loaded — please reload the page.</p>`;
   }
+
+  /* Stories at the other two levels (v57): the same card shape and
+     meta format as Toronto's, with the level's own unit word —
+     counts are divisions, never bills. Each layer's
+     summary is pre-sorted newest first; a layer whose summary
+     failed to load (its fetch carries .catch(() => null)) renders
+     the calm line inside its own group only — the other groups
+     still render. */
+  const renderLayerThreads = (elId, data, levelParam) => {
+    const el = document.getElementById(elId);
+    if (data && data.threads) {
+      el.innerHTML = data.threads.map((t) => {
+        return `<a class="thread-card" href="thread.html?level=${levelParam}&t=${encodeURIComponent(t.id)}">
+        <span class="thread-card-label">${esc(t.label)}</span>
+        <span class="thread-card-meta">${fmtNum(t.count)} divisions · Latest division ${esc(fmtDate(t.latest))}</span>
+      </a>`;
+      }).join("");
+    } else {
+      el.innerHTML = `<p>The stories could not be loaded — please reload the page.</p>`;
+    }
+  };
+  renderLayerThreads("threads-ontario", onThreadData, "ontario");
+  renderLayerThreads("threads-canada", caThreadData, "canada");
 
   /* Freshness lines (product wave Phase 3, Oct 28, 2026): refresh the
      three cards' currency lines from the same files this loader has

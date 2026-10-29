@@ -385,14 +385,15 @@
       <p class="kicker">Start anywhere</p>
       <h2 id="topics-h">Browse by topic</h2>
       <hr class="rule">
+      <p style="max-width:44rem">A topic chip searches the whole record for that word. To see one subject grouped as a timeline instead, use the stories below.</p>
       <div class="chips" id="topics"></div>
     </section>
 
     <section class="reveal" aria-labelledby="threads-h">
-      <p class="kicker">Follow a story</p>
+      <p class="kicker">Toronto City Council · Read one story</p>
       <h2 id="threads-h">Stories over time</h2>
       <hr class="rule">
-      <p style="max-width:44rem">Each story below groups the decisions in one thread of the record, oldest story to newest decision — grouping is a finding aid; the record itself is unchanged.</p>
+      <p style="max-width:44rem">Each story groups Toronto decisions whose titles or subject terms share a set of words, and lists them newest first, year by year. Every story starts in January 2018 and runs to its latest decision, shown on its card, and the cards are ordered by that date, newest first. A story is a finding aid only — the record itself is unchanged, and a decision can appear in more than one story. Stories are Toronto-only: there is no Ontario or federal version.</p>
       <div class="thread-grid" id="threads"></div>
     </section>
 
@@ -686,12 +687,13 @@ Promise.all([loadJSON(dataPath("stats.json")), loadJSON(dataPath("latest.json"))
 
   if (threadData && threadData.threads) {
     document.getElementById("threads").innerHTML = threadData.threads.map((t) => {
-      const span = t.from && t.to ? `${t.from}–${t.to}` : "";
       return `<a class="thread-card" href="thread.html?t=${encodeURIComponent(t.id)}">
         <span class="thread-card-label">${esc(t.label)}</span>
-        <span class="thread-card-meta">${fmtNum(t.count)} decisions · ${esc(span)}</span>
+        <span class="thread-card-meta">${fmtNum(t.count)} decisions · Latest decision ${esc(fmtDate(t.latest))}</span>
       </a>`;
     }).join("");
+  } else {
+    document.getElementById("threads").innerHTML = `<p>The stories could not be loaded — please reload the page.</p>`;
   }
 
   /* Freshness lines (product wave Phase 3, Oct 28, 2026): refresh the

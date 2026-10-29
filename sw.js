@@ -1,4 +1,10 @@
-// Deme service worker (v55 — 2026 campaign commitments for
+// Deme service worker (v56 — Stories over time fix
+// (Oct 29, 2026): the Stories section is labelled Toronto City
+// Council, its cards show each story's true latest decision
+// date from the regenerated threads data, story naming is
+// made consistent across the homepage, story pages and About,
+// and a stories-load fallback line is added. Copy and data
+// change plus this version bump. (v55 — 2026 campaign commitments for
 // four more incoming councillors (Oct 29, 2026): the profile data
 // (record-data/profiles.json) gains the sourced 2026 campaign
 // promises for Nate Erskine-Smith (14, from his own published
@@ -73,7 +79,7 @@
 // deploy, so assets are network-first too; cache is the offline fallback.
 // VERSION bumps rename every cache, and activate deletes the old ones —
 // bump VERSION whenever this file ships a strategy change.
-const VERSION = 'v55';
+const VERSION = 'v56';
 const SHELL = 'deme-shell-' + VERSION;
 const PAGES = 'deme-pages-' + VERSION;
 const DATA = 'deme-data-' + VERSION;

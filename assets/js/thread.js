@@ -60,7 +60,7 @@ async function init() {
   }
   const thread = (data.threads || []).find((t) => t.id === id);
   if (!thread) {
-    box.innerHTML = `<div class="calm"><h1>That story thread wasn't found.</h1>
+    box.innerHTML = `<div class="calm"><h1>That story wasn't found.</h1>
       <p>The record itself is unchanged — this grouping just doesn't exist.
       <a href="index.html">Back home →</a></p></div>`;
     return;
@@ -76,12 +76,11 @@ async function init() {
     <p class="kicker">Stories over time</p>
     <h1 style="font-size:clamp(1.9rem,4.5vw,2.8rem)">${esc(thread.label)}</h1>
     <hr class="rule">
-    <p class="lede" style="margin-bottom:.6rem">${fmtNum(thread.count)} decisions ·
-      ${esc(years[years.length - 1])}–${esc(years[0])}</p>
+    <p class="lede" style="margin-bottom:.6rem">${fmtNum(thread.count)} Toronto decisions · Jan 2018 – ${esc(fmtDate(thread.newest))} · Newest first</p>
     <p class="small" style="max-width:44rem">Grouped by these words in a
     decision's title or subject terms: ${esc(ruleShown)}${ruleShown.endsWith("…") ? "" : "."}</p>
     <p class="small" style="max-width:44rem">Grouping is a finding aid — the
-    record itself is unchanged. <a href="about.html">How threads are built →</a></p>
+    record itself is unchanged. <a href="about.html">How stories are built →</a></p>
     <div id="thread-list"></div>`;
   /* The paged list renders into its own container so the header stays put. */
   renderMoreInto(document.getElementById("thread-list"));

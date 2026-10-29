@@ -1,4 +1,9 @@
-// Deme service worker (v60 — framing rebalance (Oct 29, 2026): the site
+// Deme service worker (v61 — About page paragraph rebalance (Oct 29, 2026):
+// the About page's three-level material leads, Toronto-only explanations
+// sit under their own "The Toronto record" heading, and simple-mode keys
+// for the About page were re-keyed to the current text (stale keys fixed,
+// values corrected to match). No facts or record data changed.
+// Previous: Deme service worker (v60 — framing rebalance (Oct 29, 2026): the site
 // leads with all three levels — new Why-Deme headline, Canada → Ontario →
 // Toronto ordering throughout, a three-level Representatives chooser,
 // an honestly titled Compare page, and three-layer Open Data and
@@ -84,7 +89,7 @@
 // deploy, so assets are network-first too; cache is the offline fallback.
 // VERSION bumps rename every cache, and activate deletes the old ones —
 // bump VERSION whenever this file ships a strategy change.
-const VERSION = 'v60';
+const VERSION = 'v61';
 const SHELL = 'deme-shell-' + VERSION;
 const PAGES = 'deme-pages-' + VERSION;
 const DATA = 'deme-data-' + VERSION;

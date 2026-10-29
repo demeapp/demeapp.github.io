@@ -1,4 +1,20 @@
-// Deme service worker (v54 — 2026 campaign commitments for
+// Deme service worker (v55 — 2026 campaign commitments for
+// four more incoming councillors (Oct 29, 2026): the profile data
+// (record-data/profiles.json) gains the sourced 2026 campaign
+// promises for Nate Erskine-Smith (14, from his own published
+// policy page, nateerskinesmith.ca/policies), Curran Stikuts (20)
+// and Shaun Chen (9) — Stikuts and Chen from their own published
+// KnowYourVote Toronto questionnaire answers — and Diana Chan
+// McNally (1, from her own published plan page,
+// dianachanmcnally.ca/platform), rendered by the existing Campaign
+// promises section exactly as on 2022-term profiles — presented
+// as what they ran on, with no kept/broken status before the new
+// term begins November 15, 2026. Sara Ehrhardt keeps the standard
+// "No campaign promises on record" line: her own published
+// answers and materials hold priorities and advocacy positions,
+// no commitments under the same grading rule, and none were
+// invented to fill the gap. Data-only change plus this version
+// bump. (v54 — 2026 campaign commitments for
 // two incoming councillors (Oct 28, 2026): the profile data
 // (record-data/profiles.json) gains the sourced 2026 campaign
 // promises for Mike Layton (27, from his own published plan
@@ -57,7 +73,7 @@
 // deploy, so assets are network-first too; cache is the offline fallback.
 // VERSION bumps rename every cache, and activate deletes the old ones —
 // bump VERSION whenever this file ships a strategy change.
-const VERSION = 'v54';
+const VERSION = 'v55';
 const SHELL = 'deme-shell-' + VERSION;
 const PAGES = 'deme-pages-' + VERSION;
 const DATA = 'deme-data-' + VERSION;

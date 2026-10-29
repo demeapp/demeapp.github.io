@@ -618,6 +618,31 @@ html.js .statband:empty { min-height: 8.2rem; }
   background: var(--mint-light); border-radius: 999px; overflow: hidden;
 }
 .att-fill { height: 100%; background: var(--bronze); border-radius: 999px; }
+/* v58: career + term recorded-vote participation — the profile block
+   (stacked rows: career, basis line, terms newest first, method
+   note) and the single career line on member cards. */
+.part-block { margin: 1.6rem 0; max-width: 44rem; }
+.part-h { font-size: 1.25rem; margin: 0 0 .6rem; }
+.part-row {
+  display: flex; justify-content: space-between; align-items: baseline;
+  gap: 1rem; padding: .45rem 0; border-bottom: 1px solid var(--line-soft);
+}
+.part-career { border-bottom: 2px solid var(--line); }
+.part-lab { color: var(--ink-soft); font-weight: 600; }
+.part-career .part-lab { color: var(--ink); letter-spacing: .03em; }
+.part-fig { white-space: nowrap; color: var(--ink-soft); }
+.part-fig strong { color: var(--ink); font-size: 1.15rem; }
+.part-career .part-fig strong { font-size: 1.6rem; }
+.part-counts { margin: .5rem 0 0; font-size: 1.02rem; color: var(--ink); }
+.part-basis, .part-method { color: var(--ink-faint); font-size: .9rem; margin: .45rem 0 0; }
+.part-note { color: var(--ink-faint); font-style: italic; text-align: right; }
+.part-state { color: var(--ink-soft); margin: .2rem 0 0; }
+.part-card-line { margin: 0; padding: .35rem 0 0; font-size: .95rem; color: var(--ink); }
+.person .part-card-line { padding: 0 1.45rem 1.1rem; }
+.part-card-line span {
+  color: var(--ink-faint); font-size: .76rem; font-weight: 600;
+  letter-spacing: .05em; text-transform: uppercase; margin-right: .45rem;
+}
 .personlist { list-style: none; margin: 0; padding: 0; }
 .personlist li {
   display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap;

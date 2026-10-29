@@ -28,6 +28,17 @@ function incomingBlockHTML(c) {
     <p class="incoming-portrait">No official portrait for the new term yet — the City of Toronto has not published one. Their initials stand in until it does; Deme adds official portraits as the City publishes them.</p>
   </div>`;
 }
+/* v58: the card's career participation line (verified exporter
+   data). A first-termer's incoming block already states the
+   no-votes state in the same slot, so the line is added only when
+   the member has a career figure — a returning member (Layton)
+   shows his real career line under the incoming block. */
+function cardPartLine(c) {
+  const e = partToronto ? partToronto.members[c.slug] : null;
+  if (!e) return "";
+  if (c.incoming && e.career.pct == null) return "";
+  return participationCardLine(e);
+}
 function personCard(c) {
   const role = c.mayor ? "Mayor of Toronto"
     : `Councillor · Ward ${c.ward} — ${esc(c.wardName)}`;
@@ -42,6 +53,7 @@ function personCard(c) {
       </div>
     </div>
     ${stats}
+    ${cardPartLine(c)}
   </article>`;
 }
 /* One filter for the grid: a name, as before — and now also a ward
@@ -199,6 +211,7 @@ function earlierRow(c) {
       <div><span>${simpleT("Recorded-vote participation", "Recorded votes they took part in")}</span><strong>${esc(fmtAtt(c))}</strong></div>
       <div><span>${simpleT("Interest declared on a recorded vote · stepped back (since Jun 2023)", "Declared an interest on a recorded vote · did not vote (since Jun 2023)")}</span><strong>${earlierInterest(c)}</strong></div>
     </div>
+    ${participationCardLine(partToronto ? partToronto.members[c.slug] : null)}
     ${registerLineHTML(c)}
   </div></li>`;
 }
@@ -362,6 +375,13 @@ function initEarlierSearch() {
     }, 150);
   });
 }
+/* v58: career participation data (verified exporter output). Cards
+   render without the line until it lands, then re-render once. */
+let partToronto = null;
+loadJSON(dataPath("participation.json")).then((d) => {
+  partToronto = d;
+  if (all.length) render(filter);
+}).catch(() => {});
 loadJSON(dataPath("councillors.json")).then((people) => {
   all = people;
   const nEarlier = people.filter((c) => !c.current).length;

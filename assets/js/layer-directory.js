@@ -56,6 +56,7 @@ function layerCard(p) {
       </div>
     </div>
     ${layerStatsHTML(p)}
+    ${participationCardLine(layerPart ? layerPart.members[p.id || p.slug] : null)}
   </article>`;
 }
 
@@ -73,6 +74,7 @@ function layerEarlierRow(p) {
         <div><span>Votes cast</span><strong>${fmtNum(p.votesCast)}</strong></div>
         <div><span>${esc(LCFG.interestsLabel)}</span><strong>${fmtNum(LCFG.interestsValue(p))}</strong></div>
       </div>
+      ${participationCardLine(layerPart ? layerPart.members[p.id || p.slug] : null)}
     </div>
   </li>`;
 }
@@ -118,6 +120,9 @@ function renderLayerDirectory() {
   if (noteEl) noteEl.textContent = `(${earlier.length} members)`;
 }
 
+/* v58: career participation data (verified exporter output); if it
+   fails to load the directory renders exactly as before. */
+let layerPart = null;
 async function initLayerDirectory() {
   try {
     layerAll = await loadJSON(`${LCFG.dataDir}members.json`);
@@ -126,6 +131,7 @@ async function initLayerDirectory() {
       `<p class="small">The directory could not be loaded. Please try again.</p>`;
     return;
   }
+  layerPart = await loadJSON(`${LCFG.dataDir}participation.json`).catch(() => null);
   renderLayerDirectory();
   const q = document.getElementById("q");
   if (q) q.addEventListener("input", () => {

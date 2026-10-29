@@ -1035,6 +1035,11 @@ async function init() {
     return;
   }
   currentPerson = person;
+  /* v58: career + term participation block (data from the verified
+     participation exporter; a failed load simply omits the block). */
+  const partData = await loadJSON(dataPath("participation.json")).catch(() => null);
+  const partBlock = participationBlockHTML(
+    partData ? partData.members[person.slug] : null, "toronto", "decisions");
   document.title = `${person.name} — Toronto City Council record | Deme`;
   const role = person.current
     ? (person.mayor ? "Mayor of Toronto"
@@ -1075,6 +1080,7 @@ async function init() {
     <div id="register-summary"></div>
     <p class="small" style="max-width:44rem">${simpleT("Recorded-vote participation is the share of recorded votes where the member was present and voting — not a count of meetings attended, and declared interests are never counted against it.", "This number is the share of recorded votes where the member was there and voted. It is not a count of meetings they went to. Declared interests never count against them.")}
     <a href="about.html#how-we-count">How we count</a>${simpleT(" explains each figure on this page.", " explains each number on this page.")}</p>
+    ${partBlock}
     ${basisNote}
     ${compositionStrip(person)}
     <p class="small" style="max-width:44rem">${simpleT("The totals count the full record: member totals back to 2006; item-by-item rows from 2018. The “Interest declared on a recorded vote · stepped back (since Jun 2023)” figure is narrower: the voting record flags a declared interest only from June 2023, so the figure counts flagged votes from June 2023 on — earlier declarations were recorded as ordinary absences. A dash marks a member whose service ended before June 2023.", "The totals cover the full record. Member totals go back to 2006. Rows for each item start in 2018. The “Declared an interest on a recorded vote · did not vote (since Jun 2023)” number is narrower. The voting record only marks a declared interest from June 2023. So the number counts marked votes from June 2023 on. Before that, declarations were written down as plain absences. A dash means the member’s service ended before June 2023.")}</p>`;
@@ -1088,7 +1094,7 @@ async function init() {
           ${person.terms.map((t) => esc(fmtTerm(t))).join(" · ")}</p>
       </div>
     </div>
-    ${incomingNote}${recordSection}
+    ${incomingNote}${emptyRecord ? partBlock : ""}${recordSection}
     <p style="margin-top:1rem">${emptyRecord ? "" : `<button class="btn secondary" id="record-card-btn"
       type="button">${simpleT("Print / download record card", "Print or download record card")}</button>
     `}<button class="btn secondary" id="share-btn" type="button">Copy link</button></p>

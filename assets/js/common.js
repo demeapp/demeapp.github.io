@@ -409,6 +409,117 @@ function memberStatsHTML(person) {
   </div>`;
 }
 
+/* ---------------- career + term participation (v58) ----------------
+   Data: record-data/participation.json (Toronto) and
+   record-data/<layer>/participation.json (Ontario, federal), exported
+   from the verified participation dataset — career + per-term
+   recorded-vote participation for every member, reconciled exact
+   against the figures the site already carried. Rendering keys only
+   off the dataset fields: basis lines, partial/extract qualifiers,
+   truncated-career labels and the no-record states are data, never
+   name lists hardcoded here. The metric is recorded-vote
+   participation; it is never labelled "attendance" — no level of
+   government in this record publishes an attendance register (the
+   method notes below say exactly that, per layer). */
+const PART_METHOD = {
+  torontoStored: "Recorded-vote participation is the share of recorded votes held while the member was in office at which they cast a vote. Toronto does not publish an attendance register, so this measures voting, not presence. Votes at which the member declared an interest are counted neither way. Name-by-name votes are stored from 2018.",
+  torontoAggregate: "Recorded-vote participation is the share of recorded votes held while the member was in office at which they cast a vote. Toronto does not publish an attendance register, so this measures voting, not presence. Votes at which the member declared an interest are counted neither way. For terms before 2018, the career total comes from the City's aggregate tallies; term-by-term figures are shown only where name-by-name votes are stored (2018 on).",
+  ontario: "Recorded-vote participation is the share of recorded divisions held while the member was in office at which they voted Aye or Nay. Ontario does not publish an attendance register, so this measures voting, not presence. Deme's Ontario record begins with the 42nd Parliament in 2018; figures for the 42nd Parliament are compiled from House documents, and service before 2018 is outside the record.",
+  canada: "Recorded-vote participation is the share of recorded divisions held while the member was in office at which they voted Yea or Nay. Parliament does not publish an attendance register, so this measures voting, not presence. A paired vote — a formal arrangement where members on opposite sides agree to be absent — is not counted as a vote cast. Deme's federal record begins with the 38th Parliament in 2004; service before 2004 is outside the record."
+};
+function partPct(p) { return `${Number(p).toFixed(1)}%`; }
+function partSingleTerm(entry) {
+  if (!entry || entry.terms.length !== 1) return null;
+  const t = entry.terms[0];
+  if (t.pct == null || t.cast !== entry.career.cast
+      || t.held !== entry.career.held) return null;
+  return t;
+}
+function partBasisLine(entry, layer) {
+  const c = entry.career;
+  if (layer === "toronto") {
+    if (c.basis === "aggregate") {
+      const hasStored = entry.terms.some((t) => t.pct != null);
+      return "Career total from the City's aggregate tallies, 2006–2026."
+        + (hasStored
+          ? " Term figures below are from name-by-name votes, 2018 on."
+          : "");
+    }
+    return "From name-by-name votes, 2018–2026.";
+  }
+  if (layer === "ontario") {
+    return "Deme's Ontario record begins with the 42nd Parliament in 2018."
+      + (c.truncated
+        ? ` First elected in ${c.firstElected} — earlier service predates this record.`
+        : "");
+  }
+  return "Deme's federal record begins with the 38th Parliament in 2004."
+    + (c.truncated
+      ? ` In office since ${c.inOfficeSince} — earlier service predates this record.`
+      : "");
+}
+function partMethod(entry, layer) {
+  if (layer === "toronto") {
+    return entry.career.basis === "aggregate"
+      ? PART_METHOD.torontoAggregate : PART_METHOD.torontoStored;
+  }
+  return PART_METHOD[layer];
+}
+/* The profile block: career row first (percentage never without its
+   counts and span), the basis/coverage line directly under it, then
+   term rows newest first, then the layer's method note. A member
+   whose career equals their only term gets that term named in the
+   career title instead of a duplicated row. */
+function participationBlockHTML(entry, layer, unit) {
+  if (!entry) return "";
+  const head = `<h2 class="part-h">Recorded-vote participation</h2>`;
+  if (entry.state === "incoming") {
+    return `<section class="part-block">${head}
+      <p class="part-state">No recorded votes yet — the 2026–2030 term begins November 15, 2026.</p></section>`;
+  }
+  if (entry.state === "no-record" || entry.career.pct == null) {
+    return `<section class="part-block">${head}
+      <p class="part-state">No recorded votes yet in this record.</p></section>`;
+  }
+  const c = entry.career;
+  const single = partSingleTerm(entry);
+  const title = single
+    ? (layer === "toronto"
+      ? `CAREER · ${esc(single.label)}`
+      : `CAREER · ${esc(single.label)} · ${esc(c.span)}`)
+    : `CAREER · ${esc(c.span)}`;
+  const rows = single ? "" : entry.terms.slice().reverse().map((t) => {
+    if (t.noFigure === "aggregate") {
+      return `<div class="part-row"><span class="part-lab">${esc(t.label)}</span><span class="part-note">counted in the career total; no separate term figure</span></div>`;
+    }
+    if (t.noFigure === "no-record-yet") {
+      return `<div class="part-row"><span class="part-lab">${esc(t.label)}</span><span class="part-note">no recorded votes yet; the term begins November 15, 2026</span></div>`;
+    }
+    const q = t.qualifier === "partial"
+      ? " · from Jan 2018 (partial term in the record)"
+      : t.qualifier === "extract" ? " · from House documents" : "";
+    return `<div class="part-row"><span class="part-lab">${esc(t.label)}${q}</span><span class="part-fig"><strong>${partPct(t.pct)}</strong> ${fmtNum(t.cast)} of ${fmtNum(t.held)}</span></div>`;
+  }).join("");
+  return `<section class="part-block">${head}
+    <div class="part-row part-career"><span class="part-lab">${title}</span><span class="part-fig"><strong>${partPct(c.pct)}</strong></span></div>
+    <p class="part-counts">${fmtNum(c.cast)} of ${fmtNum(c.held)} recorded ${esc(unit)} held in office</p>
+    <p class="part-basis">${esc(partBasisLine(entry, layer))}</p>
+    ${rows}
+    <p class="part-method">${esc(partMethod(entry, layer))}</p>
+  </section>`;
+}
+/* The member-card line: career only, always with counts and span —
+   never a bare percentage. No-record members get the honest state,
+   never a blank and never 0%. */
+function participationCardLine(entry) {
+  if (!entry) return "";
+  if (entry.career.pct == null) {
+    return `<p class="part-card-line"><span>Vote participation</span> No recorded votes yet</p>`;
+  }
+  const c = entry.career;
+  return `<p class="part-card-line"><span>Vote participation</span> ${Math.round(Number(c.pct))}% · ${fmtNum(c.cast)} of ${fmtNum(c.held)} · ${esc(c.span)}</p>`;
+}
+
 /* ---------------- member avatars ----------------
    Official portraits exist for the members in PHOTO_SLUGS (the
    files live in assets/headshots/, named by slug): the 19 returning

@@ -703,6 +703,11 @@ async function renderProfile() {
       loaded. <a href="${PCFG.directoryPage}">Back to the directory</a>.</p>`;
     return;
   }
+  /* v58: career + term participation block (data from the verified
+     participation exporter; a failed load simply omits the block). */
+  const partData = await loadJSON(`${PCFG.dataDir}participation.json`).catch(() => null);
+  const partBlock = participationBlockHTML(
+    partData ? partData.members[memberId] : null, PCFG.layer, "divisions");
   const p = person;
   document.title = `${p.name} — Deme`;
   const house = PCFG.layer === "canada" ? "House of Commons"
@@ -760,6 +765,7 @@ async function renderProfile() {
       ${interestsTile}
     </div>
     <p class="small" style="max-width:44rem">${participationNote}</p>
+    ${partBlock}
     <nav class="profile-contents" aria-label="On this page">
       <span class="pc-lab">On this page</span>${contents}
     </nav>

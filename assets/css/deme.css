@@ -636,6 +636,10 @@ html.js .statband:empty { min-height: 8.2rem; }
 .part-counts { margin: .5rem 0 0; font-size: 1.02rem; color: var(--ink); }
 .part-basis, .part-method { color: var(--ink-faint); font-size: .9rem; margin: .45rem 0 0; }
 .part-note { color: var(--ink-faint); font-style: italic; text-align: right; }
+@media (max-width: 640px) {
+  .part-row { flex-direction: column; gap: .1rem; }
+  .part-note { text-align: left; }
+}
 .part-state { color: var(--ink-soft); margin: .2rem 0 0; }
 .part-card-line { margin: 0; padding: .35rem 0 0; font-size: .95rem; color: var(--ink); }
 .person .part-card-line { padding: 0 1.45rem 1.1rem; }

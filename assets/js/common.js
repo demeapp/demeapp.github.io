@@ -490,10 +490,10 @@ function participationBlockHTML(entry, layer, unit) {
     : `CAREER · ${esc(c.span)}`;
   const rows = single ? "" : entry.terms.slice().reverse().map((t) => {
     if (t.noFigure === "aggregate") {
-      return `<div class="part-row"><span class="part-lab">${esc(t.label)}</span><span class="part-note">counted in the career total; no separate term figure</span></div>`;
+      return `<div class="part-row"><span class="part-lab">${esc(t.label)}</span><span class="part-note">— counted in the career total; no separate term figure.</span></div>`;
     }
     if (t.noFigure === "no-record-yet") {
-      return `<div class="part-row"><span class="part-lab">${esc(t.label)}</span><span class="part-note">no recorded votes yet; the term begins November 15, 2026</span></div>`;
+      return `<div class="part-row"><span class="part-lab">${esc(t.label)}</span><span class="part-note">— no recorded votes yet; the term begins November 15, 2026.</span></div>`;
     }
     const q = t.qualifier === "partial"
       ? " · from Jan 2018 (partial term in the record)"

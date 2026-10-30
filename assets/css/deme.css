@@ -618,34 +618,127 @@ html.js .statband:empty { min-height: 8.2rem; }
   background: var(--mint-light); border-radius: 999px; overflow: hidden;
 }
 .att-fill { height: 100%; background: var(--bronze); border-radius: 999px; }
-/* v58: career + term recorded-vote participation — the profile block
-   (stacked rows: career, basis line, terms newest first, method
-   note) and the single career line on member cards. */
+/* v62: recorded-vote participation — the profile block is the Navy
+   & Mint panel (C8; print renders the light block below), term rows
+   can carry .part-note annotations (C1 Speaker / C2 died-in-office),
+   and directory cards carry the two-figure navy module (C7).
+   .part-nofig is the no-figure row aside (the v58 .part-note usage,
+   renamed — .part-note is the annotation component now). */
 .part-block { margin: 1.6rem 0; max-width: 44rem; }
-.part-h { font-size: 1.25rem; margin: 0 0 .6rem; }
-.part-row {
+.part-panel {
+  background: linear-gradient(180deg, #0E2A47 0%, #0A1F38 55%, #0A1424 100%);
+  border-radius: 18px; padding: 14px; max-width: 46rem; color: #fff;
+}
+.part-inner { border: 1px solid #2F4965; border-radius: 12px; padding: 26px 28px 22px; }
+.part-head { display: flex; align-items: center; gap: 16px; }
+.part-head .avatar { border: 3px solid #8FE8C4; }
+.part-name { color: #fff; font-weight: 800; font-size: 1.69rem; line-height: 1.1; }
+.part-role { color: #B5C1D3; font-size: .97rem; margin-top: 3px; }
+.part-panel .part-h {
+  color: #2FBF8F; font-size: .84rem; font-weight: 700;
+  letter-spacing: .16em; text-transform: uppercase; margin: 24px 0 0;
+}
+.part-panel .part-row {
   display: flex; justify-content: space-between; align-items: baseline;
-  gap: 1rem; padding: .45rem 0; border-bottom: 1px solid var(--line-soft);
+  gap: 1rem; padding: .56rem 0; border-bottom: 1px solid #2F4965;
 }
-.part-career { border-bottom: 2px solid var(--line); }
-.part-lab { color: var(--ink-soft); font-weight: 600; }
-.part-career .part-lab { color: var(--ink); letter-spacing: .03em; }
-.part-fig { white-space: nowrap; color: var(--ink-soft); }
-.part-fig strong { color: var(--ink); font-size: 1.15rem; }
-.part-career .part-fig strong { font-size: 1.6rem; }
-.part-counts { margin: .5rem 0 0; font-size: 1.02rem; color: var(--ink); }
-.part-basis, .part-method { color: var(--ink-faint); font-size: .9rem; margin: .45rem 0 0; }
-.part-note { color: var(--ink-faint); font-style: italic; text-align: right; }
+.part-panel .part-career {
+  flex-direction: column; align-items: flex-start; gap: .15rem;
+  border-bottom: none; padding-bottom: 0;
+}
+.part-panel .part-lab { color: #D7DEE9; font-size: .94rem; font-weight: 600; }
+.part-panel .part-career .part-lab {
+  color: #8FE8C4; font-weight: 600; letter-spacing: .09em;
+  font-size: .81rem; text-transform: uppercase;
+}
+.part-panel .part-lab .q { color: #8FA3BC; font-weight: 400; }
+.part-panel .part-fig { color: #fff; font-size: .94rem; font-weight: 600; white-space: nowrap; }
+.part-panel .part-fig strong { color: #2FBF8F; font-weight: 800; font-size: 1.19rem; }
+.part-panel .part-career .part-fig strong { font-size: 2.5rem; letter-spacing: -.01em; }
+.part-panel .part-counts { color: #B5C1D3; font-size: .94rem; margin: .15rem 0 0; }
+.part-panel .part-counts strong { color: #fff; font-size: 1.19rem; font-weight: 700; }
+.part-panel .part-basis { color: #8FE8C4; font-size: .91rem; line-height: 1.5; margin: .6rem 0 0; }
+.part-panel .part-basis + .part-row { border-top: 1px solid #2F4965; }
+.part-panel .part-note {
+  color: #8FE8C4; background: rgba(47, 191, 143, .10);
+  border-left: 3px solid #2FBF8F; border-radius: 0 6px 6px 0;
+  margin: .5rem 0 .15rem; padding: .44rem .62rem .44rem .75rem;
+  font-size: .92rem; line-height: 1.45;
+}
+.part-panel .part-nofig { color: #8FA3BC; font-style: italic; font-size: .88rem; text-align: right; }
+.part-panel .part-method { color: #B5C1D3; font-size: .88rem; line-height: 1.55; margin: 1rem 0 0; }
+.part-panel .part-state { color: #fff; font-size: 1.05rem; margin: .8rem 0 0; }
+.part-mod {
+  background: linear-gradient(180deg, #0E2A47 0%, #0A1F38 55%, #0A1424 100%);
+  border-radius: 12px; padding: 10px; margin-top: .8rem; color: #fff;
+}
+.person .part-mod { margin: 0 1.45rem 1.1rem; }
+.part-mod-in { border: 1px solid #2F4965; border-radius: 8px; padding: 13px 14px 11px; }
+.part-mod-h {
+  color: #2FBF8F; font-weight: 700; letter-spacing: .14em;
+  font-size: .66rem; text-transform: uppercase;
+}
+.part-mod-row { margin-top: .55rem; }
+.part-mod-lab {
+  display: block; color: #8FE8C4; font-weight: 600; letter-spacing: .07em;
+  font-size: .69rem; text-transform: uppercase;
+}
+.part-mod-fig { display: block; margin-top: .1rem; color: #fff; font-size: .9rem; font-weight: 600; }
+.part-mod-fig strong { color: #2FBF8F; font-weight: 800; font-size: 1.56rem; margin-right: .3rem; }
+.part-mod-row.sub .part-mod-fig { font-size: .84rem; }
+.part-mod-row.sub .part-mod-fig strong { font-size: 1.25rem; }
+.part-mod-micro { color: #8FE8C4; font-size: .75rem; line-height: 1.45; margin: .55rem 0 0; }
+.part-mod-state {
+  color: #fff; font-weight: 800; font-size: 1.19rem;
+  letter-spacing: .05em; text-transform: uppercase; margin-top: .6rem;
+}
+.part-mod-body { color: #B5C1D3; font-size: .84rem; line-height: 1.5; margin: .3rem 0 0; }
 @media (max-width: 640px) {
-  .part-row { flex-direction: column; gap: .1rem; }
-  .part-note { text-align: left; }
+  .part-inner { padding: 20px 16px 16px; }
+  .part-name { font-size: 1.35rem; }
+  .part-panel .part-row { flex-wrap: wrap; }
+  .part-panel .part-lab .q { display: block; margin-top: .15rem; }
+  .part-panel .part-nofig { text-align: left; }
 }
-.part-state { color: var(--ink-soft); margin: .2rem 0 0; }
-.part-card-line { margin: 0; padding: .35rem 0 0; font-size: .95rem; color: var(--ink); }
-.person .part-card-line { padding: 0 1.45rem 1.1rem; }
-.part-card-line span {
-  color: var(--ink-faint); font-size: .76rem; font-weight: 600;
-  letter-spacing: .05em; text-transform: uppercase; margin-right: .45rem;
+@media print {
+  .part-panel { background: #fff; padding: 0; border-radius: 0; color: var(--ink); max-width: 44rem; }
+  .part-inner { border: none; padding: 0; }
+  .part-head { display: none; }
+  .part-panel .part-h {
+    color: var(--ink); font-size: 1.25rem; font-weight: 700;
+    letter-spacing: 0; text-transform: none; margin: 0 0 .6rem;
+  }
+  .part-panel .part-row { border-bottom: 1px solid var(--line-soft); padding: .45rem 0; flex-wrap: nowrap; }
+  .part-panel .part-career {
+    flex-direction: row; justify-content: space-between; align-items: baseline;
+    border-bottom: 2px solid var(--line); padding-bottom: .45rem;
+  }
+  .part-panel .part-lab, .part-panel .part-career .part-lab {
+    color: var(--ink-soft); font-size: 1rem; font-weight: 400;
+    letter-spacing: 0; text-transform: none;
+  }
+  .part-panel .part-career .part-lab { color: var(--ink); font-weight: 700; letter-spacing: .03em; }
+  .part-panel .part-lab .q { color: var(--ink-faint); }
+  .part-panel .part-fig { color: var(--ink-soft); font-size: 1rem; font-weight: 400; white-space: normal; }
+  .part-panel .part-fig strong { color: var(--ink); font-size: 1.15rem; font-weight: 700; }
+  .part-panel .part-career .part-fig strong { font-size: 1.6rem; }
+  .part-panel .part-counts { color: var(--ink-soft); font-size: 1rem; margin-top: .5rem; }
+  .part-panel .part-counts strong { color: var(--ink); font-size: 1rem; }
+  .part-panel .part-basis { color: var(--ink-faint); font-size: .92rem; margin-top: .45rem; }
+  .part-panel .part-basis + .part-row { border-top: none; }
+  .part-panel .part-note {
+    color: #33475E; background: #F2F7F4; border-left: 3px solid #2FBF8F;
+    border-radius: 0; font-size: .92rem;
+  }
+  .part-panel .part-nofig { color: var(--ink-faint); text-align: right; }
+  .part-panel .part-method { color: var(--ink-faint); font-size: .92rem; margin-top: .45rem; }
+  .part-panel .part-state { color: var(--ink-soft); }
+  .part-mod { background: #fff; color: var(--ink); border: 1px solid var(--line-soft); }
+  .part-mod-in { border: none; }
+  .part-mod-h, .part-mod-lab, .part-mod-micro { color: var(--ink-soft); }
+  .part-mod-fig, .part-mod-state { color: var(--ink); }
+  .part-mod-fig strong { color: var(--ink); }
+  .part-mod-body { color: var(--ink-soft); }
 }
 .personlist { list-style: none; margin: 0; padding: 0; }
 .personlist li {

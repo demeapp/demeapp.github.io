@@ -1039,7 +1039,12 @@ async function init() {
      participation exporter; a failed load simply omits the block). */
   const partData = await loadJSON(dataPath("participation.json")).catch(() => null);
   const partBlock = participationBlockHTML(
-    partData ? partData.members[person.slug] : null, "toronto", "decisions");
+    partData ? partData.members[person.slug] : null, "toronto", "decisions",
+    { avatar: avatarHTML(person, "lg"), name: person.name,
+      role: person.mayor ? "Mayor of Toronto"
+        : person.current
+          ? `Toronto City Council · Ward ${person.ward} — ${person.wardName}`
+          : "Former member of Toronto City Council" });
   document.title = `${person.name} — Toronto City Council record | Deme`;
   const role = person.current
     ? (person.mayor ? "Mayor of Toronto"
@@ -1065,7 +1070,7 @@ async function init() {
   const emptyRecord = !!person.incoming && person.votesCast == null;
   const incomingNote = person.incoming
     ? (emptyRecord
-      ? `<div class="notice" style="max-width:44rem;margin-top:1rem">Elected on October 26, 2026 (unofficial results). ${esc(person.name)}’s term begins November 15, 2026, and their record on Deme begins with the new term — there are no votes to show yet, and none are invented.</div>`
+      ? `<div class="notice" style="max-width:44rem;margin-top:1rem">Elected on October 26, 2026 (unofficial results). ${esc(person.name)}’s term begins November 15, 2026, and their record on Deme begins with the new term — there are no votes to show yet, and none are invented. No official portrait for the new term yet — the City of Toronto has not published one, so their initials stand in until it does; Deme adds official portraits as the City publishes them.</div>`
       : `<div class="notice" style="max-width:44rem;margin-top:1rem">Elected on October 26, 2026 (unofficial results). ${esc(person.name)} returns to the Ward ${person.ward} seat he held in 2018–2022. The record below is from his earlier service on council (2010–2022); his new-term record begins November 15, 2026.</div>`)
     : "";
   const recordSection = emptyRecord ? "" : `

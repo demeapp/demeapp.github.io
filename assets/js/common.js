@@ -394,33 +394,31 @@ function fmtAtt(person) {
    the directory dashes them instead. */
 function memberStatsHTML(person) {
   const interest = Number(person.interest) || 0;
-  /* Decorative participation meter (the percentage figure beside it is
-     the value; the meter is aria-hidden and purely visual). Null or
-     non-numeric participation renders the em dash with no meter. */
-  const att = Number(person.participation);
-  const meter = person.participation != null && Number.isFinite(att)
-    ? `<span class="att-meter" aria-hidden="true"><span class="att-fill" style="width:${Math.max(0, Math.min(100, att))}%"></span></span>`
-    : "";
+  /* Recorded-vote participation is NOT a stats-grid stat anymore:
+     the C7 card module (participationCardModule) carries it, with
+     career + term figures and counts. The grid keeps the other
+     three summary stats. */
   return `<div class="member-stats" aria-label="Record summary">
-    <div><span>${simpleT("Recorded-vote participation", "Votes they took part in")}</span><strong>${fmtAtt(person)}</strong>${meter}</div>
     <div><span>Votes cast</span><strong>${fmtNum(person.votesCast)}</strong></div>
     <div><span>${simpleT("Tenure", "How long on Council")}</span><strong>${esc(memberTenure(person))}</strong></div>
     <div><span>${simpleT("Interest declared on a recorded vote · stepped back (since Jun 2023)", "Declared an interest on a recorded vote · did not vote (since Jun 2023)")}</span><strong>${fmtNum(interest)}</strong></div>
   </div>`;
 }
 
-/* ---------------- career + term participation (v58) ----------------
+/* ---------------- career + term participation (v62) ----------------
    Data: record-data/participation.json (Toronto) and
    record-data/<layer>/participation.json (Ontario, federal), exported
    from the verified participation dataset — career + per-term
-   recorded-vote participation for every member, reconciled exact
-   against the figures the site already carried. Rendering keys only
-   off the dataset fields: basis lines, partial/extract qualifiers,
-   truncated-career labels and the no-record states are data, never
-   name lists hardcoded here. The metric is recorded-vote
-   participation; it is never labelled "attendance" — no level of
-   government in this record publishes an attendance register (the
-   method notes below say exactly that, per layer). */
+   recorded-vote participation for every member, with the v62
+   correctness fixes (split-profile merge, phantom-row removals,
+   death-bounded service) reconciled exact against v58. Rendering keys
+   only off the dataset fields: basis lines, partial/extract
+   qualifiers, truncated-career labels, Speaker/died-in-office term
+   notes and the no-record states are data, never name lists hardcoded
+   here. The metric is recorded-vote participation; it is never
+   labelled "attendance" — no level of government in this record
+   publishes an attendance register (the method notes below say
+   exactly that, per layer). */
 const PART_METHOD = {
   torontoStored: "Recorded-vote participation is the share of recorded votes held while the member was in office at which they cast a vote. Toronto does not publish an attendance register, so this measures voting, not presence. Votes at which the member declared an interest are counted neither way. Name-by-name votes are stored from 2018.",
   torontoAggregate: "Recorded-vote participation is the share of recorded votes held while the member was in office at which they cast a vote. Toronto does not publish an attendance register, so this measures voting, not presence. Votes at which the member declared an interest are counted neither way. For terms before 2018, the career total comes from the City's aggregate tallies; term-by-term figures are shown only where name-by-name votes are stored (2018 on).",
@@ -435,28 +433,39 @@ function partSingleTerm(entry) {
       || t.held !== entry.career.held) return null;
   return t;
 }
+/* One span per block (C5): the career span lives in the career
+   title, so the basis line never restates years. Toronto's stored
+   basis is "From name-by-name votes."; the aggregate basis is the
+   tallies sentence (never span-stamped). Ontario/federal append the
+   C4 truncation clause only where the exporter proved it (shipped
+   firstYear before the record's first year) and the C1 career clause
+   for former Speakers. */
 function partBasisLine(entry, layer) {
   const c = entry.career;
   if (layer === "toronto") {
     if (c.basis === "aggregate") {
       const hasStored = entry.terms.some((t) => t.pct != null);
-      return "Career total from the City's aggregate tallies, 2006–2026."
+      return "Career total from the City's aggregate tallies."
         + (hasStored
           ? " Term figures below are from name-by-name votes, 2018 on."
           : "");
     }
-    return "From name-by-name votes, 2018–2026.";
+    return "From name-by-name votes.";
   }
+  let line;
   if (layer === "ontario") {
-    return "Deme's Ontario record begins with the 42nd Parliament in 2018."
+    line = "Deme's Ontario record begins with the 42nd Parliament in 2018."
       + (c.truncated
         ? ` First elected in ${c.firstElected} — earlier service predates this record.`
         : "");
+  } else {
+    line = "Deme's federal record begins with the 38th Parliament in 2004."
+      + (c.truncated
+        ? ` In office since ${c.inOfficeSince} — earlier service predates this record.`
+        : "");
   }
-  return "Deme's federal record begins with the 38th Parliament in 2004."
-    + (c.truncated
-      ? ` In office since ${c.inOfficeSince} — earlier service predates this record.`
-      : "");
+  if (c.speakerClause) line += ` ${c.speakerClause}`;
+  return line;
 }
 function partMethod(entry, layer) {
   if (layer === "toronto") {
@@ -465,59 +474,152 @@ function partMethod(entry, layer) {
   }
   return PART_METHOD[layer];
 }
-/* The profile block: career row first (percentage never without its
-   counts and span), the basis/coverage line directly under it, then
-   term rows newest first, then the layer's method note. A member
-   whose career equals their only term gets that term named in the
-   career title instead of a duplicated row. */
-function participationBlockHTML(entry, layer, unit) {
+/* The profile block (C8): the Navy & Mint panel — portrait head,
+   career row first (percentage never without its counts and span),
+   basis line, term rows newest first with any C1 Speaker / C2
+   died-in-office notes directly beneath the rows they qualify, then
+   the layer method note. Print renders the light block (the @media
+   print rules in deme.css). A member whose career equals their only
+   term gets that term named in the career title instead of a
+   duplicated row; the term's notes still render, beneath the basis
+   line. Toronto's career title also carries the C5 FROM label for
+   mid-term entrants. */
+function participationBlockHTML(entry, layer, unit, head) {
   if (!entry) return "";
-  const head = `<h2 class="part-h">Recorded-vote participation</h2>`;
+  const headHTML = head
+    ? `<div class="part-head">${head.avatar || ""}<div>
+        <div class="part-name">${esc(head.name)}</div>
+        <div class="part-role">${esc(head.role)}</div>
+      </div></div>`
+    : "";
+  const open = `<section class="part-block part-panel"><div class="part-inner">`
+    + `${headHTML}<h2 class="part-h">Recorded-vote participation</h2>`;
   if (entry.state === "incoming") {
-    return `<section class="part-block">${head}
-      <p class="part-state">No recorded votes yet — the 2026–2030 term begins November 15, 2026.</p></section>`;
+    return `${open}
+      <p class="part-state">No recorded votes yet — the 2026–2030 term begins November 15, 2026.</p></div></section>`;
   }
   if (entry.state === "no-record" || entry.career.pct == null) {
-    return `<section class="part-block">${head}
-      <p class="part-state">No recorded votes yet in this record.</p></section>`;
+    return `${open}
+      <p class="part-state">No recorded votes yet in this record.</p></div></section>`;
   }
   const c = entry.career;
   const single = partSingleTerm(entry);
-  const title = single
+  let title = single
     ? (layer === "toronto"
       ? `CAREER · ${esc(single.label)}`
       : `CAREER · ${esc(single.label)} · ${esc(c.span)}`)
     : `CAREER · ${esc(c.span)}`;
+  if (layer === "toronto" && c.fromLabel) title += ` · ${esc(c.fromLabel)}`;
+  const notesOf = (t) =>
+    (t.note ? `<p class="part-note">${esc(t.note)}</p>` : "")
+    + (t.diedNote ? `<p class="part-note">${esc(t.diedNote)}</p>` : "");
   const rows = single ? "" : entry.terms.slice().reverse().map((t) => {
     if (t.noFigure === "aggregate") {
-      return `<div class="part-row"><span class="part-lab">${esc(t.label)}</span><span class="part-note">— counted in the career total; no separate term figure.</span></div>`;
+      return `<div class="part-row"><span class="part-lab">${esc(t.label)}</span><span class="part-nofig">— counted in the career total; no separate term figure.</span></div>`;
     }
     if (t.noFigure === "no-record-yet") {
-      return `<div class="part-row"><span class="part-lab">${esc(t.label)}</span><span class="part-note">— no recorded votes yet; the term begins November 15, 2026.</span></div>`;
+      return `<div class="part-row"><span class="part-lab">${esc(t.label)}</span><span class="part-nofig">— no recorded votes yet; the term begins November 15, 2026.</span></div>`;
     }
     const q = t.qualifier === "partial"
-      ? " · from Jan 2018 (partial term in the record)"
-      : t.qualifier === "extract" ? " · from House documents" : "";
-    return `<div class="part-row"><span class="part-lab">${esc(t.label)}${q}</span><span class="part-fig"><strong>${partPct(t.pct)}</strong> ${fmtNum(t.cast)} of ${fmtNum(t.held)}</span></div>`;
+      ? `<span class="q"> · from Jan 2018 (partial term in the record)</span>`
+      : t.qualifier === "extract"
+        ? `<span class="q"> · from House documents</span>` : "";
+    return `<div class="part-row"><span class="part-lab">${esc(t.label)}${q}</span><span class="part-fig"><strong>${partPct(t.pct)}</strong> ${fmtNum(t.cast)} of ${fmtNum(t.held)}</span></div>${notesOf(t)}`;
   }).join("");
-  return `<section class="part-block">${head}
+  return `${open}
     <div class="part-row part-career"><span class="part-lab">${title}</span><span class="part-fig"><strong>${partPct(c.pct)}</strong></span></div>
-    <p class="part-counts">${fmtNum(c.cast)} of ${fmtNum(c.held)} recorded ${esc(unit)} held in office</p>
+    <p class="part-counts"><strong>${fmtNum(c.cast)} of ${fmtNum(c.held)}</strong> recorded ${esc(unit)} held in office</p>
     <p class="part-basis">${esc(partBasisLine(entry, layer))}</p>
-    ${rows}
+    ${single ? notesOf(single) : rows}
     <p class="part-method">${esc(partMethod(entry, layer))}</p>
-  </section>`;
+  </div></section>`;
 }
-/* The member-card line: career only, always with counts and span —
-   never a bare percentage. No-record members get the honest state,
-   never a blank and never 0%. */
-function participationCardLine(entry) {
+
+/* ---------------- directory-card module (C7) ----------------
+   One navy module inside the card: career + latest-term figures,
+   each with counts, at one-decimal precision (the v58 card printed
+   the career figure twice, at two precisions), plus at most one
+   microline — Speaker short form, truncation, single-term, or
+   mixed-basis, in that priority. THIS TERM vs LAST TERM follows C6:
+   THIS TERM only when the member sits in the displayed term.
+   No-record members get the state module, never a 0%. */
+function partFigureTerms(entry) {
+  return entry.terms.filter((t) => t.pct != null);
+}
+function partTermShortLabel(t, layer) {
+  return layer === "toronto" ? t.label.replace(/ term$/, "") : t.label;
+}
+function partCurrentLabel(partFile, layer) {
+  if (!partFile) return null;
+  let best = null, bestKey = -1;
+  for (const e of Object.values(partFile.members)) {
+    for (const t of e.terms) {
+      if (t.pct == null) continue;
+      const key = layer === "toronto"
+        ? Number(t.label.slice(0, 4))
+        : Number((t.label.match(/^(\d+)/) || [0, 0])[1]);
+      if (key > bestKey) {
+        bestKey = key;
+        best = partTermShortLabel(t, layer);
+      }
+    }
+  }
+  /* Toronto's 2026–2030 term begins November 15, 2026; from that
+     date the 2022–2026 rows are LAST TERM even before new figures
+     exist. */
+  if (layer === "toronto" && new Date() >= new Date("2026-11-15T00:00:00")) {
+    return "2026\u20132030";
+  }
+  return best;
+}
+function participationCardModule(entry, ctx) {
   if (!entry) return "";
+  const layer = ctx.layer;
   if (entry.career.pct == null) {
-    return `<p class="part-card-line"><span>Vote participation</span> No recorded votes yet</p>`;
+    const body = entry.state === "incoming"
+      ? "The 2026\u20132030 term begins November 15, 2026. Their record starts with the new term."
+      : "No recorded votes yet in this record.";
+    return `<div class="part-mod"><div class="part-mod-in">
+      <div class="part-mod-h">Recorded-vote participation</div>
+      <div class="part-mod-state">No recorded votes yet</div>
+      <p class="part-mod-body">${body}</p></div></div>`;
   }
   const c = entry.career;
-  return `<p class="part-card-line"><span>Vote participation</span> ${Math.round(Number(c.pct))}% · ${fmtNum(c.cast)} of ${fmtNum(c.held)} · ${esc(c.span)}</p>`;
+  const single = partSingleTerm(entry);
+  const figs = partFigureTerms(entry);
+  const latest = figs.length ? figs[figs.length - 1] : null;
+  let careerLab = single
+    ? (layer === "toronto"
+      ? `Career · ${single.label}`
+      : `Career · ${single.label} · ${c.span}`)
+    : `Career · ${c.span}`;
+  if (layer === "toronto" && c.fromLabel) careerLab += ` · ${c.fromLabel}`;
+  let termRow = "";
+  if (!single && latest) {
+    const isCurrent = !!ctx.current && !ctx.incoming && !!ctx.currentLabel
+      && partTermShortLabel(latest, layer) === ctx.currentLabel;
+    termRow = `<div class="part-mod-row sub"><span class="part-mod-lab">${isCurrent ? "This term" : "Last term"} · ${esc(partTermShortLabel(latest, layer))}</span><span class="part-mod-fig"><strong>${partPct(latest.pct)}</strong> ${fmtNum(latest.cast)} of ${fmtNum(latest.held)}</span></div>`;
+  }
+  let micro = "";
+  const dispNote = single ? single.noteShort : (latest ? latest.noteShort : null);
+  if (dispNote) micro = dispNote;
+  else if (c.truncated && layer === "ontario") {
+    micro = `First elected in ${c.firstElected} — earlier service predates this record.`;
+  } else if (c.truncated && layer === "canada") {
+    micro = `In office since ${c.inOfficeSince} — earlier service predates this record.`;
+  } else if (single) {
+    micro = "Only term in this record — career and this term are the same record.";
+  } else if (layer === "toronto" && c.basis === "aggregate") {
+    micro = figs.length
+      ? "Career total from the City's aggregate tallies; term figures from name-by-name votes, 2018 on."
+      : "Career total from the City's aggregate tallies.";
+  }
+  return `<div class="part-mod"><div class="part-mod-in">
+    <div class="part-mod-h">Recorded-vote participation</div>
+    <div class="part-mod-row"><span class="part-mod-lab">${esc(careerLab)}</span><span class="part-mod-fig"><strong>${partPct(c.pct)}</strong> ${fmtNum(c.cast)} of ${fmtNum(c.held)}</span></div>
+    ${termRow}
+    ${micro ? `<p class="part-mod-micro">${esc(micro)}</p>` : ""}
+  </div></div>`;
 }
 
 /* ---------------- member avatars ----------------

@@ -32,14 +32,9 @@ function layerTenure(p) {
 }
 
 function layerStatsHTML(p) {
-  const att = p.participation;
-  const meter = att != null && Number.isFinite(Number(att))
-    ? `<span class="att-meter" aria-hidden="true"><span class="att-fill" style="width:${Math.max(0, Math.min(100, Number(att)))}%"></span></span>`
-    : "";
-  const attText = att != null && Number.isFinite(Number(att))
-    ? `${Number(att).toFixed(1)}%` : "—";
+  /* Participation is carried by the C7 card module, not the stats
+     grid (v62) — the grid keeps votes cast, tenure, interests. */
   return `<div class="member-stats" aria-label="Record summary">
-    <div><span>${simpleT("Recorded-vote participation", "Votes they took part in")}</span><strong>${attText}</strong>${meter}</div>
     <div><span>Votes cast</span><strong>${fmtNum(p.votesCast)}</strong></div>
     <div><span>${simpleT("Tenure", "How long they have served")}</span><strong>${esc(layerTenure(p))}</strong></div>
     <div><span>${esc(LCFG.interestsLabel)}</span><strong>${fmtNum(LCFG.interestsValue(p))}</strong></div>
@@ -56,7 +51,9 @@ function layerCard(p) {
       </div>
     </div>
     ${layerStatsHTML(p)}
-    ${participationCardLine(layerPart ? layerPart.members[p.id || p.slug] : null)}
+    ${participationCardModule(layerPart ? layerPart.members[p.id || p.slug] : null,
+      { layer: LCFG.layer, current: !!p.current, incoming: false,
+        currentLabel: partCurrentLabel(layerPart, LCFG.layer) })}
   </article>`;
 }
 
@@ -70,11 +67,12 @@ function layerEarlierRow(p) {
       <p class="em-terms">${esc(terms)}</p>
       <p class="em-wards"><span>${esc(p.riding || "")}${p.party ? ` · ${esc(p.party)}` : ""}</span></p>
       <div class="em-stats">
-        <div><span>${simpleT("Recorded-vote participation", "Votes they took part in")}</span><strong>${p.participation != null ? `${Number(p.participation).toFixed(1)}%` : "—"}</strong></div>
         <div><span>Votes cast</span><strong>${fmtNum(p.votesCast)}</strong></div>
         <div><span>${esc(LCFG.interestsLabel)}</span><strong>${fmtNum(LCFG.interestsValue(p))}</strong></div>
       </div>
-      ${participationCardLine(layerPart ? layerPart.members[p.id || p.slug] : null)}
+      ${participationCardModule(layerPart ? layerPart.members[p.id || p.slug] : null,
+        { layer: LCFG.layer, current: false, incoming: false,
+          currentLabel: partCurrentLabel(layerPart, LCFG.layer) })}
     </div>
   </li>`;
 }

@@ -722,7 +722,9 @@ async function renderProfile() {
      participation exporter; a failed load simply omits the block). */
   const partData = await loadJSON(`${PCFG.dataDir}participation.json`).catch(() => null);
   const partBlock = participationBlockHTML(
-    partData ? partData.members[memberId] : null, PCFG.layer, "divisions");
+    partData ? partData.members[memberId] : null, PCFG.layer, "divisions",
+    { avatar: layerAvatar(person, "lg"), name: person.name,
+      role: `${PCFG.layer === "canada" ? "House of Commons" : "Legislative Assembly of Ontario"} · ${person.riding}` });
   const p = person;
   document.title = `${p.name} — Deme`;
   const house = PCFG.layer === "canada" ? "House of Commons"

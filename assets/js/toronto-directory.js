@@ -28,23 +28,30 @@ function incomingBlockHTML(c) {
     <p class="incoming-portrait">No official portrait for the new term yet — the City of Toronto has not published one. Their initials stand in until it does; Deme adds official portraits as the City publishes them.</p>
   </div>`;
 }
-/* v58: the card's career participation line (verified exporter
-   data). A first-termer's incoming block already states the
-   no-votes state in the same slot, so the line is added only when
-   the member has a career figure — a returning member (Layton)
-   shows his real career line under the incoming block. */
-function cardPartLine(c) {
+/* v62 (C7): the card's participation is the navy module — career +
+   latest-term figures with counts at one precision. A first-termer's
+   module is the no-record state itself; personCard then keeps only
+   the election marker line from the incoming block (the record and
+   portrait prose moves to the profile). A returning member (Layton)
+   keeps the full incoming block and shows his real figures. */
+function cardPartModule(c) {
   const e = partToronto ? partToronto.members[c.slug] : null;
   if (!e) return "";
-  if (c.incoming && e.career.pct == null) return "";
-  return participationCardLine(e);
+  return participationCardModule(e, {
+    layer: "toronto",
+    current: !!c.current, incoming: !!c.incoming,
+    currentLabel: partCurrentLabel(partToronto, "toronto"),
+  });
 }
 function personCard(c) {
   const role = c.mayor ? "Mayor of Toronto"
     : `Councillor · Ward ${c.ward} — ${esc(c.wardName)}`;
-  const stats = c.incoming
-    ? incomingBlockHTML(c)
-    : memberStatsHTML(c);
+  const e = partToronto ? partToronto.members[c.slug] : null;
+  const stats = !e
+    ? (c.incoming ? incomingBlockHTML(c) : memberStatsHTML(c))
+    : (c.incoming && e.career.pct == null)
+      ? `<div class="incoming-block"><p class="incoming-marker"><strong>Elected October 26, 2026 — takes office November 15, 2026</strong></p></div>`
+      : (c.incoming ? incomingBlockHTML(c) : memberStatsHTML(c));
   return `<article class="person${c.mayor ? " is-mayor" : ""}">
     <div class="person-top">${avatarHTML(c)}
       <div>
@@ -53,7 +60,7 @@ function personCard(c) {
       </div>
     </div>
     ${stats}
-    ${cardPartLine(c)}
+    ${cardPartModule(c)}
   </article>`;
 }
 /* One filter for the grid: a name, as before — and now also a ward
@@ -208,10 +215,11 @@ function earlierRow(c) {
     ${wards ? `<p class="em-wards">${wards}</p>` : ""}
     <div class="em-stats" aria-label="Record summary">
       <div><span>Votes cast</span><strong>${fmtNum(c.votesCast)}</strong></div>
-      <div><span>${simpleT("Recorded-vote participation", "Recorded votes they took part in")}</span><strong>${esc(fmtAtt(c))}</strong></div>
       <div><span>${simpleT("Interest declared on a recorded vote · stepped back (since Jun 2023)", "Declared an interest on a recorded vote · did not vote (since Jun 2023)")}</span><strong>${earlierInterest(c)}</strong></div>
     </div>
-    ${participationCardLine(partToronto ? partToronto.members[c.slug] : null)}
+    ${participationCardModule(partToronto ? partToronto.members[c.slug] : null,
+      { layer: "toronto", current: false, incoming: false,
+        currentLabel: partCurrentLabel(partToronto, "toronto") })}
     ${registerLineHTML(c)}
   </div></li>`;
 }

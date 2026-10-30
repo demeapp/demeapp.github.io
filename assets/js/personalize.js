@@ -45,6 +45,13 @@ const HomeStore = (() => {
   if (!section || !body) return;
 
   let people = [];
+  /* v62 (C7): the representative card carries the same navy
+     participation module as the directory cards; the data loads
+     alongside councillors.json and renderWard awaits it, so the
+     card never renders a figure-less interim state. */
+  let partData = null;
+  const partReady = loadJSON(dataPath("participation.json"))
+    .then((d) => { partData = d; }).catch(() => {});
   const cardCache = new Map(); // ref -> card, hydrated from year shards
 
   /* The personalization index is sharded by year
@@ -96,8 +103,8 @@ const HomeStore = (() => {
     return refs.map((r) => cardCache.get(r.ref) || null);
   }
 
-  /* Same card format as councillors.html — only the four summary
-     stats approved for member cards. */
+  /* Same card format as the Representatives directory: the summary
+     stats grid plus the C7 participation module (v62). */
   function personCard(c) {
     const role = c.mayor ? "Mayor of Toronto"
       : `Councillor · Ward ${c.ward} — ${esc(c.wardName)}`;
@@ -109,6 +116,9 @@ const HomeStore = (() => {
         </div>
       </div>
       ${memberStatsHTML(c)}
+      ${participationCardModule(partData ? partData.members[c.slug] : null,
+        { layer: "toronto", current: !!c.current, incoming: !!c.incoming,
+          currentLabel: partCurrentLabel(partData, "toronto") })}
     </article>`;
   }
 
@@ -340,6 +350,7 @@ const HomeStore = (() => {
   }
 
   async function renderWard(state) {
+    await partReady;
     const isMayor = state.choice === "mayor";
     const person = currentPerson(state);
     const notice = person ? repNotice(state, person) : "";

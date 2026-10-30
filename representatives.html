@@ -115,11 +115,6 @@
 .incoming-record { color: var(--ink); }
 .incoming-portrait { color: var(--ink-faint); font-size: .8rem; }
 
-/* The directory's own level switch: the same segmented control as
-   the header switcher (44px targets, short labels on small screens,
-   the body named in full from 720px up), sitting with the directory
-   it switches. The current level is the filled navy segment. */
-.rep-switch-row { margin: 1.2rem 0 .2rem; }
 .chooser-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1rem; margin-top:1.2rem; }
 .chooser-card { display:flex; flex-direction:column; gap:.35rem; background:var(--card); border:1px solid var(--line); border-radius:var(--radius); padding:1.2rem 1.3rem; text-decoration:none; color:var(--ink); box-shadow:var(--shadow-sm); }
 .chooser-card:hover { border-color:var(--navy); }
@@ -128,7 +123,6 @@
 .chooser-d { color:var(--ink-soft); font-size:.95rem; }
 .chooser-go { margin-top:auto; font-weight:700; color:var(--navy); }
 @media (max-width:720px){ .chooser-grid{ grid-template-columns:1fr; } }
-.rep-switch-row .level-switcher { margin-top: 0; }
 </style>
 <link rel="stylesheet" href="assets/css/improvements.css">
 <link rel="icon" href="favicon-navy-mint-v2.svg" type="image/svg+xml">
@@ -157,14 +151,6 @@
       <p class="kicker" id="rep-kicker">Representatives</p>
       <h1 id="people-h">The people on the record</h1>
       <hr class="rule">
-      <div class="rep-switch-row">
-        <nav class="level-switcher" aria-label="Choose a legislature">
-          <span class="ls-label" aria-hidden="true">Level</span>
-          <a href="representatives.html?level=canada" data-level="canada" aria-label="House of Commons"><span class="ls-short" aria-hidden="true">Canada</span><span class="ls-full" aria-hidden="true">House of Commons</span></a>
-          <a href="representatives.html?level=ontario" data-level="ontario" aria-label="Ontario Legislature"><span class="ls-short" aria-hidden="true">Ontario</span><span class="ls-full" aria-hidden="true">Ontario Legislature</span></a>
-          <a href="representatives.html?level=toronto" data-level="toronto" aria-label="Toronto City Council"><span class="ls-short" aria-hidden="true">Toronto</span><span class="ls-full" aria-hidden="true">Toronto City Council</span></a>
-        </nav>
-      </div>
       <div id="level-root"></div>
       <noscript>
         <p class="small" style="margin-top:1rem">The member lists load
@@ -345,7 +331,7 @@
         extraction, not the Assembly's official searchable record.
         Where the House document does not name the bill behind a
         division, the division carries no bill link. Disclosure
-        statements: the complete series, 2005–2025.
+        statements: the series gathered, 2005–2025.
         Expenses: payments from April 2024 to December 2025, plus
         annual totals back to 2015–16 — some early annual figures rest
         on scanned documents, and ministers' expenses are published in
@@ -474,11 +460,6 @@
   document.title = cfg.title;
   document.getElementById("rep-kicker").textContent = cfg.kicker;
   document.getElementById("people-h").textContent = cfg.h1;
-  document.querySelectorAll(".rep-switch-row [data-level]")
-    .forEach(function (a) {
-      if (a.getAttribute("data-level") === key)
-        a.setAttribute("aria-current", "true");
-    });
   if (key === "ontario") {
     window.DEME_LAYER_PAGE = {
       layer: "ontario", directoryPage: "representatives.html",

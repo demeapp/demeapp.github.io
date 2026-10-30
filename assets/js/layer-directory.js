@@ -101,14 +101,24 @@ function layerEarlierRow(p) {
 const layerFoldText = (s) => String(s || "")
   .normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
 const layerSquashText = (s) => layerFoldText(s).replace(/[^a-z0-9]+/g, "");
+/* Search-only aliases (audit F-04 sibling, Oct 30, 2026): a member
+   whose name changed keeps the former name findable. The alias is
+   never displayed and changes no member data — it only widens this
+   filter, the same one-way widening as the folding above. Rachael
+   Thomas was first elected as Rachael Harder; the duplicate profile
+   the archive once carried under that name was merged into hers,
+   and the former name now resolves to her single record. */
+const LAYER_SEARCH_ALIASES = { "rachael-thomas": "Rachael Harder" };
 function layerMatches(p, q) {
   if (!q) return true;
-  const hay = layerFoldText(`${p.name} ${p.riding || ""} ${p.party || ""} ${p.province || ""}`);
+  const alias = LAYER_SEARCH_ALIASES[p.id || p.slug] || "";
+  const hay = layerFoldText(`${p.name} ${alias} ${p.riding || ""} ${p.party || ""} ${p.province || ""}`);
   const nameSq = layerSquashText(p.name);
+  const aliasSq = layerSquashText(alias);
   return q.split(/\s+/).filter(Boolean).every((w) => {
     if (hay.includes(layerFoldText(w))) return true;
     const ws = layerSquashText(w);
-    return Boolean(ws) && nameSq.includes(ws);
+    return Boolean(ws) && (nameSq.includes(ws) || aliasSq.includes(ws));
   });
 }
 

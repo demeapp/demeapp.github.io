@@ -226,7 +226,7 @@
     <section class="hero" aria-labelledby="hero-h">
       <p class="kicker">Federal · Provincial · Municipal · The record, in plain language</p>
       <h1 id="hero-h">THE RECORD IS PUBLIC. NOW IT'S READABLE.</h1>
-      <p class="hero-sub">Every decision, every vote — Parliament Hill, Queen's Park, and City Hall, in plain language.</p>
+      <p class="hero-sub">The decisions and the recorded votes — Parliament Hill, Queen's Park, and City Hall, in plain language.</p>
       <p class="lede">Search a topic, a street, a riding, or a name.</p>
       <form class="searchbox" action="explore.html" method="get" role="search">
         <label class="visually-hidden" for="q">Search the record</label>
@@ -281,9 +281,10 @@
         <a class="layer-card" href="representatives.html?level=canada">
           <span class="layer-k">Federal · Canada</span>
           <span class="layer-t">The House of Commons</span>
-          <span class="layer-d">Every MP's record: 4,856 recorded divisions,
-          ethics registry documents, and 172,864 lobbying
-          communications.</span>
+          <span class="layer-d">The Commons record, member by member:
+          4,856 recorded divisions, ethics registry documents, and
+          172,864 lobbying communications — each communication on the
+          profile of the MP it names.</span>
           <span class="layer-fresh" data-fresh="federal">Divisions current to October 8, 2026</span>
           <span class="layer-go">See the Canada record →</span>
         </a>
@@ -300,8 +301,8 @@
         <a class="layer-card" href="representatives.html?level=toronto">
           <span class="layer-k">Municipal · Toronto</span>
           <span class="layer-t">Toronto City Council</span>
-          <span class="layer-d">33,777 decisions in plain language, every
-          member's votes, declared interests and expenses — and a say
+          <span class="layer-d">33,777 decisions in plain language,
+          members' votes, declared interests and expenses — and a say
           before the next vote.</span>
           <span class="layer-fresh" data-fresh="toronto">Decisions current to October 19, 2026</span>
           <span class="layer-go">See the Toronto record →</span>
@@ -314,7 +315,7 @@
       <h2 id="lob-teaser-h">Watching the lobbying record</h2>
       <hr class="rule">
       <p style="max-width:44rem">The Canada layer's lobbying record —
-      172,864 filed communications — is free on every MP's profile,
+      172,864 filed communications — is free on the profile of every MP they name,
       on the same record as their votes, expenses and disclosures.
       Deme is building subscriber tools for watching it across the
       whole joined record: alerts when a company or issue starts
@@ -427,8 +428,9 @@
       <h2 id="how-h">Every legislature keeps a record. Almost nobody can read it.</h2>
       <hr class="rule">
       <p style="max-width:44rem">At Queen's Park and Parliament Hill,
-      every item Deme lists is a recorded division, with each member's
-      vote attached — published inside journals and Hansard records
+      every item Deme lists is a recorded division, with the vote of
+      each member who cast one attached — published inside journals
+      and Hansard records
       that few residents ever open. Toronto City Council works the
       other way: most council decisions come with no recorded vote —
       no public list of who voted yes and who voted no. Deme keeps
@@ -463,7 +465,7 @@
       <div class="vision-band">
         <div class="bar" aria-hidden="true"></div>
         <blockquote>A world where no vote happens in the dark — and every representative answers for their record.</blockquote>
-        <p>This is the record behind that vision: every decision, every recorded vote, and the promises on the record — public, permanent and plain. Every representative shown fairly and without favour. Every resident trusted to judge the record for themselves.</p>
+        <p>This is the record behind that vision: every decision, every recorded vote, and, on Toronto profiles, the promises they campaigned on — public, permanent and plain. Every representative shown fairly and without favour. Every resident trusted to judge the record for themselves.</p>
       </div>
     </section>
 
@@ -557,6 +559,27 @@ function paintWatchLines() {
   });
 }
 window.addEventListener("deme:session", paintWatchLines);
+
+/* Hero account entry (audit F-10/D5, Oct 30, 2026): signed in, the
+   hero stops pitching the account the visitor already has — the
+   entry points at their record and their ward instead, the two
+   things the signed-in homepage below already personalizes. Signed
+   out, or before the session settles, the static entry stands;
+   every settle repaints, like the watch lines above. */
+const heroEntryBox = document.querySelector(".account-entry");
+const heroEntryDefault = heroEntryBox ? heroEntryBox.innerHTML : "";
+function paintHeroEntry() {
+  if (!heroEntryBox) return;
+  const acct = window.DemeAccount;
+  if (acct && typeof acct.isSignedIn === "function" && acct.isSignedIn()) {
+    heroEntryBox.innerHTML = `<a class="btn bronze" href="my-record.html">Go to My Record</a>
+      <a class="signin-link" href="#starthere">Your ward</a>`;
+  } else if (heroEntryBox.innerHTML !== heroEntryDefault) {
+    heroEntryBox.innerHTML = heroEntryDefault;
+  }
+}
+window.addEventListener("deme:session", paintHeroEntry);
+paintHeroEntry();
 document.getElementById("upcoming").addEventListener("click", async (e) => {
   const btn = e.target.closest(".watchbtn-home");
   if (!btn) return;

@@ -697,7 +697,22 @@ async function renderProfile() {
   }
   try {
     person = await loadJSON(`${PCFG.dataDir}member/${memberId}.json`);
-    divisions = await loadJSON(`${PCFG.dataDir}divisions.json`);
+    if (PCFG.layer === "canada") {
+      /* Backend Three item 2 (Oct 30, 2026): the per-member split file
+         first — it carries exactly this member's division rows, keyed by
+         division index, so a federal profile no longer downloads the
+         whole layer file. The layer file is the fallback, so the page is
+         correct whether or not a split file exists for this member. */
+      try {
+        const split = await loadJSON(
+          `${PCFG.dataDir}member/${memberId}.divisions.json`);
+        divisions = split.divisions || {};
+      } catch (splitErr) {
+        divisions = await loadJSON(`${PCFG.dataDir}divisions.json`);
+      }
+    } else {
+      divisions = await loadJSON(`${PCFG.dataDir}divisions.json`);
+    }
   } catch (e) {
     box.innerHTML = `<p class="small">That member's record could not be
       loaded. <a href="${PCFG.directoryPage}">Back to the directory</a>.</p>`;

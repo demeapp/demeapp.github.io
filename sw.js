@@ -1,4 +1,11 @@
-// Deme service worker (v61 — About page paragraph rebalance (Oct 29, 2026):
+// Deme service worker (v62 — Backend Three ship (Oct 30, 2026): federal
+// profile pages load the per-member division split file first (the whole
+// layer file remains the fallback); the My Record briefing gains its
+// Ontario + federal sections behind the account's riding fields and
+// behaves exactly as v1 where no riding is set; the postal-code lookup
+// data layer (federal verified tier + provincial provisional tier) is
+// published under record-data/. No record facts changed.
+// Previous: Deme service worker (v61 — About page paragraph rebalance (Oct 29, 2026):
 // the About page's three-level material leads, Toronto-only explanations
 // sit under their own "The Toronto record" heading, and simple-mode keys
 // for the About page were re-keyed to the current text (stale keys fixed,
@@ -89,7 +96,7 @@
 // deploy, so assets are network-first too; cache is the offline fallback.
 // VERSION bumps rename every cache, and activate deletes the old ones —
 // bump VERSION whenever this file ships a strategy change.
-const VERSION = 'v61';
+const VERSION = 'v62';
 const SHELL = 'deme-shell-' + VERSION;
 const PAGES = 'deme-pages-' + VERSION;
 const DATA = 'deme-data-' + VERSION;

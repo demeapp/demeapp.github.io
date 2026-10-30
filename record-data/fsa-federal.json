@@ -1,0 +1,7776 @@
+{
+ "layer": "federal",
+ "generated": "2026-10-29",
+ "source": "Elections Canada federal electoral district boundaries (2023 Representation Order) x Statistics Canada 2021 Census FSA cartographic boundary file; shares are land-area overlap of the FSA polygon.",
+ "rule": "An FSA overlapping more than one district lists every candidate with its land-area share; resolution to a single district happens only in the lookup layer under its stated rule (see lookup.js).",
+ "provinces": "Ontario FSAs only (PRUID 35)",
+ "fsaCount": 521,
+ "districts": 122,
+ "fsa": {
+  "K0A": [
+   {
+    "ridingId": 35020,
+    "riding": "Carleton",
+    "share": 0.4452,
+    "memberId": "bruce-fanjoy",
+    "member": "Bruce Fanjoy",
+    "party": "Liberal"
+   },
+   {
+    "ridingId": 35088,
+    "riding": "Prescott—Russell—Cumberland",
+    "share": 0.2585,
+    "memberId": "giovanna-mingarelli",
+    "member": "Giovanna Mingarelli",
+    "party": "Liberal"
+   },
+   {
+    "ridingId": 35051,
+    "riding": "Lanark—Frontenac",
+    "share": 0.2041,
+    "memberId": "scott-reid",
+    "member": "Scott Reid",
+    "party": "Conservative"
+   },
+   {
+    "ridingId": 35102,
+    "riding": "Stormont—Dundas—Glengarry",
+    "share": 0.0366,
+    "memberId": "eric-duncan",
+    "member": "Eric Duncan",
+    "party": "Conservative"
+   },
+   {
+    "ridingId": 35002,
+    "riding": "Algonquin—Renfrew—Pembroke",
+    "share": 0.0292,
+    "memberId": "cheryl-gallant",
+    "member": "Cheryl Gallant",
+    "party": "Conservative"
+   },
+   {
+    "ridingId": 35043,
+    "riding": "Kanata",
+    "share": 0.0198,
+    "memberId": "jenna-sudds",
+    "member": "Jenna Sudds",
+    "party": "Liberal"
+   },
+   {
+    "ridingId": 35080,
+    "riding": "Ottawa South",
+    "share": 0.0031,
+    "memberId": "david-mcguinty",
+    "member": "David McGuinty",
+    "party": "Liberal"
+   },
+   {
+    "ridingId": 35081,
+    "riding": "Ottawa—Vanier—Gloucester",
+    "share": 0.0023,
+    "memberId": "mona-fortier",
+    "member": "Mona Fortier",
+    "party": "Liberal"
+   }
+  ],
+  "K0B": [
+   {
+    "ridingId": 35088,
+    "riding": "Prescott—Russell—Cumberland",
+    "share": 0.836,
+    "memberId": "giovanna-mingarelli",
+    "member": "Giovanna Mingarelli",
+    "party": "Liberal"
+   },
+   {
+    "ridingId": 35102,
+    "riding": "Stormont—Dundas—Glengarry",
+    "share": 0.164,
+    "memberId": "eric-duncan",
+    "member": "Eric Duncan",
+    "party": "Conservative"
+   }
+  ],
+  "K0C": [
+   {
+    "ridingId": 35102,
+    "riding": "Stormont—Dundas—Glengarry",
+    "share": 0.9729,
+    "memberId": "eric-duncan",
+    "member": "Eric Duncan",
+    "party": "Conservative"
+   },
+   {
+    "ridingId": 35088,
+    "riding": "Prescott—Russell—Cumberland",
+    "share": 0.0271,
+    "memberId": "giovanna-mingarelli",
+    "member": "Giovanna Mingarelli",
+    "party": "Liberal"
+   }
+  ],
+  "K0E": [
+   {
+    "ridingId": 35052,
+    "riding": "Leeds—Grenville—Thousand Islands—Rideau Lakes",
+    "share": 0.78,
+    "memberId": "michael-barrett",
+    "member": "Michael Barrett",
+    "party": "Conservative"
+   },
+   {
+    "ridingId": 35102,
+    "riding": "Stormont—Dundas—Glengarry",
+    "share": 0.22,
+    "memberId": "eric-duncan",
+    "member": "Eric Duncan",
+    "party": "Conservative"
+   }
+  ],
+  "K0G": [
+   {
+    "ridingId": 35052,
+    "riding": "Leeds—Grenville—Thousand Islands—Rideau Lakes",
+    "share": 0.5352,
+    "memberId": "michael-barrett",
+    "member": "Michael Barrett",
+    "party": "Conservative"
+   },
+   {
+    "ridingId": 35051,
+    "riding": "Lanark—Frontenac",
+    "share": 0.4208,
+    "memberId": "scott-reid",
+    "member": "Scott Reid",
+    "party": "Conservative"
+   },
+   {
+    "ridingId": 35020,
+    "riding": "Carleton",
+    "share": 0.044,
+    "memberId": "bruce-fanjoy",
+    "member": "Bruce Fanjoy",
+    "party": "Liberal"
+   }
+  ],
+  "K0H": [
+   {
+    "ridingId": 35051,
+    "riding": "Lanark—Frontenac",
+    "share": 0.576,
+    "memberId": "scott-reid",
+    "member": "Scott Reid",
+    "party": "Conservative"
+   },
+   {
+    "ridingId": 35040,
+    "riding": "Hastings—Lennox and Addington—Tyendinaga",
+    "share": 0.3314,
+    "memberId": "shelby-kramp-neuman",
+    "member": "Shelby Kramp-Neuman",
+    "party": "Conservative"
+   },
+   {
+    "ridingId": 35046,
+    "riding": "Kingston and the Islands",
+    "share": 0.0853,
+    "memberId": "mark-gerretsen",
+    "member": "Mark Gerretsen",
+    "party": "Liberal"
+   },
+   {
+    "ridingId": 35052,
+    "riding": "Leeds—Grenville—Thousand Islands—Rideau Lakes",
+    "share": 0.0074,
+    "memberId": "michael-barrett",
+    "member": "Michael Barrett",
+    "party": "Conservative"
+   }
+  ],
+  "K0J": [
+   {
+    "ridingId": 35002,
+    "riding": "Algonquin—Renfrew—Pembroke",
+    "share": 1.0,
+    "memberId": "cheryl-gallant",
+    "member": "Cheryl Gallant",
+    "party": "Conservative"
+   }
+  ],
+  "K0K": [
+   {
+    "ridingId": 35040,
+    "riding": "Hastings—Lennox and Addington—Tyendinaga",
+    "share": 0.4827,
+    "memberId": "shelby-kramp-neuman",
+    "member": "Shelby Kramp-Neuman",
+    "party": "Conservative"
+   },
+   {
+    "ridingId": 35006,
+    "riding": "Bay of Quinte",
+    "share": 0.347,
+    "memberId": "chris-malette",
+    "member": "Chris Malette",
+    "party": "Liberal"
+   },
+   {
+    "ridingId": 35074,
+    "riding": "Northumberland—Clarke",
+    "share": 0.1703,
+    "memberId": "philip-lawrence",
+    "member": "Philip Lawrence",
+    "party": "Conservative"
+   }
+  ],
+  "K0L": [
+   {
+    "ridingId": 35040,
+    "riding": "Hastings—Lennox and Addington—Tyendinaga",
+    "share": 0.4015,
+    "memberId": "shelby-kramp-neuman",
+    "member": "Shelby Kramp-Neuman",
+    "party": "Conservative"
+   },
+   {
+    "ridingId": 35035,
+    "riding": "Haliburton—Kawartha Lakes",
+    "share": 0.3234,
+    "memberId": "jamie-schmale",
+    "member": "Jamie Schmale",
+    "party": "Conservative"
+   },
+   {
+    "ridingId": 35086,
+    "riding": "Peterborough",
+    "share": 0.2197,
+    "memberId": "emma-harrison",
+    "member": "Emma Harrison",
+    "party": "Liberal"
+   },
+   {
+    "ridingId": 35074,
+    "riding": "Northumberland—Clarke",
+    "share": 0.0555,
+    "memberId": "philip-lawrence",
+    "member": "Philip Lawrence",
+    "party": "Conservative"
+   }
+  ],
+  "K0M": [
+   {
+    "ridingId": 35035,
+    "riding": "Haliburton—Kawartha Lakes",
+    "share": 1.0,
+    "memberId": "jamie-schmale",
+    "member": "Jamie Schmale",
+    "party": "Conservative"
+   }
+  ],
+  "K1A": [
+   {
+    "ridingId": 35081,
+    "riding": "Ottawa—Vanier—Gloucester",
+    "share": 1.0,
+    "memberId": "mona-fortier",
+    "member": "Mona Fortier",
+    "party": "Liberal"
+   }
+  ],
+  "K1B": [
+   {
+    "ridingId": 35080,
+    "riding": "Ottawa South",
+    "share": 0.5383,
+    "memberId": "david-mcguinty",
+    "member": "David McGuinty",
+    "party": "Liberal"
+   },
+   {
+    "ridingId": 35081,
+    "riding": "Ottawa—Vanier—Gloucester",
+    "share": 0.4233,
+    "memberId": "mona-fortier",
+    "member": "Mona Fortier",
+    "party": "Liberal"
+   },
+   {
+    "ridingId": 35088,
+    "riding": "Prescott—Russell—Cumberland",
+    "share": 0.0384,
+    "memberId": "giovanna-mingarelli",
+    "member": "Giovanna Mingarelli",
+    "party": "Liberal"
+   }
+  ],
+  "K1C": [
+   {
+    "ridingId": 35077,
+    "riding": "Orléans",
+    "share": 1.0,
+    "memberId": "marie-france-lalonde",
+    "member": "Marie-France Lalonde",
+    "party": "Liberal"
+   }
+  ],
+  "K1E": [
+   {
+    "ridingId": 35077,
+    "riding": "Orléans",
+    "share": 1.0,
+    "memberId": "marie-france-lalonde",
+    "member": "Marie-France Lalonde",
+    "party": "Liberal"
+   }
+  ],
+  "K1G": [
+   {
+    "ridingId": 35020,
+    "riding": "Carleton",
+    "share": 0.5658,
+    "memberId": "bruce-fanjoy",
+    "member": "Bruce Fanjoy",
+    "party": "Liberal"
+   },
+   {
+    "ridingId": 35080,
+    "riding": "Ottawa South",
+    "share": 0.4342,
+    "memberId": "david-mcguinty",
+    "member": "David McGuinty",
+    "party": "Liberal"
+   }
+  ],
+  "K1H": [
+   {
+    "ridingId": 35080,
+    "riding": "Ottawa South",
+    "share": 0.8185,
+    "memberId": "david-mcguinty",
+    "member": "David McGuinty",
+    "party": "Liberal"
+   },
+   {
+    "ridingId": 35079,
+    "riding": "Ottawa Centre",
+    "share": 0.1815,
+    "memberId": "yasir-naqvi",
+    "member": "Yasir Naqvi",
+    "party": "Liberal"
+   }
+  ],
+  "K1J": [
+   {
+    "ridingId": 35081,
+    "riding": "Ottawa—Vanier—Gloucester",
+    "share": 1.0,
+    "memberId": "mona-fortier",
+    "member": "Mona Fortier",
+    "party": "Liberal"
+   }
+  ],
+  "K1K": [
+   {
+    "ridingId": 35081,
+    "riding": "Ottawa—Vanier—Gloucester",
+    "share": 1.0,
+    "memberId": "mona-fortier",
+    "member": "Mona Fortier",
+    "party": "Liberal"
+   }
+  ],
+  "K1L": [
+   {
+    "ridingId": 35081,
+    "riding": "Ottawa—Vanier—Gloucester",
+    "share": 1.0,
+    "memberId": "mona-fortier",
+    "member": "Mona Fortier",
+    "party": "Liberal"
+   }
+  ],
+  "K1M": [
+   {
+    "ridingId": 35081,
+    "riding": "Ottawa—Vanier—Gloucester",
+    "share": 1.0,
+    "memberId": "mona-fortier",
+    "member": "Mona Fortier",
+    "party": "Liberal"
+   }
+  ],
+  "K1N": [
+   {
+    "ridingId": 35081,
+    "riding": "Ottawa—Vanier—Gloucester",
+    "share": 1.0,
+    "memberId": "mona-fortier",
+    "member": "Mona Fortier",
+    "party": "Liberal"
+   }
+  ],
+  "K1P": [
+   {
+    "ridingId": 35079,
+    "riding": "Ottawa Centre",
+    "share": 1.0,
+    "memberId": "yasir-naqvi",
+    "member": "Yasir Naqvi",
+    "party": "Liberal"
+   }
+  ],
+  "K1R": [
+   {
+    "ridingId": 35079,
+    "riding": "Ottawa Centre",
+    "share": 1.0,
+    "memberId": "yasir-naqvi",
+    "member": "Yasir Naqvi",
+    "party": "Liberal"
+   }
+  ],
+  "K1S": [
+   {
+    "ridingId": 35079,
+    "riding": "Ottawa Centre",
+    "share": 1.0,
+    "memberId": "yasir-naqvi",
+    "member": "Yasir Naqvi",
+    "party": "Liberal"
+   }
+  ],
+  "K1T": [
+   {
+    "ridingId": 35080,
+    "riding": "Ottawa South",
+    "share": 1.0,
+    "memberId": "david-mcguinty",
+    "member": "David McGuinty",
+    "party": "Liberal"
+   }
+  ],
+  "K1V": [
+   {
+    "ridingId": 35020,
+    "riding": "Carleton",
+    "share": 0.4258,
+    "memberId": "bruce-fanjoy",
+    "member": "Bruce Fanjoy",
+    "party": "Liberal"
+   },
+   {
+    "ridingId": 35080,
+    "riding": "Ottawa South",
+    "share": 0.3737,
+    "memberId": "david-mcguinty",
+    "member": "David McGuinty",
+    "party": "Liberal"
+   },
+   {
+    "ridingId": 35079,
+    "riding": "Ottawa Centre",
+    "share": 0.2004,
+    "memberId": "yasir-naqvi",
+    "member": "Yasir Naqvi",
+    "party": "Liberal"
+   }
+  ],
+  "K1W": [
+   {
+    "ridingId": 35077,
+    "riding": "Orléans",
+    "share": 0.9878,
+    "memberId": "marie-france-lalonde",
+    "member": "Marie-France Lalonde",
+    "party": "Liberal"
+   },
+   {
+    "ridingId": 35081,
+    "riding": "Ottawa—Vanier—Gloucester",
+    "share": 0.0122,
+    "memberId": "mona-fortier",
+    "member": "Mona Fortier",
+    "party": "Liberal"
+   }
+  ],
+  "K1X": [
+   {
+    "ridingId": 35020,
+    "riding": "Carleton",
+    "share": 1.0,
+    "memberId": "bruce-fanjoy",
+    "member": "Bruce Fanjoy",
+    "party": "Liberal"
+   }
+  ],
+  "K1Y": [
+   {
+    "ridingId": 35079,
+    "riding": "Ottawa Centre",
+    "share": 1.0,
+    "memberId": "yasir-naqvi",
+    "member": "Yasir Naqvi",
+    "party": "Liberal"
+   }
+  ],
+  "K1Z": [
+   {
+    "ridingId": 35082,
+    "riding": "Ottawa West—Nepean",
+    "share": 0.5078,
+    "memberId": "anita-vandenbeld",
+    "member": "Anita Vandenbeld",
+    "party": "Liberal"
+   },
+   {
+    "ridingId": 35079,
+    "riding": "Ottawa Centre",
+    "share": 0.4922,
+    "memberId": "yasir-naqvi",
+    "member": "Yasir Naqvi",
+    "party": "Liberal"
+   }
+  ],
+  "K2A": [
+   {
+    "ridingId": 35082,
+    "riding": "Ottawa West—Nepean",
+    "share": 0.8785,
+    "memberId": "anita-vandenbeld",
+    "member": "Anita Vandenbeld",
+    "party": "Liberal"
+   },
+   {
+    "ridingId": 35079,
+    "riding": "Ottawa Centre",
+    "share": 0.1215,
+    "memberId": "yasir-naqvi",
+    "member": "Yasir Naqvi",
+    "party": "Liberal"
+   }
+  ],
+  "K2B": [
+   {
+    "ridingId": 35082,
+    "riding": "Ottawa West—Nepean",
+    "share": 1.0,
+    "memberId": "anita-vandenbeld",
+    "member": "Anita Vandenbeld",
+    "party": "Liberal"
+   }
+  ],
+  "K2C": [
+   {
+    "ridingId": 35079,
+    "riding": "Ottawa Centre",
+    "share": 0.5653,
+    "memberId": "yasir-naqvi",
+    "member": "Yasir Naqvi",
+    "party": "Liberal"
+   },
+   {
+    "ridingId": 35082,
+    "riding": "Ottawa West—Nepean",
+    "share": 0.4347,
+    "memberId": "anita-vandenbeld",
+    "member": "Anita Vandenbeld",
+    "party": "Liberal"
+   }
+  ],
+  "K2E": [
+   {
+    "ridingId": 35082,
+    "riding": "Ottawa West—Nepean",
+    "share": 0.5855,
+    "memberId": "anita-vandenbeld",
+    "member": "Anita Vandenbeld",
+    "party": "Liberal"
+   },
+   {
+    "ridingId": 35067,
+    "riding": "Nepean",
+    "share": 0.4143,
+    "memberId": "mark-carney",
+    "member": "Mark Carney",
+    "party": "Liberal"
+   }
+  ],
+  "K2G": [
+   {
+    "ridingId": 35067,
+    "riding": "Nepean",
+    "share": 0.7424,
+    "memberId": "mark-carney",
+    "member": "Mark Carney",
+    "party": "Liberal"
+   },
+   {
+    "ridingId": 35082,
+    "riding": "Ottawa West—Nepean",
+    "share": 0.2576,
+    "memberId": "anita-vandenbeld",
+    "member": "Anita Vandenbeld",
+    "party": "Liberal"
+   }
+  ],
+  "K2H": [
+   {
+    "ridingId": 35082,
+    "riding": "Ottawa West—Nepean",
+    "share": 0.5587,
+    "memberId": "anita-vandenbeld",
+    "member": "Anita Vandenbeld",
+    "party": "Liberal"
+   },
+   {
+    "ridingId": 35043,
+    "riding": "Kanata",
+    "share": 0.3271,
+    "memberId": "jenna-sudds",
+    "member": "Jenna Sudds",
+    "party": "Liberal"
+   },
+   {
+    "ridingId": 35067,
+    "riding": "Nepean",
+    "share": 0.1142,
+    "memberId": "mark-carney",
+    "member": "Mark Carney",
+    "party": "Liberal"
+   }
+  ],
+  "K2J": [
+   {
+    "ridingId": 35067,
+    "riding": "Nepean",
+    "share": 1.0,
+    "memberId": "mark-carney",
+    "member": "Mark Carney",
+    "party": "Liberal"
+   }
+  ],
+  "K2K": [
+   {
+    "ridingId": 35043,
+    "riding": "Kanata",
+    "share": 1.0,
+    "memberId": "jenna-sudds",
+    "member": "Jenna Sudds",
+    "party": "Liberal"
+   }
+  ],
+  "K2L": [
+   {
+    "ridingId": 35043,
+    "riding": "Kanata",
+    "share": 1.0,
+    "memberId": "jenna-sudds",
+    "member": "Jenna Sudds",
+    "party": "Liberal"
+   }
+  ],
+  "K2M": [
+   {
+    "ridingId": 35043,
+    "riding": "Kanata",
+    "share": 0.8851,
+    "memberId": "jenna-sudds",
+    "member": "Jenna Sudds",
+    "party": "Liberal"
+   },
+   {
+    "ridingId": 35020,
+    "riding": "Carleton",
+    "share": 0.1149,
+    "memberId": "bruce-fanjoy",
+    "member": "Bruce Fanjoy",
+    "party": "Liberal"
+   }
+  ],
+  "K2P": [
+   {
+    "ridingId": 35079,
+    "riding": "Ottawa Centre",
+    "share": 1.0,
+    "memberId": "yasir-naqvi",
+    "member": "Yasir Naqvi",
+    "party": "Liberal"
+   }
+  ],
+  "K2R": [
+   {
+    "ridingId": 35043,
+    "riding": "Kanata",
+    "share": 0.4993,
+    "memberId": "jenna-sudds",
+    "member": "Jenna Sudds",
+    "party": "Liberal"
+   },
+   {
+    "ridingId": 35067,
+    "riding": "Nepean",
+    "share": 0.3038,
+    "memberId": "mark-carney",
+    "member": "Mark Carney",
+    "party": "Liberal"
+   },
+   {
+    "ridingId": 35020,
+    "riding": "Carleton",
+    "share": 0.1886,
+    "memberId": "bruce-fanjoy",
+    "member": "Bruce Fanjoy",
+    "party": "Liberal"
+   },
+   {
+    "ridingId": 35082,
+    "riding": "Ottawa West—Nepean",
+    "share": 0.0084,
+    "memberId": "anita-vandenbeld",
+    "member": "Anita Vandenbeld",
+    "party": "Liberal"
+   }
+  ],
+  "K2S": [
+   {
+    "ridingId": 35020,
+    "riding": "Carleton",
+    "share": 0.8303,
+    "memberId": "bruce-fanjoy",
+    "member": "Bruce Fanjoy",
+    "party": "Liberal"
+   },
+   {
+    "ridingId": 35043,
+    "riding": "Kanata",
+    "share": 0.1697,
+    "memberId": "jenna-sudds",
+    "member": "Jenna Sudds",
+    "party": "Liberal"
+   }
+  ],
+  "K2T": [
+   {
+    "ridingId": 35043,
+    "riding": "Kanata",
+    "share": 1.0,
+    "memberId": "jenna-sudds",
+    "member": "Jenna Sudds",
+    "party": "Liberal"
+   }
+  ],
+  "K2V": [
+   {
+    "ridingId": 35020,
+    "riding": "Carleton",
+    "share": 0.9684,
+    "memberId": "bruce-fanjoy",
+    "member": "Bruce Fanjoy",
+    "party": "Liberal"
+   },
+   {
+    "ridingId": 35043,
+    "riding": "Kanata",
+    "share": 0.0316,
+    "memberId": "jenna-sudds",
+    "member": "Jenna Sudds",
+    "party": "Liberal"
+   }
+  ],
+  "K2W": [
+   {
+    "ridingId": 35043,
+    "riding": "Kanata",
+    "share": 0.7593,
+    "memberId": "jenna-sudds",
+    "member": "Jenna Sudds",
+    "party": "Liberal"
+   },
+   {
+    "ridingId": 35020,
+    "riding": "Carleton",
+    "share": 0.2371,
+    "memberId": "bruce-fanjoy",
+    "member": "Bruce Fanjoy",
+    "party": "Liberal"
+   },
+   {
+    "ridingId": 35082,
+    "riding": "Ottawa West—Nepean",
+    "share": 0.0037,
+    "memberId": "anita-vandenbeld",
+    "member": "Anita Vandenbeld",
+    "party": "Liberal"
+   }
+  ],
+  "K4A": [
+   {
+    "ridingId": 35077,
+    "riding": "Orléans",
+    "share": 0.6559,
+    "memberId": "marie-france-lalonde",
+    "member": "Marie-France Lalonde",
+    "party": "Liberal"
+   },
+   {
+    "ridingId": 35088,
+    "riding": "Prescott—Russell—Cumberland",
+    "share": 0.3441,
+    "memberId": "giovanna-mingarelli",
+    "member": "Giovanna Mingarelli",
+    "party": "Liberal"
+   }
+  ],
+  "K4B": [
+   {
+    "ridingId": 35088,
+    "riding": "Prescott—Russell—Cumberland",
+    "share": 0.8808,
+    "memberId": "giovanna-mingarelli",
+    "member": "Giovanna Mingarelli",
+    "party": "Liberal"
+   },
+   {
+    "ridingId": 35020,
+    "riding": "Carleton",
+    "share": 0.0816,
+    "memberId": "bruce-fanjoy",
+    "member": "Bruce Fanjoy",
+    "party": "Liberal"
+   },
+   {
+    "ridingId": 35077,
+    "riding": "Orléans",
+    "share": 0.0376,
+    "memberId": "marie-france-lalonde",
+    "member": "Marie-France Lalonde",
+    "party": "Liberal"
+   }
+  ],
+  "K4C": [
+   {
+    "ridingId": 35088,
+    "riding": "Prescott—Russell—Cumberland",
+    "share": 1.0,
+    "memberId": "giovanna-mingarelli",
+    "member": "Giovanna Mingarelli",
+    "party": "Liberal"
+   }
+  ],
+  "K4K": [
+   {
+    "ridingId": 35088,
+    "riding": "Prescott—Russell—Cumberland",
+    "share": 1.0,
+    "memberId": "giovanna-mingarelli",
+    "member": "Giovanna Mingarelli",
+    "party": "Liberal"
+   }
+  ],
+  "K4M": [
+   {
+    "ridingId": 35020,
+    "riding": "Carleton",
+    "share": 1.0,
+    "memberId": "bruce-fanjoy",
+    "member": "Bruce Fanjoy",
+    "party": "Liberal"
+   }
+  ],
+  "K4P": [
+   {
+    "ridingId": 35020,
+    "riding": "Carleton",
+    "share": 1.0,
+    "memberId": "bruce-fanjoy",
+    "member": "Bruce Fanjoy",
+    "party": "Liberal"
+   }
+  ],
+  "K4R": [
+   {
+    "ridingId": 35088,
+    "riding": "Prescott—Russell—Cumberland",
+    "share": 1.0,
+    "memberId": "giovanna-mingarelli",
+    "member": "Giovanna Mingarelli",
+    "party": "Liberal"
+   }
+  ],
+  "K6A": [
+   {
+    "ridingId": 35088,
+    "riding": "Prescott—Russell—Cumberland",
+    "share": 1.0,
+    "memberId": "giovanna-mingarelli",
+    "member": "Giovanna Mingarelli",
+    "party": "Liberal"
+   }
+  ],
+  "K6H": [
+   {
+    "ridingId": 35102,
+    "riding": "Stormont—Dundas—Glengarry",
+    "share": 1.0,
+    "memberId": "eric-duncan",
+    "member": "Eric Duncan",
+    "party": "Conservative"
+   }
+  ],
+  "K6J": [
+   {
+    "ridingId": 35102,
+    "riding": "Stormont—Dundas—Glengarry",
+    "share": 1.0,
+    "memberId": "eric-duncan",
+    "member": "Eric Duncan",
+    "party": "Conservative"
+   }
+  ],
+  "K6K": [
+   {
+    "ridingId": 35102,
+    "riding": "Stormont—Dundas—Glengarry",
+    "share": 1.0,
+    "memberId": "eric-duncan",
+    "member": "Eric Duncan",
+    "party": "Conservative"
+   }
+  ],
+  "K6T": [
+   {
+    "ridingId": 35052,
+    "riding": "Leeds—Grenville—Thousand Islands—Rideau Lakes",
+    "share": 1.0,
+    "memberId": "michael-barrett",
+    "member": "Michael Barrett",
+    "party": "Conservative"
+   }
+  ],
+  "K6V": [
+   {
+    "ridingId": 35052,
+    "riding": "Leeds—Grenville—Thousand Islands—Rideau Lakes",
+    "share": 1.0,
+    "memberId": "michael-barrett",
+    "member": "Michael Barrett",
+    "party": "Conservative"
+   }
+  ],
+  "K7A": [
+   {
+    "ridingId": 35051,
+    "riding": "Lanark—Frontenac",
+    "share": 0.8379,
+    "memberId": "scott-reid",
+    "member": "Scott Reid",
+    "party": "Conservative"
+   },
+   {
+    "ridingId": 35052,
+    "riding": "Leeds—Grenville—Thousand Islands—Rideau Lakes",
+    "share": 0.1621,
+    "memberId": "michael-barrett",
+    "member": "Michael Barrett",
+    "party": "Conservative"
+   }
+  ],
+  "K7C": [
+   {
+    "ridingId": 35051,
+    "riding": "Lanark—Frontenac",
+    "share": 1.0,
+    "memberId": "scott-reid",
+    "member": "Scott Reid",
+    "party": "Conservative"
+   }
+  ],
+  "K7G": [
+   {
+    "ridingId": 35052,
+    "riding": "Leeds—Grenville—Thousand Islands—Rideau Lakes",
+    "share": 0.5833,
+    "memberId": "michael-barrett",
+    "member": "Michael Barrett",
+    "party": "Conservative"
+   },
+   {
+    "ridingId": 35046,
+    "riding": "Kingston and the Islands",
+    "share": 0.4167,
+    "memberId": "mark-gerretsen",
+    "member": "Mark Gerretsen",
+    "party": "Liberal"
+   }
+  ],
+  "K7H": [
+   {
+    "ridingId": 35051,
+    "riding": "Lanark—Frontenac",
+    "share": 1.0,
+    "memberId": "scott-reid",
+    "member": "Scott Reid",
+    "party": "Conservative"
+   }
+  ],
+  "K7K": [
+   {
+    "ridingId": 35046,
+    "riding": "Kingston and the Islands",
+    "share": 1.0,
+    "memberId": "mark-gerretsen",
+    "member": "Mark Gerretsen",
+    "party": "Liberal"
+   }
+  ],
+  "K7L": [
+   {
+    "ridingId": 35046,
+    "riding": "Kingston and the Islands",
+    "share": 1.0,
+    "memberId": "mark-gerretsen",
+    "member": "Mark Gerretsen",
+    "party": "Liberal"
+   }
+  ],
+  "K7M": [
+   {
+    "ridingId": 35046,
+    "riding": "Kingston and the Islands",
+    "share": 1.0,
+    "memberId": "mark-gerretsen",
+    "member": "Mark Gerretsen",
+    "party": "Liberal"
+   }
+  ],
+  "K7N": [
+   {
+    "ridingId": 35040,
+    "riding": "Hastings—Lennox and Addington—Tyendinaga",
+    "share": 1.0,
+    "memberId": "shelby-kramp-neuman",
+    "member": "Shelby Kramp-Neuman",
+    "party": "Conservative"
+   }
+  ],
+  "K7P": [
+   {
+    "ridingId": 35046,
+    "riding": "Kingston and the Islands",
+    "share": 1.0,
+    "memberId": "mark-gerretsen",
+    "member": "Mark Gerretsen",
+    "party": "Liberal"
+   }
+  ],
+  "K7R": [
+   {
+    "ridingId": 35040,
+    "riding": "Hastings—Lennox and Addington—Tyendinaga",
+    "share": 1.0,
+    "memberId": "shelby-kramp-neuman",
+    "member": "Shelby Kramp-Neuman",
+    "party": "Conservative"
+   }
+  ],
+  "K7S": [
+   {
+    "ridingId": 35002,
+    "riding": "Algonquin—Renfrew—Pembroke",
+    "share": 0.8149,
+    "memberId": "cheryl-gallant",
+    "member": "Cheryl Gallant",
+    "party": "Conservative"
+   },
+   {
+    "ridingId": 35020,
+    "riding": "Carleton",
+    "share": 0.1851,
+    "memberId": "bruce-fanjoy",
+    "member": "Bruce Fanjoy",
+    "party": "Liberal"
+   }
+  ],
+  "K7V": [
+   {
+    "ridingId": 35002,
+    "riding": "Algonquin—Renfrew—Pembroke",
+    "share": 1.0,
+    "memberId": "cheryl-gallant",
+    "member": "Cheryl Gallant",
+    "party": "Conservative"
+   }
+  ],
+  "K8A": [
+   {
+    "ridingId": 35002,
+    "riding": "Algonquin—Renfrew—Pembroke",
+    "share": 1.0,
+    "memberId": "cheryl-gallant",
+    "member": "Cheryl Gallant",
+    "party": "Conservative"
+   }
+  ],
+  "K8B": [
+   {
+    "ridingId": 35002,
+    "riding": "Algonquin—Renfrew—Pembroke",
+    "share": 1.0,
+    "memberId": "cheryl-gallant",
+    "member": "Cheryl Gallant",
+    "party": "Conservative"
+   }
+  ],
+  "K8H": [
+   {
+    "ridingId": 35002,
+    "riding": "Algonquin—Renfrew—Pembroke",
+    "share": 1.0,
+    "memberId": "cheryl-gallant",
+    "member": "Cheryl Gallant",
+    "party": "Conservative"
+   }
+  ],
+  "K8N": [
+   {
+    "ridingId": 35006,
+    "riding": "Bay of Quinte",
+    "share": 0.7303,
+    "memberId": "chris-malette",
+    "member": "Chris Malette",
+    "party": "Liberal"
+   },
+   {
+    "ridingId": 35040,
+    "riding": "Hastings—Lennox and Addington—Tyendinaga",
+    "share": 0.2697,
+    "memberId": "shelby-kramp-neuman",
+    "member": "Shelby Kramp-Neuman",
+    "party": "Conservative"
+   }
+  ],
+  "K8P": [
+   {
+    "ridingId": 35006,
+    "riding": "Bay of Quinte",
+    "share": 1.0,
+    "memberId": "chris-malette",
+    "member": "Chris Malette",
+    "party": "Liberal"
+   }
+  ],
+  "K8R": [
+   {
+    "ridingId": 35006,
+    "riding": "Bay of Quinte",
+    "share": 1.0,
+    "memberId": "chris-malette",
+    "member": "Chris Malette",
+    "party": "Liberal"
+   }
+  ],
+  "K8V": [
+   {
+    "ridingId": 35006,
+    "riding": "Bay of Quinte",
+    "share": 0.8733,
+    "memberId": "chris-malette",
+    "member": "Chris Malette",
+    "party": "Liberal"
+   },
+   {
+    "ridingId": 35040,
+    "riding": "Hastings—Lennox and Addington—Tyendinaga",
+    "share": 0.1267,
+    "memberId": "shelby-kramp-neuman",
+    "member": "Shelby Kramp-Neuman",
+    "party": "Conservative"
+   }
+  ],
+  "K9A": [
+   {
+    "ridingId": 35074,
+    "riding": "Northumberland—Clarke",
+    "share": 1.0,
+    "memberId": "philip-lawrence",
+    "member": "Philip Lawrence",
+    "party": "Conservative"
+   }
+  ],
+  "K9H": [
+   {
+    "ridingId": 35086,
+    "riding": "Peterborough",
+    "share": 1.0,
+    "memberId": "emma-harrison",
+    "member": "Emma Harrison",
+    "party": "Liberal"
+   }
+  ],
+  "K9J": [
+   {
+    "ridingId": 35086,
+    "riding": "Peterborough",
+    "share": 0.9327,
+    "memberId": "emma-harrison",
+    "member": "Emma Harrison",
+    "party": "Liberal"
+   },
+   {
+    "ridingId": 35035,
+    "riding": "Haliburton—Kawartha Lakes",
+    "share": 0.0673,
+    "memberId": "jamie-schmale",
+    "member": "Jamie Schmale",
+    "party": "Conservative"
+   }
+  ],
+  "K9K": [
+   {
+    "ridingId": 35086,
+    "riding": "Peterborough",
+    "share": 1.0,
+    "memberId": "emma-harrison",
+    "member": "Emma Harrison",
+    "party": "Liberal"
+   }
+  ],
+  "K9L": [
+   {
+    "ridingId": 35086,
+    "riding": "Peterborough",
+    "share": 1.0,
+    "memberId": "emma-harrison",
+    "member": "Emma Harrison",
+    "party": "Liberal"
+   }
+  ],
+  "K9V": [
+   {
+    "ridingId": 35035,
+    "riding": "Haliburton—Kawartha Lakes",
+    "share": 1.0,
+    "memberId": "jamie-schmale",
+    "member": "Jamie Schmale",
+    "party": "Conservative"
+   }
+  ],
+  "L0A": [
+   {
+    "ridingId": 35035,
+    "riding": "Haliburton—Kawartha Lakes",
+    "share": 0.7283,
+    "memberId": "jamie-schmale",
+    "member": "Jamie Schmale",
+    "party": "Conservative"
+   },
+   {
+    "ridingId": 35074,
+    "riding": "Northumberland—Clarke",
+    "share": 0.2717,
+    "memberId": "philip-lawrence",
+    "member": "Philip Lawrence",
+    "party": "Conservative"
+   }
+  ],
+  "L0B": [
+   {
+    "ridingId": 35121,
+    "riding": "York—Durham",
+    "share": 0.3413,
+    "memberId": "jacob-mantle",
+    "member": "Jacob Mantle",
+    "party": "Conservative"
+   },
+   {
+    "ridingId": 35074,
+    "riding": "Northumberland—Clarke",
+    "share": 0.2576,
+    "memberId": "philip-lawrence",
+    "member": "Philip Lawrence",
+    "party": "Conservative"
+   },
+   {
+    "ridingId": 35008,
+    "riding": "Bowmanville—Oshawa North",
+    "share": 0.1804,
+    "memberId": "jamil-jivani",
+    "member": "Jamil Jivani",
+    "party": "Conservative"
+   },
+   {
+    "ridingId": 35035,
+    "riding": "Haliburton—Kawartha Lakes",
+    "share": 0.1348,
+    "memberId": "jamie-schmale",
+    "member": "Jamie Schmale",
+    "party": "Conservative"
+   },
+   {
+    "ridingId": 35087,
+    "riding": "Pickering—Brooklin",
+    "share": 0.0813,
+    "memberId": "juanita-nathan",
+    "member": "Juanita Nathan",
+    "party": "Liberal"
+   },
+   {
+    "ridingId": 35116,
+    "riding": "Whitby",
+    "share": 0.0045,
+    "memberId": "ryan-turnbull",
+    "member": "Ryan Turnbull",
+    "party": "Liberal"
+   }
+  ],
+  "L0C": [
+   {
+    "ridingId": 35121,
+    "riding": "York—Durham",
+    "share": 0.9532,
+    "memberId": "jacob-mantle",
+    "member": "Jacob Mantle",
+    "party": "Conservative"
+   },
+   {
+    "ridingId": 35035,
+    "riding": "Haliburton—Kawartha Lakes",
+    "share": 0.0468,
+    "memberId": "jamie-schmale",
+    "member": "Jamie Schmale",
+    "party": "Conservative"
+   }
+  ],
+  "L0E": [
+   {
+    "ridingId": 35121,
+    "riding": "York—Durham",
+    "share": 1.0,
+    "memberId": "jacob-mantle",
+    "member": "Jacob Mantle",
+    "party": "Conservative"
+   }
+  ],
+  "L0G": [
+   {
+    "ridingId": 35069,
+    "riding": "York—South Simcoe",
+    "share": 0.6204,
+    "memberId": "scot-davidson",
+    "member": "Scot Davidson",
+    "party": "Conservative"
+   },
+   {
+    "ridingId": 35047,
+    "riding": "King—Vaughan",
+    "share": 0.1992,
+    "memberId": "anna-roberts",
+    "member": "Anna Roberts",
+    "party": "Conservative"
+   },
+   {
+    "ridingId": 35098,
+    "riding": "Simcoe—Grey",
+    "share": 0.1798,
+    "memberId": "terry-dowdall",
+    "member": "Terry Dowdall",
+    "party": "Conservative"
+   }
+  ],
+  "L0H": [
+   {
+    "ridingId": 35087,
+    "riding": "Pickering—Brooklin",
+    "share": 1.0,
+    "memberId": "juanita-nathan",
+    "member": "Juanita Nathan",
+    "party": "Liberal"
+   }
+  ],
+  "L0J": [
+   {
+    "ridingId": 35047,
+    "riding": "King—Vaughan",
+    "share": 0.9506,
+    "memberId": "anna-roberts",
+    "member": "Anna Roberts",
+    "party": "Conservative"
+   },
+   {
+    "ridingId": 35113,
+    "riding": "Vaughan—Woodbridge",
+    "share": 0.0494,
+    "memberId": "michael-guglielmin",
+    "member": "Michael Guglielmin",
+    "party": "Conservative"
+   }
+  ],
+  "L0K": [
+   {
+    "ridingId": 35084,
+    "riding": "Parry Sound—Muskoka",
+    "share": 0.492,
+    "memberId": "scott-aitchison",
+    "member": "Scott Aitchison",
+    "party": "Conservative"
+   },
+   {
+    "ridingId": 35099,
+    "riding": "Simcoe North",
+    "share": 0.2815,
+    "memberId": "adam-chambers",
+    "member": "Adam Chambers",
+    "party": "Conservative"
+   },
+   {
+    "ridingId": 35035,
+    "riding": "Haliburton—Kawartha Lakes",
+    "share": 0.1028,
+    "memberId": "jamie-schmale",
+    "member": "Jamie Schmale",
+    "party": "Conservative"
+   },
+   {
+    "ridingId": 35121,
+    "riding": "York—Durham",
+    "share": 0.0694,
+    "memberId": "jacob-mantle",
+    "member": "Jacob Mantle",
+    "party": "Conservative"
+   },
+   {
+    "ridingId": 35005,
+    "riding": "Barrie—Springwater—Oro-Medonte",
+    "share": 0.0542,
+    "memberId": "doug-shipley",
+    "member": "Doug Shipley",
+    "party": "Conservative"
+   }
+  ],
+  "L0L": [
+   {
+    "ridingId": 35005,
+    "riding": "Barrie—Springwater—Oro-Medonte",
+    "share": 0.4764,
+    "memberId": "doug-shipley",
+    "member": "Doug Shipley",
+    "party": "Conservative"
+   },
+   {
+    "ridingId": 35099,
+    "riding": "Simcoe North",
+    "share": 0.2661,
+    "memberId": "adam-chambers",
+    "member": "Adam Chambers",
+    "party": "Conservative"
+   },
+   {
+    "ridingId": 35004,
+    "riding": "Barrie South—Innisfil",
+    "share": 0.1153,
+    "memberId": "john-brassard",
+    "member": "John Brassard",
+    "party": "Conservative"
+   },
+   {
+    "ridingId": 35098,
+    "riding": "Simcoe—Grey",
+    "share": 0.0967,
+    "memberId": "terry-dowdall",
+    "member": "Terry Dowdall",
+    "party": "Conservative"
+   },
+   {
+    "ridingId": 35069,
+    "riding": "York—South Simcoe",
+    "share": 0.0454,
+    "memberId": "scot-davidson",
+    "member": "Scot Davidson",
+    "party": "Conservative"
+   }
+  ],
+  "L0M": [
+   {
+    "ridingId": 35098,
+    "riding": "Simcoe—Grey",
+    "share": 0.9814,
+    "memberId": "terry-dowdall",
+    "member": "Terry Dowdall",
+    "party": "Conservative"
+   },
+   {
+    "ridingId": 35005,
+    "riding": "Barrie—Springwater—Oro-Medonte",
+    "share": 0.0186,
+    "memberId": "doug-shipley",
+    "member": "Doug Shipley",
+    "party": "Conservative"
+   }
+  ],
+  "L0N": [
+   {
+    "ridingId": 35098,
+    "riding": "Simcoe—Grey",
+    "share": 0.6274,
+    "memberId": "terry-dowdall",
+    "member": "Terry Dowdall",
+    "party": "Conservative"
+   },
+   {
+    "ridingId": 35115,
+    "riding": "Wellington—Halton Hills North",
+    "share": 0.3726,
+    "memberId": "michael-chong",
+    "member": "Michael Chong",
+    "party": "Conservative"
+   }
+  ],
+  "L0P": [
+   {
+    "ridingId": 35018,
+    "riding": "Burlington North—Milton West",
+    "share": 0.6884,
+    "memberId": "adam-van-koeverden",
+    "member": "Adam van Koeverden",
+    "party": "Liberal"
+   },
+   {
+    "ridingId": 35032,
+    "riding": "Flamborough—Glanbrook—Brant North",
+    "share": 0.1332,
+    "memberId": "dan-muys",
+    "member": "Dan Muys",
+    "party": "Conservative"
+   },
+   {
+    "ridingId": 35060,
+    "riding": "Milton East—Halton Hills South",
+    "share": 0.1007,
+    "memberId": "kristina-tesser-derksen",
+    "member": "Kristina Tesser Derksen",
+    "party": "Liberal"
+   },
+   {
+    "ridingId": 35115,
+    "riding": "Wellington—Halton Hills North",
+    "share": 0.0776,
+    "memberId": "michael-chong",
+    "member": "Michael Chong",
+    "party": "Conservative"
+   }
+  ],
+  "L0R": [
+   {
+    "ridingId": 35072,
+    "riding": "Niagara West",
+    "share": 0.5616,
+    "memberId": "dean-allison",
+    "member": "Dean Allison",
+    "party": "Conservative"
+   },
+   {
+    "ridingId": 35032,
+    "riding": "Flamborough—Glanbrook—Brant North",
+    "share": 0.4182,
+    "memberId": "dan-muys",
+    "member": "Dan Muys",
+    "party": "Conservative"
+   },
+   {
+    "ridingId": 35039,
+    "riding": "Hamilton West—Ancaster—Dundas",
+    "share": 0.0175,
+    "memberId": "john-paul-danko",
+    "member": "John-Paul Danko",
+    "party": "Liberal"
+   },
+   {
+    "ridingId": 35037,
+    "riding": "Hamilton East—Stoney Creek",
+    "share": 0.0023,
+    "memberId": "ned-kuruc",
+    "member": "Ned Kuruc",
+    "party": "Conservative"
+   }
+  ],
+  "L0S": [
+   {
+    "ridingId": 35071,
+    "riding": "Niagara South",
+    "share": 0.4927,
+    "memberId": "fred-davies",
+    "member": "Fred Davies",
+    "party": "Conservative"
+   },
+   {
+    "ridingId": 35072,
+    "riding": "Niagara West",
+    "share": 0.3452,
+    "memberId": "dean-allison",
+    "member": "Dean Allison",
+    "party": "Conservative"
+   },
+   {
+    "ridingId": 35070,
+    "riding": "Niagara Falls—Niagara-on-the-Lake",
+    "share": 0.1621,
+    "memberId": "tony-baldinelli",
+    "member": "Tony Baldinelli",
+    "party": "Conservative"
+   }
+  ],
+  "L1A": [
+   {
+    "ridingId": 35074,
+    "riding": "Northumberland—Clarke",
+    "share": 1.0,
+    "memberId": "philip-lawrence",
+    "member": "Philip Lawrence",
+    "party": "Conservative"
+   }
+  ],
+  "L1B": [
+   {
+    "ridingId": 35074,
+    "riding": "Northumberland—Clarke",
+    "share": 0.9575,
+    "memberId": "philip-lawrence",
+    "member": "Philip Lawrence",
+    "party": "Conservative"
+   },
+   {
+    "ridingId": 35008,
+    "riding": "Bowmanville—Oshawa North",
+    "share": 0.0425,
+    "memberId": "jamil-jivani",
+    "member": "Jamil Jivani",
+    "party": "Conservative"
+   }
+  ],
+  "L1C": [
+   {
+    "ridingId": 35008,
+    "riding": "Bowmanville—Oshawa North",
+    "share": 0.9998,
+    "memberId": "jamil-jivani",
+    "member": "Jamil Jivani",
+    "party": "Conservative"
+   }
+  ],
+  "L1E": [
+   {
+    "ridingId": 35008,
+    "riding": "Bowmanville—Oshawa North",
+    "share": 1.0,
+    "memberId": "jamil-jivani",
+    "member": "Jamil Jivani",
+    "party": "Conservative"
+   }
+  ],
+  "L1G": [
+   {
+    "ridingId": 35078,
+    "riding": "Oshawa",
+    "share": 0.6207,
+    "memberId": "rhonda-kirkland",
+    "member": "Rhonda Kirkland",
+    "party": "Conservative"
+   },
+   {
+    "ridingId": 35008,
+    "riding": "Bowmanville—Oshawa North",
+    "share": 0.3793,
+    "memberId": "jamil-jivani",
+    "member": "Jamil Jivani",
+    "party": "Conservative"
+   }
+  ],
+  "L1H": [
+   {
+    "ridingId": 35008,
+    "riding": "Bowmanville—Oshawa North",
+    "share": 0.69,
+    "memberId": "jamil-jivani",
+    "member": "Jamil Jivani",
+    "party": "Conservative"
+   },
+   {
+    "ridingId": 35078,
+    "riding": "Oshawa",
+    "share": 0.31,
+    "memberId": "rhonda-kirkland",
+    "member": "Rhonda Kirkland",
+    "party": "Conservative"
+   }
+  ],
+  "L1J": [
+   {
+    "ridingId": 35078,
+    "riding": "Oshawa",
+    "share": 1.0,
+    "memberId": "rhonda-kirkland",
+    "member": "Rhonda Kirkland",
+    "party": "Conservative"
+   }
+  ],
+  "L1K": [
+   {
+    "ridingId": 35078,
+    "riding": "Oshawa",
+    "share": 0.545,
+    "memberId": "rhonda-kirkland",
+    "member": "Rhonda Kirkland",
+    "party": "Conservative"
+   },
+   {
+    "ridingId": 35008,
+    "riding": "Bowmanville—Oshawa North",
+    "share": 0.455,
+    "memberId": "jamil-jivani",
+    "member": "Jamil Jivani",
+    "party": "Conservative"
+   }
+  ],
+  "L1L": [
+   {
+    "ridingId": 35008,
+    "riding": "Bowmanville—Oshawa North",
+    "share": 1.0,
+    "memberId": "jamil-jivani",
+    "member": "Jamil Jivani",
+    "party": "Conservative"
+   }
+  ],
+  "L1M": [
+   {
+    "ridingId": 35087,
+    "riding": "Pickering—Brooklin",
+    "share": 0.8393,
+    "memberId": "juanita-nathan",
+    "member": "Juanita Nathan",
+    "party": "Liberal"
+   },
+   {
+    "ridingId": 35116,
+    "riding": "Whitby",
+    "share": 0.1607,
+    "memberId": "ryan-turnbull",
+    "member": "Ryan Turnbull",
+    "party": "Liberal"
+   }
+  ],
+  "L1N": [
+   {
+    "ridingId": 35116,
+    "riding": "Whitby",
+    "share": 1.0,
+    "memberId": "ryan-turnbull",
+    "member": "Ryan Turnbull",
+    "party": "Liberal"
+   }
+  ],
+  "L1P": [
+   {
+    "ridingId": 35116,
+    "riding": "Whitby",
+    "share": 0.9987,
+    "memberId": "ryan-turnbull",
+    "member": "Ryan Turnbull",
+    "party": "Liberal"
+   },
+   {
+    "ridingId": 35087,
+    "riding": "Pickering—Brooklin",
+    "share": 0.0013,
+    "memberId": "juanita-nathan",
+    "member": "Juanita Nathan",
+    "party": "Liberal"
+   }
+  ],
+  "L1R": [
+   {
+    "ridingId": 35116,
+    "riding": "Whitby",
+    "share": 0.9564,
+    "memberId": "ryan-turnbull",
+    "member": "Ryan Turnbull",
+    "party": "Liberal"
+   },
+   {
+    "ridingId": 35087,
+    "riding": "Pickering—Brooklin",
+    "share": 0.0436,
+    "memberId": "juanita-nathan",
+    "member": "Juanita Nathan",
+    "party": "Liberal"
+   }
+  ],
+  "L1S": [
+   {
+    "ridingId": 35001,
+    "riding": "Ajax",
+    "share": 1.0,
+    "memberId": "jennifer-mckelvie",
+    "member": "Jennifer McKelvie",
+    "party": "Liberal"
+   }
+  ],
+  "L1T": [
+   {
+    "ridingId": 35001,
+    "riding": "Ajax",
+    "share": 1.0,
+    "memberId": "jennifer-mckelvie",
+    "member": "Jennifer McKelvie",
+    "party": "Liberal"
+   }
+  ],
+  "L1V": [
+   {
+    "ridingId": 35087,
+    "riding": "Pickering—Brooklin",
+    "share": 1.0,
+    "memberId": "juanita-nathan",
+    "member": "Juanita Nathan",
+    "party": "Liberal"
+   }
+  ],
+  "L1W": [
+   {
+    "ridingId": 35087,
+    "riding": "Pickering—Brooklin",
+    "share": 1.0,
+    "memberId": "juanita-nathan",
+    "member": "Juanita Nathan",
+    "party": "Liberal"
+   }
+  ],
+  "L1X": [
+   {
+    "ridingId": 35087,
+    "riding": "Pickering—Brooklin",
+    "share": 1.0,
+    "memberId": "juanita-nathan",
+    "member": "Juanita Nathan",
+    "party": "Liberal"
+   }
+  ],
+  "L1Y": [
+   {
+    "ridingId": 35087,
+    "riding": "Pickering—Brooklin",
+    "share": 1.0,
+    "memberId": "juanita-nathan",
+    "member": "Juanita Nathan",
+    "party": "Liberal"
+   }
+  ],
+  "L1Z": [
+   {
+    "ridingId": 35001,
+    "riding": "Ajax",
+    "share": 1.0,
+    "memberId": "jennifer-mckelvie",
+    "member": "Jennifer McKelvie",
+    "party": "Liberal"
+   }
+  ],
+  "L2A": [
+   {
+    "ridingId": 35071,
+    "riding": "Niagara South",
+    "share": 1.0,
+    "memberId": "fred-davies",
+    "member": "Fred Davies",
+    "party": "Conservative"
+   }
+  ],
+  "L2E": [
+   {
+    "ridingId": 35070,
+    "riding": "Niagara Falls—Niagara-on-the-Lake",
+    "share": 1.0,
+    "memberId": "tony-baldinelli",
+    "member": "Tony Baldinelli",
+    "party": "Conservative"
+   }
+  ],
+  "L2G": [
+   {
+    "ridingId": 35070,
+    "riding": "Niagara Falls—Niagara-on-the-Lake",
+    "share": 1.0,
+    "memberId": "tony-baldinelli",
+    "member": "Tony Baldinelli",
+    "party": "Conservative"
+   }
+  ],
+  "L2H": [
+   {
+    "ridingId": 35070,
+    "riding": "Niagara Falls—Niagara-on-the-Lake",
+    "share": 1.0,
+    "memberId": "tony-baldinelli",
+    "member": "Tony Baldinelli",
+    "party": "Conservative"
+   }
+  ],
+  "L2J": [
+   {
+    "ridingId": 35070,
+    "riding": "Niagara Falls—Niagara-on-the-Lake",
+    "share": 1.0,
+    "memberId": "tony-baldinelli",
+    "member": "Tony Baldinelli",
+    "party": "Conservative"
+   }
+  ],
+  "L2M": [
+   {
+    "ridingId": 35101,
+    "riding": "St. Catharines",
+    "share": 1.0,
+    "memberId": "chris-bittle",
+    "member": "Chris Bittle",
+    "party": "Liberal"
+   }
+  ],
+  "L2N": [
+   {
+    "ridingId": 35101,
+    "riding": "St. Catharines",
+    "share": 1.0,
+    "memberId": "chris-bittle",
+    "member": "Chris Bittle",
+    "party": "Liberal"
+   }
+  ],
+  "L2P": [
+   {
+    "ridingId": 35101,
+    "riding": "St. Catharines",
+    "share": 1.0,
+    "memberId": "chris-bittle",
+    "member": "Chris Bittle",
+    "party": "Liberal"
+   }
+  ],
+  "L2R": [
+   {
+    "ridingId": 35072,
+    "riding": "Niagara West",
+    "share": 0.8653,
+    "memberId": "dean-allison",
+    "member": "Dean Allison",
+    "party": "Conservative"
+   },
+   {
+    "ridingId": 35101,
+    "riding": "St. Catharines",
+    "share": 0.1347,
+    "memberId": "chris-bittle",
+    "member": "Chris Bittle",
+    "party": "Liberal"
+   }
+  ],
+  "L2S": [
+   {
+    "ridingId": 35072,
+    "riding": "Niagara West",
+    "share": 0.7994,
+    "memberId": "dean-allison",
+    "member": "Dean Allison",
+    "party": "Conservative"
+   },
+   {
+    "ridingId": 35101,
+    "riding": "St. Catharines",
+    "share": 0.2006,
+    "memberId": "chris-bittle",
+    "member": "Chris Bittle",
+    "party": "Liberal"
+   }
+  ],
+  "L2T": [
+   {
+    "ridingId": 35101,
+    "riding": "St. Catharines",
+    "share": 1.0,
+    "memberId": "chris-bittle",
+    "member": "Chris Bittle",
+    "party": "Liberal"
+   }
+  ],
+  "L2V": [
+   {
+    "ridingId": 35071,
+    "riding": "Niagara South",
+    "share": 1.0,
+    "memberId": "fred-davies",
+    "member": "Fred Davies",
+    "party": "Conservative"
+   }
+  ],
+  "L2W": [
+   {
+    "ridingId": 35101,
+    "riding": "St. Catharines",
+    "share": 1.0,
+    "memberId": "chris-bittle",
+    "member": "Chris Bittle",
+    "party": "Liberal"
+   }
+  ],
+  "L3B": [
+   {
+    "ridingId": 35071,
+    "riding": "Niagara South",
+    "share": 0.633,
+    "memberId": "fred-davies",
+    "member": "Fred Davies",
+    "party": "Conservative"
+   },
+   {
+    "ridingId": 35070,
+    "riding": "Niagara Falls—Niagara-on-the-Lake",
+    "share": 0.2396,
+    "memberId": "tony-baldinelli",
+    "member": "Tony Baldinelli",
+    "party": "Conservative"
+   },
+   {
+    "ridingId": 35072,
+    "riding": "Niagara West",
+    "share": 0.1274,
+    "memberId": "dean-allison",
+    "member": "Dean Allison",
+    "party": "Conservative"
+   }
+  ],
+  "L3C": [
+   {
+    "ridingId": 35071,
+    "riding": "Niagara South",
+    "share": 1.0,
+    "memberId": "fred-davies",
+    "member": "Fred Davies",
+    "party": "Conservative"
+   }
+  ],
+  "L3K": [
+   {
+    "ridingId": 35071,
+    "riding": "Niagara South",
+    "share": 0.6279,
+    "memberId": "fred-davies",
+    "member": "Fred Davies",
+    "party": "Conservative"
+   },
+   {
+    "ridingId": 35072,
+    "riding": "Niagara West",
+    "share": 0.3721,
+    "memberId": "dean-allison",
+    "member": "Dean Allison",
+    "party": "Conservative"
+   }
+  ],
+  "L3L": [
+   {
+    "ridingId": 35047,
+    "riding": "King—Vaughan",
+    "share": 1.0,
+    "memberId": "anna-roberts",
+    "member": "Anna Roberts",
+    "party": "Conservative"
+   }
+  ],
+  "L3M": [
+   {
+    "ridingId": 35072,
+    "riding": "Niagara West",
+    "share": 1.0,
+    "memberId": "dean-allison",
+    "member": "Dean Allison",
+    "party": "Conservative"
+   }
+  ],
+  "L3P": [
+   {
+    "ridingId": 35056,
+    "riding": "Markham—Stouffville",
+    "share": 0.8375,
+    "memberId": "helena-jaczek",
+    "member": "Helena Jaczek",
+    "party": "Liberal"
+   },
+   {
+    "ridingId": 35058,
+    "riding": "Markham—Unionville",
+    "share": 0.1406,
+    "memberId": "michael-ma",
+    "member": "Michael Ma",
+    "party": "Liberal"
+   },
+   {
+    "ridingId": 35057,
+    "riding": "Markham—Thornhill",
+    "share": 0.0219,
+    "memberId": "tim-hodgson",
+    "member": "Tim Hodgson",
+    "party": "Liberal"
+   }
+  ],
+  "L3R": [
+   {
+    "ridingId": 35058,
+    "riding": "Markham—Unionville",
+    "share": 0.7683,
+    "memberId": "michael-ma",
+    "member": "Michael Ma",
+    "party": "Liberal"
+   },
+   {
+    "ridingId": 35057,
+    "riding": "Markham—Thornhill",
+    "share": 0.2317,
+    "memberId": "tim-hodgson",
+    "member": "Tim Hodgson",
+    "party": "Liberal"
+   }
+  ],
+  "L3S": [
+   {
+    "ridingId": 35057,
+    "riding": "Markham—Thornhill",
+    "share": 1.0,
+    "memberId": "tim-hodgson",
+    "member": "Tim Hodgson",
+    "party": "Liberal"
+   }
+  ],
+  "L3T": [
+   {
+    "ridingId": 35057,
+    "riding": "Markham—Thornhill",
+    "share": 0.559,
+    "memberId": "tim-hodgson",
+    "member": "Tim Hodgson",
+    "party": "Liberal"
+   },
+   {
+    "ridingId": 35106,
+    "riding": "Thornhill",
+    "share": 0.3239,
+    "memberId": "melissa-lantsman",
+    "member": "Melissa Lantsman",
+    "party": "Conservative"
+   },
+   {
+    "ridingId": 35089,
+    "riding": "Richmond Hill South",
+    "share": 0.0768,
+    "memberId": "vincent-ho",
+    "member": "Vincent Ho",
+    "party": "Conservative"
+   },
+   {
+    "ridingId": 35058,
+    "riding": "Markham—Unionville",
+    "share": 0.0403,
+    "memberId": "michael-ma",
+    "member": "Michael Ma",
+    "party": "Liberal"
+   }
+  ],
+  "L3V": [
+   {
+    "ridingId": 35099,
+    "riding": "Simcoe North",
+    "share": 0.7729,
+    "memberId": "adam-chambers",
+    "member": "Adam Chambers",
+    "party": "Conservative"
+   },
+   {
+    "ridingId": 35005,
+    "riding": "Barrie—Springwater—Oro-Medonte",
+    "share": 0.2271,
+    "memberId": "doug-shipley",
+    "member": "Doug Shipley",
+    "party": "Conservative"
+   }
+  ],
+  "L3X": [
+   {
+    "ridingId": 35068,
+    "riding": "Newmarket—Aurora",
+    "share": 1.0,
+    "memberId": "sandra-cobena",
+    "member": "Sandra Cobena",
+    "party": "Conservative"
+   }
+  ],
+  "L3Y": [
+   {
+    "ridingId": 35047,
+    "riding": "King—Vaughan",
+    "share": 0.5899,
+    "memberId": "anna-roberts",
+    "member": "Anna Roberts",
+    "party": "Conservative"
+   },
+   {
+    "ridingId": 35068,
+    "riding": "Newmarket—Aurora",
+    "share": 0.4101,
+    "memberId": "sandra-cobena",
+    "member": "Sandra Cobena",
+    "party": "Conservative"
+   }
+  ],
+  "L3Z": [
+   {
+    "ridingId": 35069,
+    "riding": "York—South Simcoe",
+    "share": 1.0,
+    "memberId": "scot-davidson",
+    "member": "Scot Davidson",
+    "party": "Conservative"
+   }
+  ],
+  "L4A": [
+   {
+    "ridingId": 35121,
+    "riding": "York—Durham",
+    "share": 0.9272,
+    "memberId": "jacob-mantle",
+    "member": "Jacob Mantle",
+    "party": "Conservative"
+   },
+   {
+    "ridingId": 35056,
+    "riding": "Markham—Stouffville",
+    "share": 0.0728,
+    "memberId": "helena-jaczek",
+    "member": "Helena Jaczek",
+    "party": "Liberal"
+   }
+  ],
+  "L4B": [
+   {
+    "ridingId": 35089,
+    "riding": "Richmond Hill South",
+    "share": 1.0,
+    "memberId": "vincent-ho",
+    "member": "Vincent Ho",
+    "party": "Conservative"
+   }
+  ],
+  "L4C": [
+   {
+    "ridingId": 35089,
+    "riding": "Richmond Hill South",
+    "share": 0.8858,
+    "memberId": "vincent-ho",
+    "member": "Vincent Ho",
+    "party": "Conservative"
+   },
+   {
+    "ridingId": 35003,
+    "riding": "Aurora—Oak Ridges—Richmond Hill",
+    "share": 0.1142,
+    "memberId": "costas-menegakis",
+    "member": "Costas Menegakis",
+    "party": "Conservative"
+   }
+  ],
+  "L4E": [
+   {
+    "ridingId": 35003,
+    "riding": "Aurora—Oak Ridges—Richmond Hill",
+    "share": 1.0,
+    "memberId": "costas-menegakis",
+    "member": "Costas Menegakis",
+    "party": "Conservative"
+   }
+  ],
+  "L4G": [
+   {
+    "ridingId": 35003,
+    "riding": "Aurora—Oak Ridges—Richmond Hill",
+    "share": 0.7445,
+    "memberId": "costas-menegakis",
+    "member": "Costas Menegakis",
+    "party": "Conservative"
+   },
+   {
+    "ridingId": 35068,
+    "riding": "Newmarket—Aurora",
+    "share": 0.2555,
+    "memberId": "sandra-cobena",
+    "member": "Sandra Cobena",
+    "party": "Conservative"
+   }
+  ],
+  "L4H": [
+   {
+    "ridingId": 35113,
+    "riding": "Vaughan—Woodbridge",
+    "share": 0.6429,
+    "memberId": "michael-guglielmin",
+    "member": "Michael Guglielmin",
+    "party": "Conservative"
+   },
+   {
+    "ridingId": 35047,
+    "riding": "King—Vaughan",
+    "share": 0.3571,
+    "memberId": "anna-roberts",
+    "member": "Anna Roberts",
+    "party": "Conservative"
+   }
+  ],
+  "L4J": [
+   {
+    "ridingId": 35106,
+    "riding": "Thornhill",
+    "share": 1.0,
+    "memberId": "melissa-lantsman",
+    "member": "Melissa Lantsman",
+    "party": "Conservative"
+   }
+  ],
+  "L4K": [
+   {
+    "ridingId": 35106,
+    "riding": "Thornhill",
+    "share": 0.9847,
+    "memberId": "melissa-lantsman",
+    "member": "Melissa Lantsman",
+    "party": "Conservative"
+   },
+   {
+    "ridingId": 35047,
+    "riding": "King—Vaughan",
+    "share": 0.0153,
+    "memberId": "anna-roberts",
+    "member": "Anna Roberts",
+    "party": "Conservative"
+   }
+  ],
+  "L4L": [
+   {
+    "ridingId": 35113,
+    "riding": "Vaughan—Woodbridge",
+    "share": 0.9962,
+    "memberId": "michael-guglielmin",
+    "member": "Michael Guglielmin",
+    "party": "Conservative"
+   },
+   {
+    "ridingId": 35031,
+    "riding": "Etobicoke North",
+    "share": 0.0038,
+    "memberId": "john-zerucelli",
+    "member": "John Zerucelli",
+    "party": "Liberal"
+   }
+  ],
+  "L4M": [
+   {
+    "ridingId": 35005,
+    "riding": "Barrie—Springwater—Oro-Medonte",
+    "share": 0.9799,
+    "memberId": "doug-shipley",
+    "member": "Doug Shipley",
+    "party": "Conservative"
+   },
+   {
+    "ridingId": 35004,
+    "riding": "Barrie South—Innisfil",
+    "share": 0.0201,
+    "memberId": "john-brassard",
+    "member": "John Brassard",
+    "party": "Conservative"
+   }
+  ],
+  "L4N": [
+   {
+    "ridingId": 35004,
+    "riding": "Barrie South—Innisfil",
+    "share": 0.7304,
+    "memberId": "john-brassard",
+    "member": "John Brassard",
+    "party": "Conservative"
+   },
+   {
+    "ridingId": 35005,
+    "riding": "Barrie—Springwater—Oro-Medonte",
+    "share": 0.2696,
+    "memberId": "doug-shipley",
+    "member": "Doug Shipley",
+    "party": "Conservative"
+   }
+  ],
+  "L4P": [
+   {
+    "ridingId": 35121,
+    "riding": "York—Durham",
+    "share": 1.0,
+    "memberId": "jacob-mantle",
+    "member": "Jacob Mantle",
+    "party": "Conservative"
+   }
+  ],
+  "L4R": [
+   {
+    "ridingId": 35099,
+    "riding": "Simcoe North",
+    "share": 0.7161,
+    "memberId": "adam-chambers",
+    "member": "Adam Chambers",
+    "party": "Conservative"
+   },
+   {
+    "ridingId": 35005,
+    "riding": "Barrie—Springwater—Oro-Medonte",
+    "share": 0.2839,
+    "memberId": "doug-shipley",
+    "member": "Doug Shipley",
+    "party": "Conservative"
+   }
+  ],
+  "L4S": [
+   {
+    "ridingId": 35003,
+    "riding": "Aurora—Oak Ridges—Richmond Hill",
+    "share": 0.7922,
+    "memberId": "costas-menegakis",
+    "member": "Costas Menegakis",
+    "party": "Conservative"
+   },
+   {
+    "ridingId": 35089,
+    "riding": "Richmond Hill South",
+    "share": 0.2078,
+    "memberId": "vincent-ho",
+    "member": "Vincent Ho",
+    "party": "Conservative"
+   }
+  ],
+  "L4T": [
+   {
+    "ridingId": 35065,
+    "riding": "Mississauga—Malton",
+    "share": 1.0,
+    "memberId": "iqwinder-gaheer",
+    "member": "Iqwinder Gaheer",
+    "party": "Liberal"
+   }
+  ],
+  "L4V": [
+   {
+    "ridingId": 35065,
+    "riding": "Mississauga—Malton",
+    "share": 1.0,
+    "memberId": "iqwinder-gaheer",
+    "member": "Iqwinder Gaheer",
+    "party": "Liberal"
+   }
+  ],
+  "L4W": [
+   {
+    "ridingId": 35065,
+    "riding": "Mississauga—Malton",
+    "share": 0.5727,
+    "memberId": "iqwinder-gaheer",
+    "member": "Iqwinder Gaheer",
+    "party": "Liberal"
+   },
+   {
+    "ridingId": 35062,
+    "riding": "Mississauga East—Cooksville",
+    "share": 0.4273,
+    "memberId": "peter-fonseca",
+    "member": "Peter Fonseca",
+    "party": "Liberal"
+   }
+  ],
+  "L4X": [
+   {
+    "ridingId": 35062,
+    "riding": "Mississauga East—Cooksville",
+    "share": 0.8792,
+    "memberId": "peter-fonseca",
+    "member": "Peter Fonseca",
+    "party": "Liberal"
+   },
+   {
+    "ridingId": 35064,
+    "riding": "Mississauga—Lakeshore",
+    "share": 0.1208,
+    "memberId": "charles-sousa",
+    "member": "Charles Sousa",
+    "party": "Liberal"
+   }
+  ],
+  "L4Y": [
+   {
+    "ridingId": 35062,
+    "riding": "Mississauga East—Cooksville",
+    "share": 0.7791,
+    "memberId": "peter-fonseca",
+    "member": "Peter Fonseca",
+    "party": "Liberal"
+   },
+   {
+    "ridingId": 35064,
+    "riding": "Mississauga—Lakeshore",
+    "share": 0.2209,
+    "memberId": "charles-sousa",
+    "member": "Charles Sousa",
+    "party": "Liberal"
+   }
+  ],
+  "L4Z": [
+   {
+    "ridingId": 35065,
+    "riding": "Mississauga—Malton",
+    "share": 0.7613,
+    "memberId": "iqwinder-gaheer",
+    "member": "Iqwinder Gaheer",
+    "party": "Liberal"
+   },
+   {
+    "ridingId": 35062,
+    "riding": "Mississauga East—Cooksville",
+    "share": 0.2386,
+    "memberId": "peter-fonseca",
+    "member": "Peter Fonseca",
+    "party": "Liberal"
+   }
+  ],
+  "L5A": [
+   {
+    "ridingId": 35062,
+    "riding": "Mississauga East—Cooksville",
+    "share": 0.7736,
+    "memberId": "peter-fonseca",
+    "member": "Peter Fonseca",
+    "party": "Liberal"
+   },
+   {
+    "ridingId": 35064,
+    "riding": "Mississauga—Lakeshore",
+    "share": 0.2264,
+    "memberId": "charles-sousa",
+    "member": "Charles Sousa",
+    "party": "Liberal"
+   }
+  ],
+  "L5B": [
+   {
+    "ridingId": 35061,
+    "riding": "Mississauga Centre",
+    "share": 0.6281,
+    "memberId": "fares-al-soud",
+    "member": "Fares Al Soud",
+    "party": "Liberal"
+   },
+   {
+    "ridingId": 35064,
+    "riding": "Mississauga—Lakeshore",
+    "share": 0.2185,
+    "memberId": "charles-sousa",
+    "member": "Charles Sousa",
+    "party": "Liberal"
+   },
+   {
+    "ridingId": 35062,
+    "riding": "Mississauga East—Cooksville",
+    "share": 0.1534,
+    "memberId": "peter-fonseca",
+    "member": "Peter Fonseca",
+    "party": "Liberal"
+   }
+  ],
+  "L5C": [
+   {
+    "ridingId": 35061,
+    "riding": "Mississauga Centre",
+    "share": 0.6892,
+    "memberId": "fares-al-soud",
+    "member": "Fares Al Soud",
+    "party": "Liberal"
+   },
+   {
+    "ridingId": 35064,
+    "riding": "Mississauga—Lakeshore",
+    "share": 0.2895,
+    "memberId": "charles-sousa",
+    "member": "Charles Sousa",
+    "party": "Liberal"
+   },
+   {
+    "ridingId": 35066,
+    "riding": "Mississauga—Streetsville",
+    "share": 0.0214,
+    "memberId": "rechie-valdez",
+    "member": "Rechie Valdez",
+    "party": "Liberal"
+   }
+  ],
+  "L5E": [
+   {
+    "ridingId": 35064,
+    "riding": "Mississauga—Lakeshore",
+    "share": 1.0,
+    "memberId": "charles-sousa",
+    "member": "Charles Sousa",
+    "party": "Liberal"
+   }
+  ],
+  "L5G": [
+   {
+    "ridingId": 35064,
+    "riding": "Mississauga—Lakeshore",
+    "share": 1.0,
+    "memberId": "charles-sousa",
+    "member": "Charles Sousa",
+    "party": "Liberal"
+   }
+  ],
+  "L5H": [
+   {
+    "ridingId": 35064,
+    "riding": "Mississauga—Lakeshore",
+    "share": 1.0,
+    "memberId": "charles-sousa",
+    "member": "Charles Sousa",
+    "party": "Liberal"
+   }
+  ],
+  "L5J": [
+   {
+    "ridingId": 35064,
+    "riding": "Mississauga—Lakeshore",
+    "share": 1.0,
+    "memberId": "charles-sousa",
+    "member": "Charles Sousa",
+    "party": "Liberal"
+   }
+  ],
+  "L5K": [
+   {
+    "ridingId": 35064,
+    "riding": "Mississauga—Lakeshore",
+    "share": 1.0,
+    "memberId": "charles-sousa",
+    "member": "Charles Sousa",
+    "party": "Liberal"
+   }
+  ],
+  "L5L": [
+   {
+    "ridingId": 35063,
+    "riding": "Mississauga—Erin Mills",
+    "share": 0.9853,
+    "memberId": "iqra-khalid",
+    "member": "Iqra Khalid",
+    "party": "Liberal"
+   },
+   {
+    "ridingId": 35066,
+    "riding": "Mississauga—Streetsville",
+    "share": 0.0147,
+    "memberId": "rechie-valdez",
+    "member": "Rechie Valdez",
+    "party": "Liberal"
+   }
+  ],
+  "L5M": [
+   {
+    "ridingId": 35063,
+    "riding": "Mississauga—Erin Mills",
+    "share": 0.566,
+    "memberId": "iqra-khalid",
+    "member": "Iqra Khalid",
+    "party": "Liberal"
+   },
+   {
+    "ridingId": 35066,
+    "riding": "Mississauga—Streetsville",
+    "share": 0.434,
+    "memberId": "rechie-valdez",
+    "member": "Rechie Valdez",
+    "party": "Liberal"
+   }
+  ],
+  "L5N": [
+   {
+    "ridingId": 35066,
+    "riding": "Mississauga—Streetsville",
+    "share": 1.0,
+    "memberId": "rechie-valdez",
+    "member": "Rechie Valdez",
+    "party": "Liberal"
+   }
+  ],
+  "L5R": [
+   {
+    "ridingId": 35065,
+    "riding": "Mississauga—Malton",
+    "share": 0.5688,
+    "memberId": "iqwinder-gaheer",
+    "member": "Iqwinder Gaheer",
+    "party": "Liberal"
+   },
+   {
+    "ridingId": 35061,
+    "riding": "Mississauga Centre",
+    "share": 0.4312,
+    "memberId": "fares-al-soud",
+    "member": "Fares Al Soud",
+    "party": "Liberal"
+   }
+  ],
+  "L5S": [
+   {
+    "ridingId": 35065,
+    "riding": "Mississauga—Malton",
+    "share": 1.0,
+    "memberId": "iqwinder-gaheer",
+    "member": "Iqwinder Gaheer",
+    "party": "Liberal"
+   }
+  ],
+  "L5T": [
+   {
+    "ridingId": 35065,
+    "riding": "Mississauga—Malton",
+    "share": 1.0,
+    "memberId": "iqwinder-gaheer",
+    "member": "Iqwinder Gaheer",
+    "party": "Liberal"
+   }
+  ],
+  "L5V": [
+   {
+    "ridingId": 35065,
+    "riding": "Mississauga—Malton",
+    "share": 0.6388,
+    "memberId": "iqwinder-gaheer",
+    "member": "Iqwinder Gaheer",
+    "party": "Liberal"
+   },
+   {
+    "ridingId": 35061,
+    "riding": "Mississauga Centre",
+    "share": 0.3553,
+    "memberId": "fares-al-soud",
+    "member": "Fares Al Soud",
+    "party": "Liberal"
+   },
+   {
+    "ridingId": 35066,
+    "riding": "Mississauga—Streetsville",
+    "share": 0.0059,
+    "memberId": "rechie-valdez",
+    "member": "Rechie Valdez",
+    "party": "Liberal"
+   }
+  ],
+  "L5W": [
+   {
+    "ridingId": 35065,
+    "riding": "Mississauga—Malton",
+    "share": 0.9207,
+    "memberId": "iqwinder-gaheer",
+    "member": "Iqwinder Gaheer",
+    "party": "Liberal"
+   },
+   {
+    "ridingId": 35066,
+    "riding": "Mississauga—Streetsville",
+    "share": 0.0793,
+    "memberId": "rechie-valdez",
+    "member": "Rechie Valdez",
+    "party": "Liberal"
+   }
+  ],
+  "L6A": [
+   {
+    "ridingId": 35047,
+    "riding": "King—Vaughan",
+    "share": 0.9312,
+    "memberId": "anna-roberts",
+    "member": "Anna Roberts",
+    "party": "Conservative"
+   },
+   {
+    "ridingId": 35106,
+    "riding": "Thornhill",
+    "share": 0.0681,
+    "memberId": "melissa-lantsman",
+    "member": "Melissa Lantsman",
+    "party": "Conservative"
+   }
+  ],
+  "L6B": [
+   {
+    "ridingId": 35056,
+    "riding": "Markham—Stouffville",
+    "share": 0.5573,
+    "memberId": "helena-jaczek",
+    "member": "Helena Jaczek",
+    "party": "Liberal"
+   },
+   {
+    "ridingId": 35057,
+    "riding": "Markham—Thornhill",
+    "share": 0.4427,
+    "memberId": "tim-hodgson",
+    "member": "Tim Hodgson",
+    "party": "Liberal"
+   }
+  ],
+  "L6C": [
+   {
+    "ridingId": 35058,
+    "riding": "Markham—Unionville",
+    "share": 1.0,
+    "memberId": "michael-ma",
+    "member": "Michael Ma",
+    "party": "Liberal"
+   }
+  ],
+  "L6E": [
+   {
+    "ridingId": 35056,
+    "riding": "Markham—Stouffville",
+    "share": 0.752,
+    "memberId": "helena-jaczek",
+    "member": "Helena Jaczek",
+    "party": "Liberal"
+   },
+   {
+    "ridingId": 35058,
+    "riding": "Markham—Unionville",
+    "share": 0.248,
+    "memberId": "michael-ma",
+    "member": "Michael Ma",
+    "party": "Liberal"
+   }
+  ],
+  "L6G": [
+   {
+    "ridingId": 35057,
+    "riding": "Markham—Thornhill",
+    "share": 0.6545,
+    "memberId": "tim-hodgson",
+    "member": "Tim Hodgson",
+    "party": "Liberal"
+   },
+   {
+    "ridingId": 35058,
+    "riding": "Markham—Unionville",
+    "share": 0.3455,
+    "memberId": "michael-ma",
+    "member": "Michael Ma",
+    "party": "Liberal"
+   }
+  ],
+  "L6H": [
+   {
+    "ridingId": 35075,
+    "riding": "Oakville East",
+    "share": 0.78,
+    "memberId": "anita-anand",
+    "member": "Anita Anand",
+    "party": "Liberal"
+   },
+   {
+    "ridingId": 35076,
+    "riding": "Oakville West",
+    "share": 0.22,
+    "memberId": "sima-acan",
+    "member": "Sima Acan",
+    "party": "Liberal"
+   }
+  ],
+  "L6J": [
+   {
+    "ridingId": 35075,
+    "riding": "Oakville East",
+    "share": 1.0,
+    "memberId": "anita-anand",
+    "member": "Anita Anand",
+    "party": "Liberal"
+   }
+  ],
+  "L6K": [
+   {
+    "ridingId": 35076,
+    "riding": "Oakville West",
+    "share": 1.0,
+    "memberId": "sima-acan",
+    "member": "Sima Acan",
+    "party": "Liberal"
+   }
+  ],
+  "L6L": [
+   {
+    "ridingId": 35076,
+    "riding": "Oakville West",
+    "share": 1.0,
+    "memberId": "sima-acan",
+    "member": "Sima Acan",
+    "party": "Liberal"
+   }
+  ],
+  "L6M": [
+   {
+    "ridingId": 35076,
+    "riding": "Oakville West",
+    "share": 0.8788,
+    "memberId": "sima-acan",
+    "member": "Sima Acan",
+    "party": "Liberal"
+   },
+   {
+    "ridingId": 35075,
+    "riding": "Oakville East",
+    "share": 0.1212,
+    "memberId": "anita-anand",
+    "member": "Anita Anand",
+    "party": "Liberal"
+   }
+  ],
+  "L6P": [
+   {
+    "ridingId": 35011,
+    "riding": "Brampton East",
+    "share": 1.0,
+    "memberId": "maninder-sidhu",
+    "member": "Maninder Sidhu",
+    "party": "Liberal"
+   }
+  ],
+  "L6R": [
+   {
+    "ridingId": 35012,
+    "riding": "Brampton North—Caledon",
+    "share": 0.5637,
+    "memberId": "ruby-sahota",
+    "member": "Ruby Sahota",
+    "party": "Liberal"
+   },
+   {
+    "ridingId": 35011,
+    "riding": "Brampton East",
+    "share": 0.2507,
+    "memberId": "maninder-sidhu",
+    "member": "Maninder Sidhu",
+    "party": "Liberal"
+   },
+   {
+    "ridingId": 35010,
+    "riding": "Brampton—Chinguacousy Park",
+    "share": 0.1856,
+    "memberId": "shafqat-ali",
+    "member": "Shafqat Ali",
+    "party": "Liberal"
+   }
+  ],
+  "L6S": [
+   {
+    "ridingId": 35011,
+    "riding": "Brampton East",
+    "share": 0.7033,
+    "memberId": "maninder-sidhu",
+    "member": "Maninder Sidhu",
+    "party": "Liberal"
+   },
+   {
+    "ridingId": 35010,
+    "riding": "Brampton—Chinguacousy Park",
+    "share": 0.2967,
+    "memberId": "shafqat-ali",
+    "member": "Shafqat Ali",
+    "party": "Liberal"
+   }
+  ],
+  "L6T": [
+   {
+    "ridingId": 35010,
+    "riding": "Brampton—Chinguacousy Park",
+    "share": 1.0,
+    "memberId": "shafqat-ali",
+    "member": "Shafqat Ali",
+    "party": "Liberal"
+   }
+  ],
+  "L6V": [
+   {
+    "ridingId": 35009,
+    "riding": "Brampton Centre",
+    "share": 1.0,
+    "memberId": "amandeep-sodhi",
+    "member": "Amandeep Sodhi",
+    "party": "Liberal"
+   }
+  ],
+  "L6W": [
+   {
+    "ridingId": 35009,
+    "riding": "Brampton Centre",
+    "share": 0.6884,
+    "memberId": "amandeep-sodhi",
+    "member": "Amandeep Sodhi",
+    "party": "Liberal"
+   },
+   {
+    "ridingId": 35013,
+    "riding": "Brampton South",
+    "share": 0.2538,
+    "memberId": "sonia-sidhu",
+    "member": "Sonia Sidhu",
+    "party": "Liberal"
+   },
+   {
+    "ridingId": 35010,
+    "riding": "Brampton—Chinguacousy Park",
+    "share": 0.0579,
+    "memberId": "shafqat-ali",
+    "member": "Shafqat Ali",
+    "party": "Liberal"
+   }
+  ],
+  "L6X": [
+   {
+    "ridingId": 35013,
+    "riding": "Brampton South",
+    "share": 0.632,
+    "memberId": "sonia-sidhu",
+    "member": "Sonia Sidhu",
+    "party": "Liberal"
+   },
+   {
+    "ridingId": 35009,
+    "riding": "Brampton Centre",
+    "share": 0.2405,
+    "memberId": "amandeep-sodhi",
+    "member": "Amandeep Sodhi",
+    "party": "Liberal"
+   },
+   {
+    "ridingId": 35014,
+    "riding": "Brampton West",
+    "share": 0.1274,
+    "memberId": "amarjeet-gill",
+    "member": "Amarjeet Gill",
+    "party": "Conservative"
+   }
+  ],
+  "L6Y": [
+   {
+    "ridingId": 35013,
+    "riding": "Brampton South",
+    "share": 0.893,
+    "memberId": "sonia-sidhu",
+    "member": "Sonia Sidhu",
+    "party": "Liberal"
+   },
+   {
+    "ridingId": 35009,
+    "riding": "Brampton Centre",
+    "share": 0.107,
+    "memberId": "amandeep-sodhi",
+    "member": "Amandeep Sodhi",
+    "party": "Liberal"
+   }
+  ],
+  "L6Z": [
+   {
+    "ridingId": 35012,
+    "riding": "Brampton North—Caledon",
+    "share": 0.831,
+    "memberId": "ruby-sahota",
+    "member": "Ruby Sahota",
+    "party": "Liberal"
+   },
+   {
+    "ridingId": 35014,
+    "riding": "Brampton West",
+    "share": 0.169,
+    "memberId": "amarjeet-gill",
+    "member": "Amarjeet Gill",
+    "party": "Conservative"
+   }
+  ],
+  "L7A": [
+   {
+    "ridingId": 35014,
+    "riding": "Brampton West",
+    "share": 0.961,
+    "memberId": "amarjeet-gill",
+    "member": "Amarjeet Gill",
+    "party": "Conservative"
+   },
+   {
+    "ridingId": 35012,
+    "riding": "Brampton North—Caledon",
+    "share": 0.039,
+    "memberId": "ruby-sahota",
+    "member": "Ruby Sahota",
+    "party": "Liberal"
+   }
+  ],
+  "L7B": [
+   {
+    "ridingId": 35047,
+    "riding": "King—Vaughan",
+    "share": 1.0,
+    "memberId": "anna-roberts",
+    "member": "Anna Roberts",
+    "party": "Conservative"
+   }
+  ],
+  "L7C": [
+   {
+    "ridingId": 35025,
+    "riding": "Dufferin—Caledon",
+    "share": 0.5751,
+    "memberId": "kyle-seeback",
+    "member": "Kyle Seeback",
+    "party": "Conservative"
+   },
+   {
+    "ridingId": 35012,
+    "riding": "Brampton North—Caledon",
+    "share": 0.4249,
+    "memberId": "ruby-sahota",
+    "member": "Ruby Sahota",
+    "party": "Liberal"
+   }
+  ],
+  "L7E": [
+   {
+    "ridingId": 35025,
+    "riding": "Dufferin—Caledon",
+    "share": 1.0,
+    "memberId": "kyle-seeback",
+    "member": "Kyle Seeback",
+    "party": "Conservative"
+   }
+  ],
+  "L7G": [
+   {
+    "ridingId": 35060,
+    "riding": "Milton East—Halton Hills South",
+    "share": 0.6366,
+    "memberId": "kristina-tesser-derksen",
+    "member": "Kristina Tesser Derksen",
+    "party": "Liberal"
+   },
+   {
+    "ridingId": 35115,
+    "riding": "Wellington—Halton Hills North",
+    "share": 0.3634,
+    "memberId": "michael-chong",
+    "member": "Michael Chong",
+    "party": "Conservative"
+   }
+  ],
+  "L7J": [
+   {
+    "ridingId": 35115,
+    "riding": "Wellington—Halton Hills North",
+    "share": 0.8779,
+    "memberId": "michael-chong",
+    "member": "Michael Chong",
+    "party": "Conservative"
+   },
+   {
+    "ridingId": 35018,
+    "riding": "Burlington North—Milton West",
+    "share": 0.1221,
+    "memberId": "adam-van-koeverden",
+    "member": "Adam van Koeverden",
+    "party": "Liberal"
+   }
+  ],
+  "L7K": [
+   {
+    "ridingId": 35025,
+    "riding": "Dufferin—Caledon",
+    "share": 1.0,
+    "memberId": "kyle-seeback",
+    "member": "Kyle Seeback",
+    "party": "Conservative"
+   }
+  ],
+  "L7L": [
+   {
+    "ridingId": 35017,
+    "riding": "Burlington",
+    "share": 0.6006,
+    "memberId": "karina-gould",
+    "member": "Karina Gould",
+    "party": "Liberal"
+   },
+   {
+    "ridingId": 35018,
+    "riding": "Burlington North—Milton West",
+    "share": 0.3994,
+    "memberId": "adam-van-koeverden",
+    "member": "Adam van Koeverden",
+    "party": "Liberal"
+   }
+  ],
+  "L7M": [
+   {
+    "ridingId": 35018,
+    "riding": "Burlington North—Milton West",
+    "share": 0.9175,
+    "memberId": "adam-van-koeverden",
+    "member": "Adam van Koeverden",
+    "party": "Liberal"
+   },
+   {
+    "ridingId": 35017,
+    "riding": "Burlington",
+    "share": 0.0825,
+    "memberId": "karina-gould",
+    "member": "Karina Gould",
+    "party": "Liberal"
+   }
+  ],
+  "L7N": [
+   {
+    "ridingId": 35017,
+    "riding": "Burlington",
+    "share": 1.0,
+    "memberId": "karina-gould",
+    "member": "Karina Gould",
+    "party": "Liberal"
+   }
+  ],
+  "L7P": [
+   {
+    "ridingId": 35018,
+    "riding": "Burlington North—Milton West",
+    "share": 0.6432,
+    "memberId": "adam-van-koeverden",
+    "member": "Adam van Koeverden",
+    "party": "Liberal"
+   },
+   {
+    "ridingId": 35017,
+    "riding": "Burlington",
+    "share": 0.3568,
+    "memberId": "karina-gould",
+    "member": "Karina Gould",
+    "party": "Liberal"
+   }
+  ],
+  "L7R": [
+   {
+    "ridingId": 35017,
+    "riding": "Burlington",
+    "share": 1.0,
+    "memberId": "karina-gould",
+    "member": "Karina Gould",
+    "party": "Liberal"
+   }
+  ],
+  "L7S": [
+   {
+    "ridingId": 35017,
+    "riding": "Burlington",
+    "share": 1.0,
+    "memberId": "karina-gould",
+    "member": "Karina Gould",
+    "party": "Liberal"
+   }
+  ],
+  "L7T": [
+   {
+    "ridingId": 35017,
+    "riding": "Burlington",
+    "share": 1.0,
+    "memberId": "karina-gould",
+    "member": "Karina Gould",
+    "party": "Liberal"
+   }
+  ],
+  "L8B": [
+   {
+    "ridingId": 35032,
+    "riding": "Flamborough—Glanbrook—Brant North",
+    "share": 1.0,
+    "memberId": "dan-muys",
+    "member": "Dan Muys",
+    "party": "Conservative"
+   }
+  ],
+  "L8E": [
+   {
+    "ridingId": 35037,
+    "riding": "Hamilton East—Stoney Creek",
+    "share": 1.0,
+    "memberId": "ned-kuruc",
+    "member": "Ned Kuruc",
+    "party": "Conservative"
+   }
+  ],
+  "L8G": [
+   {
+    "ridingId": 35037,
+    "riding": "Hamilton East—Stoney Creek",
+    "share": 1.0,
+    "memberId": "ned-kuruc",
+    "member": "Ned Kuruc",
+    "party": "Conservative"
+   }
+  ],
+  "L8H": [
+   {
+    "ridingId": 35036,
+    "riding": "Hamilton Centre",
+    "share": 0.5388,
+    "memberId": "aslam-rana",
+    "member": "Aslam Rana",
+    "party": "Liberal"
+   },
+   {
+    "ridingId": 35037,
+    "riding": "Hamilton East—Stoney Creek",
+    "share": 0.4612,
+    "memberId": "ned-kuruc",
+    "member": "Ned Kuruc",
+    "party": "Conservative"
+   }
+  ],
+  "L8J": [
+   {
+    "ridingId": 35032,
+    "riding": "Flamborough—Glanbrook—Brant North",
+    "share": 0.7565,
+    "memberId": "dan-muys",
+    "member": "Dan Muys",
+    "party": "Conservative"
+   },
+   {
+    "ridingId": 35037,
+    "riding": "Hamilton East—Stoney Creek",
+    "share": 0.1994,
+    "memberId": "ned-kuruc",
+    "member": "Ned Kuruc",
+    "party": "Conservative"
+   },
+   {
+    "ridingId": 35038,
+    "riding": "Hamilton Mountain",
+    "share": 0.0441,
+    "memberId": "lisa-hepfner",
+    "member": "Lisa Hepfner",
+    "party": "Liberal"
+   }
+  ],
+  "L8K": [
+   {
+    "ridingId": 35036,
+    "riding": "Hamilton Centre",
+    "share": 0.5096,
+    "memberId": "aslam-rana",
+    "member": "Aslam Rana",
+    "party": "Liberal"
+   },
+   {
+    "ridingId": 35037,
+    "riding": "Hamilton East—Stoney Creek",
+    "share": 0.4884,
+    "memberId": "ned-kuruc",
+    "member": "Ned Kuruc",
+    "party": "Conservative"
+   },
+   {
+    "ridingId": 35038,
+    "riding": "Hamilton Mountain",
+    "share": 0.002,
+    "memberId": "lisa-hepfner",
+    "member": "Lisa Hepfner",
+    "party": "Liberal"
+   }
+  ],
+  "L8L": [
+   {
+    "ridingId": 35036,
+    "riding": "Hamilton Centre",
+    "share": 1.0,
+    "memberId": "aslam-rana",
+    "member": "Aslam Rana",
+    "party": "Liberal"
+   }
+  ],
+  "L8M": [
+   {
+    "ridingId": 35036,
+    "riding": "Hamilton Centre",
+    "share": 0.9995,
+    "memberId": "aslam-rana",
+    "member": "Aslam Rana",
+    "party": "Liberal"
+   }
+  ],
+  "L8N": [
+   {
+    "ridingId": 35032,
+    "riding": "Flamborough—Glanbrook—Brant North",
+    "share": 0.7177,
+    "memberId": "dan-muys",
+    "member": "Dan Muys",
+    "party": "Conservative"
+   },
+   {
+    "ridingId": 35036,
+    "riding": "Hamilton Centre",
+    "share": 0.2822,
+    "memberId": "aslam-rana",
+    "member": "Aslam Rana",
+    "party": "Liberal"
+   }
+  ],
+  "L8P": [
+   {
+    "ridingId": 35036,
+    "riding": "Hamilton Centre",
+    "share": 0.9848,
+    "memberId": "aslam-rana",
+    "member": "Aslam Rana",
+    "party": "Liberal"
+   },
+   {
+    "ridingId": 35039,
+    "riding": "Hamilton West—Ancaster—Dundas",
+    "share": 0.0152,
+    "memberId": "john-paul-danko",
+    "member": "John-Paul Danko",
+    "party": "Liberal"
+   }
+  ],
+  "L8R": [
+   {
+    "ridingId": 35036,
+    "riding": "Hamilton Centre",
+    "share": 0.9938,
+    "memberId": "aslam-rana",
+    "member": "Aslam Rana",
+    "party": "Liberal"
+   },
+   {
+    "ridingId": 35039,
+    "riding": "Hamilton West—Ancaster—Dundas",
+    "share": 0.0062,
+    "memberId": "john-paul-danko",
+    "member": "John-Paul Danko",
+    "party": "Liberal"
+   }
+  ],
+  "L8S": [
+   {
+    "ridingId": 35039,
+    "riding": "Hamilton West—Ancaster—Dundas",
+    "share": 1.0,
+    "memberId": "john-paul-danko",
+    "member": "John-Paul Danko",
+    "party": "Liberal"
+   }
+  ],
+  "L8T": [
+   {
+    "ridingId": 35038,
+    "riding": "Hamilton Mountain",
+    "share": 0.986,
+    "memberId": "lisa-hepfner",
+    "member": "Lisa Hepfner",
+    "party": "Liberal"
+   },
+   {
+    "ridingId": 35036,
+    "riding": "Hamilton Centre",
+    "share": 0.014,
+    "memberId": "aslam-rana",
+    "member": "Aslam Rana",
+    "party": "Liberal"
+   }
+  ],
+  "L8V": [
+   {
+    "ridingId": 35038,
+    "riding": "Hamilton Mountain",
+    "share": 1.0,
+    "memberId": "lisa-hepfner",
+    "member": "Lisa Hepfner",
+    "party": "Liberal"
+   }
+  ],
+  "L8W": [
+   {
+    "ridingId": 35038,
+    "riding": "Hamilton Mountain",
+    "share": 1.0,
+    "memberId": "lisa-hepfner",
+    "member": "Lisa Hepfner",
+    "party": "Liberal"
+   }
+  ],
+  "L9A": [
+   {
+    "ridingId": 35038,
+    "riding": "Hamilton Mountain",
+    "share": 0.9992,
+    "memberId": "lisa-hepfner",
+    "member": "Lisa Hepfner",
+    "party": "Liberal"
+   }
+  ],
+  "L9B": [
+   {
+    "ridingId": 35032,
+    "riding": "Flamborough—Glanbrook—Brant North",
+    "share": 0.432,
+    "memberId": "dan-muys",
+    "member": "Dan Muys",
+    "party": "Conservative"
+   },
+   {
+    "ridingId": 35038,
+    "riding": "Hamilton Mountain",
+    "share": 0.4142,
+    "memberId": "lisa-hepfner",
+    "member": "Lisa Hepfner",
+    "party": "Liberal"
+   },
+   {
+    "ridingId": 35039,
+    "riding": "Hamilton West—Ancaster—Dundas",
+    "share": 0.1538,
+    "memberId": "john-paul-danko",
+    "member": "John-Paul Danko",
+    "party": "Liberal"
+   }
+  ],
+  "L9C": [
+   {
+    "ridingId": 35039,
+    "riding": "Hamilton West—Ancaster—Dundas",
+    "share": 0.7835,
+    "memberId": "john-paul-danko",
+    "member": "John-Paul Danko",
+    "party": "Liberal"
+   },
+   {
+    "ridingId": 35038,
+    "riding": "Hamilton Mountain",
+    "share": 0.2165,
+    "memberId": "lisa-hepfner",
+    "member": "Lisa Hepfner",
+    "party": "Liberal"
+   }
+  ],
+  "L9E": [
+   {
+    "ridingId": 35060,
+    "riding": "Milton East—Halton Hills South",
+    "share": 0.6207,
+    "memberId": "kristina-tesser-derksen",
+    "member": "Kristina Tesser Derksen",
+    "party": "Liberal"
+   },
+   {
+    "ridingId": 35018,
+    "riding": "Burlington North—Milton West",
+    "share": 0.3793,
+    "memberId": "adam-van-koeverden",
+    "member": "Adam van Koeverden",
+    "party": "Liberal"
+   }
+  ],
+  "L9G": [
+   {
+    "ridingId": 35032,
+    "riding": "Flamborough—Glanbrook—Brant North",
+    "share": 0.6638,
+    "memberId": "dan-muys",
+    "member": "Dan Muys",
+    "party": "Conservative"
+   },
+   {
+    "ridingId": 35039,
+    "riding": "Hamilton West—Ancaster—Dundas",
+    "share": 0.3362,
+    "memberId": "john-paul-danko",
+    "member": "John-Paul Danko",
+    "party": "Liberal"
+   }
+  ],
+  "L9H": [
+   {
+    "ridingId": 35032,
+    "riding": "Flamborough—Glanbrook—Brant North",
+    "share": 0.6841,
+    "memberId": "dan-muys",
+    "member": "Dan Muys",
+    "party": "Conservative"
+   },
+   {
+    "ridingId": 35039,
+    "riding": "Hamilton West—Ancaster—Dundas",
+    "share": 0.3127,
+    "memberId": "john-paul-danko",
+    "member": "John-Paul Danko",
+    "party": "Liberal"
+   },
+   {
+    "ridingId": 35036,
+    "riding": "Hamilton Centre",
+    "share": 0.0031,
+    "memberId": "aslam-rana",
+    "member": "Aslam Rana",
+    "party": "Liberal"
+   }
+  ],
+  "L9J": [
+   {
+    "ridingId": 35004,
+    "riding": "Barrie South—Innisfil",
+    "share": 1.0,
+    "memberId": "john-brassard",
+    "member": "John Brassard",
+    "party": "Conservative"
+   }
+  ],
+  "L9K": [
+   {
+    "ridingId": 35039,
+    "riding": "Hamilton West—Ancaster—Dundas",
+    "share": 1.0,
+    "memberId": "john-paul-danko",
+    "member": "John-Paul Danko",
+    "party": "Liberal"
+   }
+  ],
+  "L9L": [
+   {
+    "ridingId": 35121,
+    "riding": "York—Durham",
+    "share": 1.0,
+    "memberId": "jacob-mantle",
+    "member": "Jacob Mantle",
+    "party": "Conservative"
+   }
+  ],
+  "L9M": [
+   {
+    "ridingId": 35099,
+    "riding": "Simcoe North",
+    "share": 1.0,
+    "memberId": "adam-chambers",
+    "member": "Adam Chambers",
+    "party": "Conservative"
+   }
+  ],
+  "L9N": [
+   {
+    "ridingId": 35069,
+    "riding": "York—South Simcoe",
+    "share": 0.9684,
+    "memberId": "scot-davidson",
+    "member": "Scot Davidson",
+    "party": "Conservative"
+   },
+   {
+    "ridingId": 35068,
+    "riding": "Newmarket—Aurora",
+    "share": 0.0316,
+    "memberId": "sandra-cobena",
+    "member": "Sandra Cobena",
+    "party": "Conservative"
+   }
+  ],
+  "L9P": [
+   {
+    "ridingId": 35121,
+    "riding": "York—Durham",
+    "share": 1.0,
+    "memberId": "jacob-mantle",
+    "member": "Jacob Mantle",
+    "party": "Conservative"
+   }
+  ],
+  "L9R": [
+   {
+    "ridingId": 35098,
+    "riding": "Simcoe—Grey",
+    "share": 0.5905,
+    "memberId": "terry-dowdall",
+    "member": "Terry Dowdall",
+    "party": "Conservative"
+   },
+   {
+    "ridingId": 35069,
+    "riding": "York—South Simcoe",
+    "share": 0.4095,
+    "memberId": "scot-davidson",
+    "member": "Scot Davidson",
+    "party": "Conservative"
+   }
+  ],
+  "L9S": [
+   {
+    "ridingId": 35004,
+    "riding": "Barrie South—Innisfil",
+    "share": 1.0,
+    "memberId": "john-brassard",
+    "member": "John Brassard",
+    "party": "Conservative"
+   }
+  ],
+  "L9T": [
+   {
+    "ridingId": 35060,
+    "riding": "Milton East—Halton Hills South",
+    "share": 0.7805,
+    "memberId": "kristina-tesser-derksen",
+    "member": "Kristina Tesser Derksen",
+    "party": "Liberal"
+   },
+   {
+    "ridingId": 35018,
+    "riding": "Burlington North—Milton West",
+    "share": 0.2195,
+    "memberId": "adam-van-koeverden",
+    "member": "Adam van Koeverden",
+    "party": "Liberal"
+   }
+  ],
+  "L9V": [
+   {
+    "ridingId": 35025,
+    "riding": "Dufferin—Caledon",
+    "share": 1.0,
+    "memberId": "kyle-seeback",
+    "member": "Kyle Seeback",
+    "party": "Conservative"
+   }
+  ],
+  "L9W": [
+   {
+    "ridingId": 35025,
+    "riding": "Dufferin—Caledon",
+    "share": 0.9774,
+    "memberId": "kyle-seeback",
+    "member": "Kyle Seeback",
+    "party": "Conservative"
+   },
+   {
+    "ridingId": 35098,
+    "riding": "Simcoe—Grey",
+    "share": 0.0226,
+    "memberId": "terry-dowdall",
+    "member": "Terry Dowdall",
+    "party": "Conservative"
+   }
+  ],
+  "L9X": [
+   {
+    "ridingId": 35005,
+    "riding": "Barrie—Springwater—Oro-Medonte",
+    "share": 1.0,
+    "memberId": "doug-shipley",
+    "member": "Doug Shipley",
+    "party": "Conservative"
+   }
+  ],
+  "L9Y": [
+   {
+    "ridingId": 35098,
+    "riding": "Simcoe—Grey",
+    "share": 1.0,
+    "memberId": "terry-dowdall",
+    "member": "Terry Dowdall",
+    "party": "Conservative"
+   }
+  ],
+  "L9Z": [
+   {
+    "ridingId": 35098,
+    "riding": "Simcoe—Grey",
+    "share": 1.0,
+    "memberId": "terry-dowdall",
+    "member": "Terry Dowdall",
+    "party": "Conservative"
+   }
+  ],
+  "M1B": [
+   {
+    "ridingId": 35094,
+    "riding": "Scarborough—Guildwood—Rouge Park",
+    "share": 0.7523,
+    "memberId": "gary-anandasangaree",
+    "member": "Gary Anandasangaree",
+    "party": "Liberal"
+   },
+   {
+    "ridingId": 35095,
+    "riding": "Scarborough North",
+    "share": 0.2477,
+    "memberId": null,
+    "vacant": true
+   }
+  ],
+  "M1C": [
+   {
+    "ridingId": 35094,
+    "riding": "Scarborough—Guildwood—Rouge Park",
+    "share": 1.0,
+    "memberId": "gary-anandasangaree",
+    "member": "Gary Anandasangaree",
+    "party": "Liberal"
+   }
+  ],
+  "M1E": [
+   {
+    "ridingId": 35094,
+    "riding": "Scarborough—Guildwood—Rouge Park",
+    "share": 0.992,
+    "memberId": "gary-anandasangaree",
+    "member": "Gary Anandasangaree",
+    "party": "Liberal"
+   },
+   {
+    "ridingId": 35096,
+    "riding": "Scarborough Southwest",
+    "share": 0.008,
+    "memberId": "doly-begum",
+    "member": "Doly Begum",
+    "party": "Liberal"
+   }
+  ],
+  "M1G": [
+   {
+    "ridingId": 35097,
+    "riding": "Scarborough—Woburn",
+    "share": 0.8707,
+    "memberId": "michael-coteau",
+    "member": "Michael Coteau",
+    "party": "Liberal"
+   },
+   {
+    "ridingId": 35094,
+    "riding": "Scarborough—Guildwood—Rouge Park",
+    "share": 0.1293,
+    "memberId": "gary-anandasangaree",
+    "member": "Gary Anandasangaree",
+    "party": "Liberal"
+   }
+  ],
+  "M1H": [
+   {
+    "ridingId": 35097,
+    "riding": "Scarborough—Woburn",
+    "share": 1.0,
+    "memberId": "michael-coteau",
+    "member": "Michael Coteau",
+    "party": "Liberal"
+   }
+  ],
+  "M1J": [
+   {
+    "ridingId": 35097,
+    "riding": "Scarborough—Woburn",
+    "share": 0.7043,
+    "memberId": "michael-coteau",
+    "member": "Michael Coteau",
+    "party": "Liberal"
+   },
+   {
+    "ridingId": 35096,
+    "riding": "Scarborough Southwest",
+    "share": 0.2934,
+    "memberId": "doly-begum",
+    "member": "Doly Begum",
+    "party": "Liberal"
+   },
+   {
+    "ridingId": 35094,
+    "riding": "Scarborough—Guildwood—Rouge Park",
+    "share": 0.0023,
+    "memberId": "gary-anandasangaree",
+    "member": "Gary Anandasangaree",
+    "party": "Liberal"
+   }
+  ],
+  "M1K": [
+   {
+    "ridingId": 35096,
+    "riding": "Scarborough Southwest",
+    "share": 0.5947,
+    "memberId": "doly-begum",
+    "member": "Doly Begum",
+    "party": "Liberal"
+   },
+   {
+    "ridingId": 35097,
+    "riding": "Scarborough—Woburn",
+    "share": 0.2285,
+    "memberId": "michael-coteau",
+    "member": "Michael Coteau",
+    "party": "Liberal"
+   },
+   {
+    "ridingId": 35093,
+    "riding": "Scarborough Centre—Don Valley East",
+    "share": 0.1768,
+    "memberId": "salma-zahid",
+    "member": "Salma Zahid",
+    "party": "Liberal"
+   }
+  ],
+  "M1L": [
+   {
+    "ridingId": 35096,
+    "riding": "Scarborough Southwest",
+    "share": 0.9698,
+    "memberId": "doly-begum",
+    "member": "Doly Begum",
+    "party": "Liberal"
+   },
+   {
+    "ridingId": 35093,
+    "riding": "Scarborough Centre—Don Valley East",
+    "share": 0.0302,
+    "memberId": "salma-zahid",
+    "member": "Salma Zahid",
+    "party": "Liberal"
+   }
+  ],
+  "M1M": [
+   {
+    "ridingId": 35096,
+    "riding": "Scarborough Southwest",
+    "share": 0.9425,
+    "memberId": "doly-begum",
+    "member": "Doly Begum",
+    "party": "Liberal"
+   },
+   {
+    "ridingId": 35094,
+    "riding": "Scarborough—Guildwood—Rouge Park",
+    "share": 0.0575,
+    "memberId": "gary-anandasangaree",
+    "member": "Gary Anandasangaree",
+    "party": "Liberal"
+   }
+  ],
+  "M1N": [
+   {
+    "ridingId": 35096,
+    "riding": "Scarborough Southwest",
+    "share": 0.9943,
+    "memberId": "doly-begum",
+    "member": "Doly Begum",
+    "party": "Liberal"
+   },
+   {
+    "ridingId": 35007,
+    "riding": "Beaches—East York",
+    "share": 0.0057,
+    "memberId": "tanveer-shahnawaz",
+    "member": "Tanveer Shahnawaz",
+    "party": "Liberal"
+   }
+  ],
+  "M1P": [
+   {
+    "ridingId": 35093,
+    "riding": "Scarborough Centre—Don Valley East",
+    "share": 0.5374,
+    "memberId": "salma-zahid",
+    "member": "Salma Zahid",
+    "party": "Liberal"
+   },
+   {
+    "ridingId": 35097,
+    "riding": "Scarborough—Woburn",
+    "share": 0.4626,
+    "memberId": "michael-coteau",
+    "member": "Michael Coteau",
+    "party": "Liberal"
+   }
+  ],
+  "M1R": [
+   {
+    "ridingId": 35093,
+    "riding": "Scarborough Centre—Don Valley East",
+    "share": 1.0,
+    "memberId": "salma-zahid",
+    "member": "Salma Zahid",
+    "party": "Liberal"
+   }
+  ],
+  "M1S": [
+   {
+    "ridingId": 35095,
+    "riding": "Scarborough North",
+    "share": 0.8068,
+    "memberId": null,
+    "vacant": true
+   },
+   {
+    "ridingId": 35092,
+    "riding": "Scarborough—Agincourt",
+    "share": 0.1932,
+    "memberId": "jean-yip",
+    "member": "Jean Yip",
+    "party": "Liberal"
+   }
+  ],
+  "M1T": [
+   {
+    "ridingId": 35092,
+    "riding": "Scarborough—Agincourt",
+    "share": 1.0,
+    "memberId": "jean-yip",
+    "member": "Jean Yip",
+    "party": "Liberal"
+   }
+  ],
+  "M1V": [
+   {
+    "ridingId": 35095,
+    "riding": "Scarborough North",
+    "share": 0.6949,
+    "memberId": null,
+    "vacant": true
+   },
+   {
+    "ridingId": 35092,
+    "riding": "Scarborough—Agincourt",
+    "share": 0.3051,
+    "memberId": "jean-yip",
+    "member": "Jean Yip",
+    "party": "Liberal"
+   }
+  ],
+  "M1W": [
+   {
+    "ridingId": 35092,
+    "riding": "Scarborough—Agincourt",
+    "share": 1.0,
+    "memberId": "jean-yip",
+    "member": "Jean Yip",
+    "party": "Liberal"
+   }
+  ],
+  "M1X": [
+   {
+    "ridingId": 35095,
+    "riding": "Scarborough North",
+    "share": 0.7487,
+    "memberId": null,
+    "vacant": true
+   },
+   {
+    "ridingId": 35094,
+    "riding": "Scarborough—Guildwood—Rouge Park",
+    "share": 0.2513,
+    "memberId": "gary-anandasangaree",
+    "member": "Gary Anandasangaree",
+    "party": "Liberal"
+   }
+  ],
+  "M2H": [
+   {
+    "ridingId": 35023,
+    "riding": "Don Valley North",
+    "share": 0.7693,
+    "memberId": "maggie-chi",
+    "member": "Maggie Chi",
+    "party": "Liberal"
+   },
+   {
+    "ridingId": 35092,
+    "riding": "Scarborough—Agincourt",
+    "share": 0.2307,
+    "memberId": "jean-yip",
+    "member": "Jean Yip",
+    "party": "Liberal"
+   }
+  ],
+  "M2J": [
+   {
+    "ridingId": 35023,
+    "riding": "Don Valley North",
+    "share": 0.6648,
+    "memberId": "maggie-chi",
+    "member": "Maggie Chi",
+    "party": "Liberal"
+   },
+   {
+    "ridingId": 35092,
+    "riding": "Scarborough—Agincourt",
+    "share": 0.3352,
+    "memberId": "jean-yip",
+    "member": "Jean Yip",
+    "party": "Liberal"
+   }
+  ],
+  "M2K": [
+   {
+    "ridingId": 35023,
+    "riding": "Don Valley North",
+    "share": 1.0,
+    "memberId": "maggie-chi",
+    "member": "Maggie Chi",
+    "party": "Liberal"
+   }
+  ],
+  "M2L": [
+   {
+    "ridingId": 35023,
+    "riding": "Don Valley North",
+    "share": 0.7962,
+    "memberId": "maggie-chi",
+    "member": "Maggie Chi",
+    "party": "Liberal"
+   },
+   {
+    "ridingId": 35024,
+    "riding": "Don Valley West",
+    "share": 0.2038,
+    "memberId": "robert-oliphant",
+    "member": "Robert Oliphant",
+    "party": "Liberal"
+   }
+  ],
+  "M2M": [
+   {
+    "ridingId": 35117,
+    "riding": "Willowdale",
+    "share": 0.8797,
+    "memberId": "ali-ehsassi",
+    "member": "Ali Ehsassi",
+    "party": "Liberal"
+   },
+   {
+    "ridingId": 35023,
+    "riding": "Don Valley North",
+    "share": 0.1203,
+    "memberId": "maggie-chi",
+    "member": "Maggie Chi",
+    "party": "Liberal"
+   }
+  ],
+  "M2N": [
+   {
+    "ridingId": 35117,
+    "riding": "Willowdale",
+    "share": 1.0,
+    "memberId": "ali-ehsassi",
+    "member": "Ali Ehsassi",
+    "party": "Liberal"
+   }
+  ],
+  "M2P": [
+   {
+    "ridingId": 35023,
+    "riding": "Don Valley North",
+    "share": 0.8138,
+    "memberId": "maggie-chi",
+    "member": "Maggie Chi",
+    "party": "Liberal"
+   },
+   {
+    "ridingId": 35024,
+    "riding": "Don Valley West",
+    "share": 0.1862,
+    "memberId": "robert-oliphant",
+    "member": "Robert Oliphant",
+    "party": "Liberal"
+   }
+  ],
+  "M2R": [
+   {
+    "ridingId": 35120,
+    "riding": "North York",
+    "share": 0.5109,
+    "memberId": "roman-baber",
+    "member": "Roman Baber",
+    "party": "Conservative"
+   },
+   {
+    "ridingId": 35117,
+    "riding": "Willowdale",
+    "share": 0.4891,
+    "memberId": "ali-ehsassi",
+    "member": "Ali Ehsassi",
+    "party": "Liberal"
+   }
+  ],
+  "M3A": [
+   {
+    "ridingId": 35093,
+    "riding": "Scarborough Centre—Don Valley East",
+    "share": 1.0,
+    "memberId": "salma-zahid",
+    "member": "Salma Zahid",
+    "party": "Liberal"
+   }
+  ],
+  "M3B": [
+   {
+    "ridingId": 35024,
+    "riding": "Don Valley West",
+    "share": 0.984,
+    "memberId": "robert-oliphant",
+    "member": "Robert Oliphant",
+    "party": "Liberal"
+   },
+   {
+    "ridingId": 35023,
+    "riding": "Don Valley North",
+    "share": 0.016,
+    "memberId": "maggie-chi",
+    "member": "Maggie Chi",
+    "party": "Liberal"
+   }
+  ],
+  "M3C": [
+   {
+    "ridingId": 35024,
+    "riding": "Don Valley West",
+    "share": 0.993,
+    "memberId": "robert-oliphant",
+    "member": "Robert Oliphant",
+    "party": "Liberal"
+   },
+   {
+    "ridingId": 35007,
+    "riding": "Beaches—East York",
+    "share": 0.007,
+    "memberId": "tanveer-shahnawaz",
+    "member": "Tanveer Shahnawaz",
+    "party": "Liberal"
+   }
+  ],
+  "M3H": [
+   {
+    "ridingId": 35120,
+    "riding": "North York",
+    "share": 1.0,
+    "memberId": "roman-baber",
+    "member": "Roman Baber",
+    "party": "Conservative"
+   }
+  ],
+  "M3J": [
+   {
+    "ridingId": 35120,
+    "riding": "North York",
+    "share": 0.6156,
+    "memberId": "roman-baber",
+    "member": "Roman Baber",
+    "party": "Conservative"
+   },
+   {
+    "ridingId": 35041,
+    "riding": "Humber River—Black Creek",
+    "share": 0.3844,
+    "memberId": "judy-a-sgro",
+    "member": "Judy A. Sgro",
+    "party": "Liberal"
+   }
+  ],
+  "M3K": [
+   {
+    "ridingId": 35120,
+    "riding": "North York",
+    "share": 1.0,
+    "memberId": "roman-baber",
+    "member": "Roman Baber",
+    "party": "Conservative"
+   }
+  ],
+  "M3L": [
+   {
+    "ridingId": 35041,
+    "riding": "Humber River—Black Creek",
+    "share": 0.8215,
+    "memberId": "judy-a-sgro",
+    "member": "Judy A. Sgro",
+    "party": "Liberal"
+   },
+   {
+    "ridingId": 35120,
+    "riding": "North York",
+    "share": 0.1785,
+    "memberId": "roman-baber",
+    "member": "Roman Baber",
+    "party": "Conservative"
+   }
+  ],
+  "M3M": [
+   {
+    "ridingId": 35120,
+    "riding": "North York",
+    "share": 1.0,
+    "memberId": "roman-baber",
+    "member": "Roman Baber",
+    "party": "Conservative"
+   }
+  ],
+  "M3N": [
+   {
+    "ridingId": 35041,
+    "riding": "Humber River—Black Creek",
+    "share": 1.0,
+    "memberId": "judy-a-sgro",
+    "member": "Judy A. Sgro",
+    "party": "Liberal"
+   }
+  ],
+  "M4A": [
+   {
+    "ridingId": 35093,
+    "riding": "Scarborough Centre—Don Valley East",
+    "share": 0.9362,
+    "memberId": "salma-zahid",
+    "member": "Salma Zahid",
+    "party": "Liberal"
+   },
+   {
+    "ridingId": 35007,
+    "riding": "Beaches—East York",
+    "share": 0.0638,
+    "memberId": "tanveer-shahnawaz",
+    "member": "Tanveer Shahnawaz",
+    "party": "Liberal"
+   }
+  ],
+  "M4B": [
+   {
+    "ridingId": 35007,
+    "riding": "Beaches—East York",
+    "share": 0.9581,
+    "memberId": "tanveer-shahnawaz",
+    "member": "Tanveer Shahnawaz",
+    "party": "Liberal"
+   },
+   {
+    "ridingId": 35024,
+    "riding": "Don Valley West",
+    "share": 0.0343,
+    "memberId": "robert-oliphant",
+    "member": "Robert Oliphant",
+    "party": "Liberal"
+   },
+   {
+    "ridingId": 35096,
+    "riding": "Scarborough Southwest",
+    "share": 0.0075,
+    "memberId": "doly-begum",
+    "member": "Doly Begum",
+    "party": "Liberal"
+   }
+  ],
+  "M4C": [
+   {
+    "ridingId": 35007,
+    "riding": "Beaches—East York",
+    "share": 1.0,
+    "memberId": "tanveer-shahnawaz",
+    "member": "Tanveer Shahnawaz",
+    "party": "Liberal"
+   }
+  ],
+  "M4E": [
+   {
+    "ridingId": 35007,
+    "riding": "Beaches—East York",
+    "share": 0.998,
+    "memberId": "tanveer-shahnawaz",
+    "member": "Tanveer Shahnawaz",
+    "party": "Liberal"
+   },
+   {
+    "ridingId": 35096,
+    "riding": "Scarborough Southwest",
+    "share": 0.002,
+    "memberId": "doly-begum",
+    "member": "Doly Begum",
+    "party": "Liberal"
+   }
+  ],
+  "M4G": [
+   {
+    "ridingId": 35024,
+    "riding": "Don Valley West",
+    "share": 0.9993,
+    "memberId": "robert-oliphant",
+    "member": "Robert Oliphant",
+    "party": "Liberal"
+   }
+  ],
+  "M4H": [
+   {
+    "ridingId": 35024,
+    "riding": "Don Valley West",
+    "share": 1.0,
+    "memberId": "robert-oliphant",
+    "member": "Robert Oliphant",
+    "party": "Liberal"
+   }
+  ],
+  "M4J": [
+   {
+    "ridingId": 35110,
+    "riding": "Toronto—Danforth",
+    "share": 1.0,
+    "memberId": "julie-dabrusin",
+    "member": "Julie Dabrusin",
+    "party": "Liberal"
+   }
+  ],
+  "M4K": [
+   {
+    "ridingId": 35110,
+    "riding": "Toronto—Danforth",
+    "share": 1.0,
+    "memberId": "julie-dabrusin",
+    "member": "Julie Dabrusin",
+    "party": "Liberal"
+   }
+  ],
+  "M4L": [
+   {
+    "ridingId": 35007,
+    "riding": "Beaches—East York",
+    "share": 0.5497,
+    "memberId": "tanveer-shahnawaz",
+    "member": "Tanveer Shahnawaz",
+    "party": "Liberal"
+   },
+   {
+    "ridingId": 35110,
+    "riding": "Toronto—Danforth",
+    "share": 0.4503,
+    "memberId": "julie-dabrusin",
+    "member": "Julie Dabrusin",
+    "party": "Liberal"
+   }
+  ],
+  "M4M": [
+   {
+    "ridingId": 35110,
+    "riding": "Toronto—Danforth",
+    "share": 0.9246,
+    "memberId": "julie-dabrusin",
+    "member": "Julie Dabrusin",
+    "party": "Liberal"
+   },
+   {
+    "ridingId": 35007,
+    "riding": "Beaches—East York",
+    "share": 0.0754,
+    "memberId": "tanveer-shahnawaz",
+    "member": "Tanveer Shahnawaz",
+    "party": "Liberal"
+   }
+  ],
+  "M4N": [
+   {
+    "ridingId": 35024,
+    "riding": "Don Valley West",
+    "share": 0.8942,
+    "memberId": "robert-oliphant",
+    "member": "Robert Oliphant",
+    "party": "Liberal"
+   },
+   {
+    "ridingId": 35026,
+    "riding": "Eglinton—Lawrence",
+    "share": 0.1058,
+    "memberId": "vince-gasparro",
+    "member": "Vince Gasparro",
+    "party": "Liberal"
+   }
+  ],
+  "M4P": [
+   {
+    "ridingId": 35024,
+    "riding": "Don Valley West",
+    "share": 0.8133,
+    "memberId": "robert-oliphant",
+    "member": "Robert Oliphant",
+    "party": "Liberal"
+   },
+   {
+    "ridingId": 35111,
+    "riding": "Toronto—St. Paul's",
+    "share": 0.1867,
+    "memberId": "leslie-church",
+    "member": "Leslie Church",
+    "party": "Liberal"
+   }
+  ],
+  "M4R": [
+   {
+    "ridingId": 35026,
+    "riding": "Eglinton—Lawrence",
+    "share": 1.0,
+    "memberId": "vince-gasparro",
+    "member": "Vince Gasparro",
+    "party": "Liberal"
+   }
+  ],
+  "M4S": [
+   {
+    "ridingId": 35111,
+    "riding": "Toronto—St. Paul's",
+    "share": 1.0,
+    "memberId": "leslie-church",
+    "member": "Leslie Church",
+    "party": "Liberal"
+   }
+  ],
+  "M4T": [
+   {
+    "ridingId": 35111,
+    "riding": "Toronto—St. Paul's",
+    "share": 0.9898,
+    "memberId": "leslie-church",
+    "member": "Leslie Church",
+    "party": "Liberal"
+   },
+   {
+    "ridingId": 35024,
+    "riding": "Don Valley West",
+    "share": 0.0102,
+    "memberId": "robert-oliphant",
+    "member": "Robert Oliphant",
+    "party": "Liberal"
+   }
+  ],
+  "M4V": [
+   {
+    "ridingId": 35111,
+    "riding": "Toronto—St. Paul's",
+    "share": 1.0,
+    "memberId": "leslie-church",
+    "member": "Leslie Church",
+    "party": "Liberal"
+   }
+  ],
+  "M4W": [
+   {
+    "ridingId": 35112,
+    "riding": "University—Rosedale",
+    "share": 0.7939,
+    "memberId": "danielle-martin",
+    "member": "Danielle Martin",
+    "party": "Liberal"
+   },
+   {
+    "ridingId": 35024,
+    "riding": "Don Valley West",
+    "share": 0.1993,
+    "memberId": "robert-oliphant",
+    "member": "Robert Oliphant",
+    "party": "Liberal"
+   },
+   {
+    "ridingId": 35109,
+    "riding": "Toronto Centre",
+    "share": 0.0068,
+    "memberId": "evan-solomon",
+    "member": "Evan Solomon",
+    "party": "Liberal"
+   }
+  ],
+  "M4X": [
+   {
+    "ridingId": 35109,
+    "riding": "Toronto Centre",
+    "share": 1.0,
+    "memberId": "evan-solomon",
+    "member": "Evan Solomon",
+    "party": "Liberal"
+   }
+  ],
+  "M4Y": [
+   {
+    "ridingId": 35109,
+    "riding": "Toronto Centre",
+    "share": 0.8011,
+    "memberId": "evan-solomon",
+    "member": "Evan Solomon",
+    "party": "Liberal"
+   },
+   {
+    "ridingId": 35112,
+    "riding": "University—Rosedale",
+    "share": 0.1989,
+    "memberId": "danielle-martin",
+    "member": "Danielle Martin",
+    "party": "Liberal"
+   }
+  ],
+  "M5A": [
+   {
+    "ridingId": 35109,
+    "riding": "Toronto Centre",
+    "share": 0.8787,
+    "memberId": "evan-solomon",
+    "member": "Evan Solomon",
+    "party": "Liberal"
+   },
+   {
+    "ridingId": 35100,
+    "riding": "Spadina—Harbourfront",
+    "share": 0.0769,
+    "memberId": "chi-nguyen",
+    "member": "Chi Nguyen",
+    "party": "Liberal"
+   },
+   {
+    "ridingId": 35110,
+    "riding": "Toronto—Danforth",
+    "share": 0.0444,
+    "memberId": "julie-dabrusin",
+    "member": "Julie Dabrusin",
+    "party": "Liberal"
+   }
+  ],
+  "M5B": [
+   {
+    "ridingId": 35109,
+    "riding": "Toronto Centre",
+    "share": 1.0,
+    "memberId": "evan-solomon",
+    "member": "Evan Solomon",
+    "party": "Liberal"
+   }
+  ],
+  "M5C": [
+   {
+    "ridingId": 35109,
+    "riding": "Toronto Centre",
+    "share": 1.0,
+    "memberId": "evan-solomon",
+    "member": "Evan Solomon",
+    "party": "Liberal"
+   }
+  ],
+  "M5E": [
+   {
+    "ridingId": 35100,
+    "riding": "Spadina—Harbourfront",
+    "share": 0.5448,
+    "memberId": "chi-nguyen",
+    "member": "Chi Nguyen",
+    "party": "Liberal"
+   },
+   {
+    "ridingId": 35109,
+    "riding": "Toronto Centre",
+    "share": 0.4552,
+    "memberId": "evan-solomon",
+    "member": "Evan Solomon",
+    "party": "Liberal"
+   }
+  ],
+  "M5G": [
+   {
+    "ridingId": 35112,
+    "riding": "University—Rosedale",
+    "share": 1.0,
+    "memberId": "danielle-martin",
+    "member": "Danielle Martin",
+    "party": "Liberal"
+   }
+  ],
+  "M5H": [
+   {
+    "ridingId": 35100,
+    "riding": "Spadina—Harbourfront",
+    "share": 1.0,
+    "memberId": "chi-nguyen",
+    "member": "Chi Nguyen",
+    "party": "Liberal"
+   }
+  ],
+  "M5J": [
+   {
+    "ridingId": 35100,
+    "riding": "Spadina—Harbourfront",
+    "share": 1.0,
+    "memberId": "chi-nguyen",
+    "member": "Chi Nguyen",
+    "party": "Liberal"
+   }
+  ],
+  "M5M": [
+   {
+    "ridingId": 35026,
+    "riding": "Eglinton—Lawrence",
+    "share": 1.0,
+    "memberId": "vince-gasparro",
+    "member": "Vince Gasparro",
+    "party": "Liberal"
+   }
+  ],
+  "M5N": [
+   {
+    "ridingId": 35026,
+    "riding": "Eglinton—Lawrence",
+    "share": 0.9748,
+    "memberId": "vince-gasparro",
+    "member": "Vince Gasparro",
+    "party": "Liberal"
+   },
+   {
+    "ridingId": 35111,
+    "riding": "Toronto—St. Paul's",
+    "share": 0.0252,
+    "memberId": "leslie-church",
+    "member": "Leslie Church",
+    "party": "Liberal"
+   }
+  ],
+  "M5P": [
+   {
+    "ridingId": 35111,
+    "riding": "Toronto—St. Paul's",
+    "share": 1.0,
+    "memberId": "leslie-church",
+    "member": "Leslie Church",
+    "party": "Liberal"
+   }
+  ],
+  "M5R": [
+   {
+    "ridingId": 35112,
+    "riding": "University—Rosedale",
+    "share": 0.7719,
+    "memberId": "danielle-martin",
+    "member": "Danielle Martin",
+    "party": "Liberal"
+   },
+   {
+    "ridingId": 35111,
+    "riding": "Toronto—St. Paul's",
+    "share": 0.2281,
+    "memberId": "leslie-church",
+    "member": "Leslie Church",
+    "party": "Liberal"
+   }
+  ],
+  "M5S": [
+   {
+    "ridingId": 35112,
+    "riding": "University—Rosedale",
+    "share": 1.0,
+    "memberId": "danielle-martin",
+    "member": "Danielle Martin",
+    "party": "Liberal"
+   }
+  ],
+  "M5T": [
+   {
+    "ridingId": 35112,
+    "riding": "University—Rosedale",
+    "share": 1.0,
+    "memberId": "danielle-martin",
+    "member": "Danielle Martin",
+    "party": "Liberal"
+   }
+  ],
+  "M5V": [
+   {
+    "ridingId": 35100,
+    "riding": "Spadina—Harbourfront",
+    "share": 0.9936,
+    "memberId": "chi-nguyen",
+    "member": "Chi Nguyen",
+    "party": "Liberal"
+   },
+   {
+    "ridingId": 35105,
+    "riding": "Taiaiako'n—Parkdale—High Park",
+    "share": 0.0064,
+    "memberId": "karim-bardeesy",
+    "member": "Karim Bardeesy",
+    "party": "Liberal"
+   }
+  ],
+  "M6A": [
+   {
+    "ridingId": 35026,
+    "riding": "Eglinton—Lawrence",
+    "share": 1.0,
+    "memberId": "vince-gasparro",
+    "member": "Vince Gasparro",
+    "party": "Liberal"
+   }
+  ],
+  "M6B": [
+   {
+    "ridingId": 35026,
+    "riding": "Eglinton—Lawrence",
+    "share": 1.0,
+    "memberId": "vince-gasparro",
+    "member": "Vince Gasparro",
+    "party": "Liberal"
+   }
+  ],
+  "M6C": [
+   {
+    "ridingId": 35111,
+    "riding": "Toronto—St. Paul's",
+    "share": 0.7515,
+    "memberId": "leslie-church",
+    "member": "Leslie Church",
+    "party": "Liberal"
+   },
+   {
+    "ridingId": 35026,
+    "riding": "Eglinton—Lawrence",
+    "share": 0.1425,
+    "memberId": "vince-gasparro",
+    "member": "Vince Gasparro",
+    "party": "Liberal"
+   },
+   {
+    "ridingId": 35022,
+    "riding": "Davenport",
+    "share": 0.106,
+    "memberId": "julie-dzerowicz",
+    "member": "Julie Dzerowicz",
+    "party": "Liberal"
+   }
+  ],
+  "M6E": [
+   {
+    "ridingId": 35022,
+    "riding": "Davenport",
+    "share": 0.7418,
+    "memberId": "julie-dzerowicz",
+    "member": "Julie Dzerowicz",
+    "party": "Liberal"
+   },
+   {
+    "ridingId": 35026,
+    "riding": "Eglinton—Lawrence",
+    "share": 0.2249,
+    "memberId": "vince-gasparro",
+    "member": "Vince Gasparro",
+    "party": "Liberal"
+   },
+   {
+    "ridingId": 35111,
+    "riding": "Toronto—St. Paul's",
+    "share": 0.0332,
+    "memberId": "leslie-church",
+    "member": "Leslie Church",
+    "party": "Liberal"
+   }
+  ],
+  "M6G": [
+   {
+    "ridingId": 35112,
+    "riding": "University—Rosedale",
+    "share": 0.6259,
+    "memberId": "danielle-martin",
+    "member": "Danielle Martin",
+    "party": "Liberal"
+   },
+   {
+    "ridingId": 35111,
+    "riding": "Toronto—St. Paul's",
+    "share": 0.3428,
+    "memberId": "leslie-church",
+    "member": "Leslie Church",
+    "party": "Liberal"
+   },
+   {
+    "ridingId": 35022,
+    "riding": "Davenport",
+    "share": 0.0313,
+    "memberId": "julie-dzerowicz",
+    "member": "Julie Dzerowicz",
+    "party": "Liberal"
+   }
+  ],
+  "M6H": [
+   {
+    "ridingId": 35022,
+    "riding": "Davenport",
+    "share": 1.0,
+    "memberId": "julie-dzerowicz",
+    "member": "Julie Dzerowicz",
+    "party": "Liberal"
+   }
+  ],
+  "M6J": [
+   {
+    "ridingId": 35112,
+    "riding": "University—Rosedale",
+    "share": 0.456,
+    "memberId": "danielle-martin",
+    "member": "Danielle Martin",
+    "party": "Liberal"
+   },
+   {
+    "ridingId": 35022,
+    "riding": "Davenport",
+    "share": 0.3468,
+    "memberId": "julie-dzerowicz",
+    "member": "Julie Dzerowicz",
+    "party": "Liberal"
+   },
+   {
+    "ridingId": 35100,
+    "riding": "Spadina—Harbourfront",
+    "share": 0.1972,
+    "memberId": "chi-nguyen",
+    "member": "Chi Nguyen",
+    "party": "Liberal"
+   }
+  ],
+  "M6K": [
+   {
+    "ridingId": 35105,
+    "riding": "Taiaiako'n—Parkdale—High Park",
+    "share": 0.6234,
+    "memberId": "karim-bardeesy",
+    "member": "Karim Bardeesy",
+    "party": "Liberal"
+   },
+   {
+    "ridingId": 35022,
+    "riding": "Davenport",
+    "share": 0.211,
+    "memberId": "julie-dzerowicz",
+    "member": "Julie Dzerowicz",
+    "party": "Liberal"
+   },
+   {
+    "ridingId": 35100,
+    "riding": "Spadina—Harbourfront",
+    "share": 0.1656,
+    "memberId": "chi-nguyen",
+    "member": "Chi Nguyen",
+    "party": "Liberal"
+   }
+  ],
+  "M6L": [
+   {
+    "ridingId": 35122,
+    "riding": "York South—Weston—Etobicoke",
+    "share": 1.0,
+    "memberId": "ahmed-hussen",
+    "member": "Ahmed Hussen",
+    "party": "Liberal"
+   }
+  ],
+  "M6M": [
+   {
+    "ridingId": 35122,
+    "riding": "York South—Weston—Etobicoke",
+    "share": 0.816,
+    "memberId": "ahmed-hussen",
+    "member": "Ahmed Hussen",
+    "party": "Liberal"
+   },
+   {
+    "ridingId": 35022,
+    "riding": "Davenport",
+    "share": 0.184,
+    "memberId": "julie-dzerowicz",
+    "member": "Julie Dzerowicz",
+    "party": "Liberal"
+   }
+  ],
+  "M6N": [
+   {
+    "ridingId": 35122,
+    "riding": "York South—Weston—Etobicoke",
+    "share": 0.5292,
+    "memberId": "ahmed-hussen",
+    "member": "Ahmed Hussen",
+    "party": "Liberal"
+   },
+   {
+    "ridingId": 35105,
+    "riding": "Taiaiako'n—Parkdale—High Park",
+    "share": 0.2712,
+    "memberId": "karim-bardeesy",
+    "member": "Karim Bardeesy",
+    "party": "Liberal"
+   },
+   {
+    "ridingId": 35022,
+    "riding": "Davenport",
+    "share": 0.1996,
+    "memberId": "julie-dzerowicz",
+    "member": "Julie Dzerowicz",
+    "party": "Liberal"
+   }
+  ],
+  "M6P": [
+   {
+    "ridingId": 35105,
+    "riding": "Taiaiako'n—Parkdale—High Park",
+    "share": 0.7573,
+    "memberId": "karim-bardeesy",
+    "member": "Karim Bardeesy",
+    "party": "Liberal"
+   },
+   {
+    "ridingId": 35022,
+    "riding": "Davenport",
+    "share": 0.2427,
+    "memberId": "julie-dzerowicz",
+    "member": "Julie Dzerowicz",
+    "party": "Liberal"
+   }
+  ],
+  "M6R": [
+   {
+    "ridingId": 35105,
+    "riding": "Taiaiako'n—Parkdale—High Park",
+    "share": 0.9914,
+    "memberId": "karim-bardeesy",
+    "member": "Karim Bardeesy",
+    "party": "Liberal"
+   },
+   {
+    "ridingId": 35022,
+    "riding": "Davenport",
+    "share": 0.0086,
+    "memberId": "julie-dzerowicz",
+    "member": "Julie Dzerowicz",
+    "party": "Liberal"
+   }
+  ],
+  "M6S": [
+   {
+    "ridingId": 35105,
+    "riding": "Taiaiako'n—Parkdale—High Park",
+    "share": 0.9976,
+    "memberId": "karim-bardeesy",
+    "member": "Karim Bardeesy",
+    "party": "Liberal"
+   },
+   {
+    "ridingId": 35122,
+    "riding": "York South—Weston—Etobicoke",
+    "share": 0.0024,
+    "memberId": "ahmed-hussen",
+    "member": "Ahmed Hussen",
+    "party": "Liberal"
+   }
+  ],
+  "M8V": [
+   {
+    "ridingId": 35030,
+    "riding": "Etobicoke—Lakeshore",
+    "share": 1.0,
+    "memberId": "james-maloney",
+    "member": "James Maloney",
+    "party": "Liberal"
+   }
+  ],
+  "M8W": [
+   {
+    "ridingId": 35030,
+    "riding": "Etobicoke—Lakeshore",
+    "share": 1.0,
+    "memberId": "james-maloney",
+    "member": "James Maloney",
+    "party": "Liberal"
+   }
+  ],
+  "M8X": [
+   {
+    "ridingId": 35030,
+    "riding": "Etobicoke—Lakeshore",
+    "share": 0.9831,
+    "memberId": "james-maloney",
+    "member": "James Maloney",
+    "party": "Liberal"
+   },
+   {
+    "ridingId": 35029,
+    "riding": "Etobicoke Centre",
+    "share": 0.0169,
+    "memberId": "yvan-baker",
+    "member": "Yvan Baker",
+    "party": "Liberal"
+   }
+  ],
+  "M8Y": [
+   {
+    "ridingId": 35030,
+    "riding": "Etobicoke—Lakeshore",
+    "share": 1.0,
+    "memberId": "james-maloney",
+    "member": "James Maloney",
+    "party": "Liberal"
+   }
+  ],
+  "M8Z": [
+   {
+    "ridingId": 35030,
+    "riding": "Etobicoke—Lakeshore",
+    "share": 0.9866,
+    "memberId": "james-maloney",
+    "member": "James Maloney",
+    "party": "Liberal"
+   },
+   {
+    "ridingId": 35029,
+    "riding": "Etobicoke Centre",
+    "share": 0.0134,
+    "memberId": "yvan-baker",
+    "member": "Yvan Baker",
+    "party": "Liberal"
+   }
+  ],
+  "M9A": [
+   {
+    "ridingId": 35029,
+    "riding": "Etobicoke Centre",
+    "share": 0.939,
+    "memberId": "yvan-baker",
+    "member": "Yvan Baker",
+    "party": "Liberal"
+   },
+   {
+    "ridingId": 35030,
+    "riding": "Etobicoke—Lakeshore",
+    "share": 0.0523,
+    "memberId": "james-maloney",
+    "member": "James Maloney",
+    "party": "Liberal"
+   },
+   {
+    "ridingId": 35122,
+    "riding": "York South—Weston—Etobicoke",
+    "share": 0.0087,
+    "memberId": "ahmed-hussen",
+    "member": "Ahmed Hussen",
+    "party": "Liberal"
+   }
+  ],
+  "M9B": [
+   {
+    "ridingId": 35029,
+    "riding": "Etobicoke Centre",
+    "share": 0.7679,
+    "memberId": "yvan-baker",
+    "member": "Yvan Baker",
+    "party": "Liberal"
+   },
+   {
+    "ridingId": 35030,
+    "riding": "Etobicoke—Lakeshore",
+    "share": 0.2321,
+    "memberId": "james-maloney",
+    "member": "James Maloney",
+    "party": "Liberal"
+   }
+  ],
+  "M9C": [
+   {
+    "ridingId": 35029,
+    "riding": "Etobicoke Centre",
+    "share": 0.8641,
+    "memberId": "yvan-baker",
+    "member": "Yvan Baker",
+    "party": "Liberal"
+   },
+   {
+    "ridingId": 35030,
+    "riding": "Etobicoke—Lakeshore",
+    "share": 0.1359,
+    "memberId": "james-maloney",
+    "member": "James Maloney",
+    "party": "Liberal"
+   }
+  ],
+  "M9L": [
+   {
+    "ridingId": 35041,
+    "riding": "Humber River—Black Creek",
+    "share": 1.0,
+    "memberId": "judy-a-sgro",
+    "member": "Judy A. Sgro",
+    "party": "Liberal"
+   }
+  ],
+  "M9M": [
+   {
+    "ridingId": 35041,
+    "riding": "Humber River—Black Creek",
+    "share": 0.9853,
+    "memberId": "judy-a-sgro",
+    "member": "Judy A. Sgro",
+    "party": "Liberal"
+   },
+   {
+    "ridingId": 35031,
+    "riding": "Etobicoke North",
+    "share": 0.0147,
+    "memberId": "john-zerucelli",
+    "member": "John Zerucelli",
+    "party": "Liberal"
+   }
+  ],
+  "M9N": [
+   {
+    "ridingId": 35122,
+    "riding": "York South—Weston—Etobicoke",
+    "share": 1.0,
+    "memberId": "ahmed-hussen",
+    "member": "Ahmed Hussen",
+    "party": "Liberal"
+   }
+  ],
+  "M9P": [
+   {
+    "ridingId": 35031,
+    "riding": "Etobicoke North",
+    "share": 0.4018,
+    "memberId": "john-zerucelli",
+    "member": "John Zerucelli",
+    "party": "Liberal"
+   },
+   {
+    "ridingId": 35122,
+    "riding": "York South—Weston—Etobicoke",
+    "share": 0.3965,
+    "memberId": "ahmed-hussen",
+    "member": "Ahmed Hussen",
+    "party": "Liberal"
+   },
+   {
+    "ridingId": 35029,
+    "riding": "Etobicoke Centre",
+    "share": 0.2017,
+    "memberId": "yvan-baker",
+    "member": "Yvan Baker",
+    "party": "Liberal"
+   }
+  ],
+  "M9R": [
+   {
+    "ridingId": 35029,
+    "riding": "Etobicoke Centre",
+    "share": 0.6454,
+    "memberId": "yvan-baker",
+    "member": "Yvan Baker",
+    "party": "Liberal"
+   },
+   {
+    "ridingId": 35031,
+    "riding": "Etobicoke North",
+    "share": 0.3546,
+    "memberId": "john-zerucelli",
+    "member": "John Zerucelli",
+    "party": "Liberal"
+   }
+  ],
+  "M9V": [
+   {
+    "ridingId": 35031,
+    "riding": "Etobicoke North",
+    "share": 1.0,
+    "memberId": "john-zerucelli",
+    "member": "John Zerucelli",
+    "party": "Liberal"
+   }
+  ],
+  "M9W": [
+   {
+    "ridingId": 35031,
+    "riding": "Etobicoke North",
+    "share": 1.0,
+    "memberId": "john-zerucelli",
+    "member": "John Zerucelli",
+    "party": "Liberal"
+   }
+  ],
+  "N0A": [
+   {
+    "ridingId": 35034,
+    "riding": "Haldimand—Norfolk",
+    "share": 0.9182,
+    "memberId": "leslyn-lewis",
+    "member": "Leslyn Lewis",
+    "party": "Conservative"
+   },
+   {
+    "ridingId": 35015,
+    "riding": "Brantford—Brant South",
+    "share": 0.0818,
+    "memberId": null,
+    "vacant": true
+   }
+  ],
+  "N0B": [
+   {
+    "ridingId": 35115,
+    "riding": "Wellington—Halton Hills North",
+    "share": 0.4212,
+    "memberId": "michael-chong",
+    "member": "Michael Chong",
+    "party": "Conservative"
+   },
+   {
+    "ridingId": 35049,
+    "riding": "Kitchener—Conestoga",
+    "share": 0.297,
+    "memberId": "tim-louis",
+    "member": "Tim Louis",
+    "party": "Liberal"
+   },
+   {
+    "ridingId": 35085,
+    "riding": "Perth—Wellington",
+    "share": 0.1332,
+    "memberId": "john-nater",
+    "member": "John Nater",
+    "party": "Conservative"
+   },
+   {
+    "ridingId": 35032,
+    "riding": "Flamborough—Glanbrook—Brant North",
+    "share": 0.0627,
+    "memberId": "dan-muys",
+    "member": "Dan Muys",
+    "party": "Conservative"
+   },
+   {
+    "ridingId": 35083,
+    "riding": "Oxford",
+    "share": 0.04,
+    "memberId": "arpan-khanna",
+    "member": "Arpan Khanna",
+    "party": "Conservative"
+   },
+   {
+    "ridingId": 35019,
+    "riding": "Cambridge",
+    "share": 0.0347,
+    "memberId": "connie-cody",
+    "member": "Connie Cody",
+    "party": "Conservative"
+   },
+   {
+    "ridingId": 35018,
+    "riding": "Burlington North—Milton West",
+    "share": 0.0112,
+    "memberId": "adam-van-koeverden",
+    "member": "Adam van Koeverden",
+    "party": "Liberal"
+   }
+  ],
+  "N0C": [
+   {
+    "ridingId": 35016,
+    "riding": "Bruce—Grey—Owen Sound",
+    "share": 1.0,
+    "memberId": "alex-ruff",
+    "member": "Alex Ruff",
+    "party": "Conservative"
+   }
+  ],
+  "N0E": [
+   {
+    "ridingId": 35034,
+    "riding": "Haldimand—Norfolk",
+    "share": 0.7931,
+    "memberId": "leslyn-lewis",
+    "member": "Leslyn Lewis",
+    "party": "Conservative"
+   },
+   {
+    "ridingId": 35015,
+    "riding": "Brantford—Brant South",
+    "share": 0.1802,
+    "memberId": null,
+    "vacant": true
+   },
+   {
+    "ridingId": 35032,
+    "riding": "Flamborough—Glanbrook—Brant North",
+    "share": 0.0267,
+    "memberId": "dan-muys",
+    "member": "Dan Muys",
+    "party": "Conservative"
+   }
+  ],
+  "N0G": [
+   {
+    "ridingId": 35042,
+    "riding": "Huron—Bruce",
+    "share": 0.5484,
+    "memberId": "ben-lobb",
+    "member": "Ben Lobb",
+    "party": "Conservative"
+   },
+   {
+    "ridingId": 35085,
+    "riding": "Perth—Wellington",
+    "share": 0.2596,
+    "memberId": "john-nater",
+    "member": "John Nater",
+    "party": "Conservative"
+   },
+   {
+    "ridingId": 35016,
+    "riding": "Bruce—Grey—Owen Sound",
+    "share": 0.192,
+    "memberId": "alex-ruff",
+    "member": "Alex Ruff",
+    "party": "Conservative"
+   }
+  ],
+  "N0H": [
+   {
+    "ridingId": 35016,
+    "riding": "Bruce—Grey—Owen Sound",
+    "share": 0.8712,
+    "memberId": "alex-ruff",
+    "member": "Alex Ruff",
+    "party": "Conservative"
+   },
+   {
+    "ridingId": 35098,
+    "riding": "Simcoe—Grey",
+    "share": 0.0933,
+    "memberId": "terry-dowdall",
+    "member": "Terry Dowdall",
+    "party": "Conservative"
+   },
+   {
+    "ridingId": 35042,
+    "riding": "Huron—Bruce",
+    "share": 0.0355,
+    "memberId": "ben-lobb",
+    "member": "Ben Lobb",
+    "party": "Conservative"
+   }
+  ],
+  "N0J": [
+   {
+    "ridingId": 35083,
+    "riding": "Oxford",
+    "share": 0.6968,
+    "memberId": "arpan-khanna",
+    "member": "Arpan Khanna",
+    "party": "Conservative"
+   },
+   {
+    "ridingId": 35027,
+    "riding": "Elgin—St. Thomas—London South",
+    "share": 0.2311,
+    "memberId": "andrew-lawton",
+    "member": "Andrew Lawton",
+    "party": "Conservative"
+   },
+   {
+    "ridingId": 35034,
+    "riding": "Haldimand—Norfolk",
+    "share": 0.0591,
+    "memberId": "leslyn-lewis",
+    "member": "Leslyn Lewis",
+    "party": "Conservative"
+   },
+   {
+    "ridingId": 35015,
+    "riding": "Brantford—Brant South",
+    "share": 0.013,
+    "memberId": null,
+    "vacant": true
+   }
+  ],
+  "N0K": [
+   {
+    "ridingId": 35085,
+    "riding": "Perth—Wellington",
+    "share": 0.7487,
+    "memberId": "john-nater",
+    "member": "John Nater",
+    "party": "Conservative"
+   },
+   {
+    "ridingId": 35042,
+    "riding": "Huron—Bruce",
+    "share": 0.2513,
+    "memberId": "ben-lobb",
+    "member": "Ben Lobb",
+    "party": "Conservative"
+   }
+  ],
+  "N0L": [
+   {
+    "ridingId": 35027,
+    "riding": "Elgin—St. Thomas—London South",
+    "share": 0.5657,
+    "memberId": "andrew-lawton",
+    "member": "Andrew Lawton",
+    "party": "Conservative"
+   },
+   {
+    "ridingId": 35059,
+    "riding": "Middlesex—London",
+    "share": 0.3845,
+    "memberId": "lianne-rood",
+    "member": "Lianne Rood",
+    "party": "Conservative"
+   },
+   {
+    "ridingId": 35021,
+    "riding": "Chatham-Kent—Leamington",
+    "share": 0.0273,
+    "memberId": "dave-epp",
+    "member": "Dave Epp",
+    "party": "Conservative"
+   },
+   {
+    "ridingId": 35083,
+    "riding": "Oxford",
+    "share": 0.0224,
+    "memberId": "arpan-khanna",
+    "member": "Arpan Khanna",
+    "party": "Conservative"
+   }
+  ],
+  "N0M": [
+   {
+    "ridingId": 35059,
+    "riding": "Middlesex—London",
+    "share": 0.4296,
+    "memberId": "lianne-rood",
+    "member": "Lianne Rood",
+    "party": "Conservative"
+   },
+   {
+    "ridingId": 35042,
+    "riding": "Huron—Bruce",
+    "share": 0.395,
+    "memberId": "ben-lobb",
+    "member": "Ben Lobb",
+    "party": "Conservative"
+   },
+   {
+    "ridingId": 35090,
+    "riding": "Sarnia—Lambton—Bkejwanong",
+    "share": 0.122,
+    "memberId": "marilyn-gladu",
+    "member": "Marilyn Gladu",
+    "party": "Liberal"
+   },
+   {
+    "ridingId": 35083,
+    "riding": "Oxford",
+    "share": 0.0533,
+    "memberId": "arpan-khanna",
+    "member": "Arpan Khanna",
+    "party": "Conservative"
+   }
+  ],
+  "N0N": [
+   {
+    "ridingId": 35090,
+    "riding": "Sarnia—Lambton—Bkejwanong",
+    "share": 1.0,
+    "memberId": "marilyn-gladu",
+    "member": "Marilyn Gladu",
+    "party": "Liberal"
+   }
+  ],
+  "N0P": [
+   {
+    "ridingId": 35021,
+    "riding": "Chatham-Kent—Leamington",
+    "share": 0.7365,
+    "memberId": "dave-epp",
+    "member": "Dave Epp",
+    "party": "Conservative"
+   },
+   {
+    "ridingId": 35090,
+    "riding": "Sarnia—Lambton—Bkejwanong",
+    "share": 0.1875,
+    "memberId": "marilyn-gladu",
+    "member": "Marilyn Gladu",
+    "party": "Liberal"
+   },
+   {
+    "ridingId": 35028,
+    "riding": "Essex",
+    "share": 0.076,
+    "memberId": "chris-lewis",
+    "member": "Chris Lewis",
+    "party": "Conservative"
+   }
+  ],
+  "N0R": [
+   {
+    "ridingId": 35028,
+    "riding": "Essex",
+    "share": 0.7027,
+    "memberId": "chris-lewis",
+    "member": "Chris Lewis",
+    "party": "Conservative"
+   },
+   {
+    "ridingId": 35021,
+    "riding": "Chatham-Kent—Leamington",
+    "share": 0.2084,
+    "memberId": "dave-epp",
+    "member": "Dave Epp",
+    "party": "Conservative"
+   },
+   {
+    "ridingId": 35118,
+    "riding": "Windsor—Tecumseh—Lakeshore",
+    "share": 0.0889,
+    "memberId": "kathy-borrelli",
+    "member": "Kathy Borrelli",
+    "party": "Conservative"
+   }
+  ],
+  "N1A": [
+   {
+    "ridingId": 35034,
+    "riding": "Haldimand—Norfolk",
+    "share": 1.0,
+    "memberId": "leslyn-lewis",
+    "member": "Leslyn Lewis",
+    "party": "Conservative"
+   }
+  ],
+  "N1C": [
+   {
+    "ridingId": 35115,
+    "riding": "Wellington—Halton Hills North",
+    "share": 1.0,
+    "memberId": "michael-chong",
+    "member": "Michael Chong",
+    "party": "Conservative"
+   }
+  ],
+  "N1E": [
+   {
+    "ridingId": 35033,
+    "riding": "Guelph",
+    "share": 0.5731,
+    "memberId": "dominique-o-rourke",
+    "member": "Dominique O'Rourke",
+    "party": "Liberal"
+   },
+   {
+    "ridingId": 35115,
+    "riding": "Wellington—Halton Hills North",
+    "share": 0.4269,
+    "memberId": "michael-chong",
+    "member": "Michael Chong",
+    "party": "Conservative"
+   }
+  ],
+  "N1G": [
+   {
+    "ridingId": 35033,
+    "riding": "Guelph",
+    "share": 0.7257,
+    "memberId": "dominique-o-rourke",
+    "member": "Dominique O'Rourke",
+    "party": "Liberal"
+   },
+   {
+    "ridingId": 35115,
+    "riding": "Wellington—Halton Hills North",
+    "share": 0.2743,
+    "memberId": "michael-chong",
+    "member": "Michael Chong",
+    "party": "Conservative"
+   }
+  ],
+  "N1H": [
+   {
+    "ridingId": 35115,
+    "riding": "Wellington—Halton Hills North",
+    "share": 0.8473,
+    "memberId": "michael-chong",
+    "member": "Michael Chong",
+    "party": "Conservative"
+   },
+   {
+    "ridingId": 35033,
+    "riding": "Guelph",
+    "share": 0.1527,
+    "memberId": "dominique-o-rourke",
+    "member": "Dominique O'Rourke",
+    "party": "Liberal"
+   }
+  ],
+  "N1K": [
+   {
+    "ridingId": 35033,
+    "riding": "Guelph",
+    "share": 1.0,
+    "memberId": "dominique-o-rourke",
+    "member": "Dominique O'Rourke",
+    "party": "Liberal"
+   }
+  ],
+  "N1L": [
+   {
+    "ridingId": 35115,
+    "riding": "Wellington—Halton Hills North",
+    "share": 0.9916,
+    "memberId": "michael-chong",
+    "member": "Michael Chong",
+    "party": "Conservative"
+   },
+   {
+    "ridingId": 35033,
+    "riding": "Guelph",
+    "share": 0.0084,
+    "memberId": "dominique-o-rourke",
+    "member": "Dominique O'Rourke",
+    "party": "Liberal"
+   }
+  ],
+  "N1M": [
+   {
+    "ridingId": 35115,
+    "riding": "Wellington—Halton Hills North",
+    "share": 1.0,
+    "memberId": "michael-chong",
+    "member": "Michael Chong",
+    "party": "Conservative"
+   }
+  ],
+  "N1P": [
+   {
+    "ridingId": 35019,
+    "riding": "Cambridge",
+    "share": 1.0,
+    "memberId": "connie-cody",
+    "member": "Connie Cody",
+    "party": "Conservative"
+   }
+  ],
+  "N1R": [
+   {
+    "ridingId": 35019,
+    "riding": "Cambridge",
+    "share": 0.7639,
+    "memberId": "connie-cody",
+    "member": "Connie Cody",
+    "party": "Conservative"
+   },
+   {
+    "ridingId": 35032,
+    "riding": "Flamborough—Glanbrook—Brant North",
+    "share": 0.2361,
+    "memberId": "dan-muys",
+    "member": "Dan Muys",
+    "party": "Conservative"
+   }
+  ],
+  "N1S": [
+   {
+    "ridingId": 35019,
+    "riding": "Cambridge",
+    "share": 1.0,
+    "memberId": "connie-cody",
+    "member": "Connie Cody",
+    "party": "Conservative"
+   }
+  ],
+  "N1T": [
+   {
+    "ridingId": 35019,
+    "riding": "Cambridge",
+    "share": 1.0,
+    "memberId": "connie-cody",
+    "member": "Connie Cody",
+    "party": "Conservative"
+   }
+  ],
+  "N2A": [
+   {
+    "ridingId": 35048,
+    "riding": "Kitchener Centre",
+    "share": 0.6846,
+    "memberId": "kelly-deridder",
+    "member": "Kelly DeRidder",
+    "party": "Conservative"
+   },
+   {
+    "ridingId": 35050,
+    "riding": "Kitchener South—Hespeler",
+    "share": 0.3154,
+    "memberId": "matt-strauss",
+    "member": "Matt Strauss",
+    "party": "Conservative"
+   }
+  ],
+  "N2B": [
+   {
+    "ridingId": 35048,
+    "riding": "Kitchener Centre",
+    "share": 1.0,
+    "memberId": "kelly-deridder",
+    "member": "Kelly DeRidder",
+    "party": "Conservative"
+   }
+  ],
+  "N2C": [
+   {
+    "ridingId": 35050,
+    "riding": "Kitchener South—Hespeler",
+    "share": 1.0,
+    "memberId": "matt-strauss",
+    "member": "Matt Strauss",
+    "party": "Conservative"
+   }
+  ],
+  "N2E": [
+   {
+    "ridingId": 35050,
+    "riding": "Kitchener South—Hespeler",
+    "share": 0.5527,
+    "memberId": "matt-strauss",
+    "member": "Matt Strauss",
+    "party": "Conservative"
+   },
+   {
+    "ridingId": 35049,
+    "riding": "Kitchener—Conestoga",
+    "share": 0.4473,
+    "memberId": "tim-louis",
+    "member": "Tim Louis",
+    "party": "Liberal"
+   }
+  ],
+  "N2G": [
+   {
+    "ridingId": 35048,
+    "riding": "Kitchener Centre",
+    "share": 0.9992,
+    "memberId": "kelly-deridder",
+    "member": "Kelly DeRidder",
+    "party": "Conservative"
+   }
+  ],
+  "N2H": [
+   {
+    "ridingId": 35048,
+    "riding": "Kitchener Centre",
+    "share": 1.0,
+    "memberId": "kelly-deridder",
+    "member": "Kelly DeRidder",
+    "party": "Conservative"
+   }
+  ],
+  "N2J": [
+   {
+    "ridingId": 35049,
+    "riding": "Kitchener—Conestoga",
+    "share": 0.8112,
+    "memberId": "tim-louis",
+    "member": "Tim Louis",
+    "party": "Liberal"
+   },
+   {
+    "ridingId": 35114,
+    "riding": "Waterloo",
+    "share": 0.1888,
+    "memberId": "bardish-chagger",
+    "member": "Bardish Chagger",
+    "party": "Liberal"
+   }
+  ],
+  "N2K": [
+   {
+    "ridingId": 35114,
+    "riding": "Waterloo",
+    "share": 0.7135,
+    "memberId": "bardish-chagger",
+    "member": "Bardish Chagger",
+    "party": "Liberal"
+   },
+   {
+    "ridingId": 35048,
+    "riding": "Kitchener Centre",
+    "share": 0.2865,
+    "memberId": "kelly-deridder",
+    "member": "Kelly DeRidder",
+    "party": "Conservative"
+   }
+  ],
+  "N2L": [
+   {
+    "ridingId": 35114,
+    "riding": "Waterloo",
+    "share": 1.0,
+    "memberId": "bardish-chagger",
+    "member": "Bardish Chagger",
+    "party": "Liberal"
+   }
+  ],
+  "N2M": [
+   {
+    "ridingId": 35048,
+    "riding": "Kitchener Centre",
+    "share": 0.8202,
+    "memberId": "kelly-deridder",
+    "member": "Kelly DeRidder",
+    "party": "Conservative"
+   },
+   {
+    "ridingId": 35049,
+    "riding": "Kitchener—Conestoga",
+    "share": 0.1798,
+    "memberId": "tim-louis",
+    "member": "Tim Louis",
+    "party": "Liberal"
+   }
+  ],
+  "N2N": [
+   {
+    "ridingId": 35049,
+    "riding": "Kitchener—Conestoga",
+    "share": 1.0,
+    "memberId": "tim-louis",
+    "member": "Tim Louis",
+    "party": "Liberal"
+   }
+  ],
+  "N2P": [
+   {
+    "ridingId": 35050,
+    "riding": "Kitchener South—Hespeler",
+    "share": 1.0,
+    "memberId": "matt-strauss",
+    "member": "Matt Strauss",
+    "party": "Conservative"
+   }
+  ],
+  "N2R": [
+   {
+    "ridingId": 35050,
+    "riding": "Kitchener South—Hespeler",
+    "share": 0.5488,
+    "memberId": "matt-strauss",
+    "member": "Matt Strauss",
+    "party": "Conservative"
+   },
+   {
+    "ridingId": 35049,
+    "riding": "Kitchener—Conestoga",
+    "share": 0.4512,
+    "memberId": "tim-louis",
+    "member": "Tim Louis",
+    "party": "Liberal"
+   }
+  ],
+  "N2T": [
+   {
+    "ridingId": 35114,
+    "riding": "Waterloo",
+    "share": 1.0,
+    "memberId": "bardish-chagger",
+    "member": "Bardish Chagger",
+    "party": "Liberal"
+   }
+  ],
+  "N2V": [
+   {
+    "ridingId": 35114,
+    "riding": "Waterloo",
+    "share": 1.0,
+    "memberId": "bardish-chagger",
+    "member": "Bardish Chagger",
+    "party": "Liberal"
+   }
+  ],
+  "N2Z": [
+   {
+    "ridingId": 35042,
+    "riding": "Huron—Bruce",
+    "share": 1.0,
+    "memberId": "ben-lobb",
+    "member": "Ben Lobb",
+    "party": "Conservative"
+   }
+  ],
+  "N3A": [
+   {
+    "ridingId": 35049,
+    "riding": "Kitchener—Conestoga",
+    "share": 0.7871,
+    "memberId": "tim-louis",
+    "member": "Tim Louis",
+    "party": "Liberal"
+   },
+   {
+    "ridingId": 35085,
+    "riding": "Perth—Wellington",
+    "share": 0.2129,
+    "memberId": "john-nater",
+    "member": "John Nater",
+    "party": "Conservative"
+   }
+  ],
+  "N3B": [
+   {
+    "ridingId": 35049,
+    "riding": "Kitchener—Conestoga",
+    "share": 1.0,
+    "memberId": "tim-louis",
+    "member": "Tim Louis",
+    "party": "Liberal"
+   }
+  ],
+  "N3C": [
+   {
+    "ridingId": 35115,
+    "riding": "Wellington—Halton Hills North",
+    "share": 0.632,
+    "memberId": "michael-chong",
+    "member": "Michael Chong",
+    "party": "Conservative"
+   },
+   {
+    "ridingId": 35050,
+    "riding": "Kitchener South—Hespeler",
+    "share": 0.368,
+    "memberId": "matt-strauss",
+    "member": "Matt Strauss",
+    "party": "Conservative"
+   }
+  ],
+  "N3E": [
+   {
+    "ridingId": 35050,
+    "riding": "Kitchener South—Hespeler",
+    "share": 1.0,
+    "memberId": "matt-strauss",
+    "member": "Matt Strauss",
+    "party": "Conservative"
+   }
+  ],
+  "N3H": [
+   {
+    "ridingId": 35019,
+    "riding": "Cambridge",
+    "share": 0.6214,
+    "memberId": "connie-cody",
+    "member": "Connie Cody",
+    "party": "Conservative"
+   },
+   {
+    "ridingId": 35050,
+    "riding": "Kitchener South—Hespeler",
+    "share": 0.3786,
+    "memberId": "matt-strauss",
+    "member": "Matt Strauss",
+    "party": "Conservative"
+   }
+  ],
+  "N3L": [
+   {
+    "ridingId": 35032,
+    "riding": "Flamborough—Glanbrook—Brant North",
+    "share": 0.8865,
+    "memberId": "dan-muys",
+    "member": "Dan Muys",
+    "party": "Conservative"
+   },
+   {
+    "ridingId": 35015,
+    "riding": "Brantford—Brant South",
+    "share": 0.1135,
+    "memberId": null,
+    "vacant": true
+   }
+  ],
+  "N3P": [
+   {
+    "ridingId": 35015,
+    "riding": "Brantford—Brant South",
+    "share": 1.0,
+    "memberId": null,
+    "vacant": true
+   }
+  ],
+  "N3R": [
+   {
+    "ridingId": 35015,
+    "riding": "Brantford—Brant South",
+    "share": 1.0,
+    "memberId": null,
+    "vacant": true
+   }
+  ],
+  "N3S": [
+   {
+    "ridingId": 35015,
+    "riding": "Brantford—Brant South",
+    "share": 1.0,
+    "memberId": null,
+    "vacant": true
+   }
+  ],
+  "N3T": [
+   {
+    "ridingId": 35015,
+    "riding": "Brantford—Brant South",
+    "share": 0.9654,
+    "memberId": null,
+    "vacant": true
+   },
+   {
+    "ridingId": 35032,
+    "riding": "Flamborough—Glanbrook—Brant North",
+    "share": 0.0346,
+    "memberId": "dan-muys",
+    "member": "Dan Muys",
+    "party": "Conservative"
+   }
+  ],
+  "N3V": [
+   {
+    "ridingId": 35015,
+    "riding": "Brantford—Brant South",
+    "share": 1.0,
+    "memberId": null,
+    "vacant": true
+   }
+  ],
+  "N3W": [
+   {
+    "ridingId": 35034,
+    "riding": "Haldimand—Norfolk",
+    "share": 0.6046,
+    "memberId": "leslyn-lewis",
+    "member": "Leslyn Lewis",
+    "party": "Conservative"
+   },
+   {
+    "ridingId": 35015,
+    "riding": "Brantford—Brant South",
+    "share": 0.3954,
+    "memberId": null,
+    "vacant": true
+   }
+  ],
+  "N3Y": [
+   {
+    "ridingId": 35034,
+    "riding": "Haldimand—Norfolk",
+    "share": 1.0,
+    "memberId": "leslyn-lewis",
+    "member": "Leslyn Lewis",
+    "party": "Conservative"
+   }
+  ],
+  "N4B": [
+   {
+    "ridingId": 35034,
+    "riding": "Haldimand—Norfolk",
+    "share": 1.0,
+    "memberId": "leslyn-lewis",
+    "member": "Leslyn Lewis",
+    "party": "Conservative"
+   }
+  ],
+  "N4G": [
+   {
+    "ridingId": 35083,
+    "riding": "Oxford",
+    "share": 0.7366,
+    "memberId": "arpan-khanna",
+    "member": "Arpan Khanna",
+    "party": "Conservative"
+   },
+   {
+    "ridingId": 35034,
+    "riding": "Haldimand—Norfolk",
+    "share": 0.2634,
+    "memberId": "leslyn-lewis",
+    "member": "Leslyn Lewis",
+    "party": "Conservative"
+   }
+  ],
+  "N4K": [
+   {
+    "ridingId": 35016,
+    "riding": "Bruce—Grey—Owen Sound",
+    "share": 1.0,
+    "memberId": "alex-ruff",
+    "member": "Alex Ruff",
+    "party": "Conservative"
+   }
+  ],
+  "N4L": [
+   {
+    "ridingId": 35016,
+    "riding": "Bruce—Grey—Owen Sound",
+    "share": 1.0,
+    "memberId": "alex-ruff",
+    "member": "Alex Ruff",
+    "party": "Conservative"
+   }
+  ],
+  "N4N": [
+   {
+    "ridingId": 35016,
+    "riding": "Bruce—Grey—Owen Sound",
+    "share": 1.0,
+    "memberId": "alex-ruff",
+    "member": "Alex Ruff",
+    "party": "Conservative"
+   }
+  ],
+  "N4S": [
+   {
+    "ridingId": 35083,
+    "riding": "Oxford",
+    "share": 1.0,
+    "memberId": "arpan-khanna",
+    "member": "Arpan Khanna",
+    "party": "Conservative"
+   }
+  ],
+  "N4T": [
+   {
+    "ridingId": 35083,
+    "riding": "Oxford",
+    "share": 1.0,
+    "memberId": "arpan-khanna",
+    "member": "Arpan Khanna",
+    "party": "Conservative"
+   }
+  ],
+  "N4V": [
+   {
+    "ridingId": 35083,
+    "riding": "Oxford",
+    "share": 1.0,
+    "memberId": "arpan-khanna",
+    "member": "Arpan Khanna",
+    "party": "Conservative"
+   }
+  ],
+  "N4W": [
+   {
+    "ridingId": 35085,
+    "riding": "Perth—Wellington",
+    "share": 0.7384,
+    "memberId": "john-nater",
+    "member": "John Nater",
+    "party": "Conservative"
+   },
+   {
+    "ridingId": 35042,
+    "riding": "Huron—Bruce",
+    "share": 0.2616,
+    "memberId": "ben-lobb",
+    "member": "Ben Lobb",
+    "party": "Conservative"
+   }
+  ],
+  "N4X": [
+   {
+    "ridingId": 35085,
+    "riding": "Perth—Wellington",
+    "share": 1.0,
+    "memberId": "john-nater",
+    "member": "John Nater",
+    "party": "Conservative"
+   }
+  ],
+  "N4Z": [
+   {
+    "ridingId": 35085,
+    "riding": "Perth—Wellington",
+    "share": 1.0,
+    "memberId": "john-nater",
+    "member": "John Nater",
+    "party": "Conservative"
+   }
+  ],
+  "N5A": [
+   {
+    "ridingId": 35085,
+    "riding": "Perth—Wellington",
+    "share": 1.0,
+    "memberId": "john-nater",
+    "member": "John Nater",
+    "party": "Conservative"
+   }
+  ],
+  "N5C": [
+   {
+    "ridingId": 35083,
+    "riding": "Oxford",
+    "share": 1.0,
+    "memberId": "arpan-khanna",
+    "member": "Arpan Khanna",
+    "party": "Conservative"
+   }
+  ],
+  "N5H": [
+   {
+    "ridingId": 35027,
+    "riding": "Elgin—St. Thomas—London South",
+    "share": 1.0,
+    "memberId": "andrew-lawton",
+    "member": "Andrew Lawton",
+    "party": "Conservative"
+   }
+  ],
+  "N5L": [
+   {
+    "ridingId": 35027,
+    "riding": "Elgin—St. Thomas—London South",
+    "share": 1.0,
+    "memberId": "andrew-lawton",
+    "member": "Andrew Lawton",
+    "party": "Conservative"
+   }
+  ],
+  "N5P": [
+   {
+    "ridingId": 35027,
+    "riding": "Elgin—St. Thomas—London South",
+    "share": 1.0,
+    "memberId": "andrew-lawton",
+    "member": "Andrew Lawton",
+    "party": "Conservative"
+   }
+  ],
+  "N5R": [
+   {
+    "ridingId": 35027,
+    "riding": "Elgin—St. Thomas—London South",
+    "share": 1.0,
+    "memberId": "andrew-lawton",
+    "member": "Andrew Lawton",
+    "party": "Conservative"
+   }
+  ],
+  "N5V": [
+   {
+    "ridingId": 35054,
+    "riding": "London—Fanshawe",
+    "share": 1.0,
+    "memberId": "kurt-holman",
+    "member": "Kurt Holman",
+    "party": "Conservative"
+   }
+  ],
+  "N5W": [
+   {
+    "ridingId": 35054,
+    "riding": "London—Fanshawe",
+    "share": 0.8375,
+    "memberId": "kurt-holman",
+    "member": "Kurt Holman",
+    "party": "Conservative"
+   },
+   {
+    "ridingId": 35053,
+    "riding": "London Centre",
+    "share": 0.1625,
+    "memberId": "peter-fragiskatos",
+    "member": "Peter Fragiskatos",
+    "party": "Liberal"
+   }
+  ],
+  "N5X": [
+   {
+    "ridingId": 35059,
+    "riding": "Middlesex—London",
+    "share": 0.5766,
+    "memberId": "lianne-rood",
+    "member": "Lianne Rood",
+    "party": "Conservative"
+   },
+   {
+    "ridingId": 35053,
+    "riding": "London Centre",
+    "share": 0.4234,
+    "memberId": "peter-fragiskatos",
+    "member": "Peter Fragiskatos",
+    "party": "Liberal"
+   }
+  ],
+  "N5Y": [
+   {
+    "ridingId": 35053,
+    "riding": "London Centre",
+    "share": 1.0,
+    "memberId": "peter-fragiskatos",
+    "member": "Peter Fragiskatos",
+    "party": "Liberal"
+   }
+  ],
+  "N5Z": [
+   {
+    "ridingId": 35054,
+    "riding": "London—Fanshawe",
+    "share": 0.9997,
+    "memberId": "kurt-holman",
+    "member": "Kurt Holman",
+    "party": "Conservative"
+   }
+  ],
+  "N6A": [
+   {
+    "ridingId": 35053,
+    "riding": "London Centre",
+    "share": 1.0,
+    "memberId": "peter-fragiskatos",
+    "member": "Peter Fragiskatos",
+    "party": "Liberal"
+   }
+  ],
+  "N6B": [
+   {
+    "ridingId": 35053,
+    "riding": "London Centre",
+    "share": 0.8583,
+    "memberId": "peter-fragiskatos",
+    "member": "Peter Fragiskatos",
+    "party": "Liberal"
+   },
+   {
+    "ridingId": 35054,
+    "riding": "London—Fanshawe",
+    "share": 0.1417,
+    "memberId": "kurt-holman",
+    "member": "Kurt Holman",
+    "party": "Conservative"
+   }
+  ],
+  "N6C": [
+   {
+    "ridingId": 35054,
+    "riding": "London—Fanshawe",
+    "share": 0.5399,
+    "memberId": "kurt-holman",
+    "member": "Kurt Holman",
+    "party": "Conservative"
+   },
+   {
+    "ridingId": 35053,
+    "riding": "London Centre",
+    "share": 0.4601,
+    "memberId": "peter-fragiskatos",
+    "member": "Peter Fragiskatos",
+    "party": "Liberal"
+   }
+  ],
+  "N6E": [
+   {
+    "ridingId": 35054,
+    "riding": "London—Fanshawe",
+    "share": 0.6355,
+    "memberId": "kurt-holman",
+    "member": "Kurt Holman",
+    "party": "Conservative"
+   },
+   {
+    "ridingId": 35027,
+    "riding": "Elgin—St. Thomas—London South",
+    "share": 0.3645,
+    "memberId": "andrew-lawton",
+    "member": "Andrew Lawton",
+    "party": "Conservative"
+   }
+  ],
+  "N6G": [
+   {
+    "ridingId": 35059,
+    "riding": "Middlesex—London",
+    "share": 0.5294,
+    "memberId": "lianne-rood",
+    "member": "Lianne Rood",
+    "party": "Conservative"
+   },
+   {
+    "ridingId": 35053,
+    "riding": "London Centre",
+    "share": 0.1995,
+    "memberId": "peter-fragiskatos",
+    "member": "Peter Fragiskatos",
+    "party": "Liberal"
+   },
+   {
+    "ridingId": 35054,
+    "riding": "London—Fanshawe",
+    "share": 0.141,
+    "memberId": "kurt-holman",
+    "member": "Kurt Holman",
+    "party": "Conservative"
+   },
+   {
+    "ridingId": 35055,
+    "riding": "London West",
+    "share": 0.1301,
+    "memberId": "arielle-kayabaga",
+    "member": "Arielle Kayabaga",
+    "party": "Liberal"
+   }
+  ],
+  "N6H": [
+   {
+    "ridingId": 35055,
+    "riding": "London West",
+    "share": 0.5373,
+    "memberId": "arielle-kayabaga",
+    "member": "Arielle Kayabaga",
+    "party": "Liberal"
+   },
+   {
+    "ridingId": 35059,
+    "riding": "Middlesex—London",
+    "share": 0.3195,
+    "memberId": "lianne-rood",
+    "member": "Lianne Rood",
+    "party": "Conservative"
+   },
+   {
+    "ridingId": 35053,
+    "riding": "London Centre",
+    "share": 0.1432,
+    "memberId": "peter-fragiskatos",
+    "member": "Peter Fragiskatos",
+    "party": "Liberal"
+   }
+  ],
+  "N6J": [
+   {
+    "ridingId": 35055,
+    "riding": "London West",
+    "share": 1.0,
+    "memberId": "arielle-kayabaga",
+    "member": "Arielle Kayabaga",
+    "party": "Liberal"
+   }
+  ],
+  "N6K": [
+   {
+    "ridingId": 35055,
+    "riding": "London West",
+    "share": 0.8278,
+    "memberId": "arielle-kayabaga",
+    "member": "Arielle Kayabaga",
+    "party": "Liberal"
+   },
+   {
+    "ridingId": 35027,
+    "riding": "Elgin—St. Thomas—London South",
+    "share": 0.1722,
+    "memberId": "andrew-lawton",
+    "member": "Andrew Lawton",
+    "party": "Conservative"
+   }
+  ],
+  "N6L": [
+   {
+    "ridingId": 35027,
+    "riding": "Elgin—St. Thomas—London South",
+    "share": 1.0,
+    "memberId": "andrew-lawton",
+    "member": "Andrew Lawton",
+    "party": "Conservative"
+   }
+  ],
+  "N6M": [
+   {
+    "ridingId": 35059,
+    "riding": "Middlesex—London",
+    "share": 0.5132,
+    "memberId": "lianne-rood",
+    "member": "Lianne Rood",
+    "party": "Conservative"
+   },
+   {
+    "ridingId": 35054,
+    "riding": "London—Fanshawe",
+    "share": 0.4868,
+    "memberId": "kurt-holman",
+    "member": "Kurt Holman",
+    "party": "Conservative"
+   }
+  ],
+  "N6N": [
+   {
+    "ridingId": 35027,
+    "riding": "Elgin—St. Thomas—London South",
+    "share": 1.0,
+    "memberId": "andrew-lawton",
+    "member": "Andrew Lawton",
+    "party": "Conservative"
+   }
+  ],
+  "N6P": [
+   {
+    "ridingId": 35059,
+    "riding": "Middlesex—London",
+    "share": 0.6452,
+    "memberId": "lianne-rood",
+    "member": "Lianne Rood",
+    "party": "Conservative"
+   },
+   {
+    "ridingId": 35027,
+    "riding": "Elgin—St. Thomas—London South",
+    "share": 0.3548,
+    "memberId": "andrew-lawton",
+    "member": "Andrew Lawton",
+    "party": "Conservative"
+   }
+  ],
+  "N7A": [
+   {
+    "ridingId": 35042,
+    "riding": "Huron—Bruce",
+    "share": 1.0,
+    "memberId": "ben-lobb",
+    "member": "Ben Lobb",
+    "party": "Conservative"
+   }
+  ],
+  "N7G": [
+   {
+    "ridingId": 35059,
+    "riding": "Middlesex—London",
+    "share": 1.0,
+    "memberId": "lianne-rood",
+    "member": "Lianne Rood",
+    "party": "Conservative"
+   }
+  ],
+  "N7L": [
+   {
+    "ridingId": 35021,
+    "riding": "Chatham-Kent—Leamington",
+    "share": 1.0,
+    "memberId": "dave-epp",
+    "member": "Dave Epp",
+    "party": "Conservative"
+   }
+  ],
+  "N7M": [
+   {
+    "ridingId": 35021,
+    "riding": "Chatham-Kent—Leamington",
+    "share": 1.0,
+    "memberId": "dave-epp",
+    "member": "Dave Epp",
+    "party": "Conservative"
+   }
+  ],
+  "N7S": [
+   {
+    "ridingId": 35090,
+    "riding": "Sarnia—Lambton—Bkejwanong",
+    "share": 1.0,
+    "memberId": "marilyn-gladu",
+    "member": "Marilyn Gladu",
+    "party": "Liberal"
+   }
+  ],
+  "N7T": [
+   {
+    "ridingId": 35090,
+    "riding": "Sarnia—Lambton—Bkejwanong",
+    "share": 1.0,
+    "memberId": "marilyn-gladu",
+    "member": "Marilyn Gladu",
+    "party": "Liberal"
+   }
+  ],
+  "N7V": [
+   {
+    "ridingId": 35090,
+    "riding": "Sarnia—Lambton—Bkejwanong",
+    "share": 1.0,
+    "memberId": "marilyn-gladu",
+    "member": "Marilyn Gladu",
+    "party": "Liberal"
+   }
+  ],
+  "N7W": [
+   {
+    "ridingId": 35090,
+    "riding": "Sarnia—Lambton—Bkejwanong",
+    "share": 1.0,
+    "memberId": "marilyn-gladu",
+    "member": "Marilyn Gladu",
+    "party": "Liberal"
+   }
+  ],
+  "N7X": [
+   {
+    "ridingId": 35090,
+    "riding": "Sarnia—Lambton—Bkejwanong",
+    "share": 1.0,
+    "memberId": "marilyn-gladu",
+    "member": "Marilyn Gladu",
+    "party": "Liberal"
+   }
+  ],
+  "N8A": [
+   {
+    "ridingId": 35090,
+    "riding": "Sarnia—Lambton—Bkejwanong",
+    "share": 0.7916,
+    "memberId": "marilyn-gladu",
+    "member": "Marilyn Gladu",
+    "party": "Liberal"
+   },
+   {
+    "ridingId": 35021,
+    "riding": "Chatham-Kent—Leamington",
+    "share": 0.2084,
+    "memberId": "dave-epp",
+    "member": "Dave Epp",
+    "party": "Conservative"
+   }
+  ],
+  "N8H": [
+   {
+    "ridingId": 35021,
+    "riding": "Chatham-Kent—Leamington",
+    "share": 1.0,
+    "memberId": "dave-epp",
+    "member": "Dave Epp",
+    "party": "Conservative"
+   }
+  ],
+  "N8M": [
+   {
+    "ridingId": 35028,
+    "riding": "Essex",
+    "share": 1.0,
+    "memberId": "chris-lewis",
+    "member": "Chris Lewis",
+    "party": "Conservative"
+   }
+  ],
+  "N8N": [
+   {
+    "ridingId": 35118,
+    "riding": "Windsor—Tecumseh—Lakeshore",
+    "share": 1.0,
+    "memberId": "kathy-borrelli",
+    "member": "Kathy Borrelli",
+    "party": "Conservative"
+   }
+  ],
+  "N8P": [
+   {
+    "ridingId": 35118,
+    "riding": "Windsor—Tecumseh—Lakeshore",
+    "share": 1.0,
+    "memberId": "kathy-borrelli",
+    "member": "Kathy Borrelli",
+    "party": "Conservative"
+   }
+  ],
+  "N8R": [
+   {
+    "ridingId": 35118,
+    "riding": "Windsor—Tecumseh—Lakeshore",
+    "share": 1.0,
+    "memberId": "kathy-borrelli",
+    "member": "Kathy Borrelli",
+    "party": "Conservative"
+   }
+  ],
+  "N8S": [
+   {
+    "ridingId": 35118,
+    "riding": "Windsor—Tecumseh—Lakeshore",
+    "share": 1.0,
+    "memberId": "kathy-borrelli",
+    "member": "Kathy Borrelli",
+    "party": "Conservative"
+   }
+  ],
+  "N8T": [
+   {
+    "ridingId": 35118,
+    "riding": "Windsor—Tecumseh—Lakeshore",
+    "share": 1.0,
+    "memberId": "kathy-borrelli",
+    "member": "Kathy Borrelli",
+    "party": "Conservative"
+   }
+  ],
+  "N8W": [
+   {
+    "ridingId": 35119,
+    "riding": "Windsor West",
+    "share": 0.9308,
+    "memberId": "harb-gill",
+    "member": "Harb Gill",
+    "party": "Conservative"
+   },
+   {
+    "ridingId": 35118,
+    "riding": "Windsor—Tecumseh—Lakeshore",
+    "share": 0.0692,
+    "memberId": "kathy-borrelli",
+    "member": "Kathy Borrelli",
+    "party": "Conservative"
+   }
+  ],
+  "N8X": [
+   {
+    "ridingId": 35119,
+    "riding": "Windsor West",
+    "share": 0.9117,
+    "memberId": "harb-gill",
+    "member": "Harb Gill",
+    "party": "Conservative"
+   },
+   {
+    "ridingId": 35118,
+    "riding": "Windsor—Tecumseh—Lakeshore",
+    "share": 0.0883,
+    "memberId": "kathy-borrelli",
+    "member": "Kathy Borrelli",
+    "party": "Conservative"
+   }
+  ],
+  "N8Y": [
+   {
+    "ridingId": 35118,
+    "riding": "Windsor—Tecumseh—Lakeshore",
+    "share": 1.0,
+    "memberId": "kathy-borrelli",
+    "member": "Kathy Borrelli",
+    "party": "Conservative"
+   }
+  ],
+  "N9A": [
+   {
+    "ridingId": 35119,
+    "riding": "Windsor West",
+    "share": 0.8233,
+    "memberId": "harb-gill",
+    "member": "Harb Gill",
+    "party": "Conservative"
+   },
+   {
+    "ridingId": 35118,
+    "riding": "Windsor—Tecumseh—Lakeshore",
+    "share": 0.1767,
+    "memberId": "kathy-borrelli",
+    "member": "Kathy Borrelli",
+    "party": "Conservative"
+   }
+  ],
+  "N9B": [
+   {
+    "ridingId": 35119,
+    "riding": "Windsor West",
+    "share": 1.0,
+    "memberId": "harb-gill",
+    "member": "Harb Gill",
+    "party": "Conservative"
+   }
+  ],
+  "N9C": [
+   {
+    "ridingId": 35119,
+    "riding": "Windsor West",
+    "share": 1.0,
+    "memberId": "harb-gill",
+    "member": "Harb Gill",
+    "party": "Conservative"
+   }
+  ],
+  "N9E": [
+   {
+    "ridingId": 35119,
+    "riding": "Windsor West",
+    "share": 1.0,
+    "memberId": "harb-gill",
+    "member": "Harb Gill",
+    "party": "Conservative"
+   }
+  ],
+  "N9G": [
+   {
+    "ridingId": 35119,
+    "riding": "Windsor West",
+    "share": 1.0,
+    "memberId": "harb-gill",
+    "member": "Harb Gill",
+    "party": "Conservative"
+   }
+  ],
+  "N9H": [
+   {
+    "ridingId": 35028,
+    "riding": "Essex",
+    "share": 0.9969,
+    "memberId": "chris-lewis",
+    "member": "Chris Lewis",
+    "party": "Conservative"
+   },
+   {
+    "ridingId": 35119,
+    "riding": "Windsor West",
+    "share": 0.0031,
+    "memberId": "harb-gill",
+    "member": "Harb Gill",
+    "party": "Conservative"
+   }
+  ],
+  "N9J": [
+   {
+    "ridingId": 35028,
+    "riding": "Essex",
+    "share": 0.8387,
+    "memberId": "chris-lewis",
+    "member": "Chris Lewis",
+    "party": "Conservative"
+   },
+   {
+    "ridingId": 35119,
+    "riding": "Windsor West",
+    "share": 0.1613,
+    "memberId": "harb-gill",
+    "member": "Harb Gill",
+    "party": "Conservative"
+   }
+  ],
+  "N9K": [
+   {
+    "ridingId": 35118,
+    "riding": "Windsor—Tecumseh—Lakeshore",
+    "share": 1.0,
+    "memberId": "kathy-borrelli",
+    "member": "Kathy Borrelli",
+    "party": "Conservative"
+   }
+  ],
+  "N9V": [
+   {
+    "ridingId": 35028,
+    "riding": "Essex",
+    "share": 1.0,
+    "memberId": "chris-lewis",
+    "member": "Chris Lewis",
+    "party": "Conservative"
+   }
+  ],
+  "N9Y": [
+   {
+    "ridingId": 35028,
+    "riding": "Essex",
+    "share": 1.0,
+    "memberId": "chris-lewis",
+    "member": "Chris Lewis",
+    "party": "Conservative"
+   }
+  ],
+  "P0A": [
+   {
+    "ridingId": 35084,
+    "riding": "Parry Sound—Muskoka",
+    "share": 1.0,
+    "memberId": "scott-aitchison",
+    "member": "Scott Aitchison",
+    "party": "Conservative"
+   }
+  ],
+  "P0B": [
+   {
+    "ridingId": 35084,
+    "riding": "Parry Sound—Muskoka",
+    "share": 1.0,
+    "memberId": "scott-aitchison",
+    "member": "Scott Aitchison",
+    "party": "Conservative"
+   }
+  ],
+  "P0C": [
+   {
+    "ridingId": 35084,
+    "riding": "Parry Sound—Muskoka",
+    "share": 1.0,
+    "memberId": "scott-aitchison",
+    "member": "Scott Aitchison",
+    "party": "Conservative"
+   }
+  ],
+  "P0E": [
+   {
+    "ridingId": 35099,
+    "riding": "Simcoe North",
+    "share": 0.6007,
+    "memberId": "adam-chambers",
+    "member": "Adam Chambers",
+    "party": "Conservative"
+   },
+   {
+    "ridingId": 35084,
+    "riding": "Parry Sound—Muskoka",
+    "share": 0.3993,
+    "memberId": "scott-aitchison",
+    "member": "Scott Aitchison",
+    "party": "Conservative"
+   }
+  ],
+  "P0G": [
+   {
+    "ridingId": 35084,
+    "riding": "Parry Sound—Muskoka",
+    "share": 1.0,
+    "memberId": "scott-aitchison",
+    "member": "Scott Aitchison",
+    "party": "Conservative"
+   }
+  ],
+  "P0H": [
+   {
+    "ridingId": 35073,
+    "riding": "Nipissing—Timiskaming",
+    "share": 0.6188,
+    "memberId": "pauline-rochefort",
+    "member": "Pauline Rochefort",
+    "party": "Liberal"
+   },
+   {
+    "ridingId": 35002,
+    "riding": "Algonquin—Renfrew—Pembroke",
+    "share": 0.1662,
+    "memberId": "cheryl-gallant",
+    "member": "Cheryl Gallant",
+    "party": "Conservative"
+   },
+   {
+    "ridingId": 35084,
+    "riding": "Parry Sound—Muskoka",
+    "share": 0.1086,
+    "memberId": "scott-aitchison",
+    "member": "Scott Aitchison",
+    "party": "Conservative"
+   },
+   {
+    "ridingId": 35104,
+    "riding": "Sudbury East—Manitoulin—Nickel Belt",
+    "share": 0.1064,
+    "memberId": "jim-belanger",
+    "member": "Jim Bélanger",
+    "party": "Conservative"
+   }
+  ],
+  "P0J": [
+   {
+    "ridingId": 35073,
+    "riding": "Nipissing—Timiskaming",
+    "share": 0.5834,
+    "memberId": "pauline-rochefort",
+    "member": "Pauline Rochefort",
+    "party": "Liberal"
+   },
+   {
+    "ridingId": 35044,
+    "riding": "Kapuskasing—Timmins—Mushkegowuk",
+    "share": 0.4166,
+    "memberId": "gaetan-malette",
+    "member": "Gaétan Malette",
+    "party": "Conservative"
+   }
+  ],
+  "P0K": [
+   {
+    "ridingId": 35044,
+    "riding": "Kapuskasing—Timmins—Mushkegowuk",
+    "share": 1.0,
+    "memberId": "gaetan-malette",
+    "member": "Gaétan Malette",
+    "party": "Conservative"
+   }
+  ],
+  "P0L": [
+   {
+    "ridingId": 35044,
+    "riding": "Kapuskasing—Timmins—Mushkegowuk",
+    "share": 0.8049,
+    "memberId": "gaetan-malette",
+    "member": "Gaétan Malette",
+    "party": "Conservative"
+   },
+   {
+    "ridingId": 35108,
+    "riding": "Thunder Bay—Superior North",
+    "share": 0.1951,
+    "memberId": "patty-hajdu",
+    "member": "Patty Hajdu",
+    "party": "Liberal"
+   }
+  ],
+  "P0M": [
+   {
+    "ridingId": 35104,
+    "riding": "Sudbury East—Manitoulin—Nickel Belt",
+    "share": 0.3913,
+    "memberId": "jim-belanger",
+    "member": "Jim Bélanger",
+    "party": "Conservative"
+   },
+   {
+    "ridingId": 35044,
+    "riding": "Kapuskasing—Timmins—Mushkegowuk",
+    "share": 0.3565,
+    "memberId": "gaetan-malette",
+    "member": "Gaétan Malette",
+    "party": "Conservative"
+   },
+   {
+    "ridingId": 35091,
+    "riding": "Sault Ste. Marie—Algoma",
+    "share": 0.2449,
+    "memberId": "terry-sheehan",
+    "member": "Terry Sheehan",
+    "party": "Liberal"
+   },
+   {
+    "ridingId": 35103,
+    "riding": "Sudbury",
+    "share": 0.005,
+    "memberId": "viviane-lapointe",
+    "member": "Viviane Lapointe",
+    "party": "Liberal"
+   },
+   {
+    "ridingId": 35084,
+    "riding": "Parry Sound—Muskoka",
+    "share": 0.0023,
+    "memberId": "scott-aitchison",
+    "member": "Scott Aitchison",
+    "party": "Conservative"
+   }
+  ],
+  "P0N": [
+   {
+    "ridingId": 35044,
+    "riding": "Kapuskasing—Timmins—Mushkegowuk",
+    "share": 1.0,
+    "memberId": "gaetan-malette",
+    "member": "Gaétan Malette",
+    "party": "Conservative"
+   }
+  ],
+  "P0P": [
+   {
+    "ridingId": 35104,
+    "riding": "Sudbury East—Manitoulin—Nickel Belt",
+    "share": 0.9517,
+    "memberId": "jim-belanger",
+    "member": "Jim Bélanger",
+    "party": "Conservative"
+   },
+   {
+    "ridingId": 35091,
+    "riding": "Sault Ste. Marie—Algoma",
+    "share": 0.0483,
+    "memberId": "terry-sheehan",
+    "member": "Terry Sheehan",
+    "party": "Liberal"
+   }
+  ],
+  "P0R": [
+   {
+    "ridingId": 35091,
+    "riding": "Sault Ste. Marie—Algoma",
+    "share": 1.0,
+    "memberId": "terry-sheehan",
+    "member": "Terry Sheehan",
+    "party": "Liberal"
+   }
+  ],
+  "P0S": [
+   {
+    "ridingId": 35091,
+    "riding": "Sault Ste. Marie—Algoma",
+    "share": 1.0,
+    "memberId": "terry-sheehan",
+    "member": "Terry Sheehan",
+    "party": "Liberal"
+   }
+  ],
+  "P0T": [
+   {
+    "ridingId": 35108,
+    "riding": "Thunder Bay—Superior North",
+    "share": 0.8175,
+    "memberId": "patty-hajdu",
+    "member": "Patty Hajdu",
+    "party": "Liberal"
+   },
+   {
+    "ridingId": 35107,
+    "riding": "Thunder Bay—Rainy River",
+    "share": 0.1346,
+    "memberId": "marcus-powlowski",
+    "member": "Marcus Powlowski",
+    "party": "Liberal"
+   },
+   {
+    "ridingId": 35045,
+    "riding": "Kenora—Kiiwetinoong",
+    "share": 0.0479,
+    "memberId": "eric-melillo",
+    "member": "Eric Melillo",
+    "party": "Conservative"
+   }
+  ],
+  "P0V": [
+   {
+    "ridingId": 35045,
+    "riding": "Kenora—Kiiwetinoong",
+    "share": 0.6306,
+    "memberId": "eric-melillo",
+    "member": "Eric Melillo",
+    "party": "Conservative"
+   },
+   {
+    "ridingId": 35044,
+    "riding": "Kapuskasing—Timmins—Mushkegowuk",
+    "share": 0.3009,
+    "memberId": "gaetan-malette",
+    "member": "Gaétan Malette",
+    "party": "Conservative"
+   },
+   {
+    "ridingId": 35108,
+    "riding": "Thunder Bay—Superior North",
+    "share": 0.0685,
+    "memberId": "patty-hajdu",
+    "member": "Patty Hajdu",
+    "party": "Liberal"
+   }
+  ],
+  "P0W": [
+   {
+    "ridingId": 35107,
+    "riding": "Thunder Bay—Rainy River",
+    "share": 1.0,
+    "memberId": "marcus-powlowski",
+    "member": "Marcus Powlowski",
+    "party": "Liberal"
+   }
+  ],
+  "P0X": [
+   {
+    "ridingId": 35045,
+    "riding": "Kenora—Kiiwetinoong",
+    "share": 1.0,
+    "memberId": "eric-melillo",
+    "member": "Eric Melillo",
+    "party": "Conservative"
+   }
+  ],
+  "P0Y": [
+   {
+    "ridingId": 35045,
+    "riding": "Kenora—Kiiwetinoong",
+    "share": 1.0,
+    "memberId": "eric-melillo",
+    "member": "Eric Melillo",
+    "party": "Conservative"
+   }
+  ],
+  "P1A": [
+   {
+    "ridingId": 35073,
+    "riding": "Nipissing—Timiskaming",
+    "share": 1.0,
+    "memberId": "pauline-rochefort",
+    "member": "Pauline Rochefort",
+    "party": "Liberal"
+   }
+  ],
+  "P1B": [
+   {
+    "ridingId": 35073,
+    "riding": "Nipissing—Timiskaming",
+    "share": 0.8874,
+    "memberId": "pauline-rochefort",
+    "member": "Pauline Rochefort",
+    "party": "Liberal"
+   },
+   {
+    "ridingId": 35104,
+    "riding": "Sudbury East—Manitoulin—Nickel Belt",
+    "share": 0.1126,
+    "memberId": "jim-belanger",
+    "member": "Jim Bélanger",
+    "party": "Conservative"
+   }
+  ],
+  "P1C": [
+   {
+    "ridingId": 35073,
+    "riding": "Nipissing—Timiskaming",
+    "share": 1.0,
+    "memberId": "pauline-rochefort",
+    "member": "Pauline Rochefort",
+    "party": "Liberal"
+   }
+  ],
+  "P1H": [
+   {
+    "ridingId": 35084,
+    "riding": "Parry Sound—Muskoka",
+    "share": 1.0,
+    "memberId": "scott-aitchison",
+    "member": "Scott Aitchison",
+    "party": "Conservative"
+   }
+  ],
+  "P1L": [
+   {
+    "ridingId": 35084,
+    "riding": "Parry Sound—Muskoka",
+    "share": 1.0,
+    "memberId": "scott-aitchison",
+    "member": "Scott Aitchison",
+    "party": "Conservative"
+   }
+  ],
+  "P1P": [
+   {
+    "ridingId": 35084,
+    "riding": "Parry Sound—Muskoka",
+    "share": 1.0,
+    "memberId": "scott-aitchison",
+    "member": "Scott Aitchison",
+    "party": "Conservative"
+   }
+  ],
+  "P2A": [
+   {
+    "ridingId": 35084,
+    "riding": "Parry Sound—Muskoka",
+    "share": 1.0,
+    "memberId": "scott-aitchison",
+    "member": "Scott Aitchison",
+    "party": "Conservative"
+   }
+  ],
+  "P2B": [
+   {
+    "ridingId": 35104,
+    "riding": "Sudbury East—Manitoulin—Nickel Belt",
+    "share": 1.0,
+    "memberId": "jim-belanger",
+    "member": "Jim Bélanger",
+    "party": "Conservative"
+   }
+  ],
+  "P2N": [
+   {
+    "ridingId": 35044,
+    "riding": "Kapuskasing—Timmins—Mushkegowuk",
+    "share": 1.0,
+    "memberId": "gaetan-malette",
+    "member": "Gaétan Malette",
+    "party": "Conservative"
+   }
+  ],
+  "P3A": [
+   {
+    "ridingId": 35103,
+    "riding": "Sudbury",
+    "share": 1.0,
+    "memberId": "viviane-lapointe",
+    "member": "Viviane Lapointe",
+    "party": "Liberal"
+   }
+  ],
+  "P3B": [
+   {
+    "ridingId": 35103,
+    "riding": "Sudbury",
+    "share": 1.0,
+    "memberId": "viviane-lapointe",
+    "member": "Viviane Lapointe",
+    "party": "Liberal"
+   }
+  ],
+  "P3C": [
+   {
+    "ridingId": 35103,
+    "riding": "Sudbury",
+    "share": 1.0,
+    "memberId": "viviane-lapointe",
+    "member": "Viviane Lapointe",
+    "party": "Liberal"
+   }
+  ],
+  "P3E": [
+   {
+    "ridingId": 35104,
+    "riding": "Sudbury East—Manitoulin—Nickel Belt",
+    "share": 0.903,
+    "memberId": "jim-belanger",
+    "member": "Jim Bélanger",
+    "party": "Conservative"
+   },
+   {
+    "ridingId": 35103,
+    "riding": "Sudbury",
+    "share": 0.097,
+    "memberId": "viviane-lapointe",
+    "member": "Viviane Lapointe",
+    "party": "Liberal"
+   }
+  ],
+  "P3G": [
+   {
+    "ridingId": 35104,
+    "riding": "Sudbury East—Manitoulin—Nickel Belt",
+    "share": 0.5056,
+    "memberId": "jim-belanger",
+    "member": "Jim Bélanger",
+    "party": "Conservative"
+   },
+   {
+    "ridingId": 35103,
+    "riding": "Sudbury",
+    "share": 0.4944,
+    "memberId": "viviane-lapointe",
+    "member": "Viviane Lapointe",
+    "party": "Liberal"
+   }
+  ],
+  "P3L": [
+   {
+    "ridingId": 35103,
+    "riding": "Sudbury",
+    "share": 1.0,
+    "memberId": "viviane-lapointe",
+    "member": "Viviane Lapointe",
+    "party": "Liberal"
+   }
+  ],
+  "P3N": [
+   {
+    "ridingId": 35104,
+    "riding": "Sudbury East—Manitoulin—Nickel Belt",
+    "share": 0.7808,
+    "memberId": "jim-belanger",
+    "member": "Jim Bélanger",
+    "party": "Conservative"
+   },
+   {
+    "ridingId": 35103,
+    "riding": "Sudbury",
+    "share": 0.2192,
+    "memberId": "viviane-lapointe",
+    "member": "Viviane Lapointe",
+    "party": "Liberal"
+   }
+  ],
+  "P3P": [
+   {
+    "ridingId": 35104,
+    "riding": "Sudbury East—Manitoulin—Nickel Belt",
+    "share": 0.9993,
+    "memberId": "jim-belanger",
+    "member": "Jim Bélanger",
+    "party": "Conservative"
+   }
+  ],
+  "P3Y": [
+   {
+    "ridingId": 35103,
+    "riding": "Sudbury",
+    "share": 0.9912,
+    "memberId": "viviane-lapointe",
+    "member": "Viviane Lapointe",
+    "party": "Liberal"
+   },
+   {
+    "ridingId": 35104,
+    "riding": "Sudbury East—Manitoulin—Nickel Belt",
+    "share": 0.0088,
+    "memberId": "jim-belanger",
+    "member": "Jim Bélanger",
+    "party": "Conservative"
+   }
+  ],
+  "P4N": [
+   {
+    "ridingId": 35044,
+    "riding": "Kapuskasing—Timmins—Mushkegowuk",
+    "share": 1.0,
+    "memberId": "gaetan-malette",
+    "member": "Gaétan Malette",
+    "party": "Conservative"
+   }
+  ],
+  "P4P": [
+   {
+    "ridingId": 35044,
+    "riding": "Kapuskasing—Timmins—Mushkegowuk",
+    "share": 1.0,
+    "memberId": "gaetan-malette",
+    "member": "Gaétan Malette",
+    "party": "Conservative"
+   }
+  ],
+  "P4R": [
+   {
+    "ridingId": 35044,
+    "riding": "Kapuskasing—Timmins—Mushkegowuk",
+    "share": 1.0,
+    "memberId": "gaetan-malette",
+    "member": "Gaétan Malette",
+    "party": "Conservative"
+   }
+  ],
+  "P5A": [
+   {
+    "ridingId": 35091,
+    "riding": "Sault Ste. Marie—Algoma",
+    "share": 1.0,
+    "memberId": "terry-sheehan",
+    "member": "Terry Sheehan",
+    "party": "Liberal"
+   }
+  ],
+  "P5E": [
+   {
+    "ridingId": 35104,
+    "riding": "Sudbury East—Manitoulin—Nickel Belt",
+    "share": 1.0,
+    "memberId": "jim-belanger",
+    "member": "Jim Bélanger",
+    "party": "Conservative"
+   }
+  ],
+  "P5N": [
+   {
+    "ridingId": 35044,
+    "riding": "Kapuskasing—Timmins—Mushkegowuk",
+    "share": 1.0,
+    "memberId": "gaetan-malette",
+    "member": "Gaétan Malette",
+    "party": "Conservative"
+   }
+  ],
+  "P6A": [
+   {
+    "ridingId": 35091,
+    "riding": "Sault Ste. Marie—Algoma",
+    "share": 1.0,
+    "memberId": "terry-sheehan",
+    "member": "Terry Sheehan",
+    "party": "Liberal"
+   }
+  ],
+  "P6B": [
+   {
+    "ridingId": 35091,
+    "riding": "Sault Ste. Marie—Algoma",
+    "share": 1.0,
+    "memberId": "terry-sheehan",
+    "member": "Terry Sheehan",
+    "party": "Liberal"
+   }
+  ],
+  "P6C": [
+   {
+    "ridingId": 35091,
+    "riding": "Sault Ste. Marie—Algoma",
+    "share": 1.0,
+    "memberId": "terry-sheehan",
+    "member": "Terry Sheehan",
+    "party": "Liberal"
+   }
+  ],
+  "P7A": [
+   {
+    "ridingId": 35108,
+    "riding": "Thunder Bay—Superior North",
+    "share": 1.0,
+    "memberId": "patty-hajdu",
+    "member": "Patty Hajdu",
+    "party": "Liberal"
+   }
+  ],
+  "P7B": [
+   {
+    "ridingId": 35108,
+    "riding": "Thunder Bay—Superior North",
+    "share": 1.0,
+    "memberId": "patty-hajdu",
+    "member": "Patty Hajdu",
+    "party": "Liberal"
+   }
+  ],
+  "P7C": [
+   {
+    "ridingId": 35107,
+    "riding": "Thunder Bay—Rainy River",
+    "share": 0.9468,
+    "memberId": "marcus-powlowski",
+    "member": "Marcus Powlowski",
+    "party": "Liberal"
+   },
+   {
+    "ridingId": 35108,
+    "riding": "Thunder Bay—Superior North",
+    "share": 0.0532,
+    "memberId": "patty-hajdu",
+    "member": "Patty Hajdu",
+    "party": "Liberal"
+   }
+  ],
+  "P7E": [
+   {
+    "ridingId": 35107,
+    "riding": "Thunder Bay—Rainy River",
+    "share": 1.0,
+    "memberId": "marcus-powlowski",
+    "member": "Marcus Powlowski",
+    "party": "Liberal"
+   }
+  ],
+  "P7G": [
+   {
+    "ridingId": 35108,
+    "riding": "Thunder Bay—Superior North",
+    "share": 0.7955,
+    "memberId": "patty-hajdu",
+    "member": "Patty Hajdu",
+    "party": "Liberal"
+   },
+   {
+    "ridingId": 35107,
+    "riding": "Thunder Bay—Rainy River",
+    "share": 0.2045,
+    "memberId": "marcus-powlowski",
+    "member": "Marcus Powlowski",
+    "party": "Liberal"
+   }
+  ],
+  "P7J": [
+   {
+    "ridingId": 35107,
+    "riding": "Thunder Bay—Rainy River",
+    "share": 1.0,
+    "memberId": "marcus-powlowski",
+    "member": "Marcus Powlowski",
+    "party": "Liberal"
+   }
+  ],
+  "P7K": [
+   {
+    "ridingId": 35107,
+    "riding": "Thunder Bay—Rainy River",
+    "share": 1.0,
+    "memberId": "marcus-powlowski",
+    "member": "Marcus Powlowski",
+    "party": "Liberal"
+   }
+  ],
+  "P7L": [
+   {
+    "ridingId": 35107,
+    "riding": "Thunder Bay—Rainy River",
+    "share": 1.0,
+    "memberId": "marcus-powlowski",
+    "member": "Marcus Powlowski",
+    "party": "Liberal"
+   }
+  ],
+  "P8N": [
+   {
+    "ridingId": 35045,
+    "riding": "Kenora—Kiiwetinoong",
+    "share": 1.0,
+    "memberId": "eric-melillo",
+    "member": "Eric Melillo",
+    "party": "Conservative"
+   }
+  ],
+  "P8T": [
+   {
+    "ridingId": 35045,
+    "riding": "Kenora—Kiiwetinoong",
+    "share": 1.0,
+    "memberId": "eric-melillo",
+    "member": "Eric Melillo",
+    "party": "Conservative"
+   }
+  ],
+  "P9A": [
+   {
+    "ridingId": 35107,
+    "riding": "Thunder Bay—Rainy River",
+    "share": 1.0,
+    "memberId": "marcus-powlowski",
+    "member": "Marcus Powlowski",
+    "party": "Liberal"
+   }
+  ],
+  "P9N": [
+   {
+    "ridingId": 35045,
+    "riding": "Kenora—Kiiwetinoong",
+    "share": 1.0,
+    "memberId": "eric-melillo",
+    "member": "Eric Melillo",
+    "party": "Conservative"
+   }
+  ],
+  "M7A": [
+   {
+    "ridingId": 35112,
+    "riding": "University—Rosedale",
+    "share": 1.0,
+    "basis": "institutional-fsa-point-verified",
+    "memberId": "danielle-martin",
+    "member": "Danielle Martin",
+    "party": "Liberal"
+   }
+  ]
+ }
+}

@@ -42,7 +42,25 @@
    (common.js shape()) whitelists its fields, so a briefingSeenAt
    field written into deme.votes.v2 would be silently dropped by
    the next VoteStore write; there is no accessor for it, and
-   adding one is outside this change. See the INC4 report. */
+   adding one is outside this change. See the INC4 report.
+
+   ---- v2 (Backend Three item 3, Oct 29, 2026) ----
+   Sections F–H extend the briefing to the visitor's Ontario and
+   federal ridings, "where verified data exists" (phase5 item 1).
+   The Toronto sections above are v1's, unchanged; v2 only appends.
+   Ridings come from the account profile's Wave 3B fields
+   (federal_riding / ontario_riding), read through
+   DemeAccount.getWatchProfile() — account data, own rows only,
+   feature-detected: an account layer without those fields reads
+   as unset and v2 behaves exactly as v1. The pure matching/window
+   logic lives in briefing-layers.js (DemeBriefingLayers), loaded
+   before this file; if it is absent the upper sections are
+   omitted, never faked. Federal member votes hydrate from the
+   per-member split file (member/<id>.divisions.json, Backend
+   Three item 2) when it is served, falling back to the layer's
+   divisions.json. Pull-only rules are unchanged: nothing is
+   sent, nothing arrives, no pick or watch at any level is
+   tallied or shown to anyone but its owner. */
 "use strict";
 
 (function initBriefing() {
@@ -91,7 +109,13 @@
   }
 
   function renderSignpost() {
-    bodyEl.innerHTML = `<div class="calm">
+    bodyEl.innerHTML = signpostHTML();
+  }
+  /* v2: the signpost markup is v1's verbatim, factored so the
+     no-ward-with-ridings path can place it above the upper-level
+     sections without duplicating (or drifting) the string. */
+  function signpostHTML() {
+    return `<div class="calm">
       <p class="calm-head">Set your Toronto ward to see your week on the record.</p>
       <p>Your ward is part of your profile.
       <a href="#account-zone">Set it in your account</a> above, and
@@ -162,7 +186,22 @@
         await window.DemeAccount.authReady();
       }
       const ward = briefingWard();
-      if (ward == null) { renderSignpost(); return; }
+      if (ward == null) {
+        /* v2: no Toronto ward — but the visitor may still have
+           Ontario/federal ridings on their account profile. They
+           get v1's signpost (for Toronto) with their upper-level
+           sections below it; a visitor with neither gets exactly
+           v1's signpost and nothing else. */
+        const t0 = todayInToronto();
+        const upperOnly = await renderUpperSections(
+          addDays(t0, -6), t0, addDays(t0, 7));
+        if (upperOnly) {
+          bodyEl.innerHTML = signpostHTML() + upperOnly;
+        } else {
+          renderSignpost();
+        }
+        return;
+      }
       const watchWardRaw = (typeof VoteStore !== "undefined"
         && VoteStore.getWatchWard) ? VoteStore.getWatchWard() : null;
       const watchWard = (watchWardRaw != null && watchWardRaw !== ward)
@@ -349,6 +388,12 @@
       /* Empty week: the honest per-section lines above stand on
          their own — older items are never backfilled into a week
          they do not belong to. */
+      /* ---- Sections F–H (v2): Ontario + federal, appended ----
+         Each upper section renders only when the visitor has that
+         level's riding set; the Toronto sections above are v1's,
+         untouched. */
+      const upper = await renderUpperSections(start, today, fwdEnd);
+      if (upper) sections.push(upper);
       bodyEl.innerHTML = sections.join("");
     } catch (e) {
       bodyEl.innerHTML = `<p class="small">Your week on the record could not be assembled. Please reload the page.</p>`;
@@ -356,6 +401,156 @@
       rendering = false;
       if (rerunQueued) { rerunQueued = false; render(); }
     }
+  }
+
+  /* ---------------- v2: Ontario + federal sections ----------------
+     Ridings are the visitor's own account-profile fields (Wave 3B),
+     read through the account layer's exported getWatchProfile();
+     they are never mirrored into VoteStore and never written here.
+     Each section degrades on its own, exactly as v1's do: a failed
+     load says so or omits, a vacant seat says so, an empty week
+     says so. Nothing is backfilled from outside the window. */
+  function watchRidings() {
+    try {
+      const acct = window.DemeAccount;
+      if (acct && typeof acct.getWatchProfile === "function") {
+        const wp = acct.getWatchProfile();
+        if (wp) {
+          return { ontario: wp.ontario_riding || null,
+                   federal: wp.federal_riding || null };
+        }
+      }
+    } catch (e) { /* an unreadable profile reads as an unset one */ }
+    return { ontario: null, federal: null };
+  }
+
+  const LAYER_CFG = {
+    ontario: { dir: "ontario", memberKey: "slug", role: "MPP",
+               house: "Queen's Park", assembly: "Legislative Assembly",
+               profilePage: "mpp.html",
+               directory: "representatives.html?level=ontario" },
+    federal: { dir: "federal", memberKey: "id", role: "MP",
+               house: "Parliament", assembly: "House of Commons",
+               profilePage: "mp.html",
+               directory: "representatives.html?level=canada" },
+  };
+
+  async function layerVotedSection(layer, riding, start, today) {
+    const L = window.DemeBriefingLayers;
+    const cfg = LAYER_CFG[layer];
+    const head = layer === "ontario" ? "Your MPP voted" : "Your MP voted";
+    const failed = `<h3>${head}</h3><p class="small">Your ${cfg.role}'s recent votes could not be loaded.</p>`;
+    let directory;
+    try {
+      directory = await loadJSON(dataPath(`${cfg.dir}/members.json`));
+    } catch (e) { return failed; }
+    const member = L.memberForRiding(directory, riding);
+    if (!member) {
+      /* The riding is set but no current member is on record for
+         it — a vacant seat, stated as v1 states a vacant ward. */
+      return `<h3>${head}</h3><p class="small">${esc(riding)} has no ${cfg.role} on record right now.</p>`;
+    }
+    const memberId = member[cfg.memberKey];
+    let rows = [];
+    let divisionsByIndex = null;
+    try {
+      const person = await loadJSON(
+        dataPath(`${cfg.dir}/member/${memberId}.json`));
+      rows = (person.votes && person.votes.rows) || [];
+      if (person.votes && person.votes.total > rows.length) {
+        const more = await loadJSON(
+          dataPath(`${cfg.dir}/member/${memberId}.more.json`));
+        rows = rows.concat(more.rows || []);
+      }
+      if (layer === "federal") {
+        /* The per-member split (Backend Three item 2) first; the
+           whole layer file is the fallback, so this section is
+           correct before and after the split ships. */
+        try {
+          const split = await loadJSON(
+            dataPath(`federal/member/${memberId}.divisions.json`));
+          const map = split.divisions || {};
+          divisionsByIndex = (i) => map[String(i)];
+        } catch (e) {
+          const all = await loadJSON(dataPath("federal/divisions.json"));
+          divisionsByIndex = (i) => all[i];
+        }
+      } else {
+        const all = await loadJSON(dataPath("ontario/divisions.json"));
+        divisionsByIndex = (i) => all[i];
+      }
+    } catch (e) { return failed; }
+    const votes = L.windowVotes(rows, divisionsByIndex, start, today, layer);
+    if (!votes.length) {
+      return `<h3>${head}</h3><p class="small">No recorded votes for your ${cfg.role} in the last 7 days.</p>`;
+    }
+    const cards = votes.slice(0, 10).map((v) => {
+      const title = v.url
+        ? `<a href="${esc(v.url)}" target="_blank" rel="noopener">${esc(cleanTitle(v.title || ""))}</a>`
+        : esc(cleanTitle(v.title || ""));
+      return `<article class="card" style="margin-bottom:1rem">
+        <div class="meta"><span>${esc(fmtDate(v.date))}</span>
+          <span>Recorded vote — ${esc(cfg.house)}</span>
+          ${v.outcome ? `<span class="pill">${esc(v.outcome)}</span>` : ""}</div>
+        <h3>${title}</h3>
+        <p style="margin:.2rem 0 0">Voted: <strong>${esc(v.vote)}</strong></p>
+      </article>`;
+    }).join("");
+    return `<h3>${head}</h3>`
+      + `<p class="small" style="margin-top:0">How ${esc(member.name)}, your ${esc(riding)} ${cfg.role}, voted in the last 7 days:</p>`
+      + cards
+      + `<p style="margin-top:.6rem"><a href="${cfg.profilePage}?m=${encodeURIComponent(memberId)}">Full record →</a></p>`;
+  }
+
+  async function layerComingSection(layer, today, fwdEnd) {
+    const cfg = LAYER_CFG[layer];
+    const head = layer === "ontario"
+      ? "Coming up at Queen's Park" : "Coming up in Parliament";
+    let up;
+    try {
+      up = await loadJSON(dataPath(`${cfg.dir}/upcoming.json`));
+    } catch (e) {
+      /* No orders file: the section is omitted — a missing file
+         must never invent a sitting day. */
+      return "";
+    }
+    const sitting = String((up && up.sittingDate) || "").slice(0, 10);
+    const items = (up && Array.isArray(up.items)) ? up.items : [];
+    if (!items.length || !inWindow(sitting, today, fwdEnd)) {
+      return `<h3>${head}</h3><div class="calm">
+        <p class="calm-head">No ${esc(cfg.assembly)} business is listed for the coming days in the published orders right now.</p>
+        <p>When the next orders are published, the sitting day and its items will be listed here.</p>
+      </div>`;
+    }
+    const cards = items.slice(0, 8).map((u) => `<article class="card" style="margin-bottom:1rem">
+      <div class="meta"><span>${esc(fmtDate(sitting))}</span>
+        <span>${esc(cfg.house)}</span><span class="pill ink">Coming up</span></div>
+      <h3>${esc(cleanTitle(u.title || ""))}</h3>
+      ${u.bill ? `<p class="small" style="margin:.2rem 0 0">Bill ${esc(u.bill)}</p>` : ""}
+      <p class="more"><a href="${cfg.directory}">Follow it on the record →</a></p>
+    </article>`).join("");
+    return `<h3>${head}</h3>${cards}`;
+  }
+
+  async function renderUpperSections(start, today, fwdEnd) {
+    const L = window.DemeBriefingLayers;
+    if (!L) return "";
+    const ridings = watchRidings();
+    if (!ridings.ontario && !ridings.federal) return "";
+    const parts = [];
+    if (ridings.ontario) {
+      parts.push(await layerVotedSection("ontario", ridings.ontario, start, today));
+    }
+    if (ridings.federal) {
+      parts.push(await layerVotedSection("federal", ridings.federal, start, today));
+    }
+    if (ridings.ontario) {
+      parts.push(await layerComingSection("ontario", today, fwdEnd));
+    }
+    if (ridings.federal) {
+      parts.push(await layerComingSection("federal", today, fwdEnd));
+    }
+    return parts.filter(Boolean).join("");
   }
 
   /* The account layer announces session settles with "deme:session"

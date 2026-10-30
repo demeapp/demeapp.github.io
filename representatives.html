@@ -123,6 +123,23 @@
 .chooser-d { color:var(--ink-soft); font-size:.95rem; }
 .chooser-go { margin-top:auto; font-weight:700; color:var(--navy); }
 @media (max-width:720px){ .chooser-grid{ grid-template-columns:1fr; } }
+/* Postal lookup (B6, Oct 30, 2026): the unified "Who represents
+   me?" panel's result blocks — level headings, candidate stacks,
+   the vacant-seat card. Navy & Mint, page-local like the finder
+   panel above. */
+.pl-level { margin-top: 1.4rem; }
+.pl-level-h { font-size: 1.12rem; margin: 0 0 .55rem; color: var(--navy-ink); }
+.pl-level-sub { display: block; margin-top: .15rem; font-size: .74rem; font-weight: 700; letter-spacing: .07em; text-transform: uppercase; color: var(--bronze-dark); }
+.pl-split { background: var(--mint-light); border-radius: 12px; padding: .95rem 1rem 1.05rem; }
+.pl-riding { margin: .95rem 0 .45rem; font-size: 1.02rem; font-weight: 700; color: var(--navy); }
+.pl-candidate:first-child .pl-riding { margin-top: .35rem; }
+.pl-pickrow { margin: .55rem 0 .1rem; }
+.pl-vacant-disc > span { font-size: .56rem; letter-spacing: .05em; text-transform: uppercase; }
+.pl-vacant-line { margin: 0; padding: .95rem 1.45rem .35rem; font-weight: 600; color: var(--navy-ink); }
+.pl-lastholder { margin: 0; padding: 0 1.45rem 1.25rem; }
+.pl-note { margin-top: .8rem; }
+.pl-caveat { margin-top: 1.1rem; }
+.pl-unpickrow { margin-top: .6rem; }
 </style>
 <link rel="stylesheet" href="assets/css/improvements.css">
 <link rel="icon" href="favicon-navy-mint-v2.svg" type="image/svg+xml">
@@ -151,6 +168,24 @@
       <p class="kicker" id="rep-kicker">Representatives</p>
       <h1 id="people-h">The people on the record</h1>
       <hr class="rule">
+      <div class="card finder-panel" data-postal-lookup>
+        <h2>Who represents me?</h2>
+        <p class="small" style="max-width:44rem;margin-top:0">Enter your
+          postal code to find your representatives in Ontario — your MPP
+          and your MP, and in Toronto your councillor too. Where an area
+          crosses a district line, Deme shows you every district and you
+          pick yours — it never guesses.</p>
+        <form class="finder-row" data-pl-form role="search">
+          <label class="visually-hidden" for="pl-q">Your postal code</label>
+          <input type="text" id="pl-q" data-pl-input placeholder="M5V 1J1" autocomplete="off" spellcheck="false">
+          <button class="btn" type="submit">Find</button>
+        </form>
+        <p class="wf-privacy">Only the first 3 characters of a postal
+          code are used, right here in your browser — your full postal
+          code is never stored or sent anywhere. A lookup only:
+          nothing is saved, and it sets nothing on your profile.</p>
+        <div data-pl-result aria-live="polite"></div>
+      </div>
       <div id="level-root"></div>
       <noscript>
         <p class="small" style="margin-top:1rem">The member lists load
@@ -420,6 +455,7 @@
 
 <script src="assets/js/simple-mode.js"></script>
 <script src="assets/js/common.js"></script>
+<script src="assets/js/postal-lookup.js"></script>
 <script>
 /* Combined Representatives directory (nav-parity wave, Oct 28, 2026):
    one directory for all three legislatures. The level comes from

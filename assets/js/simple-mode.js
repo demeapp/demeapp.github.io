@@ -151,6 +151,10 @@ const DemeSimple = (() => {
       "Type a name or a ward to cut the list below. Or type your postal code to find your representative and their record.",
     "Only the first 3 characters of a postal code are used, right here in your browser — your full postal code is never stored or sent anywhere. A lookup only: nothing is saved, and it sets nothing on your profile.":
       "Only the first 3 characters of your postal code are used, right here in your browser. Your full postal code is never saved or sent anywhere. It is a lookup only. Nothing is saved, and it sets nothing on your profile.",
+    /* ----- postal lookup panel (B6, Oct 30, 2026) ----- */
+    "Who represents me?": "Who represents me?",
+    "Enter your postal code to find your representatives in Ontario — your MPP and your MP, and in Toronto your councillor too. Where an area crosses a district line, Deme shows you every district and you pick yours — it never guesses.":
+      "Enter your postal code to find your representatives in Ontario — your MPP and your MP, and in Toronto your councillor too. If an area is in more than one district, Deme shows you all of them and you pick yours. It never guesses.",
     "Each card carries four facts — recorded-vote participation, votes cast, tenure, and — from the recorded votes — the times a member declared an interest and did not vote. Open a member for the full record. Portraits are the members’ official photos; where none is published, initials instead.":
       "Each card shows four facts: recorded votes they took part in, votes cast, how long they have served, and — from the recorded votes — times they declared an interest and did not vote. Open a member to see the full record. The photos are the members' official photos. If none is published, the card shows initials instead.",
     "Members from earlier terms, in the same archive.":

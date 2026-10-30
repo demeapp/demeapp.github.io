@@ -215,6 +215,44 @@
    group headings reuse the layer cards' layer-k style. */
 .story-group-h { margin: 1.6rem 0 .7rem; }
 .story-group-h.first { margin-top: .2rem; }
+/* Postal lookup (B6, Oct 30, 2026): the "Who represents me?" panel
+   in Start Here — the representatives page's finder-panel treatment
+   (page-local there), scoped to this section, plus the shared
+   pl-* result-block styles the lookup module renders with. */
+#starthere .finder-panel {
+  margin-top: 1.4rem; border-radius: 16px; position: relative;
+  overflow: hidden; padding-top: 1.5rem;
+  box-shadow: 0 10px 30px rgba(10, 31, 56, .10);
+}
+#starthere .finder-panel::before {
+  content: ""; position: absolute; inset: 0 0 auto 0; height: 5px;
+  background: linear-gradient(90deg, var(--navy) 0%, var(--bronze) 100%);
+}
+#starthere .pl-panel-h { font-size: 1.3rem; margin: 0 0 .4rem; color: var(--navy-ink); }
+#starthere .finder-row { display: flex; gap: .6rem; flex-wrap: wrap; margin-top: .8rem; }
+#starthere .finder-row input[type="text"] {
+  flex: 1 1 14rem; min-width: 0; font-size: 1.05rem;
+  padding: .75rem 1rem; border: 1.5px solid var(--line);
+  border-radius: 12px; background: #fff; color: var(--ink);
+}
+#starthere .finder-row input[type="text"]:focus {
+  outline: none; border-color: var(--bronze-dark);
+  box-shadow: 0 0 0 3px var(--mint-light);
+}
+#starthere .finder-row .btn { border-radius: 12px; }
+.pl-level { margin-top: 1.4rem; }
+.pl-level-h { font-size: 1.12rem; margin: 0 0 .55rem; color: var(--navy-ink); }
+.pl-level-sub { display: block; margin-top: .15rem; font-size: .74rem; font-weight: 700; letter-spacing: .07em; text-transform: uppercase; color: var(--bronze-dark); }
+.pl-split { background: var(--mint-light); border-radius: 12px; padding: .95rem 1rem 1.05rem; }
+.pl-riding { margin: .95rem 0 .45rem; font-size: 1.02rem; font-weight: 700; color: var(--navy); }
+.pl-candidate:first-child .pl-riding { margin-top: .35rem; }
+.pl-pickrow { margin: .55rem 0 .1rem; }
+.pl-vacant-disc > span { font-size: .56rem; letter-spacing: .05em; text-transform: uppercase; }
+.pl-vacant-line { margin: 0; padding: .95rem 1.45rem .35rem; font-weight: 600; color: var(--navy-ink); }
+.pl-lastholder { margin: 0; padding: 0 1.45rem 1.25rem; }
+.pl-note { margin-top: .8rem; }
+.pl-caveat { margin-top: 1.1rem; }
+.pl-unpickrow { margin-top: .6rem; }
 </style>
 </head>
 <body>
@@ -398,6 +436,24 @@
           <p style="margin:0"><a class="btn bronze" href="my-record.html">Set your Toronto ward in My Record</a></p>
         </div>
       </div>
+      <div class="card finder-panel" data-postal-lookup>
+        <h3 class="pl-panel-h">Who represents me?</h3>
+        <p class="small" style="max-width:44rem;margin-top:0">Enter your
+          postal code to find your representatives in Ontario — your MPP
+          and your MP, and in Toronto your councillor too. Where an area
+          crosses a district line, Deme shows you every district and you
+          pick yours — it never guesses.</p>
+        <form class="finder-row" data-pl-form role="search">
+          <label class="visually-hidden" for="pl-q">Your postal code</label>
+          <input type="text" id="pl-q" data-pl-input placeholder="M5V 1J1" autocomplete="off" spellcheck="false">
+          <button class="btn" type="submit">Find</button>
+        </form>
+        <p class="wf-privacy">Only the first 3 characters of a postal
+          code are used, right here in your browser — your full postal
+          code is never stored or sent anywhere. A lookup only:
+          nothing is saved, and it sets nothing on your profile.</p>
+        <div data-pl-result aria-live="polite"></div>
+      </div>
     </section>
 
     <section class="reveal" id="foryou" hidden><div id="foryou-body"></div></section>
@@ -480,6 +536,7 @@
 <script src="assets/js/personalize.js"></script>
 <script src="assets/js/account.js"></script>
 <script src="assets/js/upcoming-layers.js"></script>
+<script src="assets/js/postal-lookup.js"></script>
 <script>
 renderChrome("index.html");
 

@@ -475,7 +475,7 @@ function interestsSection(p) {
       for this member (statement years: ${missingYears.join(", ")}).</p>`;
   return `<section style="margin-top:2.4rem" aria-labelledby="interests-h">
     <h2 id="interests-h">Disclosure statements — Integrity Commissioner</h2><hr class="rule">
-    <p class="interests-intro"><strong>Disclosure statements on file: ${fmtNum(ints.count)} (annual statements, 2005–present)</strong><br>Each statement is the
+    <p class="interests-intro"><strong>Disclosure statements on file: ${fmtNum(ints.count)} (annual statements, 2005–2025)</strong><br>Each statement is the
     member's annual filing to the Integrity Commissioner — income
     sources, assets, liabilities, and gifts and benefits over $200, as
     published. Ontario has no separate gift registry: gifts and
@@ -770,7 +770,7 @@ async function renderProfile() {
     ? `<div class="stat"><span class="num">${fmtNum(st.interestsDocuments)}</span>
         <span class="lab">Ethics registry documents on file</span></div>`
     : `<div class="stat"><span class="num">${fmtNum(st.pdsStatements)}</span>
-        <span class="lab">Disclosure statements on file (annual statements, 2005–present)</span></div>`;
+        <span class="lab">Disclosure statements on file (annual statements, 2005–2025)</span></div>`;
   const participationNote = PCFG.layer === "canada"
     ? `Recorded-vote participation is the share of recorded divisions in this member's service where the member cast a vote — not a count of sittings attended. Divisions where the member was paired count as non-votes.${st.yeaNayValue ? ` In ${fmtNum(st.yeaNayValue)} division${st.yeaNayValue > 1 ? "s" : ""} in this record the published ballot value is the literal text “Yea/Nay”, a quirk of the source record; those ballots are not counted as votes cast and are shown below exactly as published.` : ""}`
     : `Recorded-vote participation is the share of recorded divisions in this member's service where the member cast a vote — not a count of sittings attended. Ontario publishes no pairing record: a member not listed in a division did not vote in it, for any reason.`;

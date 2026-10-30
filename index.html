@@ -300,7 +300,7 @@
         <a class="layer-card" href="representatives.html?level=toronto">
           <span class="layer-k">Municipal · Toronto</span>
           <span class="layer-t">Toronto City Council</span>
-          <span class="layer-d">33,795 decisions in plain language, every
+          <span class="layer-d">33,777 decisions in plain language, every
           member's votes, declared interests and expenses — and a say
           before the next vote.</span>
           <span class="layer-fresh" data-fresh="toronto">Decisions current to October 19, 2026</span>
@@ -621,7 +621,7 @@ Promise.all([loadJSON(dataPath("stats.json")), loadJSON(dataPath("latest.json"))
   }
   bandStats.push(`
     <div class="stat"><span class="num" data-count="${stats.decisions}">${fmtNum(stats.decisions)}</span>
-      <span class="lab">decisions in plain language — Toronto City Council (${stats.decisionsFrom}–${stats.decisionsTo})</span></div>`);
+      <span class="lab">decisions in the archive — Toronto City Council (${stats.decisionsFrom}–${stats.decisionsTo})</span></div>`);
   bandNames.push("Toronto City Council");
   const band = document.getElementById("statband");
   band.innerHTML = bandStats.join("");

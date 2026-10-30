@@ -91,10 +91,25 @@ function layerEarlierRow(p) {
   </li>`;
 }
 
+/* Accent and punctuation folding (audit F-04, Oct 30, 2026): the
+   same normalisation the cross-layer people search applies
+   (people-search.js, DemePeople.psNorm), ported into this filter —
+   a name typed without its accents ("gelinas" for Gélinas) still
+   finds the member, and a name typed without its punctuation
+   ("dentremont") meets the squashed name. Folding only widens the
+   match: any query that matched before still matches. */
+const layerFoldText = (s) => String(s || "")
+  .normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
+const layerSquashText = (s) => layerFoldText(s).replace(/[^a-z0-9]+/g, "");
 function layerMatches(p, q) {
   if (!q) return true;
-  const hay = `${p.name} ${p.riding || ""} ${p.party || ""} ${p.province || ""}`.toLowerCase();
-  return q.toLowerCase().split(/\s+/).every((w) => hay.includes(w));
+  const hay = layerFoldText(`${p.name} ${p.riding || ""} ${p.party || ""} ${p.province || ""}`);
+  const nameSq = layerSquashText(p.name);
+  return q.split(/\s+/).filter(Boolean).every((w) => {
+    if (hay.includes(layerFoldText(w))) return true;
+    const ws = layerSquashText(w);
+    return Boolean(ws) && nameSq.includes(ws);
+  });
 }
 
 function renderLayerDirectory() {

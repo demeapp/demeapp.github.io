@@ -2285,10 +2285,14 @@ details.pay-year[open] > summary::after { content: "\25B4"; }
   display: block; height: 100%; border-radius: 3px; background: #2FBF9B;
 }
 .rep-part-term {
-  display: flex; justify-content: space-between; gap: 1rem;
+  display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1rem;
   font-size: .82rem; color: var(--ink-soft); margin-top: .55rem;
 }
-.rep-part-termfig { white-space: nowrap; }
+/* F-10 (audit, Oct 30, 2026): the career/term figure line wraps
+   instead of holding one nowrap line — the longest career lines
+   pushed phone-width pages past the viewport (Toronto earlier
+   members measured 391px wide at a 390px viewport). */
+.rep-part-termfig { white-space: normal; }
 .rep-part-termfig strong { color: var(--ink); }
 .rep-part-micro {
   font-size: .75rem; color: var(--ink-faint);

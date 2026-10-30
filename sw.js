@@ -1,4 +1,5 @@
-// Deme service worker (v66 — Card participation swap ship (Oct 30, 2026): representative cards now lead with the current (or last) term's recorded-vote participation figure, with the career figure in the supporting row beneath; profile panels unchanged — presentation only; no figures, counts, notes, or record data changed.
+// Deme service worker (v67 — Safe-fixes wave (Oct 30, 2026): John Aldag's 44th-Parliament held corrected to 792 (98.2%; career 91.3%) from his own stored ballots, and five federal member files' absent figures recomputed on the archive-wide basis; directory counts corrected to 1,359 members (1,069 federal, 732 earlier MPs) in prose, stat bands and meta; the 743,677 vote-row figure now carries its stored-vs-aggregate basis on the Open Data page; name-by-name coverage scoped to 2,962 of 3,171 recorded-vote decisions on About, Open Data and Reporters; directory search folds accents so unaccented queries find every member; Ontario disclosure years corrected to (2005–2025); Reporters council-promises count corrected to 24 of 26; homepage Toronto card cites 33,777 briefs in plain language and the stat band reads 'decisions in the archive'; participation figure lines wrap on narrow screens. No other record facts changed.
+// Previous: Deme service worker (v66 — Card participation swap ship (Oct 30, 2026): representative cards now lead with the current (or last) term's recorded-vote participation figure, with the career figure in the supporting row beneath; profile panels unchanged — presentation only; no figures, counts, notes, or record data changed.
 // Previous: Deme service worker (v65 — Card + profile redesign ship (Oct 30, 2026): representative cards rebuilt to the approved one-hero-figure layout and profiles to the mint summary-band design — presentation only; no figures, counts, notes, or record data changed.
 // Previous: Deme service worker (v63 — Participation ship (Oct 30, 2026): every representative card and profile carries the audited participation panel — career figure with counts and span, This term / Last term rows, Speaker and died-in-office notes; Rachael Thomas's record is merged across her previous surname (77.6% career) and the duplicate Harder profile is retired; Robert Oliphant's phantom 41st-Parliament row is removed. No other record facts changed.
 // Previous: Deme service worker (v62 — Backend Three ship (Oct 30, 2026): federal
@@ -99,7 +100,7 @@
 // deploy, so assets are network-first too; cache is the offline fallback.
 // VERSION bumps rename every cache, and activate deletes the old ones —
 // bump VERSION whenever this file ships a strategy change.
-const VERSION = 'v66';
+const VERSION = 'v67';
 const SHELL = 'deme-shell-' + VERSION;
 const PAGES = 'deme-pages-' + VERSION;
 const DATA = 'deme-data-' + VERSION;

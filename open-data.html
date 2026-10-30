@@ -45,8 +45,8 @@
       <div class="statband" aria-label="The House of Commons archive, in numbers">
         <div class="stat"><span class="num">4,856</span>
           <span class="lab">recorded divisions in the archive, 2004–2026</span></div>
-        <div class="stat"><span class="num">1,070</span>
-          <span class="lab">members in the Canada directory — the 337 current MPs and 733 earlier members</span></div>
+        <div class="stat"><span class="num">1,069</span>
+          <span class="lab">members in the Canada directory — the 337 current MPs and 732 earlier members</span></div>
         <div class="stat"><span class="num">1,344,423</span>
           <span class="lab">stored member ballots across those divisions</span></div>
       </div>
@@ -104,7 +104,7 @@
           <tr>
             <td>Decision details:<br>
               <code>record-data/d/&lt;reference&gt;.json</code></td>
-            <td>One file for each of the 33,795 decisions: the official summary, what was decided, and — where the City took a recorded vote — every motion on the item with its name-by-name votes and result.</td>
+            <td>One file for each of the 33,795 decisions: the official summary, what was decided, and — where the City took a recorded vote — every motion on the item with its name-by-name votes and result (name-by-name votes exist for 2,962 of the 3,171 recorded-vote decisions; the other 209 carry tallies only).</td>
           </tr>
           <tr>
             <td>Item text, by year:<br>
@@ -142,7 +142,7 @@
             <td><a href="record-data/federal/members.json">Canada members</a><br>
               <code>record-data/federal/members.json</code> ·
               <code>record-data/federal/member/&lt;name&gt;.json</code></td>
-            <td>All 1,070 Canada members the Canada directory carries — the 337 current MPs and 733 earlier members: riding, province, party, and the record counts behind each profile. One file per member sits beside the index, carrying their divisions, registry documents and lobbying communications.</td>
+            <td>All 1,069 Canada members the Canada directory carries — the 337 current MPs and 732 earlier members: riding, province, party, and the record counts behind each profile. One file per member sits beside the index, carrying their divisions, registry documents and lobbying communications.</td>
           </tr>
             <tr>
             <td><a href="record-data/ontario/members.json">Ontario members</a><br>
@@ -266,7 +266,11 @@
       No.</strong> The City's voting record also carries rows for
       members who were absent — 112,140 of them — and rows where a member declared a personal interest and stepped back — 119, all of them dated June 2023 or later: the record carries that flag only from June 2023, and earlier declarations were recorded as ordinary absences. Neither is a vote.
       Of 743,677 vote rows in the record, 631,418 are votes actually
-      cast. The 119 are a count of recorded votes flagged
+      cast. The 743,677 is an aggregate-inclusive total: 157,292
+      are name-by-name vote rows actually stored, all from 2018
+      onward, and the other 586,385 exist only as per-member
+      career aggregates reaching back to 2006 — their source
+      database is not part of this archive. The 119 are a count of recorded votes flagged
       “interest declared”, not entries in the City's official
       declarations register; the nature of each interest is not in
       this data.</p>

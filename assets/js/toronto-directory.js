@@ -86,10 +86,28 @@ function personCard(c) {
 /* One filter for the grid: a name, as before — and now also a ward
    name or a ward number ("ward 21", "21", "Scarborough Southwest"),
    which the unified finder accepts in the same box. */
+/* Accent and punctuation folding for the name searches (audit
+   F-04, Oct 30, 2026): the same normalisation the cross-layer
+   people search applies (people-search.js, DemePeople.psNorm),
+   ported into this filter so a name typed without its accents
+   ("bailao" for Bailão, "gelinas" for Gélinas) still finds the
+   member, and a name typed without its punctuation ("dentremont")
+   meets the squashed name. Folding only widens the match: any
+   query that matched before still matches. */
+const foldText = (s) => String(s || "")
+  .normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
+const squashText = (s) => foldText(s).replace(/[^a-z0-9]+/g, "");
+/* True when the folded haystack contains the folded query, or the
+   punctuation-free query appears in the punctuation-free haystack. */
+const foldIncludes = (hay, q) => {
+  if (foldText(hay).includes(foldText(q))) return true;
+  const sq = squashText(q);
+  return Boolean(sq) && squashText(hay).includes(sq);
+};
 function matches(c, q) {
   if (!q) return true;
-  if (c.name.toLowerCase().includes(q)) return true;
-  if (c.wardName && c.wardName.toLowerCase().includes(q)) return true;
+  if (foldIncludes(c.name, q)) return true;
+  if (c.wardName && foldIncludes(c.wardName, q)) return true;
   const wm = q.match(/^(?:ward\s*)?(\d{1,2})$/);
   if (wm && c.ward === Number(wm[1])) return true;
   if (q === "mayor" && c.mayor) return true;
@@ -339,8 +357,7 @@ function renderEarlierSearch() {
   box.hidden = false;
   list.hidden = true;
   if (!isWardQuery) {
-    const q = raw.toLowerCase();
-    const hits = all.filter((c) => !c.current && c.name.toLowerCase().includes(q));
+    const hits = all.filter((c) => !c.current && foldIncludes(c.name, raw));
     hits.sort(byRecentService);
     box.innerHTML = hits.length
       ? `<ul class="personlist">${hits.map(earlierRow).join("")}</ul>`

@@ -484,7 +484,22 @@ function partMethod(entry, layer) {
    duplicated row; the term's notes still render, beneath the basis
    line. Toronto's career title also carries the C5 FROM label for
    mid-term entrants. */
-function participationBlockHTML(entry, layer, unit, head) {
+/* Slim stacked composition bar + legend inside the participation
+   panel (card/profile redesign, Oct 30, 2026): segments are prepared
+   by the caller from the same published counts the panel already
+   carries — { cls, width (percent number), label, pct (display
+   text) } — plus one aria sentence for the bar as a whole. */
+function partCompositionHTML(comp) {
+  if (!comp || !comp.segments || !comp.segments.length) return "";
+  const segs = comp.segments.filter((s) => s.width > 0)
+    .map((s) => `<span class="part-seg ${s.cls}" style="width:${Math.max(0, Math.min(100, Number(s.width))).toFixed(2)}%"></span>`).join("");
+  if (!segs) return "";
+  const legend = comp.segments
+    .map((s) => `<span><i class="sw ${s.cls}"></i>${esc(s.label)} <strong>${esc(s.pct)}</strong></span>`).join("");
+  return `<div class="part-stack" role="img" aria-label="${esc(comp.aria || "")}">${segs}</div>
+    <p class="part-legend">${legend}</p>`;
+}
+function participationBlockHTML(entry, layer, unit, head, composition) {
   if (!entry) return "";
   const headHTML = head
     ? `<div class="part-head">${head.avatar || ""}<div>
@@ -529,6 +544,7 @@ function participationBlockHTML(entry, layer, unit, head) {
   return `${open}
     <div class="part-row part-career"><span class="part-lab">${title}</span><span class="part-fig"><strong>${partPct(c.pct)}</strong></span></div>
     <p class="part-counts"><strong>${fmtNum(c.cast)} of ${fmtNum(c.held)}</strong> recorded ${esc(unit)} held in office</p>
+    ${partCompositionHTML(composition)}
     <p class="part-basis">${esc(partBasisLine(entry, layer))}</p>
     ${single ? notesOf(single) : rows}
     <p class="part-method">${esc(partMethod(entry, layer))}</p>
@@ -536,7 +552,9 @@ function participationBlockHTML(entry, layer, unit, head) {
 }
 
 /* ---------------- directory-card module (C7) ----------------
-   One navy module inside the card: career + latest-term figures,
+   One participation block inside the card (navy module to v63;
+   the light one-hero-figure layout from the Oct 30, 2026 redesign):
+   career + latest-term figures,
    each with counts, at one-decimal precision (the v58 card printed
    the career figure twice, at two precisions), plus at most one
    microline — Speaker short form, truncation, single-term, or
@@ -579,10 +597,10 @@ function participationCardModule(entry, ctx) {
     const body = entry.state === "incoming"
       ? "The 2026\u20132030 term begins November 15, 2026. Their record starts with the new term."
       : "No recorded votes yet in this record.";
-    return `<div class="part-mod"><div class="part-mod-in">
-      <div class="part-mod-h">Recorded-vote participation</div>
-      <div class="part-mod-state">No recorded votes yet</div>
-      <p class="part-mod-body">${body}</p></div></div>`;
+    return `<div class="rep-part rep-part-norec">
+      <div class="rep-part-h">Recorded-vote participation</div>
+      <div class="rep-part-state">No recorded votes yet</div>
+      <p class="rep-part-body">${body}</p></div>`;
   }
   const c = entry.career;
   const single = partSingleTerm(entry);
@@ -598,7 +616,7 @@ function participationCardModule(entry, ctx) {
   if (!single && latest) {
     const isCurrent = !!ctx.current && !ctx.incoming && !!ctx.currentLabel
       && partTermShortLabel(latest, layer) === ctx.currentLabel;
-    termRow = `<div class="part-mod-row sub"><span class="part-mod-lab">${isCurrent ? "This term" : "Last term"} · ${esc(partTermShortLabel(latest, layer))}</span><span class="part-mod-fig"><strong>${partPct(latest.pct)}</strong> ${fmtNum(latest.cast)} of ${fmtNum(latest.held)}</span></div>`;
+    termRow = `<div class="rep-part-term"><span>${isCurrent ? "This term" : "Last term"} · ${esc(partTermShortLabel(latest, layer))}</span><span class="rep-part-termfig"><strong>${partPct(latest.pct)}</strong> ${fmtNum(latest.cast)} of ${fmtNum(latest.held)}</span></div>`;
   }
   let micro = "";
   const dispNote = single ? single.noteShort : (latest ? latest.noteShort : null);
@@ -614,12 +632,37 @@ function participationCardModule(entry, ctx) {
       ? "Career total from the City's aggregate tallies; term figures from name-by-name votes, 2018 on."
       : "Career total from the City's aggregate tallies.";
   }
-  return `<div class="part-mod"><div class="part-mod-in">
-    <div class="part-mod-h">Recorded-vote participation</div>
-    <div class="part-mod-row"><span class="part-mod-lab">${esc(careerLab)}</span><span class="part-mod-fig"><strong>${partPct(c.pct)}</strong> ${fmtNum(c.cast)} of ${fmtNum(c.held)}</span></div>
+  /* Card/profile redesign (Oct 30, 2026): ONE hero figure — the
+     career percentage with its count and span attached — over one
+     slim bar. The v63 data rules above (career + This term/Last
+     term, microline priority) are unchanged; only the layout is
+     new. The old navy module's classes survive in the CSS for the
+     print record card only. */
+  const unit = layer === "toronto" ? "decisions" : "divisions";
+  /* The count's second line is the bare span (the hero figure IS
+     the career figure, and the term row below names itself) —
+     except where the label carries more than the span: a
+     single-term career (its Parliament/term name) and Toronto's
+     C5 FROM label for mid-term entrants keep the full v63 label. */
+  const spanLine = single || (layer === "toronto" && c.fromLabel)
+    ? careerLab : c.span;
+  return `<div class="rep-part">
+    <div class="rep-part-main">
+      <div class="rep-part-figwrap"><span class="rep-part-h">Recorded-vote participation</span><strong class="rep-part-fig">${partPct(c.pct)}</strong></div>
+      <p class="rep-part-of"><b>${fmtNum(c.cast)} of ${fmtNum(c.held)}</b> ${unit}<br><span>${esc(spanLine)}</span></p>
+    </div>
+    <div class="rep-part-bar" aria-hidden="true"><span style="width:${Math.max(0, Math.min(100, Number(c.pct))).toFixed(1)}%"></span></div>
     ${termRow}
-    ${micro ? `<p class="part-mod-micro">${esc(micro)}</p>` : ""}
-  </div></div>`;
+    ${micro ? `<p class="rep-part-micro">${esc(micro)}</p>` : ""}
+  </div>`;
+}
+/* The redesigned card's quiet two-item footer (serving-since +
+   documents on file), built by each directory renderer from its own
+   layer's fields. Items are HTML, already escaped by the caller. */
+function repCardFooterHTML(items) {
+  const lis = (items || []).filter(Boolean)
+    .map((t) => `<span>${t}</span>`).join("");
+  return lis ? `<div class="rep-card-foot">${lis}</div>` : "";
 }
 
 /* ---------------- member avatars ----------------

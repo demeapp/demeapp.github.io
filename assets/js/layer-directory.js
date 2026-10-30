@@ -42,18 +42,32 @@ function layerStatsHTML(p) {
 }
 
 function layerCard(p) {
+  /* Card redesign (Oct 30, 2026): party as a pill, ONE hero
+     participation figure with count + span, one slim bar, and a
+     quiet two-item footer (tenure + documents on file). The stats
+     grid remains only as the fallback when the participation file
+     has no entry for this member. No figure changes. */
+  const entry = layerPart ? layerPart.members[p.id || p.slug] : null;
+  const docN = LCFG.interestsValue(p);
+  const docItem = docN == null ? ""
+    : `<b>${fmtNum(docN)}</b> ${LCFG.layer === "canada"
+      ? (docN === 1 ? "ethics registry document" : "ethics registry documents")
+      : (docN === 1 ? "disclosure statement" : "disclosure statements")}`;
+  const record = entry
+    ? `${participationCardModule(entry,
+        { layer: LCFG.layer, current: !!p.current, incoming: false,
+          currentLabel: partCurrentLabel(layerPart, LCFG.layer) })}
+       ${repCardFooterHTML([esc(layerTenure(p)), docItem])}`
+    : layerStatsHTML(p);
   return `<article class="person">
     <div class="person-top">${layerAvatar(p)}
       <div>
         <h3><a href="${LCFG.profilePage}?${LCFG.idParam}=${encodeURIComponent(p.id || p.slug)}">${esc(p.name)}</a></h3>
         <p class="ward">${esc(LCFG.roleLine(p))}</p>
-        <p class="party-line">${esc(p.party || "")}</p>
+        ${p.party ? `<span class="party-pill">${esc(p.party)}</span>` : ""}
       </div>
     </div>
-    ${layerStatsHTML(p)}
-    ${participationCardModule(layerPart ? layerPart.members[p.id || p.slug] : null,
-      { layer: LCFG.layer, current: !!p.current, incoming: false,
-        currentLabel: partCurrentLabel(layerPart, LCFG.layer) })}
+    ${record}
   </article>`;
 }
 

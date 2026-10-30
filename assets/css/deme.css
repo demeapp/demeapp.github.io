@@ -2232,3 +2232,233 @@ details.pay-year[open] > summary::after { content: "\25B4"; }
   background: var(--mint-light); border-left: 3px solid var(--bronze-dark);
   font-size: .92rem; line-height: 1.5; color: var(--ink-soft);
 }
+
+/* ---------- card + profile redesign (Oct 30, 2026) ----------
+   Owner-approved layout wave, presentation only: directory cards
+   carry ONE hero figure (career participation % with its count and
+   span attached) over one slim bar, a party pill, and a quiet
+   two-item footer; profile pages carry one mint summary band with
+   short labels, the definition as one note line, the participation
+   panel's slim stacked composition bar with legend, committee
+   pills, PDF chips on register entries, a lead-figure expenses
+   strip with a single "Earlier years" expander, and the navy
+   "Have your say" closing panel. No figure or wording in the data
+   changed — this block only restyles the components above, and it
+   sits last so its rules win over the v63 module styles. */
+
+/* --- directory cards --- */
+.person .avatar {
+  width: 68px; height: 68px; font-size: 1.3rem;
+  border: 2px solid var(--bronze); box-shadow: none;
+}
+.party-pill {
+  display: inline-block; margin-top: .35rem;
+  font-size: .75rem; font-weight: 700; color: #0C4A3A;
+  background: var(--mint-wash); border: 1px solid #CDE9DC;
+  padding: .12rem .6rem; border-radius: 999px;
+}
+.rep-part { margin-top: .9rem; }
+.person .rep-part { margin: 1.05rem 1.45rem .95rem; }
+.rep-part-main {
+  display: flex; align-items: flex-end; justify-content: space-between;
+  gap: 1rem;
+}
+.rep-part-h {
+  display: block; font-size: .68rem; letter-spacing: .1em;
+  font-weight: 700; color: var(--ink-faint); text-transform: uppercase;
+}
+.rep-part-fig {
+  display: block; font-size: 2.1rem; font-weight: 800;
+  line-height: 1.05; color: var(--ink); margin-top: .2rem;
+}
+.rep-part-of {
+  text-align: right; font-size: .82rem; color: var(--ink-soft);
+  line-height: 1.45; margin: 0;
+}
+.rep-part-of b { color: var(--ink); font-size: .88rem; }
+.rep-part-of span { color: var(--ink-faint); font-size: .78rem; }
+.rep-part-bar {
+  height: 6px; border-radius: 3px; background: #E3EFE9;
+  margin-top: .6rem; overflow: hidden;
+}
+.rep-part-bar span {
+  display: block; height: 100%; border-radius: 3px; background: #2FBF9B;
+}
+.rep-part-term {
+  display: flex; justify-content: space-between; gap: 1rem;
+  font-size: .82rem; color: var(--ink-soft); margin-top: .55rem;
+}
+.rep-part-termfig { white-space: nowrap; }
+.rep-part-termfig strong { color: var(--ink); }
+.rep-part-micro {
+  font-size: .75rem; color: var(--ink-faint);
+  line-height: 1.45; margin: .45rem 0 0;
+}
+.rep-part-state {
+  font-size: 1.15rem; font-weight: 800; color: var(--ink);
+  margin-top: .35rem;
+}
+.rep-part-body {
+  font-size: .84rem; color: var(--ink-soft);
+  margin: .3rem 0 0; line-height: 1.5;
+}
+.rep-card-foot {
+  display: flex; justify-content: space-between; gap: 1rem;
+  border-top: 1px solid #E4ECE7; padding-top: .65rem;
+  font-size: .82rem; color: var(--ink-soft);
+}
+.person .rep-card-foot {
+  margin: auto 1.45rem 1.15rem;
+}
+.rep-card-foot b { color: var(--ink); }
+/* Earlier-member rows reuse the module at a calmer scale. */
+.personlist .rep-part { max-width: 36rem; }
+.personlist .rep-part-fig { font-size: 1.7rem; }
+@media (max-width: 640px) {
+  .person .rep-part { margin-left: 1.15rem; margin-right: 1.15rem; }
+  .person .rep-card-foot { margin-left: 1.15rem; margin-right: 1.15rem; }
+  .rep-part-fig { font-size: 1.85rem; }
+}
+@media print {
+  .rep-part-fig, .rep-card-foot b, .rep-part-termfig strong { color: var(--ink); }
+  .rep-part-bar { border: 1px solid var(--line); }
+  .rep-part-bar span { background: var(--navy); }
+}
+
+/* --- profile summary band + definition note --- */
+.profile-summary {
+  display: flex; gap: 0;
+  background: var(--mint-wash); border: 1px solid #D3E8DC;
+  border-radius: 18px; padding: 1.15rem 1.6rem 1.25rem;
+  margin: 1.4rem 0 0; max-width: 46rem;
+}
+.profile-summary .stat {
+  flex: 1; background: transparent; border: none; border-radius: 0;
+  box-shadow: none; padding: 0; min-width: 0;
+}
+.profile-summary .stat + .stat {
+  border-left: 1px solid #CFE5D9; padding-left: 1.4rem; margin-left: 1.4rem;
+}
+.profile-summary .stat .num { font-size: 1.9rem; line-height: 1.05; }
+.profile-summary .stat .lab { font-size: .82rem; margin-top: .25rem; }
+@media (max-width: 640px) {
+  .profile-summary { flex-direction: column; padding: 1.1rem 1.25rem; }
+  .profile-summary .stat + .stat {
+    border-left: none; border-top: 1px solid #CFE5D9;
+    padding-left: 0; margin-left: 0; padding-top: .8rem; margin-top: .8rem;
+  }
+}
+.profile-def-note {
+  font-size: .85rem; color: var(--ink-faint); line-height: 1.5;
+  max-width: 44rem; margin: .75rem 0 0;
+}
+.profile-def-note a { font-weight: 700; white-space: nowrap; }
+
+/* --- participation panel: stacked composition bar + legend --- */
+.part-panel .part-stack {
+  display: flex; height: 8px; border-radius: 4px; overflow: hidden;
+  background: rgba(255, 255, 255, .14); margin-top: .9rem;
+}
+.part-panel .part-seg { display: block; height: 100%; }
+.part-panel .part-seg.cast { background: #2FBF8F; }
+.part-panel .part-seg.absent { background: #C7D3DE; }
+.part-panel .part-seg.interest { background: #CFC9E8; }
+.part-panel .part-legend {
+  display: flex; flex-wrap: wrap; gap: .35rem 1.1rem;
+  font-size: .85rem; color: #D7DEE9; margin: .5rem 0 0;
+}
+.part-panel .part-legend .sw {
+  display: inline-block; width: 10px; height: 10px;
+  border-radius: 3px; margin-right: .4rem;
+}
+.part-panel .part-legend .sw.cast { background: #2FBF8F; }
+.part-panel .part-legend .sw.absent { background: #C7D3DE; }
+.part-panel .part-legend .sw.interest { background: #CFC9E8; }
+.part-panel .part-legend strong { color: #fff; }
+@media print {
+  .part-panel .part-stack { border: 1px solid var(--line); background: #fff; }
+  .part-panel .part-seg.cast { background: var(--navy); }
+  .part-panel .part-seg.absent { background: var(--line); }
+  .part-panel .part-seg.interest { background: var(--conflict); }
+  .part-panel .part-legend { color: var(--ink-soft); }
+  .part-panel .part-legend strong { color: var(--ink); }
+}
+
+/* --- committees as pills --- */
+.committee-list {
+  display: flex; flex-wrap: wrap; gap: .45rem;
+}
+.committee-list li {
+  background: var(--mint-wash); border: 1px solid #CDE9DC;
+  color: #0C4A3A; font-weight: 600; font-size: .85rem;
+  padding: .2rem .65rem; border-radius: 999px; padding-left: .65rem;
+}
+.committee-list li::before { content: none; }
+.committee-list li .role { font-weight: 400; color: var(--ink-soft); }
+
+/* --- declared interests: intro + PDF chips --- */
+.interests-intro {
+  font-size: .95rem; color: var(--ink-soft); line-height: 1.55;
+  max-width: 44rem;
+}
+.interests-intro strong { color: var(--ink); }
+.pdf-chip {
+  display: inline-block; font-size: .78rem; font-weight: 700;
+  color: var(--bronze-dark); background: #F2FAF6;
+  border: 1px solid #CDE9DC; border-radius: 6px;
+  padding: .12rem .55rem; text-decoration: none; margin-top: .3rem;
+}
+.pdf-chip:hover { border-color: var(--bronze-dark); }
+
+/* --- pay & expenses: lead strip, year blocks, one expander --- */
+.pay-lead {
+  background: #fff; border: 1px solid var(--line-soft);
+  border-radius: 14px; padding: 1rem 1.2rem 1.1rem;
+  margin-top: 1.2rem; max-width: 46rem;
+}
+.pay-lead-lab {
+  font-size: .72rem; letter-spacing: .08em; font-weight: 700;
+  text-transform: uppercase; color: var(--ink-faint); margin: 0 0 .6rem;
+}
+.pay-lead-grid { display: flex; flex-wrap: wrap; gap: .8rem 1.6rem; }
+.pay-lead-item { flex: 1 1 8rem; min-width: 7.5rem; }
+.pay-lead-v {
+  display: block; font-size: 1.3rem; font-weight: 800;
+  color: var(--navy); line-height: 1.15;
+}
+.pay-lead-l {
+  display: block; font-size: .8rem; color: var(--ink-soft); margin-top: .15rem;
+}
+.pay-year-blocks { max-width: 46rem; }
+.pay-year-h { margin: 1.4rem 0 .2rem; }
+details.pay-earlier {
+  margin-top: 1.4rem; max-width: 46rem;
+  background: #fff; border: 1px solid var(--line-soft);
+  border-radius: 12px; padding: .7rem 1.1rem 1rem;
+}
+details.pay-earlier > summary { cursor: pointer; padding: .3rem 0; }
+details.pay-earlier > summary h3 { display: inline; margin: 0; }
+details.pay-earlier > summary::after {
+  content: "\25B8"; margin-left: .45rem; color: #09684C; font-weight: 700;
+}
+details.pay-earlier[open] > summary::after { content: "\25BE"; }
+.pay-source {
+  font-size: .85rem; color: var(--ink-faint); line-height: 1.5;
+  max-width: 44rem; margin-top: 1rem;
+}
+
+/* --- navy "Have your say" closing panel (Toronto profiles) --- */
+.say-panel {
+  background: linear-gradient(180deg, #0E2A47 0%, #0A1F38 55%, #0A1424 100%);
+  border-radius: 16px; padding: 1.3rem 1.5rem; margin-top: 2.2rem;
+  max-width: 46rem; display: flex; align-items: center;
+  justify-content: space-between; gap: 1rem; flex-wrap: wrap;
+}
+.say-t { color: #fff; font-weight: 800; font-size: 1.05rem; }
+.say-s { color: #B5C1D3; font-size: .9rem; margin-top: .15rem; }
+.say-btn {
+  background: #2FBF9B; color: #06281C; font-weight: 800;
+  font-size: .88rem; padding: .55rem 1rem; border-radius: 9px;
+  text-decoration: none; white-space: nowrap;
+}
+.say-btn:visited { color: #06281C; }

@@ -167,7 +167,7 @@ function panelsSection(p) {
   if (hasCommittees) {
     committees = `<section class="profile-panel" aria-labelledby="committees-h">
       <h3 id="committees-h">Committees</h3>
-      <ul>${p.committees.map((c) =>
+      <ul class="committee-list">${p.committees.map((c) =>
         `<li>${esc(c.name)}${c.role && c.role !== "Member" ? ` — ${esc(c.role)}` : ""}</li>`).join("")}</ul>
       ${p.committeesLabel ? `<p class="intro">Committees here are ${esc(p.committeesLabel)}.</p>` : ""}
       </section>`;
@@ -390,7 +390,8 @@ function interestsSection(p) {
     }
     return `<section style="margin-top:2.4rem" aria-labelledby="interests-h">
       <h2 id="interests-h">Declared interests — the ethics registry</h2><hr class="rule">
-      <p class="small" style="max-width:44rem">Documents this member has
+      <p class="interests-intro"><strong>${fmtNum(total)} registry
+      documents on file.</strong> Documents this member has
       filed with the Conflict of Interest and Ethics Commissioner, from
       the Commissioner's public registry. The count is of registry
       documents — a disclosure summary is the member's periodic filing
@@ -474,13 +475,11 @@ function interestsSection(p) {
       for this member (statement years: ${missingYears.join(", ")}).</p>`;
   return `<section style="margin-top:2.4rem" aria-labelledby="interests-h">
     <h2 id="interests-h">Disclosure statements — Integrity Commissioner</h2><hr class="rule">
-    <p><strong>Disclosure statements on file: ${fmtNum(ints.count)} (annual statements, 2005–present)</strong></p>
-    <p class="small" style="max-width:44rem">Each statement is the
+    <p class="interests-intro"><strong>Disclosure statements on file: ${fmtNum(ints.count)} (annual statements, 2005–present)</strong><br>Each statement is the
     member's annual filing to the Integrity Commissioner — income
     sources, assets, liabilities, and gifts and benefits over $200, as
     published. Ontario has no separate gift registry: gifts and
-    personal benefits are declared inside these annual statements, and
-    each statement shown below can be read in full. The published
+    personal benefits are declared inside these annual statements. The published
     statements carry no dollar amounts, and they are snapshots by
     year, not a register of dated declarations.</p>
     ${missingNote}
@@ -532,18 +531,30 @@ function expensesSection(p) {
   if (exp.payments.length) {
     const byPeriod = {};
     for (const r of exp.payments) (byPeriod[r.period] ||= []).push(r);
-    body += Object.entries(byPeriod).map(([period, rows]) => {
-      const items = rows.map((r) => {
-        const cats = [["Travel", r.travel], ["Accommodation", r.accommodation],
-          ["Meals", r.meals], ["Hospitality", r.hospitality]]
-          .filter(([, v]) => v != null)
-          .map(([k, v]) => `${k} ${money(v)}`).join(" · ");
-        return `<li><strong>${money(r.total)}</strong> — ${esc(r.purpose || "Expense")}
-          ${r.location ? ` · ${esc(r.location)}` : ""}${cats ? `<br><span class="small">${esc(cats)}</span>` : ""}</li>`;
-      }).join("");
-      return `<details class="pay-year"><summary><h3>${esc(period)}</h3></summary>
-        <ul>${items}</ul></details>`;
+    /* Expenses layout (redesign, Oct 30, 2026): the latest period
+       stands open as category rows; every earlier period folds into
+       ONE "Earlier periods" expander — the same pattern as the
+       Toronto profile's "Earlier years". Items are unchanged. */
+    const periodItems = (rows) => rows.map((r) => {
+      const cats = [["Travel", r.travel], ["Accommodation", r.accommodation],
+        ["Meals", r.meals], ["Hospitality", r.hospitality]]
+        .filter(([, v]) => v != null)
+        .map(([k, v]) => `${k} ${money(v)}`).join(" · ");
+      return `<li><strong>${money(r.total)}</strong> — ${esc(r.purpose || "Expense")}
+        ${r.location ? ` · ${esc(r.location)}` : ""}${cats ? `<br><span class="small">${esc(cats)}</span>` : ""}</li>`;
     }).join("");
+    const entries = Object.entries(byPeriod);
+    const [latestPeriod, latestRows] = entries[entries.length - 1];
+    const earlierEntries = entries.slice(0, -1);
+    body += `<div class="pay-year-blocks"><h3 class="pay-year-h">${esc(latestPeriod)}</h3>
+      <ul>${periodItems(latestRows)}</ul></div>`;
+    if (earlierEntries.length) {
+      body += `<details class="pay-earlier"><summary><h3>Earlier periods</h3></summary>
+        ${earlierEntries.map(([period, rows]) =>
+          `<div class="pay-year-blocks"><h4 class="pay-year-h">${esc(period)}</h4>
+           <ul>${periodItems(rows)}</ul></div>`).join("")}
+        </details>`;
+    }
   }
   if (exp.annual.length) {
     const byFy = {};
@@ -721,10 +732,27 @@ async function renderProfile() {
   /* v58: career + term participation block (data from the verified
      participation exporter; a failed load simply omits the block). */
   const partData = await loadJSON(`${PCFG.dataDir}participation.json`).catch(() => null);
+  const partEntry = partData ? partData.members[memberId] : null;
+  /* Composition segments for the panel's stacked bar (redesign,
+     Oct 30, 2026): voted vs did-not-vote shares of the SAME career
+     counts the panel prints — no new figures. */
+  let partComp = null;
+  if (partEntry && partEntry.career.pct != null) {
+    const cc = partEntry.career;
+    partComp = {
+      aria: `Of ${fmtNum(cc.held)} recorded divisions held in office, this member cast a vote in ${fmtNum(cc.cast)}.`,
+      segments: [
+        { cls: "cast", width: cc.pct, label: "Voted", pct: partPct(cc.pct) },
+        { cls: "absent", width: 100 - cc.pct, label: "Did not vote",
+          pct: partPct(100 - cc.pct) },
+      ],
+    };
+  }
   const partBlock = participationBlockHTML(
-    partData ? partData.members[memberId] : null, PCFG.layer, "divisions",
+    partEntry, PCFG.layer, "divisions",
     { avatar: layerAvatar(person, "lg"), name: person.name,
-      role: `${PCFG.layer === "canada" ? "House of Commons" : "Legislative Assembly of Ontario"} · ${person.riding}` });
+      role: `${PCFG.layer === "canada" ? "House of Commons" : "Legislative Assembly of Ontario"} · ${person.riding}` },
+    partComp);
   const p = person;
   document.title = `${p.name} — Deme`;
   const house = PCFG.layer === "canada" ? "House of Commons"
@@ -770,18 +798,18 @@ async function renderProfile() {
       <div>
         <h1>${esc(p.name)}</h1>
         <p class="lede" style="margin-bottom:.3rem">${role}</p>
-        <p class="party-line">${esc(p.party || "")}</p>
+        ${p.party ? `<span class="party-pill">${esc(p.party)}</span>` : ""}
         <p class="small">${esc(tenureLine)}</p>
       </div>
     </div>
-    <div class="statTiles">
+    <div class="profile-summary">
       <div class="stat"><span class="num">${pctText(st.participation)}</span>
-        <span class="lab">Recorded-vote participation — cast a vote, out of the recorded divisions in this member's service</span></div>
+        <span class="lab">Recorded-vote participation, career</span></div>
       <div class="stat"><span class="num">${fmtNum(st.votesCast)}</span>
-        <span class="lab">Votes cast (${PCFG.layer === "canada" ? "yea or nay" : "aye or nay"}) across their record</span></div>
+        <span class="lab">Votes cast (${PCFG.layer === "canada" ? "yea or nay" : "aye or nay"})</span></div>
       ${interestsTile}
     </div>
-    <p class="small" style="max-width:44rem">${participationNote}</p>
+    <p class="profile-def-note">${participationNote} <a href="about.html#how-we-count">How we count →</a></p>
     ${partBlock}
     <nav class="profile-contents" aria-label="On this page">
       <span class="pc-lab">On this page</span>${contents}

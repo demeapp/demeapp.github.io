@@ -103,11 +103,23 @@ const HomeStore = (() => {
     return refs.map((r) => cardCache.get(r.ref) || null);
   }
 
-  /* Same card format as the Representatives directory: the summary
-     stats grid plus the C7 participation module (v62). */
+  /* Same card format as the Representatives directory (redesign,
+     Oct 30, 2026): the one-hero-figure participation module plus
+     the quiet two-item footer; the stats grid is the no-entry
+     fallback only. */
   function personCard(c) {
     const role = c.mayor ? "Mayor of Toronto"
       : `Councillor · Ward ${c.ward} — ${esc(c.wardName)}`;
+    const entry = partData ? partData.members[c.slug] : null;
+    const intItem = (c.lastSeen && c.lastSeen < "2023-06-01")
+      ? "Interest record starts Jun 2023"
+      : `<b>${fmtNum(Number(c.interest) || 0)}</b> declared interest${Number(c.interest) === 1 ? "" : "s"} · since Jun 2023`;
+    const record = entry
+      ? `${participationCardModule(entry,
+          { layer: "toronto", current: !!c.current, incoming: !!c.incoming,
+            currentLabel: partCurrentLabel(partData, "toronto") })}
+         ${repCardFooterHTML([esc(memberTenure(c)), intItem])}`
+      : memberStatsHTML(c);
     return `<article class="person${c.mayor ? " is-mayor" : ""}">
       <div class="person-top">${avatarHTML(c)}
         <div>
@@ -115,10 +127,7 @@ const HomeStore = (() => {
           <p class="ward">${role}</p>
         </div>
       </div>
-      ${memberStatsHTML(c)}
-      ${participationCardModule(partData ? partData.members[c.slug] : null,
-        { layer: "toronto", current: !!c.current, incoming: !!c.incoming,
-          currentLabel: partCurrentLabel(partData, "toronto") })}
+      ${record}
     </article>`;
   }
 

@@ -47,11 +47,31 @@ function personCard(c) {
   const role = c.mayor ? "Mayor of Toronto"
     : `Councillor · Ward ${c.ward} — ${esc(c.wardName)}`;
   const e = partToronto ? partToronto.members[c.slug] : null;
-  const stats = !e
-    ? (c.incoming ? incomingBlockHTML(c) : memberStatsHTML(c))
-    : (c.incoming && e.career.pct == null)
-      ? `<div class="incoming-block"><p class="incoming-marker"><strong>Elected October 26, 2026 — takes office November 15, 2026</strong></p></div>`
-      : (c.incoming ? incomingBlockHTML(c) : memberStatsHTML(c));
+  /* Card redesign (Oct 30, 2026): with a participation entry the
+     card is the one-hero-figure module plus a quiet two-item footer
+     (tenure + the declared-interest count) — the old stats grid
+     survives only as the no-entry fallback. Incoming states are
+     unchanged: a first-termer pairs the election marker with the
+     module's no-record state; a returning member keeps the full
+     incoming block and his real figures. */
+  const intItem = (c.lastSeen && c.lastSeen < "2023-06-01")
+    ? "Interest record starts Jun 2023"
+    : `<b>${fmtNum(Number(c.interest) || 0)}</b> declared interest${Number(c.interest) === 1 ? "" : "s"} · since Jun 2023`;
+  const footer = repCardFooterHTML([esc(memberTenure(c)), intItem]);
+  let stats, module;
+  if (!e) {
+    stats = c.incoming ? incomingBlockHTML(c) : memberStatsHTML(c);
+    module = "";
+  } else if (c.incoming && e.career.pct == null) {
+    stats = `<div class="incoming-block"><p class="incoming-marker"><strong>Elected October 26, 2026 — takes office November 15, 2026</strong></p></div>`;
+    module = cardPartModule(c);
+  } else if (c.incoming) {
+    stats = incomingBlockHTML(c);
+    module = `${cardPartModule(c)}${footer}`;
+  } else {
+    stats = "";
+    module = `${cardPartModule(c)}${footer}`;
+  }
   return `<article class="person${c.mayor ? " is-mayor" : ""}">
     <div class="person-top">${avatarHTML(c)}
       <div>
@@ -60,7 +80,7 @@ function personCard(c) {
       </div>
     </div>
     ${stats}
-    ${cardPartModule(c)}
+    ${module}
   </article>`;
 }
 /* One filter for the grid: a name, as before — and now also a ward

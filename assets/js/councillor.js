@@ -462,7 +462,7 @@ async function renderDeclaredInterests(person) {
       <span class="h-meta">${esc(meta)}</span>
       ${r.VerbalDeclaration ? `<span class="h-meta">Interest as recorded: ${esc(r.VerbalDeclaration)}</span>` : ""}
       ${r.capacityNote ? `<span class="h-meta">${esc(r.capacityNote)}</span>` : ""}
-      ${r.WrittenDeclaration ? `<span class="h-meta"><a href="${esc(r.WrittenDeclaration)}" target="_blank" rel="noopener noreferrer">Written declaration (PDF)<span class="visually-hidden"> (opens in a new tab)</span></a></span>` : ""}
+      ${r.WrittenDeclaration ? `<span class="h-meta"><a class="pdf-chip" href="${esc(r.WrittenDeclaration)}" target="_blank" rel="noopener noreferrer">Written declaration (PDF)<span class="visually-hidden"> (opens in a new tab)</span></a></span>` : ""}
       </span></li>`;
   }) : [];
   let giftsBody = "";
@@ -474,7 +474,7 @@ async function renderDeclaredInterests(person) {
       return `<li><span class="h-title">${esc(g.details || "")}
         <span class="h-meta">${esc(meta)}</span>
         <span class="h-meta">${donor}Value as published: ${esc(g.valueAsPublished || "")}${g.incompleteOrUnapproved ? " (marked incomplete and/or not approved in the registry, as published)" : ""}</span>
-        ${g.valueDetailUrl ? `<span class="h-meta"><a href="${esc(g.valueDetailUrl)}" target="_blank" rel="noopener noreferrer">Disclosure statement (PDF)<span class="visually-hidden"> (opens in a new tab)</span></a></span>` : ""}
+        ${g.valueDetailUrl ? `<span class="h-meta"><a class="pdf-chip" href="${esc(g.valueDetailUrl)}" target="_blank" rel="noopener noreferrer">Disclosure statement (PDF)<span class="visually-hidden"> (opens in a new tab)</span></a></span>` : ""}
         </span></li>`;
     }).join("");
     giftsBody = `<p class="small" style="max-width:44rem">Gifts and benefits this member disclosed, as published in the Integrity Commissioner's Gift Disclosure Registry. Values are as published.</p>
@@ -497,12 +497,16 @@ async function renderDeclaredInterests(person) {
       ? `<h3 style="margin-top:1.8rem">Gifts and benefits disclosed</h3>
       ${giftsBody}`
       : giftsNaHTML;
+    /* Two-line intro with the counts (card/profile redesign, Oct 30,
+       2026): the register/vote-record distinction is still stated
+       once, here — compressed to one sentence — and the counts line
+       folds into the intro instead of repeating below it. */
     host.innerHTML = `<section style="margin-top:2.4rem" aria-labelledby="declared-interests-h">
     <h2 id="declared-interests-h">Declared interests — the official register</h2><hr class="rule">
-    <p class="small" style="max-width:44rem">${simpleOn()
-      ? `This is the City Clerk's official list — the interests ${esc(person.name)} declared on the record, one item at a time. It is not the same as the recorded-vote count above. That count comes from recorded votes where the member declared an interest and did not vote. The two lists count different things, so their totals will not match. A member can declare an interest out loud in the chamber and still not appear in this list. The vote record above may show a declaration that this list does not have.`
-      : `The City Clerk's official register — the declarations ${esc(person.name)} made on the record, item by item. It is separate from the recorded-vote count above it, counted from recorded votes where the member declared an interest and did not vote; the two count different things and their totals will not match. <strong>This register is the City Clerk's published file of declarations. A declaration made out loud in the chamber — for example under Article 8 of the Code of Conduct — may not appear in that file, so this list can miss a declaration that the vote record shows.</strong>`}</p>
-    ${countsLine}
+    <p class="interests-intro">${simpleOn()
+      ? `The City Clerk's official list — interests declared on the record, one item at a time. It counts different things from the recorded-vote figure above, so the totals will not match.`
+      : `The City Clerk's official register — the declarations ${esc(person.name)} made on the record, item by item. It is separate from the recorded-vote count above it; the two count different things and their totals will not match.`}
+    <strong>${fmtNum(regN)} ${regN === 1 ? "entry" : "entries"} on file${giftsEraNA ? "" : ` · ${fmtNum(giftN)} gift ${giftN === 1 ? "disclosure" : "disclosures"}`}.</strong> ${simpleT("Declaring an interest is a duty, not a missed vote.", "Declaring an interest is a duty, not a missed vote.")}</p>
     ${hasEntries ? `<ul class="personlist history-rows" id="reg-list">${rowItems.slice(0, PAGE).join("")}</ul><div class="pager" id="reg-pager"></div>` : `<p class="small">${simpleOn() ? `No declaration for ${esc(person.name)} appears in the City Clerk's published list. The vote count above records declarations made on votes.` : `No declaration by ${esc(person.name)} appears in the City Clerk's published register file. The recorded-vote count above counts declarations recorded on votes.`}</p>`}
     ${giftsHTML}
     <p class="small" style="max-width:44rem;margin-top:1rem">Source: City Clerk's Office · Registry of Declared Interest (published 2007–2026; the City publishes no declarations dated 2006 or earlier) + Gift Disclosure Registry (published 2011–2025; 2026 not yet published) (Integrity Commissioner) · Open Data refreshed September 26, 2026</p>
@@ -675,7 +679,16 @@ async function renderPayExpenses(person) {
   const hasDetail = !!(detail && detail.length);
   if (!hasAnnual && !hasDetail) return;
 
-  let annualHTML = "";
+  /* Expenses layout (card/profile redesign, Oct 30, 2026): a lead
+     four-figure strip from the latest annual year, that year's
+     tables as category rows, and ONE "Earlier years" expander for
+     everything older across both publications — replacing the
+     per-year accordions. Every figure is still shown exactly as
+     published, under its own table's label; nothing is added
+     together. */
+  let leadStrip = "", annualLatest = "", annualEarlier = "";
+  let detailHead = "", detailEarlier = "";
+  const earlierYearsSeen = [];
   if (hasAnnual) {
     const years = [];
     const byYear = new Map();
@@ -701,12 +714,34 @@ async function renderPayExpenses(person) {
     </div>`;
     };
     const maxAnnualYear = Math.max(...years.map((y) => Number(y)));
-    annualHTML = years.map((y) =>
-      `<details class="pay-year"${Number(y) === maxAnnualYear ? " open" : ""}><summary><h3>${esc(y)}</h3></summary>`
-      + byYear.get(y).map(blockHTML).join("") + `</details>`).join("");
+    const latestY = years.find((y) => Number(y) === maxAnnualYear);
+    const earlierYs = years.filter((y) => Number(y) !== maxAnnualYear);
+    earlierYs.forEach((y) => earlierYearsSeen.push(Number(y)));
+    annualLatest = `<div class="pay-year-blocks"><h3 class="pay-year-h">${esc(latestY)}</h3>${byYear.get(latestY).map(blockHTML).join("")}</div>`;
+    annualEarlier = earlierYs.map((y) =>
+      `<div class="pay-year-blocks"><h4 class="pay-year-h">${esc(y)}</h4>${byYear.get(y).map(blockHTML).join("")}</div>`).join("");
+    /* Lead strip: up to four headline figures from ONE table of the
+       latest year — the table carrying the most headline fields —
+       each under its own published label. */
+    const LEAD_PRIORITY = ["remunerationAndBenefitsPaidByCity",
+      "totalRemunerationAndBenefits", "totalRemunerationAndExpenses",
+      "totalRemunerationExpenseIndemnityAndBenefits",
+      "remunerationAndBenefits", "remuneration", "benefits",
+      "supportStaffSalariesAndBenefits", "supportStaffSalaries",
+      "officeExpenses", "corporateBusinessTravel"];
+    const fieldLabel = Object.fromEntries(EXPENSE_FIELDS);
+    const cand = byYear.get(latestY)
+      .map((r) => ({ r, n: LEAD_PRIORITY.filter((k) => r[k] != null).length }))
+      .sort((a, b) => b.n - a.n)[0];
+    if (cand && cand.n) {
+      const items = LEAD_PRIORITY.filter((k) => cand.r[k] != null)
+        .slice(0, 4)
+        .map((k) => `<div class="pay-lead-item"><span class="pay-lead-v">${esc(fmtMoney(cand.r[k]))}</span><span class="pay-lead-l">${esc(fieldLabel[k] || k)}</span></div>`)
+        .join("");
+      leadStrip = `<div class="pay-lead"><p class="pay-lead-lab">${esc(latestY)} — the latest year, as published</p><div class="pay-lead-grid">${items}</div></div>`;
+    }
   }
 
-  let detailHTML = "";
   if (hasDetail) {
     const catRow = (r, c) => {
       const link = (r.cityCouncillorId != null && c.categoryId != null && c.count > 0)
@@ -758,23 +793,39 @@ async function renderPayExpenses(person) {
       dByYear.get(r.year).push(r);
     }
     const maxDetailYear = Math.max(...dyears.map((y) => Number(y)));
-    detailHTML = `<h3 style="margin-top:2.2rem">${simpleT("Office-expense detail — routine disclosure", "Office spending detail")}</h3>
-    <p class="small" style="max-width:44rem">${simpleT("The City Clerk also publishes each member's constituency services and office expenses in a routine disclosure, posted quarterly from 2013 and broken down by category. It is a separate publication from the annual reports, with a narrower scope — office spending only, not pay, benefits or staff salaries — so its figures stand on their own and are never added to the annual figures. The invoice documents themselves stay on the City's site; a category amount links to its invoices there.", "The City also posts each member's office spending by category. It has been posted every quarter since 2013. This is a different report from the yearly ones. It covers office spending only — not pay or staff. Its numbers stand on their own and are never added to the yearly numbers. The invoices stay on the City's site. A category amount links to its invoices there.")}</p>`
-      + dyears.map((y) =>
-        `<details class="pay-year"${Number(y) === maxDetailYear ? " open" : ""}><summary><h4>${esc(y)}</h4></summary>`
-        + dByYear.get(y).map(detailBlock).join("") + `</details>`).join("");
+    const latestDY = dyears.find((y) => Number(y) === maxDetailYear);
+    const earlierDYs = dyears.filter((y) => Number(y) !== maxDetailYear);
+    earlierDYs.forEach((y) => earlierYearsSeen.push(Number(y)));
+    detailHead = `<h3 style="margin-top:2.2rem">${simpleT("Office-expense detail — routine disclosure", "Office spending detail")}</h3>
+    <p class="small" style="max-width:44rem">${simpleT("The City Clerk also publishes each member's constituency services and office expenses in a routine disclosure, posted quarterly from 2013 and broken down by category. It is a separate publication from the annual reports, with a narrower scope — office spending only, not pay, benefits or staff salaries — so its figures stand on their own and are never added to the annual figures. The invoice documents themselves stay on the City's site; a category amount links to its invoices there.", "The City also posts each member's office spending by category. It has been posted every quarter since 2013. This is a different report from the yearly ones. It covers office spending only — not pay or staff. Its numbers stand on their own and are never added to the yearly numbers. The invoices stay on the City's site. A category amount links to its invoices there.")}</p>
+    <div class="pay-year-blocks"><h4 class="pay-year-h">${esc(latestDY)}</h4>${dByYear.get(latestDY).map(detailBlock).join("")}</div>`;
+    detailEarlier = earlierDYs.map((y) =>
+      `<div class="pay-year-blocks"><h4 class="pay-year-h">${esc(y)}</h4>${dByYear.get(y).map(detailBlock).join("")}</div>`).join("");
   }
 
   const intro = hasAnnual
     ? simpleT("These are the figures from the City Clerk's annual remuneration reports, shown as published. A year's figures can appear in more than one published table; each table is shown under its own label, and the site never adds the tables together. Annual reports are included for 1999–2025. The City published the same annual series back to 1998, but no per-member 1998 report could be located, so 1998 is not included. The City's quarterly routine disclosure of office expenses, published from 2013, is included below the annual figures under its own heading.", "These numbers come from the City Clerk's yearly pay reports. They are shown as published. One year's numbers can show up in more than one table. Each table is shown under its own name. The site never adds the tables together. Yearly reports run from 1999 to 2025. The City also published a yearly report for 1998, but no copy with each member's numbers could be found, so 1998 is not included. The City's office-expense detail, posted every quarter from 2013, is included below, under its own heading.")
     : simpleT("These figures come from the City Clerk's Council Expense Routine Disclosure, shown as published.", "These figures come from the City Clerk's office-expense disclosure. They are shown as published.");
+  const earlierRange = earlierYearsSeen.length
+    ? `${Math.min(...earlierYearsSeen)}–${Math.max(...earlierYearsSeen)}` : "";
+  const earlierExpander = (annualEarlier || detailEarlier)
+    ? `<details class="pay-earlier"><summary><h3>Earlier years</h3>${earlierRange ? ` <span class="small">${esc(earlierRange)}</span>` : ""}</summary>
+       ${annualEarlier}
+       ${detailEarlier ? `<h3 style="margin-top:2rem">${simpleT("Office-expense detail — routine disclosure", "Office spending detail")}</h3>${detailEarlier}` : ""}
+       </details>`
+    : "";
+  const sources = [
+    hasAnnual ? "Annual Remuneration Reports (Budgets &amp; Expense Reports) · Verified October 23, 2026" : "",
+    hasDetail ? `Council Expense Routine Disclosure (Constituency Services &amp; Office Expenses) · Verified ${esc((detailSource && detailSource.verified) || "")}` : "",
+  ].filter(Boolean).join(" · ");
   host.innerHTML = `<section style="margin-top:2.4rem" aria-labelledby="pay-expenses-h">
     <h2 id="pay-expenses-h">Pay and expenses — as published</h2><hr class="rule">
     <p class="small" style="max-width:44rem">${intro}</p>
-    ${annualHTML}
-    ${detailHTML}
-    ${hasAnnual ? `<p class="small" style="max-width:44rem;margin-top:1rem">Source: City Clerk's Office · Annual Remuneration Reports (Budgets &amp; Expense Reports) · Verified October 23, 2026</p>` : ""}
-    ${hasDetail ? `<p class="small" style="max-width:44rem;margin-top:.3rem">Source: City Clerk's Office · Council Expense Routine Disclosure (Constituency Services &amp; Office Expenses) · Verified ${esc((detailSource && detailSource.verified) || "")}</p>` : ""}
+    ${leadStrip}
+    ${annualLatest}
+    ${detailHead}
+    ${earlierExpander}
+    ${sources ? `<p class="pay-source">Source: City Clerk's Office · ${sources}</p>` : ""}
   </section>`;
 }
 
@@ -859,53 +910,53 @@ async function renderHaveYourSay(person) {
         </ol>
       </section>
     </div>
-  </section>`;
+  </section>
+  <div class="say-panel">
+    <div><div class="say-t">Have your say</div>
+    <div class="say-s">Weigh in on decisions from this record in My Record — your picks stay private.</div></div>
+    <a class="say-btn" href="my-record.html#weigh-in">Open My Record</a>
+  </div>`;
 }
 
-/* ---------- W1: recorded-vote composition strip ----------
-   One slim stacked bar under the stat tiles: of every recorded vote
-   in this member's record, the share they cast (yes or no), the
-   share they were absent for, and the share where they declared an
-   interest. Computed inline from the councillors.json person object
-   the page already loads — the same three published counts as the
-   tiles (verified reference: enhancements-prep/member-composition.json;
+/* ---------- W1: recorded-vote composition (panel segments) ----------
+   The slim stacked composition bar WITH legend now sits inside the
+   Navy & Mint participation panel (card/profile redesign, Oct 30,
+   2026), restyled from the standalone strip it replaces: of every
+   recorded vote in this member's record, the share they cast (yes
+   or no), the share they were absent for, and the share where they
+   declared an interest. Computed inline from the councillors.json
+   person object the page already loads — the same three published
+   counts as the tiles (verified reference: member-composition.json;
    the member/<slug> row files undercount pre-2018 service and are
    never the source). Presentation of published facts only: unranked,
-   ungraded, in the site's neutral colours. */
-function compositionStrip(person) {
+   ungraded. Percentages keep the OE-8 one-decimal rule and the
+   honest "<0.1" tiny-value case, matching the tiles. */
+function partComposition(person) {
   const cast = person.votesCast || 0, absent = person.absent || 0,
     interest = person.interest || 0;
   const beforeRecord = interestBeforeRecord(person);
   const total = cast + absent + interest;
-  if (!total) return "";
+  if (!total) return null;
   const pct = (n) => (100 * n / total);
   const pctTxt = (n) => {
-    /* One rounding rule everywhere (OE-8): exactly one decimal,
-       matching the stat tiles — never a bare "88" beside a tile's
-       "88.5". The tiny-value case keeps its honest "<0.1". */
     const p = pct(n);
-    return p > 0 && p < 0.05 ? "<0.1" : p.toFixed(1);
+    return p > 0 && p < 0.05 ? "<0.1%" : `${p.toFixed(1)}%`;
   };
-  const seg = (n, cls) => n > 0
-    ? `<span class="comp-seg ${cls}" style="width:${pct(n).toFixed(2)}%"></span>` : "";
-  return `<div class="composition">
-    <div class="comp-bar" role="img" aria-label="${simpleOn()
-      ? (beforeRecord
-        ? `Of ${fmtNum(total)} recorded votes in this member's record: ${fmtNum(cast)} they voted on, ${fmtNum(absent)} they were absent for.`
-        : `Of ${fmtNum(total)} recorded votes in this member's record: ${fmtNum(cast)} they voted on, ${fmtNum(absent)} they were absent for, ${fmtNum(interest)} with an interest declared.`)
-      : (beforeRecord
-        ? `Of ${fmtNum(total)} recorded votes in this member's record: ${fmtNum(cast)} cast, ${fmtNum(absent)} absent.`
-        : `Of ${fmtNum(total)} recorded votes in this member's record: ${fmtNum(cast)} cast, ${fmtNum(absent)} absent, ${fmtNum(interest)} with an interest declared.`)}">
-      ${seg(cast, "cast")}${seg(absent, "absent")}${seg(interest, "interest")}
-    </div>
-    <p class="comp-legend">${simpleOn()
-      ? (beforeRecord
-        ? `Of the ${fmtNum(total)} recorded votes in their record (member totals back to 2006; votes with names from 2018): <strong>${pctTxt(cast)}%</strong> they voted · <strong>${pctTxt(absent)}%</strong> they were absent.`
-        : `Of the ${fmtNum(total)} recorded votes in their record (member totals back to 2006; votes with names from 2018): <strong>${pctTxt(cast)}%</strong> they voted · <strong>${pctTxt(absent)}%</strong> they were absent · <strong>${pctTxt(interest)}%</strong> they declared an interest — the record flags these only from June 2023. Declaring an interest is a duty, not a missed vote.`)
-      : (beforeRecord
-        ? `Of the ${fmtNum(total)} recorded votes in their record (member totals back to 2006; name-by-name rows from 2018): <strong>${pctTxt(cast)}%</strong> cast · <strong>${pctTxt(absent)}%</strong> absent.`
-        : `Of the ${fmtNum(total)} recorded votes in their record (member totals back to 2006; name-by-name rows from 2018), counting declared interests in the total: <strong>${pctTxt(cast)}%</strong> cast · <strong>${pctTxt(absent)}%</strong> absent · <strong>${pctTxt(interest)}%</strong> declared an interest (the record flags these only from June 2023) — a duty, not an absence.`)}</p>
-  </div>`;
+  const segments = [
+    { cls: "cast", width: pct(cast),
+      label: simpleT("Voted", "They voted"), pct: pctTxt(cast) },
+    { cls: "absent", width: pct(absent),
+      label: simpleT("Absent", "They were absent"), pct: pctTxt(absent) },
+  ];
+  if (interest > 0 && !beforeRecord) {
+    segments.push({ cls: "interest", width: pct(interest),
+      label: simpleT("Declared an interest", "They declared an interest"),
+      pct: pctTxt(interest) });
+  }
+  const aria = beforeRecord
+    ? `Of ${fmtNum(total)} recorded votes in this member's record: ${fmtNum(cast)} cast, ${fmtNum(absent)} absent.`
+    : `Of ${fmtNum(total)} recorded votes in this member's record: ${fmtNum(cast)} cast, ${fmtNum(absent)} absent, ${fmtNum(interest)} with an interest declared.`;
+  return { aria, segments };
 }
 
 /* ---------- record card: preview dialog, download, print ----------
@@ -1044,14 +1095,13 @@ async function init() {
       role: person.mayor ? "Mayor of Toronto"
         : person.current
           ? `Toronto City Council · Ward ${person.ward} — ${person.wardName}`
-          : "Former member of Toronto City Council" });
+          : "Former member of Toronto City Council" },
+    partComposition(person));
   document.title = `${person.name} — Toronto City Council record | Deme`;
   const role = person.current
     ? (person.mayor ? "Mayor of Toronto"
        : `Councillor · Ward ${person.ward} — ${esc(person.wardName)}`)
     : "Former member of Toronto City Council";
-  const attBar = person.participation == null ? ""
-    : `<span class="participation-bar" aria-hidden="true"><span style="width:${Math.max(0, Math.min(100, person.participation))}%"></span></span>`;
   /* Basis note (Phase 2 audit P0-5): members whose participation and
      vote totals rest partly on the pre-2018 aggregate layer carry
      participationBasis:"aggregate" in councillors.json; the note sits
@@ -1073,21 +1123,24 @@ async function init() {
       ? `<div class="notice" style="max-width:44rem;margin-top:1rem">Elected on October 26, 2026 (unofficial results). ${esc(person.name)}’s term begins November 15, 2026, and their record on Deme begins with the new term — there are no votes to show yet, and none are invented. No official portrait for the new term yet — the City of Toronto has not published one, so their initials stand in until it does; Deme adds official portraits as the City publishes them.</div>`
       : `<div class="notice" style="max-width:44rem;margin-top:1rem">Elected on October 26, 2026 (unofficial results). ${esc(person.name)} returns to the Ward ${person.ward} seat he held in 2018–2022. The record below is from his earlier service on council (2010–2022); his new-term record begins November 15, 2026.</div>`)
     : "";
+  /* Summary band (card/profile redesign, Oct 30, 2026): one band
+     with SHORT labels replaces the three heavy stat boxes, and the
+     participation definition is demoted to ONE note line + the
+     How-we-count link. Every figure and the totals paragraph below
+     are unchanged. */
   const recordSection = emptyRecord ? "" : `
-    <div class="statTiles">
+    <div class="profile-summary">
       <div class="stat"><span class="num">${fmtAtt(person)}</span>
-        <span class="lab">${simpleT("Recorded-vote participation — present and voting, out of recorded votes where a vote was theirs to cast", "Recorded votes they took part in — they were there and voted, out of the recorded votes they could vote on")}</span>${attBar}</div>
+        <span class="lab">Recorded-vote participation, career</span></div>
       <div class="stat"><span class="num">${fmtNum(person.votesCast)}</span>
-        <span class="lab">${simpleT("Votes cast (yes or no) across their record", "Votes they cast (yes or no) in their whole record")}</span></div>
+        <span class="lab">${simpleT("Votes cast (yes or no)", "Votes they cast (yes or no)")}</span></div>
       <div class="stat"><span class="num">${interestFigure(person)}</span>
-        <span class="lab">${simpleT("Interest declared on a recorded vote · stepped back (since Jun 2023)", "Declared an interest on a recorded vote · did not vote (since Jun 2023)")}</span></div>
+        <span class="lab">${simpleT("Declared interest on a recorded vote · since Jun 2023", "Declared an interest on a recorded vote · since Jun 2023")}</span></div>
     </div>
     <div id="register-summary"></div>
-    <p class="small" style="max-width:44rem">${simpleT("Recorded-vote participation is the share of recorded votes where the member was present and voting — not a count of meetings attended, and declared interests are never counted against it.", "This number is the share of recorded votes where the member was there and voted. It is not a count of meetings they went to. Declared interests never count against them.")}
-    <a href="about.html#how-we-count">How we count</a>${simpleT(" explains each figure on this page.", " explains each number on this page.")}</p>
+    <p class="profile-def-note">${simpleT("Recorded-vote participation is the share of recorded votes where the member was present and voting — not a count of meetings attended, and declared interests are never counted against it.", "This number is the share of recorded votes where the member was there and voted. It is not a count of meetings they went to. Declared interests never count against them.")} <a href="about.html#how-we-count">How we count →</a></p>
     ${partBlock}
     ${basisNote}
-    ${compositionStrip(person)}
     <p class="small" style="max-width:44rem">${simpleT("The totals count the full record: member totals back to 2006; item-by-item rows from 2018. The “Interest declared on a recorded vote · stepped back (since Jun 2023)” figure is narrower: the voting record flags a declared interest only from June 2023, so the figure counts flagged votes from June 2023 on — earlier declarations were recorded as ordinary absences. A dash marks a member whose service ended before June 2023.", "The totals cover the full record. Member totals go back to 2006. Rows for each item start in 2018. The “Declared an interest on a recorded vote · did not vote (since Jun 2023)” number is narrower. The voting record only marks a declared interest from June 2023. So the number counts marked votes from June 2023 on. Before that, declarations were written down as plain absences. A dash means the member’s service ended before June 2023.")}</p>`;
   box.innerHTML = `
     <p class="kicker">${person.incoming ? "Incoming council" : person.current ? "Council today" : "Earlier member"}</p>

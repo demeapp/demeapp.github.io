@@ -699,17 +699,21 @@ function repCardFooterHTML(items) {
 /* ---------------- member avatars ----------------
    Official portraits exist for the members in PHOTO_SLUGS (the
    files live in assets/headshots/, named by slug): the 19 returning
-   current members, plus 27 earlier members — 20 whose portraits come
-   from the City of Toronto Archives' official councillor portrait
-   series (Fonds 219, Series 2311, via Wikimedia Commons — polish
-   wave, Oct 22, 2026; full provenance in that wave's D/E report)
-   and the 7 who left council in 2026, whose official portraits ran
-   while they served. The 7 members elected in 2026 are NOT in the
-   set: the City has not published official portraits of the
-   incoming council, so they get the initials disc — no campaign or
-   substitute photos are used. (Mike Layton's archive portrait file
-   stays on disk, unreferenced, until the parent decides whether to
-   link his earlier-service portrait; v32 roster wave, Oct 27, 2026.)
+   current members, plus Mike Layton — back on council for
+   2026–2030 after earlier service, shown in his City of Toronto
+   Archives portrait from that earlier service — plus 36 earlier
+   members: 20 whose portraits come from the City of Toronto
+   Archives' official councillor portrait series (Fonds 219,
+   Series 2311, via Wikimedia Commons — polish wave, Oct 22, 2026;
+   full provenance in that wave's D/E report), the 7 who left
+   council in 2026, whose official portraits ran while they served,
+   6 recovered from the City's official portrait files (portrait
+   wave, Oct 30, 2026), and 3 whose official portraits already
+   serve in another layer of this site and are referenced in place
+   (PHOTO_PATHS below). The other 6 members elected in 2026 are
+   NOT in the set: the City has not published official portraits
+   of the incoming council, so they get the initials disc — no
+   campaign or substitute photos are used.
    Everyone else — and any photo that fails to load — falls back
    to the member's initials on a navy disc, the old build's
    pattern. */
@@ -717,16 +721,32 @@ const PHOTO_SLUGS = new Set(["alejandra-bravo", "amber-morley",
   "anthony-perruzza", "ausma-malik", "brad-bradford", "chris-moise",
   "dianne-saxe", "frances-nunziata", "gord-perks", "jamaal-myers",
   "james-pasternak", "jon-burnside", "josh-matlow", "lily-cheng",
-  "michael-thompson", "mike-colle", "neethan-shan", "nick-mantas", "olivia-chow",
+  "michael-thompson", "mike-colle", "mike-layton", "neethan-shan",
+  "nick-mantas", "olivia-chow",
   "parthi-kandavel", "paul-ainslie", "paula-fletcher",
   "rachel-chernos-lin", "shelley-carroll", "stephen-holyday",
   "vincent-crisanti",
-  "adam-vaughan", "ana-bailao", "chin-lee", "doug-ford",
+  "adam-vaughan", "ana-bailao", "chin-lee", "cynthia-lai",
+  "denzil-minnan-wong", "doug-ford",
   "doug-holyday", "frank-di-giorgio", "gary-crawford", "janet-davis",
-  "jaye-robinson", "joe-mihevc", "john-parker", "josh-colle",
+  "jaye-robinson", "jennifer-mckelvie", "jim-karygiannis",
+  "joe-cressy", "joe-mihevc", "john-filion", "john-parker",
+  "john-tory", "jonathan-tsao", "josh-colle",
   "karen-stintz", "kristyn-wong-tam", "maria-augimeri", "mark-grimes",
-  "mary-fragedakis", "mary-margaret-mcmahon",
+  "mary-fragedakis", "mary-margaret-mcmahon", "michael-ford",
   "norman-kelly", "sarah-doucette"]);
+/* Three Toronto members' official portraits already serve in
+   another layer's folder (their MP/MPP portraits); rather than
+   duplicate the binaries, their Toronto references point at the
+   existing files. Every other slug resolves to the Toronto
+   folder by slug, as before. */
+const PHOTO_PATHS = {
+  "jennifer-mckelvie": "assets/headshots/federal/jennifer-mckelvie.webp",
+  "michael-ford": "assets/headshots/ontario/michael-d-ford.webp",
+  "jonathan-tsao": "assets/headshots/ontario/jonathan-tsao.webp",
+};
+const photoSrcFor = (slug) => PHOTO_PATHS[slug]
+  || `assets/headshots/${encodeURIComponent(slug)}.webp`;
 const initialsOf = (name) => String(name || "").split(/\s+/)
   .filter(Boolean).slice(0, 2).map((w) => w.charAt(0)).join("").toUpperCase();
 /* Avatar photo failure handling (audit F-2, Oct 26): the old
@@ -746,7 +766,7 @@ function demeAvatarError(img) {
 }
 function avatarHTML(person, size = "") {
   const img = PHOTO_SLUGS.has(person.slug)
-    ? `<img src="assets/headshots/${encodeURIComponent(person.slug)}.webp"
+    ? `<img src="${photoSrcFor(person.slug)}"
         alt="" loading="lazy" decoding="async" onerror="demeAvatarError(this)">`
     : "";
   return `<span class="avatar ${size}" aria-hidden="true"><span>${esc(initialsOf(person.name))}</span>${img}</span>`;

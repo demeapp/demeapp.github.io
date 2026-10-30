@@ -982,7 +982,7 @@ function recordCardHTML(person, standalone) {
     : "Former member of Toronto City Council";
   const photo = PHOTO_SLUGS.has(person.slug)
     ? (standalone
-      ? `<img src="assets/headshots/${person.slug}.webp" alt="" width="72" height="72" style="border-radius:50%;object-fit:cover" onerror="demeAvatarError(this)">`
+      ? `<img src="${photoSrcFor(person.slug)}" alt="" width="72" height="72" style="border-radius:50%;object-fit:cover" onerror="demeAvatarError(this)">`
       : avatarHTML(person))
     : avatarHTML(person);
   const votes = cardVotes().map((r) => standalone

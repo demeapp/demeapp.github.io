@@ -554,13 +554,19 @@ function participationBlockHTML(entry, layer, unit, head, composition) {
 /* ---------------- directory-card module (C7) ----------------
    One participation block inside the card (navy module to v63;
    the light one-hero-figure layout from the Oct 30, 2026 redesign):
-   career + latest-term figures,
-   each with counts, at one-decimal precision (the v58 card printed
-   the career figure twice, at two precisions), plus at most one
-   microline — Speaker short form, truncation, single-term, or
-   mixed-basis, in that priority. THIS TERM vs LAST TERM follows C6:
-   THIS TERM only when the member sits in the displayed term.
-   No-record members get the state module, never a 0%. */
+   the LATEST term's figure as the hero, with the career figure as
+   the supporting row beneath it (owner-approved hero swap, Oct 30,
+   2026; before the swap the hero was the career and the row the
+   term). Each figure carries its counts, at one-decimal precision
+   (the v58 card printed the career figure twice, at two
+   precisions), plus at most one microline — Speaker short form,
+   truncation, single-term, or mixed-basis, in that priority.
+   THIS TERM vs LAST TERM follows C6: THIS TERM only when the
+   member sits in the displayed term. Single-term members render
+   exactly as before (their one term already is the figure; no
+   duplicated career row), and a member with no per-term figures
+   at all keeps the career hero — there is no term figure to
+   promote. No-record members get the state module, never a 0%. */
 function partFigureTerms(entry) {
   return entry.terms.filter((t) => t.pct != null);
 }
@@ -612,12 +618,6 @@ function participationCardModule(entry, ctx) {
       : `Career · ${single.label} · ${c.span}`)
     : `Career · ${c.span}`;
   if (layer === "toronto" && c.fromLabel) careerLab += ` · ${c.fromLabel}`;
-  let termRow = "";
-  if (!single && latest) {
-    const isCurrent = !!ctx.current && !ctx.incoming && !!ctx.currentLabel
-      && partTermShortLabel(latest, layer) === ctx.currentLabel;
-    termRow = `<div class="rep-part-term"><span>${isCurrent ? "This term" : "Last term"} · ${esc(partTermShortLabel(latest, layer))}</span><span class="rep-part-termfig"><strong>${partPct(latest.pct)}</strong> ${fmtNum(latest.cast)} of ${fmtNum(latest.held)}</span></div>`;
-  }
   let micro = "";
   const dispNote = single ? single.noteShort : (latest ? latest.noteShort : null);
   if (dispNote) micro = dispNote;
@@ -632,27 +632,58 @@ function participationCardModule(entry, ctx) {
       ? "Career total from the City's aggregate tallies; term figures from name-by-name votes, 2018 on."
       : "Career total from the City's aggregate tallies.";
   }
-  /* Card/profile redesign (Oct 30, 2026): ONE hero figure — the
-     career percentage with its count and span attached — over one
-     slim bar. The v63 data rules above (career + This term/Last
-     term, microline priority) are unchanged; only the layout is
-     new. The old navy module's classes survive in the CSS for the
-     print record card only. */
   const unit = layer === "toronto" ? "decisions" : "divisions";
-  /* The count's second line is the bare span (the hero figure IS
-     the career figure, and the term row below names itself) —
-     except where the label carries more than the span: a
-     single-term career (its Parliament/term name) and Toronto's
-     C5 FROM label for mid-term entrants keep the full v63 label. */
-  const spanLine = single || (layer === "toronto" && c.fromLabel)
-    ? careerLab : c.span;
-  return `<div class="rep-part">
+  /* Hero swap (owner-approved Oct 30, 2026): ONE hero figure — the
+     LATEST term's percentage with its count and term label attached
+     — over one slim bar, with the career as the supporting row
+     (pct · cast of held · career span, plus Toronto's C5 FROM
+     label where the career carries one). The pre-swap arrangement
+     (career hero over a "This term / Last term" row) survives only
+     where there is no term figure to promote: single-term members,
+     whose hero is unchanged (their one term already is the figure,
+     under its career label, with no duplicated row beneath), and
+     members with no per-term figures, whose hero stays the career.
+     Term entries carry no span of their own — the label names the
+     term, and for Toronto the short label IS its year range. The
+     slim bar follows the hero: its fill is the hero figure's
+     voted share, from the same cast/held counts the figure prints.
+     Per-term absent/declared splits are not in the data (term
+     entries carry pct/cast/held only), so no stacked composition
+     is derived for a term; the profile panel's stacked bar stays
+     on the career composition its callers prepare. The v63 data
+     rules (microline priority, note attachment) are unchanged.
+     The old navy module's classes survive in the CSS for the
+     print record card only. In the unchanged branch below, the
+     empty ${""} line holds the exact slot the term row occupied,
+     so members on that path render byte-identical output. */
+  if (single || !latest) {
+    /* The count's second line is the full career label where it
+       carries more than the span: a single-term career (its
+       Parliament/term name) and Toronto's C5 FROM label for
+       mid-term entrants; the bare span otherwise. */
+    const spanLine = single || (layer === "toronto" && c.fromLabel)
+      ? careerLab : c.span;
+    return `<div class="rep-part">
     <div class="rep-part-main">
       <div class="rep-part-figwrap"><span class="rep-part-h">Recorded-vote participation</span><strong class="rep-part-fig">${partPct(c.pct)}</strong></div>
       <p class="rep-part-of"><b>${fmtNum(c.cast)} of ${fmtNum(c.held)}</b> ${unit}<br><span>${esc(spanLine)}</span></p>
     </div>
     <div class="rep-part-bar" aria-hidden="true"><span style="width:${Math.max(0, Math.min(100, Number(c.pct))).toFixed(1)}%"></span></div>
-    ${termRow}
+    ${""}
+    ${micro ? `<p class="rep-part-micro">${esc(micro)}</p>` : ""}
+  </div>`;
+  }
+  const isCurrent = !!ctx.current && !ctx.incoming && !!ctx.currentLabel
+    && partTermShortLabel(latest, layer) === ctx.currentLabel;
+  const heroLab = `${isCurrent ? "This term" : "Last term"} · ${partTermShortLabel(latest, layer)}`;
+  const careerRow = `<div class="rep-part-term"><span>Career</span><span class="rep-part-termfig"><strong>${partPct(c.pct)}</strong> ${fmtNum(c.cast)} of ${fmtNum(c.held)} · ${esc(c.span)}${layer === "toronto" && c.fromLabel ? ` · ${esc(c.fromLabel)}` : ""}</span></div>`;
+  return `<div class="rep-part">
+    <div class="rep-part-main">
+      <div class="rep-part-figwrap"><span class="rep-part-h">Recorded-vote participation</span><strong class="rep-part-fig">${partPct(latest.pct)}</strong></div>
+      <p class="rep-part-of"><b>${fmtNum(latest.cast)} of ${fmtNum(latest.held)}</b> ${unit}<br><span>${esc(heroLab)}</span></p>
+    </div>
+    <div class="rep-part-bar" aria-hidden="true"><span style="width:${Math.max(0, Math.min(100, Number(latest.pct))).toFixed(1)}%"></span></div>
+    ${careerRow}
     ${micro ? `<p class="rep-part-micro">${esc(micro)}</p>` : ""}
   </div>`;
 }

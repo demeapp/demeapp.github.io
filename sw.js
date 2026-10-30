@@ -1,4 +1,5 @@
-// Deme service worker (v65 — Card + profile redesign ship (Oct 30, 2026): representative cards rebuilt to the approved one-hero-figure layout and profiles to the mint summary-band design — presentation only; no figures, counts, notes, or record data changed.
+// Deme service worker (v66 — Card participation swap ship (Oct 30, 2026): representative cards now lead with the current (or last) term's recorded-vote participation figure, with the career figure in the supporting row beneath; profile panels unchanged — presentation only; no figures, counts, notes, or record data changed.
+// Previous: Deme service worker (v65 — Card + profile redesign ship (Oct 30, 2026): representative cards rebuilt to the approved one-hero-figure layout and profiles to the mint summary-band design — presentation only; no figures, counts, notes, or record data changed.
 // Previous: Deme service worker (v63 — Participation ship (Oct 30, 2026): every representative card and profile carries the audited participation panel — career figure with counts and span, This term / Last term rows, Speaker and died-in-office notes; Rachael Thomas's record is merged across her previous surname (77.6% career) and the duplicate Harder profile is retired; Robert Oliphant's phantom 41st-Parliament row is removed. No other record facts changed.
 // Previous: Deme service worker (v62 — Backend Three ship (Oct 30, 2026): federal
 // profile pages load the per-member division split file first (the whole
@@ -98,7 +99,7 @@
 // deploy, so assets are network-first too; cache is the offline fallback.
 // VERSION bumps rename every cache, and activate deletes the old ones —
 // bump VERSION whenever this file ships a strategy change.
-const VERSION = 'v65';
+const VERSION = 'v66';
 const SHELL = 'deme-shell-' + VERSION;
 const PAGES = 'deme-pages-' + VERSION;
 const DATA = 'deme-data-' + VERSION;

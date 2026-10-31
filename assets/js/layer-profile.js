@@ -131,7 +131,7 @@ function termsSection(p) {
       `<li><strong>${esc(t.riding || "")}</strong>${t.party ? ` (${esc(t.party)})` : ""} · ${fmtDate(t.from)} – ${t.to ? fmtDate(t.to) : "present"}</li>`).join("");
     return `<section style="margin-top:2.4rem" aria-labelledby="terms-h">
     <h2 id="terms-h">Service in the record</h2><hr class="rule">
-    ${p.parliaments > 1 ? `<p class="small">Service spanning ${p.parliaments} parliaments.</p>` : ""}
+    ${p.parliaments > 1 ? `<p class="small">Service spanning ${p.parliaments} parliaments in this record.</p>` : ""}
     <ul>${rows}</ul></section>`;
   }
   const rows = p.terms.map((t) =>

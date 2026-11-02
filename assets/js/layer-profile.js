@@ -121,7 +121,7 @@ async function setVoteFilter(f) {
 }
 
 /* ---------------- sections ---------------- */
-function termsSection(p) {
+function termsSection(p, partEntry) {
   if (!p.terms || !p.terms.length) return "";
   if (PCFG.layer === "canada") {
     // Federal tenure entries are stints (a riding/party span that can
@@ -129,9 +129,21 @@ function termsSection(p) {
     // never by a single Parliament — newest first, human dates.
     const rows = p.terms.slice().reverse().map((t) =>
       `<li><strong>${esc(t.riding || "")}</strong>${t.party ? ` (${esc(t.party)})` : ""} · ${fmtDate(t.from)} – ${t.to ? fmtDate(t.to) : "present"}</li>`).join("");
+    /* F2 (audit, Nov 2, 2026): the spanning line says "in this
+       record", so it counts only the Parliaments present in this
+       member's own stored ballot rows — participation.json's
+       career.parliamentsInRecord, derived from those rows via
+       divisions.json sessions. p.parliaments is the full-career
+       count (it feeds the head's "N parliaments · since YYYY"
+       career statement and stays unchanged there); for careers
+       predating the record (38th Parliament, 2004) it overstates
+       this line. Fall back to it only if the field is absent. */
+    const inRecord = partEntry && partEntry.career
+      ? partEntry.career.parliamentsInRecord : null;
+    const spanN = inRecord != null ? inRecord : p.parliaments;
     return `<section style="margin-top:2.4rem" aria-labelledby="terms-h">
     <h2 id="terms-h">Service in the record</h2><hr class="rule">
-    ${p.parliaments > 1 ? `<p class="small">Service spanning ${p.parliaments} parliaments in this record.</p>` : ""}
+    ${spanN > 1 ? `<p class="small">Service spanning ${spanN} parliaments in this record.</p>` : ""}
     <ul>${rows}</ul></section>`;
   }
   const rows = p.terms.map((t) =>
@@ -784,7 +796,7 @@ async function renderProfile() {
     ["lobbying", "Lobbying", "#lobbying-h"],
     ["votes", "Recorded votes", "#recorded-votes-h"]];
   const rendered = {
-    terms: termsSection(p), roles: rolesSection(p),
+    terms: termsSection(p, partEntry), roles: rolesSection(p),
     committees: panelsSection(p), interests: interestsSection(p),
     pay: expensesSection(p), lobbying: lobbyingSection(p), votes: "1"};
   const contents = sections.filter(([k]) => rendered[k])

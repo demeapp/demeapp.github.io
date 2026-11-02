@@ -20,6 +20,28 @@ let currentPerson = null;
    the visitor pages close to the end of the slice — or when an
    outcome filter is chosen, since a filter must see every row to
    stay honest. Row order and the published totals are unchanged. */
+/* L6-F2 (Nov 2, 2026): the dossier/disclosure sections below used to
+   fetch six whole-archive files (expenses.json, expenses-detail.json,
+   declared-interests.json, gift-disclosures.json, lobbying.json,
+   profiles.json — ≈3.1 MB decoded) to render ONE member. They now
+   share a single per-member file, member/<slug>.disclosure.json,
+   generated as verbatim slices of those same archive objects
+   (profile, lobbying, declaredInterests, gifts, expenses,
+   expensesDetail, expensesDetailSource), so every rendered figure
+   is identical. The archive files themselves stay live, unchanged,
+   for any other page that uses them. One shared promise: the four
+   section renderers below trigger exactly one fetch. A failed load
+   resolves to null and each section stands without its data,
+   exactly as a failed archive load did before. */
+let disclosurePromise = null;
+function loadDisclosure(slug) {
+  if (!disclosurePromise) {
+    disclosurePromise = loadJSON(dataPath(`member/${slug}.disclosure.json`))
+      .catch(() => null);
+  }
+  return disclosurePromise;
+}
+
 async function ensureRest() {
   if (restLoaded || !memberSlug) return;
   if (!restLoading) {
@@ -180,10 +202,11 @@ async function renderExtras(person) {
   const host = document.getElementById("profile-extra");
   if (!host) return;
   let profile = null, lobbying = null;
-  try { profile = (await loadJSON(dataPath("profiles.json")))[person.slug] || null; }
-  catch (e) { /* the record stands without the dossier */ }
-  try { lobbying = (await loadJSON(dataPath("lobbying.json")))[person.slug] || null; }
-  catch (e) { /* same */ }
+  const disc = await loadDisclosure(person.slug);
+  if (disc) {
+    profile = disc.profile || null; /* verbatim profiles.json slice */
+    lobbying = disc.lobbying || null; /* verbatim lobbying.json slice */
+  } /* on failure the record stands without the dossier, as before */
   let html = "";
   if (profile) {
     if (profile.bio) {
@@ -416,17 +439,18 @@ async function renderDeclaredInterests(person) {
   const host = document.getElementById("declared-interests");
   if (!host) return;
   let entries = null, entriesLoaded = false;
-  try {
-    const data = await loadJSON(dataPath("declared-interests.json"));
-    entries = (data.members || {})[person.slug] || null;
-    entriesLoaded = true;
-  } catch (e) { entries = null; /* the record stands without the register */ }
   let gifts = null, giftsLoaded = false;
-  try {
-    const gdata = await loadJSON(dataPath("gift-disclosures.json"));
-    gifts = (gdata.members || {})[person.slug] || null;
+  const disc = await loadDisclosure(person.slug);
+  if (disc) {
+    /* Verbatim slices of declared-interests.json / gift-disclosures.json:
+       a loaded disclosure file means both registers were checked, so
+       both loaded flags stand together, exactly as two loaded archive
+       files did; on failure neither stands, as before. */
+    entries = disc.declaredInterests || null;
+    entriesLoaded = true;
+    gifts = disc.gifts || null;
     giftsLoaded = true;
-  } catch (e) { gifts = null; }
+  } /* on failure the record stands without the register, as before */
   const hasEntries = !!(entries && entries.length);
   const hasGifts = !!(gifts && gifts.length);
   const hasVoteInterests = (person.interest || 0) > 0;
@@ -665,16 +689,16 @@ async function renderPayExpenses(person) {
   const host = document.getElementById("pay-expenses");
   if (!host) return;
   let records = null;
-  try {
-    const data = await loadJSON(dataPath("expenses.json"));
-    records = (data.members || {})[person.slug] || null;
-  } catch (e) { records = null; /* the record stands without the figures */ }
   let detail = null, detailSource = null;
-  try {
-    const ddata = await loadJSON(dataPath("expenses-detail.json"));
-    detail = (ddata.members || {})[person.slug] || null;
-    detailSource = ddata.source || null;
-  } catch (e) { detail = null; /* the annual layer stands without the detail */ }
+  const disc = await loadDisclosure(person.slug);
+  if (disc) {
+    /* Verbatim slices of expenses.json / expenses-detail.json
+       (including that file's top-level source object, whose
+       `verified` date the source line below prints). */
+    records = disc.expenses || null;
+    detail = disc.expensesDetail || null;
+    detailSource = disc.expensesDetailSource || null;
+  } /* on failure the record stands without the figures, as before */
   const hasAnnual = !!(records && records.length);
   const hasDetail = !!(detail && detail.length);
   if (!hasAnnual && !hasDetail) return;
@@ -842,8 +866,9 @@ async function renderHaveYourSay(person) {
   const host = document.getElementById("have-your-say");
   if (!host) return;
   let profile = null;
-  try { profile = (await loadJSON(dataPath("profiles.json")))[person.slug] || null; }
-  catch (e) { /* the block stands on the City links alone */ }
+  const disc = await loadDisclosure(person.slug);
+  if (disc) profile = disc.profile || null; /* verbatim profiles.json slice */
+  /* on failure the block stands on the City links alone, as before */
   const contact = (profile && profile.contact) || {};
   const phoneHref = String(contact.phone || "").replace(/[^0-9+]/g, "");
   const where = person.ward

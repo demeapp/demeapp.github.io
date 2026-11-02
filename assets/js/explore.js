@@ -270,6 +270,53 @@ async function ensureCanada() {
   if (level === "canada" || level === "all") applyFilters();
 }
 
+/* L6-F1 lazy corpus (Nov 2, 2026): NO search shard is fetched
+   until the visitor first interacts with the search — first focus
+   on or input into the search field, first level-chip or filter
+   use, a form submit, or a deep link carrying q/level/year/vote
+   (the door cards link with ?level=, which IS the interaction).
+   Before that, the results area carries the static per-level
+   counts printed on the door cards above (Toronto 33,795
+   decisions · Ontario 505 divisions · House of Commons 4,856
+   divisions, as served in explore.html) and no corpus request of
+   any kind is made: no search-<year>.json, no index-<year>.json,
+   no Ontario/federal search-divisions shard, no search-parties.
+   Once started, loading is the original sequence unchanged —
+   Toronto 2026+2025 first, the older years streamed by
+   streamRest(), and the Ontario/federal layers via
+   ensureOntario()/ensureCanada() for the current level — so
+   post-interaction search behaviour is identical. */
+let corpusStarted = false;
+let corpusReady = null;
+function renderPreInteraction() {
+  const el = $("count");
+  if (el) {
+    const t = "Toronto — 33,795 decisions · Ontario — 505 divisions"
+      + " · House of Commons — 4,856 divisions";
+    el.textContent = t;
+    el.setAttribute("aria-label", t);
+  }
+  const res = $("results");
+  if (res) res.innerHTML = `<p class="layer-empty">Search the record using the box above — results from all three legislatures will appear here.</p>`;
+  const pager = $("pager");
+  if (pager) pager.innerHTML = "";
+}
+function startCorpus() {
+  if (corpusStarted) return corpusReady;
+  corpusStarted = true;
+  archiveLoading = true;
+  corpusReady = (async () => {
+    const first = await Promise.all(SEARCH_YEARS.slice(0, 2).map((y) =>
+      loadJSON(dataPath(`search-${y}.json`)).catch(() => [])));
+    rows = first.flat();
+    if (level === "ontario" || level === "all") ensureOntario();
+    if (level === "canada" || level === "all") ensureCanada();
+    applyFilters();
+    streamRest();
+  })();
+  return corpusReady;
+}
+
 function tokens(q) {
   return q.toLowerCase().split(/\s+/).filter(Boolean);
 }
@@ -391,6 +438,10 @@ function syncFiltersToggle() {
    decide which layer's renderer answers. */
 function applyFilters(opts) {
   syncFiltersToggle();
+  /* Lazy corpus gate: any filter/search action before the corpus
+     has started simply starts it; startCorpus() re-runs
+     applyFilters() itself once the first shards land. */
+  if (!corpusStarted) { startCorpus(); return; }
   if (level === "ontario" || level === "canada") { applyDivisions(); return; }
   if (level === "all") { applyAll(); return; }
   applyTorontoFilters(opts);
@@ -910,6 +961,9 @@ function setLevel(next) {
   if (level === "all") url.searchParams.delete("level");
   else url.searchParams.set("level", level);
   history.replaceState(null, "", url);
+  /* Pre-interaction, choosing/recording a level loads nothing:
+     startCorpus() loads the layers for the then-current level. */
+  if (!corpusStarted) { renderPreInteraction(); return; }
   if (level === "ontario" || level === "all") ensureOntario();
   if (level === "canada" || level === "all") ensureCanada();
   applyFilters();
@@ -978,10 +1032,10 @@ async function streamRest() {
 }
 async function init() {
   councillors = await loadJSON(dataPath("councillors.json"));
-  archiveLoading = true;
-  const first = await Promise.all(SEARCH_YEARS.slice(0, 2).map((y) =>
-    loadJSON(dataPath(`search-${y}.json`)).catch(() => [])));
-  rows = first.flat();
+  /* L6-F1: the search corpus is NOT loaded here any more — see
+     startCorpus(). Only the small councillors directory (ward
+     names + the question parser's member list) loads up front;
+     it is not a search shard. */
   fillLoadingSelect($("f-body"));
   fillLoadingSelect($("f-status"));
   fillSelect($("f-ward"),
@@ -1001,7 +1055,18 @@ async function init() {
      param is applied after setLevel fills the level's year options,
      so a federal deep link can carry a 2004–2017 year. */
   document.querySelectorAll(".lchip").forEach((b) =>
-    b.addEventListener("click", () => { userEngaged = true; setLevel(b.dataset.level); }));
+    b.addEventListener("click", () => {
+      userEngaged = true; setLevel(b.dataset.level); startCorpus();
+    }));
+  /* First interaction with the search itself starts the corpus:
+     focus on (or a pointer press in) the search panel, which
+     covers the search field and every filter control. */
+  $("q").addEventListener("focus", () => startCorpus());
+  const panel = document.querySelector(".search-panel");
+  if (panel) {
+    panel.addEventListener("pointerdown", () => startCorpus());
+    panel.addEventListener("focusin", () => startCorpus());
+  }
   setLevel(params.get("level") || "all");
   if (params.get("year")) { $("f-year").value = params.get("year"); applyFilters(); }
   $("f-on-outcome").addEventListener("change", () => { userEngaged = true; applyFilters(); });
@@ -1112,8 +1177,16 @@ async function init() {
   $("searchform").addEventListener("submit", (e) => {
     e.preventDefault(); parseCurrentQuery(); applyFilters();
   });
-  applyFilters();
-  streamRest();
+  /* A deep link carrying a query, a level (the door cards), a year
+     or the recorded-vote flag is itself the visitor's search
+     interaction — start the corpus for it. A plain page load
+     renders the static per-level counts and fetches no shard. */
+  if (params.get("q") || params.get("level") || params.get("year")
+      || params.get("vote")) {
+    startCorpus();
+  } else {
+    renderPreInteraction();
+  }
 }
 init().catch(() => {
   $("count").textContent = "The archive could not be loaded. Please reload the page.";

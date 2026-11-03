@@ -1098,6 +1098,54 @@ function openRecordCard(person) {
   else dlg.setAttribute("open", "");
 }
 
+/* Role explainer card (v77 preview): plain-language "what this
+   level can do for you" — identical for every member at the level,
+   the Mayor carrying the mayor variant. Copy is level-scoped:
+   every item is true of Toronto City Council / the Mayor's office,
+   and the "Not their job" list names the level that does it. */
+function roleCardHTML(kind) {
+  const CARDS = {
+    councillor: {
+      h: "What a City Councillor can do for you",
+      can: [
+        "Get city services unstuck — a missed garbage or recycling pickup, a pothole, snow clearing, a broken streetlight",
+        "Property-standards and noise complaints, through city staff",
+        "Have a say on development applications and zoning in the ward",
+        "Vote on the big city choices: the city budget, TTC fares, parks and recreation programs",
+      ],
+      not: [
+        "Health cards (OHIP) and driver’s licences — <strong>provincial</strong>",
+        "Passports and employment insurance (EI) — <strong>federal</strong>",
+        "Running schools — <strong>elected school trustees</strong>",
+      ],
+    },
+    mayor: {
+      h: "What the Mayor can do for you",
+      can: [
+        "Everything a councillor can do — across the whole city, not just one ward",
+        "Lead City Council",
+        "Propose the city budget",
+        "Set the city’s direction on housing, transit and city services",
+      ],
+      not: [
+        "Health cards (OHIP) and driver’s licences — <strong>provincial</strong>",
+        "Passports and employment insurance (EI) — <strong>federal</strong>",
+        "Running schools — <strong>elected school trustees</strong>",
+      ],
+    },
+  };
+  const c = CARDS[kind];
+  if (!c) return "";
+  const li = (items) => items.map((t) => `<li>${t}</li>`).join("");
+  return `<section class="card role-card" aria-label="${c.h}">
+    <h2>${c.h}</h2>
+    <div class="role-cols">
+      <div><h3>Can help with</h3><ul>${li(c.can)}</ul></div>
+      <div><h3>Not their job</h3><ul>${li(c.not)}</ul></div>
+    </div>
+  </section>`;
+}
+
 async function init() {
   const people = await loadJSON(dataPath("councillors.json"));
   let person = null;
@@ -1177,6 +1225,7 @@ async function init() {
           ${person.terms.map((t) => esc(fmtTerm(t))).join(" · ")}</p>
       </div>
     </div>
+    ${roleCardHTML(person.mayor ? "mayor" : "councillor")}
     ${incomingNote}${emptyRecord ? partBlock : ""}${recordSection}
     <p style="margin-top:1rem">${emptyRecord ? "" : `<button class="btn secondary" id="record-card-btn"
       type="button">${simpleT("Print / download record card", "Print or download record card")}</button>

@@ -711,6 +711,52 @@ async function renderMoreLob() {
   if (b) b.addEventListener("click", renderMoreLob);
 }
 
+/* Role explainer card (v77 preview): plain-language "what this
+   level can do for you" — identical for every member at the level.
+   Copy is level-scoped: every item is true of that legislature's
+   members, and the "Not their job" list names the level that
+   does it. */
+function roleCardHTML(kind) {
+  const CARDS = {
+    mpp: {
+      h: "What an MPP can do for you",
+      can: [
+        "Help with provincial services — a health card (OHIP), a driver’s licence, ServiceOntario problems",
+        "Raise provincial issues: hospitals and health care, education funding, provincial highways",
+        "Help with disability and social-assistance programs (ODSP)",
+        "Vote on provincial laws and the provincial budget",
+      ],
+      not: [
+        "Garbage, potholes and local roads — <strong>your city councillor</strong>",
+        "Passports, EI and immigration — <strong>federal</strong>",
+      ],
+    },
+    mp: {
+      h: "What an MP can do for you",
+      can: [
+        "Help with passports, EI claims and immigration files",
+        "Help with taxes and CRA problems",
+        "Help with CPP and OAS pensions and other federal benefits",
+        "Vote on federal laws and the federal budget",
+      ],
+      not: [
+        "Health cards and driver’s licences — <strong>provincial</strong>",
+        "Garbage and local roads — <strong>your city councillor</strong>",
+      ],
+    },
+  };
+  const c = CARDS[kind];
+  if (!c) return "";
+  const li = (items) => items.map((t) => `<li>${t}</li>`).join("");
+  return `<section class="card role-card" aria-label="${c.h}">
+    <h2>${c.h}</h2>
+    <div class="role-cols">
+      <div><h3>Can help with</h3><ul>${li(c.can)}</ul></div>
+      <div><h3>Not their job</h3><ul>${li(c.not)}</ul></div>
+    </div>
+  </section>`;
+}
+
 /* ---------------- main render ---------------- */
 async function renderProfile() {
   if (!memberId) {
@@ -814,6 +860,7 @@ async function renderProfile() {
         <p class="small">${esc(tenureLine)}</p>
       </div>
     </div>
+    ${roleCardHTML(PCFG.layer === "canada" ? "mp" : "mpp")}
     <div class="profile-summary">
       <div class="stat"><span class="num">${pctText(st.participation)}</span>
         <span class="lab">Recorded-vote participation, career</span></div>

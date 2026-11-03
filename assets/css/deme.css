@@ -2358,6 +2358,25 @@ details.pay-year[open] > summary::after { content: "\25B4"; }
 }
 .profile-def-note a { font-weight: 700; white-space: nowrap; }
 
+/* --- role explainer card (v77 preview): what this level of
+   representative can do for you, in plain language. One card per
+   profile, under the profile head; the copy is identical for every
+   member at the same level. Compact: two short lists side by side,
+   stacked on narrow screens. --- */
+.role-card { margin: 1.4rem 0 0; max-width: 46rem; }
+.role-card h2 { font-size: 1.12rem; margin: 0 0 .7rem; color: var(--navy-ink); }
+.role-cols { display: grid; grid-template-columns: 1fr 1fr; gap: .2rem 1.8rem; }
+.role-cols h3 {
+  font-size: .78rem; letter-spacing: .06em; text-transform: uppercase;
+  color: var(--bronze-dark); margin: 0 0 .4rem;
+}
+.role-cols ul { margin: 0 0 .5rem; padding-left: 1.15rem; }
+.role-cols li { font-size: .93rem; line-height: 1.45; margin-bottom: .32rem; color: var(--ink-soft); }
+.role-cols li strong { color: var(--ink); font-weight: 600; }
+@media (max-width: 640px) {
+  .role-cols { grid-template-columns: 1fr; }
+}
+
 /* --- participation panel: stacked composition bar + legend --- */
 .part-panel .part-stack {
   display: flex; height: 8px; border-radius: 4px; overflow: hidden;

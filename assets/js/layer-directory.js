@@ -12,6 +12,13 @@ renderChrome(LCFG.directoryPage);
 let layerAll = [];
 let layerFilter = "";
 let layerSort = "riding";
+/* Head of government (v79): the Premier / Prime Minister is
+   pinned first in the current-members list under every sort —
+   the same treatment Toronto gives the Mayor. Identified by the
+   member id in the layer data; if the id is ever absent (the
+   office changed hands and this constant was not updated), the
+   list renders exactly as the sort leaves it. */
+const LAYER_HEAD_ID = { ontario: "doug-ford", canada: "mark-carney" };
 
 function layerAvatar(person, size = "") {
   const img = person.photo && LCFG.photoDir
@@ -131,6 +138,12 @@ function renderLayerDirectory() {
         || a.name.localeCompare(b.name);
   const shownCurrent = current.filter((p) => layerMatches(p, layerFilter))
     .sort(sortFn);
+  const headId = LAYER_HEAD_ID[LCFG.layer];
+  if (headId) {
+    const headIdx = shownCurrent.findIndex(
+      (p) => (p.id || p.slug) === headId);
+    if (headIdx > 0) shownCurrent.unshift(shownCurrent.splice(headIdx, 1)[0]);
+  }
   document.getElementById("current").innerHTML = shownCurrent.length
     ? shownCurrent.map(layerCard).join("")
     : `<p class="small">No current members match that search.</p>`;

@@ -1098,20 +1098,27 @@ function openRecordCard(person) {
   else dlg.setAttribute("open", "");
 }
 
-/* Role explainer card (v77 preview): plain-language "what this
-   level can do for you" — identical for every member at the level,
-   the Mayor carrying the mayor variant. Copy is level-scoped:
-   every item is true of Toronto City Council / the Mayor's office,
-   and the "Not their job" list names the level that does it. */
+/* Role explainer strip (v77; compact collapsible form, v79):
+   plain-language "what this level can do for you" — identical for
+   every member at the level, the Mayor carrying the mayor variant.
+   Collapsed by default: title + one summary line + a "See the
+   breakdown" toggle (native <details>, the .pay-earlier pattern);
+   the two lists sit inside. Copy is level-scoped: every item is
+   true of Toronto City Council / the Mayor's office, and the "Not
+   their job" list names the level that does it. Wording was
+   tightened in v79 (short phrases; the "Can help with" header
+   carries the verb where an item used to repeat it) — meaning
+   unchanged from the fact-checked v77 copy. */
 function roleCardHTML(kind) {
   const CARDS = {
     councillor: {
       h: "What a City Councillor can do for you",
+      line: "Missed pickups and potholes, zoning in the ward, the city budget — and what isn’t their job",
       can: [
-        "Get city services unstuck — a missed garbage or recycling pickup, a pothole, snow clearing, a broken streetlight",
+        "Get city services unstuck — missed garbage and recycling pickups, potholes, snow clearing, broken streetlights",
         "Property-standards and noise complaints, through city staff",
-        "Have a say on development applications and zoning in the ward",
-        "Vote on the big city choices: the city budget, TTC fares, parks and recreation programs",
+        "A say on development applications and zoning in the ward",
+        "Vote on the city budget, TTC fares, parks and recreation programs",
       ],
       not: [
         "Health cards (OHIP) and driver’s licences — <strong>provincial</strong>",
@@ -1121,8 +1128,9 @@ function roleCardHTML(kind) {
     },
     mayor: {
       h: "What the Mayor can do for you",
+      line: "Everything a councillor can do, across the whole city — and what isn’t the Mayor’s job",
       can: [
-        "Everything a councillor can do — across the whole city, not just one ward",
+        "Everything a councillor can do, across the whole city",
         "Lead City Council",
         "Propose the city budget",
         "Set the city’s direction on housing, transit and city services",
@@ -1138,11 +1146,17 @@ function roleCardHTML(kind) {
   if (!c) return "";
   const li = (items) => items.map((t) => `<li>${t}</li>`).join("");
   return `<section class="card role-card" aria-label="${c.h}">
-    <h2>${c.h}</h2>
-    <div class="role-cols">
-      <div><h3>Can help with</h3><ul>${li(c.can)}</ul></div>
-      <div><h3>Not their job</h3><ul>${li(c.not)}</ul></div>
-    </div>
+    <details class="role-details">
+      <summary class="role-summary">
+        <h2 class="role-title">${c.h}</h2>
+        <span class="role-line">${c.line}</span>
+        <span class="role-toggle"><span class="t-open">See the breakdown</span><span class="t-close">Hide the breakdown</span></span>
+      </summary>
+      <div class="role-cols">
+        <div><h3>Can help with</h3><ul>${li(c.can)}</ul></div>
+        <div><h3>Not their job</h3><ul>${li(c.not)}</ul></div>
+      </div>
+    </details>
   </section>`;
 }
 

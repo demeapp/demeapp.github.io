@@ -266,6 +266,12 @@ function render(q) {
   const cur = all.filter((c) => c.current && matches(c, query));
   if (currentSort === "name") cur.sort((a, b) => a.name.localeCompare(b.name));
   else cur.sort((a, b) => (a.mayor ? -1 : b.mayor ? 1 : a.ward - b.ward));
+  /* Head of government first (v79): the Mayor leads the current
+     list under EVERY sort — the ward sort already puts her first;
+     this keeps her there under Name A–Z too. The chosen sort
+     orders everyone beneath her. */
+  const mayorIdx = cur.findIndex((c) => c.mayor);
+  if (mayorIdx > 0) cur.unshift(cur.splice(mayorIdx, 1)[0]);
   document.getElementById("current").innerHTML = cur.length
     ? cur.map(personCard).join("")
     : earlierHintHTML(query);

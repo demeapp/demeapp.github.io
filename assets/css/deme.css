@@ -2358,14 +2358,37 @@ details.pay-year[open] > summary::after { content: "\25B4"; }
 }
 .profile-def-note a { font-weight: 700; white-space: nowrap; }
 
-/* --- role explainer card (v77 preview): what this level of
-   representative can do for you, in plain language. One card per
-   profile, under the profile head; the copy is identical for every
-   member at the same level. Compact: two short lists side by side,
-   stacked on narrow screens. --- */
+/* --- role explainer strip (v77; compact collapsible form,
+   v79): what this level of representative can do for you, in
+   plain language. One strip per profile, under the profile head;
+   the copy is identical for every member at the same level.
+   Collapsed by default — title, one summary line, and the
+   breakdown toggle on one row (wrapping on narrow screens);
+   the two short lists live inside a native <details>, the same
+   pattern as details.pay-earlier above, and stack on mobile. --- */
 .role-card { margin: 1.4rem 0 0; max-width: 46rem; }
-.role-card h2 { font-size: 1.12rem; margin: 0 0 .7rem; color: var(--navy-ink); }
-.role-cols { display: grid; grid-template-columns: 1fr 1fr; gap: .2rem 1.8rem; }
+.role-summary {
+  cursor: pointer; list-style: none; min-height: 44px;
+  display: flex; flex-wrap: wrap; align-items: baseline;
+  align-content: center; gap: .15rem .8rem;
+}
+.role-summary::-webkit-details-marker { display: none; }
+.role-title { font-size: 1.12rem; margin: 0; color: var(--navy-ink); }
+.role-line { font-size: .93rem; color: var(--ink-soft); }
+.role-toggle {
+  margin-left: auto; font-size: .85rem; font-weight: 700;
+  color: var(--bronze-dark); white-space: nowrap;
+}
+.role-toggle::after { content: "\25B8"; margin-left: .4rem; }
+.role-details[open ] .role-toggle::after { content: "\25BE"; }
+.role-details:not([open ]) .role-cols { display: none; }
+.role-details .t-close { display: none; }
+.role-details[open ] .t-close { display: inline; }
+.role-details[open ] .t-open { display: none; }
+.role-cols {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: .2rem 1.8rem; padding-top: .85rem;
+}
 .role-cols h3 {
   font-size: .78rem; letter-spacing: .06em; text-transform: uppercase;
   color: var(--bronze-dark); margin: 0 0 .4rem;

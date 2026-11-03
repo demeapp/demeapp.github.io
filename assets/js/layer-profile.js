@@ -711,20 +711,27 @@ async function renderMoreLob() {
   if (b) b.addEventListener("click", renderMoreLob);
 }
 
-/* Role explainer card (v77 preview): plain-language "what this
-   level can do for you" — identical for every member at the level.
-   Copy is level-scoped: every item is true of that legislature's
-   members, and the "Not their job" list names the level that
-   does it. */
+/* Role explainer strip (v77; compact collapsible form, v79):
+   plain-language "what this level can do for you" — identical for
+   every member at the level. Collapsed by default: title + one
+   summary line + a "See the breakdown" toggle (native <details>,
+   the .pay-earlier pattern); the two lists sit inside. Copy is
+   level-scoped: every item is true of that legislature's members,
+   and the "Not their job" list names the level that does it.
+   Wording was tightened in v79 (short phrases; the "Can help
+   with" header carries the verb where an item used to repeat
+   "Help with") — meaning unchanged from the fact-checked v77
+   copy. */
 function roleCardHTML(kind) {
   const CARDS = {
     mpp: {
       h: "What an MPP can do for you",
+      line: "Health cards, driver’s licences, ODSP, provincial laws — and what isn’t their job",
       can: [
-        "Help with provincial services — a health card (OHIP), a driver’s licence, ServiceOntario problems",
+        "Provincial services: health cards (OHIP), driver’s licences, ServiceOntario problems",
         "Raise provincial issues: hospitals and health care, education funding, provincial highways",
-        "Help with disability and social-assistance programs (ODSP)",
-        "Vote on provincial laws and the provincial budget",
+        "Disability and social-assistance programs (ODSP)",
+        "Vote on provincial laws and the budget",
       ],
       not: [
         "Garbage, potholes and local roads — <strong>your city councillor</strong>",
@@ -733,11 +740,12 @@ function roleCardHTML(kind) {
     },
     mp: {
       h: "What an MP can do for you",
+      line: "Passports, EI, immigration, pensions, taxes — and what isn’t their job",
       can: [
-        "Help with passports, EI claims and immigration files",
-        "Help with taxes and CRA problems",
-        "Help with CPP and OAS pensions and other federal benefits",
-        "Vote on federal laws and the federal budget",
+        "Passports, EI claims and immigration files",
+        "Taxes and CRA problems",
+        "CPP and OAS pensions, other federal benefits",
+        "Vote on federal laws and the budget",
       ],
       not: [
         "Health cards and driver’s licences — <strong>provincial</strong>",
@@ -749,11 +757,17 @@ function roleCardHTML(kind) {
   if (!c) return "";
   const li = (items) => items.map((t) => `<li>${t}</li>`).join("");
   return `<section class="card role-card" aria-label="${c.h}">
-    <h2>${c.h}</h2>
-    <div class="role-cols">
-      <div><h3>Can help with</h3><ul>${li(c.can)}</ul></div>
-      <div><h3>Not their job</h3><ul>${li(c.not)}</ul></div>
-    </div>
+    <details class="role-details">
+      <summary class="role-summary">
+        <h2 class="role-title">${c.h}</h2>
+        <span class="role-line">${c.line}</span>
+        <span class="role-toggle"><span class="t-open">See the breakdown</span><span class="t-close">Hide the breakdown</span></span>
+      </summary>
+      <div class="role-cols">
+        <div><h3>Can help with</h3><ul>${li(c.can)}</ul></div>
+        <div><h3>Not their job</h3><ul>${li(c.not)}</ul></div>
+      </div>
+    </details>
   </section>`;
 }
 

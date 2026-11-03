@@ -35,6 +35,18 @@
    Read-only by design: no account surface, no weigh-in UI, no
    watch buttons — Parliament Watch / Queen's Park Watch remain
    the held Wave 3B feature. Reading needs no account. */
+/* v76 (Nov 3, 2026): the Queen's Park and Parliament Hill panels
+   moved from the homepage to the top of their own record pages
+   (representatives.html?level=ontario / ?level=canada), where this
+   same script renders them into the same mount ids. The homepage
+   keeps the Toronto panel (fields + tail below) and gains a
+   one-line pointer under it: when a layer's snapshot is fresh
+   (its sittingDate is today or later, or it was harvested within
+   the last two days), the pointer names that layer's first item
+   of business; a stale snapshot leaves the pointer as links only.
+   Each record-page panel also carries an explicit as-of line,
+   filled from the snapshot's sittingDate (data-driven). */
+
 "use strict";
 (() => {
   const byId = (id) => document.getElementById(id);
@@ -150,10 +162,21 @@
     /* Field 5 — Stamp. */
     html += `<p class="up-fresh">${cfg.stamp(up)}</p>`;
     box.innerHTML = html;
+
+    /* As-of line (v76): the record-page panel states its own
+       snapshot date up top, from the feed — never hardcoded. */
+    const asof = document.querySelector(
+      `[data-upcoming-asof="${cfg.key}"]`);
+    if (asof) {
+      asof.textContent = up.sittingDate
+        ? `As of the sitting day of ${fullDate(up.sittingDate)}.`
+        : (up.generatedAt ? `As of ${fullDate(up.generatedAt)}.` : "");
+    }
   }
 
   const LAYERS = [
     {
+      key: "ontario",
       box: "upcoming-ontario", path: "ontario/upcoming.json",
       chamber: "Ontario Legislature", house: "the Assembly",
       paperWord: "order paper",
@@ -166,6 +189,7 @@
       fail: "Upcoming business at Queen's Park could not be loaded just now. The official source is <a href=\"https://www.ola.org/en/current-agenda\" target=\"_blank\" rel=\"noopener\">the Assembly's current agenda</a>.",
     },
     {
+      key: "federal",
       box: "upcoming-federal", path: "federal/upcoming.json",
       chamber: "House of Commons", house: "the House",
       paperWord: "projected business",
@@ -252,6 +276,55 @@
 
     /* Field 5 — Stamp. */
     const stamp = `Agenda data as published ${up ? esc(fmtDate(up.generatedAt)) : ""} · Official source: <a href="https://secure.toronto.ca/council/" target="_blank" rel="noopener">Toronto's council meeting portal</a>.`;
-    tail.innerHTML = `<p class="up-counts">${esc(counts)}</p><p class="up-fresh">${stamp}</p>`;
+    tail.innerHTML = `<p class="up-counts">${esc(counts)}</p><p class="up-fresh">${stamp}</p>`
+      + (items.length ? ""
+        : `<p class="upcoming-line"><a href="representatives.html?level=toronto">See the Toronto record →</a></p>`);
   })();
+
+  /* ---------------- Homepage pointer to the other layers ----------
+     One line under the Toronto panel. A layer earns a headline
+     only while its snapshot is fresh: its sittingDate is today or
+     later, or it was harvested within the last two days. Otherwise
+     the line stays links only — a stale snapshot never dresses
+     itself up as current business. */
+  const elsewhere = byId("upcoming-elsewhere");
+  if (elsewhere) {
+    const dayMs = 86400000;
+    const isFresh = (up) => {
+      if (!up) return false;
+      const today = todayTO();
+      const sd = String(up.sittingDate || "").slice(0, 10);
+      if (sd && sd >= today) return true;
+      const ga = String(up.generatedAt || "").slice(0, 10);
+      if (!ga) return false;
+      const diff = (Date.parse(today) - Date.parse(ga)) / dayMs;
+      return diff >= 0 && diff <= 2;
+    };
+    const headline = (up) => {
+      const items = (up.items || []).slice().sort((a, b) =>
+        (stateOf(a).rank - stateOf(b).rank)
+        || String(a.date).localeCompare(String(b.date)));
+      const pick = items.find((i) => stateOf(i).rank < 2) || items[0];
+      if (!pick) return "";
+      if (pick.bill) return `${pick.bill} · ${pick.stage || "Expected"}`;
+      let t = pick.title || "";
+      if (pick.stage
+          && !t.toLowerCase().includes(pick.stage.toLowerCase())) {
+        t += ` · ${pick.stage}`;
+      }
+      return t;
+    };
+    LAYERS.forEach((cfg) => {
+      const slot = elsewhere.querySelector(
+        `[data-elsewhere-headline="${cfg.key}"]`);
+      if (!slot) return;
+      loadJSON(dataPath(cfg.path))
+        .then((up) => {
+          if (!isFresh(up)) return;
+          const h = headline(up || {});
+          if (h) slot.textContent = `: ${h}`;
+        })
+        .catch(() => { /* links only */ });
+    });
+  }
 })();

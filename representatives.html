@@ -328,6 +328,19 @@
 
 </template>
 <template id="tpl-ontario">
+      <section class="upcoming-sec" id="upcoming-queens-park" aria-labelledby="upcoming-on-h">
+        <p class="kicker">Ontario Legislature · Before the vote</p>
+        <h2 id="upcoming-on-h">Upcoming at Queen's Park</h2>
+        <hr class="rule">
+        <p class="small" style="max-width:44rem">The business the
+        Legislative Assembly of Ontario has published for its sitting
+        day — bills called for debate and any vote formally scheduled
+        — from the day's Orders and Notices Paper. Published for
+        reading; the weigh-in covers Toronto City Council.</p>
+        <p class="up-fresh" data-upcoming-asof="ontario"></p>
+        <div id="upcoming-ontario"><span class="visually-hidden">Loading…</span>
+          <p class="upcoming-line" aria-hidden="true"><span class="skel-el" style="max-width:24rem;margin-bottom:0"></span></p></div>
+      </section>
 
       <p class="lede">Facts only — no grades, no rankings. Recorded-vote
       participation is the share of recorded divisions in a member's
@@ -412,6 +425,19 @@
 
 </template>
 <template id="tpl-canada">
+      <section class="upcoming-sec" id="upcoming-parliament" aria-labelledby="upcoming-fed-h">
+        <p class="kicker">House of Commons · Before the vote</p>
+        <h2 id="upcoming-fed-h">Upcoming at Parliament Hill</h2>
+        <hr class="rule">
+        <p class="small" style="max-width:44rem">The business the
+        House of Commons has published for its sitting day, and the
+        bills closest to a vote — from the House's projected business
+        and LEGISinfo, the Commons' bill tracker. Published for
+        reading; the weigh-in covers Toronto City Council.</p>
+        <p class="up-fresh" data-upcoming-asof="federal"></p>
+        <div id="upcoming-federal"><span class="visually-hidden">Loading…</span>
+          <p class="upcoming-line" aria-hidden="true"><span class="skel-el" style="max-width:24rem;margin-bottom:0"></span></p></div>
+      </section>
 
       <p class="lede">Facts only — no grades, no rankings. Recorded-vote
       participation is the share of recorded divisions in a member's
@@ -578,6 +604,8 @@
   }
 })();
 </script>
+<script src="assets/js/council-status.js"></script>
+<script src="assets/js/upcoming-layers.js"></script>
 <script data-goatcounter="https://demecivic.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </body>
 </html>

@@ -31,6 +31,10 @@
    named deferred division; "On today's order paper" for the
    day's published business; "Expected" for bills at report stage
    or third reading — candidates, never scheduled business.
+   (Nov 5, 2026: the order-paper label, the counts line and the
+   no-vote sentence are date-aware — an item or snapshot that is
+   not today's names its own date, e.g. "On the order paper for
+   Oct 28, 2026", and a past scheduled vote reads "was scheduled".)
 
    Read-only by design: no account surface, no weigh-in UI, no
    watch buttons — Parliament Watch / Queen's Park Watch remain
@@ -67,6 +71,27 @@
   };
   const stateOf = (it) => STATES[it.state] || STATES.expected;
 
+  /* Date-aware chip label (Nov 5, 2026): the "today's order paper"
+     label is earned only by an item dated today (Toronto). An item
+     from an older paper names its own date instead — a stale
+     snapshot never dresses itself up as today's business. */
+  function stateLabel(it) {
+    const st = stateOf(it);
+    if (st.rank === 1) {
+      const d = String(it.date || "").slice(0, 10);
+      if (d && d !== todayTO()) return `On the order paper for ${fmtDate(d)}`;
+    }
+    return st.label;
+  }
+
+  /* "On today's order paper" as a phrase, date-aware: today's paper
+     when the snapshot is today's, the dated paper otherwise. */
+  function paperPhrase(up) {
+    const d = String(up.sittingDate || up.generatedAt || "").slice(0, 10);
+    return d && d !== todayTO()
+      ? `the order paper for ${fmtDate(d)}` : "today's order paper";
+  }
+
   function fieldsBlock(rows) {
     return `<dl class="up-fields">${rows.map(([k, v]) =>
       `<div class="up-field"><dt>${esc(k)}</dt><dd>${v}</dd></div>`).join("")}</dl>`;
@@ -95,7 +120,7 @@
     return `<article class="card">
       <div class="meta"><span>${esc(fmtDate(it.date))}</span>
         <span>${esc(chamber)}</span>
-        <span class="pill ${st.cls}">${esc(st.label)}</span></div>
+        <span class="pill ${st.cls}">${esc(stateLabel(it))}</span></div>
       <h3>${head}</h3>
       ${note ? `<p class="brief">${esc(note)}</p>` : ""}
       ${it.sourceUrl ? `<p class="more"><a href="${esc(it.sourceUrl)}" target="_blank" rel="noopener">Official source <span aria-hidden="true">→</span></a></p>` : ""}
@@ -124,13 +149,15 @@
     if (scheduled.length) {
       const f = scheduled[0];
       const head = f.bill ? `${esc(f.bill)} — ${esc(f.title)}` : esc(f.title);
-      nextVote = `A vote is scheduled for ${esc(fmtDate(f.date))}: ${head}`
+      const verb = String(f.date || "").slice(0, 10) >= todayTO()
+        ? "is scheduled for" : "was scheduled for";
+      nextVote = `A vote ${verb} ${esc(fmtDate(f.date))}: ${head}`
         + (f.stage && !f.title.toLowerCase().includes(f.stage.toLowerCase())
           ? ` (${esc(f.stage)})` : "")
         + (scheduled.length > 1
           ? ` — and ${plural(scheduled.length - 1, "one more", "more")} below.` : ".");
     } else {
-      nextVote = cfg.noVote;
+      nextVote = cfg.noVote(up);
     }
 
     let html = fieldsBlock([
@@ -150,11 +177,21 @@
         <ul class="up-expected">${expected.map(expectedItem).join("")}</ul>`;
     }
 
-    /* Field 4 — Counts (this level only). */
+    /* Field 4 — Counts (this level only). The order-paper count
+       label is date-aware like the chips: a stale snapshot's count
+       names the paper's date, never "today". */
     const c = up.classification || {};
+    const stale = String(up.sittingDate || up.generatedAt || "").slice(0, 10)
+      !== todayTO();
     const parts = cfg.countParts
       .filter(([key]) => typeof c[key] === "number")
-      .map(([key, one, many]) => plural(c[key], one, many));
+      .map(([key, one, many]) => {
+        if (stale && (key === "onTodaysOrderPaper" || key === "onTodaysAgenda")) {
+          const lbl = `on the order paper for ${fmtDate(up.sittingDate || up.generatedAt)}`;
+          return plural(c[key], lbl, lbl);
+        }
+        return plural(c[key], one, many);
+      });
     if (parts.length) {
       html += `<p class="up-counts" style="margin-top:1.1rem">For ${esc(fmtDate(up.sittingDate || up.generatedAt))}: ${parts.join(" · ")}.</p>`;
     }
@@ -180,7 +217,7 @@
       box: "upcoming-ontario", path: "ontario/upcoming.json",
       chamber: "Ontario Legislature", house: "the Assembly",
       paperWord: "order paper",
-      noVote: "No vote is formally scheduled in this paper. The next votes are expected on the items on today's order paper, as they are called.",
+      noVote: (up) => `No vote is formally scheduled in this paper. The next votes are expected on the items on ${paperPhrase(up)}, as they are called.`,
       countParts: [
         ["voteScheduled", "vote scheduled", "votes scheduled"],
         ["onTodaysOrderPaper", "on today's order paper", "on today's order paper"],
@@ -193,7 +230,7 @@
       box: "upcoming-federal", path: "federal/upcoming.json",
       chamber: "House of Commons", house: "the House",
       paperWord: "projected business",
-      noVote: "No recorded division is formally scheduled for this sitting. The next votes are expected on the items on today's order paper, as they are called.",
+      noVote: (up) => `No recorded division is formally scheduled for this sitting. The next votes are expected on the items on ${paperPhrase(up)}, as they are called.`,
       countParts: [
         ["voteScheduled", "vote scheduled", "votes scheduled"],
         ["onTodaysAgenda", "on today's order paper", "on today's order paper"],

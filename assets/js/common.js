@@ -337,6 +337,12 @@ function renderChrome(active) {
               <li><a href="https://www.facebook.com/profile.php?id=1417248804799587" target="_blank" rel="noopener">Facebook<span class="visually-hidden"> (opens in a new tab)</span></a></li>
             </ul>
           </nav>
+          <nav class="footer-group footer-contact" aria-label="Contact">
+            <p class="footer-h">Contact &amp; corrections</p>
+            <ul>
+              <li><a href="mailto:demecivic@proton.me">demecivic@proton.me</a></li>
+            </ul>
+          </nav>
         </div>
         <nav class="footer-group" aria-label="The Record">
           <p class="footer-h">The Record</p>

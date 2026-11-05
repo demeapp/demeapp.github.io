@@ -1,88 +1,10 @@
 {
- "generatedAt": "2026-10-28",
+ "generatedAt": "2026-11-05",
  "layer": "federal",
  "session": "45-1",
- "sittingDate": "2026-10-28",
+ "sittingDate": "2026-11-05",
  "houseState": "sitting",
  "items": [
-  {
-   "ref": "fed:45-1:bill:C-222",
-   "kind": "bill",
-   "bill": "C-222",
-   "title": "Relieving Grieving Parents of an Administrative Burden Act (Evan's Law)",
-   "longTitle": "An Act to amend the Employment Insurance Act and the Canada Labour Code (death of a child)",
-   "stage": "At third reading in the House of Commons",
-   "state": "on_todays_agenda",
-   "date": "2026-10-28",
-   "sourceUrl": "https://www.parl.ca/legisinfo/en/bill/45-1/c-222",
-   "agendaNote": "Private Members' Business today — third reading"
-  },
-  {
-   "ref": "fed:45-1:bill:C-241",
-   "kind": "bill",
-   "bill": "C-241",
-   "title": "National Strategy on Flood and Drought Forecasting Act",
-   "longTitle": "An Act to establish a national strategy respecting flood and drought forecasting",
-   "stage": "At third reading in the House of Commons",
-   "state": "on_todays_agenda",
-   "date": "2026-10-28",
-   "sourceUrl": "https://www.parl.ca/legisinfo/en/bill/45-1/c-241",
-   "agendaNote": "Private Members' Business today — third reading"
-  },
-  {
-   "ref": "fed:45-1:bill:C-247",
-   "kind": "bill",
-   "bill": "C-247",
-   "title": "An Act to amend the Canada Labour Code",
-   "longTitle": "An Act to amend the Canada Labour Code",
-   "stage": "At second reading in the House of Commons",
-   "state": "on_todays_agenda",
-   "date": "2026-10-28",
-   "sourceUrl": "https://www.parl.ca/legisinfo/en/bill/45-1/c-247",
-   "agendaNote": "Private Members' Business today — second reading"
-  },
-  {
-   "ref": "fed:45-1:bill:C-264",
-   "kind": "bill",
-   "bill": "C-264",
-   "title": "An Act to repeal certain restrictions on shipping",
-   "longTitle": "An Act to repeal certain restrictions on shipping",
-   "stage": "At second reading in the House of Commons",
-   "state": "on_todays_agenda",
-   "date": "2026-10-28",
-   "sourceUrl": "https://www.parl.ca/legisinfo/en/bill/45-1/c-264",
-   "agendaNote": "Private Members' Business today — second reading"
-  },
-  {
-   "ref": "fed:45-1:bill:S-209",
-   "kind": "bill",
-   "bill": "S-209",
-   "title": "Protecting Young Persons from Exposure to Pornography Act",
-   "longTitle": "An Act to restrict young persons’ online access to pornographic material",
-   "stage": "At second reading in the House of Commons",
-   "state": "on_todays_agenda",
-   "date": "2026-10-28",
-   "sourceUrl": "https://www.parl.ca/legisinfo/en/bill/45-1/s-209",
-   "agendaNote": "Private Members' Business today — second reading"
-  },
-  {
-   "ref": "fed:45-1:motion:appearance-of-the-prime-minister-before-the-standing-committee-on-finance",
-   "kind": "motion",
-   "title": "Appearance of the Prime Minister before the Standing Committee on Finance",
-   "stage": "Business of Supply (opposition motion)",
-   "state": "on_todays_agenda",
-   "date": "2026-10-28",
-   "sourceUrl": "https://www.ourcommons.ca/en/parliamentary-business"
-  },
-  {
-   "ref": "fed:45-1:motion:concurrence-human-resources-skills-and-social-development-and-the-status-of-persons-with-report-10",
-   "kind": "concurrence",
-   "title": "Concurrence in Report No. 10 — Youth Employment in Canada",
-   "stage": "Standing Committee on Human Resources, Skills and Social Development and the Status of Persons with Disabilities",
-   "state": "on_todays_agenda",
-   "date": "2026-10-28",
-   "sourceUrl": "https://www.ourcommons.ca/en/parliamentary-business"
-  },
   {
    "ref": "fed:45-1:bill:C-221",
    "kind": "bill",
@@ -91,7 +13,7 @@
    "longTitle": "An Act to amend the Corrections and Conditional Release Act (disclosure of information to victims)",
    "stage": "At report stage in the House of Commons",
    "state": "expected",
-   "date": "2026-10-28",
+   "date": "2026-11-05",
    "sourceUrl": "https://www.parl.ca/legisinfo/en/bill/45-1/c-221"
   },
   {
@@ -102,8 +24,19 @@
    "longTitle": "An Act to amend the Food and Drugs Act (natural health products)",
    "stage": "At report stage in the House of Commons",
    "state": "expected",
-   "date": "2026-10-28",
+   "date": "2026-11-05",
    "sourceUrl": "https://www.parl.ca/legisinfo/en/bill/45-1/c-224"
+  },
+  {
+   "ref": "fed:45-1:bill:C-226",
+   "kind": "bill",
+   "bill": "C-226",
+   "title": "National Framework for Food Price Transparency Act",
+   "longTitle": "An Act to establish a national framework to improve food price transparency",
+   "stage": "At report stage in the House of Commons",
+   "state": "expected",
+   "date": "2026-11-05",
+   "sourceUrl": "https://www.parl.ca/legisinfo/en/bill/45-1/c-226"
   },
   {
    "ref": "fed:45-1:bill:C-227",
@@ -113,7 +46,7 @@
    "longTitle": "An Act to establish a national strategy on housing for young Canadians",
    "stage": "At report stage in the House of Commons",
    "state": "expected",
-   "date": "2026-10-28",
+   "date": "2026-11-05",
    "sourceUrl": "https://www.parl.ca/legisinfo/en/bill/45-1/c-227"
   },
   {
@@ -124,19 +57,8 @@
    "longTitle": "An Act to amend the Youth Criminal Justice Act",
    "stage": "At third reading in the House of Commons",
    "state": "expected",
-   "date": "2026-10-28",
+   "date": "2026-11-05",
    "sourceUrl": "https://www.parl.ca/legisinfo/en/bill/45-1/c-231"
-  },
-  {
-   "ref": "fed:45-1:bill:C-235",
-   "kind": "bill",
-   "bill": "C-235",
-   "title": "Respecting Families of Murdered and Brutalized Persons Act",
-   "longTitle": "An Act to amend the Criminal Code (increasing parole ineligibility)",
-   "stage": "At report stage in the House of Commons",
-   "state": "expected",
-   "date": "2026-10-28",
-   "sourceUrl": "https://www.parl.ca/legisinfo/en/bill/45-1/c-235"
   },
   {
    "ref": "fed:45-1:bill:C-238",
@@ -146,7 +68,7 @@
    "longTitle": "An Act to amend the Criminal Code (restitution orders)",
    "stage": "At report stage in the House of Commons",
    "state": "expected",
-   "date": "2026-10-28",
+   "date": "2026-11-05",
    "sourceUrl": "https://www.parl.ca/legisinfo/en/bill/45-1/c-238"
   },
   {
@@ -157,8 +79,19 @@
    "longTitle": "An Act to amend the Canadian Environmental Protection Act, 1999 and the Wrecked, Abandoned or Hazardous Vessels Act",
    "stage": "At report stage in the House of Commons",
    "state": "expected",
-   "date": "2026-10-28",
+   "date": "2026-11-05",
    "sourceUrl": "https://www.parl.ca/legisinfo/en/bill/45-1/c-244"
+  },
+  {
+   "ref": "fed:45-1:bill:C-267",
+   "kind": "bill",
+   "bill": "C-267",
+   "title": "National Framework on the Durability of Electronic Products and Essential Home Appliances Act",
+   "longTitle": "An Act to establish a national framework to promote the durability of electronic products and essential home appliances",
+   "stage": "At report stage in the House of Commons",
+   "state": "expected",
+   "date": "2026-11-05",
+   "sourceUrl": "https://www.parl.ca/legisinfo/en/bill/45-1/c-267"
   },
   {
    "ref": "fed:45-1:bill:C-268",
@@ -168,34 +101,56 @@
    "longTitle": "An Act respecting the Spectrum Policy Framework for Canada",
    "stage": "At report stage in the House of Commons",
    "state": "expected",
-   "date": "2026-10-28",
+   "date": "2026-11-05",
    "sourceUrl": "https://www.parl.ca/legisinfo/en/bill/45-1/c-268"
+  },
+  {
+   "ref": "fed:45-1:bill:C-31",
+   "kind": "bill",
+   "bill": "C-31",
+   "title": "Budget 2025 Implementation Act, No. 2",
+   "longTitle": "A second Act to implement certain provisions of the budget tabled in Parliament on November 4, 2025",
+   "stage": "At report stage in the House of Commons",
+   "state": "expected",
+   "date": "2026-11-05",
+   "sourceUrl": "https://www.parl.ca/legisinfo/en/bill/45-1/c-31"
+  },
+  {
+   "ref": "fed:45-1:bill:S-211",
+   "kind": "bill",
+   "bill": "S-211",
+   "title": "National Framework on Sports Betting Advertising Act",
+   "longTitle": "An Act respecting a national framework on sports betting advertising",
+   "stage": "At report stage in the House of Commons",
+   "state": "expected",
+   "date": "2026-11-05",
+   "sourceUrl": "https://www.parl.ca/legisinfo/en/bill/45-1/s-211"
   }
  ],
  "classification": {
-  "expected": 8,
-  "onTodaysAgenda": 7,
+  "expected": 11,
+  "onTodaysAgenda": 0,
   "voteScheduled": 0,
   "closingFeed": {
    "archiveMaxDivision": 178,
-   "sourceLatestDivision": 181,
-   "sourceLatestDate": "2026-10-26",
-   "archiveGap": 3
+   "sourceLatestDivision": 190,
+   "sourceLatestDate": "2026-11-04",
+   "archiveGap": 12
   }
  },
  "sources": {
   "legisinfo": {
    "url": "https://www.parl.ca/LEGISinfo/en/bills/json?parlses=45-1",
-   "fetchedAt": "2026-10-28T20:25:18Z",
-   "bills": 195
+   "fetchedAt": "2026-11-05T16:05:46Z",
+   "bills": 198
   },
   "agenda": {
    "url": "https://www.ourcommons.ca/en/parliamentary-business",
-   "fetchedAt": "2026-10-28T20:25:18Z"
+   "fetchedAt": "2026-11-05T16:05:46Z"
   },
   "openParliament": {
    "url": "https://api.openparliament.ca/votes/?session=45-1&limit=3",
-   "fetchedAt": "2026-10-28T20:25:18Z"
+   "fetchedAt": "2026-11-05T16:05:46Z"
   }
  }
 }

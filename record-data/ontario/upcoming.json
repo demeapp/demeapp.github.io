@@ -1,49 +1,50 @@
 {
- "generatedAt": "2026-10-28",
+ "generatedAt": "2026-11-05",
  "layer": "ontario",
  "parliament": 44,
  "session": 1,
- "paperNo": 83,
- "sittingDate": "2026-10-28",
+ "paperNo": 88,
+ "sittingDate": "2026-11-05",
  "items": [
   {
-   "ref": "ont:44-1:bill:140",
+   "ref": "ont:44-1:bill:109",
    "kind": "bill",
-   "bill": "Bill 140",
-   "title": "An Act to enact two Acts and to amend various Acts",
-   "stage": "Second Reading",
-   "state": "on_todays_order_paper",
-   "date": "2026-10-28",
-   "sourceUrl": "https://www.ola.org/en/current-agenda"
-  },
-  {
-   "ref": "ont:44-1:motion:pmb-72",
-   "kind": "motion",
-   "title": "Private Members' Motion No. 72 — deferred vote",
-   "stage": "Deferred vote",
+   "bill": "Bill 109",
+   "title": "An Act to enact the Farmland Security Act, 2026 and to amend various Acts",
+   "stage": "Third Reading",
    "state": "vote_scheduled",
-   "date": "2026-10-28",
+   "date": "2026-11-05",
    "sourceUrl": "https://www.ola.org/en/current-agenda"
   },
   {
-   "ref": "ont:44-1:bill:117",
+   "ref": "ont:44-1:bill:143",
    "kind": "bill",
-   "bill": "Bill 117",
-   "title": "An Act to enact the Access (Assistance for Care, Commuting and Essential Specialized Services) Act, 2026",
+   "bill": "Bill 143",
+   "title": "An Act to implement Budget measures and to enact and amend various statutes",
+   "stage": "Second Reading",
+   "state": "vote_scheduled",
+   "date": "2026-11-05",
+   "sourceUrl": "https://www.ola.org/en/current-agenda"
+  },
+  {
+   "ref": "ont:44-1:bill:122",
+   "kind": "bill",
+   "bill": "Bill 122",
+   "title": "An Act to proclaim Romanian Heritage Week",
    "stage": "Private Members' Public Business — Second Reading",
-   "state": "on_todays_order_paper",
-   "date": "2026-10-28",
+   "state": "vote_scheduled",
+   "date": "2026-11-05",
    "sourceUrl": "https://www.ola.org/en/current-agenda"
   }
  ],
  "classification": {
-  "onTodaysOrderPaper": 2,
-  "voteScheduled": 1
+  "onTodaysOrderPaper": 0,
+  "voteScheduled": 3
  },
  "sources": {
   "ordersAndNotices": {
    "url": "https://www.ola.org/en/current-agenda",
-   "fetchedAt": "2026-10-28T20:25:24Z",
+   "fetchedAt": "2026-11-05T16:21:16Z",
    "route": "browser-fetched page text (ola.org refuses shell fetch)"
   }
  }

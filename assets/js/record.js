@@ -532,7 +532,7 @@ function renderUpcoming() {
     upcomingBox.innerHTML = `<div class="calm">
       <p class="calm-head">No Council votes are scheduled in the published agenda right now.</p>
       <p>When the City publishes the next Council agenda, its items will be listed here with briefs — ready to weigh in on before the vote.</p>
-      <p style="margin-bottom:.4rem">Toronto's municipal election is
+      <p style="margin-bottom:.4rem">Toronto's municipal election was
       <strong>October 26, 2026</strong>; the new Council takes office in
       November, and its first agendas follow. In the meantime, the full
       record is open:</p>

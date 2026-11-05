@@ -158,7 +158,7 @@ const DemePostalLookupUI = (() => {
 
   function torontoCard(c, part) {
     const role = c.mayor ? "Mayor of Toronto"
-      : `Councillor · Ward ${c.ward} — ${esc(c.wardName)}`;
+      : `${c.incoming ? "Councillor-elect" : "Councillor"} · Ward ${c.ward} — ${esc(c.wardName)}`;
     const e = part ? part.members[c.slug] : null;
     const partModule = e
       ? participationCardModule(e, {
@@ -348,7 +348,7 @@ const DemePostalLookupUI = (() => {
         const cue = (S.cues && (S.cues[n] || S.cues[String(n)])) || "";
         return `<button type="button" class="wf-candidate" data-pl-pick="toronto:${n}">
           <span class="wf-cand-ward">Ward ${n} — ${esc(c.wardName)}</span>
-          <span class="wf-cand-who">Councillor ${esc(c.name)}</span>
+          <span class="wf-cand-who">${c.incoming ? "Councillor-elect" : "Councillor"} ${esc(c.name)}${c.incoming ? " — takes office Nov 15" : ""}</span>
           <span class="wf-cand-cue">${esc(cue)}</span>
         </button>`;
       }).join("");

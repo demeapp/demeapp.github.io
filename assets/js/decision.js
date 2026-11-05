@@ -418,7 +418,7 @@ async function init() {
     }
   } else {
     vz.innerHTML = `<div class="notice"><strong>No recorded vote.</strong>
-      Made without a name-by-name vote, so no member's position is attached to it in the public record. Only about 9 in every 100 Council decisions has one.</div>`;
+      Made without a name-by-name vote, so no member's position is attached to it in the public record. Only about 9 in every 100 decisions across Council, boards and committees has one.</div>`;
   }
 
   const t = detail && detail.text;

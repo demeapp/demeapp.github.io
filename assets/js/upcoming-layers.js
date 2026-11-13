@@ -249,16 +249,18 @@
       .catch(() => { box.innerHTML = `<p class="upcoming-line">${cfg.fail}</p>`; });
   });
 
-  /* ---------------- Toronto: the same fields on the existing panel ---
+  /* ---------------- Toronto: counts + stamp under the status band ---
      The Toronto panel's business list (status band + cards) is
      rendered by the homepage script from the same two files; this
-     block adds fields 1, 2, 4 and 5 around it, from
-     council-status.json + upcoming.json, so the three panels
-     carry the same fields in the same order. */
+     block adds the counts and the as-published stamp under it,
+     from council-status.json + upcoming.json. (v81, Nov 13, 2026:
+     the homepage panel is ONE status block — the fields block it
+     used to add, Next sitting / Next expected vote, repeated the
+     status band's facts and is no longer rendered here. The
+     legislative panels above keep the shared-fields model.) */
   (async () => {
-    const head = byId("upcoming-toronto-fields");
     const tail = byId("upcoming-toronto-tail");
-    if (!head || !tail) return;
+    if (!tail) return;
     let up = null, st = null;
     try { up = await loadJSON(dataPath("upcoming.json")); } catch (e) { /* degrade: no block */ }
     try { st = await loadJSON(dataPath("council-status.json")); } catch (e) { /* degrade: partial */ }
@@ -267,39 +269,8 @@
     const items = ((up && up.items) || [])
       .filter((u) => u && u.body === "City Council");
 
-    /* Field 1 — Next sitting. */
-    const dates = new Set();
-    if (st) {
-      (st.meetingDates || []).forEach((d) => dates.add(d));
-      if (st.firstNewTermMeetingDate) dates.add(st.firstNewTermMeetingDate);
-    }
-    items.forEach((u) => { if (u.date) dates.add(String(u.date).slice(0, 10)); });
-    const future = [...dates].filter((d) => d >= today).sort();
-    let nextSitting;
-    if (future.length) {
-      nextSitting = future[0] === today
-        ? `${esc(fullDate(future[0]))} — City Council meets today.`
-        : `${esc(fullDate(future[0]))} — the next City Council meeting on the published schedule.`;
-    } else if (st && st.newTermStart) {
-      nextSitting = `The new Council takes office on ${esc(fullDate(st.newTermStart))}. The date of its first meeting has not been published yet${st.scheduleCheckedOn ? ` (schedule checked ${esc(fmtDate(st.scheduleCheckedOn))})` : ""}.`;
-    } else {
-      nextSitting = "Not published yet.";
-    }
-
-    /* Field 2 — Next expected vote. */
-    let nextVote;
-    if (items.length) {
-      const first = items.map((u) => String(u.date).slice(0, 10)).sort()[0];
-      nextVote = `City Council votes on ${esc(fullDate(first))} — ${plural(items.length, "published item is", "published items are")} listed below.`;
-    } else {
-      nextVote = "No Council vote is scheduled in a published agenda right now. The first items of the new term will appear here when the City publishes its agenda.";
-    }
-    head.innerHTML = fieldsBlock([
-      ["Next sitting", nextSitting],
-      ["Next expected vote", nextVote],
-    ]);
-
-    /* Field 4 — Counts. */
+    /* Counts — the Council count, with board business named as
+       board business in the same line, never as Council business. */
     const cl = (up && up.classification) || {};
     const fc = typeof cl.futureCouncilItems === "number"
       ? cl.futureCouncilItems : items.length;

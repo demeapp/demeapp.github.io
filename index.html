@@ -253,6 +253,41 @@
 .pl-note { margin-top: .8rem; }
 .pl-caveat { margin-top: 1.1rem; }
 .pl-unpickrow { margin-top: .6rem; }
+/* v81 preview (Nov 13, 2026 — external audit fixes): the hero gains
+   a one-line plain definition under the subhead, and the postal
+   lookup panel moves up into the hero beside the search (same
+   panel, same [data-postal-lookup] mount — the #starthere-scoped
+   panel rules above are mirrored here under .hero). Homepage-local. */
+.hero-def {
+  font-size: 1.06rem; line-height: 1.5; color: #D9E4F0;
+  margin: 0 0 1rem; max-width: 44rem;
+}
+.hero .finder-panel {
+  margin-top: 1.6rem; border-radius: 16px; position: relative;
+  overflow: hidden; padding-top: 1.5rem; text-align: left;
+  box-shadow: 0 10px 30px rgba(10, 31, 56, .10);
+}
+.hero .finder-panel::before {
+  content: ""; position: absolute; inset: 0 0 auto 0; height: 5px;
+  background: linear-gradient(90deg, var(--navy) 0%, var(--bronze) 100%);
+}
+.hero .pl-panel-h { font-size: 1.3rem; margin: 0 0 .4rem; color: var(--navy-ink); }
+.hero .finder-row { display: flex; gap: .6rem; flex-wrap: wrap; margin-top: .8rem; }
+.hero .finder-row input[type="text"] {
+  flex: 1 1 14rem; min-width: 0; font-size: 1.05rem;
+  padding: .75rem 1rem; border: 1.5px solid var(--line);
+  border-radius: 12px; background: #fff; color: var(--ink);
+}
+.hero .finder-row input[type="text"]:focus {
+  outline: none; border-color: var(--bronze-dark);
+  box-shadow: 0 0 0 3px var(--mint-light);
+}
+.hero .finder-row .btn { border-radius: 12px; }
+/* The hero's on-dark text colours must not wash out the panel's
+   light card: restore the panel's own ink colours inside it. */
+.hero .finder-panel .small { color: var(--ink-soft); }
+.hero .finder-panel .small a,
+.hero .finder-panel .wf-note a { color: var(--bronze-dark); }
 </style>
 </head>
 <body>
@@ -265,6 +300,7 @@
       <p class="kicker">Federal · Provincial · Municipal · The record, in plain language</p>
       <h1 id="hero-h">THE RECORD IS PUBLIC. NOW IT'S READABLE.</h1>
       <p class="hero-sub">The decisions and the recorded votes — Parliament Hill, Queen's Park, and City Hall, in plain language.</p>
+      <p class="hero-def">Deme is the public record of your elected representatives — what was decided, and how each of them voted. Free, and non-partisan.</p>
       <p class="lede">Search a topic, a street, a riding, or a name.</p>
       <form class="searchbox" action="explore.html" method="get" role="search">
         <label class="visually-hidden" for="q">Search the record</label>
@@ -273,7 +309,7 @@
                autocomplete="off">
         <button class="btn" type="submit">Search</button>
       </form>
-      <p class="small" style="margin:.9rem 0 0">Anywhere in Ontario, your MPP and MP are in the <a href="representatives.html?level=canada">Canada</a> and <a href="representatives.html?level=ontario">Ontario</a> directories · <a href="#starthere">In Toronto? Find your councillor by postal code →</a></p>
+      <p class="small" style="margin:.9rem 0 0">Anywhere in Ontario, your MPP and MP are in the <a href="representatives.html?level=canada">Canada</a> and <a href="representatives.html?level=ontario">Ontario</a> directories · <a href="#find-reps">In Toronto? Find your councillor by postal code →</a></p>
       <p class="search-hint-row"><span class="search-hint" aria-hidden="true"><kbd>/</kbd> to focus search</span></p>
       <div class="askchips" aria-label="Example searches">
         <span class="askchips-label">Ask in plain words, or search a name or riding:</span>
@@ -295,17 +331,46 @@
         chips.forEach(function (c) { box.appendChild(c); });
       })();
       </script>
+      <div class="card finder-panel" id="find-reps" data-postal-lookup>
+        <h3 class="pl-panel-h">Who represents me?</h3>
+        <p class="small" style="max-width:44rem;margin-top:0">Enter your
+          postal code to find your representatives in Ontario — your MPP
+          and your MP, and in Toronto your councillor too. Where an area
+          crosses a district line, Deme shows you every district and you
+          pick yours — it never guesses.</p>
+        <form class="finder-row" data-pl-form role="search">
+          <label class="visually-hidden" for="pl-q">Your postal code</label>
+          <input type="text" id="pl-q" data-pl-input placeholder="M5V 1J1" autocomplete="off" spellcheck="false">
+          <button class="btn" type="submit">Find</button>
+        </form>
+        <p class="wf-privacy">Only the first 3 characters of a postal
+          code are used, right here in your browser — your full postal
+          code is never stored or sent anywhere. A lookup only:
+          nothing is saved, and it sets nothing on your profile.</p>
+        <div data-pl-result aria-live="polite"></div>
+      </div>
       <div class="account-entry">
-        <a class="btn bronze" href="my-record.html#account-zone">Create an account</a>
+        <a class="signin-link" href="my-record.html#account-zone">Create an account</a>
         <a class="signin-link" href="my-record.html#account-zone">Sign in</a>
       </div>
-      <p class="small account-reason">Have your say on upcoming Toronto Council decisions,
+      <p class="small account-reason">Weigh in on upcoming Toronto Council decisions,
       watch the ones that matter to you — we'll email you the outcome
       once — and see where you stand against your councillor.</p>
 
       <div class="statband" id="statband" aria-label="The record in numbers — the House of Commons, the Ontario Legislature and Toronto City Council">
-        <!-- filled from data/stats.json + the Ontario and Canada layers' meta files -->
+        <!-- Pre-filled with the current counts (v81, Nov 13, 2026) so
+             all three legislatures show together even before the data
+             loads; the homepage script replaces this from
+             data/stats.json + the Ontario and Canada layers' meta
+             files, in this same format. -->
+        <div class="stat"><span class="num" data-count="4856">4,856</span>
+          <span class="lab">recorded divisions — the House of Commons (2004–2026)</span></div>
+        <div class="stat"><span class="num" data-count="505">505</span>
+          <span class="lab">recorded divisions — the Ontario Legislature (2018–2026)</span></div>
+        <div class="stat"><span class="num" data-count="33795">33,795</span>
+          <span class="lab">decisions in the archive — Toronto City Council (2018–2026)</span></div>
       </div>
+      <p class="small" style="max-width:46rem;margin:.9rem 0 0">Divisions are recorded votes — each one a count of who voted yes and who voted no. Toronto's number counts decisions instead, and most Toronto decisions carry no recorded vote.</p>
       <p class="counting-note on-dark"><span class="pulse-dot" aria-hidden="true"></span>And counting — the record keeps growing as new decisions and recorded divisions are added.</p>
     </section>
 
@@ -314,8 +379,9 @@
       <h2 id="layers-h">Three legislatures, one record</h2>
       <hr class="rule">
       <p style="max-width:44rem">Deme covers the representatives you elect
-      at every level — the same format for each — votes, participation,
-      disclosures, and a plain-language brief on Toronto decisions.</p>
+      at every level — the same format for each — votes, recorded-vote
+      participation, disclosures, and a plain-language brief on Toronto
+      decisions.</p>
       <div class="layers-grid">
         <a class="layer-card" href="representatives.html?level=canada">
           <span class="layer-k">Federal · Canada</span>
@@ -331,10 +397,9 @@
           <span class="layer-k">Provincial · Ontario</span>
           <span class="layer-t">The Ontario Legislature</span>
           <span class="layer-d">Every current and earlier MPP with a
-          recorded vote in the archive: 505 recorded divisions — the
-          42nd Parliament's 190 extracted from House documents, the
-          43rd and 44th from the Assembly's official searchable record —
-          disclosure statements, 2005–2025, and lobbying
+          recorded vote in the archive: 505 recorded divisions —
+          the Assembly has not sat since.<br>
+          Disclosure statements, 2005–2025, and lobbying
           registrations.</span>
           <span class="layer-fresh" data-fresh="ontario">Divisions current to June 2, 2026</span>
           <span class="layer-go">See the Ontario record →</span>
@@ -345,28 +410,17 @@
           <span class="layer-d">33,795 decisions across Council,
           boards and committees — 33,777 of them in
           plain language — members' votes, declared interests and
-          expenses — and a say before the next vote.</span>
+          expenses — and a say before the next vote. Most decisions
+          carry no recorded vote.</span>
           <span class="layer-fresh" data-fresh="toronto">Decisions current to October 19, 2026</span>
           <span class="layer-go">See the Toronto record →</span>
         </a>
       </div>
     </section>
 
-    <section class="reveal" aria-labelledby="lob-teaser-h">
-      <p class="kicker">House of Commons · Coming soon</p>
-      <h2 id="lob-teaser-h">Watching the lobbying record</h2>
-      <hr class="rule">
-      <p style="max-width:44rem">The Canada layer's lobbying record —
-      172,864 filed communications — is free on the profile of every MP they name,
-      on the same record as their votes, expenses and disclosures.
-      Deme is building subscriber tools for watching it across the
-      whole joined record: alerts when a company or issue starts
-      lobbying a member, search by who met whom, digests and
-      exports — for journalists, researchers, civic and community
-      groups, and the public. The record itself stays free;
-      subscribers will pay for the tools, never the record.</p>
-      <p><a class="btn secondary" href="lobbying.html">See what's coming for subscribers →</a></p>
-    </section>
+    <!-- v81 preview: the lobbying/subscriber section moved below the
+         Toronto sections and collapsed to a short block (audit fix,
+         Nov 13, 2026) — see after "Latest in the record". -->
 
     <section class="reveal upcoming-sec" aria-labelledby="upcoming-h">
       <p class="kicker">Toronto City Council · Before the vote</p>
@@ -376,7 +430,11 @@
       Toronto layer of the record: upcoming items and the weigh-in
       cover Toronto City Council, from the City's own published
       agendas.</p>
-      <div id="upcoming-toronto-fields"></div>
+      <!-- v81 preview: ONE status block — the Next sitting / Next
+           expected vote fields block is gone (it repeated the status
+           band's facts); the band below plus the counts/footnote
+           tail carry the section. upcoming-layers.js now renders
+           the tail only. -->
       <div id="upcoming"><span class="visually-hidden">Loading…</span>
         <p class="upcoming-line" aria-hidden="true"><span class="skel-el" style="max-width:24rem;margin-bottom:0"></span></p></div>
       <div id="upcoming-toronto-tail"></div>
@@ -388,11 +446,24 @@
       <p class="kicker">All three legislatures · Catch up</p>
       <h2 id="latest-h">Latest in the record</h2>
       <hr class="rule">
-      <p class="small" style="max-width:44rem">The Commons record runs to October 8, 2026, and the Ontario record to the Assembly's sitting of June 2, 2026. Toronto City Council's last meeting in this record was July 29, 2026, and the newly elected Council takes office November 15, 2026.</p>
+      <p class="small" style="max-width:44rem">The Commons record is current to October 8, 2026, and the Ontario record is current to the Assembly's sitting of June 2, 2026. Toronto City Council's last meeting in this record was July 29, 2026, and the newly elected Council takes office November 15, 2026.</p>
       <div class="cards two" id="latest"><span class="visually-hidden">Loading…</span>
         <div class="skel-card" aria-hidden="true"><span class="skel-el sm"></span><span class="skel-el title"></span><span class="skel-el"></span><span class="skel-el short"></span></div>
         <div class="skel-card" aria-hidden="true"><span class="skel-el sm"></span><span class="skel-el title"></span><span class="skel-el"></span><span class="skel-el short"></span></div></div>
       <p style="margin-top:1.2rem"><a class="btn secondary" href="explore.html">Browse the record</a></p>
+    </section>
+
+    <section class="reveal" aria-labelledby="lob-teaser-h">
+      <p class="kicker">House of Commons · Coming soon</p>
+      <h2 id="lob-teaser-h">Watching the lobbying record</h2>
+      <hr class="rule">
+      <p style="max-width:44rem">The Canada layer's lobbying record —
+      172,864 filed communications — is free on the profile of every MP
+      they name. Deme is building subscriber tools for watching it
+      across the whole joined record: alerts, search, digests and
+      exports. The record itself stays free; subscribers will pay
+      for the tools, never the record.</p>
+      <p><a class="btn secondary" href="lobbying.html">See what's coming for subscribers →</a></p>
     </section>
 
     <section class="reveal" id="starthere" aria-labelledby="starthere-h">
@@ -414,24 +485,9 @@
           <p style="margin:0"><a class="btn bronze" href="my-record.html">Set your Toronto ward in My Record</a></p>
         </div>
       </div>
-      <div class="card finder-panel" data-postal-lookup>
-        <h3 class="pl-panel-h">Who represents me?</h3>
-        <p class="small" style="max-width:44rem;margin-top:0">Enter your
-          postal code to find your representatives in Ontario — your MPP
-          and your MP, and in Toronto your councillor too. Where an area
-          crosses a district line, Deme shows you every district and you
-          pick yours — it never guesses.</p>
-        <form class="finder-row" data-pl-form role="search">
-          <label class="visually-hidden" for="pl-q">Your postal code</label>
-          <input type="text" id="pl-q" data-pl-input placeholder="M5V 1J1" autocomplete="off" spellcheck="false">
-          <button class="btn" type="submit">Find</button>
-        </form>
-        <p class="wf-privacy">Only the first 3 characters of a postal
-          code are used, right here in your browser — your full postal
-          code is never stored or sent anywhere. A lookup only:
-          nothing is saved, and it sets nothing on your profile.</p>
-        <div data-pl-result aria-live="polite"></div>
-      </div>
+      <!-- v81 preview: the "Who represents me?" postal-lookup panel
+           moved up into the hero (audit fix, Nov 13, 2026) — the same
+           [data-postal-lookup] mount, now #find-reps in the hero. -->
     </section>
 
     <section class="reveal" id="foryou" hidden><div id="foryou-body"></div></section>
@@ -448,7 +504,7 @@
       <p class="kicker">All three legislatures · Read one story</p>
       <h2 id="threads-h">Stories over time</h2>
       <hr class="rule">
-      <p style="max-width:44rem">Each story groups decisions or recorded divisions whose titles or subject terms share a set of words, and lists them newest first, year by year. Toronto's stories draw on council decisions from January 2018 onward, Ontario's on Assembly divisions from July 2018 onward, and the federal stories on Commons divisions from October 2004 onward — each level's own span, because that is how far back each record in this archive goes. Every story runs to its latest item, shown on its card, and the cards within each legislature are ordered by that date, newest first. A story is a finding aid only — the record itself is unchanged, and an item can appear in more than one story. Not every item can be grouped: a division identified only by a motion number, with no subject in its published title — “Government motion 1”, for example — appears in no story, and a theme exists at a level only where that level's record supports one.</p>
+      <p style="max-width:44rem">Each story groups decisions or recorded divisions on one subject and lists them newest first, year by year, over each legislature's own span of the record. A story is a finding aid only — the record itself is unchanged, and an item can appear in more than one story.</p>
       <h3 class="layer-k story-group-h first">House of Commons — divisions</h3>
       <div class="thread-grid" id="threads-canada"></div>
       <h3 class="layer-k story-group-h">Ontario Legislature — divisions</h3>
@@ -474,25 +530,8 @@
       voted. <a href="about.html">How Deme works →</a></p>
     </section>
 
-    <section class="reveal" aria-labelledby="gap-h">
-      <p class="kicker">The gap Deme fills</p>
-      <h2 id="gap-h">Built to complete the record, not just cover it</h2>
-      <hr class="rule">
-      <p style="max-width:44rem">Existing tools do part of the job. Deme picks up where they stop: a plain-language record matched to your ridings and your ward.</p>
-      <ul class="gap-list">
-        <li class="gap-row">
-          <p class="who">GovTrack<small>United States</small></p>
-          <p><strong>What it does well:</strong> tracks US Congress bills and member voting records.</p>
-          <p><strong>What's missing:</strong> US federal only — nothing for Canadians at any level.</p>
-        </li>
-        <li class="gap-row">
-          <p class="who">openparliament.ca<small>Canada (federal)</small></p>
-          <p><strong>What it does well:</strong> excellent, searchable Hansard and House of Commons votes.</p>
-          <p><strong>What's missing:</strong> stops at the federal level — nothing provincial or municipal, and no ward-level view.</p>
-        </li>
-      </ul>
-      <p class="gap-close">Deme is built for all three levels of government in Canada: matched to your ward and your ridings · your positions save to your account — only yours to see, never tallied · a permanent public record. <a href="explore.html">Start searching the record →</a></p>
-    </section>
+    <!-- v81 preview: "The gap Deme fills" competitor comparison moved
+         to about.html (audit fix, Nov 13, 2026). -->
 
     <section class="reveal" aria-labelledby="vision-h">
       <h2 id="vision-h" class="visually-hidden">Our vision</h2>

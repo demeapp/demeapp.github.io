@@ -533,8 +533,8 @@ function renderUpcoming() {
       <p class="calm-head">No Council votes are scheduled in the published agenda right now.</p>
       <p>When the City publishes the next Council agenda, its items will be listed here with briefs — ready to weigh in on before the vote.</p>
       <p style="margin-bottom:.4rem">Toronto's municipal election was
-      <strong>October 26, 2026</strong>; the new Council takes office in
-      November, and its first agendas follow. In the meantime, the full
+      <strong>October 26, 2026</strong>; the new Council took office
+      November 15, 2026, and its first agendas follow. In the meantime, the full
       record is open:</p>
       <p><a class="btn secondary small" href="explore.html">Browse past decisions</a></p>
     </div>`;

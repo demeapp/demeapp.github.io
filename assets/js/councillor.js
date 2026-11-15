@@ -1277,9 +1277,9 @@ async function init() {
     memberSlug = person.slug;
     restLoaded = memberTotal <= memberRows.length;
     if (!memberRows.length) {
-      wrap.innerHTML = person.incoming
+      wrap.innerHTML = (person.incoming || person.votesCast == null)
         ? `<div class="notice">No recorded votes yet. ${esc(person.name)}’s
-          record begins with the new council term on November 15, 2026 —
+          record began with the new council term on November 15, 2026 —
           this section fills as the new council votes.</div>`
         : `<div class="notice">This member's recorded votes
         predate the searchable decision archive, which begins in 2018.

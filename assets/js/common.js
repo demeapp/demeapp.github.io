@@ -539,7 +539,7 @@ function participationBlockHTML(entry, layer, unit, head, composition) {
       return `<div class="part-row"><span class="part-lab">${esc(t.label)}</span><span class="part-nofig">— counted in the career total; no separate term figure.</span></div>`;
     }
     if (t.noFigure === "no-record-yet") {
-      return `<div class="part-row"><span class="part-lab">${esc(t.label)}</span><span class="part-nofig">— no recorded votes yet; the term begins November 15, 2026.</span></div>`;
+      return `<div class="part-row"><span class="part-lab">${esc(t.label)}</span><span class="part-nofig">— no recorded votes yet; the term began November 15, 2026.</span></div>`;
     }
     const q = t.qualifier === "partial"
       ? `<span class="q"> · from Jan 2018 (partial term in the record)</span>`

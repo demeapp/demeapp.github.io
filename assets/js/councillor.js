@@ -887,17 +887,14 @@ async function renderHaveYourSay(person) {
         are listed in the record. To reach the office that holds the seat
         today, use the City's official
         <a href="${CITY_MEMBERS_URL}" target="_blank" rel="noopener noreferrer">members of Council directory<span class="visually-hidden"> (opens in a new tab)</span></a>.</p>`;
-  const intro = person.incoming
-    ? `${esc(person.name)} was elected on October 26, 2026, and takes
-       office when the new term begins on November 15, 2026. Until then,
-       the City's
-       <a href="${CITY_MEMBERS_URL}" target="_blank" rel="noopener noreferrer">members of Council directory<span class="visually-hidden"> (opens in a new tab)</span></a>
-       reaches the office that holds the seat today. The committee
-       route below still applies to questions before council.`
-    : person.current
-    ? (simpleOn()
+  const intro = person.current
+    ? (person.votesCast == null
+      ? (simpleOn()
+        ? `The record above will show what ${esc(person.name)} decides and how they vote, starting with the new term. If you live in ${where}, this person represents you at City Hall. How to reach their office is below. While an item is still being decided, you can also speak to the committee yourself.`
+        : `The record above will show what ${esc(person.name)} decides and how they vote, starting with the new term. If you live in ${where}, this is your representative at City Hall — the office route is below. While an item is still being decided, you can speak to the committee considering it yourself.`)
+      : (simpleOn()
       ? `The record above shows what ${esc(person.name)} decided and how they voted. If you live in ${where}, this person represents you at City Hall. How to reach their office is below. While an item is still being decided, you can also speak to the committee yourself.`
-      : `The record above is what ${esc(person.name)} decided and how they voted. If you live in ${where}, this is your representative at City Hall — the office route is below. While an item is still being decided, you can speak to the committee considering it yourself.`)
+      : `The record above is what ${esc(person.name)} decided and how they voted. If you live in ${where}, this is your representative at City Hall — the office route is below. While an item is still being decided, you can speak to the committee considering it yourself.`))
     : `${esc(person.name)} no longer sits on Council, so the office that
        held this seat has changed hands — the City's
        <a href="${CITY_MEMBERS_URL}" target="_blank" rel="noopener noreferrer">members of Council directory<span class="visually-hidden"> (opens in a new tab)</span></a>
@@ -1197,18 +1194,17 @@ async function init() {
   const basisNote = person.participationBasis === "aggregate"
     ? `<p class="small" style="max-width:44rem">${simpleT("This member's participation and vote totals include their pre-2018 aggregate record, kept as totals rather than stored vote by vote; some or all of those earlier votes are not stored individually.", "This member's participation and vote totals include their record from before 2018, kept as totals, not stored one by one. Some or all of those earlier votes are not stored one by one.")}</p>`
     : "";
-  /* Incoming members (v32): elected Oct 26, 2026; the new term begins
-     Nov 15, 2026. A first-time member (votesCast null in the data)
+  /* No-record members: a member whose votesCast is null in the data
      has no record yet — the page says so in one notice instead of
      printing dash tiles and figure explanations for votes that do
-     not exist. An incoming member WITH a stored record (Layton,
-     2010–2022) keeps his real figures; the notice labels them as his
-     earlier service so nothing reads as new-term record. */
-  const emptyRecord = !!person.incoming && person.votesCast == null;
-  const incomingNote = person.incoming
-    ? (emptyRecord
-      ? `<div class="notice" style="max-width:44rem;margin-top:1rem">Elected on October 26, 2026 (unofficial results). ${esc(person.name)}’s term begins November 15, 2026, and their record on Deme begins with the new term — there are no votes to show yet, and none are invented. No official portrait for the new term yet — the City of Toronto has not published one, so their initials stand in until it does; Deme adds official portraits as the City publishes them.</div>`
-      : `<div class="notice" style="max-width:44rem;margin-top:1rem">Elected on October 26, 2026 (unofficial results). ${esc(person.name)} returns to the Ward ${person.ward} seat he held in 2018–2022. The record below is from his earlier service on council (2010–2022); his new-term record begins November 15, 2026.</div>`)
+     not exist. (v32 introduced this treatment for the incoming 2026
+     members, gated on the incoming flag; the v83 flip cleared those
+     flags, so the gate is now the null record itself — the same
+     condition the history notice below uses. A member WITH a stored
+     record, e.g. Layton 2010–2022, keeps his real figures.) */
+  const emptyRecord = person.votesCast == null;
+  const noRecordNote = emptyRecord
+    ? `<div class="notice" style="max-width:44rem;margin-top:1rem">No recorded votes yet — ${esc(person.name)}’s record began with the new council term on November 15, 2026; this page fills as the new council votes.</div>`
     : "";
   /* Summary band (card/profile redesign, Oct 30, 2026): one band
      with SHORT labels replaces the three heavy stat boxes, and the
@@ -1230,7 +1226,7 @@ async function init() {
     ${basisNote}
     <p class="small" style="max-width:44rem">${simpleT("The totals count the full record: member totals back to 2006; item-by-item rows from 2018. The “Interest declared on a recorded vote · stepped back (since Jun 2023)” figure is narrower: the voting record flags a declared interest only from June 2023, so the figure counts flagged votes from June 2023 on — earlier declarations were recorded as ordinary absences. A dash marks a member whose service ended before June 2023.", "The totals cover the full record. Member totals go back to 2006. Rows for each item start in 2018. The “Declared an interest on a recorded vote · did not vote (since Jun 2023)” number is narrower. The voting record only marks a declared interest from June 2023. So the number counts marked votes from June 2023 on. Before that, declarations were written down as plain absences. A dash means the member’s service ended before June 2023.")}</p>`;
   box.innerHTML = `
-    <p class="kicker">${person.incoming ? "Incoming council" : person.current ? "Council today" : "Earlier member"}</p>
+    <p class="kicker">${person.current ? "Council today" : "Earlier member"}</p>
     <div class="profile-head">${avatarHTML(person, "lg")}
       <div>
         <h1>${esc(person.name)}</h1>
@@ -1240,7 +1236,7 @@ async function init() {
       </div>
     </div>
     ${roleCardHTML(person.mayor ? "mayor" : "councillor")}
-    ${incomingNote}${emptyRecord ? partBlock : ""}${recordSection}
+    ${noRecordNote}${emptyRecord ? partBlock : ""}${recordSection}
     <p style="margin-top:1rem">${emptyRecord ? "" : `<button class="btn secondary" id="record-card-btn"
       type="button">${simpleT("Print / download record card", "Print or download record card")}</button>
     `}<button class="btn secondary" id="share-btn" type="button">Copy link</button></p>

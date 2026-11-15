@@ -707,7 +707,10 @@ function repCardFooterHTML(items) {
    files live in assets/headshots/, named by slug): the 19 returning
    current members, plus Mike Layton — back on council for
    2026–2030 after earlier service, shown in his City of Toronto
-   Archives portrait from that earlier service — plus 36 earlier
+   Archives portrait from that earlier service — plus 4 of the 6
+   other members first elected in 2026, whose official portraits
+   the City published on their profile pages on November 15, 2026
+   (portrait wave, Nov 15, 2026) — plus 36 earlier
    members: 20 whose portraits come from the City of Toronto
    Archives' official councillor portrait series (Fonds 219,
    Series 2311, via Wikimedia Commons — polish wave, Oct 22, 2026;
@@ -716,22 +719,24 @@ function repCardFooterHTML(items) {
    6 recovered from the City's official portrait files (portrait
    wave, Oct 30, 2026), and 3 whose official portraits already
    serve in another layer of this site and are referenced in place
-   (PHOTO_PATHS below). The other 6 members elected in 2026 are
-   NOT in the set: the City has not published official portraits
-   of the incoming council, so they get the initials disc — no
+   (PHOTO_PATHS below). The remaining 2 members elected in 2026
+   (Curran Stikuts, Nate Erskine-Smith) are NOT in the set: as of
+   November 15, 2026 the City has not published official portraits
+   on their profile pages, so they get the initials disc — no
    campaign or substitute photos are used.
    Everyone else — and any photo that fails to load — falls back
    to the member's initials on a navy disc, the old build's
    pattern. */
 const PHOTO_SLUGS = new Set(["alejandra-bravo", "amber-morley",
-  "anthony-perruzza", "ausma-malik", "brad-bradford", "chris-moise",
+  "anthony-perruzza", "ausma-malik", "brad-bradford", "chiara-padovani",
+  "chris-moise", "diana-chan-mcnally",
   "dianne-saxe", "frances-nunziata", "gord-perks", "jamaal-myers",
   "james-pasternak", "jon-burnside", "josh-matlow", "lily-cheng",
   "michael-thompson", "mike-colle", "mike-layton", "neethan-shan",
   "nick-mantas", "olivia-chow",
   "parthi-kandavel", "paul-ainslie", "paula-fletcher",
-  "rachel-chernos-lin", "shelley-carroll", "stephen-holyday",
-  "vincent-crisanti",
+  "rachel-chernos-lin", "sara-ehrhardt", "shaun-chen", "shelley-carroll",
+  "stephen-holyday", "vincent-crisanti",
   "adam-vaughan", "ana-bailao", "chin-lee", "cynthia-lai",
   "denzil-minnan-wong", "doug-ford",
   "doug-holyday", "frank-di-giorgio", "gary-crawford", "janet-davis",

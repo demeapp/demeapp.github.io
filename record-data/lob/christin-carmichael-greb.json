@@ -4,7 +4,7 @@
   "name": "City of Toronto Lobbyist Registry (Open Data)",
   "url": "https://open.toronto.ca/dataset/lobbyist-registry/"
  },
- "snapshot": "2026-10-23",
+ "snapshot": "2026-11-14",
  "count": 388,
  "communications": [
   {
@@ -153,7 +153,7 @@
   },
   {
    "date": "2018-03-23",
-   "lobbyist": "Danielle Chin",
+   "lobbyist": "Danielle Binder",
    "organization": "Building Industry and Land Development Association",
    "client": null,
    "subject": "Planning and Development, Planning Policy / Study",
@@ -161,7 +161,7 @@
   },
   {
    "date": "2018-03-20",
-   "lobbyist": "Danielle Chin",
+   "lobbyist": "Danielle Binder",
    "organization": "Building Industry and Land Development Association",
    "client": null,
    "subject": "Planning and Development, Planning Policy / Study",
@@ -1017,14 +1017,6 @@
   },
   {
    "date": "2016-12-07",
-   "lobbyist": "Chris Schafer",
-   "organization": "Uber Canada, Inc.",
-   "client": null,
-   "subject": "By-law / Regulation;Economic Development;Licences / Licensing",
-   "method": "Emails"
-  },
-  {
-   "date": "2016-12-07",
    "lobbyist": "Von Palmer",
    "organization": "Toronto Regional Real Estate Board",
    "client": null,
@@ -1038,6 +1030,14 @@
    "client": null,
    "subject": "Budget",
    "method": "Meetings"
+  },
+  {
+   "date": "2016-12-07",
+   "lobbyist": "Chris Schafer",
+   "organization": "Uber Canada, Inc.",
+   "client": null,
+   "subject": "By-law / Regulation;Economic Development;Licences / Licensing",
+   "method": "Emails"
   },
   {
    "date": "2016-12-02",
@@ -1393,14 +1393,6 @@
   },
   {
    "date": "2016-07-11",
-   "lobbyist": "Chris Schafer",
-   "organization": "Uber Canada, Inc.",
-   "client": null,
-   "subject": "By-law / Regulation;Economic Development;Licences / Licensing",
-   "method": "Emails"
-  },
-  {
-   "date": "2016-07-11",
    "lobbyist": "Steven Heller",
    "organization": "Plazacorp Investments Limited",
    "client": null,
@@ -1422,6 +1414,14 @@
    "client": null,
    "subject": "Planning and Development, Combined Application",
    "method": "Meetings"
+  },
+  {
+   "date": "2016-07-11",
+   "lobbyist": "Chris Schafer",
+   "organization": "Uber Canada, Inc.",
+   "client": null,
+   "subject": "By-law / Regulation;Economic Development;Licences / Licensing",
+   "method": "Emails"
   },
   {
    "date": "2016-07-11",
@@ -1745,19 +1745,19 @@
   },
   {
    "date": "2016-02-19",
-   "lobbyist": "Chris Schafer",
-   "organization": "Uber Canada, Inc.",
-   "client": null,
-   "subject": "By-law / Regulation;Economic Development;Licences / Licensing",
-   "method": "Emails"
-  },
-  {
-   "date": "2016-02-19",
    "lobbyist": "Paula J Tenuta",
    "organization": "Building Industry and Land Development Association",
    "client": null,
    "subject": "Planning and Development: Planning Policies/Studies",
    "method": "Other or unreported"
+  },
+  {
+   "date": "2016-02-19",
+   "lobbyist": "Chris Schafer",
+   "organization": "Uber Canada, Inc.",
+   "client": null,
+   "subject": "By-law / Regulation;Economic Development;Licences / Licensing",
+   "method": "Emails"
   },
   {
    "date": "2016-02-09",

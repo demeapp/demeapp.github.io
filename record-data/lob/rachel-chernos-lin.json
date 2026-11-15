@@ -4,9 +4,17 @@
   "name": "City of Toronto Lobbyist Registry (Open Data)",
   "url": "https://open.toronto.ca/dataset/lobbyist-registry/"
  },
- "snapshot": "2026-10-23",
- "count": 104,
+ "snapshot": "2026-11-14",
+ "count": 105,
  "communications": [
+  {
+   "date": "2026-11-05",
+   "lobbyist": "Norman Cheesman",
+   "organization": "Cheesman & Associates",
+   "client": "Toronto Industry Network",
+   "subject": "Economic Development;Environment;Planning and Development, Planning Policy / Study",
+   "method": "Emails"
+  },
   {
    "date": "2026-10-08",
    "lobbyist": "Gary E. Benner",

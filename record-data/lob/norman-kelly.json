@@ -4,7 +4,7 @@
   "name": "City of Toronto Lobbyist Registry (Open Data)",
   "url": "https://open.toronto.ca/dataset/lobbyist-registry/"
  },
- "snapshot": "2026-10-23",
+ "snapshot": "2026-11-14",
  "count": 760,
  "communications": [
   {
@@ -313,14 +313,6 @@
   },
   {
    "date": "2017-09-27",
-   "lobbyist": "Cameron MacKinnon",
-   "organization": "MacKinnon Public Affairs",
-   "client": "North American Development Group",
-   "subject": "Planning and Development Application, Official Plan;Planning and Development Application, Zoning By-law",
-   "method": "Meetings"
-  },
-  {
-   "date": "2017-09-27",
    "lobbyist": "Michael Cooperman",
    "organization": "North American Development Group",
    "client": null,
@@ -341,6 +333,14 @@
    "organization": "Bousfields Inc.",
    "client": "North American Development Group",
    "subject": "Planning and Development Application, Zoning By-law",
+   "method": "Meetings"
+  },
+  {
+   "date": "2017-09-27",
+   "lobbyist": "Cameron MacKinnon",
+   "organization": "MacKinnon Public Affairs",
+   "client": "North American Development Group",
+   "subject": "Planning and Development Application, Official Plan;Planning and Development Application, Zoning By-law",
    "method": "Meetings"
   },
   {
@@ -513,19 +513,19 @@
   },
   {
    "date": "2017-05-29",
-   "lobbyist": "Cameron MacKinnon",
-   "organization": "MacKinnon Public Affairs",
-   "client": "North American Development Group",
-   "subject": "Planning and Development Application, Official Plan;Planning and Development Application, Zoning By-law",
-   "method": "Other or unreported"
-  },
-  {
-   "date": "2017-05-29",
    "lobbyist": "Emily Reisman",
    "organization": "Urban Strategies Inc.",
    "client": "Gemterra developments Corporation",
    "subject": "Planning and Development, Combined Application",
    "method": "Meetings"
+  },
+  {
+   "date": "2017-05-29",
+   "lobbyist": "Cameron MacKinnon",
+   "organization": "MacKinnon Public Affairs",
+   "client": "North American Development Group",
+   "subject": "Planning and Development Application, Official Plan;Planning and Development Application, Zoning By-law",
+   "method": "Other or unreported"
   },
   {
    "date": "2017-05-17",
@@ -534,14 +534,6 @@
    "client": null,
    "subject": "Economic Development;Licences / Licensing;Planning and Development Application, Zoning By-law",
    "method": "Emails"
-  },
-  {
-   "date": "2017-05-15",
-   "lobbyist": "Cameron MacKinnon",
-   "organization": "MacKinnon Public Affairs",
-   "client": "North American Development Group",
-   "subject": "Planning and Development Application, Official Plan;Planning and Development Application, Zoning By-law",
-   "method": "Meetings"
   },
   {
    "date": "2017-05-15",
@@ -557,6 +549,14 @@
    "organization": "North American Development Group",
    "client": null,
    "subject": "Planning and Development, Combined Application",
+   "method": "Meetings"
+  },
+  {
+   "date": "2017-05-15",
+   "lobbyist": "Cameron MacKinnon",
+   "organization": "MacKinnon Public Affairs",
+   "client": "North American Development Group",
+   "subject": "Planning and Development Application, Official Plan;Planning and Development Application, Zoning By-law",
    "method": "Meetings"
   },
   {
@@ -1641,18 +1641,18 @@
   },
   {
    "date": "2015-11-18",
-   "lobbyist": "Cameron MacKinnon",
-   "organization": "MacKinnon Public Affairs",
-   "client": "North American Development Group",
-   "subject": "Planning and Development Application, Official Plan;Planning and Development Application, Zoning By-law",
-   "method": "Meetings"
-  },
-  {
-   "date": "2015-11-18",
    "lobbyist": "Shauna Levy",
    "organization": "Design Exchange",
    "client": null,
    "subject": "Arts / Culture;Grants / Funding",
+   "method": "Meetings"
+  },
+  {
+   "date": "2015-11-18",
+   "lobbyist": "Cameron MacKinnon",
+   "organization": "MacKinnon Public Affairs",
+   "client": "North American Development Group",
+   "subject": "Planning and Development Application, Official Plan;Planning and Development Application, Zoning By-law",
    "method": "Meetings"
   },
   {
@@ -3265,14 +3265,6 @@
   },
   {
    "date": "2014-02-28",
-   "lobbyist": "Andrew Macdonald",
-   "organization": "Uber Canada, Inc.",
-   "client": null,
-   "subject": "By-law / Regulation;Economic Development;Licences / Licensing",
-   "method": "Meetings"
-  },
-  {
-   "date": "2014-02-28",
    "lobbyist": "Paul Scrivener",
    "organization": "Toronto Industry Network",
    "client": null,
@@ -3285,6 +3277,14 @@
    "organization": "Beck Taxi Limited",
    "client": null,
    "subject": "By-law / Regulation;Licences / Licensing",
+   "method": "Meetings"
+  },
+  {
+   "date": "2014-02-28",
+   "lobbyist": "Andrew Macdonald",
+   "organization": "Uber Canada, Inc.",
+   "client": null,
+   "subject": "By-law / Regulation;Economic Development;Licences / Licensing",
    "method": "Meetings"
   },
   {

@@ -4,9 +4,25 @@
   "name": "City of Toronto Lobbyist Registry (Open Data)",
   "url": "https://open.toronto.ca/dataset/lobbyist-registry/"
  },
- "snapshot": "2026-10-23",
- "count": 1243,
+ "snapshot": "2026-11-14",
+ "count": 1245,
  "communications": [
+  {
+   "date": "2026-11-09",
+   "lobbyist": "Gary E. Benner",
+   "organization": "Underground Consulting Incorporated",
+   "client": null,
+   "subject": "Transit / TTC;Transportation - Metrolinx",
+   "method": "Emails"
+  },
+  {
+   "date": "2026-11-05",
+   "lobbyist": "Norman Cheesman",
+   "organization": "Cheesman & Associates",
+   "client": "Toronto Industry Network",
+   "subject": "Economic Development;Environment;Planning and Development, Planning Policy / Study",
+   "method": "Emails"
+  },
   {
    "date": "2026-10-16",
    "lobbyist": "Robert Bader",
@@ -441,19 +457,19 @@
   },
   {
    "date": "2025-11-13",
-   "lobbyist": "Michelle German",
-   "organization": "StrategyCorp Inc.",
-   "client": "Republic Services",
-   "subject": "By-law / Regulation;Environment;Garbage / Recycling",
-   "method": "Emails"
-  },
-  {
-   "date": "2025-11-13",
    "lobbyist": "Andrew Shapiera",
    "organization": "Canadian Federation of Independent Business",
    "client": null,
    "subject": "Budget;Transit / TTC;Transportation - Metrolinx",
    "method": "Other or unreported"
+  },
+  {
+   "date": "2025-11-13",
+   "lobbyist": "Michelle German",
+   "organization": "StrategyCorp Inc.",
+   "client": "Republic Services",
+   "subject": "By-law / Regulation;Environment;Garbage / Recycling",
+   "method": "Emails"
   },
   {
    "date": "2025-11-13",
@@ -548,7 +564,7 @@
    "lobbyist": "Thais Osso",
    "organization": "RioCan Real Estate Investment Trust",
    "client": null,
-   "subject": "Planning and Development Application;Planning and Development Application, Zoning By-law",
+   "subject": "Planning and Development Application;Zoning By-law",
    "method": "Emails"
   },
   {
@@ -556,7 +572,7 @@
    "lobbyist": "Melissa Bruzzese",
    "organization": "RioCan Real Estate Investment Trust",
    "client": null,
-   "subject": "Planning and Development Application;Planning and Development Application, Zoning By-law",
+   "subject": "Planning and Development Application;Zoning By-law",
    "method": "Emails"
   },
   {
@@ -564,7 +580,7 @@
    "lobbyist": "Thais Osso",
    "organization": "RioCan Real Estate Investment Trust",
    "client": null,
-   "subject": "Planning and Development Application;Zoning By-law",
+   "subject": "Planning and Development Application;Planning and Development Application, Zoning By-law",
    "method": "Emails"
   },
   {
@@ -572,7 +588,7 @@
    "lobbyist": "Melissa Bruzzese",
    "organization": "RioCan Real Estate Investment Trust",
    "client": null,
-   "subject": "Planning and Development Application;Zoning By-law",
+   "subject": "Planning and Development Application;Planning and Development Application, Zoning By-law",
    "method": "Emails"
   },
   {
@@ -660,7 +676,7 @@
    "lobbyist": "Logan Tao",
    "organization": "RioCan Real Estate Investment Trust",
    "client": null,
-   "subject": "Planning and Development Application;Planning and Development Application, Zoning By-law",
+   "subject": "Planning and Development Application;Zoning By-law",
    "method": "Emails"
   },
   {
@@ -668,7 +684,7 @@
    "lobbyist": "Thais Osso",
    "organization": "RioCan Real Estate Investment Trust",
    "client": null,
-   "subject": "Planning and Development Application;Planning and Development Application, Zoning By-law",
+   "subject": "Planning and Development Application;Zoning By-law",
    "method": "Emails"
   },
   {
@@ -676,7 +692,7 @@
    "lobbyist": "Melissa Bruzzese",
    "organization": "RioCan Real Estate Investment Trust",
    "client": null,
-   "subject": "Planning and Development Application;Planning and Development Application, Zoning By-law",
+   "subject": "Planning and Development Application;Zoning By-law",
    "method": "Emails"
   },
   {
@@ -684,7 +700,7 @@
    "lobbyist": "Logan Tao",
    "organization": "RioCan Real Estate Investment Trust",
    "client": null,
-   "subject": "Planning and Development Application;Zoning By-law",
+   "subject": "Planning and Development Application;Planning and Development Application, Zoning By-law",
    "method": "Emails"
   },
   {
@@ -692,7 +708,7 @@
    "lobbyist": "Thais Osso",
    "organization": "RioCan Real Estate Investment Trust",
    "client": null,
-   "subject": "Planning and Development Application;Zoning By-law",
+   "subject": "Planning and Development Application;Planning and Development Application, Zoning By-law",
    "method": "Emails"
   },
   {
@@ -700,7 +716,7 @@
    "lobbyist": "Melissa Bruzzese",
    "organization": "RioCan Real Estate Investment Trust",
    "client": null,
-   "subject": "Planning and Development Application;Zoning By-law",
+   "subject": "Planning and Development Application;Planning and Development Application, Zoning By-law",
    "method": "Emails"
   },
   {
@@ -985,19 +1001,19 @@
   },
   {
    "date": "2025-04-10",
-   "lobbyist": "Kim Wright",
-   "organization": "Wright Strategies",
-   "client": "Youth Without Shelter",
-   "subject": "Affordable Housing;Shelters;Restart and rebuild related to Covid19 pandemic",
-   "method": "Meetings"
-  },
-  {
-   "date": "2025-04-10",
    "lobbyist": "Neil Pattison",
    "organization": "Graywood Developments Ltd.",
    "client": null,
    "subject": "Planning and Development Application;Planning and Development Application, Zoning By-law;Planning and Development Application, Site Plan",
    "method": "Emails"
+  },
+  {
+   "date": "2025-04-10",
+   "lobbyist": "Kim Wright",
+   "organization": "Wright Strategies",
+   "client": "Youth Without Shelter",
+   "subject": "Affordable Housing;Shelters;Restart and rebuild related to Covid19 pandemic",
+   "method": "Meetings"
   },
   {
    "date": "2025-04-02",
@@ -1068,7 +1084,7 @@
    "lobbyist": "Thais Osso",
    "organization": "RioCan Real Estate Investment Trust",
    "client": null,
-   "subject": "Planning and Development Application;Planning and Development Application, Zoning By-law",
+   "subject": "Planning and Development Application;Zoning By-law",
    "method": "Emails"
   },
   {
@@ -1076,7 +1092,7 @@
    "lobbyist": "Melissa Bruzzese",
    "organization": "RioCan Real Estate Investment Trust",
    "client": null,
-   "subject": "Planning and Development Application;Planning and Development Application, Zoning By-law",
+   "subject": "Planning and Development Application;Zoning By-law",
    "method": "Emails"
   },
   {
@@ -1084,7 +1100,7 @@
    "lobbyist": "Thais Osso",
    "organization": "RioCan Real Estate Investment Trust",
    "client": null,
-   "subject": "Planning and Development Application;Zoning By-law",
+   "subject": "Planning and Development Application;Planning and Development Application, Zoning By-law",
    "method": "Emails"
   },
   {
@@ -1092,7 +1108,7 @@
    "lobbyist": "Melissa Bruzzese",
    "organization": "RioCan Real Estate Investment Trust",
    "client": null,
-   "subject": "Planning and Development Application;Zoning By-law",
+   "subject": "Planning and Development Application;Planning and Development Application, Zoning By-law",
    "method": "Emails"
   },
   {
@@ -1241,18 +1257,18 @@
   },
   {
    "date": "2024-11-06",
-   "lobbyist": "Jake Brockman",
-   "organization": "Uber Canada, Inc.",
-   "client": null,
-   "subject": "By-law / Regulation;Economic Development;Licences / Licensing",
-   "method": "Emails"
-  },
-  {
-   "date": "2024-11-06",
    "lobbyist": "Austin Spademan",
    "organization": "Bird Canada",
    "client": null,
    "subject": "By-law / Regulation;Transportation - Cycling / Bicycle Lanes;Transportation - Roads / Bridges",
+   "method": "Emails"
+  },
+  {
+   "date": "2024-11-06",
+   "lobbyist": "Jake Brockman",
+   "organization": "Uber Canada, Inc.",
+   "client": null,
+   "subject": "By-law / Regulation;Economic Development;Licences / Licensing",
    "method": "Emails"
   },
   {
@@ -1491,14 +1507,6 @@
    "date": "2024-06-27",
    "lobbyist": "Kim Wright",
    "organization": "Wright Strategies",
-   "client": "Toronto Outdoor Picture Show",
-   "subject": "Attractions / Tourism;Parks / Open Space;Recreation",
-   "method": "Meetings"
-  },
-  {
-   "date": "2024-06-27",
-   "lobbyist": "Kim Wright",
-   "organization": "Wright Strategies",
    "client": "Nieuport Aviation Infrastructure Partners",
    "subject": "Economic Development;Transportation",
    "method": "Emails"
@@ -1528,6 +1536,14 @@
    "method": "Emails"
   },
   {
+   "date": "2024-06-27",
+   "lobbyist": "Kim Wright",
+   "organization": "Wright Strategies",
+   "client": "Toronto Outdoor Picture Show",
+   "subject": "Attractions / Tourism;Parks / Open Space;Recreation",
+   "method": "Meetings"
+  },
+  {
    "date": "2024-06-21",
    "lobbyist": "Jim Karygiannis",
    "organization": "GTA Strategies",
@@ -1545,18 +1561,18 @@
   },
   {
    "date": "2024-06-06",
-   "lobbyist": "Laura Miller",
-   "organization": "Uber Canada, Inc.",
-   "client": null,
-   "subject": "By-law / Regulation;Economic Development;Licences / Licensing",
-   "method": "Meetings"
-  },
-  {
-   "date": "2024-06-06",
    "lobbyist": "Kim Wright",
    "organization": "Wright Strategies",
    "client": "Uber Canada, Inc.",
    "subject": "By-law / Regulation;Economic Development;Transportation - Roads / Bridges",
+   "method": "Meetings"
+  },
+  {
+   "date": "2024-06-06",
+   "lobbyist": "Laura Miller",
+   "organization": "Uber Canada, Inc.",
+   "client": null,
+   "subject": "By-law / Regulation;Economic Development;Licences / Licensing",
    "method": "Meetings"
   },
   {
@@ -3377,18 +3393,18 @@
   },
   {
    "date": "2021-05-28",
-   "lobbyist": "Janet De Silva",
-   "organization": "Toronto Region Board of Trade",
-   "client": null,
-   "subject": "Budget;Economic Development;Planning and Development, Planning Policy / Study",
-   "method": "Emails"
-  },
-  {
-   "date": "2021-05-28",
    "lobbyist": "Mike Kasij",
    "organization": "Sutera Canada Inc.",
    "client": null,
    "subject": "Grants / Funding;Hazardous Waste;Real Estate / Property (City-owned)",
+   "method": "Emails"
+  },
+  {
+   "date": "2021-05-28",
+   "lobbyist": "Janet De Silva",
+   "organization": "Toronto Region Board of Trade",
+   "client": null,
+   "subject": "Budget;Economic Development;Planning and Development, Planning Policy / Study",
    "method": "Emails"
   },
   {
@@ -5897,14 +5913,6 @@
   },
   {
    "date": "2017-06-22",
-   "lobbyist": "Chris Schafer",
-   "organization": "Uber Canada, Inc.",
-   "client": null,
-   "subject": "By-law / Regulation;Economic Development;Licences / Licensing",
-   "method": "Emails"
-  },
-  {
-   "date": "2017-06-22",
    "lobbyist": "Amir Remtulla",
    "organization": "Amir Remtulla and Associates",
    "client": "Tribute Communities",
@@ -5926,6 +5934,14 @@
    "client": null,
    "subject": "Planning and Development, Planning Policy / Study;Planning and Development Application, Zoning By-law;Planning and Development Application, Site Plan",
    "method": "Meetings"
+  },
+  {
+   "date": "2017-06-22",
+   "lobbyist": "Chris Schafer",
+   "organization": "Uber Canada, Inc.",
+   "client": null,
+   "subject": "By-law / Regulation;Economic Development;Licences / Licensing",
+   "method": "Emails"
   },
   {
    "date": "2017-06-22",

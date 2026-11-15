@@ -4,7 +4,7 @@
   "name": "City of Toronto Lobbyist Registry (Open Data)",
   "url": "https://open.toronto.ca/dataset/lobbyist-registry/"
  },
- "snapshot": "2026-10-23",
+ "snapshot": "2026-11-14",
  "count": 943,
  "communications": [
   {
@@ -689,18 +689,18 @@
   },
   {
    "date": "2024-11-06",
-   "lobbyist": "Jake Brockman",
-   "organization": "Uber Canada, Inc.",
-   "client": null,
-   "subject": "By-law / Regulation;Economic Development;Licences / Licensing",
-   "method": "Emails"
-  },
-  {
-   "date": "2024-11-06",
    "lobbyist": "Austin Spademan",
    "organization": "Bird Canada",
    "client": null,
    "subject": "By-law / Regulation;Transportation - Cycling / Bicycle Lanes;Transportation - Roads / Bridges",
+   "method": "Emails"
+  },
+  {
+   "date": "2024-11-06",
+   "lobbyist": "Jake Brockman",
+   "organization": "Uber Canada, Inc.",
+   "client": null,
+   "subject": "By-law / Regulation;Economic Development;Licences / Licensing",
    "method": "Emails"
   },
   {
@@ -1609,19 +1609,19 @@
   },
   {
    "date": "2023-06-01",
-   "lobbyist": "Jake Brockman",
-   "organization": "Uber Canada, Inc.",
-   "client": null,
-   "subject": "By-law / Regulation;Economic Development;Licences / Licensing",
-   "method": "Emails"
-  },
-  {
-   "date": "2023-06-01",
    "lobbyist": "Graham Frank",
    "organization": "Hullmark Developments Ltd.",
    "client": null,
    "subject": "Planning and Development;Combined Application",
    "method": "Meetings"
+  },
+  {
+   "date": "2023-06-01",
+   "lobbyist": "Jake Brockman",
+   "organization": "Uber Canada, Inc.",
+   "client": null,
+   "subject": "By-law / Regulation;Economic Development;Licences / Licensing",
+   "method": "Emails"
   },
   {
    "date": "2023-05-19",
@@ -4705,19 +4705,19 @@
   },
   {
    "date": "2015-09-28",
-   "lobbyist": "Ian Black",
-   "organization": "Uber Canada, Inc.",
-   "client": null,
-   "subject": "By-law / Regulation;Economic Development;Licences / Licensing",
-   "method": "Emails"
-  },
-  {
-   "date": "2015-09-28",
    "lobbyist": "Gail Souter",
    "organization": "Beck Taxi Limited",
    "client": null,
    "subject": "By-law / Regulation;Licences / Licensing",
    "method": "Written"
+  },
+  {
+   "date": "2015-09-28",
+   "lobbyist": "Ian Black",
+   "organization": "Uber Canada, Inc.",
+   "client": null,
+   "subject": "By-law / Regulation;Economic Development;Licences / Licensing",
+   "method": "Emails"
   },
   {
    "date": "2015-09-28",
@@ -4745,14 +4745,6 @@
   },
   {
    "date": "2015-09-23",
-   "lobbyist": "Chris Schafer",
-   "organization": "Uber Canada, Inc.",
-   "client": null,
-   "subject": "By-law / Regulation;Economic Development;Licences / Licensing",
-   "method": "Meetings"
-  },
-  {
-   "date": "2015-09-23",
    "lobbyist": "Kristine Hubbard",
    "organization": "Beck Taxi Limited",
    "client": null,
@@ -4765,6 +4757,14 @@
    "organization": "Beck Taxi Limited",
    "client": null,
    "subject": "By-law / Regulation;Licences / Licensing",
+   "method": "Meetings"
+  },
+  {
+   "date": "2015-09-23",
+   "lobbyist": "Chris Schafer",
+   "organization": "Uber Canada, Inc.",
+   "client": null,
+   "subject": "By-law / Regulation;Economic Development;Licences / Licensing",
    "method": "Meetings"
   },
   {
@@ -5129,7 +5129,7 @@
   },
   {
    "date": "2015-01-13",
-   "lobbyist": "Ian Black",
+   "lobbyist": "Chris Schafer",
    "organization": "Uber Canada, Inc.",
    "client": null,
    "subject": "By-law / Regulation;Economic Development;Licences / Licensing",
@@ -5137,7 +5137,7 @@
   },
   {
    "date": "2015-01-13",
-   "lobbyist": "Chris Schafer",
+   "lobbyist": "Ian Black",
    "organization": "Uber Canada, Inc.",
    "client": null,
    "subject": "By-law / Regulation;Economic Development;Licences / Licensing",

@@ -4,7 +4,7 @@
   "name": "City of Toronto Lobbyist Registry (Open Data)",
   "url": "https://open.toronto.ca/dataset/lobbyist-registry/"
  },
- "snapshot": "2026-10-23",
+ "snapshot": "2026-11-14",
  "count": 311,
  "communications": [
   {
@@ -945,18 +945,18 @@
   },
   {
    "date": "2024-11-06",
-   "lobbyist": "Jake Brockman",
-   "organization": "Uber Canada, Inc.",
-   "client": null,
-   "subject": "By-law / Regulation;Economic Development;Licences / Licensing",
-   "method": "Emails"
-  },
-  {
-   "date": "2024-11-06",
    "lobbyist": "Austin Spademan",
    "organization": "Bird Canada",
    "client": null,
    "subject": "By-law / Regulation;Transportation - Cycling / Bicycle Lanes;Transportation - Roads / Bridges",
+   "method": "Emails"
+  },
+  {
+   "date": "2024-11-06",
+   "lobbyist": "Jake Brockman",
+   "organization": "Uber Canada, Inc.",
+   "client": null,
+   "subject": "By-law / Regulation;Economic Development;Licences / Licensing",
    "method": "Emails"
   },
   {
@@ -1491,14 +1491,6 @@
    "date": "2024-02-20",
    "lobbyist": "Kim Wright",
    "organization": "Wright Strategies",
-   "client": "Youth Without Shelter",
-   "subject": "Affordable Housing;Shelters;Restart and rebuild related to Covid19 pandemic",
-   "method": "Meetings"
-  },
-  {
-   "date": "2024-02-20",
-   "lobbyist": "Kim Wright",
-   "organization": "Wright Strategies",
    "client": "Nieuport Aviation Infrastructure Partners",
    "subject": "Economic Development;Transportation",
    "method": "Meetings"
@@ -1509,6 +1501,14 @@
    "organization": "Wright Strategies",
    "client": "Collective Resource Services, LLC",
    "subject": "Economic Development;Energy;Environment",
+   "method": "Meetings"
+  },
+  {
+   "date": "2024-02-20",
+   "lobbyist": "Kim Wright",
+   "organization": "Wright Strategies",
+   "client": "Youth Without Shelter",
+   "subject": "Affordable Housing;Shelters;Restart and rebuild related to Covid19 pandemic",
    "method": "Meetings"
   },
   {

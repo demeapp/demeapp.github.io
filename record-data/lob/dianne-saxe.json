@@ -4,7 +4,7 @@
   "name": "City of Toronto Lobbyist Registry (Open Data)",
   "url": "https://open.toronto.ca/dataset/lobbyist-registry/"
  },
- "snapshot": "2026-10-23",
+ "snapshot": "2026-11-14",
  "count": 741,
  "communications": [
   {
@@ -99,16 +99,16 @@
    "date": "2026-07-15",
    "lobbyist": "Kim Wright",
    "organization": "Wright Strategies",
-   "client": "Youth Without Shelter",
-   "subject": "Affordable Housing;Shelters;Restart and rebuild related to Covid19 pandemic",
+   "client": "16607179 Canada Foundation",
+   "subject": "Arts / Culture;Environment;Parks / Open Space",
    "method": "Meetings"
   },
   {
    "date": "2026-07-15",
    "lobbyist": "Kim Wright",
    "organization": "Wright Strategies",
-   "client": "16607179 Canada Foundation",
-   "subject": "Arts / Culture;Environment;Parks / Open Space",
+   "client": "Youth Without Shelter",
+   "subject": "Affordable Housing;Shelters;Restart and rebuild related to Covid19 pandemic",
    "method": "Meetings"
   },
   {
@@ -873,7 +873,7 @@
   },
   {
    "date": "2025-07-03",
-   "lobbyist": "Adam J. Brown",
+   "lobbyist": "Jessica Smuskowitz",
    "organization": "Brown Dryer Gold Smuskowitz",
    "client": "Starlight Investments",
    "subject": "Planning and Development Application, Official Plan;Planning and Development Application, Zoning By-law",
@@ -881,7 +881,7 @@
   },
   {
    "date": "2025-07-03",
-   "lobbyist": "Jessica Smuskowitz",
+   "lobbyist": "Adam J. Brown",
    "organization": "Brown Dryer Gold Smuskowitz",
    "client": "Starlight Investments",
    "subject": "Planning and Development Application, Official Plan;Planning and Development Application, Zoning By-law",
@@ -1169,14 +1169,6 @@
   },
   {
    "date": "2025-04-01",
-   "lobbyist": "Courtney Heron-Monk",
-   "organization": "Bousfields Inc.",
-   "client": "Helberg Properties Limited",
-   "subject": "Planning and Development Application, Zoning By-law;Planning and Development Application, Minor Variance",
-   "method": "Meetings"
-  },
-  {
-   "date": "2025-04-01",
    "lobbyist": "Nadine Sarich",
    "organization": "Helberg Properties Limited",
    "client": null,
@@ -1189,6 +1181,14 @@
    "organization": "Collage Works",
    "client": "Helberg Properties Limited",
    "subject": "Planning and Development;Planning and Development Application, Official Plan;Planning and Development Application, Zoning By-law",
+   "method": "Meetings"
+  },
+  {
+   "date": "2025-04-01",
+   "lobbyist": "Courtney Heron-Monk",
+   "organization": "Bousfields Inc.",
+   "client": "Helberg Properties Limited",
+   "subject": "Planning and Development Application, Zoning By-law;Planning and Development Application, Minor Variance",
    "method": "Meetings"
   },
   {
@@ -1905,19 +1905,11 @@
   },
   {
    "date": "2024-11-06",
-   "lobbyist": "Jake Brockman",
-   "organization": "Uber Canada, Inc.",
+   "lobbyist": "Austin Spademan",
+   "organization": "Bird Canada",
    "client": null,
-   "subject": "By-law / Regulation;Economic Development;Licences / Licensing",
+   "subject": "By-law / Regulation;Transportation - Cycling / Bicycle Lanes;Transportation - Roads / Bridges",
    "method": "Emails"
-  },
-  {
-   "date": "2024-11-06",
-   "lobbyist": "Adam J. Brown",
-   "organization": "Brown Dryer Gold Smuskowitz",
-   "client": "Starlight Investments",
-   "subject": "Planning and Development Application, Official Plan;Planning and Development Application, Zoning By-law",
-   "method": "Meetings"
   },
   {
    "date": "2024-11-06",
@@ -1929,10 +1921,18 @@
   },
   {
    "date": "2024-11-06",
-   "lobbyist": "Austin Spademan",
-   "organization": "Bird Canada",
+   "lobbyist": "Adam J. Brown",
+   "organization": "Brown Dryer Gold Smuskowitz",
+   "client": "Starlight Investments",
+   "subject": "Planning and Development Application, Official Plan;Planning and Development Application, Zoning By-law",
+   "method": "Meetings"
+  },
+  {
+   "date": "2024-11-06",
+   "lobbyist": "Jake Brockman",
+   "organization": "Uber Canada, Inc.",
    "client": null,
-   "subject": "By-law / Regulation;Transportation - Cycling / Bicycle Lanes;Transportation - Roads / Bridges",
+   "subject": "By-law / Regulation;Economic Development;Licences / Licensing",
    "method": "Emails"
   },
   {
@@ -2283,14 +2283,6 @@
    "date": "2024-07-24",
    "lobbyist": "Kim Wright",
    "organization": "Wright Strategies",
-   "client": "Toronto Outdoor Picture Show",
-   "subject": "Attractions / Tourism;Parks / Open Space;Recreation",
-   "method": "Meetings"
-  },
-  {
-   "date": "2024-07-24",
-   "lobbyist": "Kim Wright",
-   "organization": "Wright Strategies",
    "client": "PortsToronto",
    "subject": "Economic Development;Transportation;Waterfront Revitalization",
    "method": "Emails"
@@ -2309,6 +2301,14 @@
    "organization": "Tenblock",
    "client": null,
    "subject": "Planning and Development;Combined Application",
+   "method": "Meetings"
+  },
+  {
+   "date": "2024-07-24",
+   "lobbyist": "Kim Wright",
+   "organization": "Wright Strategies",
+   "client": "Toronto Outdoor Picture Show",
+   "subject": "Attractions / Tourism;Parks / Open Space;Recreation",
    "method": "Meetings"
   },
   {
@@ -5489,14 +5489,6 @@
   },
   {
    "date": "2023-02-07",
-   "lobbyist": "Kim Wright",
-   "organization": "Wright Strategies",
-   "client": "Youth Without Shelter",
-   "subject": "Affordable Housing;Shelters;Restart and rebuild related to Covid19 pandemic",
-   "method": "Meetings"
-  },
-  {
-   "date": "2023-02-07",
    "lobbyist": "Peter Jakovcic",
    "organization": "Tribute Communities",
    "client": null,
@@ -5510,6 +5502,14 @@
    "client": null,
    "subject": "Building Permits;Planning and Development",
    "method": "Phone calls"
+  },
+  {
+   "date": "2023-02-07",
+   "lobbyist": "Kim Wright",
+   "organization": "Wright Strategies",
+   "client": "Youth Without Shelter",
+   "subject": "Affordable Housing;Shelters;Restart and rebuild related to Covid19 pandemic",
+   "method": "Meetings"
   },
   {
    "date": "2023-02-06",

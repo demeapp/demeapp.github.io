@@ -4,7 +4,7 @@
   "name": "City of Toronto Lobbyist Registry (Open Data)",
   "url": "https://open.toronto.ca/dataset/lobbyist-registry/"
  },
- "snapshot": "2026-10-23",
+ "snapshot": "2026-11-14",
  "count": 367,
  "communications": [
   {
@@ -705,19 +705,19 @@
   },
   {
    "date": "2015-09-28",
-   "lobbyist": "Chris Schafer",
-   "organization": "Uber Canada, Inc.",
-   "client": null,
-   "subject": "By-law / Regulation;Economic Development;Licences / Licensing",
-   "method": "Meetings"
-  },
-  {
-   "date": "2015-09-28",
    "lobbyist": "Gail Souter",
    "organization": "Beck Taxi Limited",
    "client": null,
    "subject": "By-law / Regulation;Licences / Licensing",
    "method": "Written"
+  },
+  {
+   "date": "2015-09-28",
+   "lobbyist": "Chris Schafer",
+   "organization": "Uber Canada, Inc.",
+   "client": null,
+   "subject": "By-law / Regulation;Economic Development;Licences / Licensing",
+   "method": "Meetings"
   },
   {
    "date": "2015-09-27",
@@ -1041,19 +1041,19 @@
   },
   {
    "date": "2015-06-09",
-   "lobbyist": "Chris Schafer",
-   "organization": "Uber Canada, Inc.",
-   "client": null,
-   "subject": "By-law / Regulation;Economic Development;Licences / Licensing",
-   "method": "Emails"
-  },
-  {
-   "date": "2015-06-09",
    "lobbyist": "Michael Bissett",
    "organization": "Bousfields Inc.",
    "client": "Ahern Development",
    "subject": "Planning and Development Application, Site Plan;Planning and Development Application, Minor Variance",
    "method": "Meetings"
+  },
+  {
+   "date": "2015-06-09",
+   "lobbyist": "Chris Schafer",
+   "organization": "Uber Canada, Inc.",
+   "client": null,
+   "subject": "By-law / Regulation;Economic Development;Licences / Licensing",
+   "method": "Emails"
   },
   {
    "date": "2015-06-09",

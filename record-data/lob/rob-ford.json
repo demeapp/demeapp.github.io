@@ -4,7 +4,7 @@
   "name": "City of Toronto Lobbyist Registry (Open Data)",
   "url": "https://open.toronto.ca/dataset/lobbyist-registry/"
  },
- "snapshot": "2026-10-23",
+ "snapshot": "2026-11-14",
  "count": 601,
  "communications": [
   {
@@ -3604,22 +3604,6 @@
    "lobbyist": "Steve Deveaux",
    "organization": "Building Industry and Land Development Association",
    "client": null,
-   "subject": "Planning and Development, Planning Policy / Study",
-   "method": "Meetings"
-  },
-  {
-   "date": "2010-09-13",
-   "lobbyist": "Leona Savoie",
-   "organization": "Building Industry and Land Development Association",
-   "client": null,
-   "subject": "Planning and Development, Planning Policy / Study",
-   "method": "Meetings"
-  },
-  {
-   "date": "2010-09-13",
-   "lobbyist": "Steve Deveaux",
-   "organization": "Building Industry and Land Development Association",
-   "client": null,
    "subject": "Financial Services",
    "method": "Meetings"
   },
@@ -3645,6 +3629,22 @@
    "organization": "Building Industry and Land Development Association",
    "client": null,
    "subject": "Planning and Development: Planning Policies/Studies",
+   "method": "Meetings"
+  },
+  {
+   "date": "2010-09-13",
+   "lobbyist": "Steve Deveaux",
+   "organization": "Building Industry and Land Development Association",
+   "client": null,
+   "subject": "Planning and Development, Planning Policy / Study",
+   "method": "Meetings"
+  },
+  {
+   "date": "2010-09-13",
+   "lobbyist": "Leona Savoie",
+   "organization": "Building Industry and Land Development Association",
+   "client": null,
+   "subject": "Planning and Development, Planning Policy / Study",
    "method": "Meetings"
   },
   {
@@ -3788,54 +3788,6 @@
    "lobbyist": "Stephen Upton",
    "organization": "Building Industry and Land Development Association",
    "client": null,
-   "subject": "Planning and Development, Planning Policy / Study",
-   "method": "Meetings"
-  },
-  {
-   "date": "2010-05-19",
-   "lobbyist": "Steve Deveaux",
-   "organization": "Building Industry and Land Development Association",
-   "client": null,
-   "subject": "Planning and Development, Planning Policy / Study",
-   "method": "Meetings"
-  },
-  {
-   "date": "2010-05-19",
-   "lobbyist": "Leona Savoie",
-   "organization": "Building Industry and Land Development Association",
-   "client": null,
-   "subject": "Planning and Development, Planning Policy / Study",
-   "method": "Meetings"
-  },
-  {
-   "date": "2010-05-19",
-   "lobbyist": "Joseph Vaccaro",
-   "organization": "Building Industry and Land Development Association",
-   "client": null,
-   "subject": "Planning and Development, Planning Policy / Study",
-   "method": "Meetings"
-  },
-  {
-   "date": "2010-05-19",
-   "lobbyist": "Danielle Chin",
-   "organization": "Building Industry and Land Development Association",
-   "client": null,
-   "subject": "Planning and Development, Planning Policy / Study",
-   "method": "Meetings"
-  },
-  {
-   "date": "2010-05-19",
-   "lobbyist": "Stephen Dupuis",
-   "organization": "Building Industry and Land Development Association",
-   "client": null,
-   "subject": "Planning and Development, Planning Policy / Study",
-   "method": "Meetings"
-  },
-  {
-   "date": "2010-05-19",
-   "lobbyist": "Stephen Upton",
-   "organization": "Building Industry and Land Development Association",
-   "client": null,
    "subject": "Financial Services",
    "method": "Meetings"
   },
@@ -3973,6 +3925,54 @@
    "organization": "Building Industry and Land Development Association",
    "client": null,
    "subject": "Planning and Development: Planning Policies/Studies",
+   "method": "Meetings"
+  },
+  {
+   "date": "2010-05-19",
+   "lobbyist": "Stephen Upton",
+   "organization": "Building Industry and Land Development Association",
+   "client": null,
+   "subject": "Planning and Development, Planning Policy / Study",
+   "method": "Meetings"
+  },
+  {
+   "date": "2010-05-19",
+   "lobbyist": "Steve Deveaux",
+   "organization": "Building Industry and Land Development Association",
+   "client": null,
+   "subject": "Planning and Development, Planning Policy / Study",
+   "method": "Meetings"
+  },
+  {
+   "date": "2010-05-19",
+   "lobbyist": "Leona Savoie",
+   "organization": "Building Industry and Land Development Association",
+   "client": null,
+   "subject": "Planning and Development, Planning Policy / Study",
+   "method": "Meetings"
+  },
+  {
+   "date": "2010-05-19",
+   "lobbyist": "Joseph Vaccaro",
+   "organization": "Building Industry and Land Development Association",
+   "client": null,
+   "subject": "Planning and Development, Planning Policy / Study",
+   "method": "Meetings"
+  },
+  {
+   "date": "2010-05-19",
+   "lobbyist": "Danielle Binder",
+   "organization": "Building Industry and Land Development Association",
+   "client": null,
+   "subject": "Planning and Development, Planning Policy / Study",
+   "method": "Meetings"
+  },
+  {
+   "date": "2010-05-19",
+   "lobbyist": "Stephen Dupuis",
+   "organization": "Building Industry and Land Development Association",
+   "client": null,
+   "subject": "Planning and Development, Planning Policy / Study",
    "method": "Meetings"
   },
   {

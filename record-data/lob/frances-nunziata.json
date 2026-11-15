@@ -4,7 +4,7 @@
   "name": "City of Toronto Lobbyist Registry (Open Data)",
   "url": "https://open.toronto.ca/dataset/lobbyist-registry/"
  },
- "snapshot": "2026-10-23",
+ "snapshot": "2026-11-14",
  "count": 1085,
  "communications": [
   {
@@ -849,18 +849,18 @@
   },
   {
    "date": "2024-11-06",
-   "lobbyist": "Jake Brockman",
-   "organization": "Uber Canada, Inc.",
-   "client": null,
-   "subject": "By-law / Regulation;Economic Development;Licences / Licensing",
-   "method": "Emails"
-  },
-  {
-   "date": "2024-11-06",
    "lobbyist": "Austin Spademan",
    "organization": "Bird Canada",
    "client": null,
    "subject": "By-law / Regulation;Transportation - Cycling / Bicycle Lanes;Transportation - Roads / Bridges",
+   "method": "Emails"
+  },
+  {
+   "date": "2024-11-06",
+   "lobbyist": "Jake Brockman",
+   "organization": "Uber Canada, Inc.",
+   "client": null,
+   "subject": "By-law / Regulation;Economic Development;Licences / Licensing",
    "method": "Emails"
   },
   {
@@ -2665,19 +2665,19 @@
   },
   {
    "date": "2021-06-30",
-   "lobbyist": "Kim Wright",
-   "organization": "Wright Strategies",
-   "client": "Youth Without Shelter",
-   "subject": "Affordable Housing;Shelters;Restart and rebuild related to Covid19 pandemic",
-   "method": "Emails"
-  },
-  {
-   "date": "2021-06-30",
    "lobbyist": "Amir Remtulla",
    "organization": "Amir Remtulla and Associates",
    "client": "2616942 Ontario Inc.",
    "subject": "Planning and Development;Planning and Development Application, Zoning By-law;Planning and Development Application, Site Plan",
    "method": "Other or unreported"
+  },
+  {
+   "date": "2021-06-30",
+   "lobbyist": "Kim Wright",
+   "organization": "Wright Strategies",
+   "client": "Youth Without Shelter",
+   "subject": "Affordable Housing;Shelters;Restart and rebuild related to Covid19 pandemic",
+   "method": "Emails"
   },
   {
    "date": "2021-06-29",
@@ -3793,6 +3793,14 @@
   },
   {
    "date": "2019-05-27",
+   "lobbyist": "Kim Wright",
+   "organization": "Wright Strategies",
+   "client": "Uber Canada, Inc.",
+   "subject": "By-law / Regulation;Economic Development;Transportation - Roads / Bridges",
+   "method": "Meetings"
+  },
+  {
+   "date": "2019-05-27",
    "lobbyist": "Martin Gray",
    "organization": "Uber Canada, Inc.",
    "client": null,
@@ -3805,14 +3813,6 @@
    "organization": "Uber Canada, Inc.",
    "client": null,
    "subject": "By-law / Regulation;Economic Development;Licences / Licensing",
-   "method": "Meetings"
-  },
-  {
-   "date": "2019-05-27",
-   "lobbyist": "Kim Wright",
-   "organization": "Wright Strategies",
-   "client": "Uber Canada, Inc.",
-   "subject": "By-law / Regulation;Economic Development;Transportation - Roads / Bridges",
    "method": "Meetings"
   },
   {

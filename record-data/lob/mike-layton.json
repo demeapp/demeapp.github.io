@@ -4,7 +4,7 @@
   "name": "City of Toronto Lobbyist Registry (Open Data)",
   "url": "https://open.toronto.ca/dataset/lobbyist-registry/"
  },
- "snapshot": "2026-10-23",
+ "snapshot": "2026-11-14",
  "count": 1559,
  "communications": [
   {
@@ -361,19 +361,19 @@
   },
   {
    "date": "2022-06-01",
-   "lobbyist": "Kim Wright",
-   "organization": "Wright Strategies",
-   "client": "Youth Without Shelter",
-   "subject": "Affordable Housing;Shelters;Restart and rebuild related to Covid19 pandemic",
-   "method": "Emails"
-  },
-  {
-   "date": "2022-06-01",
    "lobbyist": "Tristan Downe-Dewdney",
    "organization": "Sussex Strategy Group",
    "client": "Just For Laughs",
    "subject": "Arts / Culture;Attractions / Tourism;Economic Development",
    "method": "Meetings"
+  },
+  {
+   "date": "2022-06-01",
+   "lobbyist": "Kim Wright",
+   "organization": "Wright Strategies",
+   "client": "Youth Without Shelter",
+   "subject": "Affordable Housing;Shelters;Restart and rebuild related to Covid19 pandemic",
+   "method": "Emails"
   },
   {
    "date": "2022-05-20",
@@ -1369,19 +1369,19 @@
   },
   {
    "date": "2021-07-12",
-   "lobbyist": "Jake Brockman",
-   "organization": "Uber Canada, Inc.",
-   "client": null,
-   "subject": "By-law / Regulation;Economic Development;Licences / Licensing",
-   "method": "Meetings"
-  },
-  {
-   "date": "2021-07-12",
    "lobbyist": "Kim Wright",
    "organization": "Wright Strategies",
    "client": "Uber Canada, Inc.",
    "subject": "By-law / Regulation;Economic Development;Transportation - Roads / Bridges",
    "method": "Emails"
+  },
+  {
+   "date": "2021-07-12",
+   "lobbyist": "Jake Brockman",
+   "organization": "Uber Canada, Inc.",
+   "client": null,
+   "subject": "By-law / Regulation;Economic Development;Licences / Licensing",
+   "method": "Meetings"
   },
   {
    "date": "2021-07-11",
@@ -2473,19 +2473,19 @@
   },
   {
    "date": "2020-10-26",
-   "lobbyist": "Jake Brockman",
-   "organization": "Uber Canada, Inc.",
-   "client": null,
-   "subject": "By-law / Regulation;Economic Development;Licences / Licensing",
-   "method": "Emails"
-  },
-  {
-   "date": "2020-10-26",
    "lobbyist": "John Bitove",
    "organization": "Bird Canada",
    "client": null,
    "subject": "By-law / Regulation;Transportation - Cycling / Bicycle Lanes;Transportation - Roads / Bridges",
    "method": "Phone calls"
+  },
+  {
+   "date": "2020-10-26",
+   "lobbyist": "Jake Brockman",
+   "organization": "Uber Canada, Inc.",
+   "client": null,
+   "subject": "By-law / Regulation;Economic Development;Licences / Licensing",
+   "method": "Emails"
   },
   {
    "date": "2020-10-26",
@@ -2601,14 +2601,6 @@
   },
   {
    "date": "2020-09-14",
-   "lobbyist": "Jake Brockman",
-   "organization": "Uber Canada, Inc.",
-   "client": null,
-   "subject": "By-law / Regulation;Economic Development;Licences / Licensing",
-   "method": "Emails"
-  },
-  {
-   "date": "2020-09-14",
    "lobbyist": "Chris Schafer",
    "organization": "Bird Canada",
    "client": null,
@@ -2621,6 +2613,14 @@
    "organization": "Scooty Mobility Inc.",
    "client": null,
    "subject": "Transit / TTC;Transportation - Cycling / Bicycle Lanes;Transportation - Metrolinx",
+   "method": "Emails"
+  },
+  {
+   "date": "2020-09-14",
+   "lobbyist": "Jake Brockman",
+   "organization": "Uber Canada, Inc.",
+   "client": null,
+   "subject": "By-law / Regulation;Economic Development;Licences / Licensing",
    "method": "Emails"
   },
   {
@@ -3705,19 +3705,19 @@
   },
   {
    "date": "2019-07-15",
-   "lobbyist": "Raly Chakorova",
-   "organization": "Toronto Region Board of Trade",
-   "client": null,
-   "subject": "Budget;Economic Development;Planning and Development, Planning Policy / Study",
-   "method": "Meetings"
-  },
-  {
-   "date": "2019-07-15",
    "lobbyist": "Kristine Hubbard",
    "organization": "Beck Taxi Limited",
    "client": null,
    "subject": "By-law / Regulation;Licences / Licensing",
    "method": "Emails"
+  },
+  {
+   "date": "2019-07-15",
+   "lobbyist": "Raly Chakorova",
+   "organization": "Toronto Region Board of Trade",
+   "client": null,
+   "subject": "Budget;Economic Development;Planning and Development, Planning Policy / Study",
+   "method": "Meetings"
   },
   {
    "date": "2019-07-11",
@@ -3817,18 +3817,18 @@
   },
   {
    "date": "2019-07-02",
-   "lobbyist": "Milton Chan",
-   "organization": "Toronto Region Board of Trade",
-   "client": null,
-   "subject": "Budget;Economic Development;Planning and Development, Planning Policy / Study",
-   "method": "Emails"
-  },
-  {
-   "date": "2019-07-02",
    "lobbyist": "Kim Wright",
    "organization": "Wright Strategies",
    "client": "Uber Canada, Inc.",
    "subject": "By-law / Regulation;Economic Development;Transportation - Roads / Bridges",
+   "method": "Emails"
+  },
+  {
+   "date": "2019-07-02",
+   "lobbyist": "Milton Chan",
+   "organization": "Toronto Region Board of Trade",
+   "client": null,
+   "subject": "Budget;Economic Development;Planning and Development, Planning Policy / Study",
    "method": "Emails"
   },
   {
@@ -3849,18 +3849,10 @@
   },
   {
    "date": "2019-06-24",
-   "lobbyist": "Martin Gray",
-   "organization": "Uber Canada, Inc.",
-   "client": null,
-   "subject": "By-law / Regulation;Economic Development;Licences / Licensing",
-   "method": "Meetings"
-  },
-  {
-   "date": "2019-06-24",
-   "lobbyist": "Morva Rohani",
-   "organization": "Uber Canada, Inc.",
-   "client": null,
-   "subject": "By-law / Regulation;Economic Development;Licences / Licensing",
+   "lobbyist": "Kim Wright",
+   "organization": "Wright Strategies",
+   "client": "Uber Canada, Inc.",
+   "subject": "By-law / Regulation;Economic Development;Transportation - Roads / Bridges",
    "method": "Meetings"
   },
   {
@@ -3873,10 +3865,18 @@
   },
   {
    "date": "2019-06-24",
-   "lobbyist": "Kim Wright",
-   "organization": "Wright Strategies",
-   "client": "Uber Canada, Inc.",
-   "subject": "By-law / Regulation;Economic Development;Transportation - Roads / Bridges",
+   "lobbyist": "Martin Gray",
+   "organization": "Uber Canada, Inc.",
+   "client": null,
+   "subject": "By-law / Regulation;Economic Development;Licences / Licensing",
+   "method": "Meetings"
+  },
+  {
+   "date": "2019-06-24",
+   "lobbyist": "Morva Rohani",
+   "organization": "Uber Canada, Inc.",
+   "client": null,
+   "subject": "By-law / Regulation;Economic Development;Licences / Licensing",
    "method": "Meetings"
   },
   {
@@ -7577,19 +7577,19 @@
   },
   {
    "date": "2015-09-28",
-   "lobbyist": "Ian Black",
-   "organization": "Uber Canada, Inc.",
-   "client": null,
-   "subject": "By-law / Regulation;Economic Development;Licences / Licensing",
-   "method": "Emails"
-  },
-  {
-   "date": "2015-09-28",
    "lobbyist": "Gail Souter",
    "organization": "Beck Taxi Limited",
    "client": null,
    "subject": "By-law / Regulation;Licences / Licensing",
    "method": "Written"
+  },
+  {
+   "date": "2015-09-28",
+   "lobbyist": "Ian Black",
+   "organization": "Uber Canada, Inc.",
+   "client": null,
+   "subject": "By-law / Regulation;Economic Development;Licences / Licensing",
+   "method": "Emails"
   },
   {
    "date": "2015-09-28",

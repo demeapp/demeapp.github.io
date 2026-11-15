@@ -4,9 +4,17 @@
   "name": "City of Toronto Lobbyist Registry (Open Data)",
   "url": "https://open.toronto.ca/dataset/lobbyist-registry/"
  },
- "snapshot": "2026-10-23",
- "count": 834,
+ "snapshot": "2026-11-14",
+ "count": 835,
  "communications": [
+  {
+   "date": "2026-11-06",
+   "lobbyist": "Norman Cheesman",
+   "organization": "Cheesman & Associates",
+   "client": "Toronto Industry Network",
+   "subject": "Economic Development;Environment;Planning and Development, Planning Policy / Study",
+   "method": "Emails"
+  },
   {
    "date": "2026-10-08",
    "lobbyist": "Gary E. Benner",
@@ -825,18 +833,18 @@
   },
   {
    "date": "2024-11-06",
-   "lobbyist": "Jake Brockman",
-   "organization": "Uber Canada, Inc.",
-   "client": null,
-   "subject": "By-law / Regulation;Economic Development;Licences / Licensing",
-   "method": "Emails"
-  },
-  {
-   "date": "2024-11-06",
    "lobbyist": "Austin Spademan",
    "organization": "Bird Canada",
    "client": null,
    "subject": "By-law / Regulation;Transportation - Cycling / Bicycle Lanes;Transportation - Roads / Bridges",
+   "method": "Emails"
+  },
+  {
+   "date": "2024-11-06",
+   "lobbyist": "Jake Brockman",
+   "organization": "Uber Canada, Inc.",
+   "client": null,
+   "subject": "By-law / Regulation;Economic Development;Licences / Licensing",
    "method": "Emails"
   },
   {
@@ -1233,14 +1241,6 @@
   },
   {
    "date": "2024-01-16",
-   "lobbyist": "Michael van Hemmen",
-   "organization": "Uber Canada, Inc.",
-   "client": null,
-   "subject": "By-law / Regulation;Economic Development;Licences / Licensing",
-   "method": "Meetings"
-  },
-  {
-   "date": "2024-01-16",
    "lobbyist": "Laura Miller",
    "organization": "Uber Canada, Inc.",
    "client": null,
@@ -1250,6 +1250,14 @@
   {
    "date": "2024-01-16",
    "lobbyist": "Jake Brockman",
+   "organization": "Uber Canada, Inc.",
+   "client": null,
+   "subject": "By-law / Regulation;Economic Development;Licences / Licensing",
+   "method": "Meetings"
+  },
+  {
+   "date": "2024-01-16",
+   "lobbyist": "Michael van Hemmen",
    "organization": "Uber Canada, Inc.",
    "client": null,
    "subject": "By-law / Regulation;Economic Development;Licences / Licensing",
@@ -1673,19 +1681,19 @@
   },
   {
    "date": "2023-04-06",
-   "lobbyist": "Jake Brockman",
-   "organization": "Uber Canada, Inc.",
-   "client": null,
-   "subject": "By-law / Regulation;Economic Development;Licences / Licensing",
-   "method": "Meetings"
-  },
-  {
-   "date": "2023-04-06",
    "lobbyist": "John T McGovern",
    "organization": "Rice Commercial Group Limited",
    "client": null,
    "subject": "Building Permits;Planning and Development Application, Zoning By-law;Planning and Development Application, Site Plan",
    "method": "Phone calls"
+  },
+  {
+   "date": "2023-04-06",
+   "lobbyist": "Jake Brockman",
+   "organization": "Uber Canada, Inc.",
+   "client": null,
+   "subject": "By-law / Regulation;Economic Development;Licences / Licensing",
+   "method": "Meetings"
   },
   {
    "date": "2023-04-03",
@@ -2289,7 +2297,7 @@
   },
   {
    "date": "2018-03-20",
-   "lobbyist": "Danielle Chin",
+   "lobbyist": "Danielle Binder",
    "organization": "Building Industry and Land Development Association",
    "client": null,
    "subject": "Planning and Development, Planning Policy / Study",
@@ -3961,18 +3969,18 @@
   },
   {
    "date": "2015-09-23",
-   "lobbyist": "Chris Schafer",
-   "organization": "Uber Canada, Inc.",
-   "client": null,
-   "subject": "By-law / Regulation;Economic Development;Licences / Licensing",
-   "method": "Meetings"
-  },
-  {
-   "date": "2015-09-23",
    "lobbyist": "Kristine Hubbard",
    "organization": "Beck Taxi Limited",
    "client": null,
    "subject": "By-law / Regulation;Licences / Licensing",
+   "method": "Meetings"
+  },
+  {
+   "date": "2015-09-23",
+   "lobbyist": "Chris Schafer",
+   "organization": "Uber Canada, Inc.",
+   "client": null,
+   "subject": "By-law / Regulation;Economic Development;Licences / Licensing",
    "method": "Meetings"
   },
   {

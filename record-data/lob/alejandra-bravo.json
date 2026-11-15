@@ -4,9 +4,25 @@
   "name": "City of Toronto Lobbyist Registry (Open Data)",
   "url": "https://open.toronto.ca/dataset/lobbyist-registry/"
  },
- "snapshot": "2026-10-23",
- "count": 268,
+ "snapshot": "2026-11-14",
+ "count": 270,
  "communications": [
+  {
+   "date": "2026-11-11",
+   "lobbyist": "Edmund Un",
+   "organization": "Hullmark Developments Ltd.",
+   "client": null,
+   "subject": "Economic Development;Planning and Development, Planning Policy / Study;Planning and Development Application",
+   "method": "Emails"
+  },
+  {
+   "date": "2026-11-04",
+   "lobbyist": "Norman Cheesman",
+   "organization": "Cheesman & Associates",
+   "client": "Toronto Industry Network",
+   "subject": "Economic Development;Environment;Planning and Development, Planning Policy / Study",
+   "method": "Emails"
+  },
   {
    "date": "2026-10-08",
    "lobbyist": "Gary E. Benner",
@@ -713,18 +729,18 @@
   },
   {
    "date": "2024-11-06",
-   "lobbyist": "Jake Brockman",
-   "organization": "Uber Canada, Inc.",
-   "client": null,
-   "subject": "By-law / Regulation;Economic Development;Licences / Licensing",
-   "method": "Emails"
-  },
-  {
-   "date": "2024-11-06",
    "lobbyist": "Austin Spademan",
    "organization": "Bird Canada",
    "client": null,
    "subject": "By-law / Regulation;Transportation - Cycling / Bicycle Lanes;Transportation - Roads / Bridges",
+   "method": "Emails"
+  },
+  {
+   "date": "2024-11-06",
+   "lobbyist": "Jake Brockman",
+   "organization": "Uber Canada, Inc.",
+   "client": null,
+   "subject": "By-law / Regulation;Economic Development;Licences / Licensing",
    "method": "Emails"
   },
   {

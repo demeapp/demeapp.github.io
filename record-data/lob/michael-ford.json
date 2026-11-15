@@ -4,7 +4,7 @@
   "name": "City of Toronto Lobbyist Registry (Open Data)",
   "url": "https://open.toronto.ca/dataset/lobbyist-registry/"
  },
- "snapshot": "2026-10-23",
+ "snapshot": "2026-11-14",
  "count": 411,
  "communications": [
   {
@@ -1409,18 +1409,18 @@
   },
   {
    "date": "2019-05-21",
-   "lobbyist": "Morva Rohani",
-   "organization": "Uber Canada, Inc.",
-   "client": null,
-   "subject": "By-law / Regulation;Economic Development;Licences / Licensing",
-   "method": "Meetings"
-  },
-  {
-   "date": "2019-05-21",
    "lobbyist": "Kim Wright",
    "organization": "Wright Strategies",
    "client": "Uber Canada, Inc.",
    "subject": "By-law / Regulation;Economic Development;Transportation - Roads / Bridges",
+   "method": "Meetings"
+  },
+  {
+   "date": "2019-05-21",
+   "lobbyist": "Morva Rohani",
+   "organization": "Uber Canada, Inc.",
+   "client": null,
+   "subject": "By-law / Regulation;Economic Development;Licences / Licensing",
    "method": "Meetings"
   },
   {
@@ -2049,7 +2049,7 @@
   },
   {
    "date": "2018-03-23",
-   "lobbyist": "Danielle Chin",
+   "lobbyist": "Danielle Binder",
    "organization": "Building Industry and Land Development Association",
    "client": null,
    "subject": "Planning and Development, Planning Policy / Study",

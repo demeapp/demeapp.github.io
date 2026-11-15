@@ -4,7 +4,7 @@
   "name": "City of Toronto Lobbyist Registry (Open Data)",
   "url": "https://open.toronto.ca/dataset/lobbyist-registry/"
  },
- "snapshot": "2026-10-23",
+ "snapshot": "2026-11-14",
  "count": 857,
  "communications": [
   {
@@ -3713,7 +3713,7 @@
   },
   {
    "date": "2015-01-15",
-   "lobbyist": "Ian Black",
+   "lobbyist": "Chris Schafer",
    "organization": "Uber Canada, Inc.",
    "client": null,
    "subject": "By-law / Regulation;Economic Development;Licences / Licensing",
@@ -3721,7 +3721,7 @@
   },
   {
    "date": "2015-01-15",
-   "lobbyist": "Chris Schafer",
+   "lobbyist": "Ian Black",
    "organization": "Uber Canada, Inc.",
    "client": null,
    "subject": "By-law / Regulation;Economic Development;Licences / Licensing",

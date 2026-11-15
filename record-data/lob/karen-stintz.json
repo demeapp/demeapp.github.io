@@ -4,7 +4,7 @@
   "name": "City of Toronto Lobbyist Registry (Open Data)",
   "url": "https://open.toronto.ca/dataset/lobbyist-registry/"
  },
- "snapshot": "2026-10-23",
+ "snapshot": "2026-11-14",
  "count": 616,
  "communications": [
   {
@@ -65,6 +65,14 @@
   },
   {
    "date": "2014-08-13",
+   "lobbyist": "Lino Pellicano",
+   "organization": "Building Industry and Land Development Association",
+   "client": null,
+   "subject": "Planning and Development: Planning Policies/Studies",
+   "method": "Meetings"
+  },
+  {
+   "date": "2014-08-13",
    "lobbyist": "Bryan Tuckey",
    "organization": "Building Industry and Land Development Association",
    "client": null,
@@ -121,18 +129,10 @@
   },
   {
    "date": "2014-08-13",
-   "lobbyist": "Danielle Chin",
+   "lobbyist": "Danielle Binder",
    "organization": "Building Industry and Land Development Association",
    "client": null,
    "subject": "Planning and Development, Planning Policy / Study",
-   "method": "Meetings"
-  },
-  {
-   "date": "2014-08-13",
-   "lobbyist": "Lino Pellicano",
-   "organization": "Building Industry and Land Development Association",
-   "client": null,
-   "subject": "Planning and Development: Planning Policies/Studies",
    "method": "Meetings"
   },
   {

@@ -4,9 +4,17 @@
   "name": "City of Toronto Lobbyist Registry (Open Data)",
   "url": "https://open.toronto.ca/dataset/lobbyist-registry/"
  },
- "snapshot": "2026-10-23",
- "count": 897,
+ "snapshot": "2026-11-14",
+ "count": 898,
  "communications": [
+  {
+   "date": "2026-11-04",
+   "lobbyist": "Norman Cheesman",
+   "organization": "Cheesman & Associates",
+   "client": "Toronto Industry Network",
+   "subject": "Economic Development;Environment;Planning and Development, Planning Policy / Study",
+   "method": "Emails"
+  },
   {
    "date": "2026-10-08",
    "lobbyist": "Gary E. Benner",
@@ -609,18 +617,18 @@
   },
   {
    "date": "2024-11-06",
-   "lobbyist": "Jake Brockman",
-   "organization": "Uber Canada, Inc.",
-   "client": null,
-   "subject": "By-law / Regulation;Economic Development;Licences / Licensing",
-   "method": "Emails"
-  },
-  {
-   "date": "2024-11-06",
    "lobbyist": "Austin Spademan",
    "organization": "Bird Canada",
    "client": null,
    "subject": "By-law / Regulation;Transportation - Cycling / Bicycle Lanes;Transportation - Roads / Bridges",
+   "method": "Emails"
+  },
+  {
+   "date": "2024-11-06",
+   "lobbyist": "Jake Brockman",
+   "organization": "Uber Canada, Inc.",
+   "client": null,
+   "subject": "By-law / Regulation;Economic Development;Licences / Licensing",
    "method": "Emails"
   },
   {
@@ -2457,14 +2465,6 @@
   },
   {
    "date": "2020-09-14",
-   "lobbyist": "Jake Brockman",
-   "organization": "Uber Canada, Inc.",
-   "client": null,
-   "subject": "By-law / Regulation;Economic Development;Licences / Licensing",
-   "method": "Emails"
-  },
-  {
-   "date": "2020-09-14",
    "lobbyist": "Chris Schafer",
    "organization": "Bird Canada",
    "client": null,
@@ -2477,6 +2477,14 @@
    "organization": "Scooty Mobility Inc.",
    "client": null,
    "subject": "Transit / TTC;Transportation - Cycling / Bicycle Lanes;Transportation - Metrolinx",
+   "method": "Emails"
+  },
+  {
+   "date": "2020-09-14",
+   "lobbyist": "Jake Brockman",
+   "organization": "Uber Canada, Inc.",
+   "client": null,
+   "subject": "By-law / Regulation;Economic Development;Licences / Licensing",
    "method": "Emails"
   },
   {
@@ -4609,14 +4617,6 @@
   },
   {
    "date": "2015-12-10",
-   "lobbyist": "Chris Schafer",
-   "organization": "Uber Canada, Inc.",
-   "client": null,
-   "subject": "By-law / Regulation;Economic Development;Licences / Licensing",
-   "method": "Emails"
-  },
-  {
-   "date": "2015-12-10",
    "lobbyist": "Carolyn Fell",
    "organization": "Canadian Beverage Association",
    "client": null,
@@ -4630,6 +4630,14 @@
    "client": null,
    "subject": "Economic Development;Public Health",
    "method": "Meetings"
+  },
+  {
+   "date": "2015-12-10",
+   "lobbyist": "Chris Schafer",
+   "organization": "Uber Canada, Inc.",
+   "client": null,
+   "subject": "By-law / Regulation;Economic Development;Licences / Licensing",
+   "method": "Emails"
   },
   {
    "date": "2015-12-10",

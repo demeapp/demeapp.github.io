@@ -4,7 +4,7 @@
   "name": "City of Toronto Lobbyist Registry (Open Data)",
   "url": "https://open.toronto.ca/dataset/lobbyist-registry/"
  },
- "snapshot": "2026-10-23",
+ "snapshot": "2026-11-14",
  "count": 1653,
  "communications": [
   {
@@ -1497,18 +1497,18 @@
   },
   {
    "date": "2021-05-28",
-   "lobbyist": "Janet De Silva",
-   "organization": "Toronto Region Board of Trade",
-   "client": null,
-   "subject": "Budget;Economic Development;Planning and Development, Planning Policy / Study",
-   "method": "Emails"
-  },
-  {
-   "date": "2021-05-28",
    "lobbyist": "Justin Van Dette",
    "organization": "Deltera Inc.",
    "client": null,
    "subject": "Planning and Development, Planning Policy / Study",
+   "method": "Emails"
+  },
+  {
+   "date": "2021-05-28",
+   "lobbyist": "Janet De Silva",
+   "organization": "Toronto Region Board of Trade",
+   "client": null,
+   "subject": "Budget;Economic Development;Planning and Development, Planning Policy / Study",
    "method": "Emails"
   },
   {
@@ -3641,22 +3641,6 @@
   },
   {
    "date": "2018-12-10",
-   "lobbyist": "Matthew Kofsky",
-   "organization": "Toronto Region Board of Trade",
-   "client": null,
-   "subject": "Budget;Economic Development;Planning and Development, Planning Policy / Study",
-   "method": "Meetings"
-  },
-  {
-   "date": "2018-12-10",
-   "lobbyist": "Brian Kelcey",
-   "organization": "Toronto Region Board of Trade",
-   "client": null,
-   "subject": "Budget;Economic Development;Planning and Development, Planning Policy / Study",
-   "method": "Meetings"
-  },
-  {
-   "date": "2018-12-10",
    "lobbyist": "Brian Kelcey",
    "organization": "Toronto Region Board of Trade",
    "client": null,
@@ -3669,6 +3653,22 @@
    "organization": "Toronto Region Board of Trade",
    "client": null,
    "subject": "Transit / TTC;Transportation - Metrolinx;Transportation - Roads / Bridges",
+   "method": "Meetings"
+  },
+  {
+   "date": "2018-12-10",
+   "lobbyist": "Matthew Kofsky",
+   "organization": "Toronto Region Board of Trade",
+   "client": null,
+   "subject": "Budget;Economic Development;Planning and Development, Planning Policy / Study",
+   "method": "Meetings"
+  },
+  {
+   "date": "2018-12-10",
+   "lobbyist": "Brian Kelcey",
+   "organization": "Toronto Region Board of Trade",
+   "client": null,
+   "subject": "Budget;Economic Development;Planning and Development, Planning Policy / Study",
    "method": "Meetings"
   },
   {
@@ -3732,7 +3732,7 @@
    "lobbyist": "Milton Chan",
    "organization": "Toronto Region Board of Trade",
    "client": null,
-   "subject": "Budget;Economic Development;Planning and Development, Planning Policy / Study",
+   "subject": "Transit / TTC;Transportation - Metrolinx;Transportation - Roads / Bridges",
    "method": "Meetings"
   },
   {
@@ -3740,7 +3740,7 @@
    "lobbyist": "Milton Chan",
    "organization": "Toronto Region Board of Trade",
    "client": null,
-   "subject": "Transit / TTC;Transportation - Metrolinx;Transportation - Roads / Bridges",
+   "subject": "Budget;Economic Development;Planning and Development, Planning Policy / Study",
    "method": "Meetings"
   },
   {
@@ -4153,7 +4153,7 @@
   },
   {
    "date": "2018-03-23",
-   "lobbyist": "Danielle Chin",
+   "lobbyist": "Danielle Binder",
    "organization": "Building Industry and Land Development Association",
    "client": null,
    "subject": "Planning and Development, Planning Policy / Study",
@@ -6561,19 +6561,19 @@
   },
   {
    "date": "2016-04-13",
-   "lobbyist": "Chris Schafer",
-   "organization": "Uber Canada, Inc.",
-   "client": null,
-   "subject": "By-law / Regulation;Economic Development;Licences / Licensing",
-   "method": "Emails"
-  },
-  {
-   "date": "2016-04-13",
    "lobbyist": "Amir Remtulla",
    "organization": "Amir Remtulla and Associates",
    "client": "BILD",
    "subject": "Economic Development",
    "method": "Meetings"
+  },
+  {
+   "date": "2016-04-13",
+   "lobbyist": "Chris Schafer",
+   "organization": "Uber Canada, Inc.",
+   "client": null,
+   "subject": "By-law / Regulation;Economic Development;Licences / Licensing",
+   "method": "Emails"
   },
   {
    "date": "2016-04-13",

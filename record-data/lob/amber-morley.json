@@ -4,9 +4,25 @@
   "name": "City of Toronto Lobbyist Registry (Open Data)",
   "url": "https://open.toronto.ca/dataset/lobbyist-registry/"
  },
- "snapshot": "2026-10-23",
- "count": 377,
+ "snapshot": "2026-11-14",
+ "count": 379,
  "communications": [
+  {
+   "date": "2026-11-04",
+   "lobbyist": "Norman Cheesman",
+   "organization": "Cheesman & Associates",
+   "client": "Toronto Industry Network",
+   "subject": "Economic Development;Environment;Planning and Development, Planning Policy / Study",
+   "method": "Emails"
+  },
+  {
+   "date": "2026-10-27",
+   "lobbyist": "George Kozyrakis",
+   "organization": "George Kozyrakis",
+   "client": "Communauto Inc.",
+   "subject": "By-law / Regulation;Parking;Transportation",
+   "method": "Emails"
+  },
   {
    "date": "2026-09-03",
    "lobbyist": "Margot Zuckerman",
@@ -313,18 +329,18 @@
   },
   {
    "date": "2025-12-17",
-   "lobbyist": "Alex Glista",
-   "organization": "StrategyCorp Inc.",
-   "client": "Fengate Capital Management Ltd",
-   "subject": "Building Permits;Planning and Development Application, Official Plan;Planning and Development Application, Zoning By-law",
-   "method": "Emails"
-  },
-  {
-   "date": "2025-12-17",
    "lobbyist": "Peter Milczyn",
    "organization": "PM Strategies Inc",
    "client": "Diamante Building Group Corp",
    "subject": "Affordable Housing;Planning and Development, Combined Application",
+   "method": "Emails"
+  },
+  {
+   "date": "2025-12-17",
+   "lobbyist": "Alex Glista",
+   "organization": "StrategyCorp Inc.",
+   "client": "Fengate Capital Management Ltd",
+   "subject": "Building Permits;Planning and Development Application, Official Plan;Planning and Development Application, Zoning By-law",
    "method": "Emails"
   },
   {
@@ -641,14 +657,6 @@
   },
   {
    "date": "2025-05-20",
-   "lobbyist": "Spencer Owen",
-   "organization": "Graywood Developments Ltd.",
-   "client": null,
-   "subject": "Building Permits;Planning and Development, Combined Application",
-   "method": "Emails"
-  },
-  {
-   "date": "2025-05-20",
    "lobbyist": "Peter Milczyn",
    "organization": "PM Strategies Inc",
    "client": "2157341 Ontario Ltd",
@@ -661,6 +669,14 @@
    "organization": "PM Strategies Inc",
    "client": "Diamante Building Group Corp",
    "subject": "Affordable Housing;Planning and Development, Combined Application",
+   "method": "Emails"
+  },
+  {
+   "date": "2025-05-20",
+   "lobbyist": "Spencer Owen",
+   "organization": "Graywood Developments Ltd.",
+   "client": null,
+   "subject": "Building Permits;Planning and Development, Combined Application",
    "method": "Emails"
   },
   {
@@ -739,16 +755,16 @@
    "date": "2025-04-30",
    "lobbyist": "Peter Milczyn",
    "organization": "PM Strategies Inc",
-   "client": "Antorisa Investments Inc.",
-   "subject": "Planning and Development Application, Official Plan;Planning and Development Application, Zoning By-law",
+   "client": "Diamante Building Group Corp",
+   "subject": "Affordable Housing;Planning and Development, Combined Application",
    "method": "Emails"
   },
   {
    "date": "2025-04-30",
    "lobbyist": "Peter Milczyn",
    "organization": "PM Strategies Inc",
-   "client": "Diamante Building Group Corp",
-   "subject": "Affordable Housing;Planning and Development, Combined Application",
+   "client": "Antorisa Investments Inc.",
+   "subject": "Planning and Development Application, Official Plan;Planning and Development Application, Zoning By-law",
    "method": "Emails"
   },
   {
@@ -1081,18 +1097,18 @@
   },
   {
    "date": "2024-11-06",
-   "lobbyist": "Jake Brockman",
-   "organization": "Uber Canada, Inc.",
-   "client": null,
-   "subject": "By-law / Regulation;Economic Development;Licences / Licensing",
-   "method": "Emails"
-  },
-  {
-   "date": "2024-11-06",
    "lobbyist": "Austin Spademan",
    "organization": "Bird Canada",
    "client": null,
    "subject": "By-law / Regulation;Transportation - Cycling / Bicycle Lanes;Transportation - Roads / Bridges",
+   "method": "Emails"
+  },
+  {
+   "date": "2024-11-06",
+   "lobbyist": "Jake Brockman",
+   "organization": "Uber Canada, Inc.",
+   "client": null,
+   "subject": "By-law / Regulation;Economic Development;Licences / Licensing",
    "method": "Emails"
   },
   {
@@ -1697,14 +1713,6 @@
   },
   {
    "date": "2023-11-24",
-   "lobbyist": "Peter Milczyn",
-   "organization": "PM Strategies Inc",
-   "client": "Antorisa Investments Inc.",
-   "subject": "Planning and Development Application, Official Plan;Planning and Development Application, Zoning By-law",
-   "method": "Emails"
-  },
-  {
-   "date": "2023-11-24",
    "lobbyist": "Aleem Kanji",
    "organization": "AleemKanji.com",
    "client": "Canadian National Fireworks Association - CNFA",
@@ -1717,6 +1725,14 @@
    "organization": "PM Strategies Inc",
    "client": "Diamante Building Group Corp",
    "subject": "Affordable Housing;Planning and Development, Combined Application",
+   "method": "Emails"
+  },
+  {
+   "date": "2023-11-24",
+   "lobbyist": "Peter Milczyn",
+   "organization": "PM Strategies Inc",
+   "client": "Antorisa Investments Inc.",
+   "subject": "Planning and Development Application, Official Plan;Planning and Development Application, Zoning By-law",
    "method": "Emails"
   },
   {
@@ -1987,16 +2003,16 @@
    "date": "2023-08-23",
    "lobbyist": "Peter Milczyn",
    "organization": "PM Strategies Inc",
-   "client": "Antorisa Investments Inc.",
-   "subject": "Planning and Development Application, Official Plan;Planning and Development Application, Zoning By-law",
+   "client": "Diamante Building Group Corp",
+   "subject": "Affordable Housing;Planning and Development, Combined Application",
    "method": "Emails"
   },
   {
    "date": "2023-08-23",
    "lobbyist": "Peter Milczyn",
    "organization": "PM Strategies Inc",
-   "client": "Diamante Building Group Corp",
-   "subject": "Affordable Housing;Planning and Development, Combined Application",
+   "client": "Antorisa Investments Inc.",
+   "subject": "Planning and Development Application, Official Plan;Planning and Development Application, Zoning By-law",
    "method": "Emails"
   },
   {

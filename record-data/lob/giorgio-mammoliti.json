@@ -4,7 +4,7 @@
   "name": "City of Toronto Lobbyist Registry (Open Data)",
   "url": "https://open.toronto.ca/dataset/lobbyist-registry/"
  },
- "snapshot": "2026-10-23",
+ "snapshot": "2026-11-14",
  "count": 524,
  "communications": [
   {
@@ -1561,19 +1561,19 @@
   },
   {
    "date": "2015-06-09",
-   "lobbyist": "Chris Schafer",
-   "organization": "Uber Canada, Inc.",
-   "client": null,
-   "subject": "By-law / Regulation;Economic Development;Licences / Licensing",
-   "method": "Emails"
-  },
-  {
-   "date": "2015-06-09",
    "lobbyist": "Jamie Besner",
    "organization": "Sussex Strategy Group",
    "client": "Redpath Sugar",
    "subject": "Economic Development;Waterfront Revitalization",
    "method": "Meetings"
+  },
+  {
+   "date": "2015-06-09",
+   "lobbyist": "Chris Schafer",
+   "organization": "Uber Canada, Inc.",
+   "client": null,
+   "subject": "By-law / Regulation;Economic Development;Licences / Licensing",
+   "method": "Emails"
   },
   {
    "date": "2015-06-09",

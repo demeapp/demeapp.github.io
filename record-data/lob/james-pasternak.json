@@ -4,9 +4,17 @@
   "name": "City of Toronto Lobbyist Registry (Open Data)",
   "url": "https://open.toronto.ca/dataset/lobbyist-registry/"
  },
- "snapshot": "2026-10-23",
- "count": 1398,
+ "snapshot": "2026-11-14",
+ "count": 1399,
  "communications": [
+  {
+   "date": "2026-11-05",
+   "lobbyist": "Norman Cheesman",
+   "organization": "Cheesman & Associates",
+   "client": "Toronto Industry Network",
+   "subject": "Economic Development;Environment;Planning and Development, Planning Policy / Study",
+   "method": "Emails"
+  },
   {
    "date": "2026-10-08",
    "lobbyist": "Gary E. Benner",
@@ -809,6 +817,14 @@
   },
   {
    "date": "2024-11-06",
+   "lobbyist": "Austin Spademan",
+   "organization": "Bird Canada",
+   "client": null,
+   "subject": "By-law / Regulation;Transportation - Cycling / Bicycle Lanes;Transportation - Roads / Bridges",
+   "method": "Emails"
+  },
+  {
+   "date": "2024-11-06",
    "lobbyist": "Jake Brockman",
    "organization": "Uber Canada, Inc.",
    "client": null,
@@ -816,11 +832,11 @@
    "method": "Emails"
   },
   {
-   "date": "2024-11-06",
-   "lobbyist": "Austin Spademan",
-   "organization": "Bird Canada",
-   "client": null,
-   "subject": "By-law / Regulation;Transportation - Cycling / Bicycle Lanes;Transportation - Roads / Bridges",
+   "date": "2024-11-04",
+   "lobbyist": "Glenn De Baeremaeker",
+   "organization": "Glenn De Baeremaeker Consulting",
+   "client": "Co-op Cabs",
+   "subject": "Transit / TTC",
    "method": "Emails"
   },
   {
@@ -830,14 +846,6 @@
    "client": "Robert McAlpine Ltd.",
    "subject": "Fire Services;Water",
    "method": "Written"
-  },
-  {
-   "date": "2024-11-04",
-   "lobbyist": "Glenn De Baeremaeker",
-   "organization": "Glenn De Baeremaeker Consulting",
-   "client": "Co-op Cabs",
-   "subject": "Transit / TTC",
-   "method": "Emails"
   },
   {
    "date": "2024-10-18",
@@ -1785,6 +1793,14 @@
   },
   {
    "date": "2024-01-31",
+   "lobbyist": "Kim Wright",
+   "organization": "Wright Strategies",
+   "client": "Uber Canada, Inc.",
+   "subject": "By-law / Regulation;Economic Development;Transportation - Roads / Bridges",
+   "method": "Meetings"
+  },
+  {
+   "date": "2024-01-31",
    "lobbyist": "Laura Miller",
    "organization": "Uber Canada, Inc.",
    "client": null,
@@ -1797,14 +1813,6 @@
    "organization": "Uber Canada, Inc.",
    "client": null,
    "subject": "By-law / Regulation;Economic Development;Licences / Licensing",
-   "method": "Meetings"
-  },
-  {
-   "date": "2024-01-31",
-   "lobbyist": "Kim Wright",
-   "organization": "Wright Strategies",
-   "client": "Uber Canada, Inc.",
-   "subject": "By-law / Regulation;Economic Development;Transportation - Roads / Bridges",
    "method": "Meetings"
   },
   {
@@ -2721,14 +2729,6 @@
   },
   {
    "date": "2022-08-11",
-   "lobbyist": "Daniel McCulloch",
-   "organization": "The Equipment Specialist Inc.",
-   "client": null,
-   "subject": "Environment;Fleet Services;Transportation - Roads / Bridges",
-   "method": "Emails"
-  },
-  {
-   "date": "2022-08-11",
    "lobbyist": "Bryan Sherwood",
    "organization": "Deltera Inc.",
    "client": null,
@@ -2742,6 +2742,14 @@
    "client": null,
    "subject": "Planning and Development;Planning and Development Application;Planning and Development Application, Site Plan",
    "method": "Other or unreported"
+  },
+  {
+   "date": "2022-08-11",
+   "lobbyist": "Daniel McCulloch",
+   "organization": "The Equipment Specialist Inc.",
+   "client": null,
+   "subject": "Environment;Fleet Services;Transportation - Roads / Bridges",
+   "method": "Emails"
   },
   {
    "date": "2022-08-08",
@@ -4665,18 +4673,18 @@
   },
   {
    "date": "2020-11-30",
-   "lobbyist": "Jake Brockman",
-   "organization": "Uber Canada, Inc.",
-   "client": null,
-   "subject": "By-law / Regulation;Economic Development;Licences / Licensing",
-   "method": "Meetings"
-  },
-  {
-   "date": "2020-11-30",
    "lobbyist": "Kim Wright",
    "organization": "Wright Strategies",
    "client": "Uber Canada, Inc.",
    "subject": "By-law / Regulation;Economic Development;Transportation - Roads / Bridges",
+   "method": "Meetings"
+  },
+  {
+   "date": "2020-11-30",
+   "lobbyist": "Jake Brockman",
+   "organization": "Uber Canada, Inc.",
+   "client": null,
+   "subject": "By-law / Regulation;Economic Development;Licences / Licensing",
    "method": "Meetings"
   },
   {
@@ -4897,14 +4905,6 @@
   },
   {
    "date": "2020-09-14",
-   "lobbyist": "Jake Brockman",
-   "organization": "Uber Canada, Inc.",
-   "client": null,
-   "subject": "By-law / Regulation;Economic Development;Licences / Licensing",
-   "method": "Emails"
-  },
-  {
-   "date": "2020-09-14",
    "lobbyist": "Chris Schafer",
    "organization": "Bird Canada",
    "client": null,
@@ -4917,6 +4917,14 @@
    "organization": "Scooty Mobility Inc.",
    "client": null,
    "subject": "Transit / TTC;Transportation - Cycling / Bicycle Lanes;Transportation - Metrolinx",
+   "method": "Emails"
+  },
+  {
+   "date": "2020-09-14",
+   "lobbyist": "Jake Brockman",
+   "organization": "Uber Canada, Inc.",
+   "client": null,
+   "subject": "By-law / Regulation;Economic Development;Licences / Licensing",
    "method": "Emails"
   },
   {
@@ -8097,19 +8105,19 @@
   },
   {
    "date": "2016-09-26",
-   "lobbyist": "Chris Schafer",
-   "organization": "Uber Canada, Inc.",
-   "client": null,
-   "subject": "By-law / Regulation;Economic Development;Licences / Licensing",
-   "method": "Emails"
-  },
-  {
-   "date": "2016-09-26",
    "lobbyist": "Todd Bruce",
    "organization": "Advent Health Care Corporation",
    "client": null,
    "subject": "Planning and Development, Environmental Assessment;Planning and Development Application, Site Plan",
    "method": "Meetings"
+  },
+  {
+   "date": "2016-09-26",
+   "lobbyist": "Chris Schafer",
+   "organization": "Uber Canada, Inc.",
+   "client": null,
+   "subject": "By-law / Regulation;Economic Development;Licences / Licensing",
+   "method": "Emails"
   },
   {
    "date": "2016-09-16",
@@ -8305,18 +8313,18 @@
   },
   {
    "date": "2016-06-06",
-   "lobbyist": "Chris Schafer",
-   "organization": "Uber Canada, Inc.",
-   "client": null,
-   "subject": "By-law / Regulation;Economic Development;Licences / Licensing",
-   "method": "Emails"
-  },
-  {
-   "date": "2016-06-06",
    "lobbyist": "Todd Bruce",
    "organization": "Advent Health Care Corporation",
    "client": null,
    "subject": "Planning and Development, Environmental Assessment;Planning and Development Application, Site Plan",
+   "method": "Emails"
+  },
+  {
+   "date": "2016-06-06",
+   "lobbyist": "Chris Schafer",
+   "organization": "Uber Canada, Inc.",
+   "client": null,
+   "subject": "By-law / Regulation;Economic Development;Licences / Licensing",
    "method": "Emails"
   },
   {

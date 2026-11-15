@@ -43,7 +43,7 @@
    }
   ],
   "undated": 51,
-  "snapshot": "2026-10-23"
+  "snapshot": "2026-11-14"
  },
  "adam-giambrone": {
   "total": 95,
@@ -89,7 +89,7 @@
    }
   ],
   "undated": 92,
-  "snapshot": "2026-10-23"
+  "snapshot": "2026-11-14"
  },
  "adam-vaughan": {
   "total": 713,
@@ -155,19 +155,19 @@
    }
   ],
   "undated": 130,
-  "snapshot": "2026-10-23"
+  "snapshot": "2026-11-14"
  },
  "alejandra-bravo": {
-  "total": 268,
-  "term": 268,
+  "total": 270,
+  "term": 270,
   "first": "2022-11-17",
-  "last": "2026-10-08",
-  "lobbyists": 71,
-  "clients": 59,
-  "subjects": 114,
+  "last": "2026-11-11",
+  "lobbyists": 72,
+  "clients": 60,
+  "subjects": 115,
   "methods": {
    "Meetings": 84,
-   "Emails": 159,
+   "Emails": 161,
    "Phone calls": 15,
    "Written": 7,
    "Other or unreported": 3
@@ -179,7 +179,7 @@
    },
    {
     "label": "Economic Development",
-    "count": 53
+    "count": 55
    },
    {
     "label": "Planning and Development",
@@ -213,23 +213,23 @@
    },
    {
     "year": 2026,
-    "count": 23
+    "count": 25
    }
   ],
   "undated": 0,
-  "snapshot": "2026-10-23"
+  "snapshot": "2026-11-14"
  },
  "amber-morley": {
-  "total": 377,
-  "term": 377,
+  "total": 379,
+  "term": 379,
   "first": "2022-11-16",
-  "last": "2026-09-03",
+  "last": "2026-11-04",
   "lobbyists": 80,
   "clients": 83,
   "subjects": 157,
   "methods": {
    "Meetings": 101,
-   "Emails": 243,
+   "Emails": 245,
    "Phone calls": 9,
    "Written": 9,
    "Other or unreported": 15
@@ -241,7 +241,7 @@
    },
    {
     "label": "Economic Development",
-    "count": 73
+    "count": 74
    },
    {
     "label": "Planning and Development, Combined Application",
@@ -249,7 +249,7 @@
    },
    {
     "label": "By-law / Regulation",
-    "count": 52
+    "count": 53
    },
    {
     "label": "Planning and Development Application, Official Plan",
@@ -275,11 +275,11 @@
    },
    {
     "year": 2026,
-    "count": 38
+    "count": 40
    }
   ],
   "undated": 0,
-  "snapshot": "2026-10-23"
+  "snapshot": "2026-11-14"
  },
  "ana-bailao": {
   "total": 1565,
@@ -369,19 +369,19 @@
    }
   ],
   "undated": 2,
-  "snapshot": "2026-10-23"
+  "snapshot": "2026-11-14"
  },
  "anthony-perruzza": {
-  "total": 897,
-  "term": 198,
+  "total": 898,
+  "term": 199,
   "first": "2010-08-24",
-  "last": "2026-10-08",
+  "last": "2026-11-04",
   "lobbyists": 233,
   "clients": 197,
-  "subjects": 444,
+  "subjects": 445,
   "methods": {
    "Meetings": 254,
-   "Emails": 477,
+   "Emails": 478,
    "Phone calls": 49,
    "Written": 84,
    "Other or unreported": 33
@@ -389,7 +389,7 @@
   "top": [
    {
     "label": "Economic Development",
-    "count": 172
+    "count": 173
    },
    {
     "label": "By-law / Regulation",
@@ -475,23 +475,23 @@
    },
    {
     "year": 2026,
-    "count": 23
+    "count": 24
    }
   ],
   "undated": 51,
-  "snapshot": "2026-10-23"
+  "snapshot": "2026-11-14"
  },
  "ausma-malik": {
-  "total": 319,
-  "term": 319,
+  "total": 320,
+  "term": 320,
   "first": "2022-11-16",
-  "last": "2026-10-08",
+  "last": "2026-11-05",
   "lobbyists": 90,
-  "clients": 63,
-  "subjects": 152,
+  "clients": 64,
+  "subjects": 153,
   "methods": {
    "Meetings": 75,
-   "Emails": 228,
+   "Emails": 229,
    "Phone calls": 7,
    "Written": 6,
    "Other or unreported": 3
@@ -499,7 +499,7 @@
   "top": [
    {
     "label": "Economic Development",
-    "count": 95
+    "count": 96
    },
    {
     "label": "Attractions / Tourism",
@@ -537,11 +537,11 @@
    },
    {
     "year": 2026,
-    "count": 38
+    "count": 39
    }
   ],
   "undated": 0,
-  "snapshot": "2026-10-23"
+  "snapshot": "2026-11-14"
  },
  "bill-saundercook": {
   "total": 91,
@@ -587,7 +587,7 @@
    }
   ],
   "undated": 81,
-  "snapshot": "2026-10-23"
+  "snapshot": "2026-11-14"
  },
  "brad-bradford": {
   "total": 803,
@@ -665,7 +665,7 @@
    }
   ],
   "undated": 0,
-  "snapshot": "2026-10-23"
+  "snapshot": "2026-11-14"
  },
  "brian-ashton": {
   "total": 84,
@@ -711,7 +711,7 @@
    }
   ],
   "undated": 82,
-  "snapshot": "2026-10-23"
+  "snapshot": "2026-11-14"
  },
  "case-ootes": {
   "total": 79,
@@ -757,7 +757,7 @@
    }
   ],
   "undated": 72,
-  "snapshot": "2026-10-23"
+  "snapshot": "2026-11-14"
  },
  "cesar-palacio": {
   "total": 740,
@@ -835,7 +835,7 @@
    }
   ],
   "undated": 60,
-  "snapshot": "2026-10-23"
+  "snapshot": "2026-11-14"
  },
  "ceta-ramkhalawansingh": {
   "total": 23,
@@ -881,7 +881,7 @@
    }
   ],
   "undated": 0,
-  "snapshot": "2026-10-23"
+  "snapshot": "2026-11-14"
  },
  "chin-lee": {
   "total": 592,
@@ -959,7 +959,7 @@
    }
   ],
   "undated": 71,
-  "snapshot": "2026-10-23"
+  "snapshot": "2026-11-14"
  },
  "chris-moise": {
   "total": 489,
@@ -1021,14 +1021,14 @@
    }
   ],
   "undated": 0,
-  "snapshot": "2026-10-23"
+  "snapshot": "2026-11-14"
  },
  "christin-carmichael-greb": {
   "total": 388,
   "term": 0,
   "first": "2014-12-02",
   "last": "2018-10-31",
-  "lobbyists": 108,
+  "lobbyists": 109,
   "clients": 71,
   "subjects": 188,
   "methods": {
@@ -1083,7 +1083,7 @@
    }
   ],
   "undated": 0,
-  "snapshot": "2026-10-23"
+  "snapshot": "2026-11-14"
  },
  "cliff-jenkins": {
   "total": 88,
@@ -1129,7 +1129,7 @@
    }
   ],
   "undated": 74,
-  "snapshot": "2026-10-23"
+  "snapshot": "2026-11-14"
  },
  "cynthia-lai": {
   "total": 196,
@@ -1191,7 +1191,7 @@
    }
   ],
   "undated": 0,
-  "snapshot": "2026-10-23"
+  "snapshot": "2026-11-14"
  },
  "david-miller": {
   "total": 58,
@@ -1237,14 +1237,14 @@
    }
   ],
   "undated": 55,
-  "snapshot": "2026-10-23"
+  "snapshot": "2026-11-14"
  },
  "david-shiner": {
   "total": 699,
   "term": 0,
   "first": "2010-08-24",
   "last": "2018-11-13",
-  "lobbyists": 152,
+  "lobbyists": 151,
   "clients": 150,
   "subjects": 332,
   "methods": {
@@ -1315,7 +1315,7 @@
    }
   ],
   "undated": 57,
-  "snapshot": "2026-10-23"
+  "snapshot": "2026-11-14"
  },
  "denzil-minnan-wong": {
   "total": 1345,
@@ -1409,7 +1409,7 @@
    }
   ],
   "undated": 80,
-  "snapshot": "2026-10-23"
+  "snapshot": "2026-11-14"
  },
  "dianne-saxe": {
   "total": 741,
@@ -1471,7 +1471,7 @@
    }
   ],
   "undated": 0,
-  "snapshot": "2026-10-23"
+  "snapshot": "2026-11-14"
  },
  "doug-ford": {
   "total": 465,
@@ -1533,7 +1533,7 @@
    }
   ],
   "undated": 0,
-  "snapshot": "2026-10-23"
+  "snapshot": "2026-11-14"
  },
  "doug-holyday": {
   "total": 230,
@@ -1591,7 +1591,7 @@
    }
   ],
   "undated": 76,
-  "snapshot": "2026-10-23"
+  "snapshot": "2026-11-14"
  },
  "frances-nunziata": {
   "total": 1085,
@@ -1701,7 +1701,7 @@
    }
   ],
   "undated": 64,
-  "snapshot": "2026-10-23"
+  "snapshot": "2026-11-14"
  },
  "frank-di-giorgio": {
   "total": 735,
@@ -1779,7 +1779,7 @@
    }
   ],
   "undated": 78,
-  "snapshot": "2026-10-23"
+  "snapshot": "2026-11-14"
  },
  "gary-crawford": {
   "total": 989,
@@ -1873,7 +1873,7 @@
    }
   ],
   "undated": 1,
-  "snapshot": "2026-10-23"
+  "snapshot": "2026-11-14"
  },
  "giorgio-mammoliti": {
   "total": 524,
@@ -1951,7 +1951,7 @@
    }
   ],
   "undated": 64,
-  "snapshot": "2026-10-23"
+  "snapshot": "2026-11-14"
  },
  "glenn-de-baeremaeker": {
   "total": 857,
@@ -2029,7 +2029,7 @@
    }
   ],
   "undated": 107,
-  "snapshot": "2026-10-23"
+  "snapshot": "2026-11-14"
  },
  "gloria-lindsay-luby": {
   "total": 272,
@@ -2091,7 +2091,7 @@
    }
   ],
   "undated": 64,
-  "snapshot": "2026-10-23"
+  "snapshot": "2026-11-14"
  },
  "gord-perks": {
   "total": 943,
@@ -2201,7 +2201,7 @@
    }
   ],
   "undated": 78,
-  "snapshot": "2026-10-23"
+  "snapshot": "2026-11-14"
  },
  "howard-moscoe": {
   "total": 82,
@@ -2247,7 +2247,7 @@
    }
   ],
   "undated": 77,
-  "snapshot": "2026-10-23"
+  "snapshot": "2026-11-14"
  },
  "jamaal-myers": {
   "total": 311,
@@ -2309,7 +2309,7 @@
    }
   ],
   "undated": 0,
-  "snapshot": "2026-10-23"
+  "snapshot": "2026-11-14"
  },
  "james-maloney": {
   "total": 26,
@@ -2355,19 +2355,19 @@
    }
   ],
   "undated": 0,
-  "snapshot": "2026-10-23"
+  "snapshot": "2026-11-14"
  },
  "james-pasternak": {
-  "total": 1398,
-  "term": 332,
+  "total": 1399,
+  "term": 333,
   "first": "2011-02-14",
-  "last": "2026-10-08",
+  "last": "2026-11-05",
   "lobbyists": 245,
-  "clients": 241,
-  "subjects": 528,
+  "clients": 242,
+  "subjects": 529,
   "methods": {
    "Meetings": 411,
-   "Emails": 716,
+   "Emails": 717,
    "Phone calls": 122,
    "Written": 80,
    "Other or unreported": 69
@@ -2375,7 +2375,7 @@
   "top": [
    {
     "label": "Economic Development",
-    "count": 328
+    "count": 329
    },
    {
     "label": "By-law / Regulation",
@@ -2457,11 +2457,11 @@
    },
    {
     "year": 2026,
-    "count": 25
+    "count": 26
    }
   ],
   "undated": 0,
-  "snapshot": "2026-10-23"
+  "snapshot": "2026-11-14"
  },
  "janet-davis": {
   "total": 406,
@@ -2539,7 +2539,7 @@
    }
   ],
   "undated": 48,
-  "snapshot": "2026-10-23"
+  "snapshot": "2026-11-14"
  },
  "jaye-robinson": {
   "total": 875,
@@ -2637,7 +2637,7 @@
    }
   ],
   "undated": 0,
-  "snapshot": "2026-10-23"
+  "snapshot": "2026-11-14"
  },
  "jennifer-mckelvie": {
   "total": 726,
@@ -2711,7 +2711,7 @@
    }
   ],
   "undated": 0,
-  "snapshot": "2026-10-23"
+  "snapshot": "2026-11-14"
  },
  "jim-hart": {
   "total": 54,
@@ -2761,7 +2761,7 @@
    }
   ],
   "undated": 0,
-  "snapshot": "2026-10-23"
+  "snapshot": "2026-11-14"
  },
  "jim-karygiannis": {
   "total": 867,
@@ -2831,7 +2831,7 @@
    }
   ],
   "undated": 0,
-  "snapshot": "2026-10-23"
+  "snapshot": "2026-11-14"
  },
  "joe-cressy": {
   "total": 896,
@@ -2866,7 +2866,7 @@
     "count": 116
    },
    {
-    "label": "Licences / Licensing",
+    "label": "Planning and Development Application, Site Plan",
     "count": 102
    }
   ],
@@ -2909,7 +2909,7 @@
    }
   ],
   "undated": 0,
-  "snapshot": "2026-10-23"
+  "snapshot": "2026-11-14"
  },
  "joe-mihevc": {
   "total": 658,
@@ -2991,7 +2991,7 @@
    }
   ],
   "undated": 77,
-  "snapshot": "2026-10-23"
+  "snapshot": "2026-11-14"
  },
  "joe-pantalone": {
   "total": 174,
@@ -3037,7 +3037,7 @@
    }
   ],
   "undated": 103,
-  "snapshot": "2026-10-23"
+  "snapshot": "2026-11-14"
  },
  "john-campbell": {
   "total": 385,
@@ -3103,7 +3103,7 @@
    }
   ],
   "undated": 0,
-  "snapshot": "2026-10-23"
+  "snapshot": "2026-11-14"
  },
  "john-filion": {
   "total": 803,
@@ -3197,7 +3197,7 @@
    }
   ],
   "undated": 63,
-  "snapshot": "2026-10-23"
+  "snapshot": "2026-11-14"
  },
  "john-parker": {
   "total": 465,
@@ -3259,7 +3259,7 @@
    }
   ],
   "undated": 86,
-  "snapshot": "2026-10-23"
+  "snapshot": "2026-11-14"
  },
  "john-tory": {
   "total": 976,
@@ -3341,19 +3341,19 @@
    }
   ],
   "undated": 0,
-  "snapshot": "2026-10-23"
+  "snapshot": "2026-11-14"
  },
  "jon-burnside": {
-  "total": 693,
-  "term": 262,
+  "total": 694,
+  "term": 263,
   "first": "2014-12-02",
-  "last": "2026-10-08",
+  "last": "2026-11-05",
   "lobbyists": 157,
-  "clients": 133,
-  "subjects": 301,
+  "clients": 134,
+  "subjects": 302,
   "methods": {
    "Meetings": 261,
-   "Emails": 301,
+   "Emails": 302,
    "Phone calls": 75,
    "Written": 43,
    "Other or unreported": 13
@@ -3361,7 +3361,7 @@
   "top": [
    {
     "label": "Economic Development",
-    "count": 187
+    "count": 188
    },
    {
     "label": "By-law / Regulation",
@@ -3419,11 +3419,11 @@
    },
    {
     "year": 2026,
-    "count": 36
+    "count": 37
    }
   ],
   "undated": 0,
-  "snapshot": "2026-10-23"
+  "snapshot": "2026-11-14"
  },
  "jonathan-tsao": {
   "total": 4,
@@ -3465,7 +3465,7 @@
    }
   ],
   "undated": 0,
-  "snapshot": "2026-10-23"
+  "snapshot": "2026-11-14"
  },
  "josh-colle": {
   "total": 722,
@@ -3539,19 +3539,19 @@
    }
   ],
   "undated": 1,
-  "snapshot": "2026-10-23"
+  "snapshot": "2026-11-14"
  },
  "josh-matlow": {
-  "total": 1243,
-  "term": 335,
+  "total": 1245,
+  "term": 337,
   "first": "2010-12-22",
-  "last": "2026-10-16",
+  "last": "2026-11-09",
   "lobbyists": 268,
-  "clients": 284,
-  "subjects": 584,
+  "clients": 285,
+  "subjects": 585,
   "methods": {
    "Meetings": 419,
-   "Emails": 592,
+   "Emails": 594,
    "Phone calls": 120,
    "Written": 75,
    "Other or unreported": 37
@@ -3559,7 +3559,7 @@
   "top": [
    {
     "label": "Economic Development",
-    "count": 242
+    "count": 243
    },
    {
     "label": "By-law / Regulation",
@@ -3645,18 +3645,18 @@
    },
    {
     "year": 2026,
-    "count": 51
+    "count": 53
    }
   ],
   "undated": 1,
-  "snapshot": "2026-10-23"
+  "snapshot": "2026-11-14"
  },
  "justin-j-di-ciano": {
   "total": 600,
   "term": 0,
   "first": "2014-12-02",
   "last": "2018-09-13",
-  "lobbyists": 124,
+  "lobbyists": 125,
   "clients": 89,
   "subjects": 223,
   "methods": {
@@ -3711,14 +3711,14 @@
    }
   ],
   "undated": 0,
-  "snapshot": "2026-10-23"
+  "snapshot": "2026-11-14"
  },
  "karen-stintz": {
   "total": 616,
   "term": 0,
   "first": "2010-07-23",
   "last": "2014-11-17",
-  "lobbyists": 158,
+  "lobbyists": 159,
   "clients": 150,
   "subjects": 317,
   "methods": {
@@ -3773,7 +3773,7 @@
    }
   ],
   "undated": 98,
-  "snapshot": "2026-10-23"
+  "snapshot": "2026-11-14"
  },
  "kristyn-wong-tam": {
   "total": 1653,
@@ -3867,7 +3867,7 @@
    }
   ],
   "undated": 1,
-  "snapshot": "2026-10-23"
+  "snapshot": "2026-11-14"
  },
  "kyle-rae": {
   "total": 116,
@@ -3913,19 +3913,19 @@
    }
   ],
   "undated": 113,
-  "snapshot": "2026-10-23"
+  "snapshot": "2026-11-14"
  },
  "lily-cheng": {
-  "total": 390,
-  "term": 390,
+  "total": 391,
+  "term": 391,
   "first": "2022-11-17",
-  "last": "2026-10-08",
+  "last": "2026-11-05",
   "lobbyists": 74,
-  "clients": 63,
-  "subjects": 143,
+  "clients": 64,
+  "subjects": 144,
   "methods": {
    "Meetings": 153,
-   "Emails": 196,
+   "Emails": 197,
    "Phone calls": 25,
    "Written": 10,
    "Other or unreported": 6
@@ -3971,11 +3971,11 @@
    },
    {
     "year": 2026,
-    "count": 62
+    "count": 63
    }
   ],
   "undated": 0,
-  "snapshot": "2026-10-23"
+  "snapshot": "2026-11-14"
  },
  "lucy-troisi": {
   "total": 106,
@@ -4025,7 +4025,7 @@
    }
   ],
   "undated": 0,
-  "snapshot": "2026-10-23"
+  "snapshot": "2026-11-14"
  },
  "maria-augimeri": {
   "total": 549,
@@ -4103,7 +4103,7 @@
    }
   ],
   "undated": 61,
-  "snapshot": "2026-10-23"
+  "snapshot": "2026-11-14"
  },
  "mark-grimes": {
   "total": 1030,
@@ -4197,7 +4197,7 @@
    }
   ],
   "undated": 77,
-  "snapshot": "2026-10-23"
+  "snapshot": "2026-11-14"
  },
  "mary-fragedakis": {
   "total": 436,
@@ -4275,14 +4275,14 @@
    }
   ],
   "undated": 1,
-  "snapshot": "2026-10-23"
+  "snapshot": "2026-11-14"
  },
  "mary-margaret-mcmahon": {
   "total": 580,
   "term": 0,
   "first": "2011-02-03",
   "last": "2018-10-17",
-  "lobbyists": 148,
+  "lobbyists": 147,
   "clients": 111,
   "subjects": 268,
   "methods": {
@@ -4349,7 +4349,7 @@
    }
   ],
   "undated": 1,
-  "snapshot": "2026-10-23"
+  "snapshot": "2026-11-14"
  },
  "michael-ford": {
   "total": 411,
@@ -4419,27 +4419,27 @@
    }
   ],
   "undated": 0,
-  "snapshot": "2026-10-23"
+  "snapshot": "2026-11-14"
  },
  "michael-thompson": {
-  "total": 1580,
-  "term": 196,
+  "total": 1582,
+  "term": 198,
   "first": "2010-07-09",
-  "last": "2026-10-08",
+  "last": "2026-11-05",
   "lobbyists": 428,
   "clients": 295,
-  "subjects": 725,
+  "subjects": 727,
   "methods": {
    "Meetings": 629,
-   "Emails": 636,
-   "Phone calls": 159,
+   "Emails": 637,
+   "Phone calls": 160,
    "Written": 111,
    "Other or unreported": 45
   },
   "top": [
    {
     "label": "Economic Development",
-    "count": 533
+    "count": 534
    },
    {
     "label": "By-law / Regulation",
@@ -4525,11 +4525,11 @@
    },
    {
     "year": 2026,
-    "count": 26
+    "count": 28
    }
   ],
   "undated": 78,
-  "snapshot": "2026-10-23"
+  "snapshot": "2026-11-14"
  },
  "michael-walker": {
   "total": 84,
@@ -4579,7 +4579,7 @@
    }
   ],
   "undated": 82,
-  "snapshot": "2026-10-23"
+  "snapshot": "2026-11-14"
  },
  "michelle-berardinetti": {
   "total": 374,
@@ -4649,7 +4649,7 @@
    }
   ],
   "undated": 1,
-  "snapshot": "2026-10-23"
+  "snapshot": "2026-11-14"
  },
  "michelle-holland": {
   "total": 172,
@@ -4703,7 +4703,7 @@
    }
   ],
   "undated": 0,
-  "snapshot": "2026-10-23"
+  "snapshot": "2026-11-14"
  },
  "miganoush-megardichian": {
   "total": 1,
@@ -4741,19 +4741,19 @@
    }
   ],
   "undated": 0,
-  "snapshot": "2026-10-23"
+  "snapshot": "2026-11-14"
  },
  "mike-colle": {
-  "total": 645,
-  "term": 290,
+  "total": 648,
+  "term": 293,
   "first": "2018-12-07",
-  "last": "2026-10-08",
+  "last": "2026-11-06",
   "lobbyists": 169,
-  "clients": 128,
-  "subjects": 281,
+  "clients": 129,
+  "subjects": 284,
   "methods": {
    "Meetings": 147,
-   "Emails": 393,
+   "Emails": 396,
    "Phone calls": 75,
    "Written": 18,
    "Other or unreported": 12
@@ -4761,7 +4761,7 @@
   "top": [
    {
     "label": "Planning and Development Application, Zoning By-law",
-    "count": 103
+    "count": 105
    },
    {
     "label": "By-law / Regulation",
@@ -4769,14 +4769,14 @@
    },
    {
     "label": "Economic Development",
-    "count": 90
+    "count": 91
    },
    {
     "label": "Planning and Development Application",
-    "count": 87
+    "count": 89
    },
    {
-    "label": "Transportation - Cycling / Bicycle Lanes",
+    "label": "Planning and Development",
     "count": 69
    }
   ],
@@ -4815,11 +4815,11 @@
    },
    {
     "year": 2026,
-    "count": 24
+    "count": 27
    }
   ],
   "undated": 0,
-  "snapshot": "2026-10-23"
+  "snapshot": "2026-11-14"
  },
  "mike-del-grande": {
   "total": 218,
@@ -4881,7 +4881,7 @@
    }
   ],
   "undated": 54,
-  "snapshot": "2026-10-23"
+  "snapshot": "2026-11-14"
  },
  "mike-feldman": {
   "total": 82,
@@ -4927,7 +4927,7 @@
    }
   ],
   "undated": 76,
-  "snapshot": "2026-10-23"
+  "snapshot": "2026-11-14"
  },
  "mike-layton": {
   "total": 1559,
@@ -5021,19 +5021,19 @@
    }
   ],
   "undated": 2,
-  "snapshot": "2026-10-23"
+  "snapshot": "2026-11-14"
  },
  "neethan-shan": {
-  "total": 77,
-  "term": 30,
+  "total": 78,
+  "term": 31,
   "first": "2017-03-01",
-  "last": "2026-10-08",
+  "last": "2026-11-06",
   "lobbyists": 18,
   "clients": 34,
   "subjects": 53,
   "methods": {
    "Meetings": 23,
-   "Emails": 43,
+   "Emails": 44,
    "Phone calls": 4,
    "Written": 3,
    "Other or unreported": 4
@@ -5041,7 +5041,7 @@
   "top": [
    {
     "label": "Economic Development",
-    "count": 24
+    "count": 25
    },
    {
     "label": "Planning and Development Application, Zoning By-law",
@@ -5075,23 +5075,23 @@
    },
    {
     "year": 2026,
-    "count": 25
+    "count": 26
    }
   ],
   "undated": 0,
-  "snapshot": "2026-10-23"
+  "snapshot": "2026-11-14"
  },
  "nick-mantas": {
-  "total": 594,
-  "term": 391,
+  "total": 595,
+  "term": 392,
   "first": "2021-01-21",
-  "last": "2026-10-08",
+  "last": "2026-11-06",
   "lobbyists": 72,
-  "clients": 123,
-  "subjects": 206,
+  "clients": 124,
+  "subjects": 207,
   "methods": {
    "Meetings": 128,
-   "Emails": 217,
+   "Emails": 218,
    "Phone calls": 199,
    "Written": 10,
    "Other or unreported": 40
@@ -5107,7 +5107,7 @@
    },
    {
     "label": "Economic Development",
-    "count": 82
+    "count": 83
    },
    {
     "label": "Transportation",
@@ -5141,11 +5141,11 @@
    },
    {
     "year": 2026,
-    "count": 44
+    "count": 45
    }
   ],
   "undated": 0,
-  "snapshot": "2026-10-23"
+  "snapshot": "2026-11-14"
  },
  "norman-kelly": {
   "total": 760,
@@ -5223,27 +5223,27 @@
    }
   ],
   "undated": 73,
-  "snapshot": "2026-10-23"
+  "snapshot": "2026-11-14"
  },
  "olivia-chow": {
-  "total": 284,
-  "term": 284,
+  "total": 287,
+  "term": 287,
   "first": "2023-07-12",
-  "last": "2026-10-08",
-  "lobbyists": 103,
+  "last": "2026-11-04",
+  "lobbyists": 105,
   "clients": 56,
-  "subjects": 156,
+  "subjects": 158,
   "methods": {
    "Meetings": 88,
-   "Emails": 163,
+   "Emails": 165,
    "Phone calls": 13,
-   "Written": 16,
+   "Written": 17,
    "Other or unreported": 4
   },
   "top": [
    {
     "label": "Economic Development",
-    "count": 67
+    "count": 68
    },
    {
     "label": "By-law / Regulation",
@@ -5277,11 +5277,11 @@
    },
    {
     "year": 2026,
-    "count": 34
+    "count": 37
    }
   ],
   "undated": 0,
-  "snapshot": "2026-10-23"
+  "snapshot": "2026-11-14"
  },
  "pam-mcconnell": {
   "total": 545,
@@ -5355,19 +5355,19 @@
    }
   ],
   "undated": 78,
-  "snapshot": "2026-10-23"
+  "snapshot": "2026-11-14"
  },
  "parthi-kandavel": {
-  "total": 255,
-  "term": 255,
+  "total": 256,
+  "term": 256,
   "first": "2023-12-14",
-  "last": "2026-10-08",
+  "last": "2026-11-06",
   "lobbyists": 44,
-  "clients": 47,
-  "subjects": 91,
+  "clients": 48,
+  "subjects": 92,
   "methods": {
    "Meetings": 121,
-   "Emails": 98,
+   "Emails": 99,
    "Phone calls": 31,
    "Written": 2,
    "Other or unreported": 3
@@ -5375,7 +5375,7 @@
   "top": [
    {
     "label": "Economic Development",
-    "count": 61
+    "count": 62
    },
    {
     "label": "Planning and Development Application",
@@ -5391,7 +5391,7 @@
    },
    {
     "label": "Planning and Development, Planning Policy / Study",
-    "count": 39
+    "count": 40
    }
   ],
   "years": [
@@ -5409,23 +5409,23 @@
    },
    {
     "year": 2026,
-    "count": 24
+    "count": 25
    }
   ],
   "undated": 0,
-  "snapshot": "2026-10-23"
+  "snapshot": "2026-11-14"
  },
  "paul-ainslie": {
-  "total": 983,
-  "term": 211,
+  "total": 984,
+  "term": 212,
   "first": "2010-08-24",
-  "last": "2026-10-08",
+  "last": "2026-11-06",
   "lobbyists": 210,
   "clients": 228,
-  "subjects": 488,
+  "subjects": 489,
   "methods": {
    "Meetings": 171,
-   "Emails": 602,
+   "Emails": 603,
    "Phone calls": 72,
    "Written": 98,
    "Other or unreported": 40
@@ -5433,7 +5433,7 @@
   "top": [
    {
     "label": "Economic Development",
-    "count": 254
+    "count": 255
    },
    {
     "label": "By-law / Regulation",
@@ -5519,11 +5519,11 @@
    },
    {
     "year": 2026,
-    "count": 34
+    "count": 35
    }
   ],
   "undated": 58,
-  "snapshot": "2026-10-23"
+  "snapshot": "2026-11-14"
  },
  "paula-fletcher": {
   "total": 874,
@@ -5633,7 +5633,7 @@
    }
   ],
   "undated": 62,
-  "snapshot": "2026-10-23"
+  "snapshot": "2026-11-14"
  },
  "peter-leon": {
   "total": 80,
@@ -5683,7 +5683,7 @@
    }
   ],
   "undated": 0,
-  "snapshot": "2026-10-23"
+  "snapshot": "2026-11-14"
  },
  "peter-milczyn": {
   "total": 745,
@@ -5745,19 +5745,19 @@
    }
   ],
   "undated": 129,
-  "snapshot": "2026-10-23"
+  "snapshot": "2026-11-14"
  },
  "rachel-chernos-lin": {
-  "total": 104,
-  "term": 104,
+  "total": 105,
+  "term": 105,
   "first": "2024-11-11",
-  "last": "2026-10-08",
+  "last": "2026-11-05",
   "lobbyists": 29,
   "clients": 31,
   "subjects": 56,
   "methods": {
    "Meetings": 39,
-   "Emails": 57,
+   "Emails": 58,
    "Phone calls": 7,
    "Written": 1,
    "Other or unreported": 0
@@ -5781,7 +5781,7 @@
    },
    {
     "label": "Economic Development",
-    "count": 14
+    "count": 15
    }
   ],
   "years": [
@@ -5795,11 +5795,11 @@
    },
    {
     "year": 2026,
-    "count": 41
+    "count": 42
    }
   ],
   "undated": 0,
-  "snapshot": "2026-10-23"
+  "snapshot": "2026-11-14"
  },
  "raymond-cho": {
   "total": 367,
@@ -5873,7 +5873,7 @@
    }
   ],
   "undated": 39,
-  "snapshot": "2026-10-23"
+  "snapshot": "2026-11-14"
  },
  "rob-ford": {
   "total": 601,
@@ -5943,7 +5943,7 @@
    }
   ],
   "undated": 79,
-  "snapshot": "2026-10-23"
+  "snapshot": "2026-11-14"
  },
  "robin-buxton-potts": {
   "total": 17,
@@ -5962,15 +5962,15 @@
   },
   "top": [
    {
+    "label": "Transportation",
+    "count": 6
+   },
+   {
     "label": "By-law / Regulation",
     "count": 6
    },
    {
     "label": "Licences / Licensing",
-    "count": 6
-   },
-   {
-    "label": "Transportation",
     "count": 6
    },
    {
@@ -5989,7 +5989,7 @@
    }
   ],
   "undated": 0,
-  "snapshot": "2026-10-23"
+  "snapshot": "2026-11-14"
  },
  "ron-moeser": {
   "total": 294,
@@ -6063,7 +6063,7 @@
    }
   ],
   "undated": 49,
-  "snapshot": "2026-10-23"
+  "snapshot": "2026-11-14"
  },
  "rose-milczyn": {
   "total": 6,
@@ -6109,7 +6109,7 @@
    }
   ],
   "undated": 0,
-  "snapshot": "2026-10-23"
+  "snapshot": "2026-11-14"
  },
  "sandra-bussin": {
   "total": 69,
@@ -6159,7 +6159,7 @@
    }
   ],
   "undated": 67,
-  "snapshot": "2026-10-23"
+  "snapshot": "2026-11-14"
  },
  "sarah-doucette": {
   "total": 434,
@@ -6233,19 +6233,19 @@
    }
   ],
   "undated": 2,
-  "snapshot": "2026-10-23"
+  "snapshot": "2026-11-14"
  },
  "shelley-carroll": {
-  "total": 1218,
-  "term": 342,
+  "total": 1221,
+  "term": 345,
   "first": "2010-07-13",
-  "last": "2026-10-08",
+  "last": "2026-11-06",
   "lobbyists": 285,
   "clients": 241,
   "subjects": 540,
   "methods": {
-   "Meetings": 441,
-   "Emails": 539,
+   "Meetings": 443,
+   "Emails": 540,
    "Phone calls": 86,
    "Written": 85,
    "Other or unreported": 67
@@ -6253,7 +6253,7 @@
   "top": [
    {
     "label": "Economic Development",
-    "count": 294
+    "count": 295
    },
    {
     "label": "By-law / Regulation",
@@ -6269,7 +6269,7 @@
    },
    {
     "label": "Planning and Development, Planning Policy / Study",
-    "count": 88
+    "count": 89
    }
   ],
   "years": [
@@ -6339,23 +6339,23 @@
    },
    {
     "year": 2026,
-    "count": 29
+    "count": 32
    }
   ],
   "undated": 85,
-  "snapshot": "2026-10-23"
+  "snapshot": "2026-11-14"
  },
  "stephen-holyday": {
-  "total": 998,
-  "term": 262,
+  "total": 999,
+  "term": 263,
   "first": "2014-12-02",
-  "last": "2026-10-08",
-  "lobbyists": 232,
-  "clients": 178,
-  "subjects": 427,
+  "last": "2026-11-06",
+  "lobbyists": 231,
+  "clients": 179,
+  "subjects": 428,
   "methods": {
    "Meetings": 363,
-   "Emails": 458,
+   "Emails": 459,
    "Phone calls": 95,
    "Written": 45,
    "Other or unreported": 37
@@ -6363,7 +6363,7 @@
   "top": [
    {
     "label": "Economic Development",
-    "count": 235
+    "count": 236
    },
    {
     "label": "By-law / Regulation",
@@ -6433,11 +6433,11 @@
    },
    {
     "year": 2026,
-    "count": 47
+    "count": 48
    }
   ],
   "undated": 0,
-  "snapshot": "2026-10-23"
+  "snapshot": "2026-11-14"
  },
  "suzan-hall": {
   "total": 53,
@@ -6483,19 +6483,19 @@
    }
   ],
   "undated": 50,
-  "snapshot": "2026-10-23"
+  "snapshot": "2026-11-14"
  },
  "vincent-crisanti": {
-  "total": 834,
-  "term": 259,
+  "total": 835,
+  "term": 260,
   "first": "2010-12-13",
-  "last": "2026-10-08",
-  "lobbyists": 174,
+  "last": "2026-11-06",
+  "lobbyists": 173,
   "clients": 162,
-  "subjects": 372,
+  "subjects": 373,
   "methods": {
    "Meetings": 322,
-   "Emails": 369,
+   "Emails": 370,
    "Phone calls": 71,
    "Written": 64,
    "Other or unreported": 8
@@ -6503,7 +6503,7 @@
   "top": [
    {
     "label": "Economic Development",
-    "count": 221
+    "count": 222
    },
    {
     "label": "Licences / Licensing",
@@ -6577,10 +6577,10 @@
    },
    {
     "year": 2026,
-    "count": 21
+    "count": 22
    }
   ],
   "undated": 0,
-  "snapshot": "2026-10-23"
+  "snapshot": "2026-11-14"
  }
 }

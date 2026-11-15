@@ -4,7 +4,7 @@
   "name": "City of Toronto Lobbyist Registry (Open Data)",
   "url": "https://open.toronto.ca/dataset/lobbyist-registry/"
  },
- "snapshot": "2026-10-23",
+ "snapshot": "2026-11-14",
  "count": 726,
  "communications": [
   {
@@ -353,18 +353,18 @@
   },
   {
    "date": "2024-11-06",
-   "lobbyist": "Jake Brockman",
-   "organization": "Uber Canada, Inc.",
-   "client": null,
-   "subject": "By-law / Regulation;Economic Development;Licences / Licensing",
-   "method": "Emails"
-  },
-  {
-   "date": "2024-11-06",
    "lobbyist": "Austin Spademan",
    "organization": "Bird Canada",
    "client": null,
    "subject": "By-law / Regulation;Transportation - Cycling / Bicycle Lanes;Transportation - Roads / Bridges",
+   "method": "Emails"
+  },
+  {
+   "date": "2024-11-06",
+   "lobbyist": "Jake Brockman",
+   "organization": "Uber Canada, Inc.",
+   "client": null,
+   "subject": "By-law / Regulation;Economic Development;Licences / Licensing",
    "method": "Emails"
   },
   {
@@ -745,19 +745,19 @@
   },
   {
    "date": "2024-06-14",
-   "lobbyist": "Laura Lambie",
-   "organization": "Association of Consulting Engineering Companies - Ontario",
-   "client": null,
-   "subject": "Procurement",
-   "method": "Emails"
-  },
-  {
-   "date": "2024-06-14",
    "lobbyist": "Luke Robertson",
    "organization": "The Cadillac Fairview Corporation Limited",
    "client": null,
    "subject": "Economic Development;Transportation - Metrolinx",
    "method": "Phone calls"
+  },
+  {
+   "date": "2024-06-14",
+   "lobbyist": "Laura Lambie",
+   "organization": "Association of Consulting Engineering Companies - Ontario",
+   "client": null,
+   "subject": "Procurement",
+   "method": "Emails"
   },
   {
    "date": "2024-06-13",
@@ -873,11 +873,11 @@
   },
   {
    "date": "2024-04-30",
-   "lobbyist": "Andrew Hill",
-   "organization": "SpotHero, Inc.",
+   "lobbyist": "Moaz Ahmad",
+   "organization": "Scooty Mobility Inc.",
    "client": null,
-   "subject": "Parking;Procurement;Toronto Parking Authority",
-   "method": "Meetings"
+   "subject": "Transit / TTC;Transportation - Cycling / Bicycle Lanes;Transportation - Metrolinx",
+   "method": "Emails"
   },
   {
    "date": "2024-04-30",
@@ -889,11 +889,11 @@
   },
   {
    "date": "2024-04-30",
-   "lobbyist": "Moaz Ahmad",
-   "organization": "Scooty Mobility Inc.",
+   "lobbyist": "Andrew Hill",
+   "organization": "SpotHero, Inc.",
    "client": null,
-   "subject": "Transit / TTC;Transportation - Cycling / Bicycle Lanes;Transportation - Metrolinx",
-   "method": "Emails"
+   "subject": "Parking;Procurement;Toronto Parking Authority",
+   "method": "Meetings"
   },
   {
    "date": "2024-04-30",
@@ -1233,7 +1233,7 @@
   },
   {
    "date": "2024-01-29",
-   "lobbyist": "Jake Brockman",
+   "lobbyist": "Laura Miller",
    "organization": "Uber Canada, Inc.",
    "client": null,
    "subject": "By-law / Regulation;Economic Development;Licences / Licensing",
@@ -1241,7 +1241,7 @@
   },
   {
    "date": "2024-01-29",
-   "lobbyist": "Laura Miller",
+   "lobbyist": "Jake Brockman",
    "organization": "Uber Canada, Inc.",
    "client": null,
    "subject": "By-law / Regulation;Economic Development;Licences / Licensing",
@@ -1449,14 +1449,6 @@
   },
   {
    "date": "2023-11-14",
-   "lobbyist": "Jake Brockman",
-   "organization": "Uber Canada, Inc.",
-   "client": null,
-   "subject": "By-law / Regulation;Economic Development;Licences / Licensing",
-   "method": "Emails"
-  },
-  {
-   "date": "2023-11-14",
    "lobbyist": "Jeff Parnell",
    "organization": "Power Workers' Union",
    "client": null,
@@ -1470,6 +1462,14 @@
    "client": "Power Workers Union",
    "subject": "Economic Development;Energy",
    "method": "Meetings"
+  },
+  {
+   "date": "2023-11-14",
+   "lobbyist": "Jake Brockman",
+   "organization": "Uber Canada, Inc.",
+   "client": null,
+   "subject": "By-law / Regulation;Economic Development;Licences / Licensing",
+   "method": "Emails"
   },
   {
    "date": "2023-11-03",
@@ -1593,18 +1593,18 @@
   },
   {
    "date": "2023-10-05",
-   "lobbyist": "Matthew Kofsky",
-   "organization": "Toronto Region Board of Trade",
-   "client": null,
-   "subject": "Budget;Economic Development;Planning and Development, Planning Policy / Study",
-   "method": "Emails"
-  },
-  {
-   "date": "2023-10-05",
    "lobbyist": "Kim Wright",
    "organization": "Wright Strategies",
    "client": "Uber Canada, Inc.",
    "subject": "By-law / Regulation;Economic Development;Transportation - Roads / Bridges",
+   "method": "Emails"
+  },
+  {
+   "date": "2023-10-05",
+   "lobbyist": "Matthew Kofsky",
+   "organization": "Toronto Region Board of Trade",
+   "client": null,
+   "subject": "Budget;Economic Development;Planning and Development, Planning Policy / Study",
    "method": "Emails"
   },
   {
@@ -1625,18 +1625,18 @@
   },
   {
    "date": "2023-10-03",
-   "lobbyist": "Jake Brockman",
-   "organization": "Uber Canada, Inc.",
-   "client": null,
-   "subject": "By-law / Regulation;Economic Development;Licences / Licensing",
-   "method": "Emails"
-  },
-  {
-   "date": "2023-10-03",
    "lobbyist": "Kim Wright",
    "organization": "Wright Strategies",
    "client": "Uber Canada, Inc.",
    "subject": "By-law / Regulation;Economic Development;Transportation - Roads / Bridges",
+   "method": "Emails"
+  },
+  {
+   "date": "2023-10-03",
+   "lobbyist": "Jake Brockman",
+   "organization": "Uber Canada, Inc.",
+   "client": null,
+   "subject": "By-law / Regulation;Economic Development;Licences / Licensing",
    "method": "Emails"
   },
   {
@@ -3921,18 +3921,18 @@
   },
   {
    "date": "2020-11-18",
-   "lobbyist": "Jake Brockman",
-   "organization": "Uber Canada, Inc.",
-   "client": null,
-   "subject": "By-law / Regulation;Economic Development;Licences / Licensing",
-   "method": "Meetings"
-  },
-  {
-   "date": "2020-11-18",
    "lobbyist": "Kim Wright",
    "organization": "Wright Strategies",
    "client": "Uber Canada, Inc.",
    "subject": "By-law / Regulation;Economic Development;Transportation - Roads / Bridges",
+   "method": "Meetings"
+  },
+  {
+   "date": "2020-11-18",
+   "lobbyist": "Jake Brockman",
+   "organization": "Uber Canada, Inc.",
+   "client": null,
+   "subject": "By-law / Regulation;Economic Development;Licences / Licensing",
    "method": "Meetings"
   },
   {
@@ -4105,14 +4105,6 @@
   },
   {
    "date": "2020-09-14",
-   "lobbyist": "Jake Brockman",
-   "organization": "Uber Canada, Inc.",
-   "client": null,
-   "subject": "By-law / Regulation;Economic Development;Licences / Licensing",
-   "method": "Emails"
-  },
-  {
-   "date": "2020-09-14",
    "lobbyist": "Chris Schafer",
    "organization": "Bird Canada",
    "client": null,
@@ -4125,6 +4117,14 @@
    "organization": "Scooty Mobility Inc.",
    "client": null,
    "subject": "Transit / TTC;Transportation - Cycling / Bicycle Lanes;Transportation - Metrolinx",
+   "method": "Emails"
+  },
+  {
+   "date": "2020-09-14",
+   "lobbyist": "Jake Brockman",
+   "organization": "Uber Canada, Inc.",
+   "client": null,
+   "subject": "By-law / Regulation;Economic Development;Licences / Licensing",
    "method": "Emails"
   },
   {
@@ -5057,18 +5057,18 @@
   },
   {
    "date": "2019-05-21",
-   "lobbyist": "Cameron MacKinnon",
-   "organization": "MacKinnon Public Affairs",
-   "client": "North American Development Group",
-   "subject": "Planning and Development Application, Official Plan;Planning and Development Application, Zoning By-law",
-   "method": "Meetings"
-  },
-  {
-   "date": "2019-05-21",
    "lobbyist": "Steve Bishop",
    "organization": "North American Development Group",
    "client": null,
    "subject": "Planning and Development, Combined Application",
+   "method": "Meetings"
+  },
+  {
+   "date": "2019-05-21",
+   "lobbyist": "Cameron MacKinnon",
+   "organization": "MacKinnon Public Affairs",
+   "client": "North American Development Group",
+   "subject": "Planning and Development Application, Official Plan;Planning and Development Application, Zoning By-law",
    "method": "Meetings"
   },
   {
@@ -5097,75 +5097,75 @@
   },
   {
    "date": "2019-05-09",
+   "lobbyist": "Brendan Charters",
+   "organization": "Building Industry and Land Development Association",
+   "client": null,
+   "subject": "Planning and Development, Planning Policy / Study",
+   "method": "Meetings"
+  },
+  {
+   "date": "2019-05-09",
+   "lobbyist": "Sam Lapidus",
+   "organization": "Building Industry and Land Development Association",
+   "client": null,
+   "subject": "Planning and Development, Planning Policy / Study",
+   "method": "Meetings"
+  },
+  {
+   "date": "2019-05-09",
+   "lobbyist": "Jon Carlos Tsilfidis",
+   "organization": "Building Industry and Land Development Association",
+   "client": null,
+   "subject": "Planning and Development, Planning Policy / Study",
+   "method": "Meetings"
+  },
+  {
+   "date": "2019-05-09",
+   "lobbyist": "Paula Tenuta",
+   "organization": "Building Industry and Land Development Association",
+   "client": null,
+   "subject": "Planning and Development, Planning Policy / Study",
+   "method": "Meetings"
+  },
+  {
+   "date": "2019-05-09",
+   "lobbyist": "Brendan Charters",
+   "organization": "Building Industry and Land Development Association",
+   "client": null,
+   "subject": "Transportation - Roads / Bridges",
+   "method": "Meetings"
+  },
+  {
+   "date": "2019-05-09",
+   "lobbyist": "Sam Lapidus",
+   "organization": "Building Industry and Land Development Association",
+   "client": null,
+   "subject": "Transportation - Roads / Bridges",
+   "method": "Meetings"
+  },
+  {
+   "date": "2019-05-09",
+   "lobbyist": "Jon Carlos Tsilfidis",
+   "organization": "Building Industry and Land Development Association",
+   "client": null,
+   "subject": "Transportation - Roads / Bridges",
+   "method": "Meetings"
+  },
+  {
+   "date": "2019-05-09",
+   "lobbyist": "Paula Tenuta",
+   "organization": "Building Industry and Land Development Association",
+   "client": null,
+   "subject": "Transportation - Roads / Bridges",
+   "method": "Meetings"
+  },
+  {
+   "date": "2019-05-09",
    "lobbyist": "Milton Chan",
    "organization": "Toronto Region Board of Trade",
    "client": null,
    "subject": "Budget;Economic Development;Planning and Development, Planning Policy / Study",
    "method": "Emails"
-  },
-  {
-   "date": "2019-05-09",
-   "lobbyist": "Brendan Charters",
-   "organization": "Building Industry and Land Development Association",
-   "client": null,
-   "subject": "Planning and Development, Planning Policy / Study",
-   "method": "Meetings"
-  },
-  {
-   "date": "2019-05-09",
-   "lobbyist": "Sam Lapidus",
-   "organization": "Building Industry and Land Development Association",
-   "client": null,
-   "subject": "Planning and Development, Planning Policy / Study",
-   "method": "Meetings"
-  },
-  {
-   "date": "2019-05-09",
-   "lobbyist": "Jon Carlos Tsilfidis",
-   "organization": "Building Industry and Land Development Association",
-   "client": null,
-   "subject": "Planning and Development, Planning Policy / Study",
-   "method": "Meetings"
-  },
-  {
-   "date": "2019-05-09",
-   "lobbyist": "Paula Tenuta",
-   "organization": "Building Industry and Land Development Association",
-   "client": null,
-   "subject": "Planning and Development, Planning Policy / Study",
-   "method": "Meetings"
-  },
-  {
-   "date": "2019-05-09",
-   "lobbyist": "Brendan Charters",
-   "organization": "Building Industry and Land Development Association",
-   "client": null,
-   "subject": "Transportation - Roads / Bridges",
-   "method": "Meetings"
-  },
-  {
-   "date": "2019-05-09",
-   "lobbyist": "Sam Lapidus",
-   "organization": "Building Industry and Land Development Association",
-   "client": null,
-   "subject": "Transportation - Roads / Bridges",
-   "method": "Meetings"
-  },
-  {
-   "date": "2019-05-09",
-   "lobbyist": "Jon Carlos Tsilfidis",
-   "organization": "Building Industry and Land Development Association",
-   "client": null,
-   "subject": "Transportation - Roads / Bridges",
-   "method": "Meetings"
-  },
-  {
-   "date": "2019-05-09",
-   "lobbyist": "Paula Tenuta",
-   "organization": "Building Industry and Land Development Association",
-   "client": null,
-   "subject": "Transportation - Roads / Bridges",
-   "method": "Meetings"
   },
   {
    "date": "2019-05-09",

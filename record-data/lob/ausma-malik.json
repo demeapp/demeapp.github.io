@@ -4,9 +4,17 @@
   "name": "City of Toronto Lobbyist Registry (Open Data)",
   "url": "https://open.toronto.ca/dataset/lobbyist-registry/"
  },
- "snapshot": "2026-10-23",
- "count": 319,
+ "snapshot": "2026-11-14",
+ "count": 320,
  "communications": [
+  {
+   "date": "2026-11-05",
+   "lobbyist": "Norman Cheesman",
+   "organization": "Cheesman & Associates",
+   "client": "Toronto Industry Network",
+   "subject": "Economic Development;Environment;Planning and Development, Planning Policy / Study",
+   "method": "Emails"
+  },
   {
    "date": "2026-10-08",
    "lobbyist": "Gary E. Benner",
@@ -265,18 +273,18 @@
   },
   {
    "date": "2026-01-26",
-   "lobbyist": "Alex Glista",
-   "organization": "StrategyCorp Inc.",
-   "client": "Fengate Capital Management Ltd",
-   "subject": "Affordable Housing;Building Permits;Planning and Development, Planning Policy / Study",
-   "method": "Emails"
-  },
-  {
-   "date": "2026-01-26",
    "lobbyist": "Kim Wright",
    "organization": "Wright Strategies",
    "client": "Pegasus Group of Companies",
    "subject": "Attractions / Tourism;Economic Development;Real Estate / Property (City-owned)",
+   "method": "Emails"
+  },
+  {
+   "date": "2026-01-26",
+   "lobbyist": "Alex Glista",
+   "organization": "StrategyCorp Inc.",
+   "client": "Fengate Capital Management Ltd",
+   "subject": "Affordable Housing;Building Permits;Planning and Development, Planning Policy / Study",
    "method": "Emails"
   },
   {
@@ -473,14 +481,6 @@
   },
   {
    "date": "2025-10-01",
-   "lobbyist": "Marni Dicker",
-   "organization": "Canadian Premier League",
-   "client": null,
-   "subject": "City infrastructure - Emergency planning and/or restoration;Real Estate / Property (City-owned)",
-   "method": "Meetings"
-  },
-  {
-   "date": "2025-10-01",
    "lobbyist": "Kamal Sandhu",
    "organization": "AFC Toronto City Inc.",
    "client": null,
@@ -493,6 +493,14 @@
    "organization": "AFC Toronto City Inc.",
    "client": null,
    "subject": "Attractions / Tourism;Parks / Open Space;Recreation",
+   "method": "Meetings"
+  },
+  {
+   "date": "2025-10-01",
+   "lobbyist": "Marni Dicker",
+   "organization": "Canadian Premier League",
+   "client": null,
+   "subject": "City infrastructure - Emergency planning and/or restoration;Real Estate / Property (City-owned)",
    "method": "Meetings"
   },
   {
@@ -737,19 +745,19 @@
   },
   {
    "date": "2025-04-10",
-   "lobbyist": "Art A Phillips",
-   "organization": "Larco investments Ltd.",
-   "client": null,
-   "subject": "Planning and Development, Heritage;Planning and Development Application",
-   "method": "Meetings"
-  },
-  {
-   "date": "2025-04-10",
    "lobbyist": "Helena Ruken",
    "organization": "AFC Toronto City Inc.",
    "client": null,
    "subject": "Attractions / Tourism;Parks / Open Space;Recreation",
    "method": "Emails"
+  },
+  {
+   "date": "2025-04-10",
+   "lobbyist": "Art A Phillips",
+   "organization": "Larco investments Ltd.",
+   "client": null,
+   "subject": "Planning and Development, Heritage;Planning and Development Application",
+   "method": "Meetings"
   },
   {
    "date": "2025-04-03",
@@ -993,18 +1001,18 @@
   },
   {
    "date": "2024-11-06",
-   "lobbyist": "Michael van Hemmen",
-   "organization": "Uber Canada, Inc.",
-   "client": null,
-   "subject": "By-law / Regulation;Economic Development;Licences / Licensing",
-   "method": "Emails"
-  },
-  {
-   "date": "2024-11-06",
    "lobbyist": "Austin Spademan",
    "organization": "Bird Canada",
    "client": null,
    "subject": "By-law / Regulation;Transportation - Cycling / Bicycle Lanes;Transportation - Roads / Bridges",
+   "method": "Emails"
+  },
+  {
+   "date": "2024-11-06",
+   "lobbyist": "Michael van Hemmen",
+   "organization": "Uber Canada, Inc.",
+   "client": null,
+   "subject": "By-law / Regulation;Economic Development;Licences / Licensing",
    "method": "Emails"
   },
   {
@@ -2273,14 +2281,6 @@
   },
   {
    "date": "2023-03-02",
-   "lobbyist": "Jake Brockman",
-   "organization": "Uber Canada, Inc.",
-   "client": null,
-   "subject": "By-law / Regulation;Economic Development;Licences / Licensing",
-   "method": "Emails"
-  },
-  {
-   "date": "2023-03-02",
    "lobbyist": "Kelly O'Hanlon",
    "organization": "DIAMOND Corp",
    "client": null,
@@ -2294,6 +2294,14 @@
    "client": null,
    "subject": "Planning and Development Application, Zoning By-law",
    "method": "Meetings"
+  },
+  {
+   "date": "2023-03-02",
+   "lobbyist": "Jake Brockman",
+   "organization": "Uber Canada, Inc.",
+   "client": null,
+   "subject": "By-law / Regulation;Economic Development;Licences / Licensing",
+   "method": "Emails"
   },
   {
    "date": "2023-02-28",

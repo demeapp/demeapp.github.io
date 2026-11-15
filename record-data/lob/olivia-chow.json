@@ -4,9 +4,33 @@
   "name": "City of Toronto Lobbyist Registry (Open Data)",
   "url": "https://open.toronto.ca/dataset/lobbyist-registry/"
  },
- "snapshot": "2026-10-23",
- "count": 284,
+ "snapshot": "2026-11-14",
+ "count": 287,
  "communications": [
+  {
+   "date": "2026-11-04",
+   "lobbyist": "Norman Cheesman",
+   "organization": "Cheesman & Associates",
+   "client": "Toronto Industry Network",
+   "subject": "Economic Development;Environment;Planning and Development, Planning Policy / Study",
+   "method": "Emails"
+  },
+  {
+   "date": "2026-11-02",
+   "lobbyist": "Michael Martin",
+   "organization": "Motorola Solutions Canada Inc.",
+   "client": null,
+   "subject": "Budget;Technology",
+   "method": "Written"
+  },
+  {
+   "date": "2026-10-27",
+   "lobbyist": "SPENCER VAUDRY",
+   "organization": "SHIPPED",
+   "client": null,
+   "subject": "Planning and Development, Planning Policy / Study;Procurement;Technology",
+   "method": "Emails"
+  },
   {
    "date": "2026-10-08",
    "lobbyist": "Gary E. Benner",
@@ -2185,14 +2209,6 @@
   },
   {
    "date": "2023-07-26",
-   "lobbyist": "Jake Brockman",
-   "organization": "Uber Canada, Inc.",
-   "client": null,
-   "subject": "By-law / Regulation;Economic Development;Licences / Licensing",
-   "method": "Emails"
-  },
-  {
-   "date": "2023-07-26",
    "lobbyist": "Matthew Kofsky",
    "organization": "Toronto Region Board of Trade",
    "client": null,
@@ -2206,6 +2222,14 @@
    "client": null,
    "subject": "Budget;Economic Development;Planning and Development, Planning Policy / Study",
    "method": "Meetings"
+  },
+  {
+   "date": "2023-07-26",
+   "lobbyist": "Jake Brockman",
+   "organization": "Uber Canada, Inc.",
+   "client": null,
+   "subject": "By-law / Regulation;Economic Development;Licences / Licensing",
+   "method": "Emails"
   },
   {
    "date": "2023-07-17",

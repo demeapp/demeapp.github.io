@@ -4,7 +4,7 @@
   "name": "City of Toronto Lobbyist Registry (Open Data)",
   "url": "https://open.toronto.ca/dataset/lobbyist-registry/"
  },
- "snapshot": "2026-10-23",
+ "snapshot": "2026-11-14",
  "count": 745,
  "communications": [
   {
@@ -284,7 +284,7 @@
    "lobbyist": "Gary Switzer",
    "organization": "Building Industry and Land Development Association",
    "client": null,
-   "subject": "Planning and Development, Planning Policy / Study",
+   "subject": "Transportation - Metrolinx",
    "method": "Meetings"
   },
   {
@@ -292,7 +292,7 @@
    "lobbyist": "Gary Switzer",
    "organization": "Building Industry and Land Development Association",
    "client": null,
-   "subject": "Transportation - Metrolinx",
+   "subject": "Planning and Development, Planning Policy / Study",
    "method": "Meetings"
   },
   {
@@ -4137,7 +4137,7 @@
   },
   {
    "date": "2011-07-07",
-   "lobbyist": "Danielle Chin",
+   "lobbyist": "Danielle Binder",
    "organization": "Building Industry and Land Development Association",
    "client": null,
    "subject": "Planning and Development, Planning Policy / Study",

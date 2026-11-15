@@ -4,7 +4,7 @@
   "name": "City of Toronto Lobbyist Registry (Open Data)",
   "url": "https://open.toronto.ca/dataset/lobbyist-registry/"
  },
- "snapshot": "2026-10-23",
+ "snapshot": "2026-11-14",
  "count": 976,
  "communications": [
   {
@@ -745,19 +745,19 @@
   },
   {
    "date": "2021-12-06",
-   "lobbyist": "Janet De Silva",
-   "organization": "Toronto Region Board of Trade",
-   "client": null,
-   "subject": "Budget;Economic Development;Planning and Development, Planning Policy / Study",
-   "method": "Meetings"
-  },
-  {
-   "date": "2021-12-06",
    "lobbyist": "Peter Van Loan",
    "organization": "Aird & Berlis LLP",
    "client": "OTT Properties Inc.",
    "subject": "By-law / Regulation;Planning and Development;Planning and Development Application, Site Plan",
    "method": "Emails"
+  },
+  {
+   "date": "2021-12-06",
+   "lobbyist": "Janet De Silva",
+   "organization": "Toronto Region Board of Trade",
+   "client": null,
+   "subject": "Budget;Economic Development;Planning and Development, Planning Policy / Study",
+   "method": "Meetings"
   },
   {
    "date": "2021-11-23",
@@ -1129,14 +1129,6 @@
   },
   {
    "date": "2021-07-07",
-   "lobbyist": "Janet De Silva",
-   "organization": "Toronto Region Board of Trade",
-   "client": null,
-   "subject": "Budget;Economic Development;Planning and Development, Planning Policy / Study",
-   "method": "Meetings"
-  },
-  {
-   "date": "2021-07-07",
    "lobbyist": "John Sullivan",
    "organization": "The Cadillac Fairview Corporation Limited",
    "client": null,
@@ -1149,6 +1141,14 @@
    "organization": "Toronto Region Board of Trade",
    "client": null,
    "subject": "Attractions / Tourism;Economic Development",
+   "method": "Meetings"
+  },
+  {
+   "date": "2021-07-07",
+   "lobbyist": "Janet De Silva",
+   "organization": "Toronto Region Board of Trade",
+   "client": null,
+   "subject": "Budget;Economic Development;Planning and Development, Planning Policy / Study",
    "method": "Meetings"
   },
   {
@@ -1225,14 +1225,6 @@
   },
   {
    "date": "2021-05-13",
-   "lobbyist": "Milton Chan",
-   "organization": "Toronto Region Board of Trade",
-   "client": null,
-   "subject": "Budget;Economic Development;Planning and Development, Planning Policy / Study",
-   "method": "Meetings"
-  },
-  {
-   "date": "2021-05-13",
    "lobbyist": "Janet De Silva",
    "organization": "Toronto Region Board of Trade",
    "client": null,
@@ -1242,6 +1234,14 @@
   {
    "date": "2021-05-13",
    "lobbyist": "Roselle Martino",
+   "organization": "Toronto Region Board of Trade",
+   "client": null,
+   "subject": "Budget;Economic Development;Planning and Development, Planning Policy / Study",
+   "method": "Meetings"
+  },
+  {
+   "date": "2021-05-13",
+   "lobbyist": "Milton Chan",
    "organization": "Toronto Region Board of Trade",
    "client": null,
    "subject": "Budget;Economic Development;Planning and Development, Planning Policy / Study",
@@ -1433,14 +1433,6 @@
   },
   {
    "date": "2021-03-23",
-   "lobbyist": "Milton Chan",
-   "organization": "Toronto Region Board of Trade",
-   "client": null,
-   "subject": "Budget;Economic Development;Planning and Development, Planning Policy / Study",
-   "method": "Meetings"
-  },
-  {
-   "date": "2021-03-23",
    "lobbyist": "Janet De Silva",
    "organization": "Toronto Region Board of Trade",
    "client": null,
@@ -1450,6 +1442,14 @@
   {
    "date": "2021-03-23",
    "lobbyist": "Roselle Martino",
+   "organization": "Toronto Region Board of Trade",
+   "client": null,
+   "subject": "Budget;Economic Development;Planning and Development, Planning Policy / Study",
+   "method": "Meetings"
+  },
+  {
+   "date": "2021-03-23",
+   "lobbyist": "Milton Chan",
    "organization": "Toronto Region Board of Trade",
    "client": null,
    "subject": "Budget;Economic Development;Planning and Development, Planning Policy / Study",
@@ -1553,14 +1553,6 @@
   },
   {
    "date": "2021-02-17",
-   "lobbyist": "Milton Chan",
-   "organization": "Toronto Region Board of Trade",
-   "client": null,
-   "subject": "Budget;Economic Development;Planning and Development, Planning Policy / Study",
-   "method": "Meetings"
-  },
-  {
-   "date": "2021-02-17",
    "lobbyist": "Janet De Silva",
    "organization": "Toronto Region Board of Trade",
    "client": null,
@@ -1570,6 +1562,14 @@
   {
    "date": "2021-02-17",
    "lobbyist": "Roselle Martino",
+   "organization": "Toronto Region Board of Trade",
+   "client": null,
+   "subject": "Budget;Economic Development;Planning and Development, Planning Policy / Study",
+   "method": "Meetings"
+  },
+  {
+   "date": "2021-02-17",
+   "lobbyist": "Milton Chan",
    "organization": "Toronto Region Board of Trade",
    "client": null,
    "subject": "Budget;Economic Development;Planning and Development, Planning Policy / Study",
@@ -1745,14 +1745,6 @@
   },
   {
    "date": "2021-01-22",
-   "lobbyist": "Milton Chan",
-   "organization": "Toronto Region Board of Trade",
-   "client": null,
-   "subject": "Budget;Economic Development;Planning and Development, Planning Policy / Study",
-   "method": "Meetings"
-  },
-  {
-   "date": "2021-01-22",
    "lobbyist": "Janet De Silva",
    "organization": "Toronto Region Board of Trade",
    "client": null,
@@ -1762,6 +1754,14 @@
   {
    "date": "2021-01-22",
    "lobbyist": "Roselle Martino",
+   "organization": "Toronto Region Board of Trade",
+   "client": null,
+   "subject": "Budget;Economic Development;Planning and Development, Planning Policy / Study",
+   "method": "Meetings"
+  },
+  {
+   "date": "2021-01-22",
+   "lobbyist": "Milton Chan",
    "organization": "Toronto Region Board of Trade",
    "client": null,
    "subject": "Budget;Economic Development;Planning and Development, Planning Policy / Study",
@@ -1817,14 +1817,6 @@
   },
   {
    "date": "2020-12-17",
-   "lobbyist": "Milton Chan",
-   "organization": "Toronto Region Board of Trade",
-   "client": null,
-   "subject": "Budget;Economic Development;Planning and Development, Planning Policy / Study",
-   "method": "Meetings"
-  },
-  {
-   "date": "2020-12-17",
    "lobbyist": "Janet De Silva",
    "organization": "Toronto Region Board of Trade",
    "client": null,
@@ -1840,20 +1832,20 @@
    "method": "Meetings"
   },
   {
+   "date": "2020-12-17",
+   "lobbyist": "Milton Chan",
+   "organization": "Toronto Region Board of Trade",
+   "client": null,
+   "subject": "Budget;Economic Development;Planning and Development, Planning Policy / Study",
+   "method": "Meetings"
+  },
+  {
    "date": "2020-12-15",
    "lobbyist": "Steve Ostrowski",
    "organization": "Municipal Transit Solutions Inc.",
    "client": null,
    "subject": "Planning and Development, Planning Policy / Study;Transit / TTC;Transportation - Metrolinx",
    "method": "Emails"
-  },
-  {
-   "date": "2020-12-14",
-   "lobbyist": "Milton Chan",
-   "organization": "Toronto Region Board of Trade",
-   "client": null,
-   "subject": "Budget;Economic Development;Planning and Development, Planning Policy / Study",
-   "method": "Meetings"
   },
   {
    "date": "2020-12-14",
@@ -1880,20 +1872,20 @@
    "method": "Meetings"
   },
   {
+   "date": "2020-12-14",
+   "lobbyist": "Milton Chan",
+   "organization": "Toronto Region Board of Trade",
+   "client": null,
+   "subject": "Budget;Economic Development;Planning and Development, Planning Policy / Study",
+   "method": "Meetings"
+  },
+  {
    "date": "2020-12-11",
    "lobbyist": "Mike Kasij",
    "organization": "Sutera Canada Inc.",
    "client": null,
    "subject": "Environment;Garbage / Recycling;Hazardous Waste",
    "method": "Emails"
-  },
-  {
-   "date": "2020-12-08",
-   "lobbyist": "Milton Chan",
-   "organization": "Toronto Region Board of Trade",
-   "client": null,
-   "subject": "Budget;Economic Development;Planning and Development, Planning Policy / Study",
-   "method": "Meetings"
   },
   {
    "date": "2020-12-08",
@@ -1906,6 +1898,14 @@
   {
    "date": "2020-12-08",
    "lobbyist": "Roselle Martino",
+   "organization": "Toronto Region Board of Trade",
+   "client": null,
+   "subject": "Budget;Economic Development;Planning and Development, Planning Policy / Study",
+   "method": "Meetings"
+  },
+  {
+   "date": "2020-12-08",
+   "lobbyist": "Milton Chan",
    "organization": "Toronto Region Board of Trade",
    "client": null,
    "subject": "Budget;Economic Development;Planning and Development, Planning Policy / Study",
@@ -2033,22 +2033,6 @@
   },
   {
    "date": "2020-10-26",
-   "lobbyist": "Matthew Price",
-   "organization": "Uber Canada, Inc.",
-   "client": null,
-   "subject": "By-law / Regulation;Economic Development;Licences / Licensing",
-   "method": "Meetings"
-  },
-  {
-   "date": "2020-10-26",
-   "lobbyist": "Lola Kassim",
-   "organization": "Uber Canada, Inc.",
-   "client": null,
-   "subject": "By-law / Regulation;Economic Development;Licences / Licensing",
-   "method": "Meetings"
-  },
-  {
-   "date": "2020-10-26",
    "lobbyist": "Laura Miller",
    "organization": "Uber Canada, Inc.",
    "client": null,
@@ -2064,11 +2048,19 @@
    "method": "Meetings"
   },
   {
-   "date": "2020-10-23",
-   "lobbyist": "Milton Chan",
-   "organization": "Toronto Region Board of Trade",
+   "date": "2020-10-26",
+   "lobbyist": "Matthew Price",
+   "organization": "Uber Canada, Inc.",
    "client": null,
-   "subject": "Budget;Economic Development;Planning and Development, Planning Policy / Study",
+   "subject": "By-law / Regulation;Economic Development;Licences / Licensing",
+   "method": "Meetings"
+  },
+  {
+   "date": "2020-10-26",
+   "lobbyist": "Lola Kassim",
+   "organization": "Uber Canada, Inc.",
+   "client": null,
+   "subject": "By-law / Regulation;Economic Development;Licences / Licensing",
    "method": "Meetings"
   },
   {
@@ -2082,6 +2074,14 @@
   {
    "date": "2020-10-23",
    "lobbyist": "Craig Ruttan",
+   "organization": "Toronto Region Board of Trade",
+   "client": null,
+   "subject": "Budget;Economic Development;Planning and Development, Planning Policy / Study",
+   "method": "Meetings"
+  },
+  {
+   "date": "2020-10-23",
+   "lobbyist": "Milton Chan",
    "organization": "Toronto Region Board of Trade",
    "client": null,
    "subject": "Budget;Economic Development;Planning and Development, Planning Policy / Study",
@@ -2185,14 +2185,6 @@
   },
   {
    "date": "2020-09-14",
-   "lobbyist": "Jake Brockman",
-   "organization": "Uber Canada, Inc.",
-   "client": null,
-   "subject": "By-law / Regulation;Economic Development;Licences / Licensing",
-   "method": "Emails"
-  },
-  {
-   "date": "2020-09-14",
    "lobbyist": "Chris Schafer",
    "organization": "Bird Canada",
    "client": null,
@@ -2205,6 +2197,14 @@
    "organization": "Scooty Mobility Inc.",
    "client": null,
    "subject": "Transit / TTC;Transportation - Cycling / Bicycle Lanes;Transportation - Metrolinx",
+   "method": "Emails"
+  },
+  {
+   "date": "2020-09-14",
+   "lobbyist": "Jake Brockman",
+   "organization": "Uber Canada, Inc.",
+   "client": null,
+   "subject": "By-law / Regulation;Economic Development;Licences / Licensing",
    "method": "Emails"
   },
   {
@@ -2809,14 +2809,6 @@
   },
   {
    "date": "2020-04-25",
-   "lobbyist": "Milton Chan",
-   "organization": "Toronto Region Board of Trade",
-   "client": null,
-   "subject": "Budget;Economic Development;Planning and Development, Planning Policy / Study",
-   "method": "Phone calls"
-  },
-  {
-   "date": "2020-04-25",
    "lobbyist": "Janet De Silva",
    "organization": "Toronto Region Board of Trade",
    "client": null,
@@ -2826,6 +2818,14 @@
   {
    "date": "2020-04-25",
    "lobbyist": "Farah Mohamed",
+   "organization": "Toronto Region Board of Trade",
+   "client": null,
+   "subject": "Budget;Economic Development;Planning and Development, Planning Policy / Study",
+   "method": "Phone calls"
+  },
+  {
+   "date": "2020-04-25",
+   "lobbyist": "Milton Chan",
    "organization": "Toronto Region Board of Trade",
    "client": null,
    "subject": "Budget;Economic Development;Planning and Development, Planning Policy / Study",
@@ -3076,7 +3076,15 @@
    "lobbyist": "Milton Chan",
    "organization": "Toronto Region Board of Trade",
    "client": null,
-   "subject": "Budget;Economic Development;Planning and Development, Planning Policy / Study",
+   "subject": "Economic Development",
+   "method": "Meetings"
+  },
+  {
+   "date": "2019-11-25",
+   "lobbyist": "Janet De Silva",
+   "organization": "Toronto Region Board of Trade",
+   "client": null,
+   "subject": "Economic Development",
    "method": "Meetings"
   },
   {
@@ -3092,15 +3100,7 @@
    "lobbyist": "Milton Chan",
    "organization": "Toronto Region Board of Trade",
    "client": null,
-   "subject": "Economic Development",
-   "method": "Meetings"
-  },
-  {
-   "date": "2019-11-25",
-   "lobbyist": "Janet De Silva",
-   "organization": "Toronto Region Board of Trade",
-   "client": null,
-   "subject": "Economic Development",
+   "subject": "Budget;Economic Development;Planning and Development, Planning Policy / Study",
    "method": "Meetings"
   },
   {
@@ -3580,22 +3580,6 @@
    "lobbyist": "Milton Chan",
    "organization": "Toronto Region Board of Trade",
    "client": null,
-   "subject": "Budget;Economic Development;Planning and Development, Planning Policy / Study",
-   "method": "Meetings"
-  },
-  {
-   "date": "2019-03-06",
-   "lobbyist": "Janet De Silva",
-   "organization": "Toronto Region Board of Trade",
-   "client": null,
-   "subject": "Budget;Economic Development;Planning and Development, Planning Policy / Study",
-   "method": "Meetings"
-  },
-  {
-   "date": "2019-03-06",
-   "lobbyist": "Milton Chan",
-   "organization": "Toronto Region Board of Trade",
-   "client": null,
    "subject": "Transit / TTC;Transportation - Metrolinx;Transportation - Roads / Bridges",
    "method": "Meetings"
   },
@@ -3621,6 +3605,22 @@
    "organization": "Toronto Region Board of Trade",
    "client": null,
    "subject": "Economic Development",
+   "method": "Meetings"
+  },
+  {
+   "date": "2019-03-06",
+   "lobbyist": "Milton Chan",
+   "organization": "Toronto Region Board of Trade",
+   "client": null,
+   "subject": "Budget;Economic Development;Planning and Development, Planning Policy / Study",
+   "method": "Meetings"
+  },
+  {
+   "date": "2019-03-06",
+   "lobbyist": "Janet De Silva",
+   "organization": "Toronto Region Board of Trade",
+   "client": null,
+   "subject": "Budget;Economic Development;Planning and Development, Planning Policy / Study",
    "method": "Meetings"
   },
   {
@@ -5905,18 +5905,18 @@
   },
   {
    "date": "2016-06-06",
-   "lobbyist": "Chris Schafer",
-   "organization": "Uber Canada, Inc.",
-   "client": null,
-   "subject": "By-law / Regulation;Economic Development;Licences / Licensing",
-   "method": "Emails"
-  },
-  {
-   "date": "2016-06-06",
    "lobbyist": "Paul Scrivener",
    "organization": "Toronto Industry Network",
    "client": null,
    "subject": "By-law / Regulation;Economic Development;Environment",
+   "method": "Emails"
+  },
+  {
+   "date": "2016-06-06",
+   "lobbyist": "Chris Schafer",
+   "organization": "Uber Canada, Inc.",
+   "client": null,
+   "subject": "By-law / Regulation;Economic Development;Licences / Licensing",
    "method": "Emails"
   },
   {
@@ -7721,19 +7721,19 @@
   },
   {
    "date": "2014-12-17",
-   "lobbyist": "Ian Black",
-   "organization": "Uber Canada, Inc.",
-   "client": null,
-   "subject": "By-law / Regulation;Economic Development;Licences / Licensing",
-   "method": "Written"
-  },
-  {
-   "date": "2014-12-17",
    "lobbyist": "Kristine Hubbard",
    "organization": "Beck Taxi Limited",
    "client": null,
    "subject": "By-law / Regulation;Licences / Licensing",
    "method": "Emails"
+  },
+  {
+   "date": "2014-12-17",
+   "lobbyist": "Ian Black",
+   "organization": "Uber Canada, Inc.",
+   "client": null,
+   "subject": "By-law / Regulation;Economic Development;Licences / Licensing",
+   "method": "Written"
   },
   {
    "date": "2014-12-15",

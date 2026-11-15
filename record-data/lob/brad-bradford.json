@@ -4,7 +4,7 @@
   "name": "City of Toronto Lobbyist Registry (Open Data)",
   "url": "https://open.toronto.ca/dataset/lobbyist-registry/"
  },
- "snapshot": "2026-10-23",
+ "snapshot": "2026-11-14",
  "count": 803,
  "communications": [
   {
@@ -937,14 +937,6 @@
   },
   {
    "date": "2024-11-06",
-   "lobbyist": "Jake Brockman",
-   "organization": "Uber Canada, Inc.",
-   "client": null,
-   "subject": "By-law / Regulation;Economic Development;Licences / Licensing",
-   "method": "Emails"
-  },
-  {
-   "date": "2024-11-06",
    "lobbyist": "Kevin Widmer",
    "organization": "Fitzrovia Residential Inc.",
    "client": null,
@@ -981,6 +973,14 @@
    "organization": "Bird Canada",
    "client": null,
    "subject": "By-law / Regulation;Transportation - Cycling / Bicycle Lanes;Transportation - Roads / Bridges",
+   "method": "Emails"
+  },
+  {
+   "date": "2024-11-06",
+   "lobbyist": "Jake Brockman",
+   "organization": "Uber Canada, Inc.",
+   "client": null,
+   "subject": "By-law / Regulation;Economic Development;Licences / Licensing",
    "method": "Emails"
   },
   {
@@ -2641,7 +2641,7 @@
   },
   {
    "date": "2023-10-03",
-   "lobbyist": "Danielle Chin",
+   "lobbyist": "Danielle Binder",
    "organization": "Building Industry and Land Development Association",
    "client": null,
    "subject": "Planning and Development, Planning Policy / Study",
@@ -4073,19 +4073,19 @@
   },
   {
    "date": "2021-12-15",
-   "lobbyist": "Jake Brockman",
-   "organization": "Uber Canada, Inc.",
-   "client": null,
-   "subject": "By-law / Regulation;Economic Development;Licences / Licensing",
-   "method": "Emails"
-  },
-  {
-   "date": "2021-12-15",
    "lobbyist": "Justin Van Dette",
    "organization": "Deltera Inc.",
    "client": null,
    "subject": "Planning and Development, Planning Policy / Study",
    "method": "Phone calls"
+  },
+  {
+   "date": "2021-12-15",
+   "lobbyist": "Jake Brockman",
+   "organization": "Uber Canada, Inc.",
+   "client": null,
+   "subject": "By-law / Regulation;Economic Development;Licences / Licensing",
+   "method": "Emails"
   },
   {
    "date": "2021-12-15",
@@ -6401,22 +6401,6 @@
   },
   {
    "date": "2018-12-04",
-   "lobbyist": "Matthew Kofsky",
-   "organization": "Toronto Region Board of Trade",
-   "client": null,
-   "subject": "Budget;Economic Development;Planning and Development, Planning Policy / Study",
-   "method": "Meetings"
-  },
-  {
-   "date": "2018-12-04",
-   "lobbyist": "Brian Kelcey",
-   "organization": "Toronto Region Board of Trade",
-   "client": null,
-   "subject": "Budget;Economic Development;Planning and Development, Planning Policy / Study",
-   "method": "Meetings"
-  },
-  {
-   "date": "2018-12-04",
    "lobbyist": "Brian Kelcey",
    "organization": "Toronto Region Board of Trade",
    "client": null,
@@ -6429,6 +6413,22 @@
    "organization": "Toronto Region Board of Trade",
    "client": null,
    "subject": "Transit / TTC;Transportation - Metrolinx;Transportation - Roads / Bridges",
+   "method": "Meetings"
+  },
+  {
+   "date": "2018-12-04",
+   "lobbyist": "Matthew Kofsky",
+   "organization": "Toronto Region Board of Trade",
+   "client": null,
+   "subject": "Budget;Economic Development;Planning and Development, Planning Policy / Study",
+   "method": "Meetings"
+  },
+  {
+   "date": "2018-12-04",
+   "lobbyist": "Brian Kelcey",
+   "organization": "Toronto Region Board of Trade",
+   "client": null,
+   "subject": "Budget;Economic Development;Planning and Development, Planning Policy / Study",
    "method": "Meetings"
   }
  ]

@@ -4,9 +4,17 @@
   "name": "City of Toronto Lobbyist Registry (Open Data)",
   "url": "https://open.toronto.ca/dataset/lobbyist-registry/"
  },
- "snapshot": "2026-10-23",
- "count": 594,
+ "snapshot": "2026-11-14",
+ "count": 595,
  "communications": [
+  {
+   "date": "2026-11-06",
+   "lobbyist": "Norman Cheesman",
+   "organization": "Cheesman & Associates",
+   "client": "Toronto Industry Network",
+   "subject": "Economic Development;Environment;Planning and Development, Planning Policy / Study",
+   "method": "Emails"
+  },
   {
    "date": "2026-10-08",
    "lobbyist": "Gary E. Benner",
@@ -3201,18 +3209,18 @@
   },
   {
    "date": "2022-07-20",
-   "lobbyist": "Cameron MacKinnon",
-   "organization": "MacKinnon Public Affairs",
-   "client": "North American Development Group",
-   "subject": "Planning and Development Application, Official Plan;Planning and Development Application, Zoning By-law",
-   "method": "Phone calls"
-  },
-  {
-   "date": "2022-07-20",
    "lobbyist": "Chris Korwin-Kuczynski",
    "organization": "Chris Korwin-Kuczynski",
    "client": "Pattison Outdoor Advertising",
    "subject": "Signs",
+   "method": "Phone calls"
+  },
+  {
+   "date": "2022-07-20",
+   "lobbyist": "Cameron MacKinnon",
+   "organization": "MacKinnon Public Affairs",
+   "client": "North American Development Group",
+   "subject": "Planning and Development Application, Official Plan;Planning and Development Application, Zoning By-law",
    "method": "Phone calls"
   },
   {
@@ -3409,19 +3417,19 @@
   },
   {
    "date": "2022-04-01",
-   "lobbyist": "Cameron MacKinnon",
-   "organization": "MacKinnon Public Affairs",
-   "client": "North American Development Group",
-   "subject": "Planning and Development Application, Official Plan;Planning and Development Application, Zoning By-law",
-   "method": "Emails"
-  },
-  {
-   "date": "2022-04-01",
    "lobbyist": "Jamie Besner",
    "organization": "Sussex Strategy Group",
    "client": "The Cadillac Fairview Corporation Limited",
    "subject": "Economic Development;Transportation - Metrolinx",
    "method": "Phone calls"
+  },
+  {
+   "date": "2022-04-01",
+   "lobbyist": "Cameron MacKinnon",
+   "organization": "MacKinnon Public Affairs",
+   "client": "North American Development Group",
+   "subject": "Planning and Development Application, Official Plan;Planning and Development Application, Zoning By-law",
+   "method": "Emails"
   },
   {
    "date": "2022-03-29",
@@ -3625,14 +3633,6 @@
   },
   {
    "date": "2022-01-18",
-   "lobbyist": "Cameron MacKinnon",
-   "organization": "MacKinnon Public Affairs",
-   "client": "North American Development Group",
-   "subject": "Planning and Development Application, Official Plan;Planning and Development Application, Zoning By-law",
-   "method": "Emails"
-  },
-  {
-   "date": "2022-01-18",
    "lobbyist": "Aleem Kanji",
    "organization": "AleemKanji.com",
    "client": "Canadian National Fireworks Association - CNFA",
@@ -3640,12 +3640,12 @@
    "method": "Meetings"
   },
   {
-   "date": "2022-01-17",
+   "date": "2022-01-18",
    "lobbyist": "Cameron MacKinnon",
    "organization": "MacKinnon Public Affairs",
    "client": "North American Development Group",
    "subject": "Planning and Development Application, Official Plan;Planning and Development Application, Zoning By-law",
-   "method": "Phone calls"
+   "method": "Emails"
   },
   {
    "date": "2022-01-17",
@@ -3654,6 +3654,14 @@
    "client": null,
    "subject": "Planning and Development;Planning and Development, Combined Application",
    "method": "Emails"
+  },
+  {
+   "date": "2022-01-17",
+   "lobbyist": "Cameron MacKinnon",
+   "organization": "MacKinnon Public Affairs",
+   "client": "North American Development Group",
+   "subject": "Planning and Development Application, Official Plan;Planning and Development Application, Zoning By-law",
+   "method": "Phone calls"
   },
   {
    "date": "2022-01-12",
@@ -3689,19 +3697,19 @@
   },
   {
    "date": "2021-12-14",
-   "lobbyist": "Cameron MacKinnon",
-   "organization": "MacKinnon Public Affairs",
-   "client": "North American Development Group",
-   "subject": "Planning and Development Application, Official Plan;Planning and Development Application, Zoning By-law",
-   "method": "Phone calls"
-  },
-  {
-   "date": "2021-12-14",
    "lobbyist": "Jim Karygiannis",
    "organization": "GTA Strategies",
    "client": "D & D poultry",
    "subject": "Economic Development",
    "method": "Emails"
+  },
+  {
+   "date": "2021-12-14",
+   "lobbyist": "Cameron MacKinnon",
+   "organization": "MacKinnon Public Affairs",
+   "client": "North American Development Group",
+   "subject": "Planning and Development Application, Official Plan;Planning and Development Application, Zoning By-law",
+   "method": "Phone calls"
   },
   {
    "date": "2021-12-13",
@@ -3857,19 +3865,19 @@
   },
   {
    "date": "2021-11-12",
-   "lobbyist": "Cameron MacKinnon",
-   "organization": "MacKinnon Public Affairs",
-   "client": "North American Development Group",
-   "subject": "Planning and Development Application, Official Plan;Planning and Development Application, Zoning By-law",
-   "method": "Phone calls"
-  },
-  {
-   "date": "2021-11-12",
    "lobbyist": "Justin Van Dette",
    "organization": "Deltera Inc.",
    "client": null,
    "subject": "Planning and Development Application, Official Plan;Planning and Development Application, Site Plan;Planning and Development Application, Minor Variance",
    "method": "Other or unreported"
+  },
+  {
+   "date": "2021-11-12",
+   "lobbyist": "Cameron MacKinnon",
+   "organization": "MacKinnon Public Affairs",
+   "client": "North American Development Group",
+   "subject": "Planning and Development Application, Official Plan;Planning and Development Application, Zoning By-law",
+   "method": "Phone calls"
   },
   {
    "date": "2021-11-09",
@@ -4529,14 +4537,6 @@
   },
   {
    "date": "2021-02-11",
-   "lobbyist": "Cameron MacKinnon",
-   "organization": "MacKinnon Public Affairs",
-   "client": "North American Development Group",
-   "subject": "Planning and Development Application, Official Plan;Planning and Development Application, Zoning By-law",
-   "method": "Meetings"
-  },
-  {
-   "date": "2021-02-11",
    "lobbyist": "Steve Bishop",
    "organization": "North American Development Group",
    "client": null,
@@ -4557,6 +4557,14 @@
    "organization": "Deltera Inc.",
    "client": null,
    "subject": "Planning and Development Application, Official Plan;Planning and Development Application, Site Plan;Planning and Development Application, Minor Variance",
+   "method": "Meetings"
+  },
+  {
+   "date": "2021-02-11",
+   "lobbyist": "Cameron MacKinnon",
+   "organization": "MacKinnon Public Affairs",
+   "client": "North American Development Group",
+   "subject": "Planning and Development Application, Official Plan;Planning and Development Application, Zoning By-law",
    "method": "Meetings"
   },
   {

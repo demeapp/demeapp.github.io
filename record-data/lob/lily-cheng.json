@@ -4,9 +4,17 @@
   "name": "City of Toronto Lobbyist Registry (Open Data)",
   "url": "https://open.toronto.ca/dataset/lobbyist-registry/"
  },
- "snapshot": "2026-10-23",
- "count": 390,
+ "snapshot": "2026-11-14",
+ "count": 391,
  "communications": [
+  {
+   "date": "2026-11-05",
+   "lobbyist": "Norman Cheesman",
+   "organization": "Cheesman & Associates",
+   "client": "Toronto Industry Network",
+   "subject": "Economic Development;Environment;Planning and Development, Planning Policy / Study",
+   "method": "Emails"
+  },
   {
    "date": "2026-10-08",
    "lobbyist": "Gary E. Benner",
@@ -697,6 +705,14 @@
   },
   {
    "date": "2025-10-14",
+   "lobbyist": "Saeed Selvam",
+   "organization": "Selvam Public Affairs",
+   "client": "Motorola Solutions Canada Inc.",
+   "subject": "Emergency Services;Procurement;Technology",
+   "method": "Meetings"
+  },
+  {
+   "date": "2025-10-14",
    "lobbyist": "Ajwad Aniq",
    "organization": "Motorola Solutions Canada Inc.",
    "client": null,
@@ -709,14 +725,6 @@
    "organization": "Motorola Solutions Canada Inc.",
    "client": null,
    "subject": "Budget;Technology",
-   "method": "Meetings"
-  },
-  {
-   "date": "2025-10-14",
-   "lobbyist": "Saeed Selvam",
-   "organization": "Selvam Public Affairs",
-   "client": "Motorola Solutions Canada Inc.",
-   "subject": "Emergency Services;Procurement;Technology",
    "method": "Meetings"
   },
   {
@@ -1473,14 +1481,6 @@
   },
   {
    "date": "2024-12-04",
-   "lobbyist": "Jake Brockman",
-   "organization": "Uber Canada, Inc.",
-   "client": null,
-   "subject": "By-law / Regulation;Economic Development;Licences / Licensing",
-   "method": "Meetings"
-  },
-  {
-   "date": "2024-12-04",
    "lobbyist": "Shane Cooney",
    "organization": "Mattamy Homes Limited",
    "client": null,
@@ -1493,6 +1493,14 @@
    "organization": "Mattamy Homes Limited",
    "client": null,
    "subject": "Planning and Development;Planning and Development, Combined Application",
+   "method": "Meetings"
+  },
+  {
+   "date": "2024-12-04",
+   "lobbyist": "Jake Brockman",
+   "organization": "Uber Canada, Inc.",
+   "client": null,
+   "subject": "By-law / Regulation;Economic Development;Licences / Licensing",
    "method": "Meetings"
   },
   {
@@ -1545,18 +1553,18 @@
   },
   {
    "date": "2024-11-06",
-   "lobbyist": "Jake Brockman",
-   "organization": "Uber Canada, Inc.",
-   "client": null,
-   "subject": "By-law / Regulation;Economic Development;Licences / Licensing",
-   "method": "Emails"
-  },
-  {
-   "date": "2024-11-06",
    "lobbyist": "Austin Spademan",
    "organization": "Bird Canada",
    "client": null,
    "subject": "By-law / Regulation;Transportation - Cycling / Bicycle Lanes;Transportation - Roads / Bridges",
+   "method": "Emails"
+  },
+  {
+   "date": "2024-11-06",
+   "lobbyist": "Jake Brockman",
+   "organization": "Uber Canada, Inc.",
+   "client": null,
+   "subject": "By-law / Regulation;Economic Development;Licences / Licensing",
    "method": "Emails"
   },
   {
@@ -2369,18 +2377,18 @@
   },
   {
    "date": "2023-10-05",
-   "lobbyist": "Matthew Kofsky",
-   "organization": "Toronto Region Board of Trade",
-   "client": null,
-   "subject": "Budget;Economic Development;Planning and Development, Planning Policy / Study",
-   "method": "Emails"
-  },
-  {
-   "date": "2023-10-05",
    "lobbyist": "Xiaoli Guo",
    "organization": "M2M Development Corporation",
    "client": null,
    "subject": "Planning and Development Application, Official Plan;Planning and Development Application, Zoning By-law",
+   "method": "Emails"
+  },
+  {
+   "date": "2023-10-05",
+   "lobbyist": "Matthew Kofsky",
+   "organization": "Toronto Region Board of Trade",
+   "client": null,
+   "subject": "Budget;Economic Development;Planning and Development, Planning Policy / Study",
    "method": "Emails"
   },
   {

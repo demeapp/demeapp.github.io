@@ -4,7 +4,7 @@
   "name": "City of Toronto Lobbyist Registry (Open Data)",
   "url": "https://open.toronto.ca/dataset/lobbyist-registry/"
  },
- "snapshot": "2026-10-23",
+ "snapshot": "2026-11-14",
  "count": 1565,
  "communications": [
   {
@@ -721,19 +721,19 @@
   },
   {
    "date": "2022-01-20",
-   "lobbyist": "Amir Remtulla",
-   "organization": "Amir Remtulla and Associates",
-   "client": "Fitzrovia Residential Inc.",
-   "subject": "Planning and Development;Planning and Development Application, Zoning By-law;Planning and Development Application, Site Plan",
-   "method": "Other or unreported"
-  },
-  {
-   "date": "2022-01-20",
    "lobbyist": "Salvatore DeCaria",
    "organization": "I2 Developments Inc.",
    "client": null,
    "subject": "Planning and Development Application, Site Plan",
    "method": "Meetings"
+  },
+  {
+   "date": "2022-01-20",
+   "lobbyist": "Amir Remtulla",
+   "organization": "Amir Remtulla and Associates",
+   "client": "Fitzrovia Residential Inc.",
+   "subject": "Planning and Development;Planning and Development Application, Zoning By-law;Planning and Development Application, Site Plan",
+   "method": "Other or unreported"
   },
   {
    "date": "2022-01-20",
@@ -1609,14 +1609,6 @@
   },
   {
    "date": "2021-06-30",
-   "lobbyist": "Kim Wright",
-   "organization": "Wright Strategies",
-   "client": "Youth Without Shelter",
-   "subject": "Affordable Housing;Shelters;Restart and rebuild related to Covid19 pandemic",
-   "method": "Emails"
-  },
-  {
-   "date": "2021-06-30",
    "lobbyist": "Camille Bianchi",
    "organization": "Sequoia Grove Homes Inc",
    "client": null,
@@ -1638,6 +1630,14 @@
    "client": null,
    "subject": "Planning and Development;Planning and Development, Planning Policy / Study",
    "method": "Meetings"
+  },
+  {
+   "date": "2021-06-30",
+   "lobbyist": "Kim Wright",
+   "organization": "Wright Strategies",
+   "client": "Youth Without Shelter",
+   "subject": "Affordable Housing;Shelters;Restart and rebuild related to Covid19 pandemic",
+   "method": "Emails"
   },
   {
    "date": "2021-06-29",
@@ -1817,11 +1817,11 @@
   },
   {
    "date": "2021-05-14",
-   "lobbyist": "Milton Chan",
-   "organization": "Toronto Region Board of Trade",
+   "lobbyist": "Chris Schafer",
+   "organization": "Bird Canada",
    "client": null,
-   "subject": "Budget;Economic Development;Planning and Development, Planning Policy / Study",
-   "method": "Meetings"
+   "subject": "By-law / Regulation;Transportation - Cycling / Bicycle Lanes;Transportation - Roads / Bridges",
+   "method": "Emails"
   },
   {
    "date": "2021-05-14",
@@ -1841,11 +1841,11 @@
   },
   {
    "date": "2021-05-14",
-   "lobbyist": "Chris Schafer",
-   "organization": "Bird Canada",
+   "lobbyist": "Milton Chan",
+   "organization": "Toronto Region Board of Trade",
    "client": null,
-   "subject": "By-law / Regulation;Transportation - Cycling / Bicycle Lanes;Transportation - Roads / Bridges",
-   "method": "Emails"
+   "subject": "Budget;Economic Development;Planning and Development, Planning Policy / Study",
+   "method": "Meetings"
   },
   {
    "date": "2021-05-12",
@@ -3817,6 +3817,14 @@
   },
   {
    "date": "2019-07-04",
+   "lobbyist": "Kim Wright",
+   "organization": "Wright Strategies",
+   "client": "Uber Canada, Inc.",
+   "subject": "By-law / Regulation;Economic Development;Transportation - Roads / Bridges",
+   "method": "Meetings"
+  },
+  {
+   "date": "2019-07-04",
    "lobbyist": "Martin Gray",
    "organization": "Uber Canada, Inc.",
    "client": null,
@@ -3829,14 +3837,6 @@
    "organization": "Uber Canada, Inc.",
    "client": null,
    "subject": "By-law / Regulation;Economic Development;Licences / Licensing",
-   "method": "Meetings"
-  },
-  {
-   "date": "2019-07-04",
-   "lobbyist": "Kim Wright",
-   "organization": "Wright Strategies",
-   "client": "Uber Canada, Inc.",
-   "subject": "By-law / Regulation;Economic Development;Transportation - Roads / Bridges",
    "method": "Meetings"
   },
   {
@@ -5209,7 +5209,7 @@
   },
   {
    "date": "2018-03-22",
-   "lobbyist": "Danielle Chin",
+   "lobbyist": "Danielle Binder",
    "organization": "Building Industry and Land Development Association",
    "client": null,
    "subject": "Planning and Development, Planning Policy / Study",
@@ -5217,7 +5217,7 @@
   },
   {
    "date": "2018-03-21",
-   "lobbyist": "Danielle Chin",
+   "lobbyist": "Danielle Binder",
    "organization": "Building Industry and Land Development Association",
    "client": null,
    "subject": "Planning and Development, Planning Policy / Study",
@@ -5985,19 +5985,19 @@
   },
   {
    "date": "2017-07-05",
-   "lobbyist": "Chris Schafer",
-   "organization": "Uber Canada, Inc.",
-   "client": null,
-   "subject": "By-law / Regulation;Economic Development;Licences / Licensing",
-   "method": "Emails"
-  },
-  {
-   "date": "2017-07-05",
    "lobbyist": "Jamie Besner",
    "organization": "Sussex Strategy Group",
    "client": "Castlepoint Studio Partners",
    "subject": "Planning and Development, Combined Application",
    "method": "Meetings"
+  },
+  {
+   "date": "2017-07-05",
+   "lobbyist": "Chris Schafer",
+   "organization": "Uber Canada, Inc.",
+   "client": null,
+   "subject": "By-law / Regulation;Economic Development;Licences / Licensing",
+   "method": "Emails"
   },
   {
    "date": "2017-07-04",
@@ -7689,19 +7689,19 @@
   },
   {
    "date": "2016-05-02",
-   "lobbyist": "Chris Schafer",
-   "organization": "Uber Canada, Inc.",
-   "client": null,
-   "subject": "By-law / Regulation;Economic Development;Licences / Licensing",
-   "method": "Phone calls"
-  },
-  {
-   "date": "2016-05-02",
    "lobbyist": "Kristine Hubbard",
    "organization": "Beck Taxi Limited",
    "client": null,
    "subject": "By-law / Regulation;Licences / Licensing",
    "method": "Emails"
+  },
+  {
+   "date": "2016-05-02",
+   "lobbyist": "Chris Schafer",
+   "organization": "Uber Canada, Inc.",
+   "client": null,
+   "subject": "By-law / Regulation;Economic Development;Licences / Licensing",
+   "method": "Phone calls"
   },
   {
    "date": "2016-05-02",

@@ -4,9 +4,33 @@
   "name": "City of Toronto Lobbyist Registry (Open Data)",
   "url": "https://open.toronto.ca/dataset/lobbyist-registry/"
  },
- "snapshot": "2026-10-23",
- "count": 1218,
+ "snapshot": "2026-11-14",
+ "count": 1221,
  "communications": [
+  {
+   "date": "2026-11-06",
+   "lobbyist": "Norman Cheesman",
+   "organization": "Cheesman & Associates",
+   "client": "Toronto Industry Network",
+   "subject": "Economic Development;Environment;Planning and Development, Planning Policy / Study",
+   "method": "Emails"
+  },
+  {
+   "date": "2026-10-28",
+   "lobbyist": "Stephen Diamond",
+   "organization": "Diamondcorp",
+   "client": "Parkway Views Property LP",
+   "subject": "Planning and Development;Planning and Development, Combined Application",
+   "method": "Meetings"
+  },
+  {
+   "date": "2026-10-28",
+   "lobbyist": "Caitlin Willcocks",
+   "organization": "DiamondCorp",
+   "client": "Parkway View Property LP",
+   "subject": "Planning and Development;Planning and Development, Combined Application",
+   "method": "Meetings"
+  },
   {
    "date": "2026-10-08",
    "lobbyist": "Gary E. Benner",
@@ -793,18 +817,18 @@
   },
   {
    "date": "2024-11-06",
-   "lobbyist": "Jake Brockman",
-   "organization": "Uber Canada, Inc.",
-   "client": null,
-   "subject": "By-law / Regulation;Economic Development;Licences / Licensing",
-   "method": "Emails"
-  },
-  {
-   "date": "2024-11-06",
    "lobbyist": "Austin Spademan",
    "organization": "Bird Canada",
    "client": null,
    "subject": "By-law / Regulation;Transportation - Cycling / Bicycle Lanes;Transportation - Roads / Bridges",
+   "method": "Emails"
+  },
+  {
+   "date": "2024-11-06",
+   "lobbyist": "Jake Brockman",
+   "organization": "Uber Canada, Inc.",
+   "client": null,
+   "subject": "By-law / Regulation;Economic Development;Licences / Licensing",
    "method": "Emails"
   },
   {
@@ -1121,18 +1145,18 @@
   },
   {
    "date": "2024-07-30",
-   "lobbyist": "Fadi Dawood",
-   "organization": "Toronto Region Board of Trade",
-   "client": null,
-   "subject": "Budget;Economic Development;Planning and Development, Planning Policy / Study",
-   "method": "Meetings"
-  },
-  {
-   "date": "2024-07-30",
    "lobbyist": "Luke Robertson",
    "organization": "The Cadillac Fairview Corporation Limited",
    "client": null,
    "subject": "Budget;Parking",
+   "method": "Meetings"
+  },
+  {
+   "date": "2024-07-30",
+   "lobbyist": "Fadi Dawood",
+   "organization": "Toronto Region Board of Trade",
+   "client": null,
+   "subject": "Budget;Economic Development;Planning and Development, Planning Policy / Study",
    "method": "Meetings"
   },
   {
@@ -1289,14 +1313,6 @@
   },
   {
    "date": "2024-06-26",
-   "lobbyist": "Kim Wright",
-   "organization": "Wright Strategies",
-   "client": "Toronto Outdoor Picture Show",
-   "subject": "Attractions / Tourism;Parks / Open Space;Recreation",
-   "method": "Emails"
-  },
-  {
-   "date": "2024-06-26",
    "lobbyist": "Paul Scrivener",
    "organization": "Toronto Industry Network",
    "client": null,
@@ -1309,6 +1325,14 @@
    "organization": "Amir Remtulla and Associates",
    "client": "Tessa Virtue and Morgan Rielly",
    "subject": "Planning and Development;Planning and Development Application, Zoning By-law;Planning and Development Application, Site Plan",
+   "method": "Emails"
+  },
+  {
+   "date": "2024-06-26",
+   "lobbyist": "Kim Wright",
+   "organization": "Wright Strategies",
+   "client": "Toronto Outdoor Picture Show",
+   "subject": "Attractions / Tourism;Parks / Open Space;Recreation",
    "method": "Emails"
   },
   {
@@ -1473,22 +1497,6 @@
   },
   {
    "date": "2024-04-04",
-   "lobbyist": "Leah Forte",
-   "organization": "QuadReal Property Group Limited Partnership",
-   "client": null,
-   "subject": "By-law / Regulation;Planning and Development Application, Official Plan;Planning and Development Application, Zoning By-law",
-   "method": "Meetings"
-  },
-  {
-   "date": "2024-04-04",
-   "lobbyist": "Aaron Knight",
-   "organization": "QuadReal Property Group Limited Partnership",
-   "client": null,
-   "subject": "By-law / Regulation;Planning and Development Application, Official Plan;Planning and Development Application, Zoning By-law",
-   "method": "Meetings"
-  },
-  {
-   "date": "2024-04-04",
    "lobbyist": "Michael Mestyan",
    "organization": "Deltera Inc.",
    "client": null,
@@ -1501,6 +1509,22 @@
    "organization": "Deltera Inc.",
    "client": null,
    "subject": "Planning and Development;Planning and Development Application, Site Plan;Planning and Development, Combined Application",
+   "method": "Meetings"
+  },
+  {
+   "date": "2024-04-04",
+   "lobbyist": "Leah Forte",
+   "organization": "QuadReal Property Group Limited Partnership",
+   "client": null,
+   "subject": "By-law / Regulation;Planning and Development Application, Official Plan;Planning and Development Application, Zoning By-law",
+   "method": "Meetings"
+  },
+  {
+   "date": "2024-04-04",
+   "lobbyist": "Aaron Knight",
+   "organization": "QuadReal Property Group Limited Partnership",
+   "client": null,
+   "subject": "By-law / Regulation;Planning and Development Application, Official Plan;Planning and Development Application, Zoning By-law",
    "method": "Meetings"
   },
   {
@@ -2305,18 +2329,18 @@
   },
   {
    "date": "2023-05-09",
-   "lobbyist": "Kim Wright",
-   "organization": "Wright Strategies",
-   "client": "Youth Without Shelter",
-   "subject": "Affordable Housing;Shelters;Restart and rebuild related to Covid19 pandemic",
-   "method": "Meetings"
-  },
-  {
-   "date": "2023-05-09",
    "lobbyist": "Naureen Rizvi",
    "organization": "Unifor",
    "client": null,
    "subject": "By-law / Regulation",
+   "method": "Meetings"
+  },
+  {
+   "date": "2023-05-09",
+   "lobbyist": "Kim Wright",
+   "organization": "Wright Strategies",
+   "client": "Youth Without Shelter",
+   "subject": "Affordable Housing;Shelters;Restart and rebuild related to Covid19 pandemic",
    "method": "Meetings"
   },
   {
@@ -2609,7 +2633,7 @@
   },
   {
    "date": "2023-01-09",
-   "lobbyist": "Andrew Byrne",
+   "lobbyist": "Jake Brockman",
    "organization": "Uber Canada, Inc.",
    "client": null,
    "subject": "By-law / Regulation;Economic Development;Licences / Licensing",
@@ -2617,7 +2641,7 @@
   },
   {
    "date": "2023-01-09",
-   "lobbyist": "Jake Brockman",
+   "lobbyist": "Andrew Byrne",
    "organization": "Uber Canada, Inc.",
    "client": null,
    "subject": "By-law / Regulation;Economic Development;Licences / Licensing",
@@ -4025,18 +4049,18 @@
   },
   {
    "date": "2020-11-19",
-   "lobbyist": "Jake Brockman",
-   "organization": "Uber Canada, Inc.",
-   "client": null,
-   "subject": "By-law / Regulation;Economic Development;Licences / Licensing",
-   "method": "Meetings"
-  },
-  {
-   "date": "2020-11-19",
    "lobbyist": "Kim Wright",
    "organization": "Wright Strategies",
    "client": "Uber Canada, Inc.",
    "subject": "By-law / Regulation;Economic Development;Transportation - Roads / Bridges",
+   "method": "Meetings"
+  },
+  {
+   "date": "2020-11-19",
+   "lobbyist": "Jake Brockman",
+   "organization": "Uber Canada, Inc.",
+   "client": null,
+   "subject": "By-law / Regulation;Economic Development;Licences / Licensing",
    "method": "Meetings"
   },
   {
@@ -6817,19 +6841,19 @@
   },
   {
    "date": "2015-09-28",
-   "lobbyist": "Ian Black",
-   "organization": "Uber Canada, Inc.",
-   "client": null,
-   "subject": "By-law / Regulation;Economic Development;Licences / Licensing",
-   "method": "Emails"
-  },
-  {
-   "date": "2015-09-28",
    "lobbyist": "Gail Souter",
    "organization": "Beck Taxi Limited",
    "client": null,
    "subject": "By-law / Regulation;Licences / Licensing",
    "method": "Written"
+  },
+  {
+   "date": "2015-09-28",
+   "lobbyist": "Ian Black",
+   "organization": "Uber Canada, Inc.",
+   "client": null,
+   "subject": "By-law / Regulation;Economic Development;Licences / Licensing",
+   "method": "Emails"
   },
   {
    "date": "2015-09-27",
@@ -7201,19 +7225,19 @@
   },
   {
    "date": "2015-01-19",
-   "lobbyist": "Ian Black",
-   "organization": "Uber Canada, Inc.",
-   "client": null,
-   "subject": "By-law / Regulation;Economic Development;Licences / Licensing",
-   "method": "Meetings"
-  },
-  {
-   "date": "2015-01-19",
    "lobbyist": "Paul Scrivener",
    "organization": "Toronto Industry Network",
    "client": null,
    "subject": "By-law / Regulation;Economic Development;Environment",
    "method": "Emails"
+  },
+  {
+   "date": "2015-01-19",
+   "lobbyist": "Ian Black",
+   "organization": "Uber Canada, Inc.",
+   "client": null,
+   "subject": "By-law / Regulation;Economic Development;Licences / Licensing",
+   "method": "Meetings"
   },
   {
    "date": "2015-01-19",

@@ -4,7 +4,7 @@
   "name": "City of Toronto Lobbyist Registry (Open Data)",
   "url": "https://open.toronto.ca/dataset/lobbyist-registry/"
  },
- "snapshot": "2026-10-23",
+ "snapshot": "2026-11-14",
  "count": 875,
  "communications": [
   {
@@ -3001,22 +3001,6 @@
   },
   {
    "date": "2017-07-25",
-   "lobbyist": "Sheldon McCormick",
-   "organization": "Uber Canada, Inc.",
-   "client": null,
-   "subject": "By-law / Regulation;Economic Development;Licences / Licensing",
-   "method": "Meetings"
-  },
-  {
-   "date": "2017-07-25",
-   "lobbyist": "Chris Schafer",
-   "organization": "Uber Canada, Inc.",
-   "client": null,
-   "subject": "By-law / Regulation;Economic Development;Licences / Licensing",
-   "method": "Meetings"
-  },
-  {
-   "date": "2017-07-25",
    "lobbyist": "Philip Ristevski",
    "organization": "The Cadillac Fairview Corporation Limited",
    "client": null,
@@ -3029,6 +3013,22 @@
    "organization": "The Cadillac Fairview Corporation Limited",
    "client": null,
    "subject": "Planning and Development Application, Zoning By-law",
+   "method": "Meetings"
+  },
+  {
+   "date": "2017-07-25",
+   "lobbyist": "Chris Schafer",
+   "organization": "Uber Canada, Inc.",
+   "client": null,
+   "subject": "By-law / Regulation;Economic Development;Licences / Licensing",
+   "method": "Meetings"
+  },
+  {
+   "date": "2017-07-25",
+   "lobbyist": "Sheldon McCormick",
+   "organization": "Uber Canada, Inc.",
+   "client": null,
+   "subject": "By-law / Regulation;Economic Development;Licences / Licensing",
    "method": "Meetings"
   },
   {
@@ -3553,14 +3553,6 @@
   },
   {
    "date": "2016-09-16",
-   "lobbyist": "Chris Schafer",
-   "organization": "Uber Canada, Inc.",
-   "client": null,
-   "subject": "By-law / Regulation;Economic Development;Licences / Licensing",
-   "method": "Emails"
-  },
-  {
-   "date": "2016-09-16",
    "lobbyist": "Alain Brandon",
    "organization": "Loblaw Companies Ltd",
    "client": null,
@@ -3574,6 +3566,14 @@
    "client": null,
    "subject": "By-law / Regulation;Economic Development;Environment",
    "method": "Meetings"
+  },
+  {
+   "date": "2016-09-16",
+   "lobbyist": "Chris Schafer",
+   "organization": "Uber Canada, Inc.",
+   "client": null,
+   "subject": "By-law / Regulation;Economic Development;Licences / Licensing",
+   "method": "Emails"
   },
   {
    "date": "2016-09-13",

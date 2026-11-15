@@ -4,9 +4,33 @@
   "name": "City of Toronto Lobbyist Registry (Open Data)",
   "url": "https://open.toronto.ca/dataset/lobbyist-registry/"
  },
- "snapshot": "2026-10-23",
- "count": 645,
+ "snapshot": "2026-11-14",
+ "count": 648,
  "communications": [
+  {
+   "date": "2026-11-06",
+   "lobbyist": "Norman Cheesman",
+   "organization": "Cheesman & Associates",
+   "client": "Toronto Industry Network",
+   "subject": "Economic Development;Environment;Planning and Development, Planning Policy / Study",
+   "method": "Emails"
+  },
+  {
+   "date": "2026-10-27",
+   "lobbyist": "Alexander Savanyu",
+   "organization": "Bousfields Inc.",
+   "client": "DMJ Development Corporation",
+   "subject": "Planning and Development;Planning and Development Application;Planning and Development Application, Zoning By-law",
+   "method": "Emails"
+  },
+  {
+   "date": "2026-10-27",
+   "lobbyist": "Christopher Sim",
+   "organization": "Bousfields Inc.",
+   "client": "DMJ Development Corporation",
+   "subject": "Planning and Development;Planning and Development Application;Planning and Development Application, Zoning By-law",
+   "method": "Emails"
+  },
   {
    "date": "2026-10-08",
    "lobbyist": "Gary E. Benner",
@@ -593,18 +617,18 @@
   },
   {
    "date": "2025-04-08",
-   "lobbyist": "Michael Giles",
-   "organization": "Residential Construction Council of Ontario",
-   "client": null,
-   "subject": "Building Permits;Economic Development;Planning and Development, Planning Policy / Study",
-   "method": "Phone calls"
-  },
-  {
-   "date": "2025-04-08",
    "lobbyist": "Danielle Binder",
    "organization": "Building Industry and Land Development Association",
    "client": null,
    "subject": "Planning and Development",
+   "method": "Phone calls"
+  },
+  {
+   "date": "2025-04-08",
+   "lobbyist": "Michael Giles",
+   "organization": "Residential Construction Council of Ontario",
+   "client": null,
+   "subject": "Building Permits;Economic Development;Planning and Development, Planning Policy / Study",
    "method": "Phone calls"
   },
   {
@@ -881,18 +905,18 @@
   },
   {
    "date": "2024-11-06",
-   "lobbyist": "Jake Brockman",
-   "organization": "Uber Canada, Inc.",
-   "client": null,
-   "subject": "By-law / Regulation;Economic Development;Licences / Licensing",
-   "method": "Emails"
-  },
-  {
-   "date": "2024-11-06",
    "lobbyist": "Austin Spademan",
    "organization": "Bird Canada",
    "client": null,
    "subject": "By-law / Regulation;Transportation - Cycling / Bicycle Lanes;Transportation - Roads / Bridges",
+   "method": "Emails"
+  },
+  {
+   "date": "2024-11-06",
+   "lobbyist": "Jake Brockman",
+   "organization": "Uber Canada, Inc.",
+   "client": null,
+   "subject": "By-law / Regulation;Economic Development;Licences / Licensing",
    "method": "Emails"
   },
   {
@@ -3529,14 +3553,6 @@
   },
   {
    "date": "2020-09-14",
-   "lobbyist": "Jake Brockman",
-   "organization": "Uber Canada, Inc.",
-   "client": null,
-   "subject": "By-law / Regulation;Economic Development;Licences / Licensing",
-   "method": "Emails"
-  },
-  {
-   "date": "2020-09-14",
    "lobbyist": "Chris Schafer",
    "organization": "Bird Canada",
    "client": null,
@@ -3549,6 +3565,14 @@
    "organization": "Scooty Mobility Inc.",
    "client": null,
    "subject": "Transit / TTC;Transportation - Cycling / Bicycle Lanes;Transportation - Metrolinx",
+   "method": "Emails"
+  },
+  {
+   "date": "2020-09-14",
+   "lobbyist": "Jake Brockman",
+   "organization": "Uber Canada, Inc.",
+   "client": null,
+   "subject": "By-law / Regulation;Economic Development;Licences / Licensing",
    "method": "Emails"
   },
   {

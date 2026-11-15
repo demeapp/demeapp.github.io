@@ -4,7 +4,7 @@
   "name": "City of Toronto Lobbyist Registry (Open Data)",
   "url": "https://open.toronto.ca/dataset/lobbyist-registry/"
  },
- "snapshot": "2026-10-23",
+ "snapshot": "2026-11-14",
  "count": 896,
  "communications": [
   {
@@ -2809,18 +2809,18 @@
   },
   {
    "date": "2018-11-19",
-   "lobbyist": "Brian Kelcey",
-   "organization": "Toronto Region Board of Trade",
-   "client": null,
-   "subject": "Budget;Economic Development;Planning and Development, Planning Policy / Study",
-   "method": "Emails"
-  },
-  {
-   "date": "2018-11-19",
    "lobbyist": "Julianna Boldt",
    "organization": "Widmer Residences Corp.",
    "client": null,
    "subject": "Planning and Development, Combined Application",
+   "method": "Emails"
+  },
+  {
+   "date": "2018-11-19",
+   "lobbyist": "Brian Kelcey",
+   "organization": "Toronto Region Board of Trade",
+   "client": null,
+   "subject": "Budget;Economic Development;Planning and Development, Planning Policy / Study",
    "method": "Emails"
   },
   {
@@ -6225,19 +6225,19 @@
   },
   {
    "date": "2015-09-28",
-   "lobbyist": "Ian Black",
-   "organization": "Uber Canada, Inc.",
-   "client": null,
-   "subject": "By-law / Regulation;Economic Development;Licences / Licensing",
-   "method": "Emails"
-  },
-  {
-   "date": "2015-09-28",
    "lobbyist": "Gail Souter",
    "organization": "Beck Taxi Limited",
    "client": null,
    "subject": "By-law / Regulation;Licences / Licensing",
    "method": "Written"
+  },
+  {
+   "date": "2015-09-28",
+   "lobbyist": "Ian Black",
+   "organization": "Uber Canada, Inc.",
+   "client": null,
+   "subject": "By-law / Regulation;Economic Development;Licences / Licensing",
+   "method": "Emails"
   },
   {
    "date": "2015-09-27",

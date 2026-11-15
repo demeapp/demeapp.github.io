@@ -4,7 +4,7 @@
   "name": "City of Toronto Lobbyist Registry (Open Data)",
   "url": "https://open.toronto.ca/dataset/lobbyist-registry/"
  },
- "snapshot": "2026-10-23",
+ "snapshot": "2026-11-14",
  "count": 489,
  "communications": [
   {
@@ -1113,14 +1113,6 @@
   },
   {
    "date": "2024-11-06",
-   "lobbyist": "Jake Brockman",
-   "organization": "Uber Canada, Inc.",
-   "client": null,
-   "subject": "By-law / Regulation;Economic Development;Licences / Licensing",
-   "method": "Emails"
-  },
-  {
-   "date": "2024-11-06",
    "lobbyist": "Spencer Owen",
    "organization": "Graywood Developments Ltd.",
    "client": null,
@@ -1133,6 +1125,14 @@
    "organization": "Bird Canada",
    "client": null,
    "subject": "By-law / Regulation;Transportation - Cycling / Bicycle Lanes;Transportation - Roads / Bridges",
+   "method": "Emails"
+  },
+  {
+   "date": "2024-11-06",
+   "lobbyist": "Jake Brockman",
+   "organization": "Uber Canada, Inc.",
+   "client": null,
+   "subject": "By-law / Regulation;Economic Development;Licences / Licensing",
    "method": "Emails"
   },
   {
@@ -1433,14 +1433,6 @@
   },
   {
    "date": "2024-07-03",
-   "lobbyist": "Kim Wright",
-   "organization": "Wright Strategies",
-   "client": "Toronto Outdoor Picture Show",
-   "subject": "Attractions / Tourism;Parks / Open Space;Recreation",
-   "method": "Meetings"
-  },
-  {
-   "date": "2024-07-03",
    "lobbyist": "Tristan Downe-Dewdney",
    "organization": "Downe Dewdney Strategies Ltd.",
    "client": "Block (Sumach) Developments Limited",
@@ -1469,6 +1461,14 @@
    "organization": "Block Developments",
    "client": null,
    "subject": "Planning and Development Application",
+   "method": "Meetings"
+  },
+  {
+   "date": "2024-07-03",
+   "lobbyist": "Kim Wright",
+   "organization": "Wright Strategies",
+   "client": "Toronto Outdoor Picture Show",
+   "subject": "Attractions / Tourism;Parks / Open Space;Recreation",
    "method": "Meetings"
   },
   {
@@ -1673,6 +1673,14 @@
   },
   {
    "date": "2024-04-10",
+   "lobbyist": "Toby Wu",
+   "organization": "QuadReal Property Group Limited Partnership",
+   "client": null,
+   "subject": "Planning and Development",
+   "method": "Meetings"
+  },
+  {
+   "date": "2024-04-10",
    "lobbyist": "Ryan Dunn",
    "organization": "Rogers Communications Inc.",
    "client": null,
@@ -1685,14 +1693,6 @@
    "organization": "Rogers Communications Inc.",
    "client": null,
    "subject": "Technology",
-   "method": "Meetings"
-  },
-  {
-   "date": "2024-04-10",
-   "lobbyist": "Toby Wu",
-   "organization": "QuadReal Property Group Limited Partnership",
-   "client": null,
-   "subject": "Planning and Development",
    "method": "Meetings"
   },
   {
@@ -1913,14 +1913,6 @@
   },
   {
    "date": "2024-01-15",
-   "lobbyist": "Michael van Hemmen",
-   "organization": "Uber Canada, Inc.",
-   "client": null,
-   "subject": "By-law / Regulation;Economic Development;Licences / Licensing",
-   "method": "Meetings"
-  },
-  {
-   "date": "2024-01-15",
    "lobbyist": "Laura Miller",
    "organization": "Uber Canada, Inc.",
    "client": null,
@@ -1930,6 +1922,14 @@
   {
    "date": "2024-01-15",
    "lobbyist": "Jake Brockman",
+   "organization": "Uber Canada, Inc.",
+   "client": null,
+   "subject": "By-law / Regulation;Economic Development;Licences / Licensing",
+   "method": "Meetings"
+  },
+  {
+   "date": "2024-01-15",
+   "lobbyist": "Michael van Hemmen",
    "organization": "Uber Canada, Inc.",
    "client": null,
    "subject": "By-law / Regulation;Economic Development;Licences / Licensing",

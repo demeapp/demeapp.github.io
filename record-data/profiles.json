@@ -31,7 +31,9 @@
   "ward": "Ward 24, Scarborough—Guildwood",
   "bio": "Paul Ainslie was first elected to Toronto City Council in 2006 (appointed to a vacant Ward 41 seat in February 2006, then elected in Ward 43 that October), and has represented Scarborough-Guildwood as Ward 24 since 2018. He has over 25 years of experience across federal, provincial, and municipal government and previously owned and operated a small business. In May 2025 he was appointed Deputy Mayor for Scarborough.",
   "committees": [
+   "Executive Committee",
    "General Government and Service Excellence Committee (Chair)",
+   "Scarborough Community Council",
    "Exhibition Place Board of Governors",
    "Toronto Public Library Board",
    "Toronto Transit Commission (Chair)",
@@ -65,8 +67,11 @@
   "ward": "Ward 21, Scarborough Centre",
   "bio": "Michael Thompson was first elected to Toronto City Council in 2003 and is now in his sixth term representing Scarborough Centre. Before entering politics he worked as an entrepreneur in the business and financial services sector (after serving as an assistant to Councillor Lorenzo Berardinetti, 1998-2003), and holds a BA in Economics from Concordia University. During the 2022 election he was charged with two counts of sexual assault and stepped down as deputy mayor and Chair of the Economic and Community Development Committee; he pleaded not guilty and was found not guilty on both charges in September 2025. He did not leave office and continues to serve his term.",
   "committees": [
+   "Executive Committee",
    "Economic Development and Culture Committee (Chair)",
-   "Board of Health"
+   "Scarborough Community Council (Chair)",
+   "Board of Health",
+   "Committee of Revision"
   ],
   "contact": {
    "email": "councillor_thompson@toronto.ca",
@@ -141,6 +146,7 @@
   "bio": "Serving on Toronto City Council since 2006, representing Ward 8 York West from 2006 to 2018 and Ward 7 Humber River-Black Creek since the 2018 ward amalgamation, re-elected in 2022. Earlier he was a trustee on the Metro Toronto Separate School Board (1985-88), a North York city councillor (1988-90), and a Member of Provincial Parliament for Downsview (1990-95); he ran for mayor of Toronto in the 2023 by-election. He is seeking re-election in the 2026 municipal election.",
   "committees": [
    "Infrastructure and Environment Committee",
+   "Etobicoke York Community Council",
    "Toronto Community Housing Corporation Board of Directors",
    "Toronto Seniors Housing Corporation Board of Directors",
    "Board of Health",
@@ -168,7 +174,9 @@
   "ward": "Ward 17, Don Valley North",
   "bio": "Shelley Carroll was first elected to Toronto City Council in 2003, representing Ward 33 Don Valley East; she had previously served as a Toronto District School Board trustee from 2000 to 2003. She resigned from council in April 2018 to run as the Ontario Liberal candidate in the Don Valley North provincial election, then returned to council after winning the newly formed Ward 17 in the 2018 municipal election, and was re-elected in 2022. She served as Chair of the Budget Committee under both Mayor John Tory and Mayor Olivia Chow, and became Chair of the Toronto Police Services Board in January 2025.",
   "committees": [
+   "Executive Committee",
    "Budget Committee (Chair)",
+   "North York Community Council",
    "Toronto Police Service Board",
    "Canadian Film Centre Board of Directors",
    "Debenture Committee"
@@ -193,7 +201,9 @@
   "ward": "Ward 6, York Centre",
   "bio": "James Pasternak was first elected to Toronto City Council in 2010, representing Ward 10 York Centre; he had previously served as a Toronto District School Board trustee from 2006 to 2010. He has represented Ward 6 York Centre since the 2018 ward boundary changes, and was re-elected in 2014, 2018 and 2022. He holds degrees from York University, the University of Western Ontario, and the London School of Economics and Political Science.",
   "committees": [
-   "Community and Social Services Committee"
+   "Community and Social Services Committee",
+   "North York Community Council (Chair)",
+   "Committee of Revision"
   ],
   "contact": {
    "email": "councillor_pasternak@toronto.ca",
@@ -217,6 +227,7 @@
   "committees": [
    "Executive Committee",
    "Planning and Housing Committee",
+   "Toronto and East York Community Council",
    "Exhibition Place Board of Governors"
   ],
   "contact": {
@@ -295,6 +306,7 @@
   "committees": [
    "Planning and Housing Committee",
    "Audit Committee",
+   "Etobicoke York Community Council",
    "Exhibition Place Board of Governors",
    "Toronto Preservation Board",
    "Greater Toronto Airports Authority (GTAA) Consultative Committee",
@@ -326,9 +338,11 @@
   "committees": [
    "General Government and Service Excellence Committee",
    "Audit Committee (Chair)",
+   "Etobicoke York Community Council (Chair)",
    "Heritage Toronto Board of Directors",
    "Canadian National Exhibition Association, Municipal Section and Board of Directors",
-   "Hockey Hall of Fame and Museum Board of Directors"
+   "Hockey Hall of Fame and Museum Board of Directors",
+   "Committee of Revision"
   ],
   "contact": {
    "email": "councillor_holyday@toronto.ca",
@@ -351,7 +365,8 @@
   "bio": "Jon Burnside was elected councillor for Ward 16, Don Valley East, in the 2022 municipal election, returning to City Hall after previously representing Ward 26, Don Valley West, from 2014-2018 (a seat he lost when wards were redrawn). He served as a Toronto Police officer from 1991 to 2001 and later founded and operated a healthy food delivery business in the GTA for about 14 years. He chaired the TTC from November 2022 to August 2023.",
   "committees": [
    "General Government and Service Excellence Committee",
-   "Civic Appointments Committee"
+   "Civic Appointments Committee",
+   "North York Community Council"
   ],
   "contact": {
    "email": "councillor_burnside@toronto.ca",
@@ -408,8 +423,10 @@
   "ward": "Ward 8, Eglinton-Lawrence",
   "bio": "Mike Colle has represented Ward 8, Eglinton-Lawrence on Toronto City Council since December 2018 and was re-elected in 2022 with 70.3% of the vote; he has served as Deputy Mayor for North York since August 2023. Before joining council he was the Liberal MPP for Eglinton-Lawrence from 1995 to 2018, serving as a cabinet minister under Premier Dalton McGuinty. Earlier in his career he was a councillor for the City of York and Metropolitan Toronto, TTC chair from 1988 to 1994, and a high school history and economics teacher.",
   "committees": [
+   "Executive Committee",
    "Infrastructure and Environment Committee (Vice-Chair)",
    "Corporations Nominating Panel (Vice-Chair)",
+   "North York Community Council",
    "Hockey Hall of Fame and Museum Board of Directors"
   ],
   "contact": {
@@ -469,6 +486,7 @@
   "bio": "Nick Mantas has represented Ward 22, Scarborough-Agincourt on Toronto City Council since winning a by-election on January 15, 2021 (sworn in January 18), replacing Jim Karygiannis; he was re-elected in 2022. He holds a BA in economics from York University and previously worked as a federal constituency assistant, a policy advisor to the Senate of Canada, and chief of staff to former Ward 22 councillor Jim Karygiannis. He has also served as chair of the Panarcadian Federation of Canada and as a director of the Hellenic Canadian Board of Trade.",
   "committees": [
    "Economic Development and Culture Committee",
+   "Scarborough Community Council",
    "Toronto Zoo Board of Management",
    "Canadian National Exhibition Association, Municipal Section and Board of Directors",
    "Greater Toronto Area Agricultural Action Committee (GTA AAC)",
@@ -502,6 +520,7 @@
    "Budget Committee",
    "Civic Appointments Committee",
    "Striking Committee",
+   "Scarborough Community Council",
    "Toronto Hydro Corporation Board of Directors (Mayor's designate)",
    "Board of Health",
    "Toronto Transit Commission",
@@ -563,8 +582,11 @@
   "ward": "Ward 9, Davenport",
   "bio": "Alejandra Bravo was first elected to Toronto City Council on October 24, 2022, taking office November 15, 2022 with over 70 percent of the vote in the open-seat race to succeed Ana Bailão. She previously ran for council in Davenport in 2003, 2006 and 2014, and was the federal NDP candidate in Davenport in 2021. Born in Chile in 1971, she moved to Canada with her family as a refugee as a child; she was Director of Leadership and Training at the Broadbent Institute and spent a decade as Manager of Leadership and Learning at the Maytree Foundation.",
   "committees": [
+   "Executive Committee",
    "Community and Social Services Committee (Chair)",
    "Corporations Nominating Panel",
+   "Striking Committee (Vice-Chair)",
+   "Toronto and East York Community Council",
    "City of Toronto Long-Term Care Committee of Management (Chair)",
    "Toronto Transit Commission"
   ],
@@ -592,9 +614,11 @@
   "ward": "Ward 10, Spadina–Fort York",
   "bio": "Ausma Malik was elected to Toronto City Council in October 2022 and took office on November 15, 2022, representing Ward 10 Spadina–Fort York, succeeding Joe Cressy. She previously served as a Toronto District School Board trustee from 2014 to 2018, where she helped get Jean Lumb Public School built, and was Director of Advocacy and Organizing at the Atkinson Foundation from 2016 to 2022. The first hijab-wearing Muslim woman elected to public office in Canada, she was appointed Statutory Deputy Mayor and Deputy Mayor for Toronto and East York by Mayor Olivia Chow in August 2023.",
   "committees": [
+   "Executive Committee (Vice-Chair)",
    "Planning and Housing Committee",
    "Civic Appointments Committee (Chair)",
    "Striking Committee (Chair)",
+   "Toronto and East York Community Council",
    "Waterfront Revitalization Corporation (Mayor's designate)",
    "CreateTO Board of Directors",
    "Exhibition Place Board of Governors (Chair)",
@@ -602,7 +626,7 @@
    "Campbell House Board of Management",
    "Canadian National Exhibition Association, Municipal Section and Board of Directors",
    "Harbourfront Centre Board of Directors",
-   "Committee of Revision"
+   "Committee of Revision (Chair)"
   ],
   "contact": {
    "email": "Councillor_Malik@toronto.ca",
@@ -630,6 +654,7 @@
   "committees": [
    "Community and Social Services Committee",
    "Budget Committee",
+   "North York Community Council (Vice-Chair)",
    "TO Live Board of Directors",
    "Toronto Arts Council Board of Directors"
   ],
@@ -690,9 +715,11 @@
   "ward": "Ward 3, Etobicoke—Lakeshore",
   "bio": "Amber Morley was elected to represent Ward 3, Etobicoke-Lakeshore on October 24, 2022, defeating incumbent Mark Grimes with 46.44% of the vote. Before council she spent over 20 years in community advocacy, including as Director of the South Etobicoke Youth Assembly at LAMP Community Health Centre, as an Administrative Assistant to Councillor Peter Milczyn, and as a Constituency Assistant for Ward 4 Etobicoke-Centre. She also serves as a non-statutory Deputy Mayor for Etobicoke and York, appointed August 2023.",
   "committees": [
+   "Executive Committee",
    "Economic Development and Culture Committee",
    "Infrastructure and Environment Committee",
    "Striking Committee",
+   "Etobicoke York Community Council",
    "City of Toronto Long-Term Care Committee of Management",
    "Toronto Police Service Board",
    "Toronto Public Library Board (Mayor's designate)"
@@ -759,6 +786,7 @@
   "ward": "Mayor of Toronto (city-wide); formerly Councillor for Ward 20, Trinity-Spadina (1998-2005)",
   "bio": "Olivia Chow was elected the 66th Mayor of Toronto in the June 26, 2023 mayoral by-election and assumed office on July 12, 2023, becoming the first person of Asian descent and the first woman since amalgamation to hold the office. Her political career includes serving as a Toronto school board trustee (1985-1991), a Metro/Toronto city councillor for Trinity-Spadina (1992-2005), and as the NDP Member of Parliament for Trinity-Spadina (2006-2014). She immigrated to Toronto from Hong Kong at age 13 and is the widow of former NDP leader Jack Layton.",
   "committees": [
+   "Executive Committee (Chair)",
    "Canadian National Exhibition Association, Municipal Section and Board of Directors",
    "Debenture Committee"
   ],
@@ -787,6 +815,7 @@
   "bio": "Parthi Kandavel was elected to Toronto City Council in a by-election on November 30, 2023, replacing Gary Crawford. Between 2014 and 2022 he served as a TDSB trustee for Scarborough Southwest; he previously worked for twelve years as an elementary school teacher and holds a BA in Mathematics and Political Science from the University of Waterloo.",
   "committees": [
    "Economic Development and Culture Committee",
+   "Scarborough Community Council",
    "Toronto and Region Conservation Authority"
   ],
   "contact": {
@@ -815,6 +844,7 @@
   "committees": [
    "General Government and Service Excellence Committee (Vice-Chair)",
    "Infrastructure and Environment Committee",
+   "North York Community Council",
    "Toronto Hydro Corporation Board of Directors",
    "Association of Municipalities of Ontario Board of Directors",
    "Federation of Canadian Municipalities (FCM) Board of Directors",
@@ -889,6 +919,7 @@
   "bio": "Long-time Parkdale frontline homelessness-services worker and housing/human-rights advocate — about 12 years on the front line, including at the Parkdale Activity-Recreation Centre (PARC) and Parkdale Queen West Community Health Centre; served on the City of Toronto’s Housing Rights Advisory Committee.",
   "committees": [
    "Planning and Housing Committee (Vice-Chair)",
+   "Toronto and East York Community Council (Vice-Chair)",
    "Toronto Atmospheric Fund Board of Directors",
    "Canadian National Exhibition Association, Municipal Section and Board of Directors",
    "Toronto Arts Council Board of Directors"
@@ -909,6 +940,7 @@
    "Infrastructure and Environment Committee",
    "Audit Committee (Vice-Chair)",
    "Budget Committee",
+   "Etobicoke York Community Council (Vice-Chair)",
    "Toronto Accessibility Advisory Committee (Chair)",
    "Toronto and Region Conservation Authority"
   ],
@@ -973,10 +1005,12 @@
   "ward": "Ward 11, University—Rosedale",
   "bio": "Toronto city councillor 2010–2022 who did not seek re-election in 2022 and became York University’s chief sustainability officer in March 2023; son of former federal NDP leader Jack Layton.",
   "committees": [
+   "Executive Committee",
    "Infrastructure and Environment Committee (Chair)",
    "Budget Committee (Vice-Chair)",
    "Corporations Nominating Panel (Chair)",
    "Striking Committee",
+   "Toronto and East York Community Council",
    "Toronto Community Housing Corporation Board of Directors",
    "Toronto Hydro Corporation Board of Directors",
    "Toronto Atmospheric Fund Board of Directors (Mayor's designate)",
@@ -1104,11 +1138,13 @@
    "Community and Social Services Committee",
    "Budget Committee",
    "Civic Appointments Committee",
+   "Toronto and East York Community Council (Chair)",
    "Board of Health",
    "TO Live Board of Directors",
    "Toronto Police Service Board",
    "Canadian Stage Company Board of Directors",
-   "Ralph Thornton Community Centre Board of Management"
+   "Ralph Thornton Community Centre Board of Management",
+   "Committee of Revision"
   ],
   "contact": {},
   "promises": [
@@ -1202,6 +1238,7 @@
    "Community and Social Services Committee (Vice-Chair)",
    "Audit Committee",
    "Civic Appointments Committee (Vice-Chair)",
+   "Toronto and East York Community Council",
    "TO Live Board of Directors (Mayor's designate)",
    "Association francophone des municipalités de l'Ontario (AFMO)",
    "Toronto and Region Conservation Authority"
@@ -1214,7 +1251,9 @@
   "ward": "Ward 19, Beaches—East York",
   "bio": "Liberal MP for Beaches—East York 2015–2026 and federal Minister of Housing, Infrastructure and Communities (Dec 2024–May 2025); a commercial litigation lawyer before politics; resigned from Parliament July 7, 2026 and announced his council run August 18, 2026.",
   "committees": [
+   "Executive Committee",
    "Planning and Housing Committee (Chair)",
+   "Toronto and East York Community Council",
    "Toronto Community Housing Corporation Board of Directors (Mayor's designate)",
    "Toronto Seniors Housing Corporation Board of Directors (Mayor's designate)",
    "CreateTO Board of Directors (Mayor's designate)",
@@ -1289,6 +1328,7 @@
   "committees": [
    "General Government and Service Excellence Committee",
    "Audit Committee",
+   "Scarborough Community Council",
    "City of Toronto Long-Term Care Committee of Management",
    "Heritage Toronto Board of Directors (Mayor's designate)",
    "Greater Toronto Airports Authority (GTAA) Consultative Committee (Alternate)"
